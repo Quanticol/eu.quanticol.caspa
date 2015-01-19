@@ -2,8 +2,238 @@ grammar eu.quanticol.CASPA with org.eclipse.xtext.common.Terminals
 
 generate cASPA "http://www.quanticol.eu/CASPA"
 
-Model:
-	greetings+=Greeting*;
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+Model hidden(ML_COMMENT,SL_COMMENT,WS):
+	stores+=Store+ 
+	processes+=Process+ 
+	terms+=Term+ 
+;
+
+//TERMS
+Term hidden(ML_COMMENT,SL_COMMENT,WS):
+	"(" name=[Process|UPPER] ",""{" stores+=[Store|LOWER] "}" ")"";"
+;
+
+
+//PROCESSES
+Process hidden(ML_COMMENT,SL_COMMENT,WS):
+	name=UPPER "=" value=ProcessExpression ";"
+;
+
+ProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Parallel
+;
+
+Parallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Choice ({Parallel.left=current}  "|" right=Choice)*
+;
+
+Choice returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PrimaryProcess ({Choice.left=current}  "+" right=PrimaryProcess)*
+;
+
+PrimaryProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Leaf} value="nil" |
+	{Leaf} value="kill"|
+	PredicateProcess |
+	ActionProcess |
+	{ProcessReference} value=[Process|UPPER]
+;
+
+PredicateProcess hidden(ML_COMMENT,SL_COMMENT,WS):
+	{PredicateProcess} predicate=Predicate value=[Process|UPPER]
+;
+
+ActionProcess hidden(ML_COMMENT,SL_COMMENT,WS):
+	{ActionProcess} action=Action value=[Process|UPPER]
+;
+
+
+//ACTIONS
+Action hidden(ML_COMMENT,SL_COMMENT,WS):
+	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) (predicate=Predicate)? (evaluations=Evaluations)? (updates=Updates)? "." 
 	
-Greeting:
-	'Hello' name=ID '!';
+;
+
+Predicate hidden(ML_COMMENT,SL_COMMENT,WS) :
+	{Predicate} "[" predicate=PredicateExpression "]"
+;
+
+Evaluations hidden(ML_COMMENT,SL_COMMENT,WS):
+	 ("(" {In} expressions+=EvaluationExpressionIn+ ")"| "<" {Out} expressions+=EvaluationExpressionOut+ ">")
+;
+
+Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Updates} "{" updates+=UpdateExpression+ "}"
+;
+
+PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	expression=ActionExpression ";"
+;
+
+EvaluationExpressionIn hidden(ML_COMMENT,SL_COMMENT,WS):
+	({LocalEvaluationExpression} name=SelfReferencedStore ":=" expression=ActionExpression | 
+	{GlobalEvaluationExpression} name=[Store|LOWER] ":=" expression=ActionExpression ) ";"
+;
+
+EvaluationExpressionOut hidden(ML_COMMENT,SL_COMMENT,WS):
+	{FreeEvaluationExpression} name=FreeVariable ":=" expression=ActionExpression ";"
+;
+
+UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	({LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression  | 
+	{GlobalUpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression ) ";"
+;
+
+SelfReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
+	{SelfReferencedStore}   "this."name=[Store|LOWER]
+;
+
+ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionOr
+;
+	
+ActionOr returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionAnd ({ActionOr.left=current} "||" 
+		right=ActionAnd
+	)*
+;
+
+ActionAnd returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionEquality ({ActionAnd.left=current} "&&" 
+		right=ActionEquality
+	)*
+;
+
+ActionEquality returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionComparison (
+		{ActionEquality.left=current} op=("=="|"!=")
+		right=ActionComparison
+	)*
+;
+
+ActionComparison returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionSubtraction ({ActionComparison.left=current} op=(">="|"<="|">"|"<") 
+		right=ActionSubtraction
+	)*
+;
+	
+ActionSubtraction returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionAddition ({ActionSub.left=current} '-' 
+		right=ActionAddition
+	)*
+;
+	
+ActionAddition returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionMultiplication ({ActionPlu.left=current} '+' 
+		right=ActionMultiplication
+	)*
+;
+
+ActionMultiplication returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ActionDivision ({ActionMul.left=current} '*' 
+		right=ActionDivision
+	)*
+;
+	
+ActionDivision returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS): 
+	ActionPrimary ({ActionDiv.left=current} '/' 
+		right=ActionPrimary
+	)*
+;
+
+ActionPrimary returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	'(' ActionExpression ')' | 
+	{ActionNot} "!" expression=ActionPrimary |
+	ActionAtomic
+;
+
+ActionAtomic returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DoubleConstant} 	value=Double |
+	{FreeVariable} 		value=FreeVariable |
+	{BoolConstant} 		value=('true'|'false') |
+	{ReferencedStore} 	value=[Store|LOWER]
+;
+
+
+//STORES
+Store hidden(ML_COMMENT,SL_COMMENT,WS):
+	name=LOWER "=" value=Expression ";"
+;
+
+Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Or
+;
+	
+Or returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	And ({Or.left=current} "||" 
+		right=And
+	)*
+;
+
+And returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Equality ({And.left=current} "&&" 
+		right=Equality
+	)*
+;
+
+Equality returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Comparison (
+		{Equality.left=current} op=("=="|"!=")
+		right=Comparison
+	)*
+;
+
+Comparison returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Subtraction ({Comparison.left=current} op=(">="|"<="|">"|"<") 
+		right=Subtraction
+	)*
+;
+	
+Subtraction returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Addition ({Sub.left=current} '-' 
+		right=Addition
+	)*
+;
+	
+Addition returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Multiplication ({Plu.left=current} '+' 
+		right=Multiplication
+	)*
+;
+
+Multiplication returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Division ({Mul.left=current} '*' 
+		right=Division
+	)*
+;
+	
+Division returns Expression hidden(ML_COMMENT,SL_COMMENT,WS): 
+	Primary ({Div.left=current} '/' 
+		right=Primary
+	)*
+;
+
+Primary returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	'(' Expression ')' | 
+	{Not} "!" expression=Primary |
+	Atomic
+;
+
+Atomic returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DoubleConstant} 	value=Double |
+	{BoolConstant} 		value=('true'|'false') |
+	{ReferencedStore} 	value=[Store|LOWER]
+;
+
+Double returns ecore::EDouble:
+	 INT ('.' INT ('e'|'E' '-'? INT)?)?
+;
+
+FreeVariable returns ecore::EString:
+	"$"LOWER
+;
+
+terminal LOWER: ("a".."z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal UPPER: ("A".."Z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
