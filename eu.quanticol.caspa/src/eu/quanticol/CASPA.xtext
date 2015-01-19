@@ -1,0 +1,9 @@
+grammar eu.quanticol.CASPA with org.eclipse.xtext.common.Terminals
+
+generate cASPA "http://www.quanticol.eu/CASPA"
+
+Model:
+	greetings+=Greeting*;
+	
+Greeting:
+	'Hello' name=ID '!';
