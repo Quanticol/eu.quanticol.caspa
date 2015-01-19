@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: eu.quanticol.caspa.ui
-Bundle-Vendor: My Company
-Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: Quanticol
+Bundle-Version: 1.0.0.1
 Bundle-SymbolicName: eu.quanticol.caspa.ui; singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: eu.quanticol.caspa;visibility:=reexport,

@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<feature id="eu.quanticol.caspa.sdk"
-	label="CASPA SDK Feature "
-	version="1.0.0.qualifier">
-	<plugin
-			id="eu.quanticol.caspa"
-			download-size="0"
-			install-size="0"
-			version="0.0.0"
-			unpack="false"/>
-	<plugin
-			id="eu.quanticol.caspa.ui"
-			download-size="0"
-			install-size="0"
-			version="0.0.0"
-			unpack="false"/>
+<feature
+      id="eu.quanticol.caspa.sdk"
+      label="CASPA SDK Feature "
+      version="1.0.0.1"
+      provider-name="Quanticol">
+
+   <plugin
+         id="eu.quanticol.caspa"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.1"
+         unpack="false"/>
+
+   <plugin
+         id="eu.quanticol.caspa.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.1"
+         unpack="false"/>
+
 </feature>
