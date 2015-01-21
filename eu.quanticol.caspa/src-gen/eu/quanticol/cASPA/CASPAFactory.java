@@ -158,6 +158,33 @@ public interface CASPAFactory extends EFactory
   SelfReferencedStore createSelfReferencedStore();
 
   /**
+   * Returns a new object of class '<em>Function Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Function Expression</em>'.
+   * @generated
+   */
+  FunctionExpression createFunctionExpression();
+
+  /**
+   * Returns a new object of class '<em>Distribution</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Distribution</em>'.
+   * @generated
+   */
+  Distribution createDistribution();
+
+  /**
+   * Returns a new object of class '<em>Uniform</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Uniform</em>'.
+   * @generated
+   */
+  Uniform createUniform();
+
+  /**
    * Returns a new object of class '<em>Action Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -300,6 +327,24 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   GlobalUpdateExpression createGlobalUpdateExpression();
+
+  /**
+   * Returns a new object of class '<em>Local Update Expression Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Local Update Expression Function</em>'.
+   * @generated
+   */
+  LocalUpdateExpressionFunction createLocalUpdateExpressionFunction();
+
+  /**
+   * Returns a new object of class '<em>Global Update Expression Function</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Global Update Expression Function</em>'.
+   * @generated
+   */
+  GlobalUpdateExpressionFunction createGlobalUpdateExpressionFunction();
 
   /**
    * Returns a new object of class '<em>Action Or</em>'.

@@ -25,8 +25,10 @@ import eu.quanticol.cASPA.FreeEvaluationExpression;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.GlobalEvaluationExpression;
 import eu.quanticol.cASPA.GlobalUpdateExpression;
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
 import eu.quanticol.cASPA.LocalEvaluationExpression;
 import eu.quanticol.cASPA.LocalUpdateExpression;
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Mul;
 import eu.quanticol.cASPA.Not;
@@ -181,7 +183,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
   }
   
-  public final static String STORE_NAMES_UNIQUE = "com.blasedef.onpa.dice.storeNamesUnique";
+  public final static String STORE_NAMES_UNIQUE = "eu.quanticol.storeNamesUnique";
   
   @Check
   public void checkStoresNamesUnique(final Store store) {
@@ -208,7 +210,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
   }
   
-  public final static String PROCESS_NAMES_UNIQUE = "com.blasedef.onpa.dice.processNamesUnique";
+  public final static String PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique";
   
   @Check
   public void checkensureProcessCycles(final eu.quanticol.cASPA.Process process) {
@@ -239,7 +241,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
   @Extension
   private ETypeProvider _eTypeProvider;
   
-  public final static String WRONG_TYPE = "com.blasedef.onpa.dice.WrongType";
+  public final static String WRONG_TYPE = "eu.quanticol.WrongType";
   
   @Check
   public void checkType(final Not not) {
@@ -428,7 +430,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     ActionType type = _typeForA;
     boolean _equals = Objects.equal(type, null);
     if (_equals) {
-      this.error("assignment has non matching type to reference", CASPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION, CASPAValidator.WRONG_TYPE);
+      this.error("assignment has non matching type to reference", CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION__EXPRESSION, CASPAValidator.WRONG_TYPE);
     }
   }
   
@@ -441,7 +443,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     ActionType type = _typeForA;
     boolean _equals = Objects.equal(type, null);
     if (_equals) {
-      this.error("assignment has non matching type to reference", CASPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION, CASPAValidator.WRONG_TYPE);
+      this.error("assignment has non matching type to reference", CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION__EXPRESSION, CASPAValidator.WRONG_TYPE);
     }
   }
   
@@ -475,6 +477,34 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   @Check
   public void checkType(final GlobalEvaluationExpression evalExpression) {
+    ActionType _typeForA = null;
+    if (evalExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(evalExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("bad assignment, check types and references", CASPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, CASPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  @Check
+  public void checkType(final LocalUpdateExpressionFunction evalExpression) {
+    ActionType _typeForA = null;
+    if (evalExpression!=null) {
+      _typeForA=this._aTypeProvider.typeForA(evalExpression);
+    }
+    ActionType type = _typeForA;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("bad assignment, check types and references", 
+        CASPAPackage.Literals.EVALUATION_EXPRESSION_IN__EXPRESSION, 
+        CASPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  @Check
+  public void checkType(final GlobalUpdateExpressionFunction evalExpression) {
     ActionType _typeForA = null;
     if (evalExpression!=null) {
       _typeForA=this._aTypeProvider.typeForA(evalExpression);

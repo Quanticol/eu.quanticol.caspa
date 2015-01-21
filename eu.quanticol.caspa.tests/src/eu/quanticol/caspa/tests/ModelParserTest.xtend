@@ -414,6 +414,60 @@ public class ModelParserTest {
 		'''.parse.assertNoErrors
 	}
 	
+	@Test 
+	def void testUpdates() {
+		'''
+		i = 0.1;
+		P = a{i := U(0.2;);}.P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testUpdates1() {
+		'''
+		i = 0.1;
+		P = a{this.i := U (0.2;);}.P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testUpdates3() {
+		'''
+		i = 0.1;
+		P = a{i := Pr (1:0.2;);}.P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testUpdates4() {
+		'''
+		i = 0.1;
+		P = a{this.i := Pr (0.5:0.2;);}.P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testUpdates5() {
+		'''
+		i = 0.1;
+		P = a{i := 0.2;}.P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
+	@Test 
+	def void testUpdates6() {
+		'''
+		i = 0.1;
+		P = a{this.i := 0.2;}.P;
+		(P,{i});
+		'''.parse.assertNoErrors
+	}
+	
 	@Test
 	def void testSimple() {
 		assertReprStores("i = 10.0;","10.0")

@@ -44,6 +44,8 @@ import eu.quanticol.cASPA.FreeEvaluationExpression
 import org.eclipse.emf.ecore.EReference
 import eu.quanticol.cASPA.ActionExpression
 import eu.quanticol.typing.ExpressionsType
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction
 
 /**
  * Custom validation rules. 
@@ -96,7 +98,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 			}
 	}
 	
-	public static val STORE_NAMES_UNIQUE = 'com.blasedef.onpa.dice.storeNamesUnique'
+	public static val STORE_NAMES_UNIQUE = 'eu.quanticol.storeNamesUnique'
 	
 	@Check
 	def checkStoresNamesUnique(Store store){
@@ -121,7 +123,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	
 	//PROCESS
 	
-	public static val PROCESS_NAMES_UNIQUE = 'com.blasedef.onpa.dice.processNamesUnique'
+	public static val PROCESS_NAMES_UNIQUE = 'eu.quanticol.processNamesUnique'
 	
 	@Check
 	def checkensureProcessCycles(Process process){
@@ -146,7 +148,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	
 	@Inject extension ETypeProvider
 	
-	public static val WRONG_TYPE = "com.blasedef.onpa.dice.WrongType";
+	public static val WRONG_TYPE = "eu.quanticol.WrongType";
 	
 	@Check
 	def checkType(Not not) {
@@ -328,7 +330,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		
 		var type = updateExpression?.typeForA
 		if(type == null)
-			error("assignment has non matching type to reference", CASPAPackage$Literals::UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
+			error("assignment has non matching type to reference", CASPAPackage$Literals::LOCAL_UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
 		
 	}
 	
@@ -337,7 +339,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		
 		var type = updateExpression?.typeForA
 		if(type == null)
-			error("assignment has non matching type to reference", CASPAPackage$Literals::UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
+			error("assignment has non matching type to reference", CASPAPackage$Literals::GLOBAL_UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
 		
 	}
 	
@@ -362,6 +364,23 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	
 	@Check
 	def checkType(GlobalEvaluationExpression evalExpression){
+		var type = evalExpression?.typeForA
+		if(type == null)
+			error("bad assignment, check types and references", CASPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
+	}
+	
+	@Check
+	def checkType(LocalUpdateExpressionFunction evalExpression){
+		var type = evalExpression?.typeForA
+		if(type == null)
+			error("bad assignment, check types and references", 
+				CASPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, 
+				WRONG_TYPE
+			)
+	}
+	
+	@Check
+	def checkType(GlobalUpdateExpressionFunction evalExpression){
 		var type = evalExpression?.typeForA
 		if(type == null)
 			error("bad assignment, check types and references", CASPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)

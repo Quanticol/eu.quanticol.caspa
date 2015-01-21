@@ -9,6 +9,11 @@ import eu.quanticol.cASPA.FreeEvaluationExpression
 import eu.quanticol.cASPA.PredicateExpression
 import eu.quanticol.cASPA.SelfReferencedStore
 import eu.quanticol.cASPA.Store
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction
+import eu.quanticol.cASPA.FunctionExpression
+import eu.quanticol.cASPA.Uniform
+import eu.quanticol.cASPA.Distribution
 
 class ATypeProvider {
 	
@@ -41,6 +46,69 @@ class ATypeProvider {
 			}
 	}
 	
+	def dispatch ActionType typeForA(LocalUpdateExpressionFunction u){
+		if((u.name.name.value?.typeFor == u.expression?.typeForA) || 
+			(u.expression?.typeFor == ETypeProvider::freeVariableType)){
+				return updateExpressionType
+			}
+			else {
+				return null
+			}
+	}
+	
+	def dispatch ActionType typeForA(GlobalUpdateExpressionFunction u){
+		if((u.name.value?.typeFor == u.expression?.typeForA) || 
+			(u.expression?.typeFor == ETypeProvider::freeVariableType)){
+				return updateExpressionType
+			}
+			else {
+				return null
+			}
+	}
+	
+	def dispatch ActionType typeForA(FunctionExpression functionExpression){
+		var allCorrect = true
+		
+		for(dist : functionExpression.distribution)
+			allCorrect = allCorrect && (dist?.typeForA == updateExpressionType)
+			
+		if(allCorrect)
+			return updateExpressionType
+		else
+			return null
+	}
+	
+	def dispatch ActionType typeForA(Uniform u){
+		
+		val expression = u.expression
+		
+		if(((expression?.typeFor == ETypeProvider::freeVariableType ||
+		   		expression?.typeFor == ETypeProvider::boolConstantType ||
+		   		expression?.typeFor == ETypeProvider::doubleConstantType) ||
+		   		(expression?.typeFor == ETypeProvider::freeVariableType))){
+			return updateExpressionType
+		} else {
+			return null
+		}
+		
+	}
+	
+	def dispatch ActionType typeForA(Distribution d){
+		
+		val variable = d.prob
+		val expression = d.expression
+		
+		if(((variable.getClass == Double)
+			&& (expression?.typeFor == ETypeProvider::freeVariableType ||
+		   		expression?.typeFor == ETypeProvider::boolConstantType ||
+		   		expression?.typeFor == ETypeProvider::doubleConstantType) ||
+		   		(expression?.typeFor == ETypeProvider::freeVariableType))){
+			return updateExpressionType
+		} else {
+			return null
+		}
+	}
+		
 	def dispatch ActionType typeForA(LocalEvaluationExpression evaluationExpression){
 		
 		val variable = ((evaluationExpression.name as SelfReferencedStore).name as Store).value

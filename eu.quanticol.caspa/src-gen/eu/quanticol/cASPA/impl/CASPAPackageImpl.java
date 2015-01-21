@@ -21,6 +21,7 @@ import eu.quanticol.cASPA.CASPAFactory;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Comparison;
+import eu.quanticol.cASPA.Distribution;
 import eu.quanticol.cASPA.Div;
 import eu.quanticol.cASPA.DoubleConstant;
 import eu.quanticol.cASPA.Equality;
@@ -30,12 +31,15 @@ import eu.quanticol.cASPA.Evaluations;
 import eu.quanticol.cASPA.Expression;
 import eu.quanticol.cASPA.FreeEvaluationExpression;
 import eu.quanticol.cASPA.FreeVariable;
+import eu.quanticol.cASPA.FunctionExpression;
 import eu.quanticol.cASPA.GlobalEvaluationExpression;
 import eu.quanticol.cASPA.GlobalUpdateExpression;
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalEvaluationExpression;
 import eu.quanticol.cASPA.LocalUpdateExpression;
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Mul;
 import eu.quanticol.cASPA.Not;
@@ -54,6 +58,7 @@ import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.Sub;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
+import eu.quanticol.cASPA.Uniform;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.Updates;
 
@@ -182,6 +187,27 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass functionExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass distributionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass uniformEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass actionExpressionEClass = null;
 
   /**
@@ -288,6 +314,20 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * @generated
    */
   private EClass globalUpdateExpressionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass localUpdateExpressionFunctionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass globalUpdateExpressionFunctionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -841,16 +881,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUpdateExpression_Expression()
-  {
-    return (EReference)updateExpressionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getSelfReferencedStore()
   {
     return selfReferencedStoreEClass;
@@ -864,6 +894,76 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EReference getSelfReferencedStore_Name()
   {
     return (EReference)selfReferencedStoreEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getFunctionExpression()
+  {
+    return functionExpressionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunctionExpression_Distribution()
+  {
+    return (EReference)functionExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getDistribution()
+  {
+    return distributionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDistribution_Prob()
+  {
+    return (EAttribute)distributionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDistribution_Expression()
+  {
+    return (EReference)distributionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getUniform()
+  {
+    return uniformEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getUniform_Expression()
+  {
+    return (EReference)uniformEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1171,6 +1271,16 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getLocalUpdateExpression_Expression()
+  {
+    return (EReference)localUpdateExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getGlobalUpdateExpression()
   {
     return globalUpdateExpressionEClass;
@@ -1184,6 +1294,76 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EReference getGlobalUpdateExpression_Name()
   {
     return (EReference)globalUpdateExpressionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGlobalUpdateExpression_Expression()
+  {
+    return (EReference)globalUpdateExpressionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getLocalUpdateExpressionFunction()
+  {
+    return localUpdateExpressionFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLocalUpdateExpressionFunction_Name()
+  {
+    return (EReference)localUpdateExpressionFunctionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getLocalUpdateExpressionFunction_Expression()
+  {
+    return (EReference)localUpdateExpressionFunctionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getGlobalUpdateExpressionFunction()
+  {
+    return globalUpdateExpressionFunctionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGlobalUpdateExpressionFunction_Name()
+  {
+    return (EReference)globalUpdateExpressionFunctionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getGlobalUpdateExpressionFunction_Expression()
+  {
+    return (EReference)globalUpdateExpressionFunctionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1902,10 +2082,19 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     evaluationExpressionOutEClass = createEClass(EVALUATION_EXPRESSION_OUT);
 
     updateExpressionEClass = createEClass(UPDATE_EXPRESSION);
-    createEReference(updateExpressionEClass, UPDATE_EXPRESSION__EXPRESSION);
 
     selfReferencedStoreEClass = createEClass(SELF_REFERENCED_STORE);
     createEReference(selfReferencedStoreEClass, SELF_REFERENCED_STORE__NAME);
+
+    functionExpressionEClass = createEClass(FUNCTION_EXPRESSION);
+    createEReference(functionExpressionEClass, FUNCTION_EXPRESSION__DISTRIBUTION);
+
+    distributionEClass = createEClass(DISTRIBUTION);
+    createEAttribute(distributionEClass, DISTRIBUTION__PROB);
+    createEReference(distributionEClass, DISTRIBUTION__EXPRESSION);
+
+    uniformEClass = createEClass(UNIFORM);
+    createEReference(uniformEClass, UNIFORM__EXPRESSION);
 
     actionExpressionEClass = createEClass(ACTION_EXPRESSION);
 
@@ -1951,9 +2140,19 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     localUpdateExpressionEClass = createEClass(LOCAL_UPDATE_EXPRESSION);
     createEReference(localUpdateExpressionEClass, LOCAL_UPDATE_EXPRESSION__NAME);
+    createEReference(localUpdateExpressionEClass, LOCAL_UPDATE_EXPRESSION__EXPRESSION);
 
     globalUpdateExpressionEClass = createEClass(GLOBAL_UPDATE_EXPRESSION);
     createEReference(globalUpdateExpressionEClass, GLOBAL_UPDATE_EXPRESSION__NAME);
+    createEReference(globalUpdateExpressionEClass, GLOBAL_UPDATE_EXPRESSION__EXPRESSION);
+
+    localUpdateExpressionFunctionEClass = createEClass(LOCAL_UPDATE_EXPRESSION_FUNCTION);
+    createEReference(localUpdateExpressionFunctionEClass, LOCAL_UPDATE_EXPRESSION_FUNCTION__NAME);
+    createEReference(localUpdateExpressionFunctionEClass, LOCAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION);
+
+    globalUpdateExpressionFunctionEClass = createEClass(GLOBAL_UPDATE_EXPRESSION_FUNCTION);
+    createEReference(globalUpdateExpressionFunctionEClass, GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME);
+    createEReference(globalUpdateExpressionFunctionEClass, GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION);
 
     actionOrEClass = createEClass(ACTION_OR);
     createEReference(actionOrEClass, ACTION_OR__LEFT);
@@ -2086,6 +2285,8 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     freeEvaluationExpressionEClass.getESuperTypes().add(this.getEvaluationExpressionOut());
     localUpdateExpressionEClass.getESuperTypes().add(this.getUpdateExpression());
     globalUpdateExpressionEClass.getESuperTypes().add(this.getUpdateExpression());
+    localUpdateExpressionFunctionEClass.getESuperTypes().add(this.getUpdateExpression());
+    globalUpdateExpressionFunctionEClass.getESuperTypes().add(this.getUpdateExpression());
     actionOrEClass.getESuperTypes().add(this.getActionExpression());
     actionAndEClass.getESuperTypes().add(this.getActionExpression());
     actionEqualityEClass.getESuperTypes().add(this.getActionExpression());
@@ -2159,10 +2360,19 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEClass(evaluationExpressionOutEClass, EvaluationExpressionOut.class, "EvaluationExpressionOut", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(updateExpressionEClass, UpdateExpression.class, "UpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateExpression_Expression(), this.getActionExpression(), null, "expression", null, 0, 1, UpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(selfReferencedStoreEClass, SelfReferencedStore.class, "SelfReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getSelfReferencedStore_Name(), this.getStore(), null, "name", null, 0, 1, SelfReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(functionExpressionEClass, FunctionExpression.class, "FunctionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getFunctionExpression_Distribution(), ecorePackage.getEObject(), null, "distribution", null, 0, -1, FunctionExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(distributionEClass, Distribution.class, "Distribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDistribution_Prob(), ecorePackage.getEDouble(), "prob", null, 0, 1, Distribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDistribution_Expression(), this.getActionExpression(), null, "expression", null, 0, 1, Distribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(uniformEClass, Uniform.class, "Uniform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getUniform_Expression(), this.getActionExpression(), null, "expression", null, 0, 1, Uniform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionExpressionEClass, ActionExpression.class, "ActionExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2208,9 +2418,19 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     initEClass(localUpdateExpressionEClass, LocalUpdateExpression.class, "LocalUpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLocalUpdateExpression_Name(), this.getSelfReferencedStore(), null, "name", null, 0, 1, LocalUpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLocalUpdateExpression_Expression(), this.getActionExpression(), null, "expression", null, 0, 1, LocalUpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(globalUpdateExpressionEClass, GlobalUpdateExpression.class, "GlobalUpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getGlobalUpdateExpression_Name(), this.getStore(), null, "name", null, 0, 1, GlobalUpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGlobalUpdateExpression_Expression(), this.getActionExpression(), null, "expression", null, 0, 1, GlobalUpdateExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(localUpdateExpressionFunctionEClass, LocalUpdateExpressionFunction.class, "LocalUpdateExpressionFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getLocalUpdateExpressionFunction_Name(), this.getSelfReferencedStore(), null, "name", null, 0, 1, LocalUpdateExpressionFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLocalUpdateExpressionFunction_Expression(), this.getFunctionExpression(), null, "expression", null, 0, 1, LocalUpdateExpressionFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(globalUpdateExpressionFunctionEClass, GlobalUpdateExpressionFunction.class, "GlobalUpdateExpressionFunction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getGlobalUpdateExpressionFunction_Name(), this.getStore(), null, "name", null, 0, 1, GlobalUpdateExpressionFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getGlobalUpdateExpressionFunction_Expression(), this.getFunctionExpression(), null, "expression", null, 0, 1, GlobalUpdateExpressionFunction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(actionOrEClass, ActionOr.class, "ActionOr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getActionOr_Left(), this.getActionExpression(), null, "left", null, 0, 1, ActionOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

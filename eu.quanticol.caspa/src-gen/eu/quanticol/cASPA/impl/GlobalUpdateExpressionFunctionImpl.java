@@ -2,9 +2,9 @@
  */
 package eu.quanticol.cASPA.impl;
 
-import eu.quanticol.cASPA.ActionExpression;
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.GlobalUpdateExpression;
+import eu.quanticol.cASPA.FunctionExpression;
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
 import eu.quanticol.cASPA.Store;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -17,19 +17,19 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Global Update Expression</b></em>'.
+ * An implementation of the model object '<em><b>Global Update Expression Function</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionImpl#getName <em>Name</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionFunctionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionFunctionImpl#getExpression <em>Expression</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements GlobalUpdateExpression
+public class GlobalUpdateExpressionFunctionImpl extends UpdateExpressionImpl implements GlobalUpdateExpressionFunction
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' reference.
@@ -49,14 +49,14 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
    * @generated
    * @ordered
    */
-  protected ActionExpression expression;
+  protected FunctionExpression expression;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected GlobalUpdateExpressionImpl()
+  protected GlobalUpdateExpressionFunctionImpl()
   {
     super();
   }
@@ -69,7 +69,7 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
   @Override
   protected EClass eStaticClass()
   {
-    return CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION;
+    return CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION_FUNCTION;
   }
 
   /**
@@ -86,7 +86,7 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
       if (name != oldName)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME, oldName, name));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME, oldName, name));
       }
     }
     return name;
@@ -112,7 +112,7 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
     Store oldName = name;
     name = newName;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME, oldName, name));
   }
 
   /**
@@ -120,7 +120,7 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActionExpression getExpression()
+  public FunctionExpression getExpression()
   {
     return expression;
   }
@@ -130,13 +130,13 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(ActionExpression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(FunctionExpression newExpression, NotificationChain msgs)
   {
-    ActionExpression oldExpression = expression;
+    FunctionExpression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION, oldExpression, newExpression);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -147,20 +147,20 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(ActionExpression newExpression)
+  public void setExpression(FunctionExpression newExpression)
   {
     if (newExpression != expression)
     {
       NotificationChain msgs = null;
       if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION, null, msgs);
+        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION, null, msgs);
       if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION, null, msgs);
+        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION, null, msgs);
       msgs = basicSetExpression(newExpression, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION, newExpression, newExpression));
   }
 
   /**
@@ -173,7 +173,7 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
   {
     switch (featureID)
     {
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION:
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION:
         return basicSetExpression(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -189,10 +189,10 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
   {
     switch (featureID)
     {
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME:
         if (resolve) return getName();
         return basicGetName();
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION:
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION:
         return getExpression();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -208,11 +208,11 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
   {
     switch (featureID)
     {
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME:
         setName((Store)newValue);
         return;
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION:
-        setExpression((ActionExpression)newValue);
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION:
+        setExpression((FunctionExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -228,11 +228,11 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
   {
     switch (featureID)
     {
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME:
         setName((Store)null);
         return;
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION:
-        setExpression((ActionExpression)null);
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION:
+        setExpression((FunctionExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -248,12 +248,12 @@ public class GlobalUpdateExpressionImpl extends UpdateExpressionImpl implements 
   {
     switch (featureID)
     {
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__NAME:
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME:
         return name != null;
-      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION__EXPRESSION:
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION:
         return expression != null;
     }
     return super.eIsSet(featureID);
   }
 
-} //GlobalUpdateExpressionImpl
+} //GlobalUpdateExpressionFunctionImpl

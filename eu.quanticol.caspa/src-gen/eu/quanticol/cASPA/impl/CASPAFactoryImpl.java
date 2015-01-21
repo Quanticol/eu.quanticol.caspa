@@ -21,6 +21,7 @@ import eu.quanticol.cASPA.CASPAFactory;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Comparison;
+import eu.quanticol.cASPA.Distribution;
 import eu.quanticol.cASPA.Div;
 import eu.quanticol.cASPA.DoubleConstant;
 import eu.quanticol.cASPA.Equality;
@@ -30,12 +31,15 @@ import eu.quanticol.cASPA.Evaluations;
 import eu.quanticol.cASPA.Expression;
 import eu.quanticol.cASPA.FreeEvaluationExpression;
 import eu.quanticol.cASPA.FreeVariable;
+import eu.quanticol.cASPA.FunctionExpression;
 import eu.quanticol.cASPA.GlobalEvaluationExpression;
 import eu.quanticol.cASPA.GlobalUpdateExpression;
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalEvaluationExpression;
 import eu.quanticol.cASPA.LocalUpdateExpression;
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Mul;
 import eu.quanticol.cASPA.Not;
@@ -54,6 +58,7 @@ import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.Sub;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
+import eu.quanticol.cASPA.Uniform;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.Updates;
 
@@ -132,6 +137,9 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.EVALUATION_EXPRESSION_OUT: return createEvaluationExpressionOut();
       case CASPAPackage.UPDATE_EXPRESSION: return createUpdateExpression();
       case CASPAPackage.SELF_REFERENCED_STORE: return createSelfReferencedStore();
+      case CASPAPackage.FUNCTION_EXPRESSION: return createFunctionExpression();
+      case CASPAPackage.DISTRIBUTION: return createDistribution();
+      case CASPAPackage.UNIFORM: return createUniform();
       case CASPAPackage.ACTION_EXPRESSION: return createActionExpression();
       case CASPAPackage.STORE: return createStore();
       case CASPAPackage.EXPRESSION: return createExpression();
@@ -148,6 +156,8 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.FREE_EVALUATION_EXPRESSION: return createFreeEvaluationExpression();
       case CASPAPackage.LOCAL_UPDATE_EXPRESSION: return createLocalUpdateExpression();
       case CASPAPackage.GLOBAL_UPDATE_EXPRESSION: return createGlobalUpdateExpression();
+      case CASPAPackage.LOCAL_UPDATE_EXPRESSION_FUNCTION: return createLocalUpdateExpressionFunction();
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION: return createGlobalUpdateExpressionFunction();
       case CASPAPackage.ACTION_OR: return createActionOr();
       case CASPAPackage.ACTION_AND: return createActionAnd();
       case CASPAPackage.ACTION_EQUALITY: return createActionEquality();
@@ -345,6 +355,39 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FunctionExpression createFunctionExpression()
+  {
+    FunctionExpressionImpl functionExpression = new FunctionExpressionImpl();
+    return functionExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Distribution createDistribution()
+  {
+    DistributionImpl distribution = new DistributionImpl();
+    return distribution;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Uniform createUniform()
+  {
+    UniformImpl uniform = new UniformImpl();
+    return uniform;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public ActionExpression createActionExpression()
   {
     ActionExpressionImpl actionExpression = new ActionExpressionImpl();
@@ -514,6 +557,28 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     GlobalUpdateExpressionImpl globalUpdateExpression = new GlobalUpdateExpressionImpl();
     return globalUpdateExpression;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public LocalUpdateExpressionFunction createLocalUpdateExpressionFunction()
+  {
+    LocalUpdateExpressionFunctionImpl localUpdateExpressionFunction = new LocalUpdateExpressionFunctionImpl();
+    return localUpdateExpressionFunction;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GlobalUpdateExpressionFunction createGlobalUpdateExpressionFunction()
+  {
+    GlobalUpdateExpressionFunctionImpl globalUpdateExpressionFunction = new GlobalUpdateExpressionFunctionImpl();
+    return globalUpdateExpressionFunction;
   }
 
   /**

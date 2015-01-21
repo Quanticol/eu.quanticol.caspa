@@ -20,6 +20,7 @@ import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Comparison;
+import eu.quanticol.cASPA.Distribution;
 import eu.quanticol.cASPA.Div;
 import eu.quanticol.cASPA.DoubleConstant;
 import eu.quanticol.cASPA.Equality;
@@ -29,12 +30,15 @@ import eu.quanticol.cASPA.Evaluations;
 import eu.quanticol.cASPA.Expression;
 import eu.quanticol.cASPA.FreeEvaluationExpression;
 import eu.quanticol.cASPA.FreeVariable;
+import eu.quanticol.cASPA.FunctionExpression;
 import eu.quanticol.cASPA.GlobalEvaluationExpression;
 import eu.quanticol.cASPA.GlobalUpdateExpression;
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalEvaluationExpression;
 import eu.quanticol.cASPA.LocalUpdateExpression;
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Mul;
 import eu.quanticol.cASPA.Not;
@@ -53,6 +57,7 @@ import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.Sub;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
+import eu.quanticol.cASPA.Uniform;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.Updates;
 
@@ -231,6 +236,27 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CASPAPackage.FUNCTION_EXPRESSION:
+      {
+        FunctionExpression functionExpression = (FunctionExpression)theEObject;
+        T result = caseFunctionExpression(functionExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.DISTRIBUTION:
+      {
+        Distribution distribution = (Distribution)theEObject;
+        T result = caseDistribution(distribution);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.UNIFORM:
+      {
+        Uniform uniform = (Uniform)theEObject;
+        T result = caseUniform(uniform);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CASPAPackage.ACTION_EXPRESSION:
       {
         ActionExpression actionExpression = (ActionExpression)theEObject;
@@ -353,6 +379,22 @@ public class CASPASwitch<T> extends Switch<T>
         GlobalUpdateExpression globalUpdateExpression = (GlobalUpdateExpression)theEObject;
         T result = caseGlobalUpdateExpression(globalUpdateExpression);
         if (result == null) result = caseUpdateExpression(globalUpdateExpression);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.LOCAL_UPDATE_EXPRESSION_FUNCTION:
+      {
+        LocalUpdateExpressionFunction localUpdateExpressionFunction = (LocalUpdateExpressionFunction)theEObject;
+        T result = caseLocalUpdateExpressionFunction(localUpdateExpressionFunction);
+        if (result == null) result = caseUpdateExpression(localUpdateExpressionFunction);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION:
+      {
+        GlobalUpdateExpressionFunction globalUpdateExpressionFunction = (GlobalUpdateExpressionFunction)theEObject;
+        T result = caseGlobalUpdateExpressionFunction(globalUpdateExpressionFunction);
+        if (result == null) result = caseUpdateExpression(globalUpdateExpressionFunction);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -780,6 +822,54 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Function Expression</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Function Expression</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFunctionExpression(FunctionExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Distribution</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Distribution</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDistribution(Distribution object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Uniform</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Uniform</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUniform(Uniform object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Action Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1031,6 +1121,38 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseGlobalUpdateExpression(GlobalUpdateExpression object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Local Update Expression Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Local Update Expression Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseLocalUpdateExpressionFunction(LocalUpdateExpressionFunction object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Global Update Expression Function</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Global Update Expression Function</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseGlobalUpdateExpressionFunction(GlobalUpdateExpressionFunction object)
   {
     return null;
   }

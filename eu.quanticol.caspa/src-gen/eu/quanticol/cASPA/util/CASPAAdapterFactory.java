@@ -20,6 +20,7 @@ import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Comparison;
+import eu.quanticol.cASPA.Distribution;
 import eu.quanticol.cASPA.Div;
 import eu.quanticol.cASPA.DoubleConstant;
 import eu.quanticol.cASPA.Equality;
@@ -29,12 +30,15 @@ import eu.quanticol.cASPA.Evaluations;
 import eu.quanticol.cASPA.Expression;
 import eu.quanticol.cASPA.FreeEvaluationExpression;
 import eu.quanticol.cASPA.FreeVariable;
+import eu.quanticol.cASPA.FunctionExpression;
 import eu.quanticol.cASPA.GlobalEvaluationExpression;
 import eu.quanticol.cASPA.GlobalUpdateExpression;
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalEvaluationExpression;
 import eu.quanticol.cASPA.LocalUpdateExpression;
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Mul;
 import eu.quanticol.cASPA.Not;
@@ -53,6 +57,7 @@ import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.Sub;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
+import eu.quanticol.cASPA.Uniform;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.Updates;
 
@@ -202,6 +207,21 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
         return createSelfReferencedStoreAdapter();
       }
       @Override
+      public Adapter caseFunctionExpression(FunctionExpression object)
+      {
+        return createFunctionExpressionAdapter();
+      }
+      @Override
+      public Adapter caseDistribution(Distribution object)
+      {
+        return createDistributionAdapter();
+      }
+      @Override
+      public Adapter caseUniform(Uniform object)
+      {
+        return createUniformAdapter();
+      }
+      @Override
       public Adapter caseActionExpression(ActionExpression object)
       {
         return createActionExpressionAdapter();
@@ -280,6 +300,16 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseGlobalUpdateExpression(GlobalUpdateExpression object)
       {
         return createGlobalUpdateExpressionAdapter();
+      }
+      @Override
+      public Adapter caseLocalUpdateExpressionFunction(LocalUpdateExpressionFunction object)
+      {
+        return createLocalUpdateExpressionFunctionAdapter();
+      }
+      @Override
+      public Adapter caseGlobalUpdateExpressionFunction(GlobalUpdateExpressionFunction object)
+      {
+        return createGlobalUpdateExpressionFunctionAdapter();
       }
       @Override
       public Adapter caseActionOr(ActionOr object)
@@ -639,6 +669,51 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.FunctionExpression <em>Function Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.FunctionExpression
+   * @generated
+   */
+  public Adapter createFunctionExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Distribution <em>Distribution</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Distribution
+   * @generated
+   */
+  public Adapter createDistributionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Uniform <em>Uniform</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Uniform
+   * @generated
+   */
+  public Adapter createUniformAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionExpression <em>Action Expression</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -874,6 +949,36 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createGlobalUpdateExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.LocalUpdateExpressionFunction <em>Local Update Expression Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.LocalUpdateExpressionFunction
+   * @generated
+   */
+  public Adapter createLocalUpdateExpressionFunctionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.GlobalUpdateExpressionFunction <em>Global Update Expression Function</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.GlobalUpdateExpressionFunction
+   * @generated
+   */
+  public Adapter createGlobalUpdateExpressionFunctionAdapter()
   {
     return null;
   }

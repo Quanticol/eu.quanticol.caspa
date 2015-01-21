@@ -731,6 +731,108 @@ public class ModelParserTest {
   }
   
   @Test
+  public void testUpdates() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = a{i := U(0.2;);}.P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testUpdates1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = a{this.i := U (0.2;);}.P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testUpdates3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = a{i := Pr (1:0.2;);}.P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testUpdates4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = a{this.i := Pr (0.5:0.2;);}.P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testUpdates5() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = a{i := 0.2;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testUpdates6() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("i = 0.1;");
+      _builder.newLine();
+      _builder.append("P = a{this.i := 0.2;}.P;");
+      _builder.newLine();
+      _builder.append("(P,{i});");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testSimple() {
     this.assertReprStores("i = 10.0;", "10.0");
   }

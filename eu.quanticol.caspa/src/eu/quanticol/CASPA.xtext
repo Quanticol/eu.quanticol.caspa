@@ -83,11 +83,26 @@ EvaluationExpressionOut hidden(ML_COMMENT,SL_COMMENT,WS):
 
 UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	({LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression  | 
-	{GlobalUpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression ) ";"
+	{GlobalUpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression |
+	{LocalUpdateExpressionFunction} name=SelfReferencedStore ":=" expression=FunctionExpression |
+	{GlobalUpdateExpressionFunction} name=[Store|LOWER] ":=" expression=FunctionExpression ) ";"
 ;
 
 SelfReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
 	{SelfReferencedStore}   "this."name=[Store|LOWER]
+;
+
+FunctionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{FunctionExpression} "Pr" "(" distribution+=Distribution+ ")" |
+	{FunctionExpression} "U" "(" distribution+=Uniform ")"
+;
+
+Distribution hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Distribution} prob=Double ":" expression=ActionExpression ";"
+;
+
+Uniform hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Uniform} expression=ActionExpression ";"
 ;
 
 ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):

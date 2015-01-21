@@ -18,17 +18,21 @@ import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Comparison;
+import eu.quanticol.cASPA.Distribution;
 import eu.quanticol.cASPA.Div;
 import eu.quanticol.cASPA.DoubleConstant;
 import eu.quanticol.cASPA.Equality;
 import eu.quanticol.cASPA.FreeEvaluationExpression;
 import eu.quanticol.cASPA.FreeVariable;
+import eu.quanticol.cASPA.FunctionExpression;
 import eu.quanticol.cASPA.GlobalEvaluationExpression;
 import eu.quanticol.cASPA.GlobalUpdateExpression;
+import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalEvaluationExpression;
 import eu.quanticol.cASPA.LocalUpdateExpression;
+import eu.quanticol.cASPA.LocalUpdateExpressionFunction;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Mul;
 import eu.quanticol.cASPA.Not;
@@ -46,6 +50,7 @@ import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.Sub;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
+import eu.quanticol.cASPA.Uniform;
 import eu.quanticol.cASPA.Updates;
 import eu.quanticol.services.CASPAGrammarAccess;
 import org.eclipse.emf.ecore.EObject;
@@ -395,6 +400,12 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case CASPAPackage.DISTRIBUTION:
+				if(context == grammarAccess.getDistributionRule()) {
+					sequence_Distribution(context, (Distribution) semanticObject); 
+					return; 
+				}
+				else break;
 			case CASPAPackage.DIV:
 				if(context == grammarAccess.getAdditionRule() ||
 				   context == grammarAccess.getAdditionAccess().getPluLeftAction_1_0() ||
@@ -517,6 +528,12 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
+			case CASPAPackage.FUNCTION_EXPRESSION:
+				if(context == grammarAccess.getFunctionExpressionRule()) {
+					sequence_FunctionExpression(context, (FunctionExpression) semanticObject); 
+					return; 
+				}
+				else break;
 			case CASPAPackage.GLOBAL_EVALUATION_EXPRESSION:
 				if(context == grammarAccess.getEvaluationExpressionInRule()) {
 					sequence_EvaluationExpressionIn(context, (GlobalEvaluationExpression) semanticObject); 
@@ -526,6 +543,12 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case CASPAPackage.GLOBAL_UPDATE_EXPRESSION:
 				if(context == grammarAccess.getUpdateExpressionRule()) {
 					sequence_UpdateExpression(context, (GlobalUpdateExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case CASPAPackage.GLOBAL_UPDATE_EXPRESSION_FUNCTION:
+				if(context == grammarAccess.getUpdateExpressionRule()) {
+					sequence_UpdateExpression(context, (GlobalUpdateExpressionFunction) semanticObject); 
 					return; 
 				}
 				else break;
@@ -555,6 +578,12 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case CASPAPackage.LOCAL_UPDATE_EXPRESSION:
 				if(context == grammarAccess.getUpdateExpressionRule()) {
 					sequence_UpdateExpression(context, (LocalUpdateExpression) semanticObject); 
+					return; 
+				}
+				else break;
+			case CASPAPackage.LOCAL_UPDATE_EXPRESSION_FUNCTION:
+				if(context == grammarAccess.getUpdateExpressionRule()) {
+					sequence_UpdateExpression(context, (LocalUpdateExpressionFunction) semanticObject); 
 					return; 
 				}
 				else break;
@@ -801,6 +830,12 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case CASPAPackage.UNICAST:
 				if(context == grammarAccess.getActionRule()) {
 					sequence_Action(context, (Unicast) semanticObject); 
+					return; 
+				}
+				else break;
+			case CASPAPackage.UNIFORM:
+				if(context == grammarAccess.getUniformRule()) {
+					sequence_Uniform(context, (Uniform) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1165,6 +1200,25 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     (prob=Double expression=ActionExpression)
+	 */
+	protected void sequence_Distribution(EObject context, Distribution semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.DISTRIBUTION__PROB) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.DISTRIBUTION__PROB));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.DISTRIBUTION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.DISTRIBUTION__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDistributionAccess().getProbDoubleParserRuleCall_0_0(), semanticObject.getProb());
+		feeder.accept(grammarAccess.getDistributionAccess().getExpressionActionExpressionParserRuleCall_2_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (left=Division_Div_1_0 right=Primary)
 	 */
 	protected void sequence_Division(EObject context, Div semanticObject) {
@@ -1204,8 +1258,8 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getNameStoreLOWERTerminalRuleCall_1_1_0_1(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_1_3_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getNameStoreLOWERTerminalRuleCall_0_1_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_0_1_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -1223,8 +1277,8 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_0_3_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getNameSelfReferencedStoreParserRuleCall_0_0_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEvaluationExpressionInAccess().getExpressionActionExpressionParserRuleCall_0_0_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -1262,6 +1316,15 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     expressions+=EvaluationExpressionOut+
 	 */
 	protected void sequence_Evaluations(EObject context, Out semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (distribution+=Distribution+ | distribution+=Uniform)
+	 */
+	protected void sequence_FunctionExpression(EObject context, FunctionExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -1508,19 +1571,54 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
+	 *     expression=ActionExpression
+	 */
+	protected void sequence_Uniform(EObject context, Uniform semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.UNIFORM__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.UNIFORM__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUniformAccess().getExpressionActionExpressionParserRuleCall_0_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (name=[Store|LOWER] expression=ActionExpression)
 	 */
 	protected void sequence_UpdateExpression(EObject context, GlobalUpdateExpression semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION));
 			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION__NAME));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION__EXPRESSION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameStoreLOWERTerminalRuleCall_1_1_0_1(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_1_3_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameStoreLOWERTerminalRuleCall_0_1_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_1_3_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=[Store|LOWER] expression=FunctionExpression)
+	 */
+	protected void sequence_UpdateExpression(EObject context, GlobalUpdateExpressionFunction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameStoreLOWERTerminalRuleCall_0_3_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionFunctionExpressionParserRuleCall_0_3_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	
@@ -1531,15 +1629,34 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_UpdateExpression(EObject context, LocalUpdateExpression semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.UPDATE_EXPRESSION__EXPRESSION));
 			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION__NAME));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION__EXPRESSION));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_3_0(), semanticObject.getExpression());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameSelfReferencedStoreParserRuleCall_0_0_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionActionExpressionParserRuleCall_0_0_3_0(), semanticObject.getExpression());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (name=SelfReferencedStore expression=FunctionExpression)
+	 */
+	protected void sequence_UpdateExpression(EObject context, LocalUpdateExpressionFunction semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION_FUNCTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION_FUNCTION__NAME));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.LOCAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getNameSelfReferencedStoreParserRuleCall_0_2_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getUpdateExpressionAccess().getExpressionFunctionExpressionParserRuleCall_0_2_3_0(), semanticObject.getExpression());
 		feeder.finish();
 	}
 	

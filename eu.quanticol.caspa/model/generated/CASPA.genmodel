@@ -49,11 +49,19 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//EvaluationExpressionIn/expression"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//EvaluationExpressionOut"/>
-    <genClasses ecoreClass="CASPA.ecore#//UpdateExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateExpression/expression"/>
-    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateExpression"/>
     <genClasses ecoreClass="CASPA.ecore#//SelfReferencedStore">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//SelfReferencedStore/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//FunctionExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//FunctionExpression/distribution"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Distribution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Distribution/prob"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Distribution/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Uniform">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Uniform/expression"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//ActionExpression"/>
     <genClasses ecoreClass="CASPA.ecore#//Store">
@@ -95,9 +103,19 @@
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//LocalUpdateExpression">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpression/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpression/expression"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//GlobalUpdateExpression">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpression/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpression/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//LocalUpdateExpressionFunction">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpressionFunction/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpressionFunction/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//GlobalUpdateExpressionFunction">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpressionFunction/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpressionFunction/expression"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//ActionOr">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionOr/left"/>

@@ -57,12 +57,22 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EvaluationExpressionOut"/>
-  <eClassifiers xsi:type="ecore:EClass" name="UpdateExpression">
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelfReferencedStore">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FunctionExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="distribution" upperBound="-1"
+        eType="ecore:EClass http://www.eclipse.org/emf/2002/Ecore#//EObject" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Distribution">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//ActionExpression"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelfReferencedStore">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Uniform">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//ActionExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Store">
@@ -114,9 +124,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="LocalUpdateExpression" eSuperTypes="#//UpdateExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//SelfReferencedStore"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//ActionExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="GlobalUpdateExpression" eSuperTypes="#//UpdateExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//ActionExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LocalUpdateExpressionFunction" eSuperTypes="#//UpdateExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//SelfReferencedStore"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//FunctionExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalUpdateExpressionFunction" eSuperTypes="#//UpdateExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//FunctionExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ActionOr" eSuperTypes="#//ActionExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ActionExpression"
