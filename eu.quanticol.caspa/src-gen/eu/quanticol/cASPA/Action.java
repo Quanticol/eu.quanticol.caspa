@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link eu.quanticol.cASPA.Action#getName <em>Name</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.Action#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.Action#getEvaluations <em>Evaluations</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.Action#getArguments <em>Arguments</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.Action#getUpdates <em>Updates</em>}</li>
  * </ul>
  * </p>
@@ -78,30 +78,30 @@ public interface Action extends EObject
   void setPredicate(Predicate value);
 
   /**
-   * Returns the value of the '<em><b>Evaluations</b></em>' containment reference.
+   * Returns the value of the '<em><b>Arguments</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Evaluations</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Arguments</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Evaluations</em>' containment reference.
-   * @see #setEvaluations(Evaluations)
-   * @see eu.quanticol.cASPA.CASPAPackage#getAction_Evaluations()
+   * @return the value of the '<em>Arguments</em>' containment reference.
+   * @see #setArguments(Arguments)
+   * @see eu.quanticol.cASPA.CASPAPackage#getAction_Arguments()
    * @model containment="true"
    * @generated
    */
-  Evaluations getEvaluations();
+  Arguments getArguments();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.Action#getEvaluations <em>Evaluations</em>}' containment reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.Action#getArguments <em>Arguments</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Evaluations</em>' containment reference.
-   * @see #getEvaluations()
+   * @param value the new value of the '<em>Arguments</em>' containment reference.
+   * @see #getArguments()
    * @generated
    */
-  void setEvaluations(Evaluations value);
+  void setArguments(Arguments value);
 
   /**
    * Returns the value of the '<em><b>Updates</b></em>' containment reference.

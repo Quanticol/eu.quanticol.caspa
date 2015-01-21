@@ -31,12 +31,12 @@ public interface Uniform extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(ActionExpression)
+   * @see #setExpression(UpdateExpression)
    * @see eu.quanticol.cASPA.CASPAPackage#getUniform_Expression()
    * @model containment="true"
    * @generated
    */
-  ActionExpression getExpression();
+  UpdateExpression getExpression();
 
   /**
    * Sets the value of the '{@link eu.quanticol.cASPA.Uniform#getExpression <em>Expression</em>}' containment reference.
@@ -46,6 +46,6 @@ public interface Uniform extends EObject
    * @see #getExpression()
    * @generated
    */
-  void setExpression(ActionExpression value);
+  void setExpression(UpdateExpression value);
 
 } // Uniform

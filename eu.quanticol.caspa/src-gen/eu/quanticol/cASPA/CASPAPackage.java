@@ -103,51 +103,14 @@ public interface CASPAPackage extends EPackage
   int MODEL_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.TermImpl <em>Term</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.StoreImpl <em>Store</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.TermImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getTerm()
+   * @see eu.quanticol.cASPA.impl.StoreImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getStore()
    * @generated
    */
-  int TERM = 1;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Stores</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM__STORES = 1;
-
-  /**
-   * The number of structural features of the '<em>Term</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TERM_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ProcessImpl <em>Process</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ProcessImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getProcess()
-   * @generated
-   */
-  int PROCESS = 2;
+  int STORE = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -156,118 +119,118 @@ public interface CASPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROCESS__NAME = 0;
+  int STORE__NAME = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' containment reference.
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROCESS__VALUE = 1;
+  int STORE__VALUE = 1;
 
   /**
-   * The number of structural features of the '<em>Process</em>' class.
+   * The number of structural features of the '<em>Store</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROCESS_FEATURE_COUNT = 2;
+  int STORE_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ProcessExpressionImpl <em>Process Expression</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateExpressionImpl <em>Predicate Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ProcessExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getProcessExpression()
+   * @see eu.quanticol.cASPA.impl.PredicateExpressionImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateExpression()
    * @generated
    */
-  int PROCESS_EXPRESSION = 3;
+  int PREDICATE_EXPRESSION = 6;
 
   /**
-   * The number of structural features of the '<em>Process Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROCESS_EXPRESSION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateProcessImpl <em>Predicate Process</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.PredicateProcessImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateProcess()
-   * @generated
-   */
-  int PREDICATE_PROCESS = 4;
-
-  /**
-   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * The number of structural features of the '<em>Predicate Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE_PROCESS__PREDICATE = PROCESS_EXPRESSION_FEATURE_COUNT + 0;
+  int PREDICATE_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.ReferencedStoreImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getReferencedStore()
+   * @generated
+   */
+  int REFERENCED_STORE = 2;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE_PROCESS__VALUE = PROCESS_EXPRESSION_FEATURE_COUNT + 1;
+  int REFERENCED_STORE__VALUE = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Predicate Process</em>' class.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE_PROCESS_FEATURE_COUNT = PROCESS_EXPRESSION_FEATURE_COUNT + 2;
+  int REFERENCED_STORE__NAME = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionProcessImpl <em>Action Process</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionProcessImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionProcess()
-   * @generated
-   */
-  int ACTION_PROCESS = 5;
-
-  /**
-   * The feature id for the '<em><b>Action</b></em>' containment reference.
+   * The number of structural features of the '<em>Referenced Store</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_PROCESS__ACTION = PROCESS_EXPRESSION_FEATURE_COUNT + 0;
+  int REFERENCED_STORE_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.SelfReferencedStoreImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSelfReferencedStore()
+   * @generated
+   */
+  int SELF_REFERENCED_STORE = 3;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_PROCESS__VALUE = PROCESS_EXPRESSION_FEATURE_COUNT + 1;
+  int SELF_REFERENCED_STORE__VALUE = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Action Process</em>' class.
+   * The feature id for the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_PROCESS_FEATURE_COUNT = PROCESS_EXPRESSION_FEATURE_COUNT + 2;
+  int SELF_REFERENCED_STORE__NAME = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Self Referenced Store</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SELF_REFERENCED_STORE_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionImpl <em>Action</em>}' class.
@@ -277,7 +240,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getAction()
    * @generated
    */
-  int ACTION = 6;
+  int ACTION = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -298,13 +261,13 @@ public interface CASPAPackage extends EPackage
   int ACTION__PREDICATE = 1;
 
   /**
-   * The feature id for the '<em><b>Evaluations</b></em>' containment reference.
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION__EVALUATIONS = 2;
+  int ACTION__ARGUMENTS = 2;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference.
@@ -332,7 +295,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicate()
    * @generated
    */
-  int PREDICATE = 7;
+  int PREDICATE = 5;
 
   /**
    * The feature id for the '<em><b>Predicate</b></em>' containment reference.
@@ -353,23 +316,108 @@ public interface CASPAPackage extends EPackage
   int PREDICATE_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.EvaluationsImpl <em>Evaluations</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ArgumentsImpl <em>Arguments</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.EvaluationsImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEvaluations()
+   * @see eu.quanticol.cASPA.impl.ArgumentsImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getArguments()
    * @generated
    */
-  int EVALUATIONS = 8;
+  int ARGUMENTS = 7;
 
   /**
-   * The number of structural features of the '<em>Evaluations</em>' class.
+   * The number of structural features of the '<em>Arguments</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVALUATIONS_FEATURE_COUNT = 0;
+  int ARGUMENTS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.InArgumentsImpl <em>In Arguments</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.InArgumentsImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getInArguments()
+   * @generated
+   */
+  int IN_ARGUMENTS = 8;
+
+  /**
+   * The number of structural features of the '<em>In Arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_ARGUMENTS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.OutArgumentsImpl <em>Out Arguments</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.OutArgumentsImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOutArguments()
+   * @generated
+   */
+  int OUT_ARGUMENTS = 9;
+
+  /**
+   * The number of structural features of the '<em>Out Arguments</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUT_ARGUMENTS_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ExpressionsImpl <em>Expressions</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.ExpressionsImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getExpressions()
+   * @generated
+   */
+  int EXPRESSIONS = 10;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSIONS__VALUE = OUT_ARGUMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Expressions</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXPRESSIONS_FEATURE_COUNT = OUT_ARGUMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.VariablesImpl <em>Variables</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.VariablesImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getVariables()
+   * @generated
+   */
+  int VARIABLES = 11;
+
+  /**
+   * The number of structural features of the '<em>Variables</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLES_FEATURE_COUNT = IN_ARGUMENTS_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdatesImpl <em>Updates</em>}' class.
@@ -379,7 +427,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdates()
    * @generated
    */
-  int UPDATES = 9;
+  int UPDATES = 12;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -400,154 +448,61 @@ public interface CASPAPackage extends EPackage
   int UPDATES_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateExpressionImpl <em>Predicate Expression</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateImpl <em>Update</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.PredicateExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateExpression()
+   * @see eu.quanticol.cASPA.impl.UpdateImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdate()
    * @generated
    */
-  int PREDICATE_EXPRESSION = 10;
+  int UPDATE = 13;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * The number of structural features of the '<em>Update</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE_EXPRESSION__EXPRESSION = 0;
+  int UPDATE_FEATURE_COUNT = 0;
 
   /**
-   * The number of structural features of the '<em>Predicate Expression</em>' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.SingleEventUpdateImpl <em>Single Event Update</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.SingleEventUpdateImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSingleEventUpdate()
+   * @generated
+   */
+  int SINGLE_EVENT_UPDATE = 14;
+
+  /**
+   * The number of structural features of the '<em>Single Event Update</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PREDICATE_EXPRESSION_FEATURE_COUNT = 1;
+  int SINGLE_EVENT_UPDATE_FEATURE_COUNT = UPDATE_FEATURE_COUNT + 0;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.EvaluationExpressionInImpl <em>Evaluation Expression In</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.DistributedEventUpdateImpl <em>Distributed Event Update</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.EvaluationExpressionInImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEvaluationExpressionIn()
+   * @see eu.quanticol.cASPA.impl.DistributedEventUpdateImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdate()
    * @generated
    */
-  int EVALUATION_EXPRESSION_IN = 11;
+  int DISTRIBUTED_EVENT_UPDATE = 15;
 
   /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVALUATION_EXPRESSION_IN__EXPRESSION = 0;
-
-  /**
-   * The number of structural features of the '<em>Evaluation Expression In</em>' class.
+   * The number of structural features of the '<em>Distributed Event Update</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVALUATION_EXPRESSION_IN_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.EvaluationExpressionOutImpl <em>Evaluation Expression Out</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.EvaluationExpressionOutImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEvaluationExpressionOut()
-   * @generated
-   */
-  int EVALUATION_EXPRESSION_OUT = 12;
-
-  /**
-   * The number of structural features of the '<em>Evaluation Expression Out</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVALUATION_EXPRESSION_OUT_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateExpressionImpl <em>Update Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.UpdateExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateExpression()
-   * @generated
-   */
-  int UPDATE_EXPRESSION = 13;
-
-  /**
-   * The number of structural features of the '<em>Update Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UPDATE_EXPRESSION_FEATURE_COUNT = 0;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.SelfReferencedStoreImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSelfReferencedStore()
-   * @generated
-   */
-  int SELF_REFERENCED_STORE = 14;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELF_REFERENCED_STORE__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Self Referenced Store</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SELF_REFERENCED_STORE_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.FunctionExpressionImpl <em>Function Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.FunctionExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFunctionExpression()
-   * @generated
-   */
-  int FUNCTION_EXPRESSION = 15;
-
-  /**
-   * The feature id for the '<em><b>Distribution</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_EXPRESSION__DISTRIBUTION = 0;
-
-  /**
-   * The number of structural features of the '<em>Function Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION_EXPRESSION_FEATURE_COUNT = 1;
+  int DISTRIBUTED_EVENT_UPDATE_FEATURE_COUNT = UPDATE_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link eu.quanticol.cASPA.impl.DistributionImpl <em>Distribution</em>}' class.
@@ -615,33 +570,33 @@ public interface CASPAPackage extends EPackage
   int UNIFORM_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateExpressionImpl <em>Update Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionExpression()
+   * @see eu.quanticol.cASPA.impl.UpdateExpressionImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateExpression()
    * @generated
    */
-  int ACTION_EXPRESSION = 18;
+  int UPDATE_EXPRESSION = 18;
 
   /**
-   * The number of structural features of the '<em>Action Expression</em>' class.
+   * The number of structural features of the '<em>Update Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ACTION_EXPRESSION_FEATURE_COUNT = 0;
+  int UPDATE_EXPRESSION_FEATURE_COUNT = 0;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.StoreImpl <em>Store</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ProcessImpl <em>Process</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.StoreImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getStore()
+   * @see eu.quanticol.cASPA.impl.ProcessImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getProcess()
    * @generated
    */
-  int STORE = 19;
+  int PROCESS = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -650,7 +605,7 @@ public interface CASPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORE__NAME = 0;
+  int PROCESS__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -659,35 +614,1145 @@ public interface CASPAPackage extends EPackage
    * @generated
    * @ordered
    */
-  int STORE__VALUE = 1;
+  int PROCESS__VALUE = 1;
 
   /**
-   * The number of structural features of the '<em>Store</em>' class.
+   * The number of structural features of the '<em>Process</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int STORE_FEATURE_COUNT = 2;
+  int PROCESS_FEATURE_COUNT = 2;
 
   /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ExpressionImpl <em>Expression</em>}' class.
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ProcessExpressionImpl <em>Process Expression</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getExpression()
+   * @see eu.quanticol.cASPA.impl.ProcessExpressionImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getProcessExpression()
    * @generated
    */
-  int EXPRESSION = 20;
+  int PROCESS_EXPRESSION = 20;
 
   /**
-   * The number of structural features of the '<em>Expression</em>' class.
+   * The number of structural features of the '<em>Process Expression</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXPRESSION_FEATURE_COUNT = 0;
+  int PROCESS_EXPRESSION_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateProcessImpl <em>Predicate Process</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateProcessImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateProcess()
+   * @generated
+   */
+  int PREDICATE_PROCESS = 21;
+
+  /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_PROCESS__PREDICATE = PROCESS_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_PROCESS__VALUE = PROCESS_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Predicate Process</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_PROCESS_FEATURE_COUNT = PROCESS_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionProcessImpl <em>Action Process</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.ActionProcessImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionProcess()
+   * @generated
+   */
+  int ACTION_PROCESS = 22;
+
+  /**
+   * The feature id for the '<em><b>Action</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_PROCESS__ACTION = PROCESS_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_PROCESS__VALUE = PROCESS_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Action Process</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ACTION_PROCESS_FEATURE_COUNT = PROCESS_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.TermImpl <em>Term</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.TermImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getTerm()
+   * @generated
+   */
+  int TERM = 23;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Stores</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM__STORES = 1;
+
+  /**
+   * The number of structural features of the '<em>Term</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TERM_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.BroadcastImpl <em>Broadcast</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.BroadcastImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBroadcast()
+   * @generated
+   */
+  int BROADCAST = 24;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST__PREDICATE = ACTION__PREDICATE;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST__ARGUMENTS = ACTION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Updates</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST__UPDATES = ACTION__UPDATES;
+
+  /**
+   * The number of structural features of the '<em>Broadcast</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BROADCAST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UnicastImpl <em>Unicast</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UnicastImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUnicast()
+   * @generated
+   */
+  int UNICAST = 25;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNICAST__NAME = ACTION__NAME;
+
+  /**
+   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNICAST__PREDICATE = ACTION__PREDICATE;
+
+  /**
+   * The feature id for the '<em><b>Arguments</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNICAST__ARGUMENTS = ACTION__ARGUMENTS;
+
+  /**
+   * The feature id for the '<em><b>Updates</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNICAST__UPDATES = ACTION__UPDATES;
+
+  /**
+   * The number of structural features of the '<em>Unicast</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UNICAST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateOrImpl <em>Predicate Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateOrImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateOr()
+   * @generated
+   */
+  int PREDICATE_OR = 26;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_OR__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_OR__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Predicate Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_OR_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateAndImpl <em>Predicate And</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateAndImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateAnd()
+   * @generated
+   */
+  int PREDICATE_AND = 27;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_AND__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_AND__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Predicate And</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_AND_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateEqualityImpl <em>Predicate Equality</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateEqualityImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateEquality()
+   * @generated
+   */
+  int PREDICATE_EQUALITY = 28;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_EQUALITY__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_EQUALITY__OP = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_EQUALITY__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Predicate Equality</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_EQUALITY_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateComparisonImpl <em>Predicate Comparison</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateComparisonImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateComparison()
+   * @generated
+   */
+  int PREDICATE_COMPARISON = 29;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_COMPARISON__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_COMPARISON__OP = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_COMPARISON__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Predicate Comparison</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_COMPARISON_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateSubImpl <em>Predicate Sub</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateSubImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateSub()
+   * @generated
+   */
+  int PREDICATE_SUB = 30;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_SUB__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_SUB__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Predicate Sub</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_SUB_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicatePluImpl <em>Predicate Plu</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicatePluImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicatePlu()
+   * @generated
+   */
+  int PREDICATE_PLU = 31;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_PLU__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_PLU__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Predicate Plu</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_PLU_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateMulImpl <em>Predicate Mul</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateMulImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateMul()
+   * @generated
+   */
+  int PREDICATE_MUL = 32;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_MUL__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_MUL__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Predicate Mul</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_MUL_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PredicateDivImpl <em>Predicate Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.PredicateDivImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateDiv()
+   * @generated
+   */
+  int PREDICATE_DIV = 33;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_DIV__LEFT = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_DIV__RIGHT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Predicate Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PREDICATE_DIV_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.NotImpl <em>Not</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.NotImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getNot()
+   * @generated
+   */
+  int NOT = 34;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT__EXPRESSION = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Not</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NOT_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ConstantImpl <em>Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.ConstantImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getConstant()
+   * @generated
+   */
+  int CONSTANT = 35;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT__VALUE = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTANT_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.BoolConstantImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBoolConstant()
+   * @generated
+   */
+  int BOOL_CONSTANT = 36;
+
+  /**
+   * The feature id for the '<em><b>Value</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT__VALUE = PREDICATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Bool Constant</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BOOL_CONSTANT_FEATURE_COUNT = PREDICATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.InImpl <em>In</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.InImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getIn()
+   * @generated
+   */
+  int IN = 37;
+
+  /**
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN__EXPRESSIONS = ARGUMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>In</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IN_FEATURE_COUNT = ARGUMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.OutImpl <em>Out</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.OutImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOut()
+   * @generated
+   */
+  int OUT = 38;
+
+  /**
+   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUT__EXPRESSIONS = ARGUMENTS_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Out</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int OUT_FEATURE_COUNT = ARGUMENTS_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl <em>Local Single Event Update</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalSingleEventUpdate()
+   * @generated
+   */
+  int LOCAL_SINGLE_EVENT_UPDATE = 39;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_SINGLE_EVENT_UPDATE__NAME = SINGLE_EVENT_UPDATE_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION = SINGLE_EVENT_UPDATE_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Local Single Event Update</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int LOCAL_SINGLE_EVENT_UPDATE_FEATURE_COUNT = SINGLE_EVENT_UPDATE_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl <em>Distributed Event Update Probability</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdateProbability()
+   * @generated
+   */
+  int DISTRIBUTED_EVENT_UPDATE_PROBABILITY = 40;
+
+  /**
+   * The feature id for the '<em><b>Distribution</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION = DISTRIBUTED_EVENT_UPDATE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Distributed Event Update Probability</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTRIBUTED_EVENT_UPDATE_PROBABILITY_FEATURE_COUNT = DISTRIBUTED_EVENT_UPDATE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.DistributedEventUpdateUniformImpl <em>Distributed Event Update Uniform</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.DistributedEventUpdateUniformImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdateUniform()
+   * @generated
+   */
+  int DISTRIBUTED_EVENT_UPDATE_UNIFORM = 41;
+
+  /**
+   * The feature id for the '<em><b>Distribution</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTRIBUTED_EVENT_UPDATE_UNIFORM__DISTRIBUTION = DISTRIBUTED_EVENT_UPDATE_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Distributed Event Update Uniform</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DISTRIBUTED_EVENT_UPDATE_UNIFORM_FEATURE_COUNT = DISTRIBUTED_EVENT_UPDATE_FEATURE_COUNT + 1;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateOrImpl <em>Update Or</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateOrImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateOr()
+   * @generated
+   */
+  int UPDATE_OR = 42;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_OR__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_OR__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Update Or</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_OR_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateAndImpl <em>Update And</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateAndImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateAnd()
+   * @generated
+   */
+  int UPDATE_AND = 43;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_AND__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_AND__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Update And</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_AND_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateEqualityImpl <em>Update Equality</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateEqualityImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateEquality()
+   * @generated
+   */
+  int UPDATE_EQUALITY = 44;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_EQUALITY__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_EQUALITY__OP = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_EQUALITY__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Update Equality</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_EQUALITY_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateComparisonImpl <em>Update Comparison</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateComparisonImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateComparison()
+   * @generated
+   */
+  int UPDATE_COMPARISON = 45;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_COMPARISON__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Op</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_COMPARISON__OP = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_COMPARISON__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Update Comparison</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_COMPARISON_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 3;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateSubImpl <em>Update Sub</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateSubImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateSub()
+   * @generated
+   */
+  int UPDATE_SUB = 46;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_SUB__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_SUB__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Update Sub</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_SUB_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdatePluImpl <em>Update Plu</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdatePluImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdatePlu()
+   * @generated
+   */
+  int UPDATE_PLU = 47;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_PLU__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_PLU__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Update Plu</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_PLU_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateMulImpl <em>Update Mul</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateMulImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateMul()
+   * @generated
+   */
+  int UPDATE_MUL = 48;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_MUL__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_MUL__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Update Mul</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_MUL_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateDivImpl <em>Update Div</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateDivImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateDiv()
+   * @generated
+   */
+  int UPDATE_DIV = 49;
+
+  /**
+   * The feature id for the '<em><b>Left</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_DIV__LEFT = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Right</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_DIV__RIGHT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
+   * The number of structural features of the '<em>Update Div</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_DIV_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
+
+  /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UpdateNotImpl <em>Update Not</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.UpdateNotImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateNot()
+   * @generated
+   */
+  int UPDATE_NOT = 50;
+
+  /**
+   * The feature id for the '<em><b>Expression</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_NOT__EXPRESSION = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Update Not</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int UPDATE_NOT_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link eu.quanticol.cASPA.impl.ParallelImpl <em>Parallel</em>}' class.
@@ -697,7 +1762,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getParallel()
    * @generated
    */
-  int PARALLEL = 21;
+  int PARALLEL = 51;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -734,7 +1799,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getChoice()
    * @generated
    */
-  int CHOICE = 22;
+  int CHOICE = 52;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -771,7 +1836,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLeaf()
    * @generated
    */
-  int LEAF = 23;
+  int LEAF = 53;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -799,7 +1864,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getProcessReference()
    * @generated
    */
-  int PROCESS_REFERENCE = 24;
+  int PROCESS_REFERENCE = 54;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' reference.
@@ -818,1227 +1883,6 @@ public interface CASPAPackage extends EPackage
    * @ordered
    */
   int PROCESS_REFERENCE_FEATURE_COUNT = PROCESS_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.BroadcastImpl <em>Broadcast</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.BroadcastImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBroadcast()
-   * @generated
-   */
-  int BROADCAST = 25;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BROADCAST__NAME = ACTION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BROADCAST__PREDICATE = ACTION__PREDICATE;
-
-  /**
-   * The feature id for the '<em><b>Evaluations</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BROADCAST__EVALUATIONS = ACTION__EVALUATIONS;
-
-  /**
-   * The feature id for the '<em><b>Updates</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BROADCAST__UPDATES = ACTION__UPDATES;
-
-  /**
-   * The number of structural features of the '<em>Broadcast</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BROADCAST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.UnicastImpl <em>Unicast</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.UnicastImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUnicast()
-   * @generated
-   */
-  int UNICAST = 26;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNICAST__NAME = ACTION__NAME;
-
-  /**
-   * The feature id for the '<em><b>Predicate</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNICAST__PREDICATE = ACTION__PREDICATE;
-
-  /**
-   * The feature id for the '<em><b>Evaluations</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNICAST__EVALUATIONS = ACTION__EVALUATIONS;
-
-  /**
-   * The feature id for the '<em><b>Updates</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNICAST__UPDATES = ACTION__UPDATES;
-
-  /**
-   * The number of structural features of the '<em>Unicast</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int UNICAST_FEATURE_COUNT = ACTION_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.InImpl <em>In</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.InImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getIn()
-   * @generated
-   */
-  int IN = 27;
-
-  /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IN__EXPRESSIONS = EVALUATIONS_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>In</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int IN_FEATURE_COUNT = EVALUATIONS_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.OutImpl <em>Out</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.OutImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOut()
-   * @generated
-   */
-  int OUT = 28;
-
-  /**
-   * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUT__EXPRESSIONS = EVALUATIONS_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Out</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OUT_FEATURE_COUNT = EVALUATIONS_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.LocalEvaluationExpressionImpl <em>Local Evaluation Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.LocalEvaluationExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalEvaluationExpression()
-   * @generated
-   */
-  int LOCAL_EVALUATION_EXPRESSION = 29;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_EVALUATION_EXPRESSION__EXPRESSION = EVALUATION_EXPRESSION_IN__EXPRESSION;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_EVALUATION_EXPRESSION__NAME = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Local Evaluation Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_EVALUATION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.GlobalEvaluationExpressionImpl <em>Global Evaluation Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.GlobalEvaluationExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getGlobalEvaluationExpression()
-   * @generated
-   */
-  int GLOBAL_EVALUATION_EXPRESSION = 30;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_EVALUATION_EXPRESSION__EXPRESSION = EVALUATION_EXPRESSION_IN__EXPRESSION;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_EVALUATION_EXPRESSION__NAME = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Global Evaluation Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_EVALUATION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_IN_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.FreeEvaluationExpressionImpl <em>Free Evaluation Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.FreeEvaluationExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeEvaluationExpression()
-   * @generated
-   */
-  int FREE_EVALUATION_EXPRESSION = 31;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_EVALUATION_EXPRESSION__NAME = EVALUATION_EXPRESSION_OUT_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_EVALUATION_EXPRESSION__EXPRESSION = EVALUATION_EXPRESSION_OUT_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Free Evaluation Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_EVALUATION_EXPRESSION_FEATURE_COUNT = EVALUATION_EXPRESSION_OUT_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.LocalUpdateExpressionImpl <em>Local Update Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.LocalUpdateExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalUpdateExpression()
-   * @generated
-   */
-  int LOCAL_UPDATE_EXPRESSION = 32;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_UPDATE_EXPRESSION__NAME = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_UPDATE_EXPRESSION__EXPRESSION = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Local Update Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_UPDATE_EXPRESSION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionImpl <em>Global Update Expression</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.GlobalUpdateExpressionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getGlobalUpdateExpression()
-   * @generated
-   */
-  int GLOBAL_UPDATE_EXPRESSION = 33;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_UPDATE_EXPRESSION__NAME = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_UPDATE_EXPRESSION__EXPRESSION = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Global Update Expression</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_UPDATE_EXPRESSION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.LocalUpdateExpressionFunctionImpl <em>Local Update Expression Function</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.LocalUpdateExpressionFunctionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalUpdateExpressionFunction()
-   * @generated
-   */
-  int LOCAL_UPDATE_EXPRESSION_FUNCTION = 34;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_UPDATE_EXPRESSION_FUNCTION__NAME = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Local Update Expression Function</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int LOCAL_UPDATE_EXPRESSION_FUNCTION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionFunctionImpl <em>Global Update Expression Function</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.GlobalUpdateExpressionFunctionImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getGlobalUpdateExpressionFunction()
-   * @generated
-   */
-  int GLOBAL_UPDATE_EXPRESSION_FUNCTION = 35;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME = UPDATE_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION = UPDATE_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Global Update Expression Function</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int GLOBAL_UPDATE_EXPRESSION_FUNCTION_FEATURE_COUNT = UPDATE_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionOrImpl <em>Action Or</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionOrImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionOr()
-   * @generated
-   */
-  int ACTION_OR = 36;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_OR__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_OR__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Action Or</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_OR_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionAndImpl <em>Action And</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionAndImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionAnd()
-   * @generated
-   */
-  int ACTION_AND = 37;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_AND__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_AND__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Action And</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_AND_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionEqualityImpl <em>Action Equality</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionEqualityImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionEquality()
-   * @generated
-   */
-  int ACTION_EQUALITY = 38;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_EQUALITY__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_EQUALITY__OP = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_EQUALITY__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Action Equality</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_EQUALITY_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionComparisonImpl <em>Action Comparison</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionComparisonImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionComparison()
-   * @generated
-   */
-  int ACTION_COMPARISON = 39;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_COMPARISON__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_COMPARISON__OP = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_COMPARISON__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Action Comparison</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_COMPARISON_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionSubImpl <em>Action Sub</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionSubImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionSub()
-   * @generated
-   */
-  int ACTION_SUB = 40;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_SUB__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_SUB__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Action Sub</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_SUB_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionPluImpl <em>Action Plu</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionPluImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionPlu()
-   * @generated
-   */
-  int ACTION_PLU = 41;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_PLU__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_PLU__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Action Plu</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_PLU_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionMulImpl <em>Action Mul</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionMulImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionMul()
-   * @generated
-   */
-  int ACTION_MUL = 42;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_MUL__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_MUL__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Action Mul</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_MUL_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionDivImpl <em>Action Div</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionDivImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionDiv()
-   * @generated
-   */
-  int ACTION_DIV = 43;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_DIV__LEFT = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_DIV__RIGHT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Action Div</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_DIV_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ActionNotImpl <em>Action Not</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ActionNotImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionNot()
-   * @generated
-   */
-  int ACTION_NOT = 44;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_NOT__EXPRESSION = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Action Not</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ACTION_NOT_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.DoubleConstantImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDoubleConstant()
-   * @generated
-   */
-  int DOUBLE_CONSTANT = 45;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOUBLE_CONSTANT__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Double Constant</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DOUBLE_CONSTANT_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.FreeVariableImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeVariable()
-   * @generated
-   */
-  int FREE_VARIABLE = 46;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Free Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.BoolConstantImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBoolConstant()
-   * @generated
-   */
-  int BOOL_CONSTANT = 47;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOL_CONSTANT__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Bool Constant</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BOOL_CONSTANT_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ReferencedStoreImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getReferencedStore()
-   * @generated
-   */
-  int REFERENCED_STORE = 48;
-
-  /**
-   * The feature id for the '<em><b>Value</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCED_STORE__VALUE = ACTION_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Referenced Store</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REFERENCED_STORE_FEATURE_COUNT = ACTION_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.OrImpl <em>Or</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.OrImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOr()
-   * @generated
-   */
-  int OR = 49;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Or</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int OR_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.AndImpl <em>And</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.AndImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getAnd()
-   * @generated
-   */
-  int AND = 50;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>And</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AND_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.EqualityImpl <em>Equality</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.EqualityImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEquality()
-   * @generated
-   */
-  int EQUALITY = 51;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY__OP = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Equality</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EQUALITY_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.ComparisonImpl <em>Comparison</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.ComparisonImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getComparison()
-   * @generated
-   */
-  int COMPARISON = 52;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPARISON__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Op</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPARISON__OP = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPARISON__RIGHT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The number of structural features of the '<em>Comparison</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPARISON_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 3;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.SubImpl <em>Sub</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.SubImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSub()
-   * @generated
-   */
-  int SUB = 53;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Sub</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SUB_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.PluImpl <em>Plu</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.PluImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPlu()
-   * @generated
-   */
-  int PLU = 54;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLU__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLU__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Plu</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PLU_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.MulImpl <em>Mul</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.MulImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getMul()
-   * @generated
-   */
-  int MUL = 55;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MUL__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MUL__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Mul</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MUL_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.DivImpl <em>Div</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.DivImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDiv()
-   * @generated
-   */
-  int DIV = 56;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIV__LEFT = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIV__RIGHT = EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Div</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DIV_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.NotImpl <em>Not</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.NotImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getNot()
-   * @generated
-   */
-  int NOT = 57;
-
-  /**
-   * The feature id for the '<em><b>Expression</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NOT__EXPRESSION = EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Not</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NOT_FEATURE_COUNT = EXPRESSION_FEATURE_COUNT + 1;
 
 
   /**
@@ -2085,36 +1929,338 @@ public interface CASPAPackage extends EPackage
   EReference getModel_Terms();
 
   /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Term <em>Term</em>}'.
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Store <em>Store</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Term</em>'.
-   * @see eu.quanticol.cASPA.Term
+   * @return the meta object for class '<em>Store</em>'.
+   * @see eu.quanticol.cASPA.Store
    * @generated
    */
-  EClass getTerm();
+  EClass getStore();
 
   /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.Term#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Store#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see eu.quanticol.cASPA.Store#getName()
+   * @see #getStore()
+   * @generated
+   */
+  EAttribute getStore_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Store#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see eu.quanticol.cASPA.Store#getValue()
+   * @see #getStore()
+   * @generated
+   */
+  EAttribute getStore_Value();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.ReferencedStore <em>Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Referenced Store</em>'.
+   * @see eu.quanticol.cASPA.ReferencedStore
+   * @generated
+   */
+  EClass getReferencedStore();
+
+  /**
+   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.ReferencedStore#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.Term#getName()
-   * @see #getTerm()
+   * @see eu.quanticol.cASPA.ReferencedStore#getName()
+   * @see #getReferencedStore()
    * @generated
    */
-  EReference getTerm_Name();
+  EReference getReferencedStore_Name();
 
   /**
-   * Returns the meta object for the reference list '{@link eu.quanticol.cASPA.Term#getStores <em>Stores</em>}'.
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Stores</em>'.
-   * @see eu.quanticol.cASPA.Term#getStores()
-   * @see #getTerm()
+   * @return the meta object for class '<em>Self Referenced Store</em>'.
+   * @see eu.quanticol.cASPA.SelfReferencedStore
    * @generated
    */
-  EReference getTerm_Stores();
+  EClass getSelfReferencedStore();
+
+  /**
+   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.SelfReferencedStore#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Name</em>'.
+   * @see eu.quanticol.cASPA.SelfReferencedStore#getName()
+   * @see #getSelfReferencedStore()
+   * @generated
+   */
+  EReference getSelfReferencedStore_Name();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Action <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Action</em>'.
+   * @see eu.quanticol.cASPA.Action
+   * @generated
+   */
+  EClass getAction();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Action#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see eu.quanticol.cASPA.Action#getName()
+   * @see #getAction()
+   * @generated
+   */
+  EAttribute getAction_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Action#getPredicate <em>Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Predicate</em>'.
+   * @see eu.quanticol.cASPA.Action#getPredicate()
+   * @see #getAction()
+   * @generated
+   */
+  EReference getAction_Predicate();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Action#getArguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Arguments</em>'.
+   * @see eu.quanticol.cASPA.Action#getArguments()
+   * @see #getAction()
+   * @generated
+   */
+  EReference getAction_Arguments();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Action#getUpdates <em>Updates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Updates</em>'.
+   * @see eu.quanticol.cASPA.Action#getUpdates()
+   * @see #getAction()
+   * @generated
+   */
+  EReference getAction_Updates();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Predicate <em>Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate</em>'.
+   * @see eu.quanticol.cASPA.Predicate
+   * @generated
+   */
+  EClass getPredicate();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Predicate#getPredicate <em>Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Predicate</em>'.
+   * @see eu.quanticol.cASPA.Predicate#getPredicate()
+   * @see #getPredicate()
+   * @generated
+   */
+  EReference getPredicate_Predicate();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateExpression <em>Predicate Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Expression</em>'.
+   * @see eu.quanticol.cASPA.PredicateExpression
+   * @generated
+   */
+  EClass getPredicateExpression();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Arguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Arguments</em>'.
+   * @see eu.quanticol.cASPA.Arguments
+   * @generated
+   */
+  EClass getArguments();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.InArguments <em>In Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>In Arguments</em>'.
+   * @see eu.quanticol.cASPA.InArguments
+   * @generated
+   */
+  EClass getInArguments();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.OutArguments <em>Out Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Out Arguments</em>'.
+   * @see eu.quanticol.cASPA.OutArguments
+   * @generated
+   */
+  EClass getOutArguments();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Expressions <em>Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Expressions</em>'.
+   * @see eu.quanticol.cASPA.Expressions
+   * @generated
+   */
+  EClass getExpressions();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Expressions#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see eu.quanticol.cASPA.Expressions#getValue()
+   * @see #getExpressions()
+   * @generated
+   */
+  EAttribute getExpressions_Value();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Variables <em>Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Variables</em>'.
+   * @see eu.quanticol.cASPA.Variables
+   * @generated
+   */
+  EClass getVariables();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Updates <em>Updates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Updates</em>'.
+   * @see eu.quanticol.cASPA.Updates
+   * @generated
+   */
+  EClass getUpdates();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Updates#getUpdates <em>Updates</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Updates</em>'.
+   * @see eu.quanticol.cASPA.Updates#getUpdates()
+   * @see #getUpdates()
+   * @generated
+   */
+  EReference getUpdates_Updates();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Update <em>Update</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update</em>'.
+   * @see eu.quanticol.cASPA.Update
+   * @generated
+   */
+  EClass getUpdate();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.SingleEventUpdate <em>Single Event Update</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Single Event Update</em>'.
+   * @see eu.quanticol.cASPA.SingleEventUpdate
+   * @generated
+   */
+  EClass getSingleEventUpdate();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.DistributedEventUpdate <em>Distributed Event Update</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Distributed Event Update</em>'.
+   * @see eu.quanticol.cASPA.DistributedEventUpdate
+   * @generated
+   */
+  EClass getDistributedEventUpdate();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Distribution <em>Distribution</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Distribution</em>'.
+   * @see eu.quanticol.cASPA.Distribution
+   * @generated
+   */
+  EClass getDistribution();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Distribution#getProb <em>Prob</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Prob</em>'.
+   * @see eu.quanticol.cASPA.Distribution#getProb()
+   * @see #getDistribution()
+   * @generated
+   */
+  EAttribute getDistribution_Prob();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Distribution#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see eu.quanticol.cASPA.Distribution#getExpression()
+   * @see #getDistribution()
+   * @generated
+   */
+  EReference getDistribution_Expression();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Uniform <em>Uniform</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Uniform</em>'.
+   * @see eu.quanticol.cASPA.Uniform
+   * @generated
+   */
+  EClass getUniform();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Uniform#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see eu.quanticol.cASPA.Uniform#getExpression()
+   * @see #getUniform()
+   * @generated
+   */
+  EReference getUniform_Expression();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateExpression <em>Update Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Expression</em>'.
+   * @see eu.quanticol.cASPA.UpdateExpression
+   * @generated
+   */
+  EClass getUpdateExpression();
 
   /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.Process <em>Process</em>}'.
@@ -2223,319 +2369,812 @@ public interface CASPAPackage extends EPackage
   EReference getActionProcess_Value();
 
   /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Action <em>Action</em>}'.
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Term <em>Term</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action</em>'.
-   * @see eu.quanticol.cASPA.Action
+   * @return the meta object for class '<em>Term</em>'.
+   * @see eu.quanticol.cASPA.Term
    * @generated
    */
-  EClass getAction();
+  EClass getTerm();
 
   /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Action#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.Action#getName()
-   * @see #getAction()
-   * @generated
-   */
-  EAttribute getAction_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Action#getPredicate <em>Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Predicate</em>'.
-   * @see eu.quanticol.cASPA.Action#getPredicate()
-   * @see #getAction()
-   * @generated
-   */
-  EReference getAction_Predicate();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Action#getEvaluations <em>Evaluations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Evaluations</em>'.
-   * @see eu.quanticol.cASPA.Action#getEvaluations()
-   * @see #getAction()
-   * @generated
-   */
-  EReference getAction_Evaluations();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Action#getUpdates <em>Updates</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Updates</em>'.
-   * @see eu.quanticol.cASPA.Action#getUpdates()
-   * @see #getAction()
-   * @generated
-   */
-  EReference getAction_Updates();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Predicate <em>Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Predicate</em>'.
-   * @see eu.quanticol.cASPA.Predicate
-   * @generated
-   */
-  EClass getPredicate();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Predicate#getPredicate <em>Predicate</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Predicate</em>'.
-   * @see eu.quanticol.cASPA.Predicate#getPredicate()
-   * @see #getPredicate()
-   * @generated
-   */
-  EReference getPredicate_Predicate();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Evaluations <em>Evaluations</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Evaluations</em>'.
-   * @see eu.quanticol.cASPA.Evaluations
-   * @generated
-   */
-  EClass getEvaluations();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Updates <em>Updates</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Updates</em>'.
-   * @see eu.quanticol.cASPA.Updates
-   * @generated
-   */
-  EClass getUpdates();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Updates#getUpdates <em>Updates</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Updates</em>'.
-   * @see eu.quanticol.cASPA.Updates#getUpdates()
-   * @see #getUpdates()
-   * @generated
-   */
-  EReference getUpdates_Updates();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateExpression <em>Predicate Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Predicate Expression</em>'.
-   * @see eu.quanticol.cASPA.PredicateExpression
-   * @generated
-   */
-  EClass getPredicateExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateExpression#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.PredicateExpression#getExpression()
-   * @see #getPredicateExpression()
-   * @generated
-   */
-  EReference getPredicateExpression_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.EvaluationExpressionIn <em>Evaluation Expression In</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Evaluation Expression In</em>'.
-   * @see eu.quanticol.cASPA.EvaluationExpressionIn
-   * @generated
-   */
-  EClass getEvaluationExpressionIn();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.EvaluationExpressionIn#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.EvaluationExpressionIn#getExpression()
-   * @see #getEvaluationExpressionIn()
-   * @generated
-   */
-  EReference getEvaluationExpressionIn_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.EvaluationExpressionOut <em>Evaluation Expression Out</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Evaluation Expression Out</em>'.
-   * @see eu.quanticol.cASPA.EvaluationExpressionOut
-   * @generated
-   */
-  EClass getEvaluationExpressionOut();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateExpression <em>Update Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Update Expression</em>'.
-   * @see eu.quanticol.cASPA.UpdateExpression
-   * @generated
-   */
-  EClass getUpdateExpression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Self Referenced Store</em>'.
-   * @see eu.quanticol.cASPA.SelfReferencedStore
-   * @generated
-   */
-  EClass getSelfReferencedStore();
-
-  /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.SelfReferencedStore#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.Term#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.SelfReferencedStore#getName()
-   * @see #getSelfReferencedStore()
+   * @see eu.quanticol.cASPA.Term#getName()
+   * @see #getTerm()
    * @generated
    */
-  EReference getSelfReferencedStore_Name();
+  EReference getTerm_Name();
 
   /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.FunctionExpression <em>Function Expression</em>}'.
+   * Returns the meta object for the reference list '{@link eu.quanticol.cASPA.Term#getStores <em>Stores</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Function Expression</em>'.
-   * @see eu.quanticol.cASPA.FunctionExpression
+   * @return the meta object for the reference list '<em>Stores</em>'.
+   * @see eu.quanticol.cASPA.Term#getStores()
+   * @see #getTerm()
    * @generated
    */
-  EClass getFunctionExpression();
+  EReference getTerm_Stores();
 
   /**
-   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.FunctionExpression#getDistribution <em>Distribution</em>}'.
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Broadcast <em>Broadcast</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Broadcast</em>'.
+   * @see eu.quanticol.cASPA.Broadcast
+   * @generated
+   */
+  EClass getBroadcast();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Unicast <em>Unicast</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Unicast</em>'.
+   * @see eu.quanticol.cASPA.Unicast
+   * @generated
+   */
+  EClass getUnicast();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateOr <em>Predicate Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Or</em>'.
+   * @see eu.quanticol.cASPA.PredicateOr
+   * @generated
+   */
+  EClass getPredicateOr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateOr#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicateOr#getLeft()
+   * @see #getPredicateOr()
+   * @generated
+   */
+  EReference getPredicateOr_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateOr#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicateOr#getRight()
+   * @see #getPredicateOr()
+   * @generated
+   */
+  EReference getPredicateOr_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateAnd <em>Predicate And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate And</em>'.
+   * @see eu.quanticol.cASPA.PredicateAnd
+   * @generated
+   */
+  EClass getPredicateAnd();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateAnd#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicateAnd#getLeft()
+   * @see #getPredicateAnd()
+   * @generated
+   */
+  EReference getPredicateAnd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateAnd#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicateAnd#getRight()
+   * @see #getPredicateAnd()
+   * @generated
+   */
+  EReference getPredicateAnd_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateEquality <em>Predicate Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Equality</em>'.
+   * @see eu.quanticol.cASPA.PredicateEquality
+   * @generated
+   */
+  EClass getPredicateEquality();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateEquality#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicateEquality#getLeft()
+   * @see #getPredicateEquality()
+   * @generated
+   */
+  EReference getPredicateEquality_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.PredicateEquality#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see eu.quanticol.cASPA.PredicateEquality#getOp()
+   * @see #getPredicateEquality()
+   * @generated
+   */
+  EAttribute getPredicateEquality_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateEquality#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicateEquality#getRight()
+   * @see #getPredicateEquality()
+   * @generated
+   */
+  EReference getPredicateEquality_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateComparison <em>Predicate Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Comparison</em>'.
+   * @see eu.quanticol.cASPA.PredicateComparison
+   * @generated
+   */
+  EClass getPredicateComparison();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateComparison#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicateComparison#getLeft()
+   * @see #getPredicateComparison()
+   * @generated
+   */
+  EReference getPredicateComparison_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.PredicateComparison#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see eu.quanticol.cASPA.PredicateComparison#getOp()
+   * @see #getPredicateComparison()
+   * @generated
+   */
+  EAttribute getPredicateComparison_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateComparison#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicateComparison#getRight()
+   * @see #getPredicateComparison()
+   * @generated
+   */
+  EReference getPredicateComparison_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateSub <em>Predicate Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Sub</em>'.
+   * @see eu.quanticol.cASPA.PredicateSub
+   * @generated
+   */
+  EClass getPredicateSub();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateSub#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicateSub#getLeft()
+   * @see #getPredicateSub()
+   * @generated
+   */
+  EReference getPredicateSub_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateSub#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicateSub#getRight()
+   * @see #getPredicateSub()
+   * @generated
+   */
+  EReference getPredicateSub_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicatePlu <em>Predicate Plu</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Plu</em>'.
+   * @see eu.quanticol.cASPA.PredicatePlu
+   * @generated
+   */
+  EClass getPredicatePlu();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicatePlu#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicatePlu#getLeft()
+   * @see #getPredicatePlu()
+   * @generated
+   */
+  EReference getPredicatePlu_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicatePlu#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicatePlu#getRight()
+   * @see #getPredicatePlu()
+   * @generated
+   */
+  EReference getPredicatePlu_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateMul <em>Predicate Mul</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Mul</em>'.
+   * @see eu.quanticol.cASPA.PredicateMul
+   * @generated
+   */
+  EClass getPredicateMul();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateMul#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicateMul#getLeft()
+   * @see #getPredicateMul()
+   * @generated
+   */
+  EReference getPredicateMul_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateMul#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicateMul#getRight()
+   * @see #getPredicateMul()
+   * @generated
+   */
+  EReference getPredicateMul_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.PredicateDiv <em>Predicate Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Predicate Div</em>'.
+   * @see eu.quanticol.cASPA.PredicateDiv
+   * @generated
+   */
+  EClass getPredicateDiv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateDiv#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.PredicateDiv#getLeft()
+   * @see #getPredicateDiv()
+   * @generated
+   */
+  EReference getPredicateDiv_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.PredicateDiv#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.PredicateDiv#getRight()
+   * @see #getPredicateDiv()
+   * @generated
+   */
+  EReference getPredicateDiv_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Not <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Not</em>'.
+   * @see eu.quanticol.cASPA.Not
+   * @generated
+   */
+  EClass getNot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Not#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see eu.quanticol.cASPA.Not#getExpression()
+   * @see #getNot()
+   * @generated
+   */
+  EReference getNot_Expression();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Constant <em>Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Constant</em>'.
+   * @see eu.quanticol.cASPA.Constant
+   * @generated
+   */
+  EClass getConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Constant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see eu.quanticol.cASPA.Constant#getValue()
+   * @see #getConstant()
+   * @generated
+   */
+  EAttribute getConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.BoolConstant <em>Bool Constant</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Bool Constant</em>'.
+   * @see eu.quanticol.cASPA.BoolConstant
+   * @generated
+   */
+  EClass getBoolConstant();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.BoolConstant#getValue <em>Value</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Value</em>'.
+   * @see eu.quanticol.cASPA.BoolConstant#getValue()
+   * @see #getBoolConstant()
+   * @generated
+   */
+  EAttribute getBoolConstant_Value();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.In <em>In</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>In</em>'.
+   * @see eu.quanticol.cASPA.In
+   * @generated
+   */
+  EClass getIn();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.In#getExpressions <em>Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see eu.quanticol.cASPA.In#getExpressions()
+   * @see #getIn()
+   * @generated
+   */
+  EReference getIn_Expressions();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Out <em>Out</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Out</em>'.
+   * @see eu.quanticol.cASPA.Out
+   * @generated
+   */
+  EClass getOut();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Out#getExpressions <em>Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Expressions</em>'.
+   * @see eu.quanticol.cASPA.Out#getExpressions()
+   * @see #getOut()
+   * @generated
+   */
+  EReference getOut_Expressions();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.LocalSingleEventUpdate <em>Local Single Event Update</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Local Single Event Update</em>'.
+   * @see eu.quanticol.cASPA.LocalSingleEventUpdate
+   * @generated
+   */
+  EClass getLocalSingleEventUpdate();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Name</em>'.
+   * @see eu.quanticol.cASPA.LocalSingleEventUpdate#getName()
+   * @see #getLocalSingleEventUpdate()
+   * @generated
+   */
+  EReference getLocalSingleEventUpdate_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getExpression <em>Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Expression</em>'.
+   * @see eu.quanticol.cASPA.LocalSingleEventUpdate#getExpression()
+   * @see #getLocalSingleEventUpdate()
+   * @generated
+   */
+  EReference getLocalSingleEventUpdate_Expression();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.DistributedEventUpdateProbability <em>Distributed Event Update Probability</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Distributed Event Update Probability</em>'.
+   * @see eu.quanticol.cASPA.DistributedEventUpdateProbability
+   * @generated
+   */
+  EClass getDistributedEventUpdateProbability();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.DistributedEventUpdateProbability#getDistribution <em>Distribution</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Distribution</em>'.
-   * @see eu.quanticol.cASPA.FunctionExpression#getDistribution()
-   * @see #getFunctionExpression()
+   * @see eu.quanticol.cASPA.DistributedEventUpdateProbability#getDistribution()
+   * @see #getDistributedEventUpdateProbability()
    * @generated
    */
-  EReference getFunctionExpression_Distribution();
+  EReference getDistributedEventUpdateProbability_Distribution();
 
   /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Distribution <em>Distribution</em>}'.
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.DistributedEventUpdateUniform <em>Distributed Event Update Uniform</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Distribution</em>'.
-   * @see eu.quanticol.cASPA.Distribution
+   * @return the meta object for class '<em>Distributed Event Update Uniform</em>'.
+   * @see eu.quanticol.cASPA.DistributedEventUpdateUniform
    * @generated
    */
-  EClass getDistribution();
+  EClass getDistributedEventUpdateUniform();
 
   /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Distribution#getProb <em>Prob</em>}'.
+   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.DistributedEventUpdateUniform#getDistribution <em>Distribution</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Prob</em>'.
-   * @see eu.quanticol.cASPA.Distribution#getProb()
-   * @see #getDistribution()
+   * @return the meta object for the containment reference list '<em>Distribution</em>'.
+   * @see eu.quanticol.cASPA.DistributedEventUpdateUniform#getDistribution()
+   * @see #getDistributedEventUpdateUniform()
    * @generated
    */
-  EAttribute getDistribution_Prob();
+  EReference getDistributedEventUpdateUniform_Distribution();
 
   /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Distribution#getExpression <em>Expression</em>}'.
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateOr <em>Update Or</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Or</em>'.
+   * @see eu.quanticol.cASPA.UpdateOr
+   * @generated
+   */
+  EClass getUpdateOr();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateOr#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdateOr#getLeft()
+   * @see #getUpdateOr()
+   * @generated
+   */
+  EReference getUpdateOr_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateOr#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdateOr#getRight()
+   * @see #getUpdateOr()
+   * @generated
+   */
+  EReference getUpdateOr_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateAnd <em>Update And</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update And</em>'.
+   * @see eu.quanticol.cASPA.UpdateAnd
+   * @generated
+   */
+  EClass getUpdateAnd();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateAnd#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdateAnd#getLeft()
+   * @see #getUpdateAnd()
+   * @generated
+   */
+  EReference getUpdateAnd_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateAnd#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdateAnd#getRight()
+   * @see #getUpdateAnd()
+   * @generated
+   */
+  EReference getUpdateAnd_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateEquality <em>Update Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Equality</em>'.
+   * @see eu.quanticol.cASPA.UpdateEquality
+   * @generated
+   */
+  EClass getUpdateEquality();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateEquality#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdateEquality#getLeft()
+   * @see #getUpdateEquality()
+   * @generated
+   */
+  EReference getUpdateEquality_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.UpdateEquality#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see eu.quanticol.cASPA.UpdateEquality#getOp()
+   * @see #getUpdateEquality()
+   * @generated
+   */
+  EAttribute getUpdateEquality_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateEquality#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdateEquality#getRight()
+   * @see #getUpdateEquality()
+   * @generated
+   */
+  EReference getUpdateEquality_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateComparison <em>Update Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Comparison</em>'.
+   * @see eu.quanticol.cASPA.UpdateComparison
+   * @generated
+   */
+  EClass getUpdateComparison();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateComparison#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdateComparison#getLeft()
+   * @see #getUpdateComparison()
+   * @generated
+   */
+  EReference getUpdateComparison_Left();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.UpdateComparison#getOp <em>Op</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Op</em>'.
+   * @see eu.quanticol.cASPA.UpdateComparison#getOp()
+   * @see #getUpdateComparison()
+   * @generated
+   */
+  EAttribute getUpdateComparison_Op();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateComparison#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdateComparison#getRight()
+   * @see #getUpdateComparison()
+   * @generated
+   */
+  EReference getUpdateComparison_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateSub <em>Update Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Sub</em>'.
+   * @see eu.quanticol.cASPA.UpdateSub
+   * @generated
+   */
+  EClass getUpdateSub();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateSub#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdateSub#getLeft()
+   * @see #getUpdateSub()
+   * @generated
+   */
+  EReference getUpdateSub_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateSub#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdateSub#getRight()
+   * @see #getUpdateSub()
+   * @generated
+   */
+  EReference getUpdateSub_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdatePlu <em>Update Plu</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Plu</em>'.
+   * @see eu.quanticol.cASPA.UpdatePlu
+   * @generated
+   */
+  EClass getUpdatePlu();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdatePlu#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdatePlu#getLeft()
+   * @see #getUpdatePlu()
+   * @generated
+   */
+  EReference getUpdatePlu_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdatePlu#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdatePlu#getRight()
+   * @see #getUpdatePlu()
+   * @generated
+   */
+  EReference getUpdatePlu_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateMul <em>Update Mul</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Mul</em>'.
+   * @see eu.quanticol.cASPA.UpdateMul
+   * @generated
+   */
+  EClass getUpdateMul();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateMul#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdateMul#getLeft()
+   * @see #getUpdateMul()
+   * @generated
+   */
+  EReference getUpdateMul_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateMul#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdateMul#getRight()
+   * @see #getUpdateMul()
+   * @generated
+   */
+  EReference getUpdateMul_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateDiv <em>Update Div</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Div</em>'.
+   * @see eu.quanticol.cASPA.UpdateDiv
+   * @generated
+   */
+  EClass getUpdateDiv();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateDiv#getLeft <em>Left</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Left</em>'.
+   * @see eu.quanticol.cASPA.UpdateDiv#getLeft()
+   * @see #getUpdateDiv()
+   * @generated
+   */
+  EReference getUpdateDiv_Left();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateDiv#getRight <em>Right</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Right</em>'.
+   * @see eu.quanticol.cASPA.UpdateDiv#getRight()
+   * @see #getUpdateDiv()
+   * @generated
+   */
+  EReference getUpdateDiv_Right();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.UpdateNot <em>Update Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Update Not</em>'.
+   * @see eu.quanticol.cASPA.UpdateNot
+   * @generated
+   */
+  EClass getUpdateNot();
+
+  /**
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.UpdateNot#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.Distribution#getExpression()
-   * @see #getDistribution()
+   * @see eu.quanticol.cASPA.UpdateNot#getExpression()
+   * @see #getUpdateNot()
    * @generated
    */
-  EReference getDistribution_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Uniform <em>Uniform</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Uniform</em>'.
-   * @see eu.quanticol.cASPA.Uniform
-   * @generated
-   */
-  EClass getUniform();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Uniform#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.Uniform#getExpression()
-   * @see #getUniform()
-   * @generated
-   */
-  EReference getUniform_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionExpression <em>Action Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Expression</em>'.
-   * @see eu.quanticol.cASPA.ActionExpression
-   * @generated
-   */
-  EClass getActionExpression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Store <em>Store</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Store</em>'.
-   * @see eu.quanticol.cASPA.Store
-   * @generated
-   */
-  EClass getStore();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Store#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.Store#getName()
-   * @see #getStore()
-   * @generated
-   */
-  EAttribute getStore_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Store#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Value</em>'.
-   * @see eu.quanticol.cASPA.Store#getValue()
-   * @see #getStore()
-   * @generated
-   */
-  EReference getStore_Value();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Expression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.Expression
-   * @generated
-   */
-  EClass getExpression();
+  EReference getUpdateNot_Expression();
 
   /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.Parallel <em>Parallel</em>}'.
@@ -2644,952 +3283,6 @@ public interface CASPAPackage extends EPackage
   EReference getProcessReference_Value();
 
   /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Broadcast <em>Broadcast</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Broadcast</em>'.
-   * @see eu.quanticol.cASPA.Broadcast
-   * @generated
-   */
-  EClass getBroadcast();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Unicast <em>Unicast</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Unicast</em>'.
-   * @see eu.quanticol.cASPA.Unicast
-   * @generated
-   */
-  EClass getUnicast();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.In <em>In</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>In</em>'.
-   * @see eu.quanticol.cASPA.In
-   * @generated
-   */
-  EClass getIn();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.In#getExpressions <em>Expressions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see eu.quanticol.cASPA.In#getExpressions()
-   * @see #getIn()
-   * @generated
-   */
-  EReference getIn_Expressions();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Out <em>Out</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Out</em>'.
-   * @see eu.quanticol.cASPA.Out
-   * @generated
-   */
-  EClass getOut();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Out#getExpressions <em>Expressions</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Expressions</em>'.
-   * @see eu.quanticol.cASPA.Out#getExpressions()
-   * @see #getOut()
-   * @generated
-   */
-  EReference getOut_Expressions();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.LocalEvaluationExpression <em>Local Evaluation Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Local Evaluation Expression</em>'.
-   * @see eu.quanticol.cASPA.LocalEvaluationExpression
-   * @generated
-   */
-  EClass getLocalEvaluationExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.LocalEvaluationExpression#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.LocalEvaluationExpression#getName()
-   * @see #getLocalEvaluationExpression()
-   * @generated
-   */
-  EReference getLocalEvaluationExpression_Name();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.GlobalEvaluationExpression <em>Global Evaluation Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Global Evaluation Expression</em>'.
-   * @see eu.quanticol.cASPA.GlobalEvaluationExpression
-   * @generated
-   */
-  EClass getGlobalEvaluationExpression();
-
-  /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.GlobalEvaluationExpression#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.GlobalEvaluationExpression#getName()
-   * @see #getGlobalEvaluationExpression()
-   * @generated
-   */
-  EReference getGlobalEvaluationExpression_Name();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.FreeEvaluationExpression <em>Free Evaluation Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Free Evaluation Expression</em>'.
-   * @see eu.quanticol.cASPA.FreeEvaluationExpression
-   * @generated
-   */
-  EClass getFreeEvaluationExpression();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.FreeEvaluationExpression#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.FreeEvaluationExpression#getName()
-   * @see #getFreeEvaluationExpression()
-   * @generated
-   */
-  EAttribute getFreeEvaluationExpression_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.FreeEvaluationExpression#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.FreeEvaluationExpression#getExpression()
-   * @see #getFreeEvaluationExpression()
-   * @generated
-   */
-  EReference getFreeEvaluationExpression_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.LocalUpdateExpression <em>Local Update Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Local Update Expression</em>'.
-   * @see eu.quanticol.cASPA.LocalUpdateExpression
-   * @generated
-   */
-  EClass getLocalUpdateExpression();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.LocalUpdateExpression#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.LocalUpdateExpression#getName()
-   * @see #getLocalUpdateExpression()
-   * @generated
-   */
-  EReference getLocalUpdateExpression_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.LocalUpdateExpression#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.LocalUpdateExpression#getExpression()
-   * @see #getLocalUpdateExpression()
-   * @generated
-   */
-  EReference getLocalUpdateExpression_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.GlobalUpdateExpression <em>Global Update Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Global Update Expression</em>'.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpression
-   * @generated
-   */
-  EClass getGlobalUpdateExpression();
-
-  /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.GlobalUpdateExpression#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpression#getName()
-   * @see #getGlobalUpdateExpression()
-   * @generated
-   */
-  EReference getGlobalUpdateExpression_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.GlobalUpdateExpression#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpression#getExpression()
-   * @see #getGlobalUpdateExpression()
-   * @generated
-   */
-  EReference getGlobalUpdateExpression_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.LocalUpdateExpressionFunction <em>Local Update Expression Function</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Local Update Expression Function</em>'.
-   * @see eu.quanticol.cASPA.LocalUpdateExpressionFunction
-   * @generated
-   */
-  EClass getLocalUpdateExpressionFunction();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.LocalUpdateExpressionFunction#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.LocalUpdateExpressionFunction#getName()
-   * @see #getLocalUpdateExpressionFunction()
-   * @generated
-   */
-  EReference getLocalUpdateExpressionFunction_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.LocalUpdateExpressionFunction#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.LocalUpdateExpressionFunction#getExpression()
-   * @see #getLocalUpdateExpressionFunction()
-   * @generated
-   */
-  EReference getLocalUpdateExpressionFunction_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.GlobalUpdateExpressionFunction <em>Global Update Expression Function</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Global Update Expression Function</em>'.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpressionFunction
-   * @generated
-   */
-  EClass getGlobalUpdateExpressionFunction();
-
-  /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.GlobalUpdateExpressionFunction#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpressionFunction#getName()
-   * @see #getGlobalUpdateExpressionFunction()
-   * @generated
-   */
-  EReference getGlobalUpdateExpressionFunction_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.GlobalUpdateExpressionFunction#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpressionFunction#getExpression()
-   * @see #getGlobalUpdateExpressionFunction()
-   * @generated
-   */
-  EReference getGlobalUpdateExpressionFunction_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionOr <em>Action Or</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Or</em>'.
-   * @see eu.quanticol.cASPA.ActionOr
-   * @generated
-   */
-  EClass getActionOr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionOr#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionOr#getLeft()
-   * @see #getActionOr()
-   * @generated
-   */
-  EReference getActionOr_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionOr#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionOr#getRight()
-   * @see #getActionOr()
-   * @generated
-   */
-  EReference getActionOr_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionAnd <em>Action And</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action And</em>'.
-   * @see eu.quanticol.cASPA.ActionAnd
-   * @generated
-   */
-  EClass getActionAnd();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionAnd#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionAnd#getLeft()
-   * @see #getActionAnd()
-   * @generated
-   */
-  EReference getActionAnd_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionAnd#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionAnd#getRight()
-   * @see #getActionAnd()
-   * @generated
-   */
-  EReference getActionAnd_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionEquality <em>Action Equality</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Equality</em>'.
-   * @see eu.quanticol.cASPA.ActionEquality
-   * @generated
-   */
-  EClass getActionEquality();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionEquality#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionEquality#getLeft()
-   * @see #getActionEquality()
-   * @generated
-   */
-  EReference getActionEquality_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.ActionEquality#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see eu.quanticol.cASPA.ActionEquality#getOp()
-   * @see #getActionEquality()
-   * @generated
-   */
-  EAttribute getActionEquality_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionEquality#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionEquality#getRight()
-   * @see #getActionEquality()
-   * @generated
-   */
-  EReference getActionEquality_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionComparison <em>Action Comparison</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Comparison</em>'.
-   * @see eu.quanticol.cASPA.ActionComparison
-   * @generated
-   */
-  EClass getActionComparison();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionComparison#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionComparison#getLeft()
-   * @see #getActionComparison()
-   * @generated
-   */
-  EReference getActionComparison_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.ActionComparison#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see eu.quanticol.cASPA.ActionComparison#getOp()
-   * @see #getActionComparison()
-   * @generated
-   */
-  EAttribute getActionComparison_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionComparison#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionComparison#getRight()
-   * @see #getActionComparison()
-   * @generated
-   */
-  EReference getActionComparison_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionSub <em>Action Sub</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Sub</em>'.
-   * @see eu.quanticol.cASPA.ActionSub
-   * @generated
-   */
-  EClass getActionSub();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionSub#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionSub#getLeft()
-   * @see #getActionSub()
-   * @generated
-   */
-  EReference getActionSub_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionSub#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionSub#getRight()
-   * @see #getActionSub()
-   * @generated
-   */
-  EReference getActionSub_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionPlu <em>Action Plu</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Plu</em>'.
-   * @see eu.quanticol.cASPA.ActionPlu
-   * @generated
-   */
-  EClass getActionPlu();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionPlu#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionPlu#getLeft()
-   * @see #getActionPlu()
-   * @generated
-   */
-  EReference getActionPlu_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionPlu#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionPlu#getRight()
-   * @see #getActionPlu()
-   * @generated
-   */
-  EReference getActionPlu_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionMul <em>Action Mul</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Mul</em>'.
-   * @see eu.quanticol.cASPA.ActionMul
-   * @generated
-   */
-  EClass getActionMul();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionMul#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionMul#getLeft()
-   * @see #getActionMul()
-   * @generated
-   */
-  EReference getActionMul_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionMul#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionMul#getRight()
-   * @see #getActionMul()
-   * @generated
-   */
-  EReference getActionMul_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionDiv <em>Action Div</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Div</em>'.
-   * @see eu.quanticol.cASPA.ActionDiv
-   * @generated
-   */
-  EClass getActionDiv();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionDiv#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.ActionDiv#getLeft()
-   * @see #getActionDiv()
-   * @generated
-   */
-  EReference getActionDiv_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionDiv#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.ActionDiv#getRight()
-   * @see #getActionDiv()
-   * @generated
-   */
-  EReference getActionDiv_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ActionNot <em>Action Not</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Action Not</em>'.
-   * @see eu.quanticol.cASPA.ActionNot
-   * @generated
-   */
-  EClass getActionNot();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.ActionNot#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.ActionNot#getExpression()
-   * @see #getActionNot()
-   * @generated
-   */
-  EReference getActionNot_Expression();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.DoubleConstant <em>Double Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Double Constant</em>'.
-   * @see eu.quanticol.cASPA.DoubleConstant
-   * @generated
-   */
-  EClass getDoubleConstant();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.DoubleConstant#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see eu.quanticol.cASPA.DoubleConstant#getValue()
-   * @see #getDoubleConstant()
-   * @generated
-   */
-  EAttribute getDoubleConstant_Value();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.FreeVariable <em>Free Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Free Variable</em>'.
-   * @see eu.quanticol.cASPA.FreeVariable
-   * @generated
-   */
-  EClass getFreeVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.FreeVariable#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see eu.quanticol.cASPA.FreeVariable#getValue()
-   * @see #getFreeVariable()
-   * @generated
-   */
-  EAttribute getFreeVariable_Value();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.BoolConstant <em>Bool Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Bool Constant</em>'.
-   * @see eu.quanticol.cASPA.BoolConstant
-   * @generated
-   */
-  EClass getBoolConstant();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.BoolConstant#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Value</em>'.
-   * @see eu.quanticol.cASPA.BoolConstant#getValue()
-   * @see #getBoolConstant()
-   * @generated
-   */
-  EAttribute getBoolConstant_Value();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.ReferencedStore <em>Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Referenced Store</em>'.
-   * @see eu.quanticol.cASPA.ReferencedStore
-   * @generated
-   */
-  EClass getReferencedStore();
-
-  /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.ReferencedStore#getValue <em>Value</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Value</em>'.
-   * @see eu.quanticol.cASPA.ReferencedStore#getValue()
-   * @see #getReferencedStore()
-   * @generated
-   */
-  EReference getReferencedStore_Value();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Or <em>Or</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Or</em>'.
-   * @see eu.quanticol.cASPA.Or
-   * @generated
-   */
-  EClass getOr();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Or#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.Or#getLeft()
-   * @see #getOr()
-   * @generated
-   */
-  EReference getOr_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Or#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.Or#getRight()
-   * @see #getOr()
-   * @generated
-   */
-  EReference getOr_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.And <em>And</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>And</em>'.
-   * @see eu.quanticol.cASPA.And
-   * @generated
-   */
-  EClass getAnd();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.And#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.And#getLeft()
-   * @see #getAnd()
-   * @generated
-   */
-  EReference getAnd_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.And#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.And#getRight()
-   * @see #getAnd()
-   * @generated
-   */
-  EReference getAnd_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Equality <em>Equality</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Equality</em>'.
-   * @see eu.quanticol.cASPA.Equality
-   * @generated
-   */
-  EClass getEquality();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Equality#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.Equality#getLeft()
-   * @see #getEquality()
-   * @generated
-   */
-  EReference getEquality_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Equality#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see eu.quanticol.cASPA.Equality#getOp()
-   * @see #getEquality()
-   * @generated
-   */
-  EAttribute getEquality_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Equality#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.Equality#getRight()
-   * @see #getEquality()
-   * @generated
-   */
-  EReference getEquality_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Comparison <em>Comparison</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Comparison</em>'.
-   * @see eu.quanticol.cASPA.Comparison
-   * @generated
-   */
-  EClass getComparison();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Comparison#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.Comparison#getLeft()
-   * @see #getComparison()
-   * @generated
-   */
-  EReference getComparison_Left();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.Comparison#getOp <em>Op</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Op</em>'.
-   * @see eu.quanticol.cASPA.Comparison#getOp()
-   * @see #getComparison()
-   * @generated
-   */
-  EAttribute getComparison_Op();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Comparison#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.Comparison#getRight()
-   * @see #getComparison()
-   * @generated
-   */
-  EReference getComparison_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Sub <em>Sub</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Sub</em>'.
-   * @see eu.quanticol.cASPA.Sub
-   * @generated
-   */
-  EClass getSub();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Sub#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.Sub#getLeft()
-   * @see #getSub()
-   * @generated
-   */
-  EReference getSub_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Sub#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.Sub#getRight()
-   * @see #getSub()
-   * @generated
-   */
-  EReference getSub_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Plu <em>Plu</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Plu</em>'.
-   * @see eu.quanticol.cASPA.Plu
-   * @generated
-   */
-  EClass getPlu();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Plu#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.Plu#getLeft()
-   * @see #getPlu()
-   * @generated
-   */
-  EReference getPlu_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Plu#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.Plu#getRight()
-   * @see #getPlu()
-   * @generated
-   */
-  EReference getPlu_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Mul <em>Mul</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Mul</em>'.
-   * @see eu.quanticol.cASPA.Mul
-   * @generated
-   */
-  EClass getMul();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Mul#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.Mul#getLeft()
-   * @see #getMul()
-   * @generated
-   */
-  EReference getMul_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Mul#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.Mul#getRight()
-   * @see #getMul()
-   * @generated
-   */
-  EReference getMul_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Div <em>Div</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Div</em>'.
-   * @see eu.quanticol.cASPA.Div
-   * @generated
-   */
-  EClass getDiv();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Div#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.Div#getLeft()
-   * @see #getDiv()
-   * @generated
-   */
-  EReference getDiv_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Div#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.Div#getRight()
-   * @see #getDiv()
-   * @generated
-   */
-  EReference getDiv_Right();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.Not <em>Not</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Not</em>'.
-   * @see eu.quanticol.cASPA.Not
-   * @generated
-   */
-  EClass getNot();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Not#getExpression <em>Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Expression</em>'.
-   * @see eu.quanticol.cASPA.Not#getExpression()
-   * @see #getNot()
-   * @generated
-   */
-  EReference getNot_Expression();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3647,14 +3340,40 @@ public interface CASPAPackage extends EPackage
     EReference MODEL__TERMS = eINSTANCE.getModel_Terms();
 
     /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.TermImpl <em>Term</em>}' class.
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.StoreImpl <em>Store</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.TermImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getTerm()
+     * @see eu.quanticol.cASPA.impl.StoreImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getStore()
      * @generated
      */
-    EClass TERM = eINSTANCE.getTerm();
+    EClass STORE = eINSTANCE.getStore();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STORE__NAME = eINSTANCE.getStore_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute STORE__VALUE = eINSTANCE.getStore_Value();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.ReferencedStoreImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getReferencedStore()
+     * @generated
+     */
+    EClass REFERENCED_STORE = eINSTANCE.getReferencedStore();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' reference feature.
@@ -3662,15 +3381,255 @@ public interface CASPAPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TERM__NAME = eINSTANCE.getTerm_Name();
+    EReference REFERENCED_STORE__NAME = eINSTANCE.getReferencedStore_Name();
 
     /**
-     * The meta object literal for the '<em><b>Stores</b></em>' reference list feature.
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.SelfReferencedStoreImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSelfReferencedStore()
+     * @generated
+     */
+    EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TERM__STORES = eINSTANCE.getTerm_Stores();
+    EReference SELF_REFERENCED_STORE__NAME = eINSTANCE.getSelfReferencedStore_Name();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionImpl <em>Action</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.ActionImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getAction()
+     * @generated
+     */
+    EClass ACTION = eINSTANCE.getAction();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION__PREDICATE = eINSTANCE.getAction_Predicate();
+
+    /**
+     * The meta object literal for the '<em><b>Arguments</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION__ARGUMENTS = eINSTANCE.getAction_Arguments();
+
+    /**
+     * The meta object literal for the '<em><b>Updates</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ACTION__UPDATES = eINSTANCE.getAction_Updates();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateImpl <em>Predicate</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicate()
+     * @generated
+     */
+    EClass PREDICATE = eINSTANCE.getPredicate();
+
+    /**
+     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE__PREDICATE = eINSTANCE.getPredicate_Predicate();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateExpressionImpl <em>Predicate Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateExpressionImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateExpression()
+     * @generated
+     */
+    EClass PREDICATE_EXPRESSION = eINSTANCE.getPredicateExpression();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ArgumentsImpl <em>Arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.ArgumentsImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getArguments()
+     * @generated
+     */
+    EClass ARGUMENTS = eINSTANCE.getArguments();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.InArgumentsImpl <em>In Arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.InArgumentsImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getInArguments()
+     * @generated
+     */
+    EClass IN_ARGUMENTS = eINSTANCE.getInArguments();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.OutArgumentsImpl <em>Out Arguments</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.OutArgumentsImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOutArguments()
+     * @generated
+     */
+    EClass OUT_ARGUMENTS = eINSTANCE.getOutArguments();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ExpressionsImpl <em>Expressions</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.ExpressionsImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getExpressions()
+     * @generated
+     */
+    EClass EXPRESSIONS = eINSTANCE.getExpressions();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXPRESSIONS__VALUE = eINSTANCE.getExpressions_Value();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.VariablesImpl <em>Variables</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.VariablesImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getVariables()
+     * @generated
+     */
+    EClass VARIABLES = eINSTANCE.getVariables();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdatesImpl <em>Updates</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdatesImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdates()
+     * @generated
+     */
+    EClass UPDATES = eINSTANCE.getUpdates();
+
+    /**
+     * The meta object literal for the '<em><b>Updates</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATES__UPDATES = eINSTANCE.getUpdates_Updates();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateImpl <em>Update</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdate()
+     * @generated
+     */
+    EClass UPDATE = eINSTANCE.getUpdate();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.SingleEventUpdateImpl <em>Single Event Update</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.SingleEventUpdateImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSingleEventUpdate()
+     * @generated
+     */
+    EClass SINGLE_EVENT_UPDATE = eINSTANCE.getSingleEventUpdate();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.DistributedEventUpdateImpl <em>Distributed Event Update</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.DistributedEventUpdateImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdate()
+     * @generated
+     */
+    EClass DISTRIBUTED_EVENT_UPDATE = eINSTANCE.getDistributedEventUpdate();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.DistributionImpl <em>Distribution</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.DistributionImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistribution()
+     * @generated
+     */
+    EClass DISTRIBUTION = eINSTANCE.getDistribution();
+
+    /**
+     * The meta object literal for the '<em><b>Prob</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute DISTRIBUTION__PROB = eINSTANCE.getDistribution_Prob();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference DISTRIBUTION__EXPRESSION = eINSTANCE.getDistribution_Expression();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UniformImpl <em>Uniform</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UniformImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUniform()
+     * @generated
+     */
+    EClass UNIFORM = eINSTANCE.getUniform();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UNIFORM__EXPRESSION = eINSTANCE.getUniform_Expression();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateExpressionImpl <em>Update Expression</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateExpressionImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateExpression()
+     * @generated
+     */
+    EClass UPDATE_EXPRESSION = eINSTANCE.getUpdateExpression();
 
     /**
      * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ProcessImpl <em>Process</em>}' class.
@@ -3761,158 +3720,14 @@ public interface CASPAPackage extends EPackage
     EReference ACTION_PROCESS__VALUE = eINSTANCE.getActionProcess_Value();
 
     /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionImpl <em>Action</em>}' class.
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.TermImpl <em>Term</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getAction()
+     * @see eu.quanticol.cASPA.impl.TermImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getTerm()
      * @generated
      */
-    EClass ACTION = eINSTANCE.getAction();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION__PREDICATE = eINSTANCE.getAction_Predicate();
-
-    /**
-     * The meta object literal for the '<em><b>Evaluations</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION__EVALUATIONS = eINSTANCE.getAction_Evaluations();
-
-    /**
-     * The meta object literal for the '<em><b>Updates</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION__UPDATES = eINSTANCE.getAction_Updates();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateImpl <em>Predicate</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.PredicateImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicate()
-     * @generated
-     */
-    EClass PREDICATE = eINSTANCE.getPredicate();
-
-    /**
-     * The meta object literal for the '<em><b>Predicate</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PREDICATE__PREDICATE = eINSTANCE.getPredicate_Predicate();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.EvaluationsImpl <em>Evaluations</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.EvaluationsImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEvaluations()
-     * @generated
-     */
-    EClass EVALUATIONS = eINSTANCE.getEvaluations();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdatesImpl <em>Updates</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.UpdatesImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdates()
-     * @generated
-     */
-    EClass UPDATES = eINSTANCE.getUpdates();
-
-    /**
-     * The meta object literal for the '<em><b>Updates</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UPDATES__UPDATES = eINSTANCE.getUpdates_Updates();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateExpressionImpl <em>Predicate Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.PredicateExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateExpression()
-     * @generated
-     */
-    EClass PREDICATE_EXPRESSION = eINSTANCE.getPredicateExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PREDICATE_EXPRESSION__EXPRESSION = eINSTANCE.getPredicateExpression_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.EvaluationExpressionInImpl <em>Evaluation Expression In</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.EvaluationExpressionInImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEvaluationExpressionIn()
-     * @generated
-     */
-    EClass EVALUATION_EXPRESSION_IN = eINSTANCE.getEvaluationExpressionIn();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EVALUATION_EXPRESSION_IN__EXPRESSION = eINSTANCE.getEvaluationExpressionIn_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.EvaluationExpressionOutImpl <em>Evaluation Expression Out</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.EvaluationExpressionOutImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEvaluationExpressionOut()
-     * @generated
-     */
-    EClass EVALUATION_EXPRESSION_OUT = eINSTANCE.getEvaluationExpressionOut();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateExpressionImpl <em>Update Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.UpdateExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateExpression()
-     * @generated
-     */
-    EClass UPDATE_EXPRESSION = eINSTANCE.getUpdateExpression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.SelfReferencedStoreImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSelfReferencedStore()
-     * @generated
-     */
-    EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
+    EClass TERM = eINSTANCE.getTerm();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' reference feature.
@@ -3920,17 +3735,385 @@ public interface CASPAPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELF_REFERENCED_STORE__NAME = eINSTANCE.getSelfReferencedStore_Name();
+    EReference TERM__NAME = eINSTANCE.getTerm_Name();
 
     /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.FunctionExpressionImpl <em>Function Expression</em>}' class.
+     * The meta object literal for the '<em><b>Stores</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.FunctionExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFunctionExpression()
      * @generated
      */
-    EClass FUNCTION_EXPRESSION = eINSTANCE.getFunctionExpression();
+    EReference TERM__STORES = eINSTANCE.getTerm_Stores();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.BroadcastImpl <em>Broadcast</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.BroadcastImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBroadcast()
+     * @generated
+     */
+    EClass BROADCAST = eINSTANCE.getBroadcast();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UnicastImpl <em>Unicast</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UnicastImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUnicast()
+     * @generated
+     */
+    EClass UNICAST = eINSTANCE.getUnicast();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateOrImpl <em>Predicate Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateOrImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateOr()
+     * @generated
+     */
+    EClass PREDICATE_OR = eINSTANCE.getPredicateOr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_OR__LEFT = eINSTANCE.getPredicateOr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_OR__RIGHT = eINSTANCE.getPredicateOr_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateAndImpl <em>Predicate And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateAndImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateAnd()
+     * @generated
+     */
+    EClass PREDICATE_AND = eINSTANCE.getPredicateAnd();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_AND__LEFT = eINSTANCE.getPredicateAnd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_AND__RIGHT = eINSTANCE.getPredicateAnd_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateEqualityImpl <em>Predicate Equality</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateEqualityImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateEquality()
+     * @generated
+     */
+    EClass PREDICATE_EQUALITY = eINSTANCE.getPredicateEquality();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_EQUALITY__LEFT = eINSTANCE.getPredicateEquality_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREDICATE_EQUALITY__OP = eINSTANCE.getPredicateEquality_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_EQUALITY__RIGHT = eINSTANCE.getPredicateEquality_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateComparisonImpl <em>Predicate Comparison</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateComparisonImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateComparison()
+     * @generated
+     */
+    EClass PREDICATE_COMPARISON = eINSTANCE.getPredicateComparison();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_COMPARISON__LEFT = eINSTANCE.getPredicateComparison_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PREDICATE_COMPARISON__OP = eINSTANCE.getPredicateComparison_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_COMPARISON__RIGHT = eINSTANCE.getPredicateComparison_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateSubImpl <em>Predicate Sub</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateSubImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateSub()
+     * @generated
+     */
+    EClass PREDICATE_SUB = eINSTANCE.getPredicateSub();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_SUB__LEFT = eINSTANCE.getPredicateSub_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_SUB__RIGHT = eINSTANCE.getPredicateSub_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicatePluImpl <em>Predicate Plu</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicatePluImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicatePlu()
+     * @generated
+     */
+    EClass PREDICATE_PLU = eINSTANCE.getPredicatePlu();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_PLU__LEFT = eINSTANCE.getPredicatePlu_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_PLU__RIGHT = eINSTANCE.getPredicatePlu_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateMulImpl <em>Predicate Mul</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateMulImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateMul()
+     * @generated
+     */
+    EClass PREDICATE_MUL = eINSTANCE.getPredicateMul();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_MUL__LEFT = eINSTANCE.getPredicateMul_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_MUL__RIGHT = eINSTANCE.getPredicateMul_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PredicateDivImpl <em>Predicate Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.PredicateDivImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateDiv()
+     * @generated
+     */
+    EClass PREDICATE_DIV = eINSTANCE.getPredicateDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_DIV__LEFT = eINSTANCE.getPredicateDiv_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PREDICATE_DIV__RIGHT = eINSTANCE.getPredicateDiv_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.NotImpl <em>Not</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.NotImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getNot()
+     * @generated
+     */
+    EClass NOT = eINSTANCE.getNot();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference NOT__EXPRESSION = eINSTANCE.getNot_Expression();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ConstantImpl <em>Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.ConstantImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getConstant()
+     * @generated
+     */
+    EClass CONSTANT = eINSTANCE.getConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTANT__VALUE = eINSTANCE.getConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.BoolConstantImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBoolConstant()
+     * @generated
+     */
+    EClass BOOL_CONSTANT = eINSTANCE.getBoolConstant();
+
+    /**
+     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BOOL_CONSTANT__VALUE = eINSTANCE.getBoolConstant_Value();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.InImpl <em>In</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.InImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getIn()
+     * @generated
+     */
+    EClass IN = eINSTANCE.getIn();
+
+    /**
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference IN__EXPRESSIONS = eINSTANCE.getIn_Expressions();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.OutImpl <em>Out</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.OutImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOut()
+     * @generated
+     */
+    EClass OUT = eINSTANCE.getOut();
+
+    /**
+     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference OUT__EXPRESSIONS = eINSTANCE.getOut_Expressions();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl <em>Local Single Event Update</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalSingleEventUpdate()
+     * @generated
+     */
+    EClass LOCAL_SINGLE_EVENT_UPDATE = eINSTANCE.getLocalSingleEventUpdate();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOCAL_SINGLE_EVENT_UPDATE__NAME = eINSTANCE.getLocalSingleEventUpdate_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION = eINSTANCE.getLocalSingleEventUpdate_Expression();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl <em>Distributed Event Update Probability</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdateProbability()
+     * @generated
+     */
+    EClass DISTRIBUTED_EVENT_UPDATE_PROBABILITY = eINSTANCE.getDistributedEventUpdateProbability();
 
     /**
      * The meta object literal for the '<em><b>Distribution</b></em>' containment reference list feature.
@@ -3938,25 +4121,259 @@ public interface CASPAPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference FUNCTION_EXPRESSION__DISTRIBUTION = eINSTANCE.getFunctionExpression_Distribution();
+    EReference DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION = eINSTANCE.getDistributedEventUpdateProbability_Distribution();
 
     /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.DistributionImpl <em>Distribution</em>}' class.
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.DistributedEventUpdateUniformImpl <em>Distributed Event Update Uniform</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.DistributionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistribution()
+     * @see eu.quanticol.cASPA.impl.DistributedEventUpdateUniformImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdateUniform()
      * @generated
      */
-    EClass DISTRIBUTION = eINSTANCE.getDistribution();
+    EClass DISTRIBUTED_EVENT_UPDATE_UNIFORM = eINSTANCE.getDistributedEventUpdateUniform();
 
     /**
-     * The meta object literal for the '<em><b>Prob</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Distribution</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute DISTRIBUTION__PROB = eINSTANCE.getDistribution_Prob();
+    EReference DISTRIBUTED_EVENT_UPDATE_UNIFORM__DISTRIBUTION = eINSTANCE.getDistributedEventUpdateUniform_Distribution();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateOrImpl <em>Update Or</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateOrImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateOr()
+     * @generated
+     */
+    EClass UPDATE_OR = eINSTANCE.getUpdateOr();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_OR__LEFT = eINSTANCE.getUpdateOr_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_OR__RIGHT = eINSTANCE.getUpdateOr_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateAndImpl <em>Update And</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateAndImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateAnd()
+     * @generated
+     */
+    EClass UPDATE_AND = eINSTANCE.getUpdateAnd();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_AND__LEFT = eINSTANCE.getUpdateAnd_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_AND__RIGHT = eINSTANCE.getUpdateAnd_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateEqualityImpl <em>Update Equality</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateEqualityImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateEquality()
+     * @generated
+     */
+    EClass UPDATE_EQUALITY = eINSTANCE.getUpdateEquality();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_EQUALITY__LEFT = eINSTANCE.getUpdateEquality_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UPDATE_EQUALITY__OP = eINSTANCE.getUpdateEquality_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_EQUALITY__RIGHT = eINSTANCE.getUpdateEquality_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateComparisonImpl <em>Update Comparison</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateComparisonImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateComparison()
+     * @generated
+     */
+    EClass UPDATE_COMPARISON = eINSTANCE.getUpdateComparison();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_COMPARISON__LEFT = eINSTANCE.getUpdateComparison_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute UPDATE_COMPARISON__OP = eINSTANCE.getUpdateComparison_Op();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_COMPARISON__RIGHT = eINSTANCE.getUpdateComparison_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateSubImpl <em>Update Sub</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateSubImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateSub()
+     * @generated
+     */
+    EClass UPDATE_SUB = eINSTANCE.getUpdateSub();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_SUB__LEFT = eINSTANCE.getUpdateSub_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_SUB__RIGHT = eINSTANCE.getUpdateSub_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdatePluImpl <em>Update Plu</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdatePluImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdatePlu()
+     * @generated
+     */
+    EClass UPDATE_PLU = eINSTANCE.getUpdatePlu();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_PLU__LEFT = eINSTANCE.getUpdatePlu_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_PLU__RIGHT = eINSTANCE.getUpdatePlu_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateMulImpl <em>Update Mul</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateMulImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateMul()
+     * @generated
+     */
+    EClass UPDATE_MUL = eINSTANCE.getUpdateMul();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_MUL__LEFT = eINSTANCE.getUpdateMul_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_MUL__RIGHT = eINSTANCE.getUpdateMul_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateDivImpl <em>Update Div</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateDivImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateDiv()
+     * @generated
+     */
+    EClass UPDATE_DIV = eINSTANCE.getUpdateDiv();
+
+    /**
+     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_DIV__LEFT = eINSTANCE.getUpdateDiv_Left();
+
+    /**
+     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference UPDATE_DIV__RIGHT = eINSTANCE.getUpdateDiv_Right();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UpdateNotImpl <em>Update Not</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.UpdateNotImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateNot()
+     * @generated
+     */
+    EClass UPDATE_NOT = eINSTANCE.getUpdateNot();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
@@ -3964,71 +4381,7 @@ public interface CASPAPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DISTRIBUTION__EXPRESSION = eINSTANCE.getDistribution_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UniformImpl <em>Uniform</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.UniformImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUniform()
-     * @generated
-     */
-    EClass UNIFORM = eINSTANCE.getUniform();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference UNIFORM__EXPRESSION = eINSTANCE.getUniform_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionExpressionImpl <em>Action Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionExpression()
-     * @generated
-     */
-    EClass ACTION_EXPRESSION = eINSTANCE.getActionExpression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.StoreImpl <em>Store</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.StoreImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getStore()
-     * @generated
-     */
-    EClass STORE = eINSTANCE.getStore();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute STORE__NAME = eINSTANCE.getStore_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference STORE__VALUE = eINSTANCE.getStore_Value();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ExpressionImpl <em>Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getExpression()
-     * @generated
-     */
-    EClass EXPRESSION = eINSTANCE.getExpression();
+    EReference UPDATE_NOT__EXPRESSION = eINSTANCE.getUpdateNot_Expression();
 
     /**
      * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ParallelImpl <em>Parallel</em>}' class.
@@ -4117,784 +4470,6 @@ public interface CASPAPackage extends EPackage
      * @generated
      */
     EReference PROCESS_REFERENCE__VALUE = eINSTANCE.getProcessReference_Value();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.BroadcastImpl <em>Broadcast</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.BroadcastImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBroadcast()
-     * @generated
-     */
-    EClass BROADCAST = eINSTANCE.getBroadcast();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.UnicastImpl <em>Unicast</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.UnicastImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUnicast()
-     * @generated
-     */
-    EClass UNICAST = eINSTANCE.getUnicast();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.InImpl <em>In</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.InImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getIn()
-     * @generated
-     */
-    EClass IN = eINSTANCE.getIn();
-
-    /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference IN__EXPRESSIONS = eINSTANCE.getIn_Expressions();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.OutImpl <em>Out</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.OutImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOut()
-     * @generated
-     */
-    EClass OUT = eINSTANCE.getOut();
-
-    /**
-     * The meta object literal for the '<em><b>Expressions</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OUT__EXPRESSIONS = eINSTANCE.getOut_Expressions();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.LocalEvaluationExpressionImpl <em>Local Evaluation Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.LocalEvaluationExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalEvaluationExpression()
-     * @generated
-     */
-    EClass LOCAL_EVALUATION_EXPRESSION = eINSTANCE.getLocalEvaluationExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOCAL_EVALUATION_EXPRESSION__NAME = eINSTANCE.getLocalEvaluationExpression_Name();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.GlobalEvaluationExpressionImpl <em>Global Evaluation Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.GlobalEvaluationExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getGlobalEvaluationExpression()
-     * @generated
-     */
-    EClass GLOBAL_EVALUATION_EXPRESSION = eINSTANCE.getGlobalEvaluationExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GLOBAL_EVALUATION_EXPRESSION__NAME = eINSTANCE.getGlobalEvaluationExpression_Name();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.FreeEvaluationExpressionImpl <em>Free Evaluation Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.FreeEvaluationExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeEvaluationExpression()
-     * @generated
-     */
-    EClass FREE_EVALUATION_EXPRESSION = eINSTANCE.getFreeEvaluationExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FREE_EVALUATION_EXPRESSION__NAME = eINSTANCE.getFreeEvaluationExpression_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FREE_EVALUATION_EXPRESSION__EXPRESSION = eINSTANCE.getFreeEvaluationExpression_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.LocalUpdateExpressionImpl <em>Local Update Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.LocalUpdateExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalUpdateExpression()
-     * @generated
-     */
-    EClass LOCAL_UPDATE_EXPRESSION = eINSTANCE.getLocalUpdateExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOCAL_UPDATE_EXPRESSION__NAME = eINSTANCE.getLocalUpdateExpression_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOCAL_UPDATE_EXPRESSION__EXPRESSION = eINSTANCE.getLocalUpdateExpression_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionImpl <em>Global Update Expression</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.GlobalUpdateExpressionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getGlobalUpdateExpression()
-     * @generated
-     */
-    EClass GLOBAL_UPDATE_EXPRESSION = eINSTANCE.getGlobalUpdateExpression();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GLOBAL_UPDATE_EXPRESSION__NAME = eINSTANCE.getGlobalUpdateExpression_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GLOBAL_UPDATE_EXPRESSION__EXPRESSION = eINSTANCE.getGlobalUpdateExpression_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.LocalUpdateExpressionFunctionImpl <em>Local Update Expression Function</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.LocalUpdateExpressionFunctionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalUpdateExpressionFunction()
-     * @generated
-     */
-    EClass LOCAL_UPDATE_EXPRESSION_FUNCTION = eINSTANCE.getLocalUpdateExpressionFunction();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOCAL_UPDATE_EXPRESSION_FUNCTION__NAME = eINSTANCE.getLocalUpdateExpressionFunction_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference LOCAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION = eINSTANCE.getLocalUpdateExpressionFunction_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.GlobalUpdateExpressionFunctionImpl <em>Global Update Expression Function</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.GlobalUpdateExpressionFunctionImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getGlobalUpdateExpressionFunction()
-     * @generated
-     */
-    EClass GLOBAL_UPDATE_EXPRESSION_FUNCTION = eINSTANCE.getGlobalUpdateExpressionFunction();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GLOBAL_UPDATE_EXPRESSION_FUNCTION__NAME = eINSTANCE.getGlobalUpdateExpressionFunction_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference GLOBAL_UPDATE_EXPRESSION_FUNCTION__EXPRESSION = eINSTANCE.getGlobalUpdateExpressionFunction_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionOrImpl <em>Action Or</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionOrImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionOr()
-     * @generated
-     */
-    EClass ACTION_OR = eINSTANCE.getActionOr();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_OR__LEFT = eINSTANCE.getActionOr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_OR__RIGHT = eINSTANCE.getActionOr_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionAndImpl <em>Action And</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionAndImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionAnd()
-     * @generated
-     */
-    EClass ACTION_AND = eINSTANCE.getActionAnd();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_AND__LEFT = eINSTANCE.getActionAnd_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_AND__RIGHT = eINSTANCE.getActionAnd_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionEqualityImpl <em>Action Equality</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionEqualityImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionEquality()
-     * @generated
-     */
-    EClass ACTION_EQUALITY = eINSTANCE.getActionEquality();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_EQUALITY__LEFT = eINSTANCE.getActionEquality_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTION_EQUALITY__OP = eINSTANCE.getActionEquality_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_EQUALITY__RIGHT = eINSTANCE.getActionEquality_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionComparisonImpl <em>Action Comparison</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionComparisonImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionComparison()
-     * @generated
-     */
-    EClass ACTION_COMPARISON = eINSTANCE.getActionComparison();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_COMPARISON__LEFT = eINSTANCE.getActionComparison_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ACTION_COMPARISON__OP = eINSTANCE.getActionComparison_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_COMPARISON__RIGHT = eINSTANCE.getActionComparison_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionSubImpl <em>Action Sub</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionSubImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionSub()
-     * @generated
-     */
-    EClass ACTION_SUB = eINSTANCE.getActionSub();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_SUB__LEFT = eINSTANCE.getActionSub_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_SUB__RIGHT = eINSTANCE.getActionSub_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionPluImpl <em>Action Plu</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionPluImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionPlu()
-     * @generated
-     */
-    EClass ACTION_PLU = eINSTANCE.getActionPlu();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_PLU__LEFT = eINSTANCE.getActionPlu_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_PLU__RIGHT = eINSTANCE.getActionPlu_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionMulImpl <em>Action Mul</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionMulImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionMul()
-     * @generated
-     */
-    EClass ACTION_MUL = eINSTANCE.getActionMul();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_MUL__LEFT = eINSTANCE.getActionMul_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_MUL__RIGHT = eINSTANCE.getActionMul_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionDivImpl <em>Action Div</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionDivImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionDiv()
-     * @generated
-     */
-    EClass ACTION_DIV = eINSTANCE.getActionDiv();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_DIV__LEFT = eINSTANCE.getActionDiv_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_DIV__RIGHT = eINSTANCE.getActionDiv_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ActionNotImpl <em>Action Not</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ActionNotImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionNot()
-     * @generated
-     */
-    EClass ACTION_NOT = eINSTANCE.getActionNot();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ACTION_NOT__EXPRESSION = eINSTANCE.getActionNot_Expression();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.DoubleConstantImpl <em>Double Constant</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.DoubleConstantImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDoubleConstant()
-     * @generated
-     */
-    EClass DOUBLE_CONSTANT = eINSTANCE.getDoubleConstant();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute DOUBLE_CONSTANT__VALUE = eINSTANCE.getDoubleConstant_Value();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.FreeVariableImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeVariable()
-     * @generated
-     */
-    EClass FREE_VARIABLE = eINSTANCE.getFreeVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FREE_VARIABLE__VALUE = eINSTANCE.getFreeVariable_Value();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.BoolConstantImpl <em>Bool Constant</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.BoolConstantImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBoolConstant()
-     * @generated
-     */
-    EClass BOOL_CONSTANT = eINSTANCE.getBoolConstant();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BOOL_CONSTANT__VALUE = eINSTANCE.getBoolConstant_Value();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ReferencedStoreImpl <em>Referenced Store</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ReferencedStoreImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getReferencedStore()
-     * @generated
-     */
-    EClass REFERENCED_STORE = eINSTANCE.getReferencedStore();
-
-    /**
-     * The meta object literal for the '<em><b>Value</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REFERENCED_STORE__VALUE = eINSTANCE.getReferencedStore_Value();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.OrImpl <em>Or</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.OrImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOr()
-     * @generated
-     */
-    EClass OR = eINSTANCE.getOr();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OR__LEFT = eINSTANCE.getOr_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference OR__RIGHT = eINSTANCE.getOr_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.AndImpl <em>And</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.AndImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getAnd()
-     * @generated
-     */
-    EClass AND = eINSTANCE.getAnd();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AND__LEFT = eINSTANCE.getAnd_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AND__RIGHT = eINSTANCE.getAnd_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.EqualityImpl <em>Equality</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.EqualityImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getEquality()
-     * @generated
-     */
-    EClass EQUALITY = eINSTANCE.getEquality();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EQUALITY__LEFT = eINSTANCE.getEquality_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EQUALITY__OP = eINSTANCE.getEquality_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EQUALITY__RIGHT = eINSTANCE.getEquality_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.ComparisonImpl <em>Comparison</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.ComparisonImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getComparison()
-     * @generated
-     */
-    EClass COMPARISON = eINSTANCE.getComparison();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPARISON__LEFT = eINSTANCE.getComparison_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Op</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute COMPARISON__OP = eINSTANCE.getComparison_Op();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPARISON__RIGHT = eINSTANCE.getComparison_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.SubImpl <em>Sub</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.SubImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSub()
-     * @generated
-     */
-    EClass SUB = eINSTANCE.getSub();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SUB__LEFT = eINSTANCE.getSub_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SUB__RIGHT = eINSTANCE.getSub_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.PluImpl <em>Plu</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.PluImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPlu()
-     * @generated
-     */
-    EClass PLU = eINSTANCE.getPlu();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PLU__LEFT = eINSTANCE.getPlu_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference PLU__RIGHT = eINSTANCE.getPlu_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.MulImpl <em>Mul</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.MulImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getMul()
-     * @generated
-     */
-    EClass MUL = eINSTANCE.getMul();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MUL__LEFT = eINSTANCE.getMul_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MUL__RIGHT = eINSTANCE.getMul_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.DivImpl <em>Div</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.DivImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDiv()
-     * @generated
-     */
-    EClass DIV = eINSTANCE.getDiv();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DIV__LEFT = eINSTANCE.getDiv_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference DIV__RIGHT = eINSTANCE.getDiv_Right();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.NotImpl <em>Not</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.NotImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getNot()
-     * @generated
-     */
-    EClass NOT = eINSTANCE.getNot();
-
-    /**
-     * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference NOT__EXPRESSION = eINSTANCE.getNot_Expression();
 
   }
 

@@ -3,8 +3,8 @@
 package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.Action;
+import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.Evaluations;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.Updates;
 
@@ -26,7 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link eu.quanticol.cASPA.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.impl.ActionImpl#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.impl.ActionImpl#getEvaluations <em>Evaluations</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.ActionImpl#getArguments <em>Arguments</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.impl.ActionImpl#getUpdates <em>Updates</em>}</li>
  * </ul>
  * </p>
@@ -66,14 +66,14 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
   protected Predicate predicate;
 
   /**
-   * The cached value of the '{@link #getEvaluations() <em>Evaluations</em>}' containment reference.
+   * The cached value of the '{@link #getArguments() <em>Arguments</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEvaluations()
+   * @see #getArguments()
    * @generated
    * @ordered
    */
-  protected Evaluations evaluations;
+  protected Arguments arguments;
 
   /**
    * The cached value of the '{@link #getUpdates() <em>Updates</em>}' containment reference.
@@ -182,9 +182,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public Evaluations getEvaluations()
+  public Arguments getArguments()
   {
-    return evaluations;
+    return arguments;
   }
 
   /**
@@ -192,13 +192,13 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetEvaluations(Evaluations newEvaluations, NotificationChain msgs)
+  public NotificationChain basicSetArguments(Arguments newArguments, NotificationChain msgs)
   {
-    Evaluations oldEvaluations = evaluations;
-    evaluations = newEvaluations;
+    Arguments oldArguments = arguments;
+    arguments = newArguments;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.ACTION__EVALUATIONS, oldEvaluations, newEvaluations);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.ACTION__ARGUMENTS, oldArguments, newArguments);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -209,20 +209,20 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEvaluations(Evaluations newEvaluations)
+  public void setArguments(Arguments newArguments)
   {
-    if (newEvaluations != evaluations)
+    if (newArguments != arguments)
     {
       NotificationChain msgs = null;
-      if (evaluations != null)
-        msgs = ((InternalEObject)evaluations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.ACTION__EVALUATIONS, null, msgs);
-      if (newEvaluations != null)
-        msgs = ((InternalEObject)newEvaluations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.ACTION__EVALUATIONS, null, msgs);
-      msgs = basicSetEvaluations(newEvaluations, msgs);
+      if (arguments != null)
+        msgs = ((InternalEObject)arguments).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.ACTION__ARGUMENTS, null, msgs);
+      if (newArguments != null)
+        msgs = ((InternalEObject)newArguments).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.ACTION__ARGUMENTS, null, msgs);
+      msgs = basicSetArguments(newArguments, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.ACTION__EVALUATIONS, newEvaluations, newEvaluations));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.ACTION__ARGUMENTS, newArguments, newArguments));
   }
 
   /**
@@ -285,8 +285,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
     {
       case CASPAPackage.ACTION__PREDICATE:
         return basicSetPredicate(null, msgs);
-      case CASPAPackage.ACTION__EVALUATIONS:
-        return basicSetEvaluations(null, msgs);
+      case CASPAPackage.ACTION__ARGUMENTS:
+        return basicSetArguments(null, msgs);
       case CASPAPackage.ACTION__UPDATES:
         return basicSetUpdates(null, msgs);
     }
@@ -307,8 +307,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         return getName();
       case CASPAPackage.ACTION__PREDICATE:
         return getPredicate();
-      case CASPAPackage.ACTION__EVALUATIONS:
-        return getEvaluations();
+      case CASPAPackage.ACTION__ARGUMENTS:
+        return getArguments();
       case CASPAPackage.ACTION__UPDATES:
         return getUpdates();
     }
@@ -331,8 +331,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case CASPAPackage.ACTION__PREDICATE:
         setPredicate((Predicate)newValue);
         return;
-      case CASPAPackage.ACTION__EVALUATIONS:
-        setEvaluations((Evaluations)newValue);
+      case CASPAPackage.ACTION__ARGUMENTS:
+        setArguments((Arguments)newValue);
         return;
       case CASPAPackage.ACTION__UPDATES:
         setUpdates((Updates)newValue);
@@ -357,8 +357,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
       case CASPAPackage.ACTION__PREDICATE:
         setPredicate((Predicate)null);
         return;
-      case CASPAPackage.ACTION__EVALUATIONS:
-        setEvaluations((Evaluations)null);
+      case CASPAPackage.ACTION__ARGUMENTS:
+        setArguments((Arguments)null);
         return;
       case CASPAPackage.ACTION__UPDATES:
         setUpdates((Updates)null);
@@ -381,8 +381,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CASPAPackage.ACTION__PREDICATE:
         return predicate != null;
-      case CASPAPackage.ACTION__EVALUATIONS:
-        return evaluations != null;
+      case CASPAPackage.ACTION__ARGUMENTS:
+        return arguments != null;
       case CASPAPackage.ACTION__UPDATES:
         return updates != null;
     }

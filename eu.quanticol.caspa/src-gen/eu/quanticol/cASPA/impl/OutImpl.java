@@ -3,8 +3,8 @@
 package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.EvaluationExpressionOut;
 import eu.quanticol.cASPA.Out;
+import eu.quanticol.cASPA.OutArguments;
 
 import java.util.Collection;
 
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class OutImpl extends EvaluationsImpl implements Out
+public class OutImpl extends ArgumentsImpl implements Out
 {
   /**
    * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
@@ -41,7 +41,7 @@ public class OutImpl extends EvaluationsImpl implements Out
    * @generated
    * @ordered
    */
-  protected EList<EvaluationExpressionOut> expressions;
+  protected EList<OutArguments> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class OutImpl extends EvaluationsImpl implements Out
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EvaluationExpressionOut> getExpressions()
+  public EList<OutArguments> getExpressions()
   {
     if (expressions == null)
     {
-      expressions = new EObjectContainmentEList<EvaluationExpressionOut>(EvaluationExpressionOut.class, this, CASPAPackage.OUT__EXPRESSIONS);
+      expressions = new EObjectContainmentEList<OutArguments>(OutArguments.class, this, CASPAPackage.OUT__EXPRESSIONS);
     }
     return expressions;
   }
@@ -123,7 +123,7 @@ public class OutImpl extends EvaluationsImpl implements Out
     {
       case CASPAPackage.OUT__EXPRESSIONS:
         getExpressions().clear();
-        getExpressions().addAll((Collection<? extends EvaluationExpressionOut>)newValue);
+        getExpressions().addAll((Collection<? extends OutArguments>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

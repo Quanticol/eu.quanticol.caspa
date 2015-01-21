@@ -12,10 +12,47 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Model/processes"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Model/terms"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Term">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/stores"/>
+    <genClasses ecoreClass="CASPA.ecore#//Store">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Store/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Store/value"/>
     </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//ReferencedStore">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ReferencedStore/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//SelfReferencedStore">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//SelfReferencedStore/name"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Action">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Action/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Action/predicate"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Action/arguments"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Action/updates"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Predicate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Predicate/predicate"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateExpression"/>
+    <genClasses ecoreClass="CASPA.ecore#//Arguments"/>
+    <genClasses ecoreClass="CASPA.ecore#//InArguments"/>
+    <genClasses ecoreClass="CASPA.ecore#//OutArguments"/>
+    <genClasses ecoreClass="CASPA.ecore#//Expressions">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Expressions/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Variables"/>
+    <genClasses ecoreClass="CASPA.ecore#//Updates">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Updates/updates"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Update"/>
+    <genClasses ecoreClass="CASPA.ecore#//SingleEventUpdate"/>
+    <genClasses ecoreClass="CASPA.ecore#//DistributedEventUpdate"/>
+    <genClasses ecoreClass="CASPA.ecore#//Distribution">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Distribution/prob"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Distribution/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Uniform">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Uniform/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateExpression"/>
     <genClasses ecoreClass="CASPA.ecore#//Process">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Process/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Process/value"/>
@@ -29,46 +66,108 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionProcess/action"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionProcess/value"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Action">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Action/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Action/predicate"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Action/evaluations"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Action/updates"/>
+    <genClasses ecoreClass="CASPA.ecore#//Term">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/stores"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Predicate">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Predicate/predicate"/>
+    <genClasses ecoreClass="CASPA.ecore#//Broadcast"/>
+    <genClasses ecoreClass="CASPA.ecore#//Unicast"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateOr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateOr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateOr/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Evaluations"/>
-    <genClasses ecoreClass="CASPA.ecore#//Updates">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Updates/updates"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateAnd">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateAnd/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateAnd/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//PredicateExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateExpression/expression"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateEquality">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateEquality/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//PredicateEquality/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateEquality/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//EvaluationExpressionIn">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//EvaluationExpressionIn/expression"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateComparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateComparison/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//PredicateComparison/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateComparison/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//EvaluationExpressionOut"/>
-    <genClasses ecoreClass="CASPA.ecore#//UpdateExpression"/>
-    <genClasses ecoreClass="CASPA.ecore#//SelfReferencedStore">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//SelfReferencedStore/name"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateSub">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateSub/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateSub/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//FunctionExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//FunctionExpression/distribution"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicatePlu">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicatePlu/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicatePlu/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Distribution">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Distribution/prob"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Distribution/expression"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateMul">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateMul/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateMul/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Uniform">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Uniform/expression"/>
+    <genClasses ecoreClass="CASPA.ecore#//PredicateDiv">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateDiv/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateDiv/right"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionExpression"/>
-    <genClasses ecoreClass="CASPA.ecore#//Store">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Store/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Store/value"/>
+    <genClasses ecoreClass="CASPA.ecore#//Not">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Not/expression"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Expression"/>
+    <genClasses ecoreClass="CASPA.ecore#//Constant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Constant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//BoolConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//BoolConstant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//In">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//In/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Out">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Out/expressions"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//LocalSingleEventUpdate">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalSingleEventUpdate/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalSingleEventUpdate/expression"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//DistributedEventUpdateProbability">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//DistributedEventUpdateProbability/distribution"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//DistributedEventUpdateUniform">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//DistributedEventUpdateUniform/distribution"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateOr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateOr/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateOr/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateAnd">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateAnd/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateAnd/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateEquality">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateEquality/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//UpdateEquality/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateEquality/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateComparison">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateComparison/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//UpdateComparison/op"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateComparison/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateSub">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateSub/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateSub/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdatePlu">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdatePlu/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdatePlu/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateMul">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateMul/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateMul/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateDiv">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateDiv/left"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateDiv/right"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//UpdateNot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//UpdateNot/expression"/>
+    </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//Parallel">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Parallel/left"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Parallel/right"/>
@@ -82,126 +181,6 @@
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//ProcessReference">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ProcessReference/value"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Broadcast"/>
-    <genClasses ecoreClass="CASPA.ecore#//Unicast"/>
-    <genClasses ecoreClass="CASPA.ecore#//In">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//In/expressions"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Out">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Out/expressions"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//LocalEvaluationExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalEvaluationExpression/name"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//GlobalEvaluationExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalEvaluationExpression/name"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//FreeEvaluationExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//FreeEvaluationExpression/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//FreeEvaluationExpression/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//LocalUpdateExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpression/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpression/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//GlobalUpdateExpression">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpression/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpression/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//LocalUpdateExpressionFunction">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpressionFunction/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalUpdateExpressionFunction/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//GlobalUpdateExpressionFunction">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpressionFunction/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//GlobalUpdateExpressionFunction/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionOr">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionOr/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionOr/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionAnd">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionAnd/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionAnd/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionEquality">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionEquality/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//ActionEquality/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionEquality/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionComparison">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionComparison/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//ActionComparison/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionComparison/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionSub">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionSub/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionSub/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionPlu">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionPlu/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionPlu/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionMul">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionMul/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionMul/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionDiv">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionDiv/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionDiv/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ActionNot">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionNot/expression"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//DoubleConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//DoubleConstant/value"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//FreeVariable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//FreeVariable/value"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//BoolConstant">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//BoolConstant/value"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//ReferencedStore">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ReferencedStore/value"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Or">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Or/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Or/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//And">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//And/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//And/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Equality">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Equality/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Equality/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Equality/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Comparison">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Comparison/left"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Comparison/op"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Comparison/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Sub">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Sub/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Sub/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Plu">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Plu/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Plu/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Mul">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Mul/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Mul/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Div">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Div/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Div/right"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//Not">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Not/expression"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

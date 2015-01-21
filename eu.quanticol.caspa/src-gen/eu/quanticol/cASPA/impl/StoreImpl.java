@@ -3,14 +3,11 @@
 package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.Expression;
 import eu.quanticol.cASPA.Store;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
@@ -52,14 +49,24 @@ public class StoreImpl extends MinimalEObjectImpl.Container implements Store
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' containment reference.
+   * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getValue()
    * @generated
    * @ordered
    */
-  protected Expression value;
+  protected static final int VALUE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getValue()
+   * @generated
+   * @ordered
+   */
+  protected int value = VALUE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +117,7 @@ public class StoreImpl extends MinimalEObjectImpl.Container implements Store
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getValue()
+  public int getValue()
   {
     return value;
   }
@@ -120,53 +127,12 @@ public class StoreImpl extends MinimalEObjectImpl.Container implements Store
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetValue(Expression newValue, NotificationChain msgs)
+  public void setValue(int newValue)
   {
-    Expression oldValue = value;
+    int oldValue = value;
     value = newValue;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.STORE__VALUE, oldValue, newValue);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setValue(Expression newValue)
-  {
-    if (newValue != value)
-    {
-      NotificationChain msgs = null;
-      if (value != null)
-        msgs = ((InternalEObject)value).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.STORE__VALUE, null, msgs);
-      if (newValue != null)
-        msgs = ((InternalEObject)newValue).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.STORE__VALUE, null, msgs);
-      msgs = basicSetValue(newValue, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.STORE__VALUE, newValue, newValue));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case CASPAPackage.STORE__VALUE:
-        return basicSetValue(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.STORE__VALUE, oldValue, value));
   }
 
   /**
@@ -201,7 +167,7 @@ public class StoreImpl extends MinimalEObjectImpl.Container implements Store
         setName((String)newValue);
         return;
       case CASPAPackage.STORE__VALUE:
-        setValue((Expression)newValue);
+        setValue((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,7 +187,7 @@ public class StoreImpl extends MinimalEObjectImpl.Container implements Store
         setName(NAME_EDEFAULT);
         return;
       case CASPAPackage.STORE__VALUE:
-        setValue((Expression)null);
+        setValue(VALUE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -240,7 +206,7 @@ public class StoreImpl extends MinimalEObjectImpl.Container implements Store
       case CASPAPackage.STORE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case CASPAPackage.STORE__VALUE:
-        return value != null;
+        return value != VALUE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -258,6 +224,8 @@ public class StoreImpl extends MinimalEObjectImpl.Container implements Store
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", value: ");
+    result.append(value);
     result.append(')');
     return result.toString();
   }

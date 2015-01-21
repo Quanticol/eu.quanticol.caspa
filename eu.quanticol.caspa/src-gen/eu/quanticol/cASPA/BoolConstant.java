@@ -19,7 +19,7 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface BoolConstant extends ActionExpression, Expression
+public interface BoolConstant extends PredicateExpression, UpdateExpression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.

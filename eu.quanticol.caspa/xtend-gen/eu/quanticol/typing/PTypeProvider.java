@@ -2,18 +2,14 @@ package eu.quanticol.typing;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
-import eu.quanticol.cASPA.ActionExpression;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.Parallel;
-import eu.quanticol.cASPA.Predicate;
-import eu.quanticol.cASPA.PredicateExpression;
 import eu.quanticol.cASPA.PredicateProcess;
 import eu.quanticol.cASPA.ProcessExpression;
 import eu.quanticol.cASPA.ProcessReference;
 import eu.quanticol.typing.ATypeProvider;
-import eu.quanticol.typing.ActionType;
 import eu.quanticol.typing.ETypeProvider;
 import eu.quanticol.typing.ExpressionsType;
 import eu.quanticol.typing.ProcessType;
@@ -93,34 +89,11 @@ public class PTypeProvider {
   }
   
   protected ProcessType _typeForP(final PredicateProcess pp) {
-    Predicate _predicate = pp.getPredicate();
-    PredicateExpression _predicate_1 = _predicate.getPredicate();
-    ActionExpression _expression = _predicate_1.getExpression();
-    ActionType _typeForA = null;
-    if (_expression!=null) {
-      _typeForA=this._aTypeProvider.typeForA(_expression);
-    }
-    final ActionType predicate = _typeForA;
-    eu.quanticol.cASPA.Process _value = pp.getValue();
-    ProcessExpression _value_1 = _value.getValue();
-    ProcessType _typeForP = null;
-    if (_value_1!=null) {
-      _typeForP=this.typeForP(_value_1);
-    }
-    final ProcessType reference = _typeForP;
-    boolean _and = false;
-    boolean _equals = Objects.equal(predicate, ETypeProvider.boolConstantType);
-    if (!_equals) {
-      _and = false;
-    } else {
-      boolean _equals_1 = Objects.equal(reference, PTypeProvider.processType);
-      _and = _equals_1;
-    }
-    if (_and) {
-      return PTypeProvider.processType;
-    } else {
-      return null;
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method expression is undefined for the type PTypeProvider"
+      + "\ntypeForA cannot be resolved"
+      + "\n== cannot be resolved"
+      + "\n&& cannot be resolved");
   }
   
   protected ProcessType _typeForP(final ActionProcess ap) {

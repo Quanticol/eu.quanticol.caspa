@@ -14,3 +14,6 @@
 /.ExpressionsType.java._trace
 /.EvaluationExpressionType.java._trace
 /.ETypeProvider.java._trace
+/.TypeProvider.java._trace
+/.BaseType.java._trace
+/.ConstantType.java._trace

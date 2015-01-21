@@ -1,5 +1,5 @@
 package eu.quanticol.typing
 
-class DoubleConstantType implements ExpressionsType {
+class DoubleConstantType implements BaseType {
 	override toString() { "double" }
 }

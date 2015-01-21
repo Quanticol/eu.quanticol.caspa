@@ -2,7 +2,6 @@
  */
 package eu.quanticol.cASPA;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface SelfReferencedStore extends EObject
+public interface SelfReferencedStore extends PredicateExpression, Expressions, Variables, UpdateExpression
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' reference.

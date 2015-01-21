@@ -3,8 +3,8 @@
 package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.Expression;
 import eu.quanticol.cASPA.Not;
+import eu.quanticol.cASPA.PredicateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -27,7 +27,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class NotImpl extends ExpressionImpl implements Not
+public class NotImpl extends PredicateExpressionImpl implements Not
 {
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -37,7 +37,7 @@ public class NotImpl extends ExpressionImpl implements Not
    * @generated
    * @ordered
    */
-  protected Expression expression;
+  protected PredicateExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -65,7 +65,7 @@ public class NotImpl extends ExpressionImpl implements Not
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getExpression()
+  public PredicateExpression getExpression()
   {
     return expression;
   }
@@ -75,9 +75,9 @@ public class NotImpl extends ExpressionImpl implements Not
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(Expression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(PredicateExpression newExpression, NotificationChain msgs)
   {
-    Expression oldExpression = expression;
+    PredicateExpression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
@@ -92,7 +92,7 @@ public class NotImpl extends ExpressionImpl implements Not
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(Expression newExpression)
+  public void setExpression(PredicateExpression newExpression)
   {
     if (newExpression != expression)
     {
@@ -151,7 +151,7 @@ public class NotImpl extends ExpressionImpl implements Not
     switch (featureID)
     {
       case CASPAPackage.NOT__EXPRESSION:
-        setExpression((Expression)newValue);
+        setExpression((PredicateExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,7 +168,7 @@ public class NotImpl extends ExpressionImpl implements Not
     switch (featureID)
     {
       case CASPAPackage.NOT__EXPRESSION:
-        setExpression((Expression)null);
+        setExpression((PredicateExpression)null);
         return;
     }
     super.eUnset(featureID);

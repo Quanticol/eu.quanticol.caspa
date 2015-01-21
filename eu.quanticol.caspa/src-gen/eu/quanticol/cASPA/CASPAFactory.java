@@ -32,13 +32,166 @@ public interface CASPAFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Term</em>'.
+   * Returns a new object of class '<em>Store</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Term</em>'.
+   * @return a new object of class '<em>Store</em>'.
    * @generated
    */
-  Term createTerm();
+  Store createStore();
+
+  /**
+   * Returns a new object of class '<em>Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Referenced Store</em>'.
+   * @generated
+   */
+  ReferencedStore createReferencedStore();
+
+  /**
+   * Returns a new object of class '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Self Referenced Store</em>'.
+   * @generated
+   */
+  SelfReferencedStore createSelfReferencedStore();
+
+  /**
+   * Returns a new object of class '<em>Action</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action</em>'.
+   * @generated
+   */
+  Action createAction();
+
+  /**
+   * Returns a new object of class '<em>Predicate</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predicate</em>'.
+   * @generated
+   */
+  Predicate createPredicate();
+
+  /**
+   * Returns a new object of class '<em>Predicate Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predicate Expression</em>'.
+   * @generated
+   */
+  PredicateExpression createPredicateExpression();
+
+  /**
+   * Returns a new object of class '<em>Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Arguments</em>'.
+   * @generated
+   */
+  Arguments createArguments();
+
+  /**
+   * Returns a new object of class '<em>In Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>In Arguments</em>'.
+   * @generated
+   */
+  InArguments createInArguments();
+
+  /**
+   * Returns a new object of class '<em>Out Arguments</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Out Arguments</em>'.
+   * @generated
+   */
+  OutArguments createOutArguments();
+
+  /**
+   * Returns a new object of class '<em>Expressions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Expressions</em>'.
+   * @generated
+   */
+  Expressions createExpressions();
+
+  /**
+   * Returns a new object of class '<em>Variables</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Variables</em>'.
+   * @generated
+   */
+  Variables createVariables();
+
+  /**
+   * Returns a new object of class '<em>Updates</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Updates</em>'.
+   * @generated
+   */
+  Updates createUpdates();
+
+  /**
+   * Returns a new object of class '<em>Update</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update</em>'.
+   * @generated
+   */
+  Update createUpdate();
+
+  /**
+   * Returns a new object of class '<em>Single Event Update</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Single Event Update</em>'.
+   * @generated
+   */
+  SingleEventUpdate createSingleEventUpdate();
+
+  /**
+   * Returns a new object of class '<em>Distributed Event Update</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Distributed Event Update</em>'.
+   * @generated
+   */
+  DistributedEventUpdate createDistributedEventUpdate();
+
+  /**
+   * Returns a new object of class '<em>Distribution</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Distribution</em>'.
+   * @generated
+   */
+  Distribution createDistribution();
+
+  /**
+   * Returns a new object of class '<em>Uniform</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Uniform</em>'.
+   * @generated
+   */
+  Uniform createUniform();
+
+  /**
+   * Returns a new object of class '<em>Update Expression</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Expression</em>'.
+   * @generated
+   */
+  UpdateExpression createUpdateExpression();
 
   /**
    * Returns a new object of class '<em>Process</em>'.
@@ -77,139 +230,256 @@ public interface CASPAFactory extends EFactory
   ActionProcess createActionProcess();
 
   /**
-   * Returns a new object of class '<em>Action</em>'.
+   * Returns a new object of class '<em>Term</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action</em>'.
+   * @return a new object of class '<em>Term</em>'.
    * @generated
    */
-  Action createAction();
+  Term createTerm();
 
   /**
-   * Returns a new object of class '<em>Predicate</em>'.
+   * Returns a new object of class '<em>Broadcast</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate</em>'.
+   * @return a new object of class '<em>Broadcast</em>'.
    * @generated
    */
-  Predicate createPredicate();
+  Broadcast createBroadcast();
 
   /**
-   * Returns a new object of class '<em>Evaluations</em>'.
+   * Returns a new object of class '<em>Unicast</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Evaluations</em>'.
+   * @return a new object of class '<em>Unicast</em>'.
    * @generated
    */
-  Evaluations createEvaluations();
+  Unicast createUnicast();
 
   /**
-   * Returns a new object of class '<em>Updates</em>'.
+   * Returns a new object of class '<em>Predicate Or</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Updates</em>'.
+   * @return a new object of class '<em>Predicate Or</em>'.
    * @generated
    */
-  Updates createUpdates();
+  PredicateOr createPredicateOr();
 
   /**
-   * Returns a new object of class '<em>Predicate Expression</em>'.
+   * Returns a new object of class '<em>Predicate And</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate Expression</em>'.
+   * @return a new object of class '<em>Predicate And</em>'.
    * @generated
    */
-  PredicateExpression createPredicateExpression();
+  PredicateAnd createPredicateAnd();
 
   /**
-   * Returns a new object of class '<em>Evaluation Expression In</em>'.
+   * Returns a new object of class '<em>Predicate Equality</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Evaluation Expression In</em>'.
+   * @return a new object of class '<em>Predicate Equality</em>'.
    * @generated
    */
-  EvaluationExpressionIn createEvaluationExpressionIn();
+  PredicateEquality createPredicateEquality();
 
   /**
-   * Returns a new object of class '<em>Evaluation Expression Out</em>'.
+   * Returns a new object of class '<em>Predicate Comparison</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Evaluation Expression Out</em>'.
+   * @return a new object of class '<em>Predicate Comparison</em>'.
    * @generated
    */
-  EvaluationExpressionOut createEvaluationExpressionOut();
+  PredicateComparison createPredicateComparison();
 
   /**
-   * Returns a new object of class '<em>Update Expression</em>'.
+   * Returns a new object of class '<em>Predicate Sub</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update Expression</em>'.
+   * @return a new object of class '<em>Predicate Sub</em>'.
    * @generated
    */
-  UpdateExpression createUpdateExpression();
+  PredicateSub createPredicateSub();
 
   /**
-   * Returns a new object of class '<em>Self Referenced Store</em>'.
+   * Returns a new object of class '<em>Predicate Plu</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Self Referenced Store</em>'.
+   * @return a new object of class '<em>Predicate Plu</em>'.
    * @generated
    */
-  SelfReferencedStore createSelfReferencedStore();
+  PredicatePlu createPredicatePlu();
 
   /**
-   * Returns a new object of class '<em>Function Expression</em>'.
+   * Returns a new object of class '<em>Predicate Mul</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function Expression</em>'.
+   * @return a new object of class '<em>Predicate Mul</em>'.
    * @generated
    */
-  FunctionExpression createFunctionExpression();
+  PredicateMul createPredicateMul();
 
   /**
-   * Returns a new object of class '<em>Distribution</em>'.
+   * Returns a new object of class '<em>Predicate Div</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Distribution</em>'.
+   * @return a new object of class '<em>Predicate Div</em>'.
    * @generated
    */
-  Distribution createDistribution();
+  PredicateDiv createPredicateDiv();
 
   /**
-   * Returns a new object of class '<em>Uniform</em>'.
+   * Returns a new object of class '<em>Not</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Uniform</em>'.
+   * @return a new object of class '<em>Not</em>'.
    * @generated
    */
-  Uniform createUniform();
+  Not createNot();
 
   /**
-   * Returns a new object of class '<em>Action Expression</em>'.
+   * Returns a new object of class '<em>Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Expression</em>'.
+   * @return a new object of class '<em>Constant</em>'.
    * @generated
    */
-  ActionExpression createActionExpression();
+  Constant createConstant();
 
   /**
-   * Returns a new object of class '<em>Store</em>'.
+   * Returns a new object of class '<em>Bool Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Store</em>'.
+   * @return a new object of class '<em>Bool Constant</em>'.
    * @generated
    */
-  Store createStore();
+  BoolConstant createBoolConstant();
 
   /**
-   * Returns a new object of class '<em>Expression</em>'.
+   * Returns a new object of class '<em>In</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expression</em>'.
+   * @return a new object of class '<em>In</em>'.
    * @generated
    */
-  Expression createExpression();
+  In createIn();
+
+  /**
+   * Returns a new object of class '<em>Out</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Out</em>'.
+   * @generated
+   */
+  Out createOut();
+
+  /**
+   * Returns a new object of class '<em>Local Single Event Update</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Local Single Event Update</em>'.
+   * @generated
+   */
+  LocalSingleEventUpdate createLocalSingleEventUpdate();
+
+  /**
+   * Returns a new object of class '<em>Distributed Event Update Probability</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Distributed Event Update Probability</em>'.
+   * @generated
+   */
+  DistributedEventUpdateProbability createDistributedEventUpdateProbability();
+
+  /**
+   * Returns a new object of class '<em>Distributed Event Update Uniform</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Distributed Event Update Uniform</em>'.
+   * @generated
+   */
+  DistributedEventUpdateUniform createDistributedEventUpdateUniform();
+
+  /**
+   * Returns a new object of class '<em>Update Or</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Or</em>'.
+   * @generated
+   */
+  UpdateOr createUpdateOr();
+
+  /**
+   * Returns a new object of class '<em>Update And</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update And</em>'.
+   * @generated
+   */
+  UpdateAnd createUpdateAnd();
+
+  /**
+   * Returns a new object of class '<em>Update Equality</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Equality</em>'.
+   * @generated
+   */
+  UpdateEquality createUpdateEquality();
+
+  /**
+   * Returns a new object of class '<em>Update Comparison</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Comparison</em>'.
+   * @generated
+   */
+  UpdateComparison createUpdateComparison();
+
+  /**
+   * Returns a new object of class '<em>Update Sub</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Sub</em>'.
+   * @generated
+   */
+  UpdateSub createUpdateSub();
+
+  /**
+   * Returns a new object of class '<em>Update Plu</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Plu</em>'.
+   * @generated
+   */
+  UpdatePlu createUpdatePlu();
+
+  /**
+   * Returns a new object of class '<em>Update Mul</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Mul</em>'.
+   * @generated
+   */
+  UpdateMul createUpdateMul();
+
+  /**
+   * Returns a new object of class '<em>Update Div</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Div</em>'.
+   * @generated
+   */
+  UpdateDiv createUpdateDiv();
+
+  /**
+   * Returns a new object of class '<em>Update Not</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Not</em>'.
+   * @generated
+   */
+  UpdateNot createUpdateNot();
 
   /**
    * Returns a new object of class '<em>Parallel</em>'.
@@ -246,303 +516,6 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   ProcessReference createProcessReference();
-
-  /**
-   * Returns a new object of class '<em>Broadcast</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Broadcast</em>'.
-   * @generated
-   */
-  Broadcast createBroadcast();
-
-  /**
-   * Returns a new object of class '<em>Unicast</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Unicast</em>'.
-   * @generated
-   */
-  Unicast createUnicast();
-
-  /**
-   * Returns a new object of class '<em>In</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>In</em>'.
-   * @generated
-   */
-  In createIn();
-
-  /**
-   * Returns a new object of class '<em>Out</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Out</em>'.
-   * @generated
-   */
-  Out createOut();
-
-  /**
-   * Returns a new object of class '<em>Local Evaluation Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Local Evaluation Expression</em>'.
-   * @generated
-   */
-  LocalEvaluationExpression createLocalEvaluationExpression();
-
-  /**
-   * Returns a new object of class '<em>Global Evaluation Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Global Evaluation Expression</em>'.
-   * @generated
-   */
-  GlobalEvaluationExpression createGlobalEvaluationExpression();
-
-  /**
-   * Returns a new object of class '<em>Free Evaluation Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Free Evaluation Expression</em>'.
-   * @generated
-   */
-  FreeEvaluationExpression createFreeEvaluationExpression();
-
-  /**
-   * Returns a new object of class '<em>Local Update Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Local Update Expression</em>'.
-   * @generated
-   */
-  LocalUpdateExpression createLocalUpdateExpression();
-
-  /**
-   * Returns a new object of class '<em>Global Update Expression</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Global Update Expression</em>'.
-   * @generated
-   */
-  GlobalUpdateExpression createGlobalUpdateExpression();
-
-  /**
-   * Returns a new object of class '<em>Local Update Expression Function</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Local Update Expression Function</em>'.
-   * @generated
-   */
-  LocalUpdateExpressionFunction createLocalUpdateExpressionFunction();
-
-  /**
-   * Returns a new object of class '<em>Global Update Expression Function</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Global Update Expression Function</em>'.
-   * @generated
-   */
-  GlobalUpdateExpressionFunction createGlobalUpdateExpressionFunction();
-
-  /**
-   * Returns a new object of class '<em>Action Or</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Or</em>'.
-   * @generated
-   */
-  ActionOr createActionOr();
-
-  /**
-   * Returns a new object of class '<em>Action And</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action And</em>'.
-   * @generated
-   */
-  ActionAnd createActionAnd();
-
-  /**
-   * Returns a new object of class '<em>Action Equality</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Equality</em>'.
-   * @generated
-   */
-  ActionEquality createActionEquality();
-
-  /**
-   * Returns a new object of class '<em>Action Comparison</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Comparison</em>'.
-   * @generated
-   */
-  ActionComparison createActionComparison();
-
-  /**
-   * Returns a new object of class '<em>Action Sub</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Sub</em>'.
-   * @generated
-   */
-  ActionSub createActionSub();
-
-  /**
-   * Returns a new object of class '<em>Action Plu</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Plu</em>'.
-   * @generated
-   */
-  ActionPlu createActionPlu();
-
-  /**
-   * Returns a new object of class '<em>Action Mul</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Mul</em>'.
-   * @generated
-   */
-  ActionMul createActionMul();
-
-  /**
-   * Returns a new object of class '<em>Action Div</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Div</em>'.
-   * @generated
-   */
-  ActionDiv createActionDiv();
-
-  /**
-   * Returns a new object of class '<em>Action Not</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Not</em>'.
-   * @generated
-   */
-  ActionNot createActionNot();
-
-  /**
-   * Returns a new object of class '<em>Double Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Double Constant</em>'.
-   * @generated
-   */
-  DoubleConstant createDoubleConstant();
-
-  /**
-   * Returns a new object of class '<em>Free Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Free Variable</em>'.
-   * @generated
-   */
-  FreeVariable createFreeVariable();
-
-  /**
-   * Returns a new object of class '<em>Bool Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool Constant</em>'.
-   * @generated
-   */
-  BoolConstant createBoolConstant();
-
-  /**
-   * Returns a new object of class '<em>Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Referenced Store</em>'.
-   * @generated
-   */
-  ReferencedStore createReferencedStore();
-
-  /**
-   * Returns a new object of class '<em>Or</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Or</em>'.
-   * @generated
-   */
-  Or createOr();
-
-  /**
-   * Returns a new object of class '<em>And</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>And</em>'.
-   * @generated
-   */
-  And createAnd();
-
-  /**
-   * Returns a new object of class '<em>Equality</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Equality</em>'.
-   * @generated
-   */
-  Equality createEquality();
-
-  /**
-   * Returns a new object of class '<em>Comparison</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Comparison</em>'.
-   * @generated
-   */
-  Comparison createComparison();
-
-  /**
-   * Returns a new object of class '<em>Sub</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sub</em>'.
-   * @generated
-   */
-  Sub createSub();
-
-  /**
-   * Returns a new object of class '<em>Plu</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Plu</em>'.
-   * @generated
-   */
-  Plu createPlu();
-
-  /**
-   * Returns a new object of class '<em>Mul</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Mul</em>'.
-   * @generated
-   */
-  Mul createMul();
-
-  /**
-   * Returns a new object of class '<em>Div</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Div</em>'.
-   * @generated
-   */
-  Div createDiv();
-
-  /**
-   * Returns a new object of class '<em>Not</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Not</em>'.
-   * @generated
-   */
-  Not createNot();
 
   /**
    * Returns the package supported by this factory.

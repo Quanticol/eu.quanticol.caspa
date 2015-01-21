@@ -3,8 +3,8 @@
 package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.EvaluationExpressionIn;
 import eu.quanticol.cASPA.In;
+import eu.quanticol.cASPA.InArguments;
 
 import java.util.Collection;
 
@@ -31,7 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *
  * @generated
  */
-public class InImpl extends EvaluationsImpl implements In
+public class InImpl extends ArgumentsImpl implements In
 {
   /**
    * The cached value of the '{@link #getExpressions() <em>Expressions</em>}' containment reference list.
@@ -41,7 +41,7 @@ public class InImpl extends EvaluationsImpl implements In
    * @generated
    * @ordered
    */
-  protected EList<EvaluationExpressionIn> expressions;
+  protected EList<InArguments> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class InImpl extends EvaluationsImpl implements In
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<EvaluationExpressionIn> getExpressions()
+  public EList<InArguments> getExpressions()
   {
     if (expressions == null)
     {
-      expressions = new EObjectContainmentEList<EvaluationExpressionIn>(EvaluationExpressionIn.class, this, CASPAPackage.IN__EXPRESSIONS);
+      expressions = new EObjectContainmentEList<InArguments>(InArguments.class, this, CASPAPackage.IN__EXPRESSIONS);
     }
     return expressions;
   }
@@ -123,7 +123,7 @@ public class InImpl extends EvaluationsImpl implements In
     {
       case CASPAPackage.IN__EXPRESSIONS:
         getExpressions().clear();
-        getExpressions().addAll((Collection<? extends EvaluationExpressionIn>)newValue);
+        getExpressions().addAll((Collection<? extends InArguments>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

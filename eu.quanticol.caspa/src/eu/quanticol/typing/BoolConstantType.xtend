@@ -1,5 +1,5 @@
 package eu.quanticol.typing
 
-class BoolConstantType implements ExpressionsType {
+class BoolConstantType implements BaseType {
 	override toString() { "boolean" }
 }

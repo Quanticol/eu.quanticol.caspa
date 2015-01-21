@@ -19,7 +19,7 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface Not extends Expression
+public interface Not extends PredicateExpression
 {
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.
@@ -30,12 +30,12 @@ public interface Not extends Expression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(Expression)
+   * @see #setExpression(PredicateExpression)
    * @see eu.quanticol.cASPA.CASPAPackage#getNot_Expression()
    * @model containment="true"
    * @generated
    */
-  Expression getExpression();
+  PredicateExpression getExpression();
 
   /**
    * Sets the value of the '{@link eu.quanticol.cASPA.Not#getExpression <em>Expression</em>}' containment reference.
@@ -45,6 +45,6 @@ public interface Not extends Expression
    * @see #getExpression()
    * @generated
    */
-  void setExpression(Expression value);
+  void setExpression(PredicateExpression value);
 
 } // Not

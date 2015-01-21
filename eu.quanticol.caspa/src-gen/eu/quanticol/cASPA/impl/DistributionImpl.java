@@ -2,9 +2,9 @@
  */
 package eu.quanticol.cASPA.impl;
 
-import eu.quanticol.cASPA.ActionExpression;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.UpdateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -59,7 +59,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
    * @generated
    * @ordered
    */
-  protected ActionExpression expression;
+  protected UpdateExpression expression;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +110,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
    * <!-- end-user-doc -->
    * @generated
    */
-  public ActionExpression getExpression()
+  public UpdateExpression getExpression()
   {
     return expression;
   }
@@ -120,9 +120,9 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(ActionExpression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetExpression(UpdateExpression newExpression, NotificationChain msgs)
   {
-    ActionExpression oldExpression = expression;
+    UpdateExpression oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
     {
@@ -137,7 +137,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(ActionExpression newExpression)
+  public void setExpression(UpdateExpression newExpression)
   {
     if (newExpression != expression)
     {
@@ -201,7 +201,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
         setProb((Double)newValue);
         return;
       case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        setExpression((ActionExpression)newValue);
+        setExpression((UpdateExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,7 +221,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
         setProb(PROB_EDEFAULT);
         return;
       case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        setExpression((ActionExpression)null);
+        setExpression((UpdateExpression)null);
         return;
     }
     super.eUnset(featureID);

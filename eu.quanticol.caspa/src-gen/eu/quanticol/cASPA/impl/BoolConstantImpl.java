@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class BoolConstantImpl extends ActionExpressionImpl implements BoolConstant
+public class BoolConstantImpl extends PredicateExpressionImpl implements BoolConstant
 {
   /**
    * The default value of the '{@link #getValue() <em>Value</em>}' attribute.

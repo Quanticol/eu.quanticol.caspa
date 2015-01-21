@@ -20,11 +20,11 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface In extends Evaluations
+public interface In extends Arguments
 {
   /**
    * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-   * The list contents are of type {@link eu.quanticol.cASPA.EvaluationExpressionIn}.
+   * The list contents are of type {@link eu.quanticol.cASPA.InArguments}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
@@ -36,6 +36,6 @@ public interface In extends Evaluations
    * @model containment="true"
    * @generated
    */
-  EList<EvaluationExpressionIn> getExpressions();
+  EList<InArguments> getExpressions();
 
 } // In

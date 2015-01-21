@@ -17,18 +17,18 @@ import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CASPAGrammarAccess grammarAccess;
-	protected AbstractElementAlias match_ActionPrimary_LeftParenthesisKeyword_0_0_a;
-	protected AbstractElementAlias match_ActionPrimary_LeftParenthesisKeyword_0_0_p;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_a;
-	protected AbstractElementAlias match_Primary_LeftParenthesisKeyword_0_0_p;
+	protected AbstractElementAlias match_PredicatePrimary_LeftParenthesisKeyword_0_0_a;
+	protected AbstractElementAlias match_PredicatePrimary_LeftParenthesisKeyword_0_0_p;
+	protected AbstractElementAlias match_UpdatePrimary_LeftParenthesisKeyword_0_0_a;
+	protected AbstractElementAlias match_UpdatePrimary_LeftParenthesisKeyword_0_0_p;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CASPAGrammarAccess) access;
-		match_ActionPrimary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getActionPrimaryAccess().getLeftParenthesisKeyword_0_0());
-		match_ActionPrimary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getActionPrimaryAccess().getLeftParenthesisKeyword_0_0());
-		match_Primary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
-		match_Primary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryAccess().getLeftParenthesisKeyword_0_0());
+		match_PredicatePrimary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPredicatePrimaryAccess().getLeftParenthesisKeyword_0_0());
+		match_PredicatePrimary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPredicatePrimaryAccess().getLeftParenthesisKeyword_0_0());
+		match_UpdatePrimary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getUpdatePrimaryAccess().getLeftParenthesisKeyword_0_0());
+		match_UpdatePrimary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getUpdatePrimaryAccess().getLeftParenthesisKeyword_0_0());
 	}
 	
 	@Override
@@ -43,14 +43,14 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_ActionPrimary_LeftParenthesisKeyword_0_0_a.equals(syntax))
-				emit_ActionPrimary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_ActionPrimary_LeftParenthesisKeyword_0_0_p.equals(syntax))
-				emit_ActionPrimary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Primary_LeftParenthesisKeyword_0_0_a.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Primary_LeftParenthesisKeyword_0_0_p.equals(syntax))
-				emit_Primary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			if(match_PredicatePrimary_LeftParenthesisKeyword_0_0_a.equals(syntax))
+				emit_PredicatePrimary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_PredicatePrimary_LeftParenthesisKeyword_0_0_p.equals(syntax))
+				emit_PredicatePrimary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_UpdatePrimary_LeftParenthesisKeyword_0_0_a.equals(syntax))
+				emit_UpdatePrimary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_UpdatePrimary_LeftParenthesisKeyword_0_0_p.equals(syntax))
+				emit_UpdatePrimary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -59,7 +59,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('*
 	 */
-	protected void emit_ActionPrimary_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PredicatePrimary_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -67,7 +67,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('+
 	 */
-	protected void emit_ActionPrimary_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_PredicatePrimary_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -75,7 +75,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('*
 	 */
-	protected void emit_Primary_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UpdatePrimary_LeftParenthesisKeyword_0_0_a(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	
@@ -83,7 +83,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     '('+
 	 */
-	protected void emit_Primary_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_UpdatePrimary_LeftParenthesisKeyword_0_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

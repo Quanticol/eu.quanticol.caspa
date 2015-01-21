@@ -11,7 +11,7 @@ package eu.quanticol.cASPA;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.ReferencedStore#getValue <em>Value</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.ReferencedStore#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -19,32 +19,32 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface ReferencedStore extends ActionExpression, Expression
+public interface ReferencedStore extends PredicateExpression, Expressions, Variables, UpdateExpression
 {
   /**
-   * Returns the value of the '<em><b>Value</b></em>' reference.
+   * Returns the value of the '<em><b>Name</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' reference isn't clear,
+   * If the meaning of the '<em>Name</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' reference.
-   * @see #setValue(Store)
-   * @see eu.quanticol.cASPA.CASPAPackage#getReferencedStore_Value()
+   * @return the value of the '<em>Name</em>' reference.
+   * @see #setName(Store)
+   * @see eu.quanticol.cASPA.CASPAPackage#getReferencedStore_Name()
    * @model
    * @generated
    */
-  Store getValue();
+  Store getName();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.ReferencedStore#getValue <em>Value</em>}' reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.ReferencedStore#getName <em>Name</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' reference.
-   * @see #getValue()
+   * @param value the new value of the '<em>Name</em>' reference.
+   * @see #getName()
    * @generated
    */
-  void setValue(Store value);
+  void setName(Store value);
 
 } // ReferencedStore

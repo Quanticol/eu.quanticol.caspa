@@ -3,63 +3,60 @@
 package eu.quanticol.cASPA.util;
 
 import eu.quanticol.cASPA.Action;
-import eu.quanticol.cASPA.ActionAnd;
-import eu.quanticol.cASPA.ActionComparison;
-import eu.quanticol.cASPA.ActionDiv;
-import eu.quanticol.cASPA.ActionEquality;
-import eu.quanticol.cASPA.ActionExpression;
-import eu.quanticol.cASPA.ActionMul;
-import eu.quanticol.cASPA.ActionNot;
-import eu.quanticol.cASPA.ActionOr;
-import eu.quanticol.cASPA.ActionPlu;
 import eu.quanticol.cASPA.ActionProcess;
-import eu.quanticol.cASPA.ActionSub;
-import eu.quanticol.cASPA.And;
+import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.BoolConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
-import eu.quanticol.cASPA.Comparison;
+import eu.quanticol.cASPA.Constant;
+import eu.quanticol.cASPA.DistributedEventUpdate;
+import eu.quanticol.cASPA.DistributedEventUpdateProbability;
+import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.Distribution;
-import eu.quanticol.cASPA.Div;
-import eu.quanticol.cASPA.DoubleConstant;
-import eu.quanticol.cASPA.Equality;
-import eu.quanticol.cASPA.EvaluationExpressionIn;
-import eu.quanticol.cASPA.EvaluationExpressionOut;
-import eu.quanticol.cASPA.Evaluations;
-import eu.quanticol.cASPA.Expression;
-import eu.quanticol.cASPA.FreeEvaluationExpression;
-import eu.quanticol.cASPA.FreeVariable;
-import eu.quanticol.cASPA.FunctionExpression;
-import eu.quanticol.cASPA.GlobalEvaluationExpression;
-import eu.quanticol.cASPA.GlobalUpdateExpression;
-import eu.quanticol.cASPA.GlobalUpdateExpressionFunction;
+import eu.quanticol.cASPA.Expressions;
 import eu.quanticol.cASPA.In;
+import eu.quanticol.cASPA.InArguments;
 import eu.quanticol.cASPA.Leaf;
-import eu.quanticol.cASPA.LocalEvaluationExpression;
-import eu.quanticol.cASPA.LocalUpdateExpression;
-import eu.quanticol.cASPA.LocalUpdateExpressionFunction;
+import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
-import eu.quanticol.cASPA.Mul;
 import eu.quanticol.cASPA.Not;
-import eu.quanticol.cASPA.Or;
 import eu.quanticol.cASPA.Out;
+import eu.quanticol.cASPA.OutArguments;
 import eu.quanticol.cASPA.Parallel;
-import eu.quanticol.cASPA.Plu;
 import eu.quanticol.cASPA.Predicate;
+import eu.quanticol.cASPA.PredicateAnd;
+import eu.quanticol.cASPA.PredicateComparison;
+import eu.quanticol.cASPA.PredicateDiv;
+import eu.quanticol.cASPA.PredicateEquality;
 import eu.quanticol.cASPA.PredicateExpression;
+import eu.quanticol.cASPA.PredicateMul;
+import eu.quanticol.cASPA.PredicateOr;
+import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
+import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
 import eu.quanticol.cASPA.ProcessReference;
 import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
+import eu.quanticol.cASPA.SingleEventUpdate;
 import eu.quanticol.cASPA.Store;
-import eu.quanticol.cASPA.Sub;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.Uniform;
+import eu.quanticol.cASPA.Update;
+import eu.quanticol.cASPA.UpdateAnd;
+import eu.quanticol.cASPA.UpdateComparison;
+import eu.quanticol.cASPA.UpdateDiv;
+import eu.quanticol.cASPA.UpdateEquality;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateMul;
+import eu.quanticol.cASPA.UpdateNot;
+import eu.quanticol.cASPA.UpdateOr;
+import eu.quanticol.cASPA.UpdatePlu;
+import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
+import eu.quanticol.cASPA.Variables;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -137,9 +134,94 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseTerm(Term object)
+      public Adapter caseStore(Store object)
       {
-        return createTermAdapter();
+        return createStoreAdapter();
+      }
+      @Override
+      public Adapter caseReferencedStore(ReferencedStore object)
+      {
+        return createReferencedStoreAdapter();
+      }
+      @Override
+      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
+      {
+        return createSelfReferencedStoreAdapter();
+      }
+      @Override
+      public Adapter caseAction(Action object)
+      {
+        return createActionAdapter();
+      }
+      @Override
+      public Adapter casePredicate(Predicate object)
+      {
+        return createPredicateAdapter();
+      }
+      @Override
+      public Adapter casePredicateExpression(PredicateExpression object)
+      {
+        return createPredicateExpressionAdapter();
+      }
+      @Override
+      public Adapter caseArguments(Arguments object)
+      {
+        return createArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseInArguments(InArguments object)
+      {
+        return createInArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseOutArguments(OutArguments object)
+      {
+        return createOutArgumentsAdapter();
+      }
+      @Override
+      public Adapter caseExpressions(Expressions object)
+      {
+        return createExpressionsAdapter();
+      }
+      @Override
+      public Adapter caseVariables(Variables object)
+      {
+        return createVariablesAdapter();
+      }
+      @Override
+      public Adapter caseUpdates(Updates object)
+      {
+        return createUpdatesAdapter();
+      }
+      @Override
+      public Adapter caseUpdate(Update object)
+      {
+        return createUpdateAdapter();
+      }
+      @Override
+      public Adapter caseSingleEventUpdate(SingleEventUpdate object)
+      {
+        return createSingleEventUpdateAdapter();
+      }
+      @Override
+      public Adapter caseDistributedEventUpdate(DistributedEventUpdate object)
+      {
+        return createDistributedEventUpdateAdapter();
+      }
+      @Override
+      public Adapter caseDistribution(Distribution object)
+      {
+        return createDistributionAdapter();
+      }
+      @Override
+      public Adapter caseUniform(Uniform object)
+      {
+        return createUniformAdapter();
+      }
+      @Override
+      public Adapter caseUpdateExpression(UpdateExpression object)
+      {
+        return createUpdateExpressionAdapter();
       }
       @Override
       public Adapter caseProcess(eu.quanticol.cASPA.Process object)
@@ -162,79 +244,144 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
         return createActionProcessAdapter();
       }
       @Override
-      public Adapter caseAction(Action object)
+      public Adapter caseTerm(Term object)
       {
-        return createActionAdapter();
+        return createTermAdapter();
       }
       @Override
-      public Adapter casePredicate(Predicate object)
+      public Adapter caseBroadcast(Broadcast object)
       {
-        return createPredicateAdapter();
+        return createBroadcastAdapter();
       }
       @Override
-      public Adapter caseEvaluations(Evaluations object)
+      public Adapter caseUnicast(Unicast object)
       {
-        return createEvaluationsAdapter();
+        return createUnicastAdapter();
       }
       @Override
-      public Adapter caseUpdates(Updates object)
+      public Adapter casePredicateOr(PredicateOr object)
       {
-        return createUpdatesAdapter();
+        return createPredicateOrAdapter();
       }
       @Override
-      public Adapter casePredicateExpression(PredicateExpression object)
+      public Adapter casePredicateAnd(PredicateAnd object)
       {
-        return createPredicateExpressionAdapter();
+        return createPredicateAndAdapter();
       }
       @Override
-      public Adapter caseEvaluationExpressionIn(EvaluationExpressionIn object)
+      public Adapter casePredicateEquality(PredicateEquality object)
       {
-        return createEvaluationExpressionInAdapter();
+        return createPredicateEqualityAdapter();
       }
       @Override
-      public Adapter caseEvaluationExpressionOut(EvaluationExpressionOut object)
+      public Adapter casePredicateComparison(PredicateComparison object)
       {
-        return createEvaluationExpressionOutAdapter();
+        return createPredicateComparisonAdapter();
       }
       @Override
-      public Adapter caseUpdateExpression(UpdateExpression object)
+      public Adapter casePredicateSub(PredicateSub object)
       {
-        return createUpdateExpressionAdapter();
+        return createPredicateSubAdapter();
       }
       @Override
-      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
+      public Adapter casePredicatePlu(PredicatePlu object)
       {
-        return createSelfReferencedStoreAdapter();
+        return createPredicatePluAdapter();
       }
       @Override
-      public Adapter caseFunctionExpression(FunctionExpression object)
+      public Adapter casePredicateMul(PredicateMul object)
       {
-        return createFunctionExpressionAdapter();
+        return createPredicateMulAdapter();
       }
       @Override
-      public Adapter caseDistribution(Distribution object)
+      public Adapter casePredicateDiv(PredicateDiv object)
       {
-        return createDistributionAdapter();
+        return createPredicateDivAdapter();
       }
       @Override
-      public Adapter caseUniform(Uniform object)
+      public Adapter caseNot(Not object)
       {
-        return createUniformAdapter();
+        return createNotAdapter();
       }
       @Override
-      public Adapter caseActionExpression(ActionExpression object)
+      public Adapter caseConstant(Constant object)
       {
-        return createActionExpressionAdapter();
+        return createConstantAdapter();
       }
       @Override
-      public Adapter caseStore(Store object)
+      public Adapter caseBoolConstant(BoolConstant object)
       {
-        return createStoreAdapter();
+        return createBoolConstantAdapter();
       }
       @Override
-      public Adapter caseExpression(Expression object)
+      public Adapter caseIn(In object)
       {
-        return createExpressionAdapter();
+        return createInAdapter();
+      }
+      @Override
+      public Adapter caseOut(Out object)
+      {
+        return createOutAdapter();
+      }
+      @Override
+      public Adapter caseLocalSingleEventUpdate(LocalSingleEventUpdate object)
+      {
+        return createLocalSingleEventUpdateAdapter();
+      }
+      @Override
+      public Adapter caseDistributedEventUpdateProbability(DistributedEventUpdateProbability object)
+      {
+        return createDistributedEventUpdateProbabilityAdapter();
+      }
+      @Override
+      public Adapter caseDistributedEventUpdateUniform(DistributedEventUpdateUniform object)
+      {
+        return createDistributedEventUpdateUniformAdapter();
+      }
+      @Override
+      public Adapter caseUpdateOr(UpdateOr object)
+      {
+        return createUpdateOrAdapter();
+      }
+      @Override
+      public Adapter caseUpdateAnd(UpdateAnd object)
+      {
+        return createUpdateAndAdapter();
+      }
+      @Override
+      public Adapter caseUpdateEquality(UpdateEquality object)
+      {
+        return createUpdateEqualityAdapter();
+      }
+      @Override
+      public Adapter caseUpdateComparison(UpdateComparison object)
+      {
+        return createUpdateComparisonAdapter();
+      }
+      @Override
+      public Adapter caseUpdateSub(UpdateSub object)
+      {
+        return createUpdateSubAdapter();
+      }
+      @Override
+      public Adapter caseUpdatePlu(UpdatePlu object)
+      {
+        return createUpdatePluAdapter();
+      }
+      @Override
+      public Adapter caseUpdateMul(UpdateMul object)
+      {
+        return createUpdateMulAdapter();
+      }
+      @Override
+      public Adapter caseUpdateDiv(UpdateDiv object)
+      {
+        return createUpdateDivAdapter();
+      }
+      @Override
+      public Adapter caseUpdateNot(UpdateNot object)
+      {
+        return createUpdateNotAdapter();
       }
       @Override
       public Adapter caseParallel(Parallel object)
@@ -255,171 +402,6 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseProcessReference(ProcessReference object)
       {
         return createProcessReferenceAdapter();
-      }
-      @Override
-      public Adapter caseBroadcast(Broadcast object)
-      {
-        return createBroadcastAdapter();
-      }
-      @Override
-      public Adapter caseUnicast(Unicast object)
-      {
-        return createUnicastAdapter();
-      }
-      @Override
-      public Adapter caseIn(In object)
-      {
-        return createInAdapter();
-      }
-      @Override
-      public Adapter caseOut(Out object)
-      {
-        return createOutAdapter();
-      }
-      @Override
-      public Adapter caseLocalEvaluationExpression(LocalEvaluationExpression object)
-      {
-        return createLocalEvaluationExpressionAdapter();
-      }
-      @Override
-      public Adapter caseGlobalEvaluationExpression(GlobalEvaluationExpression object)
-      {
-        return createGlobalEvaluationExpressionAdapter();
-      }
-      @Override
-      public Adapter caseFreeEvaluationExpression(FreeEvaluationExpression object)
-      {
-        return createFreeEvaluationExpressionAdapter();
-      }
-      @Override
-      public Adapter caseLocalUpdateExpression(LocalUpdateExpression object)
-      {
-        return createLocalUpdateExpressionAdapter();
-      }
-      @Override
-      public Adapter caseGlobalUpdateExpression(GlobalUpdateExpression object)
-      {
-        return createGlobalUpdateExpressionAdapter();
-      }
-      @Override
-      public Adapter caseLocalUpdateExpressionFunction(LocalUpdateExpressionFunction object)
-      {
-        return createLocalUpdateExpressionFunctionAdapter();
-      }
-      @Override
-      public Adapter caseGlobalUpdateExpressionFunction(GlobalUpdateExpressionFunction object)
-      {
-        return createGlobalUpdateExpressionFunctionAdapter();
-      }
-      @Override
-      public Adapter caseActionOr(ActionOr object)
-      {
-        return createActionOrAdapter();
-      }
-      @Override
-      public Adapter caseActionAnd(ActionAnd object)
-      {
-        return createActionAndAdapter();
-      }
-      @Override
-      public Adapter caseActionEquality(ActionEquality object)
-      {
-        return createActionEqualityAdapter();
-      }
-      @Override
-      public Adapter caseActionComparison(ActionComparison object)
-      {
-        return createActionComparisonAdapter();
-      }
-      @Override
-      public Adapter caseActionSub(ActionSub object)
-      {
-        return createActionSubAdapter();
-      }
-      @Override
-      public Adapter caseActionPlu(ActionPlu object)
-      {
-        return createActionPluAdapter();
-      }
-      @Override
-      public Adapter caseActionMul(ActionMul object)
-      {
-        return createActionMulAdapter();
-      }
-      @Override
-      public Adapter caseActionDiv(ActionDiv object)
-      {
-        return createActionDivAdapter();
-      }
-      @Override
-      public Adapter caseActionNot(ActionNot object)
-      {
-        return createActionNotAdapter();
-      }
-      @Override
-      public Adapter caseDoubleConstant(DoubleConstant object)
-      {
-        return createDoubleConstantAdapter();
-      }
-      @Override
-      public Adapter caseFreeVariable(FreeVariable object)
-      {
-        return createFreeVariableAdapter();
-      }
-      @Override
-      public Adapter caseBoolConstant(BoolConstant object)
-      {
-        return createBoolConstantAdapter();
-      }
-      @Override
-      public Adapter caseReferencedStore(ReferencedStore object)
-      {
-        return createReferencedStoreAdapter();
-      }
-      @Override
-      public Adapter caseOr(Or object)
-      {
-        return createOrAdapter();
-      }
-      @Override
-      public Adapter caseAnd(And object)
-      {
-        return createAndAdapter();
-      }
-      @Override
-      public Adapter caseEquality(Equality object)
-      {
-        return createEqualityAdapter();
-      }
-      @Override
-      public Adapter caseComparison(Comparison object)
-      {
-        return createComparisonAdapter();
-      }
-      @Override
-      public Adapter caseSub(Sub object)
-      {
-        return createSubAdapter();
-      }
-      @Override
-      public Adapter casePlu(Plu object)
-      {
-        return createPluAdapter();
-      }
-      @Override
-      public Adapter caseMul(Mul object)
-      {
-        return createMulAdapter();
-      }
-      @Override
-      public Adapter caseDiv(Div object)
-      {
-        return createDivAdapter();
-      }
-      @Override
-      public Adapter caseNot(Not object)
-      {
-        return createNotAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -459,16 +441,271 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Term <em>Term</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Store <em>Store</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Term
+   * @see eu.quanticol.cASPA.Store
    * @generated
    */
-  public Adapter createTermAdapter()
+  public Adapter createStoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ReferencedStore <em>Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.ReferencedStore
+   * @generated
+   */
+  public Adapter createReferencedStoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.SelfReferencedStore
+   * @generated
+   */
+  public Adapter createSelfReferencedStoreAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Action <em>Action</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Action
+   * @generated
+   */
+  public Adapter createActionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Predicate <em>Predicate</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Predicate
+   * @generated
+   */
+  public Adapter createPredicateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateExpression <em>Predicate Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.PredicateExpression
+   * @generated
+   */
+  public Adapter createPredicateExpressionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Arguments <em>Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Arguments
+   * @generated
+   */
+  public Adapter createArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.InArguments <em>In Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.InArguments
+   * @generated
+   */
+  public Adapter createInArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.OutArguments <em>Out Arguments</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.OutArguments
+   * @generated
+   */
+  public Adapter createOutArgumentsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Expressions <em>Expressions</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Expressions
+   * @generated
+   */
+  public Adapter createExpressionsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Variables <em>Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Variables
+   * @generated
+   */
+  public Adapter createVariablesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Updates <em>Updates</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Updates
+   * @generated
+   */
+  public Adapter createUpdatesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Update <em>Update</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Update
+   * @generated
+   */
+  public Adapter createUpdateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.SingleEventUpdate <em>Single Event Update</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.SingleEventUpdate
+   * @generated
+   */
+  public Adapter createSingleEventUpdateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.DistributedEventUpdate <em>Distributed Event Update</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.DistributedEventUpdate
+   * @generated
+   */
+  public Adapter createDistributedEventUpdateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Distribution <em>Distribution</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Distribution
+   * @generated
+   */
+  public Adapter createDistributionAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Uniform <em>Uniform</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Uniform
+   * @generated
+   */
+  public Adapter createUniformAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateExpression <em>Update Expression</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateExpression
+   * @generated
+   */
+  public Adapter createUpdateExpressionAdapter()
   {
     return null;
   }
@@ -534,226 +771,421 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Action <em>Action</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Term <em>Term</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Action
+   * @see eu.quanticol.cASPA.Term
    * @generated
    */
-  public Adapter createActionAdapter()
+  public Adapter createTermAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Predicate <em>Predicate</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Broadcast <em>Broadcast</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Predicate
+   * @see eu.quanticol.cASPA.Broadcast
    * @generated
    */
-  public Adapter createPredicateAdapter()
+  public Adapter createBroadcastAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Evaluations <em>Evaluations</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Unicast <em>Unicast</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Evaluations
+   * @see eu.quanticol.cASPA.Unicast
    * @generated
    */
-  public Adapter createEvaluationsAdapter()
+  public Adapter createUnicastAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Updates <em>Updates</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateOr <em>Predicate Or</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Updates
+   * @see eu.quanticol.cASPA.PredicateOr
    * @generated
    */
-  public Adapter createUpdatesAdapter()
+  public Adapter createPredicateOrAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateExpression <em>Predicate Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateAnd <em>Predicate And</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.PredicateExpression
+   * @see eu.quanticol.cASPA.PredicateAnd
    * @generated
    */
-  public Adapter createPredicateExpressionAdapter()
+  public Adapter createPredicateAndAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.EvaluationExpressionIn <em>Evaluation Expression In</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateEquality <em>Predicate Equality</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.EvaluationExpressionIn
+   * @see eu.quanticol.cASPA.PredicateEquality
    * @generated
    */
-  public Adapter createEvaluationExpressionInAdapter()
+  public Adapter createPredicateEqualityAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.EvaluationExpressionOut <em>Evaluation Expression Out</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateComparison <em>Predicate Comparison</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.EvaluationExpressionOut
+   * @see eu.quanticol.cASPA.PredicateComparison
    * @generated
    */
-  public Adapter createEvaluationExpressionOutAdapter()
+  public Adapter createPredicateComparisonAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateExpression <em>Update Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateSub <em>Predicate Sub</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.UpdateExpression
+   * @see eu.quanticol.cASPA.PredicateSub
    * @generated
    */
-  public Adapter createUpdateExpressionAdapter()
+  public Adapter createPredicateSubAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicatePlu <em>Predicate Plu</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.SelfReferencedStore
+   * @see eu.quanticol.cASPA.PredicatePlu
    * @generated
    */
-  public Adapter createSelfReferencedStoreAdapter()
+  public Adapter createPredicatePluAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.FunctionExpression <em>Function Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateMul <em>Predicate Mul</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.FunctionExpression
+   * @see eu.quanticol.cASPA.PredicateMul
    * @generated
    */
-  public Adapter createFunctionExpressionAdapter()
+  public Adapter createPredicateMulAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Distribution <em>Distribution</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateDiv <em>Predicate Div</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Distribution
+   * @see eu.quanticol.cASPA.PredicateDiv
    * @generated
    */
-  public Adapter createDistributionAdapter()
+  public Adapter createPredicateDivAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Uniform <em>Uniform</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Not <em>Not</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Uniform
+   * @see eu.quanticol.cASPA.Not
    * @generated
    */
-  public Adapter createUniformAdapter()
+  public Adapter createNotAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionExpression <em>Action Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Constant <em>Constant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionExpression
+   * @see eu.quanticol.cASPA.Constant
    * @generated
    */
-  public Adapter createActionExpressionAdapter()
+  public Adapter createConstantAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Store <em>Store</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.BoolConstant <em>Bool Constant</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Store
+   * @see eu.quanticol.cASPA.BoolConstant
    * @generated
    */
-  public Adapter createStoreAdapter()
+  public Adapter createBoolConstantAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Expression <em>Expression</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.In <em>In</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Expression
+   * @see eu.quanticol.cASPA.In
    * @generated
    */
-  public Adapter createExpressionAdapter()
+  public Adapter createInAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Out <em>Out</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Out
+   * @generated
+   */
+  public Adapter createOutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.LocalSingleEventUpdate <em>Local Single Event Update</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.LocalSingleEventUpdate
+   * @generated
+   */
+  public Adapter createLocalSingleEventUpdateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.DistributedEventUpdateProbability <em>Distributed Event Update Probability</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.DistributedEventUpdateProbability
+   * @generated
+   */
+  public Adapter createDistributedEventUpdateProbabilityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.DistributedEventUpdateUniform <em>Distributed Event Update Uniform</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.DistributedEventUpdateUniform
+   * @generated
+   */
+  public Adapter createDistributedEventUpdateUniformAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateOr <em>Update Or</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateOr
+   * @generated
+   */
+  public Adapter createUpdateOrAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateAnd <em>Update And</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateAnd
+   * @generated
+   */
+  public Adapter createUpdateAndAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateEquality <em>Update Equality</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateEquality
+   * @generated
+   */
+  public Adapter createUpdateEqualityAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateComparison <em>Update Comparison</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateComparison
+   * @generated
+   */
+  public Adapter createUpdateComparisonAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateSub <em>Update Sub</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateSub
+   * @generated
+   */
+  public Adapter createUpdateSubAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdatePlu <em>Update Plu</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdatePlu
+   * @generated
+   */
+  public Adapter createUpdatePluAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateMul <em>Update Mul</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateMul
+   * @generated
+   */
+  public Adapter createUpdateMulAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateDiv <em>Update Div</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateDiv
+   * @generated
+   */
+  public Adapter createUpdateDivAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateNot <em>Update Not</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateNot
+   * @generated
+   */
+  public Adapter createUpdateNotAdapter()
   {
     return null;
   }
@@ -814,501 +1246,6 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createProcessReferenceAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Broadcast <em>Broadcast</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Broadcast
-   * @generated
-   */
-  public Adapter createBroadcastAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Unicast <em>Unicast</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Unicast
-   * @generated
-   */
-  public Adapter createUnicastAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.In <em>In</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.In
-   * @generated
-   */
-  public Adapter createInAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Out <em>Out</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Out
-   * @generated
-   */
-  public Adapter createOutAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.LocalEvaluationExpression <em>Local Evaluation Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.LocalEvaluationExpression
-   * @generated
-   */
-  public Adapter createLocalEvaluationExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.GlobalEvaluationExpression <em>Global Evaluation Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.GlobalEvaluationExpression
-   * @generated
-   */
-  public Adapter createGlobalEvaluationExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.FreeEvaluationExpression <em>Free Evaluation Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.FreeEvaluationExpression
-   * @generated
-   */
-  public Adapter createFreeEvaluationExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.LocalUpdateExpression <em>Local Update Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.LocalUpdateExpression
-   * @generated
-   */
-  public Adapter createLocalUpdateExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.GlobalUpdateExpression <em>Global Update Expression</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpression
-   * @generated
-   */
-  public Adapter createGlobalUpdateExpressionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.LocalUpdateExpressionFunction <em>Local Update Expression Function</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.LocalUpdateExpressionFunction
-   * @generated
-   */
-  public Adapter createLocalUpdateExpressionFunctionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.GlobalUpdateExpressionFunction <em>Global Update Expression Function</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.GlobalUpdateExpressionFunction
-   * @generated
-   */
-  public Adapter createGlobalUpdateExpressionFunctionAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionOr <em>Action Or</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionOr
-   * @generated
-   */
-  public Adapter createActionOrAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionAnd <em>Action And</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionAnd
-   * @generated
-   */
-  public Adapter createActionAndAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionEquality <em>Action Equality</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionEquality
-   * @generated
-   */
-  public Adapter createActionEqualityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionComparison <em>Action Comparison</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionComparison
-   * @generated
-   */
-  public Adapter createActionComparisonAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionSub <em>Action Sub</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionSub
-   * @generated
-   */
-  public Adapter createActionSubAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionPlu <em>Action Plu</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionPlu
-   * @generated
-   */
-  public Adapter createActionPluAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionMul <em>Action Mul</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionMul
-   * @generated
-   */
-  public Adapter createActionMulAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionDiv <em>Action Div</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionDiv
-   * @generated
-   */
-  public Adapter createActionDivAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ActionNot <em>Action Not</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ActionNot
-   * @generated
-   */
-  public Adapter createActionNotAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.DoubleConstant <em>Double Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.DoubleConstant
-   * @generated
-   */
-  public Adapter createDoubleConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.FreeVariable <em>Free Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.FreeVariable
-   * @generated
-   */
-  public Adapter createFreeVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.BoolConstant <em>Bool Constant</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.BoolConstant
-   * @generated
-   */
-  public Adapter createBoolConstantAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ReferencedStore <em>Referenced Store</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.ReferencedStore
-   * @generated
-   */
-  public Adapter createReferencedStoreAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Or <em>Or</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Or
-   * @generated
-   */
-  public Adapter createOrAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.And <em>And</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.And
-   * @generated
-   */
-  public Adapter createAndAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Equality <em>Equality</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Equality
-   * @generated
-   */
-  public Adapter createEqualityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Comparison <em>Comparison</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Comparison
-   * @generated
-   */
-  public Adapter createComparisonAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Sub <em>Sub</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Sub
-   * @generated
-   */
-  public Adapter createSubAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Plu <em>Plu</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Plu
-   * @generated
-   */
-  public Adapter createPluAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Mul <em>Mul</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Mul
-   * @generated
-   */
-  public Adapter createMulAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Div <em>Div</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Div
-   * @generated
-   */
-  public Adapter createDivAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Not <em>Not</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.Not
-   * @generated
-   */
-  public Adapter createNotAdapter()
   {
     return null;
   }

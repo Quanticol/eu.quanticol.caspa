@@ -10,9 +10,279 @@ Model hidden(ML_COMMENT,SL_COMMENT,WS):
 	terms+=Term+ 
 ;
 
-//TERMS
-Term hidden(ML_COMMENT,SL_COMMENT,WS):
-	"(" name=[Process|UPPER] ",""{" stores+=[Store|LOWER] "}" ")"";"
+//STORE
+Store hidden(ML_COMMENT,SL_COMMENT,WS):
+	name=LOWER "=" value=Natural ";"
+;
+
+ReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
+	{ReferencedStore} name=[Store|LOWER]
+;
+
+SelfReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
+	{SelfReferencedStore}   "this."name=[Store|LOWER]
+;
+
+/**  Old Store expressions
+StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreOr ";"
+;
+	
+StoreOr returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreAnd ({StoreOr.left=current} "||" 
+		right=StoreAnd
+	)*
+;
+
+StoreAnd returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreEquality ({StoreAnd.left=current} "&&" 
+		right=StoreEquality
+	)*
+;
+
+StoreEquality returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreComparison (
+		{StoreEquality.left=current} op=("=="|"!=")
+		right=StoreComparison
+	)*
+;
+
+StoreComparison returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreSubtraction ({StoreComparison.left=current} op=(">="|"<="|">"|"<") 
+		right=StoreSubtraction
+	)*
+;
+	
+StoreSubtraction returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreAddition ({StoreSub.left=current} '-' 
+		right=StoreAddition
+	)*
+;
+	
+StoreAddition returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreMultiplication ({StorePlu.left=current} '+' 
+		right=StoreMultiplication
+	)*
+;
+
+StoreMultiplication returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	StoreDivision ({StoreMul.left=current} '*' 
+		right=StoreDivision
+	)*
+;
+	
+StoreDivision returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS): 
+	StorePrimary ({StoreDiv.left=current} '/' 
+		right=StorePrimary
+	)*
+;
+
+StorePrimary returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	'(' StoreExpression ')' | 
+	{StoreNot} "!" expression=StorePrimary |
+	StoreAtomic
+;
+
+StoreAtomic returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DoubleConstant} 	value=Double |
+	{BoolConstant} 		value=('true'|'false') |
+	ReferencedStore
+;
+ **/
+
+//ACTIONS
+Action hidden(ML_COMMENT,SL_COMMENT,WS):
+	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) (predicate=Predicate)? (arguments=Arguments)? (updates=Updates)? "." 
+	
+;
+
+//PREDICATE
+Predicate hidden(ML_COMMENT,SL_COMMENT,WS) :
+	{Predicate} "[" predicate=PredicateExpression "]"
+;
+
+PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateOr ";"
+;
+	
+PredicateOr returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateAnd ({PredicateOr.left=current} "||" 
+		right=PredicateAnd
+	)*
+;
+
+PredicateAnd returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateEquality ({PredicateAnd.left=current} "&&" 
+		right=PredicateEquality
+	)*
+;
+
+PredicateEquality returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateComparison (
+		{PredicateEquality.left=current} op=("=="|"!=")
+		right=PredicateComparison
+	)*
+;
+
+PredicateComparison returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateSubtraction ({PredicateComparison.left=current} op=(">="|"<="|">"|"<") 
+		right=PredicateSubtraction
+	)*
+;
+	
+PredicateSubtraction returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateAddition ({PredicateSub.left=current} '-' 
+		right=PredicateAddition
+	)*
+;
+	
+PredicateAddition returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateMultiplication ({PredicatePlu.left=current} '+' 
+		right=PredicateMultiplication
+	)*
+;
+
+PredicateMultiplication returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	PredicateDivision ({PredicateMul.left=current} '*' 
+		right=PredicateDivision
+	)*
+;
+	
+PredicateDivision returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS): 
+	PredicatePrimary ({PredicateDiv.left=current} '/' 
+		right=PredicatePrimary
+	)*
+;
+
+PredicatePrimary returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	'(' PredicateExpression ')' | 
+	{Not} "!" expression=PredicatePrimary |
+	PredicateAtomic
+;
+
+PredicateAtomic returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Constant} 	value=Natural |
+	{Bool} value=Bool |
+	ReferencedStore |
+	SelfReferencedStore
+;
+
+//ARGUMENTS
+Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
+	 ("(" {In} expressions+=InArguments+ ")"| "<" {Out} expressions+=OutArguments+ ">")
+;
+
+InArguments hidden(ML_COMMENT,SL_COMMENT,WS):
+	Variables
+;
+
+OutArguments hidden(ML_COMMENT,SL_COMMENT,WS):
+	Expressions
+;
+
+Expressions hidden(ML_COMMENT,SL_COMMENT,WS):
+	SelfReferencedStore | 
+	ReferencedStore |
+	value=Natural
+;
+
+Variables hidden(ML_COMMENT,SL_COMMENT,WS):
+	SelfReferencedStore | 
+	ReferencedStore
+;
+
+//UPDATES
+Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Updates} "{" updates+=Update+ "}"
+;
+
+
+Update hidden(ML_COMMENT,SL_COMMENT,WS):
+	(SingleEventUpdate | DistributedEventUpdate) ";"
+;
+
+SingleEventUpdate hidden(ML_COMMENT,SL_COMMENT,WS):
+	{LocalSingleEventUpdate} name=SelfReferencedStore ":=" expression=UpdateExpression  // | 
+	//{GlobalSingleEventUpdate} name=[Store|LOWER] ":=" expression=ActionExpression
+;
+
+DistributedEventUpdate hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DistributedEventUpdateProbability} "Pr" "(" distribution+=Distribution+ ")" |
+	{DistributedEventUpdateUniform} "U" "(" distribution+=Uniform ")"
+;
+
+Distribution hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Distribution} prob=Double ":" expression=UpdateExpression ";"
+;
+
+Uniform hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Uniform} expression=UpdateExpression ";"
+;
+
+UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateOr
+;
+	
+UpdateOr returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateAnd ({UpdateOr.left=current} "||" 
+		right=UpdateAnd
+	)*
+;
+
+UpdateAnd returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateEquality ({UpdateAnd.left=current} "&&" 
+		right=UpdateEquality
+	)*
+;
+
+UpdateEquality returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateComparison (
+		{UpdateEquality.left=current} op=("=="|"!=")
+		right=UpdateComparison
+	)*
+;
+
+UpdateComparison returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateSubtraction ({UpdateComparison.left=current} op=(">="|"<="|">"|"<") 
+		right=UpdateSubtraction
+	)*
+;
+	
+UpdateSubtraction returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateAddition ({UpdateSub.left=current} '-' 
+		right=UpdateAddition
+	)*
+;
+	
+UpdateAddition returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateMultiplication ({UpdatePlu.left=current} '+' 
+		right=UpdateMultiplication
+	)*
+;
+
+UpdateMultiplication returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	UpdateDivision ({UpdateMul.left=current} '*' 
+		right=UpdateDivision
+	)*
+;
+	
+UpdateDivision returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS): 
+	UpdatePrimary ({UpdateDiv.left=current} '/' 
+		right=UpdatePrimary
+	)*
+;
+
+UpdatePrimary returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	'(' UpdateExpression ')' | 
+	{UpdateNot} "!" expression=UpdatePrimary |
+	UpdateAtomic
+;
+
+UpdateAtomic returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Constant} 	value=Natural |
+	{Bool} value=Bool |
+	ReferencedStore |
+	SelfReferencedStore
 ;
 
 
@@ -50,205 +320,23 @@ ActionProcess hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 
-//ACTIONS
-Action hidden(ML_COMMENT,SL_COMMENT,WS):
-	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) (predicate=Predicate)? (evaluations=Evaluations)? (updates=Updates)? "." 
-	
-;
-
-Predicate hidden(ML_COMMENT,SL_COMMENT,WS) :
-	{Predicate} "[" predicate=PredicateExpression "]"
-;
-
-Evaluations hidden(ML_COMMENT,SL_COMMENT,WS):
-	 ("(" {In} expressions+=EvaluationExpressionIn+ ")"| "<" {Out} expressions+=EvaluationExpressionOut+ ">")
-;
-
-Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Updates} "{" updates+=UpdateExpression+ "}"
-;
-
-PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	expression=ActionExpression ";"
-;
-
-EvaluationExpressionIn hidden(ML_COMMENT,SL_COMMENT,WS):
-	({LocalEvaluationExpression} name=SelfReferencedStore ":=" expression=ActionExpression | 
-	{GlobalEvaluationExpression} name=[Store|LOWER] ":=" expression=ActionExpression ) ";"
-;
-
-EvaluationExpressionOut hidden(ML_COMMENT,SL_COMMENT,WS):
-	{FreeEvaluationExpression} name=FreeVariable ":=" expression=ActionExpression ";"
-;
-
-UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	({LocalUpdateExpression} name=SelfReferencedStore ":=" expression=ActionExpression  | 
-	{GlobalUpdateExpression} name=[Store|LOWER] ":=" expression=ActionExpression |
-	{LocalUpdateExpressionFunction} name=SelfReferencedStore ":=" expression=FunctionExpression |
-	{GlobalUpdateExpressionFunction} name=[Store|LOWER] ":=" expression=FunctionExpression ) ";"
-;
-
-SelfReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
-	{SelfReferencedStore}   "this."name=[Store|LOWER]
-;
-
-FunctionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{FunctionExpression} "Pr" "(" distribution+=Distribution+ ")" |
-	{FunctionExpression} "U" "(" distribution+=Uniform ")"
-;
-
-Distribution hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Distribution} prob=Double ":" expression=ActionExpression ";"
-;
-
-Uniform hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Uniform} expression=ActionExpression ";"
-;
-
-ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionOr
-;
-	
-ActionOr returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionAnd ({ActionOr.left=current} "||" 
-		right=ActionAnd
-	)*
-;
-
-ActionAnd returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionEquality ({ActionAnd.left=current} "&&" 
-		right=ActionEquality
-	)*
-;
-
-ActionEquality returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionComparison (
-		{ActionEquality.left=current} op=("=="|"!=")
-		right=ActionComparison
-	)*
-;
-
-ActionComparison returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionSubtraction ({ActionComparison.left=current} op=(">="|"<="|">"|"<") 
-		right=ActionSubtraction
-	)*
-;
-	
-ActionSubtraction returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionAddition ({ActionSub.left=current} '-' 
-		right=ActionAddition
-	)*
-;
-	
-ActionAddition returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionMultiplication ({ActionPlu.left=current} '+' 
-		right=ActionMultiplication
-	)*
-;
-
-ActionMultiplication returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ActionDivision ({ActionMul.left=current} '*' 
-		right=ActionDivision
-	)*
-;
-	
-ActionDivision returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS): 
-	ActionPrimary ({ActionDiv.left=current} '/' 
-		right=ActionPrimary
-	)*
-;
-
-ActionPrimary returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	'(' ActionExpression ')' | 
-	{ActionNot} "!" expression=ActionPrimary |
-	ActionAtomic
-;
-
-ActionAtomic returns ActionExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{DoubleConstant} 	value=Double |
-	{FreeVariable} 		value=FreeVariable |
-	{BoolConstant} 		value=('true'|'false') |
-	{ReferencedStore} 	value=[Store|LOWER]
-;
-
-
-//STORES
-Store hidden(ML_COMMENT,SL_COMMENT,WS):
-	name=LOWER "=" value=Expression ";"
-;
-
-Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Or
-;
-	
-Or returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	And ({Or.left=current} "||" 
-		right=And
-	)*
-;
-
-And returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Equality ({And.left=current} "&&" 
-		right=Equality
-	)*
-;
-
-Equality returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Comparison (
-		{Equality.left=current} op=("=="|"!=")
-		right=Comparison
-	)*
-;
-
-Comparison returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Subtraction ({Comparison.left=current} op=(">="|"<="|">"|"<") 
-		right=Subtraction
-	)*
-;
-	
-Subtraction returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Addition ({Sub.left=current} '-' 
-		right=Addition
-	)*
-;
-	
-Addition returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Multiplication ({Plu.left=current} '+' 
-		right=Multiplication
-	)*
-;
-
-Multiplication returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	Division ({Mul.left=current} '*' 
-		right=Division
-	)*
-;
-	
-Division returns Expression hidden(ML_COMMENT,SL_COMMENT,WS): 
-	Primary ({Div.left=current} '/' 
-		right=Primary
-	)*
-;
-
-Primary returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	'(' Expression ')' | 
-	{Not} "!" expression=Primary |
-	Atomic
-;
-
-Atomic returns Expression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{DoubleConstant} 	value=Double |
-	{BoolConstant} 		value=('true'|'false') |
-	{ReferencedStore} 	value=[Store|LOWER]
+//TERMS
+Term hidden(ML_COMMENT,SL_COMMENT,WS):
+	"(" name=[Process|UPPER] ",""{" stores+=[Store|LOWER] "}" ")"";"
 ;
 
 Double returns ecore::EDouble:
 	 INT ('.' INT ('e'|'E' '-'? INT)?)?
 ;
 
-FreeVariable returns ecore::EString:
-	"$"LOWER
+Natural returns ecore::EInt:
+	NAT
+;
+
+Bool returns ecore::EBoolean:
+	('true'|'false')
 ;
 
 terminal LOWER: ("a".."z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal UPPER: ("A".."Z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+terminal NAT: ('0'..'9')+;
