@@ -2,7 +2,6 @@
  */
 package eu.quanticol.cASPA;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,7 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Store extends EObject
+public interface Store extends StoreExpression
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -58,12 +57,12 @@ public interface Store extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(int)
+   * @see #setValue(String)
    * @see eu.quanticol.cASPA.CASPAPackage#getStore_Value()
    * @model
    * @generated
    */
-  int getValue();
+  String getValue();
 
   /**
    * Sets the value of the '{@link eu.quanticol.cASPA.Store#getValue <em>Value</em>}' attribute.
@@ -73,6 +72,6 @@ public interface Store extends EObject
    * @see #getValue()
    * @generated
    */
-  void setValue(int value);
+  void setValue(String value);
 
 } // Store

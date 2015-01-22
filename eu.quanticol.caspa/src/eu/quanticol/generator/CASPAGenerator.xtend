@@ -6,6 +6,7 @@ package eu.quanticol.generator
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IFileSystemAccess
+import eu.quanticol.cASPA.Model
 
 /**
  * Generates code from your model files on save.
@@ -14,28 +15,21 @@ import org.eclipse.xtext.generator.IFileSystemAccess
  */
 class CASPAGenerator implements IGenerator {
 	
-	override doGenerate(Resource input, IFileSystemAccess fsa) {
-		throw new UnsupportedOperationException("TODO: auto-generated method stub")
+	override doGenerate(Resource resource, IFileSystemAccess fsa) {
+		for (e : resource.allContents.toIterable.filter(typeof(Model))){
+			fsa.generateFile("simulators/simulator.java",e.compile)
+		}
 	}
 	
-//	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-//		for (e : resource.allContents.toIterable.filter(typeof(Model))){
-//			fsa.generateFile("simulators/simulator.java",e.compile)
-//		}
-//	}
-//	
-//	def CharSequence compile(Model model){
-//		'''
-//		package simulators;
-//		
-//		public class simulator{
-//			«FOR store : model.stores»
-//					«store.compile»
-//			«ENDFOR»
-//		}
-//		
-//		'''
-//	}
+	def CharSequence compile(Model model){
+		'''
+		package simulators;
+		
+		public class simulator{
+		}
+		
+		'''
+	}
 //	
 //	def CharSequence compile(Store store){
 //		'''

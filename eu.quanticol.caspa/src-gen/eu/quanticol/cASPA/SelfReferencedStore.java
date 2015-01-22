@@ -19,7 +19,7 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface SelfReferencedStore extends PredicateExpression, Expressions, Variables, UpdateExpression
+public interface SelfReferencedStore extends StoreExpression
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' reference.

@@ -4,7 +4,6 @@ package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Model;
-import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.Term;
 
 import java.util.Collection;
@@ -28,9 +27,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.impl.ModelImpl#getStores <em>Stores</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.impl.ModelImpl#getProcesses <em>Processes</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.impl.ModelImpl#getTerms <em>Terms</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.ModelImpl#getProcesses <em>Processes</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,14 +37,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getStores() <em>Stores</em>}' containment reference list.
+   * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStores()
+   * @see #getTerms()
    * @generated
    * @ordered
    */
-  protected EList<Store> stores;
+  protected EList<Term> terms;
 
   /**
    * The cached value of the '{@link #getProcesses() <em>Processes</em>}' containment reference list.
@@ -57,16 +55,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @ordered
    */
   protected EList<eu.quanticol.cASPA.Process> processes;
-
-  /**
-   * The cached value of the '{@link #getTerms() <em>Terms</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTerms()
-   * @generated
-   * @ordered
-   */
-  protected EList<Term> terms;
 
   /**
    * <!-- begin-user-doc -->
@@ -94,13 +82,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Store> getStores()
+  public EList<Term> getTerms()
   {
-    if (stores == null)
+    if (terms == null)
     {
-      stores = new EObjectContainmentEList<Store>(Store.class, this, CASPAPackage.MODEL__STORES);
+      terms = new EObjectContainmentEList<Term>(Term.class, this, CASPAPackage.MODEL__TERMS);
     }
-    return stores;
+    return terms;
   }
 
   /**
@@ -122,31 +110,15 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Term> getTerms()
-  {
-    if (terms == null)
-    {
-      terms = new EObjectContainmentEList<Term>(Term.class, this, CASPAPackage.MODEL__TERMS);
-    }
-    return terms;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case CASPAPackage.MODEL__STORES:
-        return ((InternalEList<?>)getStores()).basicRemove(otherEnd, msgs);
-      case CASPAPackage.MODEL__PROCESSES:
-        return ((InternalEList<?>)getProcesses()).basicRemove(otherEnd, msgs);
       case CASPAPackage.MODEL__TERMS:
         return ((InternalEList<?>)getTerms()).basicRemove(otherEnd, msgs);
+      case CASPAPackage.MODEL__PROCESSES:
+        return ((InternalEList<?>)getProcesses()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -161,12 +133,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CASPAPackage.MODEL__STORES:
-        return getStores();
-      case CASPAPackage.MODEL__PROCESSES:
-        return getProcesses();
       case CASPAPackage.MODEL__TERMS:
         return getTerms();
+      case CASPAPackage.MODEL__PROCESSES:
+        return getProcesses();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -182,17 +152,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CASPAPackage.MODEL__STORES:
-        getStores().clear();
-        getStores().addAll((Collection<? extends Store>)newValue);
+      case CASPAPackage.MODEL__TERMS:
+        getTerms().clear();
+        getTerms().addAll((Collection<? extends Term>)newValue);
         return;
       case CASPAPackage.MODEL__PROCESSES:
         getProcesses().clear();
         getProcesses().addAll((Collection<? extends eu.quanticol.cASPA.Process>)newValue);
-        return;
-      case CASPAPackage.MODEL__TERMS:
-        getTerms().clear();
-        getTerms().addAll((Collection<? extends Term>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -208,14 +174,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CASPAPackage.MODEL__STORES:
-        getStores().clear();
+      case CASPAPackage.MODEL__TERMS:
+        getTerms().clear();
         return;
       case CASPAPackage.MODEL__PROCESSES:
         getProcesses().clear();
-        return;
-      case CASPAPackage.MODEL__TERMS:
-        getTerms().clear();
         return;
     }
     super.eUnset(featureID);
@@ -231,12 +194,10 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case CASPAPackage.MODEL__STORES:
-        return stores != null && !stores.isEmpty();
-      case CASPAPackage.MODEL__PROCESSES:
-        return processes != null && !processes.isEmpty();
       case CASPAPackage.MODEL__TERMS:
         return terms != null && !terms.isEmpty();
+      case CASPAPackage.MODEL__PROCESSES:
+        return processes != null && !processes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

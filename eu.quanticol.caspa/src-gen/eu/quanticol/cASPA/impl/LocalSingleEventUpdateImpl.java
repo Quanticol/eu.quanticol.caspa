@@ -4,7 +4,7 @@ package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
-import eu.quanticol.cASPA.SelfReferencedStore;
+import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.UpdateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class LocalSingleEventUpdateImpl extends SingleEventUpdateImpl implements LocalSingleEventUpdate
+public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSingleEventUpdate
 {
   /**
    * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
@@ -39,7 +39,7 @@ public class LocalSingleEventUpdateImpl extends SingleEventUpdateImpl implements
    * @generated
    * @ordered
    */
-  protected SelfReferencedStore name;
+  protected StoreExpression name;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -77,7 +77,7 @@ public class LocalSingleEventUpdateImpl extends SingleEventUpdateImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public SelfReferencedStore getName()
+  public StoreExpression getName()
   {
     return name;
   }
@@ -87,9 +87,9 @@ public class LocalSingleEventUpdateImpl extends SingleEventUpdateImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(SelfReferencedStore newName, NotificationChain msgs)
+  public NotificationChain basicSetName(StoreExpression newName, NotificationChain msgs)
   {
-    SelfReferencedStore oldName = name;
+    StoreExpression oldName = name;
     name = newName;
     if (eNotificationRequired())
     {
@@ -104,7 +104,7 @@ public class LocalSingleEventUpdateImpl extends SingleEventUpdateImpl implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(SelfReferencedStore newName)
+  public void setName(StoreExpression newName)
   {
     if (newName != name)
     {
@@ -215,7 +215,7 @@ public class LocalSingleEventUpdateImpl extends SingleEventUpdateImpl implements
     switch (featureID)
     {
       case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME:
-        setName((SelfReferencedStore)newValue);
+        setName((StoreExpression)newValue);
         return;
       case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION:
         setExpression((UpdateExpression)newValue);
@@ -235,7 +235,7 @@ public class LocalSingleEventUpdateImpl extends SingleEventUpdateImpl implements
     switch (featureID)
     {
       case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME:
-        setName((SelfReferencedStore)null);
+        setName((StoreExpression)null);
         return;
       case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION:
         setExpression((UpdateExpression)null);

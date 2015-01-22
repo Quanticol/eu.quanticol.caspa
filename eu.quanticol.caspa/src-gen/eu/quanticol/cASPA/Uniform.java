@@ -2,7 +2,6 @@
  */
 package eu.quanticol.cASPA;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,32 +19,32 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Uniform extends EObject
+public interface Uniform extends Updates
 {
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Expression</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Expression</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(UpdateExpression)
+   * @return the value of the '<em>Expression</em>' attribute.
+   * @see #setExpression(String)
    * @see eu.quanticol.cASPA.CASPAPackage#getUniform_Expression()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  UpdateExpression getExpression();
+  String getExpression();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.Uniform#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.Uniform#getExpression <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
+   * @param value the new value of the '<em>Expression</em>' attribute.
    * @see #getExpression()
    * @generated
    */
-  void setExpression(UpdateExpression value);
+  void setExpression(String value);
 
 } // Uniform

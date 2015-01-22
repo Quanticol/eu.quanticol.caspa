@@ -3,7 +3,6 @@
 package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.Update;
 import eu.quanticol.cASPA.Updates;
 
 import java.util.Collection;
@@ -43,7 +42,7 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
    * @generated
    * @ordered
    */
-  protected EList<Update> updates;
+  protected EList<Updates> updates;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,11 +70,11 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Update> getUpdates()
+  public EList<Updates> getUpdates()
   {
     if (updates == null)
     {
-      updates = new EObjectContainmentEList<Update>(Update.class, this, CASPAPackage.UPDATES__UPDATES);
+      updates = new EObjectContainmentEList<Updates>(Updates.class, this, CASPAPackage.UPDATES__UPDATES);
     }
     return updates;
   }
@@ -125,7 +124,7 @@ public class UpdatesImpl extends MinimalEObjectImpl.Container implements Updates
     {
       case CASPAPackage.UPDATES__UPDATES:
         getUpdates().clear();
-        getUpdates().addAll((Collection<? extends Update>)newValue);
+        getUpdates().addAll((Collection<? extends Updates>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -12,7 +12,7 @@ package eu.quanticol.cASPA;
  * The following features are supported:
  * <ul>
  *   <li>{@link eu.quanticol.cASPA.PredicateProcess#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.PredicateProcess#getValue <em>Value</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.PredicateProcess#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,29 +49,29 @@ public interface PredicateProcess extends ProcessExpression
   void setPredicate(Predicate value);
 
   /**
-   * Returns the value of the '<em><b>Value</b></em>' reference.
+   * Returns the value of the '<em><b>Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Value</em>' reference isn't clear,
+   * If the meaning of the '<em>Ref</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Value</em>' reference.
-   * @see #setValue(eu.quanticol.cASPA.Process)
-   * @see eu.quanticol.cASPA.CASPAPackage#getPredicateProcess_Value()
-   * @model
+   * @return the value of the '<em>Ref</em>' containment reference.
+   * @see #setRef(ProcessExpression)
+   * @see eu.quanticol.cASPA.CASPAPackage#getPredicateProcess_Ref()
+   * @model containment="true"
    * @generated
    */
-  eu.quanticol.cASPA.Process getValue();
+  ProcessExpression getRef();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.PredicateProcess#getValue <em>Value</em>}' reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.PredicateProcess#getRef <em>Ref</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Value</em>' reference.
-   * @see #getValue()
+   * @param value the new value of the '<em>Ref</em>' containment reference.
+   * @see #getRef()
    * @generated
    */
-  void setValue(eu.quanticol.cASPA.Process value);
+  void setRef(ProcessExpression value);
 
 } // PredicateProcess

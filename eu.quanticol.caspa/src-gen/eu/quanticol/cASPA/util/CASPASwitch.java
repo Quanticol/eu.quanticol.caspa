@@ -5,24 +5,19 @@ package eu.quanticol.cASPA.util;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
-import eu.quanticol.cASPA.BoolConstant;
+import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
-import eu.quanticol.cASPA.DistributedEventUpdate;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.Distribution;
-import eu.quanticol.cASPA.Expressions;
 import eu.quanticol.cASPA.In;
-import eu.quanticol.cASPA.InArguments;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
-import eu.quanticol.cASPA.Not;
 import eu.quanticol.cASPA.Out;
-import eu.quanticol.cASPA.OutArguments;
 import eu.quanticol.cASPA.Parallel;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -31,32 +26,27 @@ import eu.quanticol.cASPA.PredicateDiv;
 import eu.quanticol.cASPA.PredicateEquality;
 import eu.quanticol.cASPA.PredicateExpression;
 import eu.quanticol.cASPA.PredicateMul;
+import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
-import eu.quanticol.cASPA.ProcessReference;
+import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
-import eu.quanticol.cASPA.SingleEventUpdate;
 import eu.quanticol.cASPA.Store;
+import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.Uniform;
-import eu.quanticol.cASPA.Update;
-import eu.quanticol.cASPA.UpdateAnd;
-import eu.quanticol.cASPA.UpdateComparison;
 import eu.quanticol.cASPA.UpdateDiv;
-import eu.quanticol.cASPA.UpdateEquality;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.UpdateMul;
-import eu.quanticol.cASPA.UpdateNot;
-import eu.quanticol.cASPA.UpdateOr;
 import eu.quanticol.cASPA.UpdatePlu;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
-import eu.quanticol.cASPA.Variables;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -133,36 +123,13 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.STORE:
+      case CASPAPackage.STORE_EXPRESSION:
       {
-        Store store = (Store)theEObject;
-        T result = caseStore(store);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.REFERENCED_STORE:
-      {
-        ReferencedStore referencedStore = (ReferencedStore)theEObject;
-        T result = caseReferencedStore(referencedStore);
-        if (result == null) result = casePredicateExpression(referencedStore);
-        if (result == null) result = caseExpressions(referencedStore);
-        if (result == null) result = caseVariables(referencedStore);
-        if (result == null) result = caseUpdateExpression(referencedStore);
-        if (result == null) result = caseOutArguments(referencedStore);
-        if (result == null) result = caseInArguments(referencedStore);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.SELF_REFERENCED_STORE:
-      {
-        SelfReferencedStore selfReferencedStore = (SelfReferencedStore)theEObject;
-        T result = caseSelfReferencedStore(selfReferencedStore);
-        if (result == null) result = casePredicateExpression(selfReferencedStore);
-        if (result == null) result = caseExpressions(selfReferencedStore);
-        if (result == null) result = caseVariables(selfReferencedStore);
-        if (result == null) result = caseUpdateExpression(selfReferencedStore);
-        if (result == null) result = caseOutArguments(selfReferencedStore);
-        if (result == null) result = caseInArguments(selfReferencedStore);
+        StoreExpression storeExpression = (StoreExpression)theEObject;
+        T result = caseStoreExpression(storeExpression);
+        if (result == null) result = casePredicateExpression(storeExpression);
+        if (result == null) result = caseArguments(storeExpression);
+        if (result == null) result = caseUpdateExpression(storeExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -194,77 +161,10 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.IN_ARGUMENTS:
-      {
-        InArguments inArguments = (InArguments)theEObject;
-        T result = caseInArguments(inArguments);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.OUT_ARGUMENTS:
-      {
-        OutArguments outArguments = (OutArguments)theEObject;
-        T result = caseOutArguments(outArguments);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.EXPRESSIONS:
-      {
-        Expressions expressions = (Expressions)theEObject;
-        T result = caseExpressions(expressions);
-        if (result == null) result = caseOutArguments(expressions);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.VARIABLES:
-      {
-        Variables variables = (Variables)theEObject;
-        T result = caseVariables(variables);
-        if (result == null) result = caseInArguments(variables);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CASPAPackage.UPDATES:
       {
         Updates updates = (Updates)theEObject;
         T result = caseUpdates(updates);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.UPDATE:
-      {
-        Update update = (Update)theEObject;
-        T result = caseUpdate(update);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.SINGLE_EVENT_UPDATE:
-      {
-        SingleEventUpdate singleEventUpdate = (SingleEventUpdate)theEObject;
-        T result = caseSingleEventUpdate(singleEventUpdate);
-        if (result == null) result = caseUpdate(singleEventUpdate);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE:
-      {
-        DistributedEventUpdate distributedEventUpdate = (DistributedEventUpdate)theEObject;
-        T result = caseDistributedEventUpdate(distributedEventUpdate);
-        if (result == null) result = caseUpdate(distributedEventUpdate);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.DISTRIBUTION:
-      {
-        Distribution distribution = (Distribution)theEObject;
-        T result = caseDistribution(distribution);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.UNIFORM:
-      {
-        Uniform uniform = (Uniform)theEObject;
-        T result = caseUniform(uniform);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -289,26 +189,51 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.PREDICATE_PROCESS:
-      {
-        PredicateProcess predicateProcess = (PredicateProcess)theEObject;
-        T result = casePredicateProcess(predicateProcess);
-        if (result == null) result = caseProcessExpression(predicateProcess);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.ACTION_PROCESS:
-      {
-        ActionProcess actionProcess = (ActionProcess)theEObject;
-        T result = caseActionProcess(actionProcess);
-        if (result == null) result = caseProcessExpression(actionProcess);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CASPAPackage.TERM:
       {
         Term term = (Term)theEObject;
         T result = caseTerm(term);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.BOOLEAN_CONSTANT:
+      {
+        BooleanConstant booleanConstant = (BooleanConstant)theEObject;
+        T result = caseBooleanConstant(booleanConstant);
+        if (result == null) result = casePredicateExpression(booleanConstant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.STORE:
+      {
+        Store store = (Store)theEObject;
+        T result = caseStore(store);
+        if (result == null) result = caseStoreExpression(store);
+        if (result == null) result = casePredicateExpression(store);
+        if (result == null) result = caseArguments(store);
+        if (result == null) result = caseUpdateExpression(store);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.REFERENCED_STORE:
+      {
+        ReferencedStore referencedStore = (ReferencedStore)theEObject;
+        T result = caseReferencedStore(referencedStore);
+        if (result == null) result = caseStoreExpression(referencedStore);
+        if (result == null) result = casePredicateExpression(referencedStore);
+        if (result == null) result = caseArguments(referencedStore);
+        if (result == null) result = caseUpdateExpression(referencedStore);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.SELF_REFERENCED_STORE:
+      {
+        SelfReferencedStore selfReferencedStore = (SelfReferencedStore)theEObject;
+        T result = caseSelfReferencedStore(selfReferencedStore);
+        if (result == null) result = caseStoreExpression(selfReferencedStore);
+        if (result == null) result = casePredicateExpression(selfReferencedStore);
+        if (result == null) result = caseArguments(selfReferencedStore);
+        if (result == null) result = caseUpdateExpression(selfReferencedStore);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -392,11 +317,11 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.NOT:
+      case CASPAPackage.PREDICATE_NOT:
       {
-        Not not = (Not)theEObject;
-        T result = caseNot(not);
-        if (result == null) result = casePredicateExpression(not);
+        PredicateNot predicateNot = (PredicateNot)theEObject;
+        T result = casePredicateNot(predicateNot);
+        if (result == null) result = casePredicateExpression(predicateNot);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -405,16 +330,8 @@ public class CASPASwitch<T> extends Switch<T>
         Constant constant = (Constant)theEObject;
         T result = caseConstant(constant);
         if (result == null) result = casePredicateExpression(constant);
+        if (result == null) result = caseArguments(constant);
         if (result == null) result = caseUpdateExpression(constant);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.BOOL_CONSTANT:
-      {
-        BoolConstant boolConstant = (BoolConstant)theEObject;
-        T result = caseBoolConstant(boolConstant);
-        if (result == null) result = casePredicateExpression(boolConstant);
-        if (result == null) result = caseUpdateExpression(boolConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -438,8 +355,7 @@ public class CASPASwitch<T> extends Switch<T>
       {
         LocalSingleEventUpdate localSingleEventUpdate = (LocalSingleEventUpdate)theEObject;
         T result = caseLocalSingleEventUpdate(localSingleEventUpdate);
-        if (result == null) result = caseSingleEventUpdate(localSingleEventUpdate);
-        if (result == null) result = caseUpdate(localSingleEventUpdate);
+        if (result == null) result = caseUpdates(localSingleEventUpdate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -447,8 +363,7 @@ public class CASPASwitch<T> extends Switch<T>
       {
         DistributedEventUpdateProbability distributedEventUpdateProbability = (DistributedEventUpdateProbability)theEObject;
         T result = caseDistributedEventUpdateProbability(distributedEventUpdateProbability);
-        if (result == null) result = caseDistributedEventUpdate(distributedEventUpdateProbability);
-        if (result == null) result = caseUpdate(distributedEventUpdateProbability);
+        if (result == null) result = caseUpdates(distributedEventUpdateProbability);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -456,40 +371,23 @@ public class CASPASwitch<T> extends Switch<T>
       {
         DistributedEventUpdateUniform distributedEventUpdateUniform = (DistributedEventUpdateUniform)theEObject;
         T result = caseDistributedEventUpdateUniform(distributedEventUpdateUniform);
-        if (result == null) result = caseDistributedEventUpdate(distributedEventUpdateUniform);
-        if (result == null) result = caseUpdate(distributedEventUpdateUniform);
+        if (result == null) result = caseUpdates(distributedEventUpdateUniform);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.UPDATE_OR:
+      case CASPAPackage.DISTRIBUTION:
       {
-        UpdateOr updateOr = (UpdateOr)theEObject;
-        T result = caseUpdateOr(updateOr);
-        if (result == null) result = caseUpdateExpression(updateOr);
+        Distribution distribution = (Distribution)theEObject;
+        T result = caseDistribution(distribution);
+        if (result == null) result = caseUpdates(distribution);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.UPDATE_AND:
+      case CASPAPackage.UNIFORM:
       {
-        UpdateAnd updateAnd = (UpdateAnd)theEObject;
-        T result = caseUpdateAnd(updateAnd);
-        if (result == null) result = caseUpdateExpression(updateAnd);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.UPDATE_EQUALITY:
-      {
-        UpdateEquality updateEquality = (UpdateEquality)theEObject;
-        T result = caseUpdateEquality(updateEquality);
-        if (result == null) result = caseUpdateExpression(updateEquality);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.UPDATE_COMPARISON:
-      {
-        UpdateComparison updateComparison = (UpdateComparison)theEObject;
-        T result = caseUpdateComparison(updateComparison);
-        if (result == null) result = caseUpdateExpression(updateComparison);
+        Uniform uniform = (Uniform)theEObject;
+        T result = caseUniform(uniform);
+        if (result == null) result = caseUpdates(uniform);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -525,14 +423,6 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.UPDATE_NOT:
-      {
-        UpdateNot updateNot = (UpdateNot)theEObject;
-        T result = caseUpdateNot(updateNot);
-        if (result == null) result = caseUpdateExpression(updateNot);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case CASPAPackage.PARALLEL:
       {
         Parallel parallel = (Parallel)theEObject;
@@ -557,11 +447,35 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.PROCESS_REFERENCE:
+      case CASPAPackage.PREDICATE_PROCESS:
       {
-        ProcessReference processReference = (ProcessReference)theEObject;
-        T result = caseProcessReference(processReference);
-        if (result == null) result = caseProcessExpression(processReference);
+        PredicateProcess predicateProcess = (PredicateProcess)theEObject;
+        T result = casePredicateProcess(predicateProcess);
+        if (result == null) result = caseProcessExpression(predicateProcess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.ACTION_PROCESS:
+      {
+        ActionProcess actionProcess = (ActionProcess)theEObject;
+        T result = caseActionProcess(actionProcess);
+        if (result == null) result = caseProcessExpression(actionProcess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.REFERENCED_PROCESS:
+      {
+        ReferencedProcess referencedProcess = (ReferencedProcess)theEObject;
+        T result = caseReferencedProcess(referencedProcess);
+        if (result == null) result = caseProcessExpression(referencedProcess);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.TP_PARALLEL:
+      {
+        TPParallel tpParallel = (TPParallel)theEObject;
+        T result = caseTPParallel(tpParallel);
+        if (result == null) result = caseProcessExpression(tpParallel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -586,49 +500,17 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Store</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Store Expression</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Store</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Store Expression</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseStore(Store object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseReferencedStore(ReferencedStore object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSelfReferencedStore(SelfReferencedStore object)
+  public T caseStoreExpression(StoreExpression object)
   {
     return null;
   }
@@ -698,70 +580,6 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>In Arguments</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>In Arguments</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseInArguments(InArguments object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Out Arguments</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Out Arguments</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseOutArguments(OutArguments object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Expressions</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Expressions</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseExpressions(Expressions object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Variables</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Variables</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseVariables(Variables object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Updates</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -773,86 +591,6 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUpdates(Updates object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Update</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUpdate(Update object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Single Event Update</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Single Event Update</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSingleEventUpdate(SingleEventUpdate object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Distributed Event Update</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Distributed Event Update</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDistributedEventUpdate(DistributedEventUpdate object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Distribution</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Distribution</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseDistribution(Distribution object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Uniform</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Uniform</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUniform(Uniform object)
   {
     return null;
   }
@@ -906,38 +644,6 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Predicate Process</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Predicate Process</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T casePredicateProcess(PredicateProcess object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Action Process</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Action Process</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseActionProcess(ActionProcess object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Term</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -949,6 +655,70 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTerm(Term object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Boolean Constant</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Boolean Constant</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBooleanConstant(BooleanConstant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Store</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Store</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStore(Store object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferencedStore(ReferencedStore object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSelfReferencedStore(SelfReferencedStore object)
   {
     return null;
   }
@@ -1114,17 +884,17 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Not</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Predicate Not</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Not</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Predicate Not</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseNot(Not object)
+  public T casePredicateNot(PredicateNot object)
   {
     return null;
   }
@@ -1141,22 +911,6 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstant(Constant object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Bool Constant</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBoolConstant(BoolConstant object)
   {
     return null;
   }
@@ -1242,65 +996,33 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Update Or</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Distribution</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update Or</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Distribution</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUpdateOr(UpdateOr object)
+  public T caseDistribution(Distribution object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Update And</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Uniform</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update And</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Uniform</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUpdateAnd(UpdateAnd object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Update Equality</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update Equality</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUpdateEquality(UpdateEquality object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Update Comparison</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update Comparison</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUpdateComparison(UpdateComparison object)
+  public T caseUniform(Uniform object)
   {
     return null;
   }
@@ -1370,22 +1092,6 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Update Not</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Update Not</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseUpdateNot(UpdateNot object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Parallel</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1434,17 +1140,65 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Process Reference</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Predicate Process</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Process Reference</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Predicate Process</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseProcessReference(ProcessReference object)
+  public T casePredicateProcess(PredicateProcess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Action Process</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Action Process</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseActionProcess(ActionProcess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Referenced Process</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Referenced Process</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReferencedProcess(ReferencedProcess object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>TP Parallel</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>TP Parallel</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTPParallel(TPParallel object)
   {
     return null;
   }

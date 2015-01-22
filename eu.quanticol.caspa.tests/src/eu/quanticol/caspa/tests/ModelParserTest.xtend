@@ -18,16 +18,92 @@ public class ModelParserTest {
 	@Inject extension ValidationTestHelper
 	
 	@Test
-	def void testSimpleModel(){
+	def void testBikeSharingModel(){
 		'''
-		i = 10;
-		P = P;
-		(P,{i});
+		//our stations
+		(G|R,{zone = 1, bikes = 5, slots = 5});
+		(G|R,{zone = 2, bikes = 5, slots = 5});
+		(G|R,{zone = 3, bikes = 5, slots = 5});
+		(G|R,{zone = 4, bikes = 5, slots = 5});
+
+		//our people
+		(Q, {zone = 1});
+		(Q, {zone = 2});
+		(Q, {zone = 3});
+		(Q, {zone = 4});
+
+		//shed actions
+		G = [bikes > 0] 		get[zone == this.zone]{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+
+		//people actions
+		Q = B;
+		//Uniform distribution "U"
+		B = move*[False]{this.zone := U(1, 2, 3, 4)}.B + stop*[False].WS;
+		WS = ret[zone == this.zone].P;
+		P = go*[False].WB;
+		WB = get[zone == this.zone].B;
 		'''.parse.assertNoErrors
 	}
 	
+	@Test
+	def void testBikeSharingArgsModel(){
+		'''
+		//Now the pedestrians are interested in the total number of bikes and slots that they have seen
+
+		//our stations
+		(G|R,{zone = 1, bikes = 5, slots = 5});
+		(G|R,{zone = 2, bikes = 5, slots = 5});
+		(G|R,{zone = 3, bikes = 5, slots = 5});
+		(G|R,{zone = 4, bikes = 5, slots = 5});
+
+		//our people
+		(Q, {zone = 1, slots = 0, bikes = 0});
+		(Q, {zone = 2, slots = 0, bikes = 0});
+		(Q, {zone = 3, slots = 0, bikes = 0});
+		(Q, {zone = 4, slots = 0, bikes = 0});
+
+		//shed actions
+		G = [bikes > 0] 		get[zone == this.zone]<this.slots>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<this.bikes>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+
+		//people actions
+		Q = B;
+		B = move*[False]{this.zone := U(1, 2, 3, 4)}.B + stop*[False].WS;
+		WS = ret[zone == this.zone](bikes){this.bikes := this.bikes + bikes}.P;
+		P = go*[False].WB;
+		WB = get[zone == this.zone](slots){this.slots := this.slots + slots}.B;
+		'''.parse.assertNoErrors
+	}
 	
-	
+	@Test
+	def void testBikeSharingPrModel(){
+		'''
+		//our stations
+		(G|R,{zone = 1, bikes = 5, slots = 5});
+		(G|R,{zone = 2, bikes = 5, slots = 5});
+		(G|R,{zone = 3, bikes = 5, slots = 5});
+		(G|R,{zone = 4, bikes = 5, slots = 5});
+
+		//our people
+		(Q, {zone = 1});
+		(Q, {zone = 2});
+		(Q, {zone = 3});
+		(Q, {zone = 4});
+
+		//shed actions
+		G = [bikes > 0] 		get[zone == this.zone]{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+
+		//people actions
+		Q = B;
+		// notice the change to Pr here - probability:zone number
+		B = move*[False]{this.zone := Pr(0.25:1, 0.05:2, 0.40:3, 0.3:4)}.B + stop*[False].WS;
+		WS = ret[zone == this.zone].P;
+		P = go*[False].WB;
+		WB = get[zone == this.zone].B;
+		'''.parse.assertNoErrors
+	}
 	
 //	CharSequence output
 //	

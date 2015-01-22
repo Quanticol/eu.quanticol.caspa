@@ -20,7 +20,7 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface LocalSingleEventUpdate extends SingleEventUpdate
+public interface LocalSingleEventUpdate extends Updates
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' containment reference.
@@ -31,12 +31,12 @@ public interface LocalSingleEventUpdate extends SingleEventUpdate
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(SelfReferencedStore)
+   * @see #setName(StoreExpression)
    * @see eu.quanticol.cASPA.CASPAPackage#getLocalSingleEventUpdate_Name()
    * @model containment="true"
    * @generated
    */
-  SelfReferencedStore getName();
+  StoreExpression getName();
 
   /**
    * Sets the value of the '{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getName <em>Name</em>}' containment reference.
@@ -46,7 +46,7 @@ public interface LocalSingleEventUpdate extends SingleEventUpdate
    * @see #getName()
    * @generated
    */
-  void setName(SelfReferencedStore value);
+  void setName(StoreExpression value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

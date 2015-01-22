@@ -5,21 +5,20 @@ generate cASPA "http://www.quanticol.eu/CASPA"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Model hidden(ML_COMMENT,SL_COMMENT,WS):
-	stores+=Store+ 
-	processes+=Process+ 
 	terms+=Term+ 
+	processes+=Process+ 
 ;
 
 //STORE
-Store hidden(ML_COMMENT,SL_COMMENT,WS):
-	name=LOWER "=" value=Natural ";"
+Store returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Store} name=LOWER "=" value=Natural
 ;
 
-ReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
+ReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{ReferencedStore} name=[Store|LOWER]
 ;
 
-SelfReferencedStore hidden(ML_COMMENT,SL_COMMENT,WS):
+SelfReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{SelfReferencedStore}   "this."name=[Store|LOWER]
 ;
 
@@ -102,7 +101,7 @@ Predicate hidden(ML_COMMENT,SL_COMMENT,WS) :
 ;
 
 PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	PredicateOr ";"
+	PredicateOr
 ;
 	
 PredicateOr returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -156,98 +155,74 @@ PredicateDivision returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 PredicatePrimary returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	'(' PredicateExpression ')' | 
-	{Not} "!" expression=PredicatePrimary |
+	{PredicateNot} "!" expression=PredicatePrimary |
 	PredicateAtomic
 ;
 
 PredicateAtomic returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Constant} 	value=Natural |
-	{Bool} value=Bool |
+	{BooleanConstant} value=Bool |
 	ReferencedStore |
 	SelfReferencedStore
 ;
 
 //ARGUMENTS
-Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
-	 ("(" {In} expressions+=InArguments+ ")"| "<" {Out} expressions+=OutArguments+ ">")
+Arguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
+	 ("(" {In} expressions+=InArguments ( "," expressions+=InArguments+)* ")" | 
+	 "<" {Out} expressions+=OutArguments ( "," expressions+=OutArguments+)* ">")
 ;
 
-InArguments hidden(ML_COMMENT,SL_COMMENT,WS):
+InArguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	Variables
 ;
 
-OutArguments hidden(ML_COMMENT,SL_COMMENT,WS):
+OutArguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	Expressions
 ;
 
-Expressions hidden(ML_COMMENT,SL_COMMENT,WS):
+Expressions returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	SelfReferencedStore | 
 	ReferencedStore |
-	value=Natural
+	{Constant} 	value=Natural
 ;
 
-Variables hidden(ML_COMMENT,SL_COMMENT,WS):
+Variables returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	SelfReferencedStore | 
 	ReferencedStore
 ;
 
 //UPDATES
-Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Updates} "{" updates+=Update+ "}"
+Updates returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Updates} "{" updates+=Update ( ";" updates+=Update+)* "}"
 ;
 
 
-Update hidden(ML_COMMENT,SL_COMMENT,WS):
-	(SingleEventUpdate | DistributedEventUpdate) ";"
+Update returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	DistributedEventUpdate | 
+	SingleEventUpdate
 ;
 
-SingleEventUpdate hidden(ML_COMMENT,SL_COMMENT,WS):
-	{LocalSingleEventUpdate} name=SelfReferencedStore ":=" expression=UpdateExpression  // | 
-	//{GlobalSingleEventUpdate} name=[Store|LOWER] ":=" expression=ActionExpression
+SingleEventUpdate returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{LocalSingleEventUpdate} name=SelfReferencedStore ":=" expression=UpdateExpression
 ;
 
-DistributedEventUpdate hidden(ML_COMMENT,SL_COMMENT,WS):
-	{DistributedEventUpdateProbability} "Pr" "(" distribution+=Distribution+ ")" |
-	{DistributedEventUpdateUniform} "U" "(" distribution+=Uniform ")"
+DistributedEventUpdate returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DistributedEventUpdateProbability} name=SelfReferencedStore ":=" "Pr" "(" distribution+=Distribution ( "," distribution+=Distribution+)* ")" |
+	{DistributedEventUpdateUniform} name=SelfReferencedStore ":=" "U" "(" distribution+=Uniform ( "," distribution+=Uniform+)* ")"
 ;
 
-Distribution hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Distribution} prob=Double ":" expression=UpdateExpression ";"
+Distribution returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Distribution} prob=Double ":" expression=Natural
 ;
 
-Uniform hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Uniform} expression=UpdateExpression ";"
+Uniform returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Uniform} expression=Natural
 ;
 
 UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	UpdateOr
-;
-	
-UpdateOr returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	UpdateAnd ({UpdateOr.left=current} "||" 
-		right=UpdateAnd
-	)*
-;
+	UpdateSubtraction
+;	
 
-UpdateAnd returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	UpdateEquality ({UpdateAnd.left=current} "&&" 
-		right=UpdateEquality
-	)*
-;
-
-UpdateEquality returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	UpdateComparison (
-		{UpdateEquality.left=current} op=("=="|"!=")
-		right=UpdateComparison
-	)*
-;
-
-UpdateComparison returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	UpdateSubtraction ({UpdateComparison.left=current} op=(">="|"<="|">"|"<") 
-		right=UpdateSubtraction
-	)*
-;
-	
 UpdateSubtraction returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	UpdateAddition ({UpdateSub.left=current} '-' 
 		right=UpdateAddition
@@ -274,13 +249,11 @@ UpdateDivision returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 UpdatePrimary returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	'(' UpdateExpression ')' | 
-	{UpdateNot} "!" expression=UpdatePrimary |
 	UpdateAtomic
 ;
 
 UpdateAtomic returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Constant} 	value=Natural |
-	{Bool} value=Bool |
 	ReferencedStore |
 	SelfReferencedStore
 ;
@@ -304,39 +277,57 @@ Choice returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 PrimaryProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	"(" ProcessExpression ")" |
+	AtomicProcess
+;
+
+
+AtomicProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Leaf} value="nil" |
 	{Leaf} value="kill"|
 	PredicateProcess |
 	ActionProcess |
-	{ProcessReference} value=[Process|UPPER]
+	ReferencedProcess 
 ;
 
-PredicateProcess hidden(ML_COMMENT,SL_COMMENT,WS):
-	{PredicateProcess} predicate=Predicate value=[Process|UPPER]
+PredicateProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{PredicateProcess} predicate=Predicate ref=PrimaryProcess
 ;
 
-ActionProcess hidden(ML_COMMENT,SL_COMMENT,WS):
-	{ActionProcess} action=Action value=[Process|UPPER]
+ActionProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{ActionProcess} action=Action ref=PrimaryProcess
 ;
 
+ReferencedProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{ReferencedProcess} name=[Process|UPPER]
+;
 
 //TERMS
 Term hidden(ML_COMMENT,SL_COMMENT,WS):
-	"(" name=[Process|UPPER] ",""{" stores+=[Store|LOWER] "}" ")"";"
+	"(" processes+=TermProcessExpression+ ",""{" stores+=Store ("," stores+=Store+)* "}" ")"";"
 ;
+
+TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	TermProcessParallel
+;
+
+TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
+;
+
+//BASETYPES
 
 Double returns ecore::EDouble:
 	 INT ('.' INT ('e'|'E' '-'? INT)?)?
 ;
 
 Natural returns ecore::EInt:
-	NAT
+	INT
 ;
 
-Bool returns ecore::EBoolean:
-	('true'|'false')
+Bool returns BooleanConstant:
+	{BooleanConstant} ('True'|'False')
 ;
 
 terminal LOWER: ("a".."z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 terminal UPPER: ("A".."Z") ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
-terminal NAT: ('0'..'9')+;

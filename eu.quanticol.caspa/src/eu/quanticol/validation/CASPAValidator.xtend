@@ -3,7 +3,33 @@
  */
 package eu.quanticol.validation
 
+import com.google.inject.Inject
+import eu.quanticol.cASPA.CASPAPackage
+import eu.quanticol.cASPA.LocalSingleEventUpdate
+import eu.quanticol.cASPA.Model
+import eu.quanticol.cASPA.Predicate
+import eu.quanticol.cASPA.PredicateAnd
+import eu.quanticol.cASPA.PredicateComparison
+import eu.quanticol.cASPA.PredicateDiv
+import eu.quanticol.cASPA.PredicateEquality
+import eu.quanticol.cASPA.PredicateExpression
+import eu.quanticol.cASPA.PredicateMul
+import eu.quanticol.cASPA.PredicateNot
+import eu.quanticol.cASPA.PredicateOr
+import eu.quanticol.cASPA.PredicatePlu
+import eu.quanticol.cASPA.PredicateSub
+import eu.quanticol.cASPA.Process
+import eu.quanticol.cASPA.UpdateDiv
+import eu.quanticol.cASPA.UpdateExpression
+import eu.quanticol.cASPA.UpdateMul
+import eu.quanticol.cASPA.UpdatePlu
+import eu.quanticol.cASPA.UpdateSub
+import eu.quanticol.typing.BaseType
+import eu.quanticol.typing.TypeProvider
+import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.validation.Check
+
+import static org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * Custom validation rules. 
@@ -12,410 +38,171 @@ import org.eclipse.xtext.validation.Check
  */
 class CASPAValidator extends AbstractCASPAValidator  {
 	
+	@Inject extension TypeProvider
+	
+	public static val WRONG_TYPE = "eu.quanticol.WrongType";
+	public static val SELF_REFERENCING_STORE = 'eu.quanticol.selfReferencingStore'
+	public static val STORE_NAMES_UNIQUE = 'eu.quanticol.storeNamesUnique'
+	public static val PROCESS_NAMES_UNIQUE = 'eu.quanticol.processNamesUnique'
 	
 	@Check
-	def checkType(Store store){
-		var type = evalExpression?.typeForA
-		if(type == null)
-			error("bad assignment, check types and references", CASPAPackage$Literals::FREE_EVALUATION_EXPRESSION__EXPRESSION, WRONG_TYPE)
+	def checkensureProcessCycles(Process process){
+		
+		var processes = getContainerOfType(process, typeof(Model)).processes
+		
+		var count = 0
+		
+		for(proc : processes)
+			if(proc.name.equals(process.name))
+				count = count + 1
+				
+		if(count == 1)
+			return
+		else 
+			error("Must have unique process names. '" + process.name + "' is repeated",
+				CASPAPackage::eINSTANCE.process_Name,
+				PROCESS_NAMES_UNIQUE
+			)
+			
 	}
 	
-	//STORE
+	@Check
+	def checkType(Predicate predicate){
+		checkExpectedBoolean(predicate.predicate, CASPAPackage.Literals::PREDICATE__PREDICATE)
+	}
 	
-//	public static val SELF_REFERENCING_STORE = 'eu.quanticol.selfReferencingStore'
+	@Check
+	def checkType(PredicateOr p){
+		checkExpectedBoolean(p.left, CASPAPackage.Literals::PREDICATE_OR__LEFT)
+		checkExpectedBoolean(p.right, CASPAPackage.Literals::PREDICATE_OR__RIGHT)
+	}
 	
-//	@Check
-//	def void checkForwardReference(VariableRef varRef) {
-//		val variable = varRef.getVariable()
-//		if (variable != null && !varRef.variablesDefinedBefore.contains(
-//				variable)) {
-//			error("variable forward reference not allowed: '"
-//					+ variable.name + "'",
-//					ExpressionsPackage::eINSTANCE.variableRef_Variable,
-//					FORWARD_REFERENCE, variable.name)
-//		}
-//	}
+	@Check
+	def checkType(PredicateAnd p){
+		checkExpectedBoolean(p.left, CASPAPackage.Literals::PREDICATE_AND__LEFT)
+		checkExpectedBoolean(p.right, CASPAPackage.Literals::PREDICATE_AND__RIGHT)
+	}
 	
-//	@Check
-//	def checkNotSelfReferencing(ReferencedStore refStore){
-//			
-//		val store = refStore.value
-//		if(store != null && refStore.selfReferencedStores == store)
-//			error("Cannot have self referencing stores. '" + refStore.value.name + "' is seen in the expression",
-//				CASPAPackage::eINSTANCE.referencedStore_Value,
-//				eu.quanticol.validation.CASPAValidator.SELF_REFERENCING_STORE
-//			)
-//		
-//	}
-//	
-//	def void findReferencedRates(Expression e, ArrayList<String> strings) {
-//		switch (e) {
-//			Or: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			And: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			Equality:   		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			Comparison: 		{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			Sub: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			Plu: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			Mul:				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			Div: 				{e.left.findReferencedRates(strings) e.right.findReferencedRates(strings)}
-//			Not: 				e.expression.findReferencedRates(strings)
-//			ReferencedStore: 	{strings.add(e.value.name)}
-//			FreeVariable:		{strings.add(e.value.substring(1))}
-//			}
-//	}
-//	
-//	public static val STORE_NAMES_UNIQUE = 'eu.quanticol.storeNamesUnique'
-//	
-//	@Check
-//	def checkStoresNamesUnique(Store store){
-//		
-//		var stores = getContainerOfType(store, typeof(Model)).stores
-//		
-//		var count = 0
-//		
-//		for(st : stores)
-//			if(st.name.contains(store.name))
-//				count = count + 1
-//				
-//		if(count == 1)
-//			return
-//		else 
-//			error("Must have unique store names. '" + store.name + "' is repeated",
-//				CASPAPackage::eINSTANCE.store_Name,
-//				STORE_NAMES_UNIQUE
-//			)
-//			
-//	}
-//	
-//	//PROCESS
-//	
-//	public static val PROCESS_NAMES_UNIQUE = 'eu.quanticol.processNamesUnique'
-//	
-//	@Check
-//	def checkensureProcessCycles(Process process){
-//		
-//		var processes = getContainerOfType(process, typeof(Model)).processes
-//		
-//		var count = 0
-//		
-//		for(proc : processes)
-//			if(proc.name.contains(process.name))
-//				count = count + 1
-//				
-//		if(count == 1)
-//			return
-//		else 
-//			error("Must have unique process names. '" + process.name + "' is repeated",
-//				CASPAPackage::eINSTANCE.process_Name,
-//				PROCESS_NAMES_UNIQUE
-//			)
-//			
-//	}
-//	
-//	@Inject extension ETypeProvider
-//	
-//	public static val WRONG_TYPE = "eu.quanticol.WrongType";
-//	
-//	@Check
-//	def checkType(Not not) {
-//		checkExpectedBoolean(not.expression,
-//				CASPAPackage$Literals::NOT__EXPRESSION)
-//	}
-//	
-//	@Check
-//	def checkType(ActionNot not) {
-//		checkExpectedBoolean(not.expression,
-//				CASPAPackage$Literals::ACTION_NOT__EXPRESSION)
-//	}
-//	
-//	@Check
-//	def checkType(Or or){
-//		checkExpectedBoolean(or.left,
-//			CASPAPackage$Literals::OR__LEFT
-//		)
-//		checkExpectedBoolean(or.right,
-//			CASPAPackage$Literals::OR__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionOr or){
-//		checkExpectedBoolean(or.left,
-//			CASPAPackage$Literals::ACTION_OR__LEFT
-//		)
-//		checkExpectedBoolean(or.right,
-//			CASPAPackage$Literals::ACTION_OR__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(And and){
-//		checkExpectedBoolean(and.left,
-//			CASPAPackage$Literals::AND__LEFT
-//		)
-//		checkExpectedBoolean(and.right,
-//			CASPAPackage$Literals::AND__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionAnd and){
-//		checkExpectedBoolean(and.left,
-//			CASPAPackage$Literals::ACTION_AND__LEFT
-//		)
-//		checkExpectedBoolean(and.right,
-//			CASPAPackage$Literals::ACTION_AND__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(Equality eq){
-//		checkExpectedBoolean(eq.left,
-//			CASPAPackage$Literals::EQUALITY__LEFT
-//		)
-//		checkExpectedBoolean(eq.right,
-//			CASPAPackage$Literals::EQUALITY__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionEquality eq){
-//		checkExpectedBoolean(eq.left,
-//			CASPAPackage$Literals::ACTION_EQUALITY__LEFT
-//		)
-//		checkExpectedBoolean(eq.right,
-//			CASPAPackage$Literals::ACTION_EQUALITY__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(Comparison com){
-//		checkExpectedDouble(com.left,
-//			CASPAPackage$Literals::COMPARISON__LEFT
-//		)
-//		checkExpectedDouble(com.right,
-//			CASPAPackage$Literals::COMPARISON__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionComparison com){
-//		checkExpectedDouble(com.left,
-//			CASPAPackage$Literals::ACTION_COMPARISON__LEFT
-//		)
-//		checkExpectedDouble(com.right,
-//			CASPAPackage$Literals::ACTION_COMPARISON__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(Sub sub){
-//		checkExpectedDouble(sub.left,
-//			CASPAPackage$Literals::SUB__LEFT
-//		)
-//		checkExpectedDouble(sub.right,
-//			CASPAPackage$Literals::SUB__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionSub sub){
-//		checkExpectedDouble(sub.left,
-//			CASPAPackage$Literals::ACTION_SUB__LEFT
-//		)
-//		checkExpectedDouble(sub.right,
-//			CASPAPackage$Literals::ACTION_SUB__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(Plu plu){
-//		checkExpectedDouble(plu.left,
-//			CASPAPackage$Literals::PLU__LEFT
-//		)
-//		checkExpectedDouble(plu.right,
-//			CASPAPackage$Literals::PLU__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionPlu plu){
-//		checkExpectedDouble(plu.left,
-//			CASPAPackage$Literals::ACTION_PLU__LEFT
-//		)
-//		checkExpectedDouble(plu.right,
-//			CASPAPackage$Literals::ACTION_PLU__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(Mul mul){
-//		checkExpectedDouble(mul.left,
-//			CASPAPackage$Literals::MUL__LEFT
-//		)
-//		checkExpectedDouble(mul.right,
-//			CASPAPackage$Literals::MUL__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionMul mul){
-//		checkExpectedDouble(mul.left,
-//			CASPAPackage$Literals::ACTION_MUL__LEFT
-//		)
-//		checkExpectedDouble(mul.right,
-//			CASPAPackage$Literals::ACTION_MUL__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(Div div){
-//		checkExpectedDouble(div.left,
-//			CASPAPackage$Literals::DIV__LEFT
-//		)
-//		checkExpectedDouble(div.right,
-//			CASPAPackage$Literals::DIV__RIGHT
-//		)
-//	}
-//	
-//	@Check
-//	def checkType(ActionDiv div){
-//		checkExpectedDouble(div.left,
-//			CASPAPackage$Literals::ACTION_DIV__LEFT
-//		)
-//		checkExpectedDouble(div.right,
-//			CASPAPackage$Literals::ACTION_DIV__RIGHT
-//		)
-//	}
-//	
-//	
-//	@Inject extension ATypeProvider
-//
-//	@Check
-//	def checkType(LocalUpdateExpression updateExpression){
-//		
-//		var type = updateExpression?.typeForA
-//		if(type == null)
-//			error("assignment has non matching type to reference", CASPAPackage$Literals::LOCAL_UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
-//		
-//	}
-//	
-//	@Check
-//	def checkType(GlobalUpdateExpression updateExpression){
-//		
-//		var type = updateExpression?.typeForA
-//		if(type == null)
-//			error("assignment has non matching type to reference", CASPAPackage$Literals::GLOBAL_UPDATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
-//		
-//	}
-//	
-//	@Check
-//	def checkType(PredicateExpression predicateExpression){
-//		
-//		var type = predicateExpression?.typeForA
-//		if(type == null)
-//			error("Predicates must be boolean", CASPAPackage$Literals::PREDICATE_EXPRESSION__EXPRESSION, WRONG_TYPE)
-//		
-//	}
-//	
-//	@Check
-//	def checkType(LocalEvaluationExpression evalExpression){
-//		var type = evalExpression?.typeForA
-//		if(type == null)
-//			error("bad assignment, check types and references", 
-//				CASPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, 
-//				WRONG_TYPE
-//			)
-//	}
-//	
-//	@Check
-//	def checkType(GlobalEvaluationExpression evalExpression){
-//		var type = evalExpression?.typeForA
-//		if(type == null)
-//			error("bad assignment, check types and references", CASPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
-//	}
-//	
-//	@Check
-//	def checkType(LocalUpdateExpressionFunction evalExpression){
-//		var type = evalExpression?.typeForA
-//		if(type == null)
-//			error("bad assignment, check types and references", 
-//				CASPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, 
-//				WRONG_TYPE
-//			)
-//	}
-//	
-//	@Check
-//	def checkType(GlobalUpdateExpressionFunction evalExpression){
-//		var type = evalExpression?.typeForA
-//		if(type == null)
-//			error("bad assignment, check types and references", CASPAPackage$Literals::EVALUATION_EXPRESSION_IN__EXPRESSION, WRONG_TYPE)
-//	}
-//	
-//	@Check
-//	def checkType(FreeEvaluationExpression evalExpression){
-//		var type = evalExpression?.typeForA
-//		if(type == null)
-//			error("bad assignment, check types and references", CASPAPackage$Literals::FREE_EVALUATION_EXPRESSION__EXPRESSION, WRONG_TYPE)
-//	}
-//	
-//	
-//	def private checkExpectedBoolean(Expression exp, EReference reference) {
-//		checkExpectedType(exp, ETypeProvider::boolConstantType, reference)
-//	}
-//	
-//	def private checkExpectedBoolean(ActionExpression exp, EReference reference) {
-//		checkExpectedType(exp, ETypeProvider::boolConstantType, reference)
-//	}
-//	
-//	def private checkExpectedDouble(Expression exp, EReference reference) {
-//		checkExpectedType(exp, ETypeProvider::doubleConstantType, reference)
-//	}
-//	
-//	def private checkExpectedDouble(ActionExpression exp, EReference reference) {
-//		checkExpectedType(exp, ETypeProvider::doubleConstantType, reference)
-//	}
-//	
-//	def private checkExpectedType(ActionExpression exp,
-//			ExpressionsType expectedType, EReference reference) {
-//		val actualType = getTypeAndCheckNotNull(exp, reference)
-//		if (!(actualType == expectedType || actualType == ETypeProvider::freeVariableType))
-//			error("Expected " + expectedType + " type, but was " + actualType,
-//					reference, WRONG_TYPE)
-//	}
-//	
-//	def private checkExpectedType(Expression exp,
-//			ExpressionsType expectedType, EReference reference) {
-//		val actualType = getTypeAndCheckNotNull(exp, reference)
-//		if (actualType != expectedType)
-//			error("Expected " + expectedType + " type, but was " + actualType,
-//					reference, WRONG_TYPE)
-//	}
-//	
-//	def private ExpressionsType getTypeAndCheckNotNull(ActionExpression exp,
-//			EReference reference) {
-//		var type = exp?.typeFor
-//		if (type == null)
-//			error("null type", reference, WRONG_TYPE)
-//		return type;
-//	}
-//	
-//	def private ExpressionsType getTypeAndCheckNotNull(Expression exp,
-//			EReference reference) {
-//		var type = exp?.typeFor
-//		if (type == null)
-//			error("null type", reference, WRONG_TYPE)
-//		return type;
-//	}
+	@Check
+	def checkType(PredicateEquality p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::PREDICATE_EQUALITY__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::PREDICATE_EQUALITY__RIGHT)
+	}
 	
-//  public static val INVALID_NAME = 'invalidName'
-//
-//	@Check
-//	def checkGreetingStartsWithCapital(Greeting greeting) {
-//		if (!Character.isUpperCase(greeting.name.charAt(0))) {
-//			warning('Name should start with a capital', 
-//					MyDslPackage.Literals.GREETING__NAME,
-//					INVALID_NAME)
-//		}
-//	}
+	@Check
+	def checkType(PredicateComparison p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::PREDICATE_COMPARISON__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::PREDICATE_COMPARISON__RIGHT)
+	}
+	
+	@Check
+	def checkType(PredicateSub p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::PREDICATE_SUB__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::PREDICATE_SUB__RIGHT)
+	}
+	
+	
+	@Check
+	def checkType(PredicatePlu p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::PREDICATE_PLU__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::PREDICATE_PLU__RIGHT)
+	}
+	
+	
+	@Check
+	def checkType(PredicateMul p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::PREDICATE_MUL__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::PREDICATE_MUL__RIGHT)
+	}	
+	
+	@Check
+	def checkType(PredicateDiv p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::PREDICATE_DIV__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::PREDICATE_DIV__RIGHT)
+	}	
+	
+	@Check
+	def checkType(PredicateNot p){
+		checkExpectedBoolean(p.expression, CASPAPackage.Literals::PREDICATE_NOT__EXPRESSION)
+	}	
+	
+	
+	def private checkExpectedBoolean(PredicateExpression exp, EReference reference) {
+		checkExpectedType(exp, TypeProvider::boolConstantType, reference)
+	}
+
+	def private checkExpectedInt(PredicateExpression exp, EReference reference) {
+		checkExpectedType(exp, TypeProvider::constantType, reference)
+	}
+
+	def private checkExpectedType(PredicateExpression exp,
+			BaseType expectedType, EReference reference) {
+				
+		val actualType = getTypeAndCheckNotNull(exp, reference)
+		if (actualType != expectedType)
+			error("expected " + expectedType + " type, but was " + actualType,
+					reference, WRONG_TYPE)
+	}
+	
+	def private BaseType getTypeAndCheckNotNull(PredicateExpression exp,
+			EReference reference) {
+		var type = exp?.typeFor
+		if (type == null)
+			error("null type", reference, WRONG_TYPE)
+		return type;
+	}
+	
+	@Check
+	def checkType(LocalSingleEventUpdate update){
+		checkExpectedInt(update.expression, CASPAPackage.Literals::LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION)
+	}
+	
+
+	@Check
+	def checkType(UpdateSub p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::UPDATE_SUB__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::UPDATE_SUB__RIGHT)
+	}
+	
+	
+	@Check
+	def checkType(UpdatePlu p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::UPDATE_PLU__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::UPDATE_PLU__RIGHT)
+	}
+	
+	
+	@Check
+	def checkType(UpdateMul p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::UPDATE_MUL__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::UPDATE_MUL__RIGHT)
+	}	
+	
+	@Check
+	def checkType(UpdateDiv p){
+		checkExpectedInt(p.left, CASPAPackage.Literals::UPDATE_DIV__LEFT)
+		checkExpectedInt(p.right, CASPAPackage.Literals::UPDATE_DIV__RIGHT)
+	}		
+
+	def private checkExpectedInt(UpdateExpression exp, EReference reference) {
+		checkExpectedType(exp, TypeProvider::constantType, reference)
+	}
+
+	def private checkExpectedType(UpdateExpression exp,
+			BaseType expectedType, EReference reference) {
+				
+		val actualType = getTypeAndCheckNotNull(exp, reference)
+		if (actualType != expectedType)
+			error("expected " + expectedType + " type, but was " + actualType,
+					reference, WRONG_TYPE)
+	}
+	
+	def private BaseType getTypeAndCheckNotNull(UpdateExpression exp,
+			EReference reference) {
+		var type = exp?.typeFor
+		if (type == null)
+			error("null type", reference, WRONG_TYPE)
+		return type;
+	}
+
 }

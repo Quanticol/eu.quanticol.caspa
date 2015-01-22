@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.Term#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.Term#getProcesses <em>Processes</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.Term#getStores <em>Stores</em>}</li>
  * </ul>
  * </p>
@@ -26,45 +26,35 @@ import org.eclipse.emf.ecore.EObject;
 public interface Term extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' reference.
+   * Returns the value of the '<em><b>Processes</b></em>' containment reference list.
+   * The list contents are of type {@link eu.quanticol.cASPA.ProcessExpression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' reference isn't clear,
+   * If the meaning of the '<em>Processes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' reference.
-   * @see #setName(eu.quanticol.cASPA.Process)
-   * @see eu.quanticol.cASPA.CASPAPackage#getTerm_Name()
-   * @model
+   * @return the value of the '<em>Processes</em>' containment reference list.
+   * @see eu.quanticol.cASPA.CASPAPackage#getTerm_Processes()
+   * @model containment="true"
    * @generated
    */
-  eu.quanticol.cASPA.Process getName();
+  EList<ProcessExpression> getProcesses();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.Term#getName <em>Name</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' reference.
-   * @see #getName()
-   * @generated
-   */
-  void setName(eu.quanticol.cASPA.Process value);
-
-  /**
-   * Returns the value of the '<em><b>Stores</b></em>' reference list.
-   * The list contents are of type {@link eu.quanticol.cASPA.Store}.
+   * Returns the value of the '<em><b>Stores</b></em>' containment reference list.
+   * The list contents are of type {@link eu.quanticol.cASPA.StoreExpression}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Stores</em>' reference list isn't clear,
+   * If the meaning of the '<em>Stores</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stores</em>' reference list.
+   * @return the value of the '<em>Stores</em>' containment reference list.
    * @see eu.quanticol.cASPA.CASPAPackage#getTerm_Stores()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  EList<Store> getStores();
+  EList<StoreExpression> getStores();
 
 } // Term

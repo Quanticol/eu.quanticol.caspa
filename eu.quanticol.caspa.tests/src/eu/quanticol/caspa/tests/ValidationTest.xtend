@@ -1,23 +1,35 @@
-package eu.quanticol.caspa.tests
-
-import com.google.inject.Inject
-import eu.quanticol.CASPAInjectorProvider
-import eu.quanticol.cASPA.CASPAPackage
-import eu.quanticol.cASPA.Model
-import eu.quanticol.validation.CASPAValidator
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.eclipse.xtext.junit4.validation.ValidationTestHelper
-import org.junit.Test
-import org.junit.runner.RunWith
-
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(CASPAInjectorProvider))
-class ValidationTest {
-	
+//package eu.quanticol.caspa.tests
+//
+//import com.google.inject.Inject
+//import eu.quanticol.CASPAInjectorProvider
+//import eu.quanticol.cASPA.CASPAPackage
+//import eu.quanticol.cASPA.Model
+//import eu.quanticol.validation.CASPAValidator
+//import org.eclipse.xtext.junit4.InjectWith
+//import org.eclipse.xtext.junit4.XtextRunner
+//import org.eclipse.xtext.junit4.util.ParseHelper
+//import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+//import org.junit.Test
+//import org.junit.runner.RunWith
+//
+//@RunWith(typeof(XtextRunner))
+//@InjectWith(typeof(CASPAInjectorProvider))
+//class ValidationTest {
+//	
 //	@Inject extension ParseHelper<Model>
 //	@Inject extension ValidationTestHelper
+//	
+//	@Test
+//	def void testStoreIsConstant(){
+//		'''
+//		i = 05;
+//		P = [True;]P;
+//		(P,{i});
+//		'''.parse.assertError(CASPAPackage::eINSTANCE.predicateExpression,
+//			CASPAValidator::WRONG_TYPE,
+//			"Must be boolean")
+//	}
+//	
 //	
 //	@Test
 //	def void testCheckNotSelfReferencing(){
@@ -396,6 +408,6 @@ class ValidationTest {
 //			"bad assignment, check types and references"
 //		)
 //	}
-	
-	
-}
+//	
+//	
+//}

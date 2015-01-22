@@ -3,22 +3,23 @@
 package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
-import eu.quanticol.cASPA.Store;
+import eu.quanticol.cASPA.ProcessExpression;
+import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Term;
 
 import java.util.Collection;
 
-import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -27,7 +28,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.impl.TermImpl#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.TermImpl#getProcesses <em>Processes</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.impl.TermImpl#getStores <em>Stores</em>}</li>
  * </ul>
  * </p>
@@ -37,24 +38,24 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 public class TermImpl extends MinimalEObjectImpl.Container implements Term
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
+   * The cached value of the '{@link #getProcesses() <em>Processes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getProcesses()
    * @generated
    * @ordered
    */
-  protected eu.quanticol.cASPA.Process name;
+  protected EList<ProcessExpression> processes;
 
   /**
-   * The cached value of the '{@link #getStores() <em>Stores</em>}' reference list.
+   * The cached value of the '{@link #getStores() <em>Stores</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStores()
    * @generated
    * @ordered
    */
-  protected EList<Store> stores;
+  protected EList<StoreExpression> stores;
 
   /**
    * <!-- begin-user-doc -->
@@ -82,19 +83,13 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
    * <!-- end-user-doc -->
    * @generated
    */
-  public eu.quanticol.cASPA.Process getName()
+  public EList<ProcessExpression> getProcesses()
   {
-    if (name != null && name.eIsProxy())
+    if (processes == null)
     {
-      InternalEObject oldName = (InternalEObject)name;
-      name = (eu.quanticol.cASPA.Process)eResolveProxy(oldName);
-      if (name != oldName)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.TERM__NAME, oldName, name));
-      }
+      processes = new EObjectContainmentEList<ProcessExpression>(ProcessExpression.class, this, CASPAPackage.TERM__PROCESSES);
     }
-    return name;
+    return processes;
   }
 
   /**
@@ -102,36 +97,31 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
    * <!-- end-user-doc -->
    * @generated
    */
-  public eu.quanticol.cASPA.Process basicGetName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(eu.quanticol.cASPA.Process newName)
-  {
-    eu.quanticol.cASPA.Process oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.TERM__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Store> getStores()
+  public EList<StoreExpression> getStores()
   {
     if (stores == null)
     {
-      stores = new EObjectResolvingEList<Store>(Store.class, this, CASPAPackage.TERM__STORES);
+      stores = new EObjectContainmentEList<StoreExpression>(StoreExpression.class, this, CASPAPackage.TERM__STORES);
     }
     return stores;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case CASPAPackage.TERM__PROCESSES:
+        return ((InternalEList<?>)getProcesses()).basicRemove(otherEnd, msgs);
+      case CASPAPackage.TERM__STORES:
+        return ((InternalEList<?>)getStores()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -144,9 +134,8 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
   {
     switch (featureID)
     {
-      case CASPAPackage.TERM__NAME:
-        if (resolve) return getName();
-        return basicGetName();
+      case CASPAPackage.TERM__PROCESSES:
+        return getProcesses();
       case CASPAPackage.TERM__STORES:
         return getStores();
     }
@@ -164,12 +153,13 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
   {
     switch (featureID)
     {
-      case CASPAPackage.TERM__NAME:
-        setName((eu.quanticol.cASPA.Process)newValue);
+      case CASPAPackage.TERM__PROCESSES:
+        getProcesses().clear();
+        getProcesses().addAll((Collection<? extends ProcessExpression>)newValue);
         return;
       case CASPAPackage.TERM__STORES:
         getStores().clear();
-        getStores().addAll((Collection<? extends Store>)newValue);
+        getStores().addAll((Collection<? extends StoreExpression>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -185,8 +175,8 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
   {
     switch (featureID)
     {
-      case CASPAPackage.TERM__NAME:
-        setName((eu.quanticol.cASPA.Process)null);
+      case CASPAPackage.TERM__PROCESSES:
+        getProcesses().clear();
         return;
       case CASPAPackage.TERM__STORES:
         getStores().clear();
@@ -205,8 +195,8 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
   {
     switch (featureID)
     {
-      case CASPAPackage.TERM__NAME:
-        return name != null;
+      case CASPAPackage.TERM__PROCESSES:
+        return processes != null && !processes.isEmpty();
       case CASPAPackage.TERM__STORES:
         return stores != null && !stores.isEmpty();
     }

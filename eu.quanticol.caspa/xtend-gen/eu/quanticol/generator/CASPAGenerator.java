@@ -3,9 +3,15 @@
  */
 package eu.quanticol.generator;
 
+import com.google.common.collect.Iterables;
+import eu.quanticol.cASPA.Model;
+import org.eclipse.emf.common.util.TreeIterator;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.IFileSystemAccess;
 import org.eclipse.xtext.generator.IGenerator;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -14,7 +20,26 @@ import org.eclipse.xtext.generator.IGenerator;
  */
 @SuppressWarnings("all")
 public class CASPAGenerator implements IGenerator {
-  public void doGenerate(final Resource input, final IFileSystemAccess fsa) {
-    throw new UnsupportedOperationException("TODO: auto-generated method stub");
+  public void doGenerate(final Resource resource, final IFileSystemAccess fsa) {
+    TreeIterator<EObject> _allContents = resource.getAllContents();
+    Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
+    Iterable<Model> _filter = Iterables.<Model>filter(_iterable, Model.class);
+    for (final Model e : _filter) {
+      CharSequence _compile = this.compile(e);
+      fsa.generateFile("simulators/simulator.java", _compile);
+    }
+  }
+  
+  public CharSequence compile(final Model model) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("package simulators;");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("public class simulator{");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    _builder.newLine();
+    return _builder;
   }
 }

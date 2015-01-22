@@ -5,25 +5,20 @@ package eu.quanticol.cASPA.impl;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
-import eu.quanticol.cASPA.BoolConstant;
+import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAFactory;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
-import eu.quanticol.cASPA.DistributedEventUpdate;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.Distribution;
-import eu.quanticol.cASPA.Expressions;
 import eu.quanticol.cASPA.In;
-import eu.quanticol.cASPA.InArguments;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
-import eu.quanticol.cASPA.Not;
 import eu.quanticol.cASPA.Out;
-import eu.quanticol.cASPA.OutArguments;
 import eu.quanticol.cASPA.Parallel;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -32,32 +27,27 @@ import eu.quanticol.cASPA.PredicateDiv;
 import eu.quanticol.cASPA.PredicateEquality;
 import eu.quanticol.cASPA.PredicateExpression;
 import eu.quanticol.cASPA.PredicateMul;
+import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
-import eu.quanticol.cASPA.ProcessReference;
+import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
-import eu.quanticol.cASPA.SingleEventUpdate;
 import eu.quanticol.cASPA.Store;
+import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.Uniform;
-import eu.quanticol.cASPA.Update;
-import eu.quanticol.cASPA.UpdateAnd;
-import eu.quanticol.cASPA.UpdateComparison;
 import eu.quanticol.cASPA.UpdateDiv;
-import eu.quanticol.cASPA.UpdateEquality;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.UpdateMul;
-import eu.quanticol.cASPA.UpdateNot;
-import eu.quanticol.cASPA.UpdateOr;
 import eu.quanticol.cASPA.UpdatePlu;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
-import eu.quanticol.cASPA.Variables;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -86,21 +76,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass storeEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass referencedStoreEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass selfReferencedStoreEClass = null;
+  private EClass storeExpressionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -135,70 +111,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass inArgumentsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass outArgumentsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass expressionsEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass variablesEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass updatesEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass updateEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass singleEventUpdateEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass distributedEventUpdateEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass distributionEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass uniformEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -226,21 +139,35 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass predicateProcessEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass actionProcessEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass termEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass booleanConstantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referencedStoreEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass selfReferencedStoreEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -317,7 +244,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass notEClass = null;
+  private EClass predicateNotEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -325,13 +252,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * @generated
    */
   private EClass constantEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass boolConstantEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -373,28 +293,14 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass updateOrEClass = null;
+  private EClass distributionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass updateAndEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass updateEqualityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass updateComparisonEClass = null;
+  private EClass uniformEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -429,13 +335,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass updateNotEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass parallelEClass = null;
 
   /**
@@ -457,7 +356,28 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass processReferenceEClass = null;
+  private EClass predicateProcessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass actionProcessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass referencedProcessEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass tpParallelEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -537,7 +457,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Stores()
+  public EReference getModel_Terms()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
   }
@@ -557,79 +477,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getModel_Terms()
+  public EClass getStoreExpression()
   {
-    return (EReference)modelEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getStore()
-  {
-    return storeEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStore_Name()
-  {
-    return (EAttribute)storeEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getStore_Value()
-  {
-    return (EAttribute)storeEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getReferencedStore()
-  {
-    return referencedStoreEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getReferencedStore_Name()
-  {
-    return (EReference)referencedStoreEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSelfReferencedStore()
-  {
-    return selfReferencedStoreEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getSelfReferencedStore_Name()
-  {
-    return (EReference)selfReferencedStoreEClass.getEStructuralFeatures().get(0);
+    return storeExpressionEClass;
   }
 
   /**
@@ -727,56 +577,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getInArguments()
-  {
-    return inArgumentsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getOutArguments()
-  {
-    return outArgumentsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getExpressions()
-  {
-    return expressionsEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getExpressions_Value()
-  {
-    return (EAttribute)expressionsEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getVariables()
-  {
-    return variablesEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getUpdates()
   {
     return updatesEClass;
@@ -790,86 +590,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EReference getUpdates_Updates()
   {
     return (EReference)updatesEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUpdate()
-  {
-    return updateEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getSingleEventUpdate()
-  {
-    return singleEventUpdateEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDistributedEventUpdate()
-  {
-    return distributedEventUpdateEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getDistribution()
-  {
-    return distributionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getDistribution_Prob()
-  {
-    return (EAttribute)distributionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getDistribution_Expression()
-  {
-    return (EReference)distributionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUniform()
-  {
-    return uniformEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUniform_Expression()
-  {
-    return (EReference)uniformEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -927,66 +647,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getPredicateProcess()
-  {
-    return predicateProcessEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPredicateProcess_Predicate()
-  {
-    return (EReference)predicateProcessEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getPredicateProcess_Value()
-  {
-    return (EReference)predicateProcessEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getActionProcess()
-  {
-    return actionProcessEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getActionProcess_Action()
-  {
-    return (EReference)actionProcessEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getActionProcess_Value()
-  {
-    return (EReference)actionProcessEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getTerm()
   {
     return termEClass;
@@ -997,7 +657,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTerm_Name()
+  public EReference getTerm_Processes()
   {
     return (EReference)termEClass.getEStructuralFeatures().get(0);
   }
@@ -1010,6 +670,96 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EReference getTerm_Stores()
   {
     return (EReference)termEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBooleanConstant()
+  {
+    return booleanConstantEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBooleanConstant_Value()
+  {
+    return (EReference)booleanConstantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStore()
+  {
+    return storeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStore_Name()
+  {
+    return (EAttribute)storeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getStore_Value()
+  {
+    return (EAttribute)storeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReferencedStore()
+  {
+    return referencedStoreEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReferencedStore_Name()
+  {
+    return (EReference)referencedStoreEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSelfReferencedStore()
+  {
+    return selfReferencedStoreEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getSelfReferencedStore_Name()
+  {
+    return (EReference)selfReferencedStoreEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1297,9 +1047,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getNot()
+  public EClass getPredicateNot()
   {
-    return notEClass;
+    return predicateNotEClass;
   }
 
   /**
@@ -1307,9 +1057,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getNot_Expression()
+  public EReference getPredicateNot_Expression()
   {
-    return (EReference)notEClass.getEStructuralFeatures().get(0);
+    return (EReference)predicateNotEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1330,26 +1080,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EAttribute getConstant_Value()
   {
     return (EAttribute)constantEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getBoolConstant()
-  {
-    return boolConstantEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getBoolConstant_Value()
-  {
-    return (EAttribute)boolConstantEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1437,9 +1167,19 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDistributedEventUpdateProbability_Distribution()
+  public EReference getDistributedEventUpdateProbability_Name()
   {
     return (EReference)distributedEventUpdateProbabilityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getDistributedEventUpdateProbability_Distribution()
+  {
+    return (EReference)distributedEventUpdateProbabilityEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1457,7 +1197,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getDistributedEventUpdateUniform_Distribution()
+  public EReference getDistributedEventUpdateUniform_Name()
   {
     return (EReference)distributedEventUpdateUniformEClass.getEStructuralFeatures().get(0);
   }
@@ -1467,9 +1207,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUpdateOr()
+  public EReference getDistributedEventUpdateUniform_Distribution()
   {
-    return updateOrEClass;
+    return (EReference)distributedEventUpdateUniformEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1477,9 +1217,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUpdateOr_Left()
+  public EClass getDistribution()
   {
-    return (EReference)updateOrEClass.getEStructuralFeatures().get(0);
+    return distributionEClass;
   }
 
   /**
@@ -1487,9 +1227,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUpdateOr_Right()
+  public EAttribute getDistribution_Prob()
   {
-    return (EReference)updateOrEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)distributionEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1497,9 +1237,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUpdateAnd()
+  public EAttribute getDistribution_Expression()
   {
-    return updateAndEClass;
+    return (EAttribute)distributionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1507,9 +1247,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUpdateAnd_Left()
+  public EClass getUniform()
   {
-    return (EReference)updateAndEClass.getEStructuralFeatures().get(0);
+    return uniformEClass;
   }
 
   /**
@@ -1517,89 +1257,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getUpdateAnd_Right()
+  public EAttribute getUniform_Expression()
   {
-    return (EReference)updateAndEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUpdateEquality()
-  {
-    return updateEqualityEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdateEquality_Left()
-  {
-    return (EReference)updateEqualityEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getUpdateEquality_Op()
-  {
-    return (EAttribute)updateEqualityEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdateEquality_Right()
-  {
-    return (EReference)updateEqualityEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getUpdateComparison()
-  {
-    return updateComparisonEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdateComparison_Left()
-  {
-    return (EReference)updateComparisonEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getUpdateComparison_Op()
-  {
-    return (EAttribute)updateComparisonEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdateComparison_Right()
-  {
-    return (EReference)updateComparisonEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)uniformEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1727,26 +1387,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getUpdateNot()
-  {
-    return updateNotEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getUpdateNot_Expression()
-  {
-    return (EReference)updateNotEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getParallel()
   {
     return parallelEClass;
@@ -1827,9 +1467,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getProcessReference()
+  public EClass getPredicateProcess()
   {
-    return processReferenceEClass;
+    return predicateProcessEClass;
   }
 
   /**
@@ -1837,9 +1477,99 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getProcessReference_Value()
+  public EReference getPredicateProcess_Predicate()
   {
-    return (EReference)processReferenceEClass.getEStructuralFeatures().get(0);
+    return (EReference)predicateProcessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getPredicateProcess_Ref()
+  {
+    return (EReference)predicateProcessEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getActionProcess()
+  {
+    return actionProcessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionProcess_Action()
+  {
+    return (EReference)actionProcessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getActionProcess_Ref()
+  {
+    return (EReference)actionProcessEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getReferencedProcess()
+  {
+    return referencedProcessEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReferencedProcess_Name()
+  {
+    return (EReference)referencedProcessEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getTPParallel()
+  {
+    return tpParallelEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTPParallel_Left()
+  {
+    return (EReference)tpParallelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getTPParallel_Right()
+  {
+    return (EReference)tpParallelEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1873,19 +1603,10 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     // Create classes and their features
     modelEClass = createEClass(MODEL);
-    createEReference(modelEClass, MODEL__STORES);
-    createEReference(modelEClass, MODEL__PROCESSES);
     createEReference(modelEClass, MODEL__TERMS);
+    createEReference(modelEClass, MODEL__PROCESSES);
 
-    storeEClass = createEClass(STORE);
-    createEAttribute(storeEClass, STORE__NAME);
-    createEAttribute(storeEClass, STORE__VALUE);
-
-    referencedStoreEClass = createEClass(REFERENCED_STORE);
-    createEReference(referencedStoreEClass, REFERENCED_STORE__NAME);
-
-    selfReferencedStoreEClass = createEClass(SELF_REFERENCED_STORE);
-    createEReference(selfReferencedStoreEClass, SELF_REFERENCED_STORE__NAME);
+    storeExpressionEClass = createEClass(STORE_EXPRESSION);
 
     actionEClass = createEClass(ACTION);
     createEAttribute(actionEClass, ACTION__NAME);
@@ -1900,30 +1621,8 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     argumentsEClass = createEClass(ARGUMENTS);
 
-    inArgumentsEClass = createEClass(IN_ARGUMENTS);
-
-    outArgumentsEClass = createEClass(OUT_ARGUMENTS);
-
-    expressionsEClass = createEClass(EXPRESSIONS);
-    createEAttribute(expressionsEClass, EXPRESSIONS__VALUE);
-
-    variablesEClass = createEClass(VARIABLES);
-
     updatesEClass = createEClass(UPDATES);
     createEReference(updatesEClass, UPDATES__UPDATES);
-
-    updateEClass = createEClass(UPDATE);
-
-    singleEventUpdateEClass = createEClass(SINGLE_EVENT_UPDATE);
-
-    distributedEventUpdateEClass = createEClass(DISTRIBUTED_EVENT_UPDATE);
-
-    distributionEClass = createEClass(DISTRIBUTION);
-    createEAttribute(distributionEClass, DISTRIBUTION__PROB);
-    createEReference(distributionEClass, DISTRIBUTION__EXPRESSION);
-
-    uniformEClass = createEClass(UNIFORM);
-    createEReference(uniformEClass, UNIFORM__EXPRESSION);
 
     updateExpressionEClass = createEClass(UPDATE_EXPRESSION);
 
@@ -1933,17 +1632,22 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     processExpressionEClass = createEClass(PROCESS_EXPRESSION);
 
-    predicateProcessEClass = createEClass(PREDICATE_PROCESS);
-    createEReference(predicateProcessEClass, PREDICATE_PROCESS__PREDICATE);
-    createEReference(predicateProcessEClass, PREDICATE_PROCESS__VALUE);
-
-    actionProcessEClass = createEClass(ACTION_PROCESS);
-    createEReference(actionProcessEClass, ACTION_PROCESS__ACTION);
-    createEReference(actionProcessEClass, ACTION_PROCESS__VALUE);
-
     termEClass = createEClass(TERM);
-    createEReference(termEClass, TERM__NAME);
+    createEReference(termEClass, TERM__PROCESSES);
     createEReference(termEClass, TERM__STORES);
+
+    booleanConstantEClass = createEClass(BOOLEAN_CONSTANT);
+    createEReference(booleanConstantEClass, BOOLEAN_CONSTANT__VALUE);
+
+    storeEClass = createEClass(STORE);
+    createEAttribute(storeEClass, STORE__NAME);
+    createEAttribute(storeEClass, STORE__VALUE);
+
+    referencedStoreEClass = createEClass(REFERENCED_STORE);
+    createEReference(referencedStoreEClass, REFERENCED_STORE__NAME);
+
+    selfReferencedStoreEClass = createEClass(SELF_REFERENCED_STORE);
+    createEReference(selfReferencedStoreEClass, SELF_REFERENCED_STORE__NAME);
 
     broadcastEClass = createEClass(BROADCAST);
 
@@ -1983,14 +1687,11 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     createEReference(predicateDivEClass, PREDICATE_DIV__LEFT);
     createEReference(predicateDivEClass, PREDICATE_DIV__RIGHT);
 
-    notEClass = createEClass(NOT);
-    createEReference(notEClass, NOT__EXPRESSION);
+    predicateNotEClass = createEClass(PREDICATE_NOT);
+    createEReference(predicateNotEClass, PREDICATE_NOT__EXPRESSION);
 
     constantEClass = createEClass(CONSTANT);
     createEAttribute(constantEClass, CONSTANT__VALUE);
-
-    boolConstantEClass = createEClass(BOOL_CONSTANT);
-    createEAttribute(boolConstantEClass, BOOL_CONSTANT__VALUE);
 
     inEClass = createEClass(IN);
     createEReference(inEClass, IN__EXPRESSIONS);
@@ -2003,28 +1704,19 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     createEReference(localSingleEventUpdateEClass, LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION);
 
     distributedEventUpdateProbabilityEClass = createEClass(DISTRIBUTED_EVENT_UPDATE_PROBABILITY);
+    createEReference(distributedEventUpdateProbabilityEClass, DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME);
     createEReference(distributedEventUpdateProbabilityEClass, DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION);
 
     distributedEventUpdateUniformEClass = createEClass(DISTRIBUTED_EVENT_UPDATE_UNIFORM);
+    createEReference(distributedEventUpdateUniformEClass, DISTRIBUTED_EVENT_UPDATE_UNIFORM__NAME);
     createEReference(distributedEventUpdateUniformEClass, DISTRIBUTED_EVENT_UPDATE_UNIFORM__DISTRIBUTION);
 
-    updateOrEClass = createEClass(UPDATE_OR);
-    createEReference(updateOrEClass, UPDATE_OR__LEFT);
-    createEReference(updateOrEClass, UPDATE_OR__RIGHT);
+    distributionEClass = createEClass(DISTRIBUTION);
+    createEAttribute(distributionEClass, DISTRIBUTION__PROB);
+    createEAttribute(distributionEClass, DISTRIBUTION__EXPRESSION);
 
-    updateAndEClass = createEClass(UPDATE_AND);
-    createEReference(updateAndEClass, UPDATE_AND__LEFT);
-    createEReference(updateAndEClass, UPDATE_AND__RIGHT);
-
-    updateEqualityEClass = createEClass(UPDATE_EQUALITY);
-    createEReference(updateEqualityEClass, UPDATE_EQUALITY__LEFT);
-    createEAttribute(updateEqualityEClass, UPDATE_EQUALITY__OP);
-    createEReference(updateEqualityEClass, UPDATE_EQUALITY__RIGHT);
-
-    updateComparisonEClass = createEClass(UPDATE_COMPARISON);
-    createEReference(updateComparisonEClass, UPDATE_COMPARISON__LEFT);
-    createEAttribute(updateComparisonEClass, UPDATE_COMPARISON__OP);
-    createEReference(updateComparisonEClass, UPDATE_COMPARISON__RIGHT);
+    uniformEClass = createEClass(UNIFORM);
+    createEAttribute(uniformEClass, UNIFORM__EXPRESSION);
 
     updateSubEClass = createEClass(UPDATE_SUB);
     createEReference(updateSubEClass, UPDATE_SUB__LEFT);
@@ -2042,9 +1734,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     createEReference(updateDivEClass, UPDATE_DIV__LEFT);
     createEReference(updateDivEClass, UPDATE_DIV__RIGHT);
 
-    updateNotEClass = createEClass(UPDATE_NOT);
-    createEReference(updateNotEClass, UPDATE_NOT__EXPRESSION);
-
     parallelEClass = createEClass(PARALLEL);
     createEReference(parallelEClass, PARALLEL__LEFT);
     createEReference(parallelEClass, PARALLEL__RIGHT);
@@ -2056,8 +1745,20 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     leafEClass = createEClass(LEAF);
     createEAttribute(leafEClass, LEAF__VALUE);
 
-    processReferenceEClass = createEClass(PROCESS_REFERENCE);
-    createEReference(processReferenceEClass, PROCESS_REFERENCE__VALUE);
+    predicateProcessEClass = createEClass(PREDICATE_PROCESS);
+    createEReference(predicateProcessEClass, PREDICATE_PROCESS__PREDICATE);
+    createEReference(predicateProcessEClass, PREDICATE_PROCESS__REF);
+
+    actionProcessEClass = createEClass(ACTION_PROCESS);
+    createEReference(actionProcessEClass, ACTION_PROCESS__ACTION);
+    createEReference(actionProcessEClass, ACTION_PROCESS__REF);
+
+    referencedProcessEClass = createEClass(REFERENCED_PROCESS);
+    createEReference(referencedProcessEClass, REFERENCED_PROCESS__NAME);
+
+    tpParallelEClass = createEClass(TP_PARALLEL);
+    createEReference(tpParallelEClass, TP_PARALLEL__LEFT);
+    createEReference(tpParallelEClass, TP_PARALLEL__RIGHT);
   }
 
   /**
@@ -2089,20 +1790,13 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    referencedStoreEClass.getESuperTypes().add(this.getPredicateExpression());
-    referencedStoreEClass.getESuperTypes().add(this.getExpressions());
-    referencedStoreEClass.getESuperTypes().add(this.getVariables());
-    referencedStoreEClass.getESuperTypes().add(this.getUpdateExpression());
-    selfReferencedStoreEClass.getESuperTypes().add(this.getPredicateExpression());
-    selfReferencedStoreEClass.getESuperTypes().add(this.getExpressions());
-    selfReferencedStoreEClass.getESuperTypes().add(this.getVariables());
-    selfReferencedStoreEClass.getESuperTypes().add(this.getUpdateExpression());
-    expressionsEClass.getESuperTypes().add(this.getOutArguments());
-    variablesEClass.getESuperTypes().add(this.getInArguments());
-    singleEventUpdateEClass.getESuperTypes().add(this.getUpdate());
-    distributedEventUpdateEClass.getESuperTypes().add(this.getUpdate());
-    predicateProcessEClass.getESuperTypes().add(this.getProcessExpression());
-    actionProcessEClass.getESuperTypes().add(this.getProcessExpression());
+    storeExpressionEClass.getESuperTypes().add(this.getPredicateExpression());
+    storeExpressionEClass.getESuperTypes().add(this.getArguments());
+    storeExpressionEClass.getESuperTypes().add(this.getUpdateExpression());
+    booleanConstantEClass.getESuperTypes().add(this.getPredicateExpression());
+    storeEClass.getESuperTypes().add(this.getStoreExpression());
+    referencedStoreEClass.getESuperTypes().add(this.getStoreExpression());
+    selfReferencedStoreEClass.getESuperTypes().add(this.getStoreExpression());
     broadcastEClass.getESuperTypes().add(this.getAction());
     unicastEClass.getESuperTypes().add(this.getAction());
     predicateOrEClass.getESuperTypes().add(this.getPredicateExpression());
@@ -2113,45 +1807,35 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     predicatePluEClass.getESuperTypes().add(this.getPredicateExpression());
     predicateMulEClass.getESuperTypes().add(this.getPredicateExpression());
     predicateDivEClass.getESuperTypes().add(this.getPredicateExpression());
-    notEClass.getESuperTypes().add(this.getPredicateExpression());
+    predicateNotEClass.getESuperTypes().add(this.getPredicateExpression());
     constantEClass.getESuperTypes().add(this.getPredicateExpression());
+    constantEClass.getESuperTypes().add(this.getArguments());
     constantEClass.getESuperTypes().add(this.getUpdateExpression());
-    boolConstantEClass.getESuperTypes().add(this.getPredicateExpression());
-    boolConstantEClass.getESuperTypes().add(this.getUpdateExpression());
     inEClass.getESuperTypes().add(this.getArguments());
     outEClass.getESuperTypes().add(this.getArguments());
-    localSingleEventUpdateEClass.getESuperTypes().add(this.getSingleEventUpdate());
-    distributedEventUpdateProbabilityEClass.getESuperTypes().add(this.getDistributedEventUpdate());
-    distributedEventUpdateUniformEClass.getESuperTypes().add(this.getDistributedEventUpdate());
-    updateOrEClass.getESuperTypes().add(this.getUpdateExpression());
-    updateAndEClass.getESuperTypes().add(this.getUpdateExpression());
-    updateEqualityEClass.getESuperTypes().add(this.getUpdateExpression());
-    updateComparisonEClass.getESuperTypes().add(this.getUpdateExpression());
+    localSingleEventUpdateEClass.getESuperTypes().add(this.getUpdates());
+    distributedEventUpdateProbabilityEClass.getESuperTypes().add(this.getUpdates());
+    distributedEventUpdateUniformEClass.getESuperTypes().add(this.getUpdates());
+    distributionEClass.getESuperTypes().add(this.getUpdates());
+    uniformEClass.getESuperTypes().add(this.getUpdates());
     updateSubEClass.getESuperTypes().add(this.getUpdateExpression());
     updatePluEClass.getESuperTypes().add(this.getUpdateExpression());
     updateMulEClass.getESuperTypes().add(this.getUpdateExpression());
     updateDivEClass.getESuperTypes().add(this.getUpdateExpression());
-    updateNotEClass.getESuperTypes().add(this.getUpdateExpression());
     parallelEClass.getESuperTypes().add(this.getProcessExpression());
     choiceEClass.getESuperTypes().add(this.getProcessExpression());
     leafEClass.getESuperTypes().add(this.getProcessExpression());
-    processReferenceEClass.getESuperTypes().add(this.getProcessExpression());
+    predicateProcessEClass.getESuperTypes().add(this.getProcessExpression());
+    actionProcessEClass.getESuperTypes().add(this.getProcessExpression());
+    referencedProcessEClass.getESuperTypes().add(this.getProcessExpression());
+    tpParallelEClass.getESuperTypes().add(this.getProcessExpression());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Stores(), this.getStore(), null, "stores", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Processes(), this.getProcess(), null, "processes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getModel_Terms(), this.getTerm(), null, "terms", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Processes(), this.getProcess(), null, "processes", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getStore_Name(), ecorePackage.getEString(), "name", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getStore_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(referencedStoreEClass, ReferencedStore.class, "ReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferencedStore_Name(), this.getStore(), null, "name", null, 0, 1, ReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(selfReferencedStoreEClass, SelfReferencedStore.class, "SelfReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSelfReferencedStore_Name(), this.getStore(), null, "name", null, 0, 1, SelfReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(storeExpressionEClass, StoreExpression.class, "StoreExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2166,30 +1850,8 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     initEClass(argumentsEClass, Arguments.class, "Arguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(inArgumentsEClass, InArguments.class, "InArguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(outArgumentsEClass, OutArguments.class, "OutArguments", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(expressionsEClass, Expressions.class, "Expressions", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExpressions_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Expressions.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(variablesEClass, Variables.class, "Variables", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(updatesEClass, Updates.class, "Updates", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdates_Updates(), this.getUpdate(), null, "updates", null, 0, -1, Updates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(updateEClass, Update.class, "Update", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(singleEventUpdateEClass, SingleEventUpdate.class, "SingleEventUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(distributedEventUpdateEClass, DistributedEventUpdate.class, "DistributedEventUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(distributionEClass, Distribution.class, "Distribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDistribution_Prob(), ecorePackage.getEDouble(), "prob", null, 0, 1, Distribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDistribution_Expression(), this.getUpdateExpression(), null, "expression", null, 0, 1, Distribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(uniformEClass, Uniform.class, "Uniform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUniform_Expression(), this.getUpdateExpression(), null, "expression", null, 0, 1, Uniform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getUpdates_Updates(), this.getUpdates(), null, "updates", null, 0, -1, Updates.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(updateExpressionEClass, UpdateExpression.class, "UpdateExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2199,17 +1861,22 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     initEClass(processExpressionEClass, ProcessExpression.class, "ProcessExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(predicateProcessEClass, PredicateProcess.class, "PredicateProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPredicateProcess_Predicate(), this.getPredicate(), null, "predicate", null, 0, 1, PredicateProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPredicateProcess_Value(), this.getProcess(), null, "value", null, 0, 1, PredicateProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(actionProcessEClass, ActionProcess.class, "ActionProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getActionProcess_Action(), this.getAction(), null, "action", null, 0, 1, ActionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActionProcess_Value(), this.getProcess(), null, "value", null, 0, 1, ActionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTerm_Name(), this.getProcess(), null, "name", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTerm_Stores(), this.getStore(), null, "stores", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTerm_Processes(), this.getProcessExpression(), null, "processes", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTerm_Stores(), this.getStoreExpression(), null, "stores", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(booleanConstantEClass, BooleanConstant.class, "BooleanConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBooleanConstant_Value(), this.getBooleanConstant(), null, "value", null, 0, 1, BooleanConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getStore_Name(), ecorePackage.getEString(), "name", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getStore_Value(), ecorePackage.getEString(), "value", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(referencedStoreEClass, ReferencedStore.class, "ReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReferencedStore_Name(), this.getStore(), null, "name", null, 0, 1, ReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(selfReferencedStoreEClass, SelfReferencedStore.class, "SelfReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSelfReferencedStore_Name(), this.getStore(), null, "name", null, 0, 1, SelfReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(broadcastEClass, Broadcast.class, "Broadcast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2249,48 +1916,36 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEReference(getPredicateDiv_Left(), this.getPredicateExpression(), null, "left", null, 0, 1, PredicateDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getPredicateDiv_Right(), this.getPredicateExpression(), null, "right", null, 0, 1, PredicateDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(notEClass, Not.class, "Not", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getNot_Expression(), this.getPredicateExpression(), null, "expression", null, 0, 1, Not.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(predicateNotEClass, PredicateNot.class, "PredicateNot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPredicateNot_Expression(), this.getPredicateExpression(), null, "expression", null, 0, 1, PredicateNot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(boolConstantEClass, BoolConstant.class, "BoolConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBoolConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, BoolConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConstant_Value(), ecorePackage.getEString(), "value", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(inEClass, In.class, "In", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getIn_Expressions(), this.getInArguments(), null, "expressions", null, 0, -1, In.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getIn_Expressions(), this.getArguments(), null, "expressions", null, 0, -1, In.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(outEClass, Out.class, "Out", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getOut_Expressions(), this.getOutArguments(), null, "expressions", null, 0, -1, Out.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getOut_Expressions(), this.getArguments(), null, "expressions", null, 0, -1, Out.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(localSingleEventUpdateEClass, LocalSingleEventUpdate.class, "LocalSingleEventUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getLocalSingleEventUpdate_Name(), this.getSelfReferencedStore(), null, "name", null, 0, 1, LocalSingleEventUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getLocalSingleEventUpdate_Name(), this.getStoreExpression(), null, "name", null, 0, 1, LocalSingleEventUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getLocalSingleEventUpdate_Expression(), this.getUpdateExpression(), null, "expression", null, 0, 1, LocalSingleEventUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(distributedEventUpdateProbabilityEClass, DistributedEventUpdateProbability.class, "DistributedEventUpdateProbability", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDistributedEventUpdateProbability_Distribution(), this.getDistribution(), null, "distribution", null, 0, -1, DistributedEventUpdateProbability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDistributedEventUpdateProbability_Name(), this.getStoreExpression(), null, "name", null, 0, 1, DistributedEventUpdateProbability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDistributedEventUpdateProbability_Distribution(), this.getUpdates(), null, "distribution", null, 0, -1, DistributedEventUpdateProbability.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(distributedEventUpdateUniformEClass, DistributedEventUpdateUniform.class, "DistributedEventUpdateUniform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDistributedEventUpdateUniform_Distribution(), this.getUniform(), null, "distribution", null, 0, -1, DistributedEventUpdateUniform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDistributedEventUpdateUniform_Name(), this.getStoreExpression(), null, "name", null, 0, 1, DistributedEventUpdateUniform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDistributedEventUpdateUniform_Distribution(), this.getUpdates(), null, "distribution", null, 0, -1, DistributedEventUpdateUniform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(updateOrEClass, UpdateOr.class, "UpdateOr", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateOr_Left(), this.getUpdateExpression(), null, "left", null, 0, 1, UpdateOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUpdateOr_Right(), this.getUpdateExpression(), null, "right", null, 0, 1, UpdateOr.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(distributionEClass, Distribution.class, "Distribution", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDistribution_Prob(), ecorePackage.getEDouble(), "prob", null, 0, 1, Distribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDistribution_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, Distribution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(updateAndEClass, UpdateAnd.class, "UpdateAnd", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateAnd_Left(), this.getUpdateExpression(), null, "left", null, 0, 1, UpdateAnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUpdateAnd_Right(), this.getUpdateExpression(), null, "right", null, 0, 1, UpdateAnd.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(updateEqualityEClass, UpdateEquality.class, "UpdateEquality", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateEquality_Left(), this.getUpdateExpression(), null, "left", null, 0, 1, UpdateEquality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getUpdateEquality_Op(), ecorePackage.getEString(), "op", null, 0, 1, UpdateEquality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUpdateEquality_Right(), this.getUpdateExpression(), null, "right", null, 0, 1, UpdateEquality.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(updateComparisonEClass, UpdateComparison.class, "UpdateComparison", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateComparison_Left(), this.getUpdateExpression(), null, "left", null, 0, 1, UpdateComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getUpdateComparison_Op(), ecorePackage.getEString(), "op", null, 0, 1, UpdateComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getUpdateComparison_Right(), this.getUpdateExpression(), null, "right", null, 0, 1, UpdateComparison.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(uniformEClass, Uniform.class, "Uniform", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getUniform_Expression(), ecorePackage.getEString(), "expression", null, 0, 1, Uniform.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(updateSubEClass, UpdateSub.class, "UpdateSub", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getUpdateSub_Left(), this.getUpdateExpression(), null, "left", null, 0, 1, UpdateSub.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2308,9 +1963,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEReference(getUpdateDiv_Left(), this.getUpdateExpression(), null, "left", null, 0, 1, UpdateDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getUpdateDiv_Right(), this.getUpdateExpression(), null, "right", null, 0, 1, UpdateDiv.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(updateNotEClass, UpdateNot.class, "UpdateNot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getUpdateNot_Expression(), this.getUpdateExpression(), null, "expression", null, 0, 1, UpdateNot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(parallelEClass, Parallel.class, "Parallel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getParallel_Left(), this.getProcessExpression(), null, "left", null, 0, 1, Parallel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getParallel_Right(), this.getProcessExpression(), null, "right", null, 0, 1, Parallel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2322,8 +1974,20 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEClass(leafEClass, Leaf.class, "Leaf", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLeaf_Value(), ecorePackage.getEString(), "value", null, 0, 1, Leaf.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(processReferenceEClass, ProcessReference.class, "ProcessReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getProcessReference_Value(), this.getProcess(), null, "value", null, 0, 1, ProcessReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(predicateProcessEClass, PredicateProcess.class, "PredicateProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getPredicateProcess_Predicate(), this.getPredicate(), null, "predicate", null, 0, 1, PredicateProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPredicateProcess_Ref(), this.getProcessExpression(), null, "ref", null, 0, 1, PredicateProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(actionProcessEClass, ActionProcess.class, "ActionProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getActionProcess_Action(), this.getAction(), null, "action", null, 0, 1, ActionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getActionProcess_Ref(), this.getProcessExpression(), null, "ref", null, 0, 1, ActionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(referencedProcessEClass, ReferencedProcess.class, "ReferencedProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getReferencedProcess_Name(), this.getProcess(), null, "name", null, 0, 1, ReferencedProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(tpParallelEClass, TPParallel.class, "TPParallel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTPParallel_Left(), this.getProcessExpression(), null, "left", null, 0, 1, TPParallel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTPParallel_Right(), this.getProcessExpression(), null, "right", null, 0, 1, TPParallel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

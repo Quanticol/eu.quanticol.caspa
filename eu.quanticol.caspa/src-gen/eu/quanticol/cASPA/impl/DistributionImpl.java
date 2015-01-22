@@ -4,16 +4,12 @@ package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Distribution;
-import eu.quanticol.cASPA.UpdateExpression;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *
  * @generated
  */
-public class DistributionImpl extends MinimalEObjectImpl.Container implements Distribution
+public class DistributionImpl extends UpdatesImpl implements Distribution
 {
   /**
    * The default value of the '{@link #getProb() <em>Prob</em>}' attribute.
@@ -52,14 +48,24 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
   protected double prob = PROB_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The default value of the '{@link #getExpression() <em>Expression</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getExpression()
    * @generated
    * @ordered
    */
-  protected UpdateExpression expression;
+  protected static final String EXPRESSION_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getExpression()
+   * @generated
+   * @ordered
+   */
+  protected String expression = EXPRESSION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -110,7 +116,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
    * <!-- end-user-doc -->
    * @generated
    */
-  public UpdateExpression getExpression()
+  public String getExpression()
   {
     return expression;
   }
@@ -120,53 +126,12 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(UpdateExpression newExpression, NotificationChain msgs)
+  public void setExpression(String newExpression)
   {
-    UpdateExpression oldExpression = expression;
+    String oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTION__EXPRESSION, oldExpression, newExpression);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setExpression(UpdateExpression newExpression)
-  {
-    if (newExpression != expression)
-    {
-      NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.DISTRIBUTION__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.DISTRIBUTION__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTION__EXPRESSION, newExpression, newExpression));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        return basicSetExpression(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTION__EXPRESSION, oldExpression, expression));
   }
 
   /**
@@ -201,7 +166,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
         setProb((Double)newValue);
         return;
       case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        setExpression((UpdateExpression)newValue);
+        setExpression((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -221,7 +186,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
         setProb(PROB_EDEFAULT);
         return;
       case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        setExpression((UpdateExpression)null);
+        setExpression(EXPRESSION_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -240,7 +205,7 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
       case CASPAPackage.DISTRIBUTION__PROB:
         return prob != PROB_EDEFAULT;
       case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        return expression != null;
+        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
     }
     return super.eIsSet(featureID);
   }
@@ -258,6 +223,8 @@ public class DistributionImpl extends MinimalEObjectImpl.Container implements Di
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (prob: ");
     result.append(prob);
+    result.append(", expression: ");
+    result.append(expression);
     result.append(')');
     return result.toString();
   }

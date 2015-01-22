@@ -2,9 +2,9 @@
  */
 package eu.quanticol.cASPA.impl;
 
+import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Out;
-import eu.quanticol.cASPA.OutArguments;
 
 import java.util.Collection;
 
@@ -41,7 +41,7 @@ public class OutImpl extends ArgumentsImpl implements Out
    * @generated
    * @ordered
    */
-  protected EList<OutArguments> expressions;
+  protected EList<Arguments> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class OutImpl extends ArgumentsImpl implements Out
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<OutArguments> getExpressions()
+  public EList<Arguments> getExpressions()
   {
     if (expressions == null)
     {
-      expressions = new EObjectContainmentEList<OutArguments>(OutArguments.class, this, CASPAPackage.OUT__EXPRESSIONS);
+      expressions = new EObjectContainmentEList<Arguments>(Arguments.class, this, CASPAPackage.OUT__EXPRESSIONS);
     }
     return expressions;
   }
@@ -123,7 +123,7 @@ public class OutImpl extends ArgumentsImpl implements Out
     {
       case CASPAPackage.OUT__EXPRESSIONS:
         getExpressions().clear();
-        getExpressions().addAll((Collection<? extends OutArguments>)newValue);
+        getExpressions().addAll((Collection<? extends Arguments>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

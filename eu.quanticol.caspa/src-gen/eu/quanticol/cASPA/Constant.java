@@ -19,7 +19,7 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface Constant extends PredicateExpression, UpdateExpression
+public interface Constant extends PredicateExpression, Arguments, UpdateExpression
 {
   /**
    * Returns the value of the '<em><b>Value</b></em>' attribute.
@@ -30,12 +30,12 @@ public interface Constant extends PredicateExpression, UpdateExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Value</em>' attribute.
-   * @see #setValue(int)
+   * @see #setValue(String)
    * @see eu.quanticol.cASPA.CASPAPackage#getConstant_Value()
    * @model
    * @generated
    */
-  int getValue();
+  String getValue();
 
   /**
    * Sets the value of the '{@link eu.quanticol.cASPA.Constant#getValue <em>Value</em>}' attribute.
@@ -45,6 +45,6 @@ public interface Constant extends PredicateExpression, UpdateExpression
    * @see #getValue()
    * @generated
    */
-  void setValue(int value);
+  void setValue(String value);
 
 } // Constant

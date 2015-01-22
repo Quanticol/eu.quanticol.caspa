@@ -24,7 +24,7 @@ public interface Out extends Arguments
 {
   /**
    * Returns the value of the '<em><b>Expressions</b></em>' containment reference list.
-   * The list contents are of type {@link eu.quanticol.cASPA.OutArguments}.
+   * The list contents are of type {@link eu.quanticol.cASPA.Arguments}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Expressions</em>' containment reference list isn't clear,
@@ -36,6 +36,6 @@ public interface Out extends Arguments
    * @model containment="true"
    * @generated
    */
-  EList<OutArguments> getExpressions();
+  EList<Arguments> getExpressions();
 
 } // Out

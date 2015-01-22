@@ -4,6 +4,30 @@
 package eu.quanticol.ui.labeling
 
 import com.google.inject.Inject
+import eu.quanticol.cASPA.Term
+import eu.quanticol.cASPA.Process
+import eu.quanticol.cASPA.ProcessExpression
+import eu.quanticol.cASPA.ReferencedProcess
+import eu.quanticol.ModelUtil
+import eu.quanticol.cASPA.TPParallel
+import eu.quanticol.cASPA.Store
+import eu.quanticol.cASPA.SelfReferencedStore
+import eu.quanticol.cASPA.ReferencedStore
+import eu.quanticol.cASPA.Predicate
+import eu.quanticol.cASPA.PredicateExpression
+import eu.quanticol.cASPA.Constant
+import eu.quanticol.cASPA.BooleanConstant
+import eu.quanticol.cASPA.Action
+import eu.quanticol.cASPA.Arguments
+import eu.quanticol.cASPA.Updates
+import eu.quanticol.cASPA.UpdateExpression
+import eu.quanticol.cASPA.Uniform
+import eu.quanticol.cASPA.Distribution
+import eu.quanticol.cASPA.DistributedEventUpdateUniform
+import eu.quanticol.cASPA.DistributedEventUpdateProbability
+import eu.quanticol.cASPA.LocalSingleEventUpdate
+import eu.quanticol.cASPA.PredicateProcess
+import eu.quanticol.cASPA.ActionProcess
 
 /**
  * Provides labels for a EObjects.
@@ -17,13 +41,106 @@ class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 		super(delegate);
 	}
 
-	// Labels and icons can be computed like this:
+	@Inject extension ModelUtil
+
+	def text(Term term){
+		
+		var String temp
+		
+		for(process : term.processes){
+			temp = process.cTString
+		}
+			
+		return "Term " + temp
+	}
 	
-//	def text(Greeting ele) {
-//		'A greeting to ' + ele.name
-//	}
-//
-//	def image(Greeting ele) {
-//		'Greeting.gif'
-//	}
+	def text(ProcessExpression pe){
+		pe.cTString
+	}
+	
+	def text(Process p){
+		p.cTString
+	}
+
+	
+	def text(TPParallel tpp){
+		 "|"
+	}
+	
+	def text(ReferencedProcess process){
+		process.name.cTString
+	}
+	
+	def text(Store s){
+		s.cTString
+	}
+	
+	def text(SelfReferencedStore s){
+		s.cTString
+	}
+	
+	def text(ReferencedStore s){
+		s.cTString
+	}
+	
+	def text(Predicate p){
+		p.cTString
+	}
+	
+	def text(PredicateExpression pe){
+		pe.cTString
+	}
+	
+	def text(Constant c){
+		c.cTString
+	}
+	
+	def text(BooleanConstant bc){
+		bc.cTString
+	}
+	
+	def text(Action a){
+		a.cTString
+	}
+	
+	def text(Arguments a){
+		a.cTString
+	}
+	
+	def text(Updates u){
+		u.cTString
+	}	
+	
+	def text(LocalSingleEventUpdate u){
+		u.cTString
+	}
+	
+	def text(DistributedEventUpdateProbability u){
+		u.cTString
+	} 
+	
+	def text(DistributedEventUpdateUniform u){ 
+		u.cTString
+	}
+	
+	def text(Distribution u){ 
+		u.cTString
+	}
+	
+	def text(Uniform u){ 
+		u.cTString
+	} 
+	
+	def text(UpdateExpression u){ 
+		u.cTString
+	}
+	
+	def text(PredicateProcess p){
+		p.cTString
+	}
+	
+	def text(ActionProcess p){
+		p.cTString
+	}
+	
 }

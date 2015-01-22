@@ -14,9 +14,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.Model#getStores <em>Stores</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.Model#getProcesses <em>Processes</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.Model#getTerms <em>Terms</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.Model#getProcesses <em>Processes</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,20 +26,20 @@ import org.eclipse.emf.ecore.EObject;
 public interface Model extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Stores</b></em>' containment reference list.
-   * The list contents are of type {@link eu.quanticol.cASPA.Store}.
+   * Returns the value of the '<em><b>Terms</b></em>' containment reference list.
+   * The list contents are of type {@link eu.quanticol.cASPA.Term}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Stores</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Terms</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Stores</em>' containment reference list.
-   * @see eu.quanticol.cASPA.CASPAPackage#getModel_Stores()
+   * @return the value of the '<em>Terms</em>' containment reference list.
+   * @see eu.quanticol.cASPA.CASPAPackage#getModel_Terms()
    * @model containment="true"
    * @generated
    */
-  EList<Store> getStores();
+  EList<Term> getTerms();
 
   /**
    * Returns the value of the '<em><b>Processes</b></em>' containment reference list.
@@ -57,21 +56,5 @@ public interface Model extends EObject
    * @generated
    */
   EList<eu.quanticol.cASPA.Process> getProcesses();
-
-  /**
-   * Returns the value of the '<em><b>Terms</b></em>' containment reference list.
-   * The list contents are of type {@link eu.quanticol.cASPA.Term}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Terms</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Terms</em>' containment reference list.
-   * @see eu.quanticol.cASPA.CASPAPackage#getModel_Terms()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Term> getTerms();
 
 } // Model

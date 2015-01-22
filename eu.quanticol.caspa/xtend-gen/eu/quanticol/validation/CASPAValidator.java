@@ -3,8 +3,36 @@
  */
 package eu.quanticol.validation;
 
+import com.google.common.base.Objects;
+import com.google.inject.Inject;
+import eu.quanticol.cASPA.CASPAPackage;
+import eu.quanticol.cASPA.LocalSingleEventUpdate;
+import eu.quanticol.cASPA.Model;
+import eu.quanticol.cASPA.Predicate;
+import eu.quanticol.cASPA.PredicateAnd;
+import eu.quanticol.cASPA.PredicateComparison;
+import eu.quanticol.cASPA.PredicateDiv;
+import eu.quanticol.cASPA.PredicateEquality;
+import eu.quanticol.cASPA.PredicateExpression;
+import eu.quanticol.cASPA.PredicateMul;
+import eu.quanticol.cASPA.PredicateNot;
+import eu.quanticol.cASPA.PredicateOr;
+import eu.quanticol.cASPA.PredicatePlu;
+import eu.quanticol.cASPA.PredicateSub;
+import eu.quanticol.cASPA.UpdateDiv;
+import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateMul;
+import eu.quanticol.cASPA.UpdatePlu;
+import eu.quanticol.cASPA.UpdateSub;
+import eu.quanticol.typing.BaseType;
+import eu.quanticol.typing.TypeProvider;
 import eu.quanticol.validation.AbstractCASPAValidator;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EAttribute;
+import org.eclipse.emf.ecore.EReference;
+import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Extension;
 
 /**
  * Custom validation rules.
@@ -13,14 +41,208 @@ import org.eclipse.xtext.validation.Check;
  */
 @SuppressWarnings("all")
 public class CASPAValidator extends AbstractCASPAValidator {
+  @Inject
+  @Extension
+  private TypeProvider _typeProvider;
+  
+  public final static String WRONG_TYPE = "eu.quanticol.WrongType";
+  
+  public final static String SELF_REFERENCING_STORE = "eu.quanticol.selfReferencingStore";
+  
+  public final static String STORE_NAMES_UNIQUE = "eu.quanticol.storeNamesUnique";
+  
+  public final static String PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique";
+  
   @Check
-  public void checkType(final /* Store */Object store) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method or field evalExpression is undefined for the type CASPAValidator"
-      + "\nCASPAPackage$Literals cannot be resolved to a type."
-      + "\nThe method or field WRONG_TYPE is undefined for the type CASPAValidator"
-      + "\ntypeForA cannot be resolved"
-      + "\n== cannot be resolved"
-      + "\nFREE_EVALUATION_EXPRESSION__EXPRESSION cannot be resolved");
+  public void checkensureProcessCycles(final eu.quanticol.cASPA.Process process) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
+    EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
+    int count = 0;
+    for (final eu.quanticol.cASPA.Process proc : processes) {
+      String _name = proc.getName();
+      String _name_1 = process.getName();
+      boolean _equals = _name.equals(_name_1);
+      if (_equals) {
+        count = (count + 1);
+      }
+    }
+    if ((count == 1)) {
+      return;
+    } else {
+      String _name_2 = process.getName();
+      String _plus = ("Must have unique process names. \'" + _name_2);
+      String _plus_1 = (_plus + "\' is repeated");
+      EAttribute _process_Name = CASPAPackage.eINSTANCE.getProcess_Name();
+      this.error(_plus_1, _process_Name, 
+        CASPAValidator.PROCESS_NAMES_UNIQUE);
+    }
+  }
+  
+  @Check
+  public void checkType(final Predicate predicate) {
+    PredicateExpression _predicate = predicate.getPredicate();
+    this.checkExpectedBoolean(_predicate, CASPAPackage.Literals.PREDICATE__PREDICATE);
+  }
+  
+  @Check
+  public void checkType(final PredicateOr p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedBoolean(_left, CASPAPackage.Literals.PREDICATE_OR__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedBoolean(_right, CASPAPackage.Literals.PREDICATE_OR__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicateAnd p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedBoolean(_left, CASPAPackage.Literals.PREDICATE_AND__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedBoolean(_right, CASPAPackage.Literals.PREDICATE_AND__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicateEquality p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.PREDICATE_EQUALITY__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.PREDICATE_EQUALITY__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicateComparison p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.PREDICATE_COMPARISON__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.PREDICATE_COMPARISON__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicateSub p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.PREDICATE_SUB__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.PREDICATE_SUB__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicatePlu p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.PREDICATE_PLU__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.PREDICATE_PLU__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicateMul p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.PREDICATE_MUL__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.PREDICATE_MUL__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicateDiv p) {
+    PredicateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.PREDICATE_DIV__LEFT);
+    PredicateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.PREDICATE_DIV__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final PredicateNot p) {
+    PredicateExpression _expression = p.getExpression();
+    this.checkExpectedBoolean(_expression, CASPAPackage.Literals.PREDICATE_NOT__EXPRESSION);
+  }
+  
+  private void checkExpectedBoolean(final PredicateExpression exp, final EReference reference) {
+    this.checkExpectedType(exp, TypeProvider.boolConstantType, reference);
+  }
+  
+  private void checkExpectedInt(final PredicateExpression exp, final EReference reference) {
+    this.checkExpectedType(exp, TypeProvider.constantType, reference);
+  }
+  
+  private void checkExpectedType(final PredicateExpression exp, final BaseType expectedType, final EReference reference) {
+    final BaseType actualType = this.getTypeAndCheckNotNull(exp, reference);
+    boolean _notEquals = (!Objects.equal(actualType, expectedType));
+    if (_notEquals) {
+      this.error(((("expected " + expectedType) + " type, but was ") + actualType), reference, CASPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  private BaseType getTypeAndCheckNotNull(final PredicateExpression exp, final EReference reference) {
+    BaseType _typeFor = null;
+    if (exp!=null) {
+      _typeFor=this._typeProvider.typeFor(exp);
+    }
+    BaseType type = _typeFor;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("null type", reference, CASPAValidator.WRONG_TYPE);
+    }
+    return type;
+  }
+  
+  @Check
+  public void checkType(final LocalSingleEventUpdate update) {
+    UpdateExpression _expression = update.getExpression();
+    this.checkExpectedInt(_expression, CASPAPackage.Literals.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION);
+  }
+  
+  @Check
+  public void checkType(final UpdateSub p) {
+    UpdateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.UPDATE_SUB__LEFT);
+    UpdateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.UPDATE_SUB__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final UpdatePlu p) {
+    UpdateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.UPDATE_PLU__LEFT);
+    UpdateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.UPDATE_PLU__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final UpdateMul p) {
+    UpdateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.UPDATE_MUL__LEFT);
+    UpdateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.UPDATE_MUL__RIGHT);
+  }
+  
+  @Check
+  public void checkType(final UpdateDiv p) {
+    UpdateExpression _left = p.getLeft();
+    this.checkExpectedInt(_left, CASPAPackage.Literals.UPDATE_DIV__LEFT);
+    UpdateExpression _right = p.getRight();
+    this.checkExpectedInt(_right, CASPAPackage.Literals.UPDATE_DIV__RIGHT);
+  }
+  
+  private void checkExpectedInt(final UpdateExpression exp, final EReference reference) {
+    this.checkExpectedType(exp, TypeProvider.constantType, reference);
+  }
+  
+  private void checkExpectedType(final UpdateExpression exp, final BaseType expectedType, final EReference reference) {
+    final BaseType actualType = this.getTypeAndCheckNotNull(exp, reference);
+    boolean _notEquals = (!Objects.equal(actualType, expectedType));
+    if (_notEquals) {
+      this.error(((("expected " + expectedType) + " type, but was ") + actualType), reference, CASPAValidator.WRONG_TYPE);
+    }
+  }
+  
+  private BaseType getTypeAndCheckNotNull(final UpdateExpression exp, final EReference reference) {
+    BaseType _typeFor = null;
+    if (exp!=null) {
+      _typeFor=this._typeProvider.typeFor(exp);
+    }
+    BaseType type = _typeFor;
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      this.error("null type", reference, CASPAValidator.WRONG_TYPE);
+    }
+    return type;
   }
 }

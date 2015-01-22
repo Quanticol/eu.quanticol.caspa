@@ -26,7 +26,7 @@ public interface Updates extends EObject
 {
   /**
    * Returns the value of the '<em><b>Updates</b></em>' containment reference list.
-   * The list contents are of type {@link eu.quanticol.cASPA.Update}.
+   * The list contents are of type {@link eu.quanticol.cASPA.Updates}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Updates</em>' containment reference list isn't clear,
@@ -38,6 +38,6 @@ public interface Updates extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Update> getUpdates();
+  EList<Updates> getUpdates();
 
 } // Updates

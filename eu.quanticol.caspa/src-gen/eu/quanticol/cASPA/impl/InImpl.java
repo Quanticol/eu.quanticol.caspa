@@ -2,9 +2,9 @@
  */
 package eu.quanticol.cASPA.impl;
 
+import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.In;
-import eu.quanticol.cASPA.InArguments;
 
 import java.util.Collection;
 
@@ -41,7 +41,7 @@ public class InImpl extends ArgumentsImpl implements In
    * @generated
    * @ordered
    */
-  protected EList<InArguments> expressions;
+  protected EList<Arguments> expressions;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,11 +69,11 @@ public class InImpl extends ArgumentsImpl implements In
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<InArguments> getExpressions()
+  public EList<Arguments> getExpressions()
   {
     if (expressions == null)
     {
-      expressions = new EObjectContainmentEList<InArguments>(InArguments.class, this, CASPAPackage.IN__EXPRESSIONS);
+      expressions = new EObjectContainmentEList<Arguments>(Arguments.class, this, CASPAPackage.IN__EXPRESSIONS);
     }
     return expressions;
   }
@@ -123,7 +123,7 @@ public class InImpl extends ArgumentsImpl implements In
     {
       case CASPAPackage.IN__EXPRESSIONS:
         getExpressions().clear();
-        getExpressions().addAll((Collection<? extends InArguments>)newValue);
+        getExpressions().addAll((Collection<? extends Arguments>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

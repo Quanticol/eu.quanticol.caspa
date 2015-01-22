@@ -32,31 +32,13 @@ public interface CASPAFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Store</em>'.
+   * Returns a new object of class '<em>Store Expression</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Store</em>'.
+   * @return a new object of class '<em>Store Expression</em>'.
    * @generated
    */
-  Store createStore();
-
-  /**
-   * Returns a new object of class '<em>Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Referenced Store</em>'.
-   * @generated
-   */
-  ReferencedStore createReferencedStore();
-
-  /**
-   * Returns a new object of class '<em>Self Referenced Store</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Self Referenced Store</em>'.
-   * @generated
-   */
-  SelfReferencedStore createSelfReferencedStore();
+  StoreExpression createStoreExpression();
 
   /**
    * Returns a new object of class '<em>Action</em>'.
@@ -95,42 +77,6 @@ public interface CASPAFactory extends EFactory
   Arguments createArguments();
 
   /**
-   * Returns a new object of class '<em>In Arguments</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>In Arguments</em>'.
-   * @generated
-   */
-  InArguments createInArguments();
-
-  /**
-   * Returns a new object of class '<em>Out Arguments</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Out Arguments</em>'.
-   * @generated
-   */
-  OutArguments createOutArguments();
-
-  /**
-   * Returns a new object of class '<em>Expressions</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Expressions</em>'.
-   * @generated
-   */
-  Expressions createExpressions();
-
-  /**
-   * Returns a new object of class '<em>Variables</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Variables</em>'.
-   * @generated
-   */
-  Variables createVariables();
-
-  /**
    * Returns a new object of class '<em>Updates</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -138,51 +84,6 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   Updates createUpdates();
-
-  /**
-   * Returns a new object of class '<em>Update</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update</em>'.
-   * @generated
-   */
-  Update createUpdate();
-
-  /**
-   * Returns a new object of class '<em>Single Event Update</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Single Event Update</em>'.
-   * @generated
-   */
-  SingleEventUpdate createSingleEventUpdate();
-
-  /**
-   * Returns a new object of class '<em>Distributed Event Update</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Distributed Event Update</em>'.
-   * @generated
-   */
-  DistributedEventUpdate createDistributedEventUpdate();
-
-  /**
-   * Returns a new object of class '<em>Distribution</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Distribution</em>'.
-   * @generated
-   */
-  Distribution createDistribution();
-
-  /**
-   * Returns a new object of class '<em>Uniform</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Uniform</em>'.
-   * @generated
-   */
-  Uniform createUniform();
 
   /**
    * Returns a new object of class '<em>Update Expression</em>'.
@@ -212,24 +113,6 @@ public interface CASPAFactory extends EFactory
   ProcessExpression createProcessExpression();
 
   /**
-   * Returns a new object of class '<em>Predicate Process</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Predicate Process</em>'.
-   * @generated
-   */
-  PredicateProcess createPredicateProcess();
-
-  /**
-   * Returns a new object of class '<em>Action Process</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Action Process</em>'.
-   * @generated
-   */
-  ActionProcess createActionProcess();
-
-  /**
    * Returns a new object of class '<em>Term</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -237,6 +120,42 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   Term createTerm();
+
+  /**
+   * Returns a new object of class '<em>Boolean Constant</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Boolean Constant</em>'.
+   * @generated
+   */
+  BooleanConstant createBooleanConstant();
+
+  /**
+   * Returns a new object of class '<em>Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Store</em>'.
+   * @generated
+   */
+  Store createStore();
+
+  /**
+   * Returns a new object of class '<em>Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Referenced Store</em>'.
+   * @generated
+   */
+  ReferencedStore createReferencedStore();
+
+  /**
+   * Returns a new object of class '<em>Self Referenced Store</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Self Referenced Store</em>'.
+   * @generated
+   */
+  SelfReferencedStore createSelfReferencedStore();
 
   /**
    * Returns a new object of class '<em>Broadcast</em>'.
@@ -329,13 +248,13 @@ public interface CASPAFactory extends EFactory
   PredicateDiv createPredicateDiv();
 
   /**
-   * Returns a new object of class '<em>Not</em>'.
+   * Returns a new object of class '<em>Predicate Not</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Not</em>'.
+   * @return a new object of class '<em>Predicate Not</em>'.
    * @generated
    */
-  Not createNot();
+  PredicateNot createPredicateNot();
 
   /**
    * Returns a new object of class '<em>Constant</em>'.
@@ -345,15 +264,6 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   Constant createConstant();
-
-  /**
-   * Returns a new object of class '<em>Bool Constant</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Bool Constant</em>'.
-   * @generated
-   */
-  BoolConstant createBoolConstant();
 
   /**
    * Returns a new object of class '<em>In</em>'.
@@ -401,40 +311,22 @@ public interface CASPAFactory extends EFactory
   DistributedEventUpdateUniform createDistributedEventUpdateUniform();
 
   /**
-   * Returns a new object of class '<em>Update Or</em>'.
+   * Returns a new object of class '<em>Distribution</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update Or</em>'.
+   * @return a new object of class '<em>Distribution</em>'.
    * @generated
    */
-  UpdateOr createUpdateOr();
+  Distribution createDistribution();
 
   /**
-   * Returns a new object of class '<em>Update And</em>'.
+   * Returns a new object of class '<em>Uniform</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update And</em>'.
+   * @return a new object of class '<em>Uniform</em>'.
    * @generated
    */
-  UpdateAnd createUpdateAnd();
-
-  /**
-   * Returns a new object of class '<em>Update Equality</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update Equality</em>'.
-   * @generated
-   */
-  UpdateEquality createUpdateEquality();
-
-  /**
-   * Returns a new object of class '<em>Update Comparison</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update Comparison</em>'.
-   * @generated
-   */
-  UpdateComparison createUpdateComparison();
+  Uniform createUniform();
 
   /**
    * Returns a new object of class '<em>Update Sub</em>'.
@@ -473,15 +365,6 @@ public interface CASPAFactory extends EFactory
   UpdateDiv createUpdateDiv();
 
   /**
-   * Returns a new object of class '<em>Update Not</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Update Not</em>'.
-   * @generated
-   */
-  UpdateNot createUpdateNot();
-
-  /**
    * Returns a new object of class '<em>Parallel</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -509,13 +392,40 @@ public interface CASPAFactory extends EFactory
   Leaf createLeaf();
 
   /**
-   * Returns a new object of class '<em>Process Reference</em>'.
+   * Returns a new object of class '<em>Predicate Process</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Process Reference</em>'.
+   * @return a new object of class '<em>Predicate Process</em>'.
    * @generated
    */
-  ProcessReference createProcessReference();
+  PredicateProcess createPredicateProcess();
+
+  /**
+   * Returns a new object of class '<em>Action Process</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Action Process</em>'.
+   * @generated
+   */
+  ActionProcess createActionProcess();
+
+  /**
+   * Returns a new object of class '<em>Referenced Process</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Referenced Process</em>'.
+   * @generated
+   */
+  ReferencedProcess createReferencedProcess();
+
+  /**
+   * Returns a new object of class '<em>TP Parallel</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>TP Parallel</em>'.
+   * @generated
+   */
+  TPParallel createTPParallel();
 
   /**
    * Returns the package supported by this factory.

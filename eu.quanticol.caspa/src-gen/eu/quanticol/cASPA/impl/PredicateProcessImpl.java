@@ -5,6 +5,7 @@ package eu.quanticol.cASPA.impl;
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateProcess;
+import eu.quanticol.cASPA.ProcessExpression;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -22,7 +23,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * <ul>
  *   <li>{@link eu.quanticol.cASPA.impl.PredicateProcessImpl#getPredicate <em>Predicate</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.impl.PredicateProcessImpl#getValue <em>Value</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.PredicateProcessImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -41,14 +42,14 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
   protected Predicate predicate;
 
   /**
-   * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+   * The cached value of the '{@link #getRef() <em>Ref</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getValue()
+   * @see #getRef()
    * @generated
    * @ordered
    */
-  protected eu.quanticol.cASPA.Process value;
+  protected ProcessExpression ref;
 
   /**
    * <!-- begin-user-doc -->
@@ -124,19 +125,9 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
    * <!-- end-user-doc -->
    * @generated
    */
-  public eu.quanticol.cASPA.Process getValue()
+  public ProcessExpression getRef()
   {
-    if (value != null && value.eIsProxy())
-    {
-      InternalEObject oldValue = (InternalEObject)value;
-      value = (eu.quanticol.cASPA.Process)eResolveProxy(oldValue);
-      if (value != oldValue)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.PREDICATE_PROCESS__VALUE, oldValue, value));
-      }
-    }
-    return value;
+    return ref;
   }
 
   /**
@@ -144,22 +135,37 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
    * <!-- end-user-doc -->
    * @generated
    */
-  public eu.quanticol.cASPA.Process basicGetValue()
+  public NotificationChain basicSetRef(ProcessExpression newRef, NotificationChain msgs)
   {
-    return value;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setValue(eu.quanticol.cASPA.Process newValue)
-  {
-    eu.quanticol.cASPA.Process oldValue = value;
-    value = newValue;
+    ProcessExpression oldRef = ref;
+    ref = newRef;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.PREDICATE_PROCESS__VALUE, oldValue, value));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.PREDICATE_PROCESS__REF, oldRef, newRef);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRef(ProcessExpression newRef)
+  {
+    if (newRef != ref)
+    {
+      NotificationChain msgs = null;
+      if (ref != null)
+        msgs = ((InternalEObject)ref).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.PREDICATE_PROCESS__REF, null, msgs);
+      if (newRef != null)
+        msgs = ((InternalEObject)newRef).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.PREDICATE_PROCESS__REF, null, msgs);
+      msgs = basicSetRef(newRef, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.PREDICATE_PROCESS__REF, newRef, newRef));
   }
 
   /**
@@ -174,6 +180,8 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
     {
       case CASPAPackage.PREDICATE_PROCESS__PREDICATE:
         return basicSetPredicate(null, msgs);
+      case CASPAPackage.PREDICATE_PROCESS__REF:
+        return basicSetRef(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -190,9 +198,8 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
     {
       case CASPAPackage.PREDICATE_PROCESS__PREDICATE:
         return getPredicate();
-      case CASPAPackage.PREDICATE_PROCESS__VALUE:
-        if (resolve) return getValue();
-        return basicGetValue();
+      case CASPAPackage.PREDICATE_PROCESS__REF:
+        return getRef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -210,8 +217,8 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
       case CASPAPackage.PREDICATE_PROCESS__PREDICATE:
         setPredicate((Predicate)newValue);
         return;
-      case CASPAPackage.PREDICATE_PROCESS__VALUE:
-        setValue((eu.quanticol.cASPA.Process)newValue);
+      case CASPAPackage.PREDICATE_PROCESS__REF:
+        setRef((ProcessExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -230,8 +237,8 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
       case CASPAPackage.PREDICATE_PROCESS__PREDICATE:
         setPredicate((Predicate)null);
         return;
-      case CASPAPackage.PREDICATE_PROCESS__VALUE:
-        setValue((eu.quanticol.cASPA.Process)null);
+      case CASPAPackage.PREDICATE_PROCESS__REF:
+        setRef((ProcessExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -249,8 +256,8 @@ public class PredicateProcessImpl extends ProcessExpressionImpl implements Predi
     {
       case CASPAPackage.PREDICATE_PROCESS__PREDICATE:
         return predicate != null;
-      case CASPAPackage.PREDICATE_PROCESS__VALUE:
-        return value != null;
+      case CASPAPackage.PREDICATE_PROCESS__REF:
+        return ref != null;
     }
     return super.eIsSet(featureID);
   }

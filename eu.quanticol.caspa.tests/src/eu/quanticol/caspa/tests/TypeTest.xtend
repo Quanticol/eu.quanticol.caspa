@@ -1,21 +1,19 @@
-package eu.quanticol.caspa.tests
-
-import com.google.inject.Inject
-import eu.quanticol.CASPAInjectorProvider
-import eu.quanticol.cASPA.Model
-import org.eclipse.xtext.junit4.InjectWith
-import org.eclipse.xtext.junit4.XtextRunner
-import org.eclipse.xtext.junit4.util.ParseHelper
-import org.junit.Test
-import org.junit.runner.RunWith
-import eu.quanticol.typing.ETypeProvider
-import eu.quanticol.typing.ExpressionsType
-
-import static extension org.junit.Assert.*
-
-@RunWith(typeof(XtextRunner))
-@InjectWith(typeof(CASPAInjectorProvider))
-class TypeTest {
+//package eu.quanticol.caspa.tests
+//
+//import com.google.inject.Inject
+//import eu.quanticol.CASPAInjectorProvider
+//import eu.quanticol.cASPA.Model
+//import org.eclipse.xtext.junit4.InjectWith
+//import org.eclipse.xtext.junit4.XtextRunner
+//import org.eclipse.xtext.junit4.util.ParseHelper
+//import org.junit.Test
+//import org.junit.runner.RunWith
+//
+//import static extension org.junit.Assert.*
+//
+//@RunWith(typeof(XtextRunner))
+//@InjectWith(typeof(CASPAInjectorProvider))
+//class TypeTest {
 	
 //		@Inject extension ParseHelper<Model>
 //		@Inject extension ETypeProvider
@@ -47,6 +45,6 @@ class TypeTest {
 //		def assertType(CharSequence input, ExpressionsType expectedType) {
 //			expectedType.assertSame(input.parse.stores.last.value.typeFor)
 //		}
-		
-	
-}
+//		
+//	
+//}
