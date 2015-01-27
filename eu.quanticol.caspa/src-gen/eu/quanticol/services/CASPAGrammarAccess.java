@@ -231,10 +231,10 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//;
 		// ** / //ACTIONS
 		//Action hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate? arguments=Arguments? updates=Updates? ".";
+		//	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate arguments=Arguments updates=Updates? ".";
 		public ParserRule getRule() { return rule; }
 
-		//({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate? arguments=Arguments? updates=Updates? "."
+		//({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate arguments=Arguments updates=Updates? "."
 		public Group getGroup() { return cGroup; }
 
 		//{Broadcast} name=LOWER "*" | {Unicast} name=LOWER
@@ -267,13 +267,13 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//LOWER
 		public RuleCall getNameLOWERTerminalRuleCall_0_1_1_0() { return cNameLOWERTerminalRuleCall_0_1_1_0; }
 
-		//predicate=Predicate?
+		//predicate=Predicate
 		public Assignment getPredicateAssignment_1() { return cPredicateAssignment_1; }
 
 		//Predicate
 		public RuleCall getPredicatePredicateParserRuleCall_1_0() { return cPredicatePredicateParserRuleCall_1_0; }
 
-		//arguments=Arguments?
+		//arguments=Arguments
 		public Assignment getArgumentsAssignment_2() { return cArgumentsAssignment_2; }
 
 		//Arguments
@@ -918,12 +918,16 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSelfReferencedStoreParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cReferencedStoreParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Action cConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
+		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cValueNaturalParserRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
 		
 		//Variables returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	SelfReferencedStore | ReferencedStore;
+		//	SelfReferencedStore | ReferencedStore | {Constant} value=Natural;
 		public ParserRule getRule() { return rule; }
 
-		//SelfReferencedStore | ReferencedStore
+		//SelfReferencedStore | ReferencedStore | {Constant} value=Natural
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//SelfReferencedStore
@@ -931,6 +935,18 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 		//ReferencedStore
 		public RuleCall getReferencedStoreParserRuleCall_1() { return cReferencedStoreParserRuleCall_1; }
+
+		//{Constant} value=Natural
+		public Group getGroup_2() { return cGroup_2; }
+
+		//{Constant}
+		public Action getConstantAction_2_0() { return cConstantAction_2_0; }
+
+		//value=Natural
+		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+
+		//Natural
+		public RuleCall getValueNaturalParserRuleCall_2_1_0() { return cValueNaturalParserRuleCall_2_1_0; }
 	}
 
 	public class UpdatesElements extends AbstractParserRuleElementFinder {
@@ -1758,7 +1774,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cProcessesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cProcessesTermProcessExpressionParserRuleCall_1_0 = (RuleCall)cProcessesAssignment_1.eContents().get(0);
+		private final RuleCall cProcessesReferencedProcessParserRuleCall_1_0 = (RuleCall)cProcessesAssignment_1.eContents().get(0);
 		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cStoresAssignment_4 = (Assignment)cGroup.eContents().get(4);
@@ -1773,20 +1789,20 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////TERMS
 		//Term hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	"(" processes+=TermProcessExpression+ "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
+		//	"(" processes=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"(" processes+=TermProcessExpression+ "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";"
+		//"(" processes=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
 
-		//processes+=TermProcessExpression+
+		//processes=ReferencedProcess
 		public Assignment getProcessesAssignment_1() { return cProcessesAssignment_1; }
 
-		//TermProcessExpression
-		public RuleCall getProcessesTermProcessExpressionParserRuleCall_1_0() { return cProcessesTermProcessExpressionParserRuleCall_1_0; }
+		//ReferencedProcess
+		public RuleCall getProcessesReferencedProcessParserRuleCall_1_0() { return cProcessesReferencedProcessParserRuleCall_1_0; }
 
 		//","
 		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
@@ -1822,54 +1838,6 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
 	}
 
-	public class TermProcessExpressionElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TermProcessExpression");
-		private final RuleCall cTermProcessParallelParserRuleCall = (RuleCall)rule.eContents().get(1);
-		
-		//TermProcessExpression returns ProcessExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	TermProcessParallel;
-		public ParserRule getRule() { return rule; }
-
-		//TermProcessParallel
-		public RuleCall getTermProcessParallelParserRuleCall() { return cTermProcessParallelParserRuleCall; }
-	}
-
-	public class TermProcessParallelElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "TermProcessParallel");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final RuleCall cReferencedProcessParserRuleCall_0 = (RuleCall)cGroup.eContents().get(0);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Action cTPParallelLeftAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Keyword cVerticalLineKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
-		private final Assignment cRightAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cRightReferencedProcessParserRuleCall_1_2_0 = (RuleCall)cRightAssignment_1_2.eContents().get(0);
-		
-		//TermProcessParallel returns ProcessExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	ReferencedProcess ({TPParallel.left=current} "|" right=ReferencedProcess)*;
-		public ParserRule getRule() { return rule; }
-
-		//ReferencedProcess ({TPParallel.left=current} "|" right=ReferencedProcess)*
-		public Group getGroup() { return cGroup; }
-
-		//ReferencedProcess
-		public RuleCall getReferencedProcessParserRuleCall_0() { return cReferencedProcessParserRuleCall_0; }
-
-		//({TPParallel.left=current} "|" right=ReferencedProcess)*
-		public Group getGroup_1() { return cGroup_1; }
-
-		//{TPParallel.left=current}
-		public Action getTPParallelLeftAction_1_0() { return cTPParallelLeftAction_1_0; }
-
-		//"|"
-		public Keyword getVerticalLineKeyword_1_1() { return cVerticalLineKeyword_1_1; }
-
-		//right=ReferencedProcess
-		public Assignment getRightAssignment_1_2() { return cRightAssignment_1_2; }
-
-		//ReferencedProcess
-		public RuleCall getRightReferencedProcessParserRuleCall_1_2_0() { return cRightReferencedProcessParserRuleCall_1_2_0; }
-	}
-
 	public class DoubleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Double");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1877,25 +1845,30 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
 		private final Keyword cFullStopKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
 		private final RuleCall cINTTerminalRuleCall_1_1 = (RuleCall)cGroup_1.eContents().get(1);
-		private final Alternatives cAlternatives_1_2 = (Alternatives)cGroup_1.eContents().get(2);
-		private final Keyword cEKeyword_1_2_0 = (Keyword)cAlternatives_1_2.eContents().get(0);
-		private final Group cGroup_1_2_1 = (Group)cAlternatives_1_2.eContents().get(1);
-		private final Keyword cEKeyword_1_2_1_0 = (Keyword)cGroup_1_2_1.eContents().get(0);
-		private final Keyword cHyphenMinusKeyword_1_2_1_1 = (Keyword)cGroup_1_2_1.eContents().get(1);
-		private final RuleCall cINTTerminalRuleCall_1_2_1_2 = (RuleCall)cGroup_1_2_1.eContents().get(2);
+		private final Group cGroup_1_2 = (Group)cGroup_1.eContents().get(2);
+		private final Keyword cCircumflexAccentKeyword_1_2_0 = (Keyword)cGroup_1_2.eContents().get(0);
+		private final Keyword cHyphenMinusKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
+		private final RuleCall cINTTerminalRuleCall_1_2_2 = (RuleCall)cGroup_1_2.eContents().get(2);
 		
+		////TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+		////	TermProcessParallel
+		////;
+		////
+		////TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+		////	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
+		////;
 		////BASETYPES
 		//Double returns ecore::EDouble:
-		//	INT ("." INT ("e" | "E" "-"? INT)?)?;
+		//	INT ("." INT ("^" "-"? INT)?)?;
 		public ParserRule getRule() { return rule; }
 
-		//INT ("." INT ("e" | "E" "-"? INT)?)?
+		//INT ("." INT ("^" "-"? INT)?)?
 		public Group getGroup() { return cGroup; }
 
 		//INT
 		public RuleCall getINTTerminalRuleCall_0() { return cINTTerminalRuleCall_0; }
 
-		//("." INT ("e" | "E" "-"? INT)?)?
+		//("." INT ("^" "-"? INT)?)?
 		public Group getGroup_1() { return cGroup_1; }
 
 		//"."
@@ -1904,30 +1877,24 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getINTTerminalRuleCall_1_1() { return cINTTerminalRuleCall_1_1; }
 
-		//("e" | "E" "-"? INT)?
-		public Alternatives getAlternatives_1_2() { return cAlternatives_1_2; }
+		//("^" "-"? INT)?
+		public Group getGroup_1_2() { return cGroup_1_2; }
 
-		//"e"
-		public Keyword getEKeyword_1_2_0() { return cEKeyword_1_2_0; }
-
-		//"E" "-"? INT
-		public Group getGroup_1_2_1() { return cGroup_1_2_1; }
-
-		//"E"
-		public Keyword getEKeyword_1_2_1_0() { return cEKeyword_1_2_1_0; }
+		//"^"
+		public Keyword getCircumflexAccentKeyword_1_2_0() { return cCircumflexAccentKeyword_1_2_0; }
 
 		//"-"?
-		public Keyword getHyphenMinusKeyword_1_2_1_1() { return cHyphenMinusKeyword_1_2_1_1; }
+		public Keyword getHyphenMinusKeyword_1_2_1() { return cHyphenMinusKeyword_1_2_1; }
 
 		//INT
-		public RuleCall getINTTerminalRuleCall_1_2_1_2() { return cINTTerminalRuleCall_1_2_1_2; }
+		public RuleCall getINTTerminalRuleCall_1_2_2() { return cINTTerminalRuleCall_1_2_2; }
 	}
 
 	public class NaturalElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Natural");
 		private final RuleCall cINTTerminalRuleCall = (RuleCall)rule.eContents().get(1);
 		
-		//Natural:
+		//Natural returns ecore::EInt:
 		//	INT;
 		public ParserRule getRule() { return rule; }
 
@@ -2009,8 +1976,6 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	private final ActionProcessElements pActionProcess;
 	private final ReferencedProcessElements pReferencedProcess;
 	private final TermElements pTerm;
-	private final TermProcessExpressionElements pTermProcessExpression;
-	private final TermProcessParallelElements pTermProcessParallel;
 	private final DoubleElements pDouble;
 	private final NaturalElements pNatural;
 	private final BoolElements pBool;
@@ -2071,8 +2036,6 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		this.pActionProcess = new ActionProcessElements();
 		this.pReferencedProcess = new ReferencedProcessElements();
 		this.pTerm = new TermElements();
-		this.pTermProcessExpression = new TermProcessExpressionElements();
-		this.pTermProcessParallel = new TermProcessParallelElements();
 		this.pDouble = new DoubleElements();
 		this.pNatural = new NaturalElements();
 		this.pBool = new BoolElements();
@@ -2215,7 +2178,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	//;
 	// ** / //ACTIONS
 	//Action hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate? arguments=Arguments? updates=Updates? ".";
+	//	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate arguments=Arguments updates=Updates? ".";
 	public ActionElements getActionAccess() {
 		return pAction;
 	}
@@ -2388,7 +2351,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Variables returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	SelfReferencedStore | ReferencedStore;
+	//	SelfReferencedStore | ReferencedStore | {Constant} value=Natural;
 	public VariablesElements getVariablesAccess() {
 		return pVariables;
 	}
@@ -2623,7 +2586,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	////TERMS
 	//Term hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	"(" processes+=TermProcessExpression+ "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
+	//	"(" processes=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
 	public TermElements getTermAccess() {
 		return pTerm;
 	}
@@ -2632,29 +2595,16 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		return getTermAccess().getRule();
 	}
 
-	//TermProcessExpression returns ProcessExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	TermProcessParallel;
-	public TermProcessExpressionElements getTermProcessExpressionAccess() {
-		return pTermProcessExpression;
-	}
-	
-	public ParserRule getTermProcessExpressionRule() {
-		return getTermProcessExpressionAccess().getRule();
-	}
-
-	//TermProcessParallel returns ProcessExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	ReferencedProcess ({TPParallel.left=current} "|" right=ReferencedProcess)*;
-	public TermProcessParallelElements getTermProcessParallelAccess() {
-		return pTermProcessParallel;
-	}
-	
-	public ParserRule getTermProcessParallelRule() {
-		return getTermProcessParallelAccess().getRule();
-	}
-
+	////TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	////	TermProcessParallel
+	////;
+	////
+	////TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	////	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
+	////;
 	////BASETYPES
 	//Double returns ecore::EDouble:
-	//	INT ("." INT ("e" | "E" "-"? INT)?)?;
+	//	INT ("." INT ("^" "-"? INT)?)?;
 	public DoubleElements getDoubleAccess() {
 		return pDouble;
 	}
@@ -2663,7 +2613,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		return getDoubleAccess().getRule();
 	}
 
-	//Natural:
+	//Natural returns ecore::EInt:
 	//	INT;
 	public NaturalElements getNaturalAccess() {
 		return pNatural;

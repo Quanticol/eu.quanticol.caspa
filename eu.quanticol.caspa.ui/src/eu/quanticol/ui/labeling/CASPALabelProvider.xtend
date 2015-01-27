@@ -9,7 +9,7 @@ import eu.quanticol.cASPA.Process
 import eu.quanticol.cASPA.ProcessExpression
 import eu.quanticol.cASPA.ReferencedProcess
 import eu.quanticol.ModelUtil
-import eu.quanticol.cASPA.TPParallel
+//import eu.quanticol.cASPA.TPParallel
 import eu.quanticol.cASPA.Store
 import eu.quanticol.cASPA.SelfReferencedStore
 import eu.quanticol.cASPA.ReferencedStore
@@ -47,9 +47,11 @@ class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 		
 		var String temp
 		
-		for(process : term.processes){
-			temp = process.cTString
-		}
+//		for(process : term.processes){
+//			temp = process.cTString
+//		}
+
+		temp = term.processes.cTString
 			
 		return "Term " + temp
 	}
@@ -63,9 +65,9 @@ class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 	}
 
 	
-	def text(TPParallel tpp){
-		 "|"
-	}
+//	def text(TPParallel tpp){
+//		 "|"
+//	}
 	
 	def text(ReferencedProcess process){
 		process.name.cTString

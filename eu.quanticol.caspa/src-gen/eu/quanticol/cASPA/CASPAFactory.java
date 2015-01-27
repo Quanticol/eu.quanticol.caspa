@@ -419,15 +419,6 @@ public interface CASPAFactory extends EFactory
   ReferencedProcess createReferencedProcess();
 
   /**
-   * Returns a new object of class '<em>TP Parallel</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>TP Parallel</em>'.
-   * @generated
-   */
-  TPParallel createTPParallel();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

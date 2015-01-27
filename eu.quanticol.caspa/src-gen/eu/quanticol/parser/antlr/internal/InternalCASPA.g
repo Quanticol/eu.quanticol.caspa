@@ -403,7 +403,7 @@ ruleAction returns [EObject current=null]
 	    }
 
 )
-)?(
+)(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getActionAccess().getArgumentsArgumentsParserRuleCall_2_0()); 
@@ -421,7 +421,7 @@ ruleAction returns [EObject current=null]
 	    }
 
 )
-)?(
+)(
 (
 		{ 
 	        newCompositeNode(grammarAccess.getActionAccess().getUpdatesUpdatesParserRuleCall_3_0()); 
@@ -1698,7 +1698,32 @@ ruleVariables returns [EObject current=null]
         $current = $this_ReferencedStore_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getVariablesAccess().getConstantAction_2_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getVariablesAccess().getValueNaturalParserRuleCall_2_1_0()); 
+	    }
+		lv_value_3_0=ruleNatural		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getVariablesRule());
+	        }
+       		set(
+       			$current, 
+       			"value",
+        		lv_value_3_0, 
+        		"Natural");
+	        afterParserOrEnumRuleCall();
+	    }
+
 )
+)))
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -3326,22 +3351,22 @@ ruleTerm returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTermAccess().getProcessesTermProcessExpressionParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getTermAccess().getProcessesReferencedProcessParserRuleCall_1_0()); 
 	    }
-		lv_processes_1_0=ruleTermProcessExpression		{
+		lv_processes_1_0=ruleReferencedProcess		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTermRule());
 	        }
-       		add(
+       		set(
        			$current, 
        			"processes",
         		lv_processes_1_0, 
-        		"TermProcessExpression");
+        		"ReferencedProcess");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)+	otherlv_2=',' 
+)	otherlv_2=',' 
     {
     	newLeafNode(otherlv_2, grammarAccess.getTermAccess().getCommaKeyword_2());
     }
@@ -3411,114 +3436,6 @@ finally {
 
 
 
-// Entry rule entryRuleTermProcessExpression
-entryRuleTermProcessExpression returns [EObject current=null] 
-	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-	}
-	:
-	{ newCompositeNode(grammarAccess.getTermProcessExpressionRule()); }
-	 iv_ruleTermProcessExpression=ruleTermProcessExpression 
-	 { $current=$iv_ruleTermProcessExpression.current; } 
-	 EOF 
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
-// Rule TermProcessExpression
-ruleTermProcessExpression returns [EObject current=null] 
-    @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-    }
-    @after { leaveRule(); }:
-
-    { 
-        newCompositeNode(grammarAccess.getTermProcessExpressionAccess().getTermProcessParallelParserRuleCall()); 
-    }
-    this_TermProcessParallel_0=ruleTermProcessParallel
-    { 
-        $current = $this_TermProcessParallel_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
-
-
-
-
-// Entry rule entryRuleTermProcessParallel
-entryRuleTermProcessParallel returns [EObject current=null] 
-	@init { 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-	}
-	:
-	{ newCompositeNode(grammarAccess.getTermProcessParallelRule()); }
-	 iv_ruleTermProcessParallel=ruleTermProcessParallel 
-	 { $current=$iv_ruleTermProcessParallel.current; } 
-	 EOF 
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
-// Rule TermProcessParallel
-ruleTermProcessParallel returns [EObject current=null] 
-    @init { enterRule(); 
-		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-    }
-    @after { leaveRule(); }:
-(
-    { 
-        newCompositeNode(grammarAccess.getTermProcessParallelAccess().getReferencedProcessParserRuleCall_0()); 
-    }
-    this_ReferencedProcess_0=ruleReferencedProcess
-    { 
-        $current = $this_ReferencedProcess_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-((
-    {
-        $current = forceCreateModelElementAndSet(
-            grammarAccess.getTermProcessParallelAccess().getTPParallelLeftAction_1_0(),
-            $current);
-    }
-)	otherlv_2='|' 
-    {
-    	newLeafNode(otherlv_2, grammarAccess.getTermProcessParallelAccess().getVerticalLineKeyword_1_1());
-    }
-(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getTermProcessParallelAccess().getRightReferencedProcessParserRuleCall_1_2_0()); 
-	    }
-		lv_right_3_0=ruleReferencedProcess		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTermProcessParallelRule());
-	        }
-       		set(
-       			$current, 
-       			"right",
-        		lv_right_3_0, 
-        		"ReferencedProcess");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-))*)
-;
-finally {
-	myHiddenTokenState.restore();
-}
-
-
-
-
-
 // Entry rule entryRuleDouble
 entryRuleDouble returns [String current=null] 
 	:
@@ -3554,32 +3471,25 @@ ruleDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
     newLeafNode(this_INT_2, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_1_1()); 
     }
 (
-	kw='e' 
+	kw='^' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDoubleAccess().getEKeyword_1_2_0()); 
-    }
-
-    |(
-	kw='E' 
-    {
-        $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDoubleAccess().getEKeyword_1_2_1_0()); 
+        newLeafNode(kw, grammarAccess.getDoubleAccess().getCircumflexAccentKeyword_1_2_0()); 
     }
 (
 	kw='-' 
     {
         $current.merge(kw);
-        newLeafNode(kw, grammarAccess.getDoubleAccess().getHyphenMinusKeyword_1_2_1_1()); 
+        newLeafNode(kw, grammarAccess.getDoubleAccess().getHyphenMinusKeyword_1_2_1()); 
     }
-)?    this_INT_6=RULE_INT    {
-		$current.merge(this_INT_6);
+)?    this_INT_5=RULE_INT    {
+		$current.merge(this_INT_5);
     }
 
     { 
-    newLeafNode(this_INT_6, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_1_2_1_2()); 
+    newLeafNode(this_INT_5, grammarAccess.getDoubleAccess().getINTTerminalRuleCall_1_2_2()); 
     }
-))?)?)
+)?)?)
     ;
 
 

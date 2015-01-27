@@ -55,7 +55,7 @@ public class DistributionImpl extends UpdatesImpl implements Distribution
    * @generated
    * @ordered
    */
-  protected static final String EXPRESSION_EDEFAULT = null;
+  protected static final int EXPRESSION_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
@@ -65,7 +65,7 @@ public class DistributionImpl extends UpdatesImpl implements Distribution
    * @generated
    * @ordered
    */
-  protected String expression = EXPRESSION_EDEFAULT;
+  protected int expression = EXPRESSION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -116,7 +116,7 @@ public class DistributionImpl extends UpdatesImpl implements Distribution
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getExpression()
+  public int getExpression()
   {
     return expression;
   }
@@ -126,9 +126,9 @@ public class DistributionImpl extends UpdatesImpl implements Distribution
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(String newExpression)
+  public void setExpression(int newExpression)
   {
-    String oldExpression = expression;
+    int oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTION__EXPRESSION, oldExpression, expression));
@@ -166,7 +166,7 @@ public class DistributionImpl extends UpdatesImpl implements Distribution
         setProb((Double)newValue);
         return;
       case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        setExpression((String)newValue);
+        setExpression((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -205,7 +205,7 @@ public class DistributionImpl extends UpdatesImpl implements Distribution
       case CASPAPackage.DISTRIBUTION__PROB:
         return prob != PROB_EDEFAULT;
       case CASPAPackage.DISTRIBUTION__EXPRESSION:
-        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+        return expression != EXPRESSION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

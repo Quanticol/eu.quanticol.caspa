@@ -22,12 +22,10 @@ import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
 import eu.quanticol.cASPA.Store;
-import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Uniform;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.Updates;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 import org.eclipse.xtext.xbase.lib.Extension;
@@ -50,11 +48,9 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
   
   public String text(final Term term) {
     String temp = null;
-    EList<ProcessExpression> _processes = term.getProcesses();
-    for (final ProcessExpression process : _processes) {
-      String _cTString = this._modelUtil.cTString(process);
-      temp = _cTString;
-    }
+    ProcessExpression _processes = term.getProcesses();
+    String _cTString = this._modelUtil.cTString(_processes);
+    temp = _cTString;
     return ("Term " + temp);
   }
   
@@ -64,10 +60,6 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
   
   public String text(final eu.quanticol.cASPA.Process p) {
     return this._modelUtil.cTString(p);
-  }
-  
-  public String text(final TPParallel tpp) {
-    return "|";
   }
   
   public String text(final ReferencedProcess process) {

@@ -51,7 +51,6 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getUpdateAtomicAccess().getAlternatives(), "rule__UpdateAtomic__Alternatives");
 					put(grammarAccess.getPrimaryProcessAccess().getAlternatives(), "rule__PrimaryProcess__Alternatives");
 					put(grammarAccess.getAtomicProcessAccess().getAlternatives(), "rule__AtomicProcess__Alternatives");
-					put(grammarAccess.getDoubleAccess().getAlternatives_1_2(), "rule__Double__Alternatives_1_2");
 					put(grammarAccess.getBoolAccess().getAlternatives_1(), "rule__Bool__Alternatives_1");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getStoreAccess().getGroup(), "rule__Store__Group__0");
@@ -86,6 +85,7 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArgumentsAccess().getGroup_1(), "rule__Arguments__Group_1__0");
 					put(grammarAccess.getArgumentsAccess().getGroup_1_3(), "rule__Arguments__Group_1_3__0");
 					put(grammarAccess.getExpressionsAccess().getGroup_2(), "rule__Expressions__Group_2__0");
+					put(grammarAccess.getVariablesAccess().getGroup_2(), "rule__Variables__Group_2__0");
 					put(grammarAccess.getUpdatesAccess().getGroup(), "rule__Updates__Group__0");
 					put(grammarAccess.getUpdatesAccess().getGroup_3(), "rule__Updates__Group_3__0");
 					put(grammarAccess.getSingleEventUpdateAccess().getGroup(), "rule__SingleEventUpdate__Group__0");
@@ -118,11 +118,9 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getReferencedProcessAccess().getGroup(), "rule__ReferencedProcess__Group__0");
 					put(grammarAccess.getTermAccess().getGroup(), "rule__Term__Group__0");
 					put(grammarAccess.getTermAccess().getGroup_5(), "rule__Term__Group_5__0");
-					put(grammarAccess.getTermProcessParallelAccess().getGroup(), "rule__TermProcessParallel__Group__0");
-					put(grammarAccess.getTermProcessParallelAccess().getGroup_1(), "rule__TermProcessParallel__Group_1__0");
 					put(grammarAccess.getDoubleAccess().getGroup(), "rule__Double__Group__0");
 					put(grammarAccess.getDoubleAccess().getGroup_1(), "rule__Double__Group_1__0");
-					put(grammarAccess.getDoubleAccess().getGroup_1_2_1(), "rule__Double__Group_1_2_1__0");
+					put(grammarAccess.getDoubleAccess().getGroup_1_2(), "rule__Double__Group_1_2__0");
 					put(grammarAccess.getBoolAccess().getGroup(), "rule__Bool__Group__0");
 					put(grammarAccess.getModelAccess().getTermsAssignment_0(), "rule__Model__TermsAssignment_0");
 					put(grammarAccess.getModelAccess().getProcessesAssignment_1(), "rule__Model__ProcessesAssignment_1");
@@ -154,6 +152,7 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArgumentsAccess().getExpressionsAssignment_1_2(), "rule__Arguments__ExpressionsAssignment_1_2");
 					put(grammarAccess.getArgumentsAccess().getExpressionsAssignment_1_3_1(), "rule__Arguments__ExpressionsAssignment_1_3_1");
 					put(grammarAccess.getExpressionsAccess().getValueAssignment_2_1(), "rule__Expressions__ValueAssignment_2_1");
+					put(grammarAccess.getVariablesAccess().getValueAssignment_2_1(), "rule__Variables__ValueAssignment_2_1");
 					put(grammarAccess.getUpdatesAccess().getUpdatesAssignment_2(), "rule__Updates__UpdatesAssignment_2");
 					put(grammarAccess.getUpdatesAccess().getUpdatesAssignment_3_1(), "rule__Updates__UpdatesAssignment_3_1");
 					put(grammarAccess.getSingleEventUpdateAccess().getNameAssignment_1(), "rule__SingleEventUpdate__NameAssignment_1");
@@ -186,7 +185,6 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTermAccess().getProcessesAssignment_1(), "rule__Term__ProcessesAssignment_1");
 					put(grammarAccess.getTermAccess().getStoresAssignment_4(), "rule__Term__StoresAssignment_4");
 					put(grammarAccess.getTermAccess().getStoresAssignment_5_1(), "rule__Term__StoresAssignment_5_1");
-					put(grammarAccess.getTermProcessParallelAccess().getRightAssignment_1_2(), "rule__TermProcessParallel__RightAssignment_1_2");
 				}
 			};
 		}

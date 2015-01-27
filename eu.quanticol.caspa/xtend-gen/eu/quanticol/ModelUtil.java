@@ -32,7 +32,6 @@ import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
-import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Uniform;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
@@ -47,17 +46,6 @@ public class ModelUtil {
   public String cTString(final ProcessExpression e) {
     String _switchResult = null;
     boolean _matched = false;
-    if (!_matched) {
-      if (e instanceof TPParallel) {
-        _matched=true;
-        ProcessExpression _left = ((TPParallel)e).getLeft();
-        String _cTString = this.cTString(_left);
-        String _plus = (_cTString + " | ");
-        ProcessExpression _right = ((TPParallel)e).getRight();
-        String _cTString_1 = this.cTString(_right);
-        _switchResult = (_plus + _cTString_1);
-      }
-    }
     if (!_matched) {
       if (e instanceof ReferencedProcess) {
         _matched=true;
@@ -253,8 +241,8 @@ public class ModelUtil {
   }
   
   public String cTString(final Constant c) {
-    String _value = c.getValue();
-    return ("" + _value);
+    int _value = c.getValue();
+    return ("" + Integer.valueOf(_value));
   }
   
   public String cTString(final BooleanConstant bc) {
@@ -347,8 +335,8 @@ public class ModelUtil {
         String _name = ((Store)s).getName();
         String _plus = ("" + _name);
         String _plus_1 = (_plus + " = ");
-        String _value = ((Store)s).getValue();
-        _switchResult = (_plus_1 + _value);
+        int _value = ((Store)s).getValue();
+        _switchResult = (_plus_1 + Integer.valueOf(_value));
       }
     }
     if (!_matched) {
@@ -372,8 +360,8 @@ public class ModelUtil {
     String _name = s.getName();
     String _plus = ("" + _name);
     String _plus_1 = (_plus + " = ");
-    String _value = s.getValue();
-    return (_plus_1 + _value);
+    int _value = s.getValue();
+    return (_plus_1 + Integer.valueOf(_value));
   }
   
   public String cTString(final Updates u) {
@@ -448,15 +436,15 @@ public class ModelUtil {
       String _string = Double.valueOf(_prob).toString();
       String _plus = ("" + _string);
       /* (_plus + " : "); */
-      String _expression = u.getExpression();
-      _xblockexpression = _expression.toString();
+      int _expression = u.getExpression();
+      _xblockexpression = Integer.valueOf(_expression).toString();
     }
     return _xblockexpression;
   }
   
   public String cTString(final Uniform u) {
-    String _expression = u.getExpression();
-    return _expression.toString();
+    int _expression = u.getExpression();
+    return Integer.valueOf(_expression).toString();
   }
   
   public String cTString(final UpdateExpression ue) {

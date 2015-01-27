@@ -37,7 +37,6 @@ import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
-import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.Uniform;
@@ -337,11 +336,6 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseReferencedProcess(ReferencedProcess object)
       {
         return createReferencedProcessAdapter();
-      }
-      @Override
-      public Adapter caseTPParallel(TPParallel object)
-      {
-        return createTPParallelAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -1021,21 +1015,6 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createReferencedProcessAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.TPParallel <em>TP Parallel</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see eu.quanticol.cASPA.TPParallel
-   * @generated
-   */
-  public Adapter createTPParallelAdapter()
   {
     return null;
   }

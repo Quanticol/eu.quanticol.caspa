@@ -32,7 +32,6 @@ import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
 import eu.quanticol.cASPA.Store;
-import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.Uniform;
@@ -160,6 +159,11 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getUpdateSubtractionRule() ||
 				   context == grammarAccess.getUpdateSubtractionAccess().getUpdateSubLeftAction_1_0()) {
 					sequence_UpdateAtomic(context, (Constant) semanticObject); 
+					return; 
+				}
+				else if(context == grammarAccess.getInArgumentsRule() ||
+				   context == grammarAccess.getVariablesRule()) {
+					sequence_Variables(context, (Constant) semanticObject); 
 					return; 
 				}
 				else break;
@@ -471,10 +475,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getParallelAccess().getParallelLeftAction_1_0() ||
 				   context == grammarAccess.getPrimaryProcessRule() ||
 				   context == grammarAccess.getProcessExpressionRule() ||
-				   context == grammarAccess.getReferencedProcessRule() ||
-				   context == grammarAccess.getTermProcessExpressionRule() ||
-				   context == grammarAccess.getTermProcessParallelRule() ||
-				   context == grammarAccess.getTermProcessParallelAccess().getTPParallelLeftAction_1_0()) {
+				   context == grammarAccess.getReferencedProcessRule()) {
 					sequence_ReferencedProcess(context, (ReferencedProcess) semanticObject); 
 					return; 
 				}
@@ -562,14 +563,6 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case CASPAPackage.STORE:
 				if(context == grammarAccess.getStoreRule()) {
 					sequence_Store(context, (Store) semanticObject); 
-					return; 
-				}
-				else break;
-			case CASPAPackage.TP_PARALLEL:
-				if(context == grammarAccess.getTermProcessExpressionRule() ||
-				   context == grammarAccess.getTermProcessParallelRule() ||
-				   context == grammarAccess.getTermProcessParallelAccess().getTPParallelLeftAction_1_0()) {
-					sequence_TermProcessParallel(context, (TPParallel) semanticObject); 
 					return; 
 				}
 				else break;
@@ -682,7 +675,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate? arguments=Arguments? updates=Updates?)
+	 *     (name=LOWER predicate=Predicate arguments=Arguments updates=Updates?)
 	 */
 	protected void sequence_Action(EObject context, Broadcast semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -691,7 +684,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=LOWER predicate=Predicate? arguments=Arguments? updates=Updates?)
+	 *     (name=LOWER predicate=Predicate arguments=Arguments updates=Updates?)
 	 */
 	protected void sequence_Action(EObject context, Unicast semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1136,26 +1129,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (left=TermProcessParallel_TPParallel_1_0 right=ReferencedProcess)
-	 */
-	protected void sequence_TermProcessParallel(EObject context, TPParallel semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.TP_PARALLEL__LEFT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.TP_PARALLEL__LEFT));
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.TP_PARALLEL__RIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.TP_PARALLEL__RIGHT));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getTermProcessParallelAccess().getTPParallelLeftAction_1_0(), semanticObject.getLeft());
-		feeder.accept(grammarAccess.getTermProcessParallelAccess().getRightReferencedProcessParserRuleCall_1_2_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (processes+=TermProcessExpression+ stores+=Store stores+=Store*)
+	 *     (processes=ReferencedProcess stores+=Store stores+=Store*)
 	 */
 	protected void sequence_Term(EObject context, Term semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1269,5 +1243,21 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Updates(EObject context, Updates semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     value=Natural
+	 */
+	protected void sequence_Variables(EObject context, Constant semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.CONSTANT__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.CONSTANT__VALUE));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getVariablesAccess().getValueNaturalParserRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.finish();
 	}
 }

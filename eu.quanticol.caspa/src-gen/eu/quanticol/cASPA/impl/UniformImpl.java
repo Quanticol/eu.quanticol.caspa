@@ -34,7 +34,7 @@ public class UniformImpl extends UpdatesImpl implements Uniform
    * @generated
    * @ordered
    */
-  protected static final String EXPRESSION_EDEFAULT = null;
+  protected static final int EXPRESSION_EDEFAULT = 0;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' attribute.
@@ -44,7 +44,7 @@ public class UniformImpl extends UpdatesImpl implements Uniform
    * @generated
    * @ordered
    */
-  protected String expression = EXPRESSION_EDEFAULT;
+  protected int expression = EXPRESSION_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,7 +72,7 @@ public class UniformImpl extends UpdatesImpl implements Uniform
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getExpression()
+  public int getExpression()
   {
     return expression;
   }
@@ -82,9 +82,9 @@ public class UniformImpl extends UpdatesImpl implements Uniform
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(String newExpression)
+  public void setExpression(int newExpression)
   {
-    String oldExpression = expression;
+    int oldExpression = expression;
     expression = newExpression;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.UNIFORM__EXPRESSION, oldExpression, expression));
@@ -117,7 +117,7 @@ public class UniformImpl extends UpdatesImpl implements Uniform
     switch (featureID)
     {
       case CASPAPackage.UNIFORM__EXPRESSION:
-        setExpression((String)newValue);
+        setExpression((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -151,7 +151,7 @@ public class UniformImpl extends UpdatesImpl implements Uniform
     switch (featureID)
     {
       case CASPAPackage.UNIFORM__EXPRESSION:
-        return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
+        return expression != EXPRESSION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }

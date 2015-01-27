@@ -3,7 +3,7 @@ package eu.quanticol
 import eu.quanticol.cASPA.ProcessExpression
 import eu.quanticol.cASPA.Process
 import eu.quanticol.cASPA.ReferencedProcess
-import eu.quanticol.cASPA.TPParallel
+//import eu.quanticol.cASPA.TPParallel
 import eu.quanticol.cASPA.Store
 import eu.quanticol.cASPA.SelfReferencedStore
 import eu.quanticol.cASPA.ReferencedStore
@@ -47,7 +47,7 @@ class ModelUtil {
 	
 		def String cTString(ProcessExpression e) {
 			switch (e) {
-				TPParallel: 					e.left.cTString + " | " + e.right.cTString
+				//TPParallel: 					e.left.cTString + " | " + e.right.cTString
 				ReferencedProcess:				"" + e.name.cTString
 				Parallel:						e.left.cTString + " | " + e.right.cTString
 				Choice:							e.left.cTString + " + " + e.right.cTString

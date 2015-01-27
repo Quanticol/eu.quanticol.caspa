@@ -12,51 +12,50 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalCASPALexer extends Lexer {
-    public static final int T__19=19;
-    public static final int T__15=15;
-    public static final int T__16=16;
-    public static final int T__17=17;
-    public static final int T__18=18;
-    public static final int T__13=13;
-    public static final int T__14=14;
     public static final int RULE_ID=7;
-    public static final int T__26=26;
-    public static final int T__27=27;
-    public static final int T__28=28;
-    public static final int RULE_INT=4;
     public static final int T__29=29;
-    public static final int T__22=22;
-    public static final int RULE_ML_COMMENT=9;
-    public static final int T__23=23;
-    public static final int T__24=24;
+    public static final int T__28=28;
+    public static final int T__27=27;
+    public static final int T__26=26;
     public static final int T__25=25;
-    public static final int T__20=20;
+    public static final int T__24=24;
+    public static final int T__23=23;
+    public static final int T__22=22;
     public static final int T__21=21;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__20=20;
+    public static final int EOF=-1;
     public static final int RULE_LOWER=5;
-    public static final int RULE_STRING=8;
+    public static final int T__19=19;
+    public static final int T__16=16;
+    public static final int T__15=15;
+    public static final int T__18=18;
+    public static final int T__17=17;
+    public static final int T__14=14;
+    public static final int T__13=13;
+    public static final int RULE_INT=4;
+    public static final int T__42=42;
+    public static final int T__43=43;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__46=46;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int RULE_UPPER=6;
     public static final int RULE_SL_COMMENT=10;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int RULE_ML_COMMENT=9;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
+    public static final int RULE_STRING=8;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int EOF=-1;
-    public static final int T__30=30;
-    public static final int T__31=31;
-    public static final int T__32=32;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int RULE_WS=11;
-    public static final int RULE_UPPER=6;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
-    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -200,10 +199,11 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__19;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:17:7: ( 'e' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:17:9: 'e'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:17:7: ( 'True' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:17:9: 'True'
             {
-            match('e'); 
+            match("True"); 
+
 
             }
 
@@ -220,10 +220,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__20;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:18:7: ( 'True' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:18:9: 'True'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:18:7: ( 'False' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:18:9: 'False'
             {
-            match("True"); 
+            match("False"); 
 
 
             }
@@ -241,11 +241,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__21;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:19:7: ( 'False' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:19:9: 'False'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:19:7: ( '=' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:19:9: '='
             {
-            match("False"); 
-
+            match('='); 
 
             }
 
@@ -262,10 +261,11 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:20:7: ( '=' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:20:9: '='
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:20:7: ( 'this.' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:20:9: 'this.'
             {
-            match('='); 
+            match("this."); 
+
 
             }
 
@@ -282,11 +282,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:21:7: ( 'this.' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:21:9: 'this.'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:21:7: ( '.' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:21:9: '.'
             {
-            match("this."); 
-
+            match('.'); 
 
             }
 
@@ -303,10 +302,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:22:7: ( '.' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:22:9: '.'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:22:7: ( '*' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:22:9: '*'
             {
-            match('.'); 
+            match('*'); 
 
             }
 
@@ -323,10 +322,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:23:7: ( '*' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:23:9: '*'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:23:7: ( '[' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:23:9: '['
             {
-            match('*'); 
+            match('['); 
 
             }
 
@@ -343,10 +342,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__26;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:24:7: ( '[' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:24:9: '['
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:24:7: ( ']' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:24:9: ']'
             {
-            match('['); 
+            match(']'); 
 
             }
 
@@ -363,10 +362,11 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__27;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:25:7: ( ']' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:25:9: ']'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:25:7: ( '||' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:25:9: '||'
             {
-            match(']'); 
+            match("||"); 
+
 
             }
 
@@ -383,10 +383,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__28;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:26:7: ( '||' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:26:9: '||'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:26:7: ( '&&' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:26:9: '&&'
             {
-            match("||"); 
+            match("&&"); 
 
 
             }
@@ -404,11 +404,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__29;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:27:7: ( '&&' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:27:9: '&&'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:27:7: ( '-' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:27:9: '-'
             {
-            match("&&"); 
-
+            match('-'); 
 
             }
 
@@ -425,10 +424,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__30;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:28:7: ( '-' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:28:9: '-'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:28:7: ( '+' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:28:9: '+'
             {
-            match('-'); 
+            match('+'); 
 
             }
 
@@ -445,10 +444,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__31;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:29:7: ( '+' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:29:9: '+'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:29:7: ( '/' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:29:9: '/'
             {
-            match('+'); 
+            match('/'); 
 
             }
 
@@ -465,10 +464,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__32;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:30:7: ( '/' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:30:9: '/'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:30:7: ( '(' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:30:9: '('
             {
-            match('/'); 
+            match('('); 
 
             }
 
@@ -485,10 +484,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__33;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:31:7: ( '(' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:31:9: '('
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:31:7: ( ')' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:31:9: ')'
             {
-            match('('); 
+            match(')'); 
 
             }
 
@@ -505,10 +504,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__34;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:32:7: ( ')' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:32:9: ')'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:32:7: ( '!' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:32:9: '!'
             {
-            match(')'); 
+            match('!'); 
 
             }
 
@@ -525,10 +524,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__35;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:33:7: ( '!' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:33:9: '!'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:33:7: ( ',' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:33:9: ','
             {
-            match('!'); 
+            match(','); 
 
             }
 
@@ -545,10 +544,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__36;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:34:7: ( ',' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:34:9: ','
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:34:7: ( '{' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:34:9: '{'
             {
-            match(','); 
+            match('{'); 
 
             }
 
@@ -565,10 +564,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__37;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:35:7: ( '{' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:35:9: '{'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:35:7: ( '}' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:35:9: '}'
             {
-            match('{'); 
+            match('}'); 
 
             }
 
@@ -585,10 +584,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__38;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:36:7: ( '}' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:36:9: '}'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:36:7: ( ';' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:36:9: ';'
             {
-            match('}'); 
+            match(';'); 
 
             }
 
@@ -605,10 +604,11 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__39;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:37:7: ( ';' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:37:9: ';'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:37:7: ( ':=' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:37:9: ':='
             {
-            match(';'); 
+            match(":="); 
+
 
             }
 
@@ -625,10 +625,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__40;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:38:7: ( ':=' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:38:9: ':='
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:38:7: ( 'Pr' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:38:9: 'Pr'
             {
-            match(":="); 
+            match("Pr"); 
 
 
             }
@@ -646,11 +646,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__41;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:39:7: ( 'Pr' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:39:9: 'Pr'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:39:7: ( 'U' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:39:9: 'U'
             {
-            match("Pr"); 
-
+            match('U'); 
 
             }
 
@@ -667,10 +666,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__42;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:40:7: ( 'U' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:40:9: 'U'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:40:7: ( ':' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:40:9: ':'
             {
-            match('U'); 
+            match(':'); 
 
             }
 
@@ -687,10 +686,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__43;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:41:7: ( ':' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:41:9: ':'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:41:7: ( '|' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:41:9: '|'
             {
-            match(':'); 
+            match('|'); 
 
             }
 
@@ -707,10 +706,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__44;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:42:7: ( '|' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:42:9: '|'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:42:7: ( '^' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:42:9: '^'
             {
-            match('|'); 
+            match('^'); 
 
             }
 
@@ -727,10 +726,11 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:43:7: ( 'E' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:43:9: 'E'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:43:7: ( 'nil' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:43:9: 'nil'
             {
-            match('E'); 
+            match("nil"); 
+
 
             }
 
@@ -747,29 +747,8 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = T__46;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:44:7: ( 'nil' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:44:9: 'nil'
-            {
-            match("nil"); 
-
-
-            }
-
-            state.type = _type;
-            state.channel = _channel;
-        }
-        finally {
-        }
-    }
-    // $ANTLR end "T__46"
-
-    // $ANTLR start "T__47"
-    public final void mT__47() throws RecognitionException {
-        try {
-            int _type = T__47;
-            int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:45:7: ( 'kill' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:45:9: 'kill'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:44:7: ( 'kill' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:44:9: 'kill'
             {
             match("kill"); 
 
@@ -782,18 +761,18 @@ public class InternalCASPALexer extends Lexer {
         finally {
         }
     }
-    // $ANTLR end "T__47"
+    // $ANTLR end "T__46"
 
     // $ANTLR start "RULE_LOWER"
     public final void mRULE_LOWER() throws RecognitionException {
         try {
             int _type = RULE_LOWER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9883:12: ( 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9883:14: 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9692:12: ( 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9692:14: 'a' .. 'z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             matchRange('a','z'); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9883:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9692:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop1:
             do {
                 int alt1=2;
@@ -842,11 +821,11 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_UPPER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9885:12: ( 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9885:14: 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9694:12: ( 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9694:14: 'A' .. 'Z' ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
             matchRange('A','Z'); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9885:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9694:23: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -895,10 +874,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9887:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9887:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9696:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9696:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9887:11: ( '^' )?
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9696:11: ( '^' )?
             int alt3=2;
             int LA3_0 = input.LA(1);
 
@@ -907,7 +886,7 @@ public class InternalCASPALexer extends Lexer {
             }
             switch (alt3) {
                 case 1 :
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9887:11: '^'
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9696:11: '^'
                     {
                     match('^'); 
 
@@ -925,7 +904,7 @@ public class InternalCASPALexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9887:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9696:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop4:
             do {
                 int alt4=2;
@@ -974,10 +953,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9889:10: ( ( '0' .. '9' )+ )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9889:12: ( '0' .. '9' )+
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9698:10: ( ( '0' .. '9' )+ )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9698:12: ( '0' .. '9' )+
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9889:12: ( '0' .. '9' )+
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9698:12: ( '0' .. '9' )+
             int cnt5=0;
             loop5:
             do {
@@ -991,7 +970,7 @@ public class InternalCASPALexer extends Lexer {
 
                 switch (alt5) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9889:13: '0' .. '9'
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9698:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1023,10 +1002,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt8=2;
             int LA8_0 = input.LA(1);
 
@@ -1044,10 +1023,10 @@ public class InternalCASPALexer extends Lexer {
             }
             switch (alt8) {
                 case 1 :
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop6:
                     do {
                         int alt6=3;
@@ -1063,7 +1042,7 @@ public class InternalCASPALexer extends Lexer {
 
                         switch (alt6) {
                     	case 1 :
-                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:21: '\\\\' .
+                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1071,7 +1050,7 @@ public class InternalCASPALexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1096,10 +1075,10 @@ public class InternalCASPALexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop7:
                     do {
                         int alt7=3;
@@ -1115,7 +1094,7 @@ public class InternalCASPALexer extends Lexer {
 
                         switch (alt7) {
                     	case 1 :
-                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:54: '\\\\' .
+                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1123,7 +1102,7 @@ public class InternalCASPALexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9891:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9700:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1166,12 +1145,12 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9893:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9893:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9702:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9702:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9893:24: ( options {greedy=false; } : . )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9702:24: ( options {greedy=false; } : . )*
             loop9:
             do {
                 int alt9=2;
@@ -1196,7 +1175,7 @@ public class InternalCASPALexer extends Lexer {
 
                 switch (alt9) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9893:52: .
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9702:52: .
             	    {
             	    matchAny(); 
 
@@ -1226,12 +1205,12 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop10:
             do {
                 int alt10=2;
@@ -1244,7 +1223,7 @@ public class InternalCASPALexer extends Lexer {
 
                 switch (alt10) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1264,7 +1243,7 @@ public class InternalCASPALexer extends Lexer {
                 }
             } while (true);
 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:40: ( ( '\\r' )? '\\n' )?
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:40: ( ( '\\r' )? '\\n' )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1273,9 +1252,9 @@ public class InternalCASPALexer extends Lexer {
             }
             switch (alt12) {
                 case 1 :
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:41: ( '\\r' )? '\\n'
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:41: ( '\\r' )? '\\n'
                     {
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:41: ( '\\r' )?
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:41: ( '\\r' )?
                     int alt11=2;
                     int LA11_0 = input.LA(1);
 
@@ -1284,7 +1263,7 @@ public class InternalCASPALexer extends Lexer {
                     }
                     switch (alt11) {
                         case 1 :
-                            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:41: '\\r'
+                            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1316,10 +1295,10 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9897:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9897:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9706:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9706:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9897:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9706:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt13=0;
             loop13:
             do {
@@ -1373,8 +1352,8 @@ public class InternalCASPALexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9899:16: ( . )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9899:18: .
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9708:16: ( . )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9708:18: .
             {
             matchAny(); 
 
@@ -1389,8 +1368,8 @@ public class InternalCASPALexer extends Lexer {
     // $ANTLR end "RULE_ANY_OTHER"
 
     public void mTokens() throws RecognitionException {
-        // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | RULE_LOWER | RULE_UPPER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
-        int alt14=44;
+        // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:8: ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_LOWER | RULE_UPPER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER )
+        int alt14=43;
         alt14 = dfa14.predict(input);
         switch (alt14) {
             case 1 :
@@ -1632,70 +1611,63 @@ public class InternalCASPALexer extends Lexer {
                 }
                 break;
             case 35 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:214: T__47
-                {
-                mT__47(); 
-
-                }
-                break;
-            case 36 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:220: RULE_LOWER
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:214: RULE_LOWER
                 {
                 mRULE_LOWER(); 
 
                 }
                 break;
-            case 37 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:231: RULE_UPPER
+            case 36 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:225: RULE_UPPER
                 {
                 mRULE_UPPER(); 
 
                 }
                 break;
-            case 38 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:242: RULE_ID
+            case 37 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:236: RULE_ID
                 {
                 mRULE_ID(); 
 
                 }
                 break;
-            case 39 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:250: RULE_INT
+            case 38 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:244: RULE_INT
                 {
                 mRULE_INT(); 
 
                 }
                 break;
-            case 40 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:259: RULE_STRING
+            case 39 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:253: RULE_STRING
                 {
                 mRULE_STRING(); 
 
                 }
                 break;
-            case 41 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:271: RULE_ML_COMMENT
+            case 40 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:265: RULE_ML_COMMENT
                 {
                 mRULE_ML_COMMENT(); 
 
                 }
                 break;
-            case 42 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:287: RULE_SL_COMMENT
+            case 41 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:281: RULE_SL_COMMENT
                 {
                 mRULE_SL_COMMENT(); 
 
                 }
                 break;
-            case 43 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:303: RULE_WS
+            case 42 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:297: RULE_WS
                 {
                 mRULE_WS(); 
 
                 }
                 break;
-            case 44 :
-                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:311: RULE_ANY_OTHER
+            case 43 :
+                // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:1:305: RULE_ANY_OTHER
                 {
                 mRULE_ANY_OTHER(); 
 
@@ -1709,72 +1681,53 @@ public class InternalCASPALexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\1\50\1\52\1\54\1\56\1\60\2\62\1\66\4\uffff\1\74\1\46\2\uffff\1\102\6\uffff\1\112\1\62\1\114\1\115\3\66\1\62\1\46\2\uffff\2\46\12\uffff\1\66\1\uffff\1\62\1\uffff\2\62\1\66\25\uffff\1\127\2\uffff\2\66\4\uffff\2\62\1\66\1\uffff\1\135\1\66\1\137\1\62\1\66\1\uffff\1\142\1\uffff\1\143\3\uffff";
+        "\1\uffff\1\46\1\50\1\52\1\54\2\56\1\63\4\uffff\1\71\1\44\2\uffff\1\77\6\uffff\1\107\1\56\1\111\1\113\3\63\1\56\2\uffff\2\44\12\uffff\1\56\1\uffff\2\56\2\63\25\uffff\1\124\3\uffff\2\63\3\uffff\2\56\1\63\1\uffff\1\132\1\63\1\134\1\56\1\63\1\uffff\1\137\1\uffff\1\140\3\uffff";
     static final String DFA14_eofS =
-        "\144\uffff";
+        "\141\uffff";
     static final String DFA14_minS =
-        "\1\0\4\75\4\60\4\uffff\1\174\1\46\2\uffff\1\52\6\uffff\1\75\7\60\1\101\2\uffff\2\0\12\uffff\1\60\1\uffff\1\60\1\uffff\3\60\25\uffff\1\60\2\uffff\2\60\4\uffff\3\60\1\uffff\4\60\1\56\1\uffff\1\60\1\uffff\1\60\3\uffff";
+        "\1\0\4\75\3\60\4\uffff\1\174\1\46\2\uffff\1\52\6\uffff\1\75\2\60\1\101\4\60\2\uffff\2\0\12\uffff\1\60\1\uffff\4\60\25\uffff\1\60\3\uffff\2\60\3\uffff\3\60\1\uffff\4\60\1\56\1\uffff\1\60\1\uffff\1\60\3\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\4\75\4\172\4\uffff\1\174\1\46\2\uffff\1\57\6\uffff\1\75\10\172\2\uffff\2\uffff\12\uffff\1\172\1\uffff\1\172\1\uffff\3\172\25\uffff\1\172\2\uffff\2\172\4\uffff\3\172\1\uffff\5\172\1\uffff\1\172\1\uffff\1\172\3\uffff";
+        "\1\uffff\4\75\3\172\4\uffff\1\174\1\46\2\uffff\1\57\6\uffff\1\75\7\172\2\uffff\2\uffff\12\uffff\1\172\1\uffff\4\172\25\uffff\1\172\3\uffff\2\172\3\uffff\3\172\1\uffff\5\172\1\uffff\1\172\1\uffff\1\172\3\uffff";
     static final String DFA14_acceptS =
-        "\11\uffff\1\14\1\15\1\16\1\17\2\uffff\1\22\1\23\1\uffff\1\25\1\26\1\30\1\31\1\32\1\33\11\uffff\1\46\1\47\2\uffff\1\53\1\54\1\1\1\12\1\2\1\27\1\3\1\5\1\4\1\6\1\uffff\1\7\1\uffff\1\45\3\uffff\1\44\1\14\1\15\1\16\1\17\1\20\1\40\1\21\1\22\1\23\1\51\1\52\1\24\1\25\1\26\1\30\1\31\1\32\1\33\1\34\1\37\1\uffff\1\36\1\41\2\uffff\1\46\1\47\1\50\1\53\3\uffff\1\35\5\uffff\1\42\1\uffff\1\10\1\uffff\1\13\1\43\1\11";
+        "\10\uffff\1\13\1\14\1\15\1\16\2\uffff\1\21\1\22\1\uffff\1\24\1\25\1\27\1\30\1\31\1\32\10\uffff\1\45\1\46\2\uffff\1\52\1\53\1\1\1\11\1\2\1\26\1\3\1\5\1\4\1\6\1\uffff\1\44\4\uffff\1\43\1\13\1\14\1\15\1\16\1\17\1\37\1\20\1\21\1\22\1\50\1\51\1\23\1\24\1\25\1\27\1\30\1\31\1\32\1\33\1\36\1\uffff\1\35\1\45\1\40\2\uffff\1\46\1\47\1\52\3\uffff\1\34\5\uffff\1\41\1\uffff\1\7\1\uffff\1\12\1\42\1\10";
     static final String DFA14_specialS =
-        "\1\1\42\uffff\1\2\1\0\77\uffff}>";
+        "\1\1\40\uffff\1\2\1\0\76\uffff}>";
     static final String[] DFA14_transitionS = {
-            "\11\46\2\45\2\46\1\45\22\46\1\45\1\2\1\43\3\46\1\16\1\44\1\22\1\23\1\12\1\20\1\24\1\17\1\11\1\21\12\42\1\30\1\27\1\4\1\1\1\3\2\46\4\37\1\33\1\7\11\37\1\31\3\37\1\6\1\32\5\37\1\13\1\46\1\14\1\40\1\41\1\46\4\36\1\5\5\36\1\35\2\36\1\34\5\36\1\10\6\36\1\25\1\15\1\26\uff82\46",
+            "\11\44\2\43\2\44\1\43\22\44\1\43\1\2\1\41\3\44\1\15\1\42\1\21\1\22\1\11\1\17\1\23\1\16\1\10\1\20\12\40\1\27\1\26\1\4\1\1\1\3\2\44\5\36\1\6\11\36\1\30\3\36\1\5\1\31\5\36\1\12\1\44\1\13\1\32\1\37\1\44\12\35\1\34\2\35\1\33\5\35\1\7\6\35\1\24\1\14\1\25\uff82\44",
+            "\1\45",
             "\1\47",
             "\1\51",
             "\1\53",
-            "\1\55",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\21\57\1\55\10\57",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\1\60\31\57",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\7\62\1\61\22\62",
+            "",
+            "",
+            "",
+            "",
+            "\1\70",
+            "\1\72",
+            "",
+            "",
+            "\1\75\4\uffff\1\76",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "\1\106",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\21\57\1\110\10\57",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\21\63\1\61\10\63",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\1\64\31\63",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\7\57\1\65\22\57",
-            "",
-            "",
-            "",
-            "",
-            "\1\73",
-            "\1\75",
-            "",
-            "",
-            "\1\100\4\uffff\1\101",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\1\111",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\21\63\1\113\10\63",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\116\21\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\117\21\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-            "\32\120\4\uffff\1\120\1\uffff\32\120",
-            "",
-            "",
-            "\0\122",
-            "\0\122",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
+            "\32\112\4\uffff\1\112\1\uffff\32\112",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\10\62\1\114\21\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\10\62\1\115\21\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\24\63\1\124\5\63",
             "",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\13\63\1\125\16\63",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\10\57\1\126\21\57",
+            "\0\117",
+            "\0\117",
             "",
             "",
             "",
@@ -1785,39 +1738,55 @@ public class InternalCASPALexer extends Lexer {
             "",
             "",
             "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-            "",
-            "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\130\16\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\131\16\57",
-            "",
-            "",
-            "",
-            "",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\4\63\1\132\25\63",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\22\63\1\133\7\63",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\22\57\1\134\7\57",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\24\57\1\121\5\57",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\136\16\57",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\4\63\1\140\25\63",
-            "\1\141\1\uffff\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\122\16\57",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\10\62\1\123\21\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
             "",
             "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
-            "\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+            "",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\13\62\1\125\16\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\13\62\1\126\16\62",
+            "",
+            "",
+            "",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\127\25\57",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\22\57\1\130\7\57",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\22\62\1\131\7\62",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\13\62\1\133\16\62",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\135\25\57",
+            "\1\136\1\uffff\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "\12\62\7\uffff\32\62\4\uffff\1\62\1\uffff\32\62",
+            "",
+            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
             "",
             "",
             ""
@@ -1853,19 +1822,19 @@ public class InternalCASPALexer extends Lexer {
             this.transition = DFA14_transition;
         }
         public String getDescription() {
-            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | T__47 | RULE_LOWER | RULE_UPPER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
+            return "1:1: Tokens : ( T__13 | T__14 | T__15 | T__16 | T__17 | T__18 | T__19 | T__20 | T__21 | T__22 | T__23 | T__24 | T__25 | T__26 | T__27 | T__28 | T__29 | T__30 | T__31 | T__32 | T__33 | T__34 | T__35 | T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | T__43 | T__44 | T__45 | T__46 | RULE_LOWER | RULE_UPPER | RULE_ID | RULE_INT | RULE_STRING | RULE_ML_COMMENT | RULE_SL_COMMENT | RULE_WS | RULE_ANY_OTHER );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             IntStream input = _input;
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_36 = input.LA(1);
+                        int LA14_34 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_36>='\u0000' && LA14_36<='\uFFFF')) ) {s = 82;}
+                        if ( ((LA14_34>='\u0000' && LA14_34<='\uFFFF')) ) {s = 79;}
 
-                        else s = 38;
+                        else s = 36;
 
                         if ( s>=0 ) return s;
                         break;
@@ -1881,83 +1850,79 @@ public class InternalCASPALexer extends Lexer {
 
                         else if ( (LA14_0=='<') ) {s = 4;}
 
-                        else if ( (LA14_0=='e') ) {s = 5;}
+                        else if ( (LA14_0=='T') ) {s = 5;}
 
-                        else if ( (LA14_0=='T') ) {s = 6;}
+                        else if ( (LA14_0=='F') ) {s = 6;}
 
-                        else if ( (LA14_0=='F') ) {s = 7;}
+                        else if ( (LA14_0=='t') ) {s = 7;}
 
-                        else if ( (LA14_0=='t') ) {s = 8;}
+                        else if ( (LA14_0=='.') ) {s = 8;}
 
-                        else if ( (LA14_0=='.') ) {s = 9;}
+                        else if ( (LA14_0=='*') ) {s = 9;}
 
-                        else if ( (LA14_0=='*') ) {s = 10;}
+                        else if ( (LA14_0=='[') ) {s = 10;}
 
-                        else if ( (LA14_0=='[') ) {s = 11;}
+                        else if ( (LA14_0==']') ) {s = 11;}
 
-                        else if ( (LA14_0==']') ) {s = 12;}
+                        else if ( (LA14_0=='|') ) {s = 12;}
 
-                        else if ( (LA14_0=='|') ) {s = 13;}
+                        else if ( (LA14_0=='&') ) {s = 13;}
 
-                        else if ( (LA14_0=='&') ) {s = 14;}
+                        else if ( (LA14_0=='-') ) {s = 14;}
 
-                        else if ( (LA14_0=='-') ) {s = 15;}
+                        else if ( (LA14_0=='+') ) {s = 15;}
 
-                        else if ( (LA14_0=='+') ) {s = 16;}
+                        else if ( (LA14_0=='/') ) {s = 16;}
 
-                        else if ( (LA14_0=='/') ) {s = 17;}
+                        else if ( (LA14_0=='(') ) {s = 17;}
 
-                        else if ( (LA14_0=='(') ) {s = 18;}
+                        else if ( (LA14_0==')') ) {s = 18;}
 
-                        else if ( (LA14_0==')') ) {s = 19;}
+                        else if ( (LA14_0==',') ) {s = 19;}
 
-                        else if ( (LA14_0==',') ) {s = 20;}
+                        else if ( (LA14_0=='{') ) {s = 20;}
 
-                        else if ( (LA14_0=='{') ) {s = 21;}
+                        else if ( (LA14_0=='}') ) {s = 21;}
 
-                        else if ( (LA14_0=='}') ) {s = 22;}
+                        else if ( (LA14_0==';') ) {s = 22;}
 
-                        else if ( (LA14_0==';') ) {s = 23;}
+                        else if ( (LA14_0==':') ) {s = 23;}
 
-                        else if ( (LA14_0==':') ) {s = 24;}
+                        else if ( (LA14_0=='P') ) {s = 24;}
 
-                        else if ( (LA14_0=='P') ) {s = 25;}
+                        else if ( (LA14_0=='U') ) {s = 25;}
 
-                        else if ( (LA14_0=='U') ) {s = 26;}
+                        else if ( (LA14_0=='^') ) {s = 26;}
 
-                        else if ( (LA14_0=='E') ) {s = 27;}
+                        else if ( (LA14_0=='n') ) {s = 27;}
 
-                        else if ( (LA14_0=='n') ) {s = 28;}
+                        else if ( (LA14_0=='k') ) {s = 28;}
 
-                        else if ( (LA14_0=='k') ) {s = 29;}
+                        else if ( ((LA14_0>='a' && LA14_0<='j')||(LA14_0>='l' && LA14_0<='m')||(LA14_0>='o' && LA14_0<='s')||(LA14_0>='u' && LA14_0<='z')) ) {s = 29;}
 
-                        else if ( ((LA14_0>='a' && LA14_0<='d')||(LA14_0>='f' && LA14_0<='j')||(LA14_0>='l' && LA14_0<='m')||(LA14_0>='o' && LA14_0<='s')||(LA14_0>='u' && LA14_0<='z')) ) {s = 30;}
+                        else if ( ((LA14_0>='A' && LA14_0<='E')||(LA14_0>='G' && LA14_0<='O')||(LA14_0>='Q' && LA14_0<='S')||(LA14_0>='V' && LA14_0<='Z')) ) {s = 30;}
 
-                        else if ( ((LA14_0>='A' && LA14_0<='D')||(LA14_0>='G' && LA14_0<='O')||(LA14_0>='Q' && LA14_0<='S')||(LA14_0>='V' && LA14_0<='Z')) ) {s = 31;}
+                        else if ( (LA14_0=='_') ) {s = 31;}
 
-                        else if ( (LA14_0=='^') ) {s = 32;}
+                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 32;}
 
-                        else if ( (LA14_0=='_') ) {s = 33;}
+                        else if ( (LA14_0=='\"') ) {s = 33;}
 
-                        else if ( ((LA14_0>='0' && LA14_0<='9')) ) {s = 34;}
+                        else if ( (LA14_0=='\'') ) {s = 34;}
 
-                        else if ( (LA14_0=='\"') ) {s = 35;}
+                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 35;}
 
-                        else if ( (LA14_0=='\'') ) {s = 36;}
-
-                        else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 37;}
-
-                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 38;}
+                        else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 36;}
 
                         if ( s>=0 ) return s;
                         break;
                     case 2 : 
-                        int LA14_35 = input.LA(1);
+                        int LA14_33 = input.LA(1);
 
                         s = -1;
-                        if ( ((LA14_35>='\u0000' && LA14_35<='\uFFFF')) ) {s = 82;}
+                        if ( ((LA14_33>='\u0000' && LA14_33<='\uFFFF')) ) {s = 79;}
 
-                        else s = 38;
+                        else s = 36;
 
                         if ( s>=0 ) return s;
                         break;

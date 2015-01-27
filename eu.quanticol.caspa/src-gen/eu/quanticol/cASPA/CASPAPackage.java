@@ -347,7 +347,7 @@ public interface CASPAPackage extends EPackage
   int TERM = 10;
 
   /**
-   * The feature id for the '<em><b>Processes</b></em>' containment reference list.
+   * The feature id for the '<em><b>Processes</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1603,43 +1603,6 @@ public interface CASPAPackage extends EPackage
    */
   int REFERENCED_PROCESS_FEATURE_COUNT = PROCESS_EXPRESSION_FEATURE_COUNT + 1;
 
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.TPParallelImpl <em>TP Parallel</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.TPParallelImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getTPParallel()
-   * @generated
-   */
-  int TP_PARALLEL = 44;
-
-  /**
-   * The feature id for the '<em><b>Left</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TP_PARALLEL__LEFT = PROCESS_EXPRESSION_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Right</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TP_PARALLEL__RIGHT = PROCESS_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>TP Parallel</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TP_PARALLEL_FEATURE_COUNT = PROCESS_EXPRESSION_FEATURE_COUNT + 2;
-
 
   /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.Model <em>Model</em>}'.
@@ -1862,10 +1825,10 @@ public interface CASPAPackage extends EPackage
   EClass getTerm();
 
   /**
-   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Term#getProcesses <em>Processes</em>}'.
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Term#getProcesses <em>Processes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Processes</em>'.
+   * @return the meta object for the containment reference '<em>Processes</em>'.
    * @see eu.quanticol.cASPA.Term#getProcesses()
    * @see #getTerm()
    * @generated
@@ -2808,38 +2771,6 @@ public interface CASPAPackage extends EPackage
   EReference getReferencedProcess_Name();
 
   /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.TPParallel <em>TP Parallel</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>TP Parallel</em>'.
-   * @see eu.quanticol.cASPA.TPParallel
-   * @generated
-   */
-  EClass getTPParallel();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.TPParallel#getLeft <em>Left</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Left</em>'.
-   * @see eu.quanticol.cASPA.TPParallel#getLeft()
-   * @see #getTPParallel()
-   * @generated
-   */
-  EReference getTPParallel_Left();
-
-  /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.TPParallel#getRight <em>Right</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Right</em>'.
-   * @see eu.quanticol.cASPA.TPParallel#getRight()
-   * @see #getTPParallel()
-   * @generated
-   */
-  EReference getTPParallel_Right();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3053,7 +2984,7 @@ public interface CASPAPackage extends EPackage
     EClass TERM = eINSTANCE.getTerm();
 
     /**
-     * The meta object literal for the '<em><b>Processes</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Processes</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -3829,32 +3760,6 @@ public interface CASPAPackage extends EPackage
      * @generated
      */
     EReference REFERENCED_PROCESS__NAME = eINSTANCE.getReferencedProcess_Name();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.TPParallelImpl <em>TP Parallel</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.TPParallelImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getTPParallel()
-     * @generated
-     */
-    EClass TP_PARALLEL = eINSTANCE.getTPParallel();
-
-    /**
-     * The meta object literal for the '<em><b>Left</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TP_PARALLEL__LEFT = eINSTANCE.getTPParallel_Left();
-
-    /**
-     * The meta object literal for the '<em><b>Right</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference TP_PARALLEL__RIGHT = eINSTANCE.getTPParallel_Right();
 
   }
 

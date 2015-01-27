@@ -38,7 +38,6 @@ import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
-import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.Uniform;
@@ -153,7 +152,6 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.PREDICATE_PROCESS: return createPredicateProcess();
       case CASPAPackage.ACTION_PROCESS: return createActionProcess();
       case CASPAPackage.REFERENCED_PROCESS: return createReferencedProcess();
-      case CASPAPackage.TP_PARALLEL: return createTPParallel();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -641,17 +639,6 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     ReferencedProcessImpl referencedProcess = new ReferencedProcessImpl();
     return referencedProcess;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public TPParallel createTPParallel()
-  {
-    TPParallelImpl tpParallel = new TPParallelImpl();
-    return tpParallel;
   }
 
   /**

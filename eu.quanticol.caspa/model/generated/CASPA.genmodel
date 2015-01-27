@@ -154,9 +154,5 @@
     <genClasses ecoreClass="CASPA.ecore#//ReferencedProcess">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ReferencedProcess/name"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//TPParallel">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//TPParallel/left"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//TPParallel/right"/>
-    </genClasses>
   </genPackages>
 </genmodel:GenModel>

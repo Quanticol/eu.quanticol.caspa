@@ -91,7 +91,7 @@ StoreAtomic returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 //ACTIONS
 Action hidden(ML_COMMENT,SL_COMMENT,WS):
-	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) (predicate=Predicate)? (arguments=Arguments)? (updates=Updates)? "." 
+	({Broadcast} name=LOWER "*" | {Unicast} name=LOWER) predicate=Predicate arguments=Arguments (updates=Updates)? "." 
 	
 ;
 
@@ -188,7 +188,8 @@ Expressions returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 
 Variables returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	SelfReferencedStore | 
-	ReferencedStore
+	ReferencedStore |
+	{Constant} 	value=Natural
 ;
 
 //UPDATES
@@ -304,21 +305,21 @@ ReferencedProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 //TERMS
 Term hidden(ML_COMMENT,SL_COMMENT,WS):
-	"(" processes+=TermProcessExpression+ ",""{" stores+=Store ("," stores+=Store+)* "}" ")"";"
+	"(" processes=ReferencedProcess ",""{" stores+=Store ("," stores+=Store+)* "}" ")"";"
 ;
 
-TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	TermProcessParallel
-;
-
-TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
-;
+//TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+//	TermProcessParallel
+//;
+//
+//TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+//	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
+//;
 
 //BASETYPES
 
 Double returns ecore::EDouble:
-	 INT ('.' INT ('e'|'E' '-'? INT)?)?
+	 INT ('.' INT ( '^' ("-")? INT)?)?
 ;
 
 Natural returns ecore::EInt:

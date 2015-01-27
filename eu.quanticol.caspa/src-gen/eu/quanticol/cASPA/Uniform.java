@@ -30,12 +30,12 @@ public interface Uniform extends Updates
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Expression</em>' attribute.
-   * @see #setExpression(String)
+   * @see #setExpression(int)
    * @see eu.quanticol.cASPA.CASPAPackage#getUniform_Expression()
    * @model
    * @generated
    */
-  String getExpression();
+  int getExpression();
 
   /**
    * Sets the value of the '{@link eu.quanticol.cASPA.Uniform#getExpression <em>Expression</em>}' attribute.
@@ -45,6 +45,6 @@ public interface Uniform extends Updates
    * @see #getExpression()
    * @generated
    */
-  void setExpression(String value);
+  void setExpression(int value);
 
 } // Uniform

@@ -37,7 +37,6 @@ import eu.quanticol.cASPA.ReferencedStore;
 import eu.quanticol.cASPA.SelfReferencedStore;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
-import eu.quanticol.cASPA.TPParallel;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.Uniform;
@@ -468,14 +467,6 @@ public class CASPASwitch<T> extends Switch<T>
         ReferencedProcess referencedProcess = (ReferencedProcess)theEObject;
         T result = caseReferencedProcess(referencedProcess);
         if (result == null) result = caseProcessExpression(referencedProcess);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.TP_PARALLEL:
-      {
-        TPParallel tpParallel = (TPParallel)theEObject;
-        T result = caseTPParallel(tpParallel);
-        if (result == null) result = caseProcessExpression(tpParallel);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1183,22 +1174,6 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseReferencedProcess(ReferencedProcess object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>TP Parallel</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>TP Parallel</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseTPParallel(TPParallel object)
   {
     return null;
   }
