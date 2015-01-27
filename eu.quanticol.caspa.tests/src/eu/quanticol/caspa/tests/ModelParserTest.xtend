@@ -20,29 +20,30 @@ public class ModelParserTest {
 	@Test
 	def void testBikeSharingModel(){
 		'''
-		//our stations
-		(G|R,{zone = 1, bikes = 5, slots = 5});
-		(G|R,{zone = 2, bikes = 5, slots = 5});
-		(G|R,{zone = 3, bikes = 5, slots = 5});
-		(G|R,{zone = 4, bikes = 5, slots = 5});
-
+		//bike stations
+		(Shed,{zone = 1, bikes = 5, slots = 5});
+		(Shed,{zone = 2, bikes = 5, slots = 5});
+		(Shed,{zone = 3, bikes = 5, slots = 5});
+		(Shed,{zone = 4, bikes = 5, slots = 5});
+		
 		//our people
 		(Q, {zone = 1});
 		(Q, {zone = 2});
 		(Q, {zone = 3});
 		(Q, {zone = 4});
-
+		
 		//shed actions
-		G = [bikes > 0] 		get[zone == this.zone]{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
-
+		Shed = G|R;
+		G = [bikes > 0] 		get[zone == this.zone]<1>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<1>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+		
 		//people actions
 		Q = B;
 		//Uniform distribution "U"
-		B = move*[False]{this.zone := U(1, 2, 3, 4)}.B + stop*[False].WS;
-		WS = ret[zone == this.zone].P;
-		P = go*[False].WB;
-		WB = get[zone == this.zone].B;
+		B = move*[False]<1>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<1>.WS;
+		WS = ret[zone == this.zone](1).P;
+		P = go*[False]<1>.WB;
+		WB = get[zone == this.zone](1).B;
 		'''.parse.assertNoErrors
 	}
 	
@@ -50,28 +51,29 @@ public class ModelParserTest {
 	def void testBikeSharingArgsModel(){
 		'''
 		//Now the pedestrians are interested in the total number of bikes and slots that they have seen
-
-		//our stations
-		(G|R,{zone = 1, bikes = 5, slots = 5});
-		(G|R,{zone = 2, bikes = 5, slots = 5});
-		(G|R,{zone = 3, bikes = 5, slots = 5});
-		(G|R,{zone = 4, bikes = 5, slots = 5});
-
+		
+		//bike stations
+		(Shed,{zone = 1, bikes = 5, slots = 5});
+		(Shed,{zone = 2, bikes = 5, slots = 5});
+		(Shed,{zone = 3, bikes = 5, slots = 5});
+		(Shed,{zone = 4, bikes = 5, slots = 5});
+		
 		//our people
 		(Q, {zone = 1, slots = 0, bikes = 0});
 		(Q, {zone = 2, slots = 0, bikes = 0});
 		(Q, {zone = 3, slots = 0, bikes = 0});
 		(Q, {zone = 4, slots = 0, bikes = 0});
-
+		
 		//shed actions
+		Shed = G|R;
 		G = [bikes > 0] 		get[zone == this.zone]<this.slots>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
 		R = [slots > bikes] 	ret[zone == this.zone]<this.bikes>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
-
+		
 		//people actions
 		Q = B;
-		B = move*[False]{this.zone := U(1, 2, 3, 4)}.B + stop*[False].WS;
+		B = move*[False]<1>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<1>.WS;
 		WS = ret[zone == this.zone](bikes){this.bikes := this.bikes + bikes}.P;
-		P = go*[False].WB;
+		P = go*[False]<1>.WB;
 		WB = get[zone == this.zone](slots){this.slots := this.slots + slots}.B;
 		'''.parse.assertNoErrors
 	}
@@ -79,29 +81,246 @@ public class ModelParserTest {
 	@Test
 	def void testBikeSharingPrModel(){
 		'''
-		//our stations
-		(G|R,{zone = 1, bikes = 5, slots = 5});
-		(G|R,{zone = 2, bikes = 5, slots = 5});
-		(G|R,{zone = 3, bikes = 5, slots = 5});
-		(G|R,{zone = 4, bikes = 5, slots = 5});
-
+		//bike stations
+		(Shed,{zone = 1, bikes = 5, slots = 5});
+		(Shed,{zone = 2, bikes = 5, slots = 5});
+		(Shed,{zone = 3, bikes = 5, slots = 5});
+		(Shed,{zone = 4, bikes = 5, slots = 5});
+		
 		//our people
 		(Q, {zone = 1});
 		(Q, {zone = 2});
 		(Q, {zone = 3});
 		(Q, {zone = 4});
-
+		
 		//shed actions
-		G = [bikes > 0] 		get[zone == this.zone]{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
-
+		Shed = G|R;
+		G = [bikes > 0] 		get[zone == this.zone]<1>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<1>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+		
 		//people actions
 		Q = B;
 		// notice the change to Pr here - probability:zone number
-		B = move*[False]{this.zone := Pr(0.25:1, 0.05:2, 0.40:3, 0.3:4)}.B + stop*[False].WS;
-		WS = ret[zone == this.zone].P;
-		P = go*[False].WB;
-		WB = get[zone == this.zone].B;
+		B = move*[False]<1>{this.zone := Pr(0.25:1, 0.05:2, 0.40:3, 0.3:4)}.B + stop*[False]<1>.WS;
+		WS = ret[zone == this.zone](1).P;
+		P = go*[False]<1>.WB;
+		WB = get[zone == this.zone](1).B;
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testProcessActions(){
+		'''
+		/*
+		 * Process - Actions (CDW 27.01.15)
+		 * Some examples
+		 */
+
+		/*
+		 * (CDW 27.01.15)
+		 * Actions are built up of:
+		 * Part					Defined-by					Type				Optional/Compulsory
+		 * ----------------------------------------------------------------------------------------
+		 * Name 				lower case char				String				Compulsory							
+		 * Predicate 			square brackets				Logical				Compulsory
+		 * In/Out Arguments 	angled/round brackets		Value				Optional
+		 * Update 				curly brackets				Assignment			Compulsory
+		 * ProcessReference		"."							ProcessReference	Compulsory
+		 */
+
+		/*
+		 * Compulsory In/Out Arguments (CDW 27.01.15)
+		 * 
+		 * The environment must facilitate the communication between action pairs if there is no
+		 * distinct in/out coupling.
+		 * 
+		 * P = a{this.x := this.x + 1}.P
+		 * Q = a{this.x := this.x + 1}.Q
+		 * 
+		 * In the above, who is the sender, and who is the receiver?
+		 * 
+		 * OR
+		 * 
+		 * Compulsory In/Out?
+		 * 
+		 * P = a<1>{this.x := this.x + 1}.P
+		 * Q = a(1){this.x := this.x + 1}.Q
+		 * 
+		 */
+		
+		/*
+		 * Compulsory Predicate? (CDW 27.01.15)
+		 * 
+		 * Not certain I understand the meaning of a[False]<>{}
+		 * 
+		 * Predicates might well need to be compulsory as well.
+		 * 
+		 */
+		 /*
+		  * OPTIONAL Updates? (CDW 27.01.15)
+		  * 
+		  * I am fairly certain that updates can be options, certainly for outgoing actions.
+		  * 
+		  */
+		
+		(P,{a=1,b=1});
+		(Q,{c=1,d=1});
+		
+		//unicast
+		P = msg[True]<this.a>{this.a := this.a + 1}.R;
+		Q = msg[True](a){this.c := this.c + a}.S;
+		
+		//broadcast
+		R = msg*[True]<this.a>{this.a := this.a + 1}.T;
+		S = msg*[True](a){this.c := this.c + a}.W;
+		 
+		//can miss out updates:
+		T = msg1[True]<this.a>.P;
+		W = msg1[True](a).Q;
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testProcessLeaf(){
+		'''
+		/*
+		 * Process - nil/kill - the leaves (CDW 27.01.15)
+		 */
+		 
+		 (P,{a=1}); //should both parse, but fail validation
+		 (Q,{a=1}); //(@CDW VALIDATIONCHECK:These are invalid Process for Term 	27.01.15)
+		 
+		 P = nil;	//OK, but how to check for this? - what if the ProcessExpression is more complex.
+		 Q = kill;
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testProcessPredicate(){
+		'''
+		/*
+		 * Process - Predicate (CDW 27.01.15)
+		 * Some example expressions
+		 */
+		 
+		 
+		(P,{a=1,b=1});
+		(Z,{c=1});
+		 
+		//Demonstration of Predicate expressions - not real examples
+		 
+		//atomic
+		P = [True]Q + [False]Q;
+		 
+		//values and comparison
+		Q = [this.a > 0]R 
+		 + [this.a < 0]R 
+		 + [this.a <= 0]R 
+		 + [this.a >= 0]R 
+		 + [this.a == 0]R 
+		 + [this.a != 0]R;
+		 
+		//arithmetic used inside logical expression
+		R = [this.a > (c * 1)]S;
+		 
+		//demonstration of different logical operators
+		S = [False || True]T 
+		 + [True && False]T 
+		 + [!False]T 
+		 + [!(True || False) && (!False && True)]T;
+		 
+		//demonstration of arithmetic and comparison operators
+		T = [(this.a + this.b) >= 2]W 
+		 + [(this.a - this.b) <= 2]W 
+		 + [(this.a / this.b) < 2]W 
+		 + [(this.a * this.b) > 2]W
+		 + [(this.a * this.b) == 2]W
+		 + [(this.a * this.b) != 2]W;
+		
+		//demonstration using global reference
+		W = [(this.a - this.b) == c]P;
+		 
+		Z = Z;
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testTermStore(){
+		'''
+		/*
+		 * Stores (CDW 27.01.15)
+		 * ATTR : VALUE (VALUE is Natural type)
+		 * These should parse, but there are validation checks to be made
+		 */
+		 
+		(P,{a=1}); 		// (@CDW VALIDATIONCHECK:Does the store ever get used? 	27.01.15)
+		(P,{a=1}); 		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
+		(P,{a=1,a=1}); 	// (@CDW VALIDATIONCHECK:This is a STORE repetition. 	27.01.15)
+		(P,{a=1,b=1});
+		(P,{b=1,a=1});		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
+		 
+		P=P;
+		'''.parse.assertNoErrors
+	}
+	
+	@Test
+	def void testTermProcess(){
+		'''
+		/*
+		 * A Discussion of the expressions of Process in Terms (CDW 27.01.15).
+		 * 
+		 * In main3.pdf (CASPA: a Collective Adaptive Stochastic Process Algebra)
+		 * we see the use of (G|R, {zone = l, bikes = i, slots = j}). Ignore the stores as this is a discussion of
+		 * Processes. The Process is two Processes running in parallel "|". If we allow for "|" in a Term definition, 
+		 * then we should allow for full expressiveness in Terms (no?). I don't believe this to be sensible, Terms 
+		 * could become polluted with Process expressions, and may confuse the user. Instead I think a singular Process
+		 * reference should be used in the Term, as shown below.  
+		 */
+		
+		//parallel processes
+		(P, {a=1});
+		(A, {a=1});	
+		(B, {a=1});
+		(C, {a=1});
+		//parallel and choice
+		(D, {a=1});
+		//parallel, choice and predicate
+		(E, {a=1});
+		//nil - a pointless expression? - this will need to be checked for at parsing (@CDW VALIDATIONCHECK 27.01.15)
+		(F, {a=1});
+		//kill - also pointless? - this will also need to be checked for at parsing (@CDW VALIDATIONCHECK 27.01.15)
+		(G, {a=1});
+		//Action - for a later discussion. (CDW 27.01.15)
+		(H, {a=1});
+		
+		//simplistic processes
+		P = P;
+		Q = Q;
+		R = R;
+		S = S;
+		
+		//Parallel
+		A = P|Q;
+		B = P|Q|R;
+		C = P|Q|R|S;
+		
+		//Choice
+		D = A + R;
+		
+		//Predicate
+		E = A + [True]D;
+		
+		//nil
+		F = nil;
+		
+		//kill
+		G = kill;
+		
+		//Action
+		H = a[True]<1>.H;
+		
+		//UNUSED
+		I = I;	//(@CDW VALIDATIONCHECK 27.01.15 - this goes unused, need a check for this?)
 		'''.parse.assertNoErrors
 	}
 	
