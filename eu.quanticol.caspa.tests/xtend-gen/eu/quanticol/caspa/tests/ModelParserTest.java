@@ -26,6 +26,818 @@ public class ModelParserTest {
   private ValidationTestHelper _validationTestHelper;
   
   @Test
+  public void testSimple() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimple2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimple3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P=P;");
+      _builder.newLine();
+      _builder.append("Q=Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleReference() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P=Q;");
+      _builder.newLine();
+      _builder.append("Q=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePar() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = A | B;");
+      _builder.newLine();
+      _builder.append("A = A;");
+      _builder.newLine();
+      _builder.append("B = B;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleCho() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = A + B;");
+      _builder.newLine();
+      _builder.append("A = A;");
+      _builder.newLine();
+      _builder.append("B = B;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleNil() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleKill() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = kill;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePredTrue() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = [True]P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePredFalse() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = [False]P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniOut() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a[True]<1>.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniIn() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a[False](1).P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroOut() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a*[True]<1>.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroIn() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a*[False](1).P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniOutU() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a[True]<1>{this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniInU() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a[False](1){this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroOutU() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a*[True]<1>{this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroInU() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1});");
+      _builder.newLine();
+      _builder.append("P = a*[False](1){this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleReference2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P=Q;");
+      _builder.newLine();
+      _builder.append("Q=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePar2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = A | B;");
+      _builder.newLine();
+      _builder.append("A = A;");
+      _builder.newLine();
+      _builder.append("B = B;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleCho2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = A + B;");
+      _builder.newLine();
+      _builder.append("A = A;");
+      _builder.newLine();
+      _builder.append("B = B;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleNil2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleKill2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = kill;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePredTrue2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = [True]P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePredFalse2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = [False]P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniOut2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a[True]<1>.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniIn2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a[False](1).P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroOut2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[True]<1>.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroIn2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[False](1).P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniOutU2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a[True]<1>{this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniInU2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a[False](1){this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroOutU2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[True]<1>{this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroInU2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[False](1){this.a := 1}.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleReference3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P=Q;");
+      _builder.newLine();
+      _builder.append("Q=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePar3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = A | B;");
+      _builder.newLine();
+      _builder.append("A = A;");
+      _builder.newLine();
+      _builder.append("B = B;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleCho3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = A + B;");
+      _builder.newLine();
+      _builder.append("A = A;");
+      _builder.newLine();
+      _builder.append("B = B;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleNil3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleKill3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = kill;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePredTrue3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = [True]P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimplePredFalse3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = [False]P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniOut3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a[True]<1>.P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniIn3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a[False](1).P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroOut3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[True]<1>.P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroIn3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[False](1).P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniOutU3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a[True]<1>{this.a := 1}.P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionUniInU3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a[False](1){this.a := 1}.P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroOutU3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[True]<1>{this.a := 1}.P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSimpleActionBroInU3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a=1, b=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a=1,b=1});");
+      _builder.newLine();
+      _builder.append("P = a*[False](1){this.a := 1}.P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      this._validationTestHelper.assertNoErrors(_parse);
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testBikeSharingModel() {
     try {
       StringConcatenation _builder = new StringConcatenation();
@@ -208,6 +1020,10 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append(" ");
       _builder.append("*/");
+      _builder.newLine();
+      _builder.append(" ");
+      _builder.newLine();
+      _builder.append("(@CDW VALIDATIONCHECK:Matching arguments \t27.01.15)");
       _builder.newLine();
       _builder.newLine();
       _builder.append("/*");
