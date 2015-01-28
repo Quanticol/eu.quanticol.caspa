@@ -13,6 +13,7 @@ import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
@@ -261,6 +262,11 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseOut(Out object)
       {
         return createOutAdapter();
+      }
+      @Override
+      public Adapter caseFreeVariable(FreeVariable object)
+      {
+        return createFreeVariableAdapter();
       }
       @Override
       public Adapter caseLocalSingleEventUpdate(LocalSingleEventUpdate object)
@@ -790,6 +796,21 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.FreeVariable <em>Free Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.FreeVariable
+   * @generated
+   */
+  public Adapter createFreeVariableAdapter()
   {
     return null;
   }

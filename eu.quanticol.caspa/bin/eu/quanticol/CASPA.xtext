@@ -173,7 +173,9 @@ PredicateAtomic returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 //ARGUMENTS
 Arguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	 ("(" {In} expressions+=InArguments ( "," expressions+=InArguments+)* ")" | 
-	 "<" {Out} expressions+=OutArguments ( "," expressions+=OutArguments+)* ">")
+	 	{In} "()" |
+	 "<" {Out} expressions+=OutArguments ( "," expressions+=OutArguments+)* ">" |
+	 {Out} "<>")
 ;
 
 InArguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -186,18 +188,12 @@ OutArguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 
 Expressions returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	StoreRef |
-	Default |
 	{Constant} 	value=Natural
 ;
 
 Variables returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
-	Default |
 	FreeVariable
 	
-;
-
-Default returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Default} value = " "
 ;
 
 FreeVariable returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):

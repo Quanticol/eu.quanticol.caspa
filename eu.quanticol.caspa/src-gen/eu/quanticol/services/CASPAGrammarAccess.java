@@ -792,24 +792,30 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cExpressionsInArgumentsParserRuleCall_0_3_1_0 = (RuleCall)cExpressionsAssignment_0_3_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Action cOutAction_1_1 = (Action)cGroup_1.eContents().get(1);
-		private final Assignment cExpressionsAssignment_1_2 = (Assignment)cGroup_1.eContents().get(2);
-		private final RuleCall cExpressionsOutArgumentsParserRuleCall_1_2_0 = (RuleCall)cExpressionsAssignment_1_2.eContents().get(0);
-		private final Group cGroup_1_3 = (Group)cGroup_1.eContents().get(3);
-		private final Keyword cCommaKeyword_1_3_0 = (Keyword)cGroup_1_3.eContents().get(0);
-		private final Assignment cExpressionsAssignment_1_3_1 = (Assignment)cGroup_1_3.eContents().get(1);
-		private final RuleCall cExpressionsOutArgumentsParserRuleCall_1_3_1_0 = (RuleCall)cExpressionsAssignment_1_3_1.eContents().get(0);
-		private final Keyword cGreaterThanSignKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
+		private final Action cInAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Keyword cLeftParenthesisRightParenthesisKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
+		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
+		private final Keyword cLessThanSignKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Action cOutAction_2_1 = (Action)cGroup_2.eContents().get(1);
+		private final Assignment cExpressionsAssignment_2_2 = (Assignment)cGroup_2.eContents().get(2);
+		private final RuleCall cExpressionsOutArgumentsParserRuleCall_2_2_0 = (RuleCall)cExpressionsAssignment_2_2.eContents().get(0);
+		private final Group cGroup_2_3 = (Group)cGroup_2.eContents().get(3);
+		private final Keyword cCommaKeyword_2_3_0 = (Keyword)cGroup_2_3.eContents().get(0);
+		private final Assignment cExpressionsAssignment_2_3_1 = (Assignment)cGroup_2_3.eContents().get(1);
+		private final RuleCall cExpressionsOutArgumentsParserRuleCall_2_3_1_0 = (RuleCall)cExpressionsAssignment_2_3_1.eContents().get(0);
+		private final Keyword cGreaterThanSignKeyword_2_4 = (Keyword)cGroup_2.eContents().get(4);
+		private final Group cGroup_3 = (Group)cAlternatives.eContents().get(3);
+		private final Action cOutAction_3_0 = (Action)cGroup_3.eContents().get(0);
+		private final Keyword cLessThanSignGreaterThanSignKeyword_3_1 = (Keyword)cGroup_3.eContents().get(1);
 		
 		////ARGUMENTS
 		//Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	"(" {In} expressions+=InArguments ("," expressions+=InArguments+)* ")" | "<" {Out} expressions+=OutArguments (","
-		//	expressions+=OutArguments+)* ">";
+		//	"(" {In} expressions+=InArguments ("," expressions+=InArguments+)* ")" | {In} "()" | "<" {Out}
+		//	expressions+=OutArguments ("," expressions+=OutArguments+)* ">" | {Out} "<>";
 		public ParserRule getRule() { return rule; }
 
-		//"(" {In} expressions+=InArguments ("," expressions+=InArguments+)* ")" | "<" {Out} expressions+=OutArguments (","
-		//expressions+=OutArguments+)* ">"
+		//"(" {In} expressions+=InArguments ("," expressions+=InArguments+)* ")" | {In} "()" | "<" {Out} expressions+=OutArguments
+		//("," expressions+=OutArguments+)* ">" | {Out} "<>"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//"(" {In} expressions+=InArguments ("," expressions+=InArguments+)* ")"
@@ -842,35 +848,53 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_4() { return cRightParenthesisKeyword_0_4; }
 
-		//"<" {Out} expressions+=OutArguments ("," expressions+=OutArguments+)* ">"
+		//{In} "()"
 		public Group getGroup_1() { return cGroup_1; }
 
+		//{In}
+		public Action getInAction_1_0() { return cInAction_1_0; }
+
+		//"()"
+		public Keyword getLeftParenthesisRightParenthesisKeyword_1_1() { return cLeftParenthesisRightParenthesisKeyword_1_1; }
+
+		//"<" {Out} expressions+=OutArguments ("," expressions+=OutArguments+)* ">"
+		public Group getGroup_2() { return cGroup_2; }
+
 		//"<"
-		public Keyword getLessThanSignKeyword_1_0() { return cLessThanSignKeyword_1_0; }
+		public Keyword getLessThanSignKeyword_2_0() { return cLessThanSignKeyword_2_0; }
 
 		//{Out}
-		public Action getOutAction_1_1() { return cOutAction_1_1; }
+		public Action getOutAction_2_1() { return cOutAction_2_1; }
 
 		//expressions+=OutArguments
-		public Assignment getExpressionsAssignment_1_2() { return cExpressionsAssignment_1_2; }
+		public Assignment getExpressionsAssignment_2_2() { return cExpressionsAssignment_2_2; }
 
 		//OutArguments
-		public RuleCall getExpressionsOutArgumentsParserRuleCall_1_2_0() { return cExpressionsOutArgumentsParserRuleCall_1_2_0; }
+		public RuleCall getExpressionsOutArgumentsParserRuleCall_2_2_0() { return cExpressionsOutArgumentsParserRuleCall_2_2_0; }
 
 		//("," expressions+=OutArguments+)*
-		public Group getGroup_1_3() { return cGroup_1_3; }
+		public Group getGroup_2_3() { return cGroup_2_3; }
 
 		//","
-		public Keyword getCommaKeyword_1_3_0() { return cCommaKeyword_1_3_0; }
+		public Keyword getCommaKeyword_2_3_0() { return cCommaKeyword_2_3_0; }
 
 		//expressions+=OutArguments+
-		public Assignment getExpressionsAssignment_1_3_1() { return cExpressionsAssignment_1_3_1; }
+		public Assignment getExpressionsAssignment_2_3_1() { return cExpressionsAssignment_2_3_1; }
 
 		//OutArguments
-		public RuleCall getExpressionsOutArgumentsParserRuleCall_1_3_1_0() { return cExpressionsOutArgumentsParserRuleCall_1_3_1_0; }
+		public RuleCall getExpressionsOutArgumentsParserRuleCall_2_3_1_0() { return cExpressionsOutArgumentsParserRuleCall_2_3_1_0; }
 
 		//">"
-		public Keyword getGreaterThanSignKeyword_1_4() { return cGreaterThanSignKeyword_1_4; }
+		public Keyword getGreaterThanSignKeyword_2_4() { return cGreaterThanSignKeyword_2_4; }
+
+		//{Out} "<>"
+		public Group getGroup_3() { return cGroup_3; }
+
+		//{Out}
+		public Action getOutAction_3_0() { return cOutAction_3_0; }
+
+		//"<>"
+		public Keyword getLessThanSignGreaterThanSignKeyword_3_1() { return cLessThanSignGreaterThanSignKeyword_3_1; }
 	}
 
 	public class InArgumentsElements extends AbstractParserRuleElementFinder {
@@ -931,34 +955,38 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	public class VariablesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Variables");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cStoreRefParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
-		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cValueNaturalParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
+		private final RuleCall cFreeVariableParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
 		//Variables returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	StoreRef | {Constant} value=Natural;
+		//	FreeVariable;
 		public ParserRule getRule() { return rule; }
 
-		//StoreRef | {Constant} value=Natural
-		public Alternatives getAlternatives() { return cAlternatives; }
+		//FreeVariable
+		public RuleCall getFreeVariableParserRuleCall() { return cFreeVariableParserRuleCall; }
+	}
 
-		//StoreRef
-		public RuleCall getStoreRefParserRuleCall_0() { return cStoreRefParserRuleCall_0; }
+	public class FreeVariableElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "FreeVariable");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Action cFreeVariableAction_0 = (Action)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameLOWERTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		
+		//FreeVariable returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
+		//	{FreeVariable} name=LOWER;
+		public ParserRule getRule() { return rule; }
 
-		//{Constant} value=Natural
-		public Group getGroup_1() { return cGroup_1; }
+		//{FreeVariable} name=LOWER
+		public Group getGroup() { return cGroup; }
 
-		//{Constant}
-		public Action getConstantAction_1_0() { return cConstantAction_1_0; }
+		//{FreeVariable}
+		public Action getFreeVariableAction_0() { return cFreeVariableAction_0; }
 
-		//value=Natural
-		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
+		//name=LOWER
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//Natural
-		public RuleCall getValueNaturalParserRuleCall_1_1_0() { return cValueNaturalParserRuleCall_1_1_0; }
+		//LOWER
+		public RuleCall getNameLOWERTerminalRuleCall_1_0() { return cNameLOWERTerminalRuleCall_1_0; }
 	}
 
 	public class UpdatesElements extends AbstractParserRuleElementFinder {
@@ -1961,6 +1989,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	private final OutArgumentsElements pOutArguments;
 	private final ExpressionsElements pExpressions;
 	private final VariablesElements pVariables;
+	private final FreeVariableElements pFreeVariable;
 	private final UpdatesElements pUpdates;
 	private final UpdateElements pUpdate;
 	private final SingleEventUpdateElements pSingleEventUpdate;
@@ -2022,6 +2051,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		this.pOutArguments = new OutArgumentsElements();
 		this.pExpressions = new ExpressionsElements();
 		this.pVariables = new VariablesElements();
+		this.pFreeVariable = new FreeVariableElements();
 		this.pUpdates = new UpdatesElements();
 		this.pUpdate = new UpdateElements();
 		this.pSingleEventUpdate = new SingleEventUpdateElements();
@@ -2329,8 +2359,8 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	////ARGUMENTS
 	//Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	"(" {In} expressions+=InArguments ("," expressions+=InArguments+)* ")" | "<" {Out} expressions+=OutArguments (","
-	//	expressions+=OutArguments+)* ">";
+	//	"(" {In} expressions+=InArguments ("," expressions+=InArguments+)* ")" | {In} "()" | "<" {Out}
+	//	expressions+=OutArguments ("," expressions+=OutArguments+)* ">" | {Out} "<>";
 	public ArgumentsElements getArgumentsAccess() {
 		return pArguments;
 	}
@@ -2370,13 +2400,23 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Variables returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	StoreRef | {Constant} value=Natural;
+	//	FreeVariable;
 	public VariablesElements getVariablesAccess() {
 		return pVariables;
 	}
 	
 	public ParserRule getVariablesRule() {
 		return getVariablesAccess().getRule();
+	}
+
+	//FreeVariable returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
+	//	{FreeVariable} name=LOWER;
+	public FreeVariableElements getFreeVariableAccess() {
+		return pFreeVariable;
+	}
+	
+	public ParserRule getFreeVariableRule() {
+		return getFreeVariableAccess().getRule();
 	}
 
 	////UPDATES

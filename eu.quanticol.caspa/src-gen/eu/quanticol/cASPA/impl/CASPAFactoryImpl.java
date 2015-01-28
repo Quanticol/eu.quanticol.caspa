@@ -14,6 +14,7 @@ import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
@@ -137,6 +138,7 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.CONSTANT: return createConstant();
       case CASPAPackage.IN: return createIn();
       case CASPAPackage.OUT: return createOut();
+      case CASPAPackage.FREE_VARIABLE: return createFreeVariable();
       case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE: return createLocalSingleEventUpdate();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY: return createDistributedEventUpdateProbability();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_UNIFORM: return createDistributedEventUpdateUniform();
@@ -474,6 +476,17 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     OutImpl out = new OutImpl();
     return out;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public FreeVariable createFreeVariable()
+  {
+    FreeVariableImpl freeVariable = new FreeVariableImpl();
+    return freeVariable;
   }
 
   /**

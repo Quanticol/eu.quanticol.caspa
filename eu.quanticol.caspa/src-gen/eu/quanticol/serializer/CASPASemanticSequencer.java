@@ -11,6 +11,7 @@ import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
@@ -161,11 +162,6 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					sequence_UpdateAtomic(context, (Constant) semanticObject); 
 					return; 
 				}
-				else if(context == grammarAccess.getInArgumentsRule() ||
-				   context == grammarAccess.getVariablesRule()) {
-					sequence_Variables(context, (Constant) semanticObject); 
-					return; 
-				}
 				else break;
 			case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY:
 				if(context == grammarAccess.getDistributedEventUpdateRule() ||
@@ -184,6 +180,14 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case CASPAPackage.DISTRIBUTION:
 				if(context == grammarAccess.getDistributionRule()) {
 					sequence_Distribution(context, (Distribution) semanticObject); 
+					return; 
+				}
+				else break;
+			case CASPAPackage.FREE_VARIABLE:
+				if(context == grammarAccess.getFreeVariableRule() ||
+				   context == grammarAccess.getInArgumentsRule() ||
+				   context == grammarAccess.getVariablesRule()) {
+					sequence_FreeVariable(context, (FreeVariable) semanticObject); 
 					return; 
 				}
 				else break;
@@ -482,7 +486,6 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				else break;
 			case CASPAPackage.REFERENCED_STORE:
 				if(context == grammarAccess.getExpressionsRule() ||
-				   context == grammarAccess.getInArgumentsRule() ||
 				   context == grammarAccess.getOutArgumentsRule() ||
 				   context == grammarAccess.getPredicateAdditionRule() ||
 				   context == grammarAccess.getPredicateAdditionAccess().getPredicatePluLeftAction_1_0() ||
@@ -515,15 +518,13 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getUpdateMultiplicationAccess().getUpdateMulLeftAction_1_0() ||
 				   context == grammarAccess.getUpdatePrimaryRule() ||
 				   context == grammarAccess.getUpdateSubtractionRule() ||
-				   context == grammarAccess.getUpdateSubtractionAccess().getUpdateSubLeftAction_1_0() ||
-				   context == grammarAccess.getVariablesRule()) {
+				   context == grammarAccess.getUpdateSubtractionAccess().getUpdateSubLeftAction_1_0()) {
 					sequence_ReferencedStore(context, (ReferencedStore) semanticObject); 
 					return; 
 				}
 				else break;
 			case CASPAPackage.SELF_REFERENCED_STORE:
 				if(context == grammarAccess.getExpressionsRule() ||
-				   context == grammarAccess.getInArgumentsRule() ||
 				   context == grammarAccess.getOutArgumentsRule() ||
 				   context == grammarAccess.getPredicateAdditionRule() ||
 				   context == grammarAccess.getPredicateAdditionAccess().getPredicatePluLeftAction_1_0() ||
@@ -556,8 +557,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getUpdateMultiplicationAccess().getUpdateMulLeftAction_1_0() ||
 				   context == grammarAccess.getUpdatePrimaryRule() ||
 				   context == grammarAccess.getUpdateSubtractionRule() ||
-				   context == grammarAccess.getUpdateSubtractionAccess().getUpdateSubLeftAction_1_0() ||
-				   context == grammarAccess.getVariablesRule()) {
+				   context == grammarAccess.getUpdateSubtractionAccess().getUpdateSubLeftAction_1_0()) {
 					sequence_SelfReferencedStore(context, (SelfReferencedStore) semanticObject); 
 					return; 
 				}
@@ -787,6 +787,22 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getExpressionsAccess().getValueNaturalParserRuleCall_1_1_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     name=LOWER
+	 */
+	protected void sequence_FreeVariable(EObject context, FreeVariable semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.FREE_VARIABLE__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.FREE_VARIABLE__NAME));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getFreeVariableAccess().getNameLOWERTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -1245,21 +1261,5 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 */
 	protected void sequence_Updates(EObject context, Updates semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     value=Natural
-	 */
-	protected void sequence_Variables(EObject context, Constant semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.CONSTANT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.CONSTANT__VALUE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariablesAccess().getValueNaturalParserRuleCall_1_1_0(), semanticObject.getValue());
-		feeder.finish();
 	}
 }

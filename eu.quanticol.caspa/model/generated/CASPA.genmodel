@@ -97,6 +97,9 @@
     <genClasses ecoreClass="CASPA.ecore#//Out">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Out/expressions"/>
     </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//FreeVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//FreeVariable/name"/>
+    </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//LocalSingleEventUpdate">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalSingleEventUpdate/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalSingleEventUpdate/expression"/>

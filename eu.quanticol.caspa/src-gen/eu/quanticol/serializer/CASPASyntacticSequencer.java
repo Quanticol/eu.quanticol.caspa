@@ -19,7 +19,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected CASPAGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Arguments_CommaKeyword_0_3_0_q;
-	protected AbstractElementAlias match_Arguments_CommaKeyword_1_3_0_q;
+	protected AbstractElementAlias match_Arguments_CommaKeyword_2_3_0_q;
 	protected AbstractElementAlias match_Bool_FalseKeyword_1_1_or_TrueKeyword_1_0;
 	protected AbstractElementAlias match_DistributedEventUpdate_CommaKeyword_0_6_0_q;
 	protected AbstractElementAlias match_DistributedEventUpdate_CommaKeyword_1_6_0_q;
@@ -36,7 +36,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (CASPAGrammarAccess) access;
 		match_Arguments_CommaKeyword_0_3_0_q = new TokenAlias(false, true, grammarAccess.getArgumentsAccess().getCommaKeyword_0_3_0());
-		match_Arguments_CommaKeyword_1_3_0_q = new TokenAlias(false, true, grammarAccess.getArgumentsAccess().getCommaKeyword_1_3_0());
+		match_Arguments_CommaKeyword_2_3_0_q = new TokenAlias(false, true, grammarAccess.getArgumentsAccess().getCommaKeyword_2_3_0());
 		match_Bool_FalseKeyword_1_1_or_TrueKeyword_1_0 = new AlternativeAlias(false, false, new TokenAlias(false, false, grammarAccess.getBoolAccess().getFalseKeyword_1_1()), new TokenAlias(false, false, grammarAccess.getBoolAccess().getTrueKeyword_1_0()));
 		match_DistributedEventUpdate_CommaKeyword_0_6_0_q = new TokenAlias(false, true, grammarAccess.getDistributedEventUpdateAccess().getCommaKeyword_0_6_0());
 		match_DistributedEventUpdate_CommaKeyword_1_6_0_q = new TokenAlias(false, true, grammarAccess.getDistributedEventUpdateAccess().getCommaKeyword_1_6_0());
@@ -64,8 +64,8 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
 			if(match_Arguments_CommaKeyword_0_3_0_q.equals(syntax))
 				emit_Arguments_CommaKeyword_0_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Arguments_CommaKeyword_1_3_0_q.equals(syntax))
-				emit_Arguments_CommaKeyword_1_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Arguments_CommaKeyword_2_3_0_q.equals(syntax))
+				emit_Arguments_CommaKeyword_2_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_Bool_FalseKeyword_1_1_or_TrueKeyword_1_0.equals(syntax))
 				emit_Bool_FalseKeyword_1_1_or_TrueKeyword_1_0(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_DistributedEventUpdate_CommaKeyword_0_6_0_q.equals(syntax))
@@ -104,7 +104,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_Arguments_CommaKeyword_1_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Arguments_CommaKeyword_2_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

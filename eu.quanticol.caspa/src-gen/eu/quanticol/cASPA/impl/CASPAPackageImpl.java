@@ -14,6 +14,7 @@ import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
@@ -265,6 +266,13 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * @generated
    */
   private EClass outEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass freeVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1119,6 +1127,26 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFreeVariable()
+  {
+    return freeVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFreeVariable_Name()
+  {
+    return (EAttribute)freeVariableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getLocalSingleEventUpdate()
   {
     return localSingleEventUpdateEClass;
@@ -1661,6 +1689,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     outEClass = createEClass(OUT);
     createEReference(outEClass, OUT__EXPRESSIONS);
 
+    freeVariableEClass = createEClass(FREE_VARIABLE);
+    createEAttribute(freeVariableEClass, FREE_VARIABLE__NAME);
+
     localSingleEventUpdateEClass = createEClass(LOCAL_SINGLE_EVENT_UPDATE);
     createEReference(localSingleEventUpdateEClass, LOCAL_SINGLE_EVENT_UPDATE__NAME);
     createEReference(localSingleEventUpdateEClass, LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION);
@@ -1771,6 +1802,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     constantEClass.getESuperTypes().add(this.getUpdateExpression());
     inEClass.getESuperTypes().add(this.getArguments());
     outEClass.getESuperTypes().add(this.getArguments());
+    freeVariableEClass.getESuperTypes().add(this.getArguments());
     localSingleEventUpdateEClass.getESuperTypes().add(this.getUpdates());
     distributedEventUpdateProbabilityEClass.getESuperTypes().add(this.getUpdates());
     distributedEventUpdateUniformEClass.getESuperTypes().add(this.getUpdates());
@@ -1884,6 +1916,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     initEClass(outEClass, Out.class, "Out", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOut_Expressions(), this.getArguments(), null, "expressions", null, 0, -1, Out.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(freeVariableEClass, FreeVariable.class, "FreeVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFreeVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, FreeVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(localSingleEventUpdateEClass, LocalSingleEventUpdate.class, "LocalSingleEventUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLocalSingleEventUpdate_Name(), this.getStoreExpression(), null, "name", null, 0, 1, LocalSingleEventUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
