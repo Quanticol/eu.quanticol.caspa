@@ -47,14 +47,12 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   public final static String WRONG_TYPE = "eu.quanticol.WrongType";
   
-  public final static String SELF_REFERENCING_STORE = "eu.quanticol.selfReferencingStore";
-  
-  public final static String STORE_NAMES_UNIQUE = "eu.quanticol.storeNamesUnique";
-  
   public final static String PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique";
   
+  public final static String FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique";
+  
   @Check
-  public void checkensureProcessCycles(final eu.quanticol.cASPA.Process process) {
+  public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
     EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
     int count = 0;

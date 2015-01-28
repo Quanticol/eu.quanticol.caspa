@@ -40,13 +40,12 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	
 	@Inject extension TypeProvider
 	
-	public static val WRONG_TYPE = "eu.quanticol.WrongType";
-	public static val SELF_REFERENCING_STORE = 'eu.quanticol.selfReferencingStore'
-	public static val STORE_NAMES_UNIQUE = 'eu.quanticol.storeNamesUnique'
-	public static val PROCESS_NAMES_UNIQUE = 'eu.quanticol.processNamesUnique'
+	public static val WRONG_TYPE = "eu.quanticol.WrongType"
+	public static val PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique"
+	public static val FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique"
 	
 	@Check
-	def checkensureProcessCycles(Process process){
+	def checkProcessNamesUnique(Process process){
 		
 		var processes = getContainerOfType(process, typeof(Model)).processes
 		
