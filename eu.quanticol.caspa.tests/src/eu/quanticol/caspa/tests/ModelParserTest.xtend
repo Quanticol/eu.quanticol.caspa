@@ -20,7 +20,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimple(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P=P;
 		'''.parse.assertNoErrors
 	}
@@ -28,7 +28,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimple2(){
 		'''
-		(P,{a=1,b=1});
+		(P,{a:=1,b:=1});
 		P=P;
 		'''.parse.assertNoErrors
 	}
@@ -36,8 +36,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimple3(){
 		'''
-		(P,{a=1,b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P=P;
 		Q=Q;
 		'''.parse.assertNoErrors
@@ -46,7 +46,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleReference(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P=Q;
 		Q=P;
 		'''.parse.assertNoErrors
@@ -55,7 +55,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePar(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = A | B;
 		A = A;
 		B = B;
@@ -65,7 +65,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleCho(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = A + B;
 		A = A;
 		B = B;
@@ -75,7 +75,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleNil(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = nil;
 		'''.parse.assertNoErrors
 	}
@@ -83,7 +83,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleKill(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = kill;
 		'''.parse.assertNoErrors
 	}
@@ -91,7 +91,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePredTrue(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = [True]P;
 		'''.parse.assertNoErrors
 	}
@@ -99,7 +99,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePredFalse(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = [False]P;
 		'''.parse.assertNoErrors
 	}
@@ -107,7 +107,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniOut(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a[True]<1>.P;
 		'''.parse.assertNoErrors
 	}
@@ -115,7 +115,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniIn(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a[False](1).P;
 		'''.parse.assertNoErrors
 	}
@@ -123,7 +123,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroOut(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a*[True]<1>.P;
 		'''.parse.assertNoErrors
 	}
@@ -131,7 +131,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroIn(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a*[False](1).P;
 		'''.parse.assertNoErrors
 	}
@@ -139,7 +139,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniOutU(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a[True]<1>{this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
@@ -147,7 +147,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniInU(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a[False](1){this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
@@ -155,7 +155,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroOutU(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a*[True]<1>{this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
@@ -163,7 +163,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroInU(){
 		'''
-		(P,{a=1});
+		(P,{a:=1});
 		P = a*[False](1){this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
@@ -171,7 +171,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleReference2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P=Q;
 		Q=P;
 		'''.parse.assertNoErrors
@@ -180,7 +180,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePar2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = A | B;
 		A = A;
 		B = B;
@@ -190,7 +190,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleCho2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = A + B;
 		A = A;
 		B = B;
@@ -200,7 +200,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleNil2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = nil;
 		'''.parse.assertNoErrors
 	}
@@ -208,7 +208,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleKill2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = kill;
 		'''.parse.assertNoErrors
 	}
@@ -216,7 +216,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePredTrue2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = [True]P;
 		'''.parse.assertNoErrors
 	}
@@ -224,7 +224,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePredFalse2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = [False]P;
 		'''.parse.assertNoErrors
 	}
@@ -232,7 +232,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniOut2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = a[True]<1>.P;
 		'''.parse.assertNoErrors
 	}
@@ -240,7 +240,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniIn2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = a[False](1).P;
 		'''.parse.assertNoErrors
 	}
@@ -248,7 +248,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroOut2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = a*[True]<1>.P;
 		'''.parse.assertNoErrors
 	}
@@ -256,7 +256,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroIn2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = a*[False](1).P;
 		'''.parse.assertNoErrors
 	}
@@ -264,7 +264,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniOutU2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = a[True]<1>{this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
@@ -272,7 +272,7 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniInU2(){
 		'''
-		(P,{a=1, b=1});
+		(P,{a:=1, b:=1});
 		P = a[False](1){this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
@@ -280,24 +280,24 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroOutU2(){
 		'''
-		(P,{a=1, b=1});
-		P = a*[True]<1>{this.a := 1}.P;
+		(P,{a:=1, b:=1});
+		P = a*[True]<1>{a := 1}.P;
 		'''.parse.assertNoErrors
 	}
 	
 	@Test
 	def void testSimpleActionBroInU2(){
 		'''
-		(P,{a=1, b=1});
-		P = a*[False](1){this.a := 1}.P;
+		(P,{a:=1, b:=1});
+		P = a*[False](1){a := 1}.P;
 		'''.parse.assertNoErrors
 	}
 	
 @Test
 	def void testSimpleReference3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P=Q;
 		Q=P;
 		'''.parse.assertNoErrors
@@ -306,8 +306,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePar3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = A | B;
 		A = A;
 		B = B;
@@ -318,8 +318,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleCho3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = A + B;
 		A = A;
 		B = B;
@@ -330,8 +330,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleNil3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = nil;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -340,8 +340,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleKill3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = kill;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -350,8 +350,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePredTrue3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = [True]P;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -360,8 +360,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimplePredFalse3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = [False]P;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -370,8 +370,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniOut3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = a[True]<1>.P;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -380,8 +380,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniIn3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = a[False](1).P;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -390,8 +390,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroOut3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = a*[True]<1>.P;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -400,8 +400,8 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroIn3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
 		P = a*[False](1).P;
 		Q = Q;
 		'''.parse.assertNoErrors
@@ -410,9 +410,9 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniOutU3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
-		P = a[True]<1>{this.a := 1}.P;
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
+		P = a[True]<1>{a := 1}.P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -420,9 +420,9 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionUniInU3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
-		P = a[False](1){this.a := 1}.P;
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
+		P = a[False](1){a := 1}.P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -430,9 +430,9 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroOutU3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
-		P = a*[True]<1>{this.a := 1}.P;
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
+		P = a*[True]<1>{a := 1}.P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -440,9 +440,9 @@ public class ModelParserTest {
 	@Test
 	def void testSimpleActionBroInU3(){
 		'''
-		(P,{a=1, b=1});
-		(Q,{a=1,b=1});
-		P = a*[False](1){this.a := 1}.P;
+		(P,{a:=1,b:=1});
+		(Q,{a:=1,b:=1});
+		P = a*[False](1){a := 1}.P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -451,21 +451,21 @@ public class ModelParserTest {
 	def void testBikeSharingModel(){
 		'''
 		//bike stations
-		(Shed,{zone = 1, bikes = 5, slots = 5});
-		(Shed,{zone = 2, bikes = 5, slots = 5});
-		(Shed,{zone = 3, bikes = 5, slots = 5});
-		(Shed,{zone = 4, bikes = 5, slots = 5});
+		(Shed,{zone := 1, bikes := 5, slots := 5});
+		(Shed,{zone := 2, bikes := 5, slots := 5});
+		(Shed,{zone := 3, bikes := 5, slots := 5});
+		(Shed,{zone := 4, bikes := 5, slots := 5});
 		
 		//our people
-		(Q, {zone = 1});
-		(Q, {zone = 2});
-		(Q, {zone = 3});
-		(Q, {zone = 4});
+		(Q, {zone := 1});
+		(Q, {zone := 2});
+		(Q, {zone := 3});
+		(Q, {zone := 4});
 		
 		//shed actions
 		Shed = G|R;
-		G = [bikes > 0] 		get[zone == this.zone]<1>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]<1>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+		G = [bikes > 0] 		get[zone == this.zone]<1>{bikes := this.bikes - 1; slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<1>{bikes := this.bikes + 1; slots := this.slots - 1}.R;
 		
 		//people actions
 		Q = B;
@@ -483,21 +483,21 @@ public class ModelParserTest {
 		//Now the pedestrians are interested in the total number of bikes and slots that they have seen
 		
 		//bike stations
-		(Shed,{zone = 1, bikes = 5, slots = 5});
-		(Shed,{zone = 2, bikes = 5, slots = 5});
-		(Shed,{zone = 3, bikes = 5, slots = 5});
-		(Shed,{zone = 4, bikes = 5, slots = 5});
+		(Shed,{zone := 1, bikes := 5, slots := 5});
+		(Shed,{zone := 2, bikes := 5, slots := 5});
+		(Shed,{zone := 3, bikes := 5, slots := 5});
+		(Shed,{zone := 4, bikes := 5, slots := 5});
 		
 		//our people
-		(Q, {zone = 1, slots = 0, bikes = 0});
-		(Q, {zone = 2, slots = 0, bikes = 0});
-		(Q, {zone = 3, slots = 0, bikes = 0});
-		(Q, {zone = 4, slots = 0, bikes = 0});
+		(Q, {zone := 1, slots := 0, bikes := 0});
+		(Q, {zone := 2, slots := 0, bikes := 0});
+		(Q, {zone := 3, slots := 0, bikes := 0});
+		(Q, {zone := 4, slots := 0, bikes := 0});
 		
 		//shed actions
 		Shed = G|R;
-		G = [bikes > 0] 		get[zone == this.zone]<this.slots>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]<this.bikes>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+		G = [bikes > 0] 		get[zone == this.zone]<this.slots>{bikes := bikes - 1; slots := slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<this.bikes>{bikes := bikes + 1; slots := slots - 1}.R;
 		
 		//people actions
 		Q = B;
@@ -512,16 +512,16 @@ public class ModelParserTest {
 	def void testBikeSharingPrModel(){
 		'''
 		//bike stations
-		(Shed,{zone = 1, bikes = 5, slots = 5});
-		(Shed,{zone = 2, bikes = 5, slots = 5});
-		(Shed,{zone = 3, bikes = 5, slots = 5});
-		(Shed,{zone = 4, bikes = 5, slots = 5});
+		(Shed,{zone := 1, bikes := 5, slots := 5});
+		(Shed,{zone := 2, bikes := 5, slots := 5});
+		(Shed,{zone := 3, bikes := 5, slots := 5});
+		(Shed,{zone := 4, bikes := 5, slots := 5});
 		
 		//our people
-		(Q, {zone = 1});
-		(Q, {zone = 2});
-		(Q, {zone = 3});
-		(Q, {zone = 4});
+		(Q, {zone := 1});
+		(Q, {zone := 2});
+		(Q, {zone := 3});
+		(Q, {zone := 4});
 		
 		//shed actions
 		Shed = G|R;
@@ -546,7 +546,7 @@ public class ModelParserTest {
 		 * Some examples
 		 */
 		 
-		(@CDW VALIDATIONCHECK:Matching arguments 	27.01.15)
+		//(@CDW VALIDATIONCHECK:Matching arguments 	27.01.15)
 
 		/*
 		 * (CDW 27.01.15)
@@ -595,8 +595,8 @@ public class ModelParserTest {
 		  * 
 		  */
 		
-		(P,{a=1,b=1});
-		(Q,{c=1,d=1});
+		(P,{a:=1,b:=1});
+		(Q,{c:=1,d:=1});
 		
 		//unicast
 		P = msg[True]<this.a>{this.a := this.a + 1}.R;
@@ -619,8 +619,8 @@ public class ModelParserTest {
 		 * Process - nil/kill - the leaves (CDW 27.01.15)
 		 */
 		 
-		 (P,{a=1}); //should both parse, but fail validation
-		 (Q,{a=1}); //(@CDW VALIDATIONCHECK:These are invalid Process for Term 	27.01.15)
+		 (P,{a:=1}); //should both parse, but fail validation
+		 (Q,{a:=1}); //(@CDW VALIDATIONCHECK:These are invalid Process for Term 	27.01.15)
 		 
 		 P = nil;	//OK, but how to check for this? - what if the ProcessExpression is more complex.
 		 Q = kill;
@@ -636,8 +636,8 @@ public class ModelParserTest {
 		 */
 		 
 		 
-		(P,{a=1,b=1});
-		(Z,{c=1});
+		(P,{a:=1,b:=1});
+		(Z,{c:=1});
 		 
 		//Demonstration of Predicate expressions - not real examples
 		 
@@ -685,11 +685,11 @@ public class ModelParserTest {
 		 * These should parse, but there are validation checks to be made
 		 */
 		 
-		(P,{a=1}); 		// (@CDW VALIDATIONCHECK:Does the store ever get used? 	27.01.15)
-		(P,{a=1}); 		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
-		(P,{a=1,a=1}); 	// (@CDW VALIDATIONCHECK:This is a STORE repetition. 	27.01.15)
-		(P,{a=1,b=1});
-		(P,{b=1,a=1});		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
+		(P,{a:=1}); 		// (@CDW VALIDATIONCHECK:Does the store ever get used? 	27.01.15)
+		(P,{a:=1}); 		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
+		(P,{a:=1,a:=1}); 	// (@CDW VALIDATIONCHECK:This is a STORE repetition. 	27.01.15)
+		(P,{a:=1,b:=1});
+		(P,{b:=1,a:=1});		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
 		 
 		P=P;
 		'''.parse.assertNoErrors
@@ -710,20 +710,20 @@ public class ModelParserTest {
 		 */
 		
 		//parallel processes
-		(P, {a=1});
-		(A, {a=1});	
-		(B, {a=1});
-		(C, {a=1});
+		(P, {a:=1});
+		(A, {a:=1});	
+		(B, {a:=1});
+		(C, {a:=1});
 		//parallel and choice
-		(D, {a=1});
+		(D, {a:=1});
 		//parallel, choice and predicate
-		(E, {a=1});
+		(E, {a:=1});
 		//nil - a pointless expression? - this will need to be checked for at parsing (@CDW VALIDATIONCHECK 27.01.15)
-		(F, {a=1});
+		(F, {a:=1});
 		//kill - also pointless? - this will also need to be checked for at parsing (@CDW VALIDATIONCHECK 27.01.15)
-		(G, {a=1});
+		(G, {a:=1});
 		//Action - for a later discussion. (CDW 27.01.15)
-		(H, {a=1});
+		(H, {a:=1});
 		
 		//simplistic processes
 		P = P;

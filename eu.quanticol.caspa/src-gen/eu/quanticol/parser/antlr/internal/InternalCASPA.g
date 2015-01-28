@@ -175,9 +175,9 @@ ruleStore returns [EObject current=null]
 	    }
 
 )
-)	otherlv_2='=' 
+)	otherlv_2=':=' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getStoreAccess().getEqualsSignKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getStoreAccess().getColonEqualsSignKeyword_2());
     }
 (
 (
@@ -302,6 +302,56 @@ ruleSelfReferencedStore returns [EObject current=null]
 
 )
 ))
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleStoreRef
+entryRuleStoreRef returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getStoreRefRule()); }
+	 iv_ruleStoreRef=ruleStoreRef 
+	 { $current=$iv_ruleStoreRef.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule StoreRef
+ruleStoreRef returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getStoreRefAccess().getReferencedStoreParserRuleCall_0()); 
+    }
+    this_ReferencedStore_0=ruleReferencedStore
+    { 
+        $current = $this_ReferencedStore_0.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getStoreRefAccess().getSelfReferencedStoreParserRuleCall_1()); 
+    }
+    this_SelfReferencedStore_1=ruleSelfReferencedStore
+    { 
+        $current = $this_SelfReferencedStore_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -1606,43 +1656,33 @@ ruleExpressions returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getExpressionsAccess().getSelfReferencedStoreParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getExpressionsAccess().getStoreRefParserRuleCall_0()); 
     }
-    this_SelfReferencedStore_0=ruleSelfReferencedStore
+    this_StoreRef_0=ruleStoreRef
     { 
-        $current = $this_SelfReferencedStore_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getExpressionsAccess().getReferencedStoreParserRuleCall_1()); 
-    }
-    this_ReferencedStore_1=ruleReferencedStore
-    { 
-        $current = $this_ReferencedStore_1.current; 
+        $current = $this_StoreRef_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getExpressionsAccess().getConstantAction_2_0(),
+            grammarAccess.getExpressionsAccess().getConstantAction_1_0(),
             $current);
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExpressionsAccess().getValueNaturalParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getExpressionsAccess().getValueNaturalParserRuleCall_1_1_0()); 
 	    }
-		lv_value_3_0=ruleNatural		{
+		lv_value_2_0=ruleNatural		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getExpressionsRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_3_0, 
+        		lv_value_2_0, 
         		"Natural");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1681,43 +1721,33 @@ ruleVariables returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getVariablesAccess().getSelfReferencedStoreParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getVariablesAccess().getStoreRefParserRuleCall_0()); 
     }
-    this_SelfReferencedStore_0=ruleSelfReferencedStore
+    this_StoreRef_0=ruleStoreRef
     { 
-        $current = $this_SelfReferencedStore_0.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getVariablesAccess().getReferencedStoreParserRuleCall_1()); 
-    }
-    this_ReferencedStore_1=ruleReferencedStore
-    { 
-        $current = $this_ReferencedStore_1.current; 
+        $current = $this_StoreRef_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getVariablesAccess().getConstantAction_2_0(),
+            grammarAccess.getVariablesAccess().getConstantAction_1_0(),
             $current);
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getVariablesAccess().getValueNaturalParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getVariablesAccess().getValueNaturalParserRuleCall_1_1_0()); 
 	    }
-		lv_value_3_0=ruleNatural		{
+		lv_value_2_0=ruleNatural		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getVariablesRule());
 	        }
        		set(
        			$current, 
        			"value",
-        		lv_value_3_0, 
+        		lv_value_2_0, 
         		"Natural");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1898,9 +1928,9 @@ ruleSingleEventUpdate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSingleEventUpdateAccess().getNameSelfReferencedStoreParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getSingleEventUpdateAccess().getNameStoreRefParserRuleCall_1_0()); 
 	    }
-		lv_name_1_0=ruleSelfReferencedStore		{
+		lv_name_1_0=ruleStoreRef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSingleEventUpdateRule());
 	        }
@@ -1908,7 +1938,7 @@ ruleSingleEventUpdate returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"SelfReferencedStore");
+        		"StoreRef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -1975,9 +2005,9 @@ ruleDistributedEventUpdate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getNameSelfReferencedStoreParserRuleCall_0_1_0()); 
+	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getNameStoreRefParserRuleCall_0_1_0()); 
 	    }
-		lv_name_1_0=ruleSelfReferencedStore		{
+		lv_name_1_0=ruleStoreRef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDistributedEventUpdateRule());
 	        }
@@ -1985,7 +2015,7 @@ ruleDistributedEventUpdate returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_1_0, 
-        		"SelfReferencedStore");
+        		"StoreRef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2056,9 +2086,9 @@ ruleDistributedEventUpdate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getNameSelfReferencedStoreParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getNameStoreRefParserRuleCall_1_1_0()); 
 	    }
-		lv_name_10_0=ruleSelfReferencedStore		{
+		lv_name_10_0=ruleStoreRef		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDistributedEventUpdateRule());
 	        }
@@ -2066,7 +2096,7 @@ ruleDistributedEventUpdate returns [EObject current=null]
        			$current, 
        			"name",
         		lv_name_10_0, 
-        		"SelfReferencedStore");
+        		"StoreRef");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2687,21 +2717,11 @@ ruleUpdateAtomic returns [EObject current=null]
 ))
     |
     { 
-        newCompositeNode(grammarAccess.getUpdateAtomicAccess().getReferencedStoreParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getUpdateAtomicAccess().getStoreRefParserRuleCall_1()); 
     }
-    this_ReferencedStore_2=ruleReferencedStore
+    this_StoreRef_2=ruleStoreRef
     { 
-        $current = $this_ReferencedStore_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getUpdateAtomicAccess().getSelfReferencedStoreParserRuleCall_2()); 
-    }
-    this_SelfReferencedStore_3=ruleSelfReferencedStore
-    { 
-        $current = $this_SelfReferencedStore_3.current; 
+        $current = $this_StoreRef_2.current; 
         afterParserOrEnumRuleCall();
     }
 )

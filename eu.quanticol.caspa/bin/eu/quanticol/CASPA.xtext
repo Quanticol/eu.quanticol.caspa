@@ -11,7 +11,7 @@ Model hidden(ML_COMMENT,SL_COMMENT,WS):
 
 //STORE
 Store returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Store} name=LOWER "=" value=Natural
+	{Store} name=LOWER ":=" value=Natural
 ;
 
 ReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -20,6 +20,10 @@ ReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 SelfReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{SelfReferencedStore}   "this."name=[Store|LOWER]
+;
+
+StoreRef returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	ReferencedStore | SelfReferencedStore
 ;
 
 /**  Old Store expressions
@@ -181,14 +185,12 @@ OutArguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 Expressions returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
-	SelfReferencedStore | 
-	ReferencedStore |
+	StoreRef |
 	{Constant} 	value=Natural
 ;
 
 Variables returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
-	SelfReferencedStore | 
-	ReferencedStore |
+	StoreRef |
 	{Constant} 	value=Natural
 ;
 
@@ -204,12 +206,12 @@ Update returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 SingleEventUpdate returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{LocalSingleEventUpdate} name=SelfReferencedStore ":=" expression=UpdateExpression
+	{LocalSingleEventUpdate} name=StoreRef ":=" expression=UpdateExpression
 ;
 
 DistributedEventUpdate returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{DistributedEventUpdateProbability} name=SelfReferencedStore ":=" "Pr" "(" distribution+=Distribution ( "," distribution+=Distribution+)* ")" |
-	{DistributedEventUpdateUniform} name=SelfReferencedStore ":=" "U" "(" distribution+=Uniform ( "," distribution+=Uniform+)* ")"
+	{DistributedEventUpdateProbability} name=StoreRef ":=" "Pr" "(" distribution+=Distribution ( "," distribution+=Distribution+)* ")" |
+	{DistributedEventUpdateUniform} name=StoreRef ":=" "U" "(" distribution+=Uniform ( "," distribution+=Uniform+)* ")"
 ;
 
 Distribution returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -255,8 +257,7 @@ UpdatePrimary returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 UpdateAtomic returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Constant} 	value=Natural |
-	ReferencedStore |
-	SelfReferencedStore
+	StoreRef
 ;
 
 

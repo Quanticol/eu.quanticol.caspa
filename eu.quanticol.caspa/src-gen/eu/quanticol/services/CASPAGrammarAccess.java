@@ -52,16 +52,16 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cStoreAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameLOWERTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cColonEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cValueAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cValueNaturalParserRuleCall_3_0 = (RuleCall)cValueAssignment_3.eContents().get(0);
 		
 		////STORE
 		//Store returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{Store} name=LOWER "=" value=Natural;
+		//	{Store} name=LOWER ":=" value=Natural;
 		public ParserRule getRule() { return rule; }
 
-		//{Store} name=LOWER "=" value=Natural
+		//{Store} name=LOWER ":=" value=Natural
 		public Group getGroup() { return cGroup; }
 
 		//{Store}
@@ -73,8 +73,8 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//LOWER
 		public RuleCall getNameLOWERTerminalRuleCall_1_0() { return cNameLOWERTerminalRuleCall_1_0; }
 
-		//"="
-		public Keyword getEqualsSignKeyword_2() { return cEqualsSignKeyword_2; }
+		//":="
+		public Keyword getColonEqualsSignKeyword_2() { return cColonEqualsSignKeyword_2; }
 
 		//value=Natural
 		public Assignment getValueAssignment_3() { return cValueAssignment_3; }
@@ -141,6 +141,26 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 		//LOWER
 		public RuleCall getNameStoreLOWERTerminalRuleCall_2_0_1() { return cNameStoreLOWERTerminalRuleCall_2_0_1; }
+	}
+
+	public class StoreRefElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "StoreRef");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cReferencedStoreParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSelfReferencedStoreParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//StoreRef returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
+		//	ReferencedStore | SelfReferencedStore;
+		public ParserRule getRule() { return rule; }
+
+		//ReferencedStore | SelfReferencedStore
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//ReferencedStore
+		public RuleCall getReferencedStoreParserRuleCall_0() { return cReferencedStoreParserRuleCall_0; }
+
+		//SelfReferencedStore
+		public RuleCall getSelfReferencedStoreParserRuleCall_1() { return cSelfReferencedStoreParserRuleCall_1; }
 	}
 
 	public class ActionElements extends AbstractParserRuleElementFinder {
@@ -880,73 +900,65 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	public class ExpressionsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Expressions");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSelfReferencedStoreParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cReferencedStoreParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cValueNaturalParserRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final RuleCall cStoreRefParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueNaturalParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		
 		//Expressions returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	SelfReferencedStore | ReferencedStore | {Constant} value=Natural;
+		//	StoreRef | {Constant} value=Natural;
 		public ParserRule getRule() { return rule; }
 
-		//SelfReferencedStore | ReferencedStore | {Constant} value=Natural
+		//StoreRef | {Constant} value=Natural
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//SelfReferencedStore
-		public RuleCall getSelfReferencedStoreParserRuleCall_0() { return cSelfReferencedStoreParserRuleCall_0; }
-
-		//ReferencedStore
-		public RuleCall getReferencedStoreParserRuleCall_1() { return cReferencedStoreParserRuleCall_1; }
+		//StoreRef
+		public RuleCall getStoreRefParserRuleCall_0() { return cStoreRefParserRuleCall_0; }
 
 		//{Constant} value=Natural
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//{Constant}
-		public Action getConstantAction_2_0() { return cConstantAction_2_0; }
+		public Action getConstantAction_1_0() { return cConstantAction_1_0; }
 
 		//value=Natural
-		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
 
 		//Natural
-		public RuleCall getValueNaturalParserRuleCall_2_1_0() { return cValueNaturalParserRuleCall_2_1_0; }
+		public RuleCall getValueNaturalParserRuleCall_1_1_0() { return cValueNaturalParserRuleCall_1_1_0; }
 	}
 
 	public class VariablesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Variables");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSelfReferencedStoreParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cReferencedStoreParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final Group cGroup_2 = (Group)cAlternatives.eContents().get(2);
-		private final Action cConstantAction_2_0 = (Action)cGroup_2.eContents().get(0);
-		private final Assignment cValueAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cValueNaturalParserRuleCall_2_1_0 = (RuleCall)cValueAssignment_2_1.eContents().get(0);
+		private final RuleCall cStoreRefParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
+		private final Action cConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
+		private final RuleCall cValueNaturalParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		
 		//Variables returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	SelfReferencedStore | ReferencedStore | {Constant} value=Natural;
+		//	StoreRef | {Constant} value=Natural;
 		public ParserRule getRule() { return rule; }
 
-		//SelfReferencedStore | ReferencedStore | {Constant} value=Natural
+		//StoreRef | {Constant} value=Natural
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//SelfReferencedStore
-		public RuleCall getSelfReferencedStoreParserRuleCall_0() { return cSelfReferencedStoreParserRuleCall_0; }
-
-		//ReferencedStore
-		public RuleCall getReferencedStoreParserRuleCall_1() { return cReferencedStoreParserRuleCall_1; }
+		//StoreRef
+		public RuleCall getStoreRefParserRuleCall_0() { return cStoreRefParserRuleCall_0; }
 
 		//{Constant} value=Natural
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_1() { return cGroup_1; }
 
 		//{Constant}
-		public Action getConstantAction_2_0() { return cConstantAction_2_0; }
+		public Action getConstantAction_1_0() { return cConstantAction_1_0; }
 
 		//value=Natural
-		public Assignment getValueAssignment_2_1() { return cValueAssignment_2_1; }
+		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
 
 		//Natural
-		public RuleCall getValueNaturalParserRuleCall_2_1_0() { return cValueNaturalParserRuleCall_2_1_0; }
+		public RuleCall getValueNaturalParserRuleCall_1_1_0() { return cValueNaturalParserRuleCall_1_1_0; }
 	}
 
 	public class UpdatesElements extends AbstractParserRuleElementFinder {
@@ -1023,26 +1035,26 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cLocalSingleEventUpdateAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSelfReferencedStoreParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cNameStoreRefParserRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cExpressionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cExpressionUpdateExpressionParserRuleCall_3_0 = (RuleCall)cExpressionAssignment_3.eContents().get(0);
 		
 		//SingleEventUpdate returns Updates hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{LocalSingleEventUpdate} name=SelfReferencedStore ":=" expression=UpdateExpression;
+		//	{LocalSingleEventUpdate} name=StoreRef ":=" expression=UpdateExpression;
 		public ParserRule getRule() { return rule; }
 
-		//{LocalSingleEventUpdate} name=SelfReferencedStore ":=" expression=UpdateExpression
+		//{LocalSingleEventUpdate} name=StoreRef ":=" expression=UpdateExpression
 		public Group getGroup() { return cGroup; }
 
 		//{LocalSingleEventUpdate}
 		public Action getLocalSingleEventUpdateAction_0() { return cLocalSingleEventUpdateAction_0; }
 
-		//name=SelfReferencedStore
+		//name=StoreRef
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
 
-		//SelfReferencedStore
-		public RuleCall getNameSelfReferencedStoreParserRuleCall_1_0() { return cNameSelfReferencedStoreParserRuleCall_1_0; }
+		//StoreRef
+		public RuleCall getNameStoreRefParserRuleCall_1_0() { return cNameStoreRefParserRuleCall_1_0; }
 
 		//":="
 		public Keyword getColonEqualsSignKeyword_2() { return cColonEqualsSignKeyword_2; }
@@ -1060,7 +1072,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_0 = (Group)cAlternatives.eContents().get(0);
 		private final Action cDistributedEventUpdateProbabilityAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Assignment cNameAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
-		private final RuleCall cNameSelfReferencedStoreParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
+		private final RuleCall cNameStoreRefParserRuleCall_0_1_0 = (RuleCall)cNameAssignment_0_1.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
 		private final Keyword cPrKeyword_0_3 = (Keyword)cGroup_0.eContents().get(3);
 		private final Keyword cLeftParenthesisKeyword_0_4 = (Keyword)cGroup_0.eContents().get(4);
@@ -1074,7 +1086,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
 		private final Action cDistributedEventUpdateUniformAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cNameAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final RuleCall cNameSelfReferencedStoreParserRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
+		private final RuleCall cNameStoreRefParserRuleCall_1_1_0 = (RuleCall)cNameAssignment_1_1.eContents().get(0);
 		private final Keyword cColonEqualsSignKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
 		private final Keyword cUKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		private final Keyword cLeftParenthesisKeyword_1_4 = (Keyword)cGroup_1.eContents().get(4);
@@ -1087,28 +1099,28 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_1_7 = (Keyword)cGroup_1.eContents().get(7);
 		
 		//DistributedEventUpdate returns Updates hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{DistributedEventUpdateProbability} name=SelfReferencedStore ":=" "Pr" "(" distribution+=Distribution (","
-		//	distribution+=Distribution+)* ")" | {DistributedEventUpdateUniform} name=SelfReferencedStore ":=" "U" "("
-		//	distribution+=Uniform ("," distribution+=Uniform+)* ")";
+		//	{DistributedEventUpdateProbability} name=StoreRef ":=" "Pr" "(" distribution+=Distribution (","
+		//	distribution+=Distribution+)* ")" | {DistributedEventUpdateUniform} name=StoreRef ":=" "U" "(" distribution+=Uniform
+		//	("," distribution+=Uniform+)* ")";
 		public ParserRule getRule() { return rule; }
 
-		//{DistributedEventUpdateProbability} name=SelfReferencedStore ":=" "Pr" "(" distribution+=Distribution (","
-		//distribution+=Distribution+)* ")" | {DistributedEventUpdateUniform} name=SelfReferencedStore ":=" "U" "("
-		//distribution+=Uniform ("," distribution+=Uniform+)* ")"
+		//{DistributedEventUpdateProbability} name=StoreRef ":=" "Pr" "(" distribution+=Distribution (","
+		//distribution+=Distribution+)* ")" | {DistributedEventUpdateUniform} name=StoreRef ":=" "U" "(" distribution+=Uniform
+		//("," distribution+=Uniform+)* ")"
 		public Alternatives getAlternatives() { return cAlternatives; }
 
-		//{DistributedEventUpdateProbability} name=SelfReferencedStore ":=" "Pr" "(" distribution+=Distribution (","
+		//{DistributedEventUpdateProbability} name=StoreRef ":=" "Pr" "(" distribution+=Distribution (","
 		//distribution+=Distribution+)* ")"
 		public Group getGroup_0() { return cGroup_0; }
 
 		//{DistributedEventUpdateProbability}
 		public Action getDistributedEventUpdateProbabilityAction_0_0() { return cDistributedEventUpdateProbabilityAction_0_0; }
 
-		//name=SelfReferencedStore
+		//name=StoreRef
 		public Assignment getNameAssignment_0_1() { return cNameAssignment_0_1; }
 
-		//SelfReferencedStore
-		public RuleCall getNameSelfReferencedStoreParserRuleCall_0_1_0() { return cNameSelfReferencedStoreParserRuleCall_0_1_0; }
+		//StoreRef
+		public RuleCall getNameStoreRefParserRuleCall_0_1_0() { return cNameStoreRefParserRuleCall_0_1_0; }
 
 		//":="
 		public Keyword getColonEqualsSignKeyword_0_2() { return cColonEqualsSignKeyword_0_2; }
@@ -1140,18 +1152,17 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//")"
 		public Keyword getRightParenthesisKeyword_0_7() { return cRightParenthesisKeyword_0_7; }
 
-		//{DistributedEventUpdateUniform} name=SelfReferencedStore ":=" "U" "(" distribution+=Uniform (","
-		//distribution+=Uniform+)* ")"
+		//{DistributedEventUpdateUniform} name=StoreRef ":=" "U" "(" distribution+=Uniform ("," distribution+=Uniform+)* ")"
 		public Group getGroup_1() { return cGroup_1; }
 
 		//{DistributedEventUpdateUniform}
 		public Action getDistributedEventUpdateUniformAction_1_0() { return cDistributedEventUpdateUniformAction_1_0; }
 
-		//name=SelfReferencedStore
+		//name=StoreRef
 		public Assignment getNameAssignment_1_1() { return cNameAssignment_1_1; }
 
-		//SelfReferencedStore
-		public RuleCall getNameSelfReferencedStoreParserRuleCall_1_1_0() { return cNameSelfReferencedStoreParserRuleCall_1_1_0; }
+		//StoreRef
+		public RuleCall getNameStoreRefParserRuleCall_1_1_0() { return cNameStoreRefParserRuleCall_1_1_0; }
 
 		//":="
 		public Keyword getColonEqualsSignKeyword_1_2() { return cColonEqualsSignKeyword_1_2; }
@@ -1439,14 +1450,13 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cConstantAction_0_0 = (Action)cGroup_0.eContents().get(0);
 		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cValueNaturalParserRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
-		private final RuleCall cReferencedStoreParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cSelfReferencedStoreParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cStoreRefParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//UpdateAtomic returns UpdateExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{Constant} value=Natural | ReferencedStore | SelfReferencedStore;
+		//	{Constant} value=Natural | StoreRef;
 		public ParserRule getRule() { return rule; }
 
-		//{Constant} value=Natural | ReferencedStore | SelfReferencedStore
+		//{Constant} value=Natural | StoreRef
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{Constant} value=Natural
@@ -1461,11 +1471,8 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//Natural
 		public RuleCall getValueNaturalParserRuleCall_0_1_0() { return cValueNaturalParserRuleCall_0_1_0; }
 
-		//ReferencedStore
-		public RuleCall getReferencedStoreParserRuleCall_1() { return cReferencedStoreParserRuleCall_1; }
-
-		//SelfReferencedStore
-		public RuleCall getSelfReferencedStoreParserRuleCall_2() { return cSelfReferencedStoreParserRuleCall_2; }
+		//StoreRef
+		public RuleCall getStoreRefParserRuleCall_1() { return cStoreRefParserRuleCall_1; }
 	}
 
 	public class ProcessElements extends AbstractParserRuleElementFinder {
@@ -1935,6 +1942,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	private final StoreElements pStore;
 	private final ReferencedStoreElements pReferencedStore;
 	private final SelfReferencedStoreElements pSelfReferencedStore;
+	private final StoreRefElements pStoreRef;
 	private final ActionElements pAction;
 	private final PredicateElements pPredicate;
 	private final PredicateExpressionElements pPredicateExpression;
@@ -1995,6 +2003,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		this.pStore = new StoreElements();
 		this.pReferencedStore = new ReferencedStoreElements();
 		this.pSelfReferencedStore = new SelfReferencedStoreElements();
+		this.pStoreRef = new StoreRefElements();
 		this.pAction = new ActionElements();
 		this.pPredicate = new PredicateElements();
 		this.pPredicateExpression = new PredicateExpressionElements();
@@ -2082,7 +2091,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	////STORE
 	//Store returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{Store} name=LOWER "=" value=Natural;
+	//	{Store} name=LOWER ":=" value=Natural;
 	public StoreElements getStoreAccess() {
 		return pStore;
 	}
@@ -2109,6 +2118,16 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getSelfReferencedStoreRule() {
 		return getSelfReferencedStoreAccess().getRule();
+	}
+
+	//StoreRef returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
+	//	ReferencedStore | SelfReferencedStore;
+	public StoreRefElements getStoreRefAccess() {
+		return pStoreRef;
+	}
+	
+	public ParserRule getStoreRefRule() {
+		return getStoreRefAccess().getRule();
 	}
 
 	/// **  Old Store expressions
@@ -2341,7 +2360,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Expressions returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	SelfReferencedStore | ReferencedStore | {Constant} value=Natural;
+	//	StoreRef | {Constant} value=Natural;
 	public ExpressionsElements getExpressionsAccess() {
 		return pExpressions;
 	}
@@ -2351,7 +2370,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Variables returns Arguments hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	SelfReferencedStore | ReferencedStore | {Constant} value=Natural;
+	//	StoreRef | {Constant} value=Natural;
 	public VariablesElements getVariablesAccess() {
 		return pVariables;
 	}
@@ -2382,7 +2401,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SingleEventUpdate returns Updates hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{LocalSingleEventUpdate} name=SelfReferencedStore ":=" expression=UpdateExpression;
+	//	{LocalSingleEventUpdate} name=StoreRef ":=" expression=UpdateExpression;
 	public SingleEventUpdateElements getSingleEventUpdateAccess() {
 		return pSingleEventUpdate;
 	}
@@ -2392,9 +2411,9 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//DistributedEventUpdate returns Updates hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{DistributedEventUpdateProbability} name=SelfReferencedStore ":=" "Pr" "(" distribution+=Distribution (","
-	//	distribution+=Distribution+)* ")" | {DistributedEventUpdateUniform} name=SelfReferencedStore ":=" "U" "("
-	//	distribution+=Uniform ("," distribution+=Uniform+)* ")";
+	//	{DistributedEventUpdateProbability} name=StoreRef ":=" "Pr" "(" distribution+=Distribution (","
+	//	distribution+=Distribution+)* ")" | {DistributedEventUpdateUniform} name=StoreRef ":=" "U" "(" distribution+=Uniform
+	//	("," distribution+=Uniform+)* ")";
 	public DistributedEventUpdateElements getDistributedEventUpdateAccess() {
 		return pDistributedEventUpdate;
 	}
@@ -2484,7 +2503,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//UpdateAtomic returns UpdateExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{Constant} value=Natural | ReferencedStore | SelfReferencedStore;
+	//	{Constant} value=Natural | StoreRef;
 	public UpdateAtomicElements getUpdateAtomicAccess() {
 		return pUpdateAtomic;
 	}

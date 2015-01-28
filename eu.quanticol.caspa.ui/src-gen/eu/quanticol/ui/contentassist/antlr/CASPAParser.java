@@ -37,6 +37,7 @@ public class CASPAParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
+					put(grammarAccess.getStoreRefAccess().getAlternatives(), "rule__StoreRef__Alternatives");
 					put(grammarAccess.getActionAccess().getAlternatives_0(), "rule__Action__Alternatives_0");
 					put(grammarAccess.getPredicateEqualityAccess().getOpAlternatives_1_1_0(), "rule__PredicateEquality__OpAlternatives_1_1_0");
 					put(grammarAccess.getPredicateComparisonAccess().getOpAlternatives_1_1_0(), "rule__PredicateComparison__OpAlternatives_1_1_0");
@@ -84,8 +85,8 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArgumentsAccess().getGroup_0_3(), "rule__Arguments__Group_0_3__0");
 					put(grammarAccess.getArgumentsAccess().getGroup_1(), "rule__Arguments__Group_1__0");
 					put(grammarAccess.getArgumentsAccess().getGroup_1_3(), "rule__Arguments__Group_1_3__0");
-					put(grammarAccess.getExpressionsAccess().getGroup_2(), "rule__Expressions__Group_2__0");
-					put(grammarAccess.getVariablesAccess().getGroup_2(), "rule__Variables__Group_2__0");
+					put(grammarAccess.getExpressionsAccess().getGroup_1(), "rule__Expressions__Group_1__0");
+					put(grammarAccess.getVariablesAccess().getGroup_1(), "rule__Variables__Group_1__0");
 					put(grammarAccess.getUpdatesAccess().getGroup(), "rule__Updates__Group__0");
 					put(grammarAccess.getUpdatesAccess().getGroup_3(), "rule__Updates__Group_3__0");
 					put(grammarAccess.getSingleEventUpdateAccess().getGroup(), "rule__SingleEventUpdate__Group__0");
@@ -151,8 +152,8 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArgumentsAccess().getExpressionsAssignment_0_3_1(), "rule__Arguments__ExpressionsAssignment_0_3_1");
 					put(grammarAccess.getArgumentsAccess().getExpressionsAssignment_1_2(), "rule__Arguments__ExpressionsAssignment_1_2");
 					put(grammarAccess.getArgumentsAccess().getExpressionsAssignment_1_3_1(), "rule__Arguments__ExpressionsAssignment_1_3_1");
-					put(grammarAccess.getExpressionsAccess().getValueAssignment_2_1(), "rule__Expressions__ValueAssignment_2_1");
-					put(grammarAccess.getVariablesAccess().getValueAssignment_2_1(), "rule__Variables__ValueAssignment_2_1");
+					put(grammarAccess.getExpressionsAccess().getValueAssignment_1_1(), "rule__Expressions__ValueAssignment_1_1");
+					put(grammarAccess.getVariablesAccess().getValueAssignment_1_1(), "rule__Variables__ValueAssignment_1_1");
 					put(grammarAccess.getUpdatesAccess().getUpdatesAssignment_2(), "rule__Updates__UpdatesAssignment_2");
 					put(grammarAccess.getUpdatesAccess().getUpdatesAssignment_3_1(), "rule__Updates__UpdatesAssignment_3_1");
 					put(grammarAccess.getSingleEventUpdateAccess().getNameAssignment_1(), "rule__SingleEventUpdate__NameAssignment_1");

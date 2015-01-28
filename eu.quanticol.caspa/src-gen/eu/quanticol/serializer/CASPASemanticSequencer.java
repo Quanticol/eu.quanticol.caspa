@@ -504,6 +504,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getPredicateSubtractionRule() ||
 				   context == grammarAccess.getPredicateSubtractionAccess().getPredicateSubLeftAction_1_0() ||
 				   context == grammarAccess.getReferencedStoreRule() ||
+				   context == grammarAccess.getStoreRefRule() ||
 				   context == grammarAccess.getUpdateAdditionRule() ||
 				   context == grammarAccess.getUpdateAdditionAccess().getUpdatePluLeftAction_1_0() ||
 				   context == grammarAccess.getUpdateAtomicRule() ||
@@ -544,6 +545,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getPredicateSubtractionRule() ||
 				   context == grammarAccess.getPredicateSubtractionAccess().getPredicateSubLeftAction_1_0() ||
 				   context == grammarAccess.getSelfReferencedStoreRule() ||
+				   context == grammarAccess.getStoreRefRule() ||
 				   context == grammarAccess.getUpdateAdditionRule() ||
 				   context == grammarAccess.getUpdateAdditionAccess().getUpdatePluLeftAction_1_0() ||
 				   context == grammarAccess.getUpdateAtomicRule() ||
@@ -748,7 +750,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=SelfReferencedStore distribution+=Distribution distribution+=Distribution*)
+	 *     (name=StoreRef distribution+=Distribution distribution+=Distribution*)
 	 */
 	protected void sequence_DistributedEventUpdate(EObject context, DistributedEventUpdateProbability semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -757,7 +759,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=SelfReferencedStore distribution+=Uniform distribution+=Uniform*)
+	 *     (name=StoreRef distribution+=Uniform distribution+=Uniform*)
 	 */
 	protected void sequence_DistributedEventUpdate(EObject context, DistributedEventUpdateUniform semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -784,7 +786,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExpressionsAccess().getValueNaturalParserRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getExpressionsAccess().getValueNaturalParserRuleCall_1_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -1101,7 +1103,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (name=SelfReferencedStore expression=UpdateExpression)
+	 *     (name=StoreRef expression=UpdateExpression)
 	 */
 	protected void sequence_SingleEventUpdate(EObject context, LocalSingleEventUpdate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1257,7 +1259,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariablesAccess().getValueNaturalParserRuleCall_2_1_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getVariablesAccess().getValueNaturalParserRuleCall_1_1_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 }

@@ -29,7 +29,7 @@ public class ModelParserTest {
   public void testSimple() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P=P;");
       _builder.newLine();
@@ -44,7 +44,7 @@ public class ModelParserTest {
   public void testSimple2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1,b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P=P;");
       _builder.newLine();
@@ -59,9 +59,9 @@ public class ModelParserTest {
   public void testSimple3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1,b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P=P;");
       _builder.newLine();
@@ -78,7 +78,7 @@ public class ModelParserTest {
   public void testSimpleReference() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P=Q;");
       _builder.newLine();
@@ -95,7 +95,7 @@ public class ModelParserTest {
   public void testSimplePar() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = A | B;");
       _builder.newLine();
@@ -114,7 +114,7 @@ public class ModelParserTest {
   public void testSimpleCho() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = A + B;");
       _builder.newLine();
@@ -133,7 +133,7 @@ public class ModelParserTest {
   public void testSimpleNil() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = nil;");
       _builder.newLine();
@@ -148,7 +148,7 @@ public class ModelParserTest {
   public void testSimpleKill() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = kill;");
       _builder.newLine();
@@ -163,7 +163,7 @@ public class ModelParserTest {
   public void testSimplePredTrue() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = [True]P;");
       _builder.newLine();
@@ -178,7 +178,7 @@ public class ModelParserTest {
   public void testSimplePredFalse() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = [False]P;");
       _builder.newLine();
@@ -193,7 +193,7 @@ public class ModelParserTest {
   public void testSimpleActionUniOut() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a[True]<1>.P;");
       _builder.newLine();
@@ -208,7 +208,7 @@ public class ModelParserTest {
   public void testSimpleActionUniIn() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a[False](1).P;");
       _builder.newLine();
@@ -223,7 +223,7 @@ public class ModelParserTest {
   public void testSimpleActionBroOut() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a*[True]<1>.P;");
       _builder.newLine();
@@ -238,7 +238,7 @@ public class ModelParserTest {
   public void testSimpleActionBroIn() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a*[False](1).P;");
       _builder.newLine();
@@ -253,7 +253,7 @@ public class ModelParserTest {
   public void testSimpleActionUniOutU() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a[True]<1>{this.a := 1}.P;");
       _builder.newLine();
@@ -268,7 +268,7 @@ public class ModelParserTest {
   public void testSimpleActionUniInU() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a[False](1){this.a := 1}.P;");
       _builder.newLine();
@@ -283,7 +283,7 @@ public class ModelParserTest {
   public void testSimpleActionBroOutU() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a*[True]<1>{this.a := 1}.P;");
       _builder.newLine();
@@ -298,7 +298,7 @@ public class ModelParserTest {
   public void testSimpleActionBroInU() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1});");
+      _builder.append("(P,{a:=1});");
       _builder.newLine();
       _builder.append("P = a*[False](1){this.a := 1}.P;");
       _builder.newLine();
@@ -313,7 +313,7 @@ public class ModelParserTest {
   public void testSimpleReference2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P=Q;");
       _builder.newLine();
@@ -330,7 +330,7 @@ public class ModelParserTest {
   public void testSimplePar2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = A | B;");
       _builder.newLine();
@@ -349,7 +349,7 @@ public class ModelParserTest {
   public void testSimpleCho2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = A + B;");
       _builder.newLine();
@@ -368,7 +368,7 @@ public class ModelParserTest {
   public void testSimpleNil2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = nil;");
       _builder.newLine();
@@ -383,7 +383,7 @@ public class ModelParserTest {
   public void testSimpleKill2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = kill;");
       _builder.newLine();
@@ -398,7 +398,7 @@ public class ModelParserTest {
   public void testSimplePredTrue2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = [True]P;");
       _builder.newLine();
@@ -413,7 +413,7 @@ public class ModelParserTest {
   public void testSimplePredFalse2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = [False]P;");
       _builder.newLine();
@@ -428,7 +428,7 @@ public class ModelParserTest {
   public void testSimpleActionUniOut2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = a[True]<1>.P;");
       _builder.newLine();
@@ -443,7 +443,7 @@ public class ModelParserTest {
   public void testSimpleActionUniIn2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = a[False](1).P;");
       _builder.newLine();
@@ -458,7 +458,7 @@ public class ModelParserTest {
   public void testSimpleActionBroOut2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = a*[True]<1>.P;");
       _builder.newLine();
@@ -473,7 +473,7 @@ public class ModelParserTest {
   public void testSimpleActionBroIn2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = a*[False](1).P;");
       _builder.newLine();
@@ -488,7 +488,7 @@ public class ModelParserTest {
   public void testSimpleActionUniOutU2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = a[True]<1>{this.a := 1}.P;");
       _builder.newLine();
@@ -503,7 +503,7 @@ public class ModelParserTest {
   public void testSimpleActionUniInU2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
       _builder.append("P = a[False](1){this.a := 1}.P;");
       _builder.newLine();
@@ -518,9 +518,9 @@ public class ModelParserTest {
   public void testSimpleActionBroOutU2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[True]<1>{this.a := 1}.P;");
+      _builder.append("P = a*[True]<1>{a := 1}.P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -533,9 +533,9 @@ public class ModelParserTest {
   public void testSimpleActionBroInU2() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1){this.a := 1}.P;");
+      _builder.append("P = a*[False](1){a := 1}.P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -548,9 +548,9 @@ public class ModelParserTest {
   public void testSimpleReference3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P=Q;");
       _builder.newLine();
@@ -567,9 +567,9 @@ public class ModelParserTest {
   public void testSimplePar3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = A | B;");
       _builder.newLine();
@@ -590,9 +590,9 @@ public class ModelParserTest {
   public void testSimpleCho3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = A + B;");
       _builder.newLine();
@@ -613,9 +613,9 @@ public class ModelParserTest {
   public void testSimpleNil3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = nil;");
       _builder.newLine();
@@ -632,9 +632,9 @@ public class ModelParserTest {
   public void testSimpleKill3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = kill;");
       _builder.newLine();
@@ -651,9 +651,9 @@ public class ModelParserTest {
   public void testSimplePredTrue3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = [True]P;");
       _builder.newLine();
@@ -670,9 +670,9 @@ public class ModelParserTest {
   public void testSimplePredFalse3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = [False]P;");
       _builder.newLine();
@@ -689,9 +689,9 @@ public class ModelParserTest {
   public void testSimpleActionUniOut3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = a[True]<1>.P;");
       _builder.newLine();
@@ -708,9 +708,9 @@ public class ModelParserTest {
   public void testSimpleActionUniIn3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = a[False](1).P;");
       _builder.newLine();
@@ -727,9 +727,9 @@ public class ModelParserTest {
   public void testSimpleActionBroOut3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = a*[True]<1>.P;");
       _builder.newLine();
@@ -746,9 +746,9 @@ public class ModelParserTest {
   public void testSimpleActionBroIn3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("P = a*[False](1).P;");
       _builder.newLine();
@@ -765,11 +765,11 @@ public class ModelParserTest {
   public void testSimpleActionUniOutU3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a[True]<1>{this.a := 1}.P;");
+      _builder.append("P = a[True]<1>{a := 1}.P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -784,11 +784,11 @@ public class ModelParserTest {
   public void testSimpleActionUniInU3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a[False](1){this.a := 1}.P;");
+      _builder.append("P = a[False](1){a := 1}.P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -803,11 +803,11 @@ public class ModelParserTest {
   public void testSimpleActionBroOutU3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[True]<1>{this.a := 1}.P;");
+      _builder.append("P = a*[True]<1>{a := 1}.P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -822,11 +822,11 @@ public class ModelParserTest {
   public void testSimpleActionBroInU3() {
     try {
       StringConcatenation _builder = new StringConcatenation();
-      _builder.append("(P,{a=1, b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a=1,b=1});");
+      _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1){this.a := 1}.P;");
+      _builder.append("P = a*[False](1){a := 1}.P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -843,33 +843,33 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("//bike stations");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 1, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 1, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 2, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 2, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 3, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 3, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 4, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 4, bikes := 5, slots := 5});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//our people");
       _builder.newLine();
-      _builder.append("(Q, {zone = 1});");
+      _builder.append("(Q, {zone := 1});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 2});");
+      _builder.append("(Q, {zone := 2});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 3});");
+      _builder.append("(Q, {zone := 3});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 4});");
+      _builder.append("(Q, {zone := 4});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//shed actions");
       _builder.newLine();
       _builder.append("Shed = G|R;");
       _builder.newLine();
-      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<1>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;");
+      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<1>{bikes := this.bikes - 1; slots := this.slots + 1}.G;");
       _builder.newLine();
-      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<1>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;");
+      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<1>{bikes := this.bikes + 1; slots := this.slots - 1}.R;");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//people actions");
@@ -902,33 +902,33 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("//bike stations");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 1, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 1, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 2, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 2, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 3, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 3, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 4, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 4, bikes := 5, slots := 5});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//our people");
       _builder.newLine();
-      _builder.append("(Q, {zone = 1, slots = 0, bikes = 0});");
+      _builder.append("(Q, {zone := 1, slots := 0, bikes := 0});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 2, slots = 0, bikes = 0});");
+      _builder.append("(Q, {zone := 2, slots := 0, bikes := 0});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 3, slots = 0, bikes = 0});");
+      _builder.append("(Q, {zone := 3, slots := 0, bikes := 0});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 4, slots = 0, bikes = 0});");
+      _builder.append("(Q, {zone := 4, slots := 0, bikes := 0});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//shed actions");
       _builder.newLine();
       _builder.append("Shed = G|R;");
       _builder.newLine();
-      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<this.slots>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;");
+      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<this.slots>{bikes := bikes - 1; slots := slots + 1}.G;");
       _builder.newLine();
-      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<this.bikes>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;");
+      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<this.bikes>{bikes := bikes + 1; slots := slots - 1}.R;");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//people actions");
@@ -956,24 +956,24 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("//bike stations");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 1, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 1, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 2, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 2, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 3, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 3, bikes := 5, slots := 5});");
       _builder.newLine();
-      _builder.append("(Shed,{zone = 4, bikes = 5, slots = 5});");
+      _builder.append("(Shed,{zone := 4, bikes := 5, slots := 5});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//our people");
       _builder.newLine();
-      _builder.append("(Q, {zone = 1});");
+      _builder.append("(Q, {zone := 1});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 2});");
+      _builder.append("(Q, {zone := 2});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 3});");
+      _builder.append("(Q, {zone := 3});");
       _builder.newLine();
-      _builder.append("(Q, {zone = 4});");
+      _builder.append("(Q, {zone := 4});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//shed actions");
@@ -1023,7 +1023,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append(" ");
       _builder.newLine();
-      _builder.append("(@CDW VALIDATIONCHECK:Matching arguments \t27.01.15)");
+      _builder.append("//(@CDW VALIDATIONCHECK:Matching arguments \t27.01.15)");
       _builder.newLine();
       _builder.newLine();
       _builder.append("/*");
@@ -1158,9 +1158,9 @@ public class ModelParserTest {
       _builder.append("*/");
       _builder.newLine();
       _builder.newLine();
-      _builder.append("(P,{a=1,b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Q,{c=1,d=1});");
+      _builder.append("(Q,{c:=1,d:=1});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//unicast");
@@ -1206,10 +1206,10 @@ public class ModelParserTest {
       _builder.append(" ");
       _builder.newLine();
       _builder.append(" ");
-      _builder.append("(P,{a=1}); //should both parse, but fail validation");
+      _builder.append("(P,{a:=1}); //should both parse, but fail validation");
       _builder.newLine();
       _builder.append(" ");
-      _builder.append("(Q,{a=1}); //(@CDW VALIDATIONCHECK:These are invalid Process for Term \t27.01.15)");
+      _builder.append("(Q,{a:=1}); //(@CDW VALIDATIONCHECK:These are invalid Process for Term \t27.01.15)");
       _builder.newLine();
       _builder.append(" ");
       _builder.newLine();
@@ -1245,9 +1245,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append(" ");
       _builder.newLine();
-      _builder.append("(P,{a=1,b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(Z,{c=1});");
+      _builder.append("(Z,{c:=1});");
       _builder.newLine();
       _builder.append(" ");
       _builder.newLine();
@@ -1358,15 +1358,15 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append(" ");
       _builder.newLine();
-      _builder.append("(P,{a=1}); \t\t// (@CDW VALIDATIONCHECK:Does the store ever get used? \t27.01.15)");
+      _builder.append("(P,{a:=1}); \t\t// (@CDW VALIDATIONCHECK:Does the store ever get used? \t27.01.15)");
       _builder.newLine();
-      _builder.append("(P,{a=1}); \t\t// (@CDW VALIDATIONCHECK:This is a TERM repetition. \t27.01.15)");
+      _builder.append("(P,{a:=1}); \t\t// (@CDW VALIDATIONCHECK:This is a TERM repetition. \t27.01.15)");
       _builder.newLine();
-      _builder.append("(P,{a=1,a=1}); \t// (@CDW VALIDATIONCHECK:This is a STORE repetition. \t27.01.15)");
+      _builder.append("(P,{a:=1,a:=1}); \t// (@CDW VALIDATIONCHECK:This is a STORE repetition. \t27.01.15)");
       _builder.newLine();
-      _builder.append("(P,{a=1,b=1});");
+      _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("(P,{b=1,a=1});\t\t// (@CDW VALIDATIONCHECK:This is a TERM repetition. \t27.01.15)");
+      _builder.append("(P,{b:=1,a:=1});\t\t// (@CDW VALIDATIONCHECK:This is a TERM repetition. \t27.01.15)");
       _builder.newLine();
       _builder.append(" ");
       _builder.newLine();
@@ -1415,33 +1415,33 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("//parallel processes");
       _builder.newLine();
-      _builder.append("(P, {a=1});");
+      _builder.append("(P, {a:=1});");
       _builder.newLine();
-      _builder.append("(A, {a=1});\t");
+      _builder.append("(A, {a:=1});\t");
       _builder.newLine();
-      _builder.append("(B, {a=1});");
+      _builder.append("(B, {a:=1});");
       _builder.newLine();
-      _builder.append("(C, {a=1});");
+      _builder.append("(C, {a:=1});");
       _builder.newLine();
       _builder.append("//parallel and choice");
       _builder.newLine();
-      _builder.append("(D, {a=1});");
+      _builder.append("(D, {a:=1});");
       _builder.newLine();
       _builder.append("//parallel, choice and predicate");
       _builder.newLine();
-      _builder.append("(E, {a=1});");
+      _builder.append("(E, {a:=1});");
       _builder.newLine();
       _builder.append("//nil - a pointless expression? - this will need to be checked for at parsing (@CDW VALIDATIONCHECK 27.01.15)");
       _builder.newLine();
-      _builder.append("(F, {a=1});");
+      _builder.append("(F, {a:=1});");
       _builder.newLine();
       _builder.append("//kill - also pointless? - this will also need to be checked for at parsing (@CDW VALIDATIONCHECK 27.01.15)");
       _builder.newLine();
-      _builder.append("(G, {a=1});");
+      _builder.append("(G, {a:=1});");
       _builder.newLine();
       _builder.append("//Action - for a later discussion. (CDW 27.01.15)");
       _builder.newLine();
-      _builder.append("(H, {a=1});");
+      _builder.append("(H, {a:=1});");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//simplistic processes");
