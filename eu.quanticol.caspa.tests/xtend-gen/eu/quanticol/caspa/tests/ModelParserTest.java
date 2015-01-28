@@ -210,7 +210,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1});");
       _builder.newLine();
-      _builder.append("P = a[False](1).P;");
+      _builder.append("P = a[False]().P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -240,7 +240,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1).P;");
+      _builder.append("P = a*[False]().P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -270,7 +270,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1});");
       _builder.newLine();
-      _builder.append("P = a[False](1){this.a := 1}.P;");
+      _builder.append("P = a[False](){this.a := 1}.P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -300,7 +300,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1){this.a := 1}.P;");
+      _builder.append("P = a*[False](){this.a := 1}.P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -445,7 +445,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
-      _builder.append("P = a[False](1).P;");
+      _builder.append("P = a[False]().P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -475,7 +475,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1).P;");
+      _builder.append("P = a*[False]().P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -505,7 +505,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
-      _builder.append("P = a[False](1){this.a := 1}.P;");
+      _builder.append("P = a[False](){this.a := 1}.P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -535,7 +535,7 @@ public class ModelParserTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1, b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1){a := 1}.P;");
+      _builder.append("P = a*[False](){a := 1}.P;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -712,7 +712,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a[False](1).P;");
+      _builder.append("P = a[False]().P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -750,7 +750,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1).P;");
+      _builder.append("P = a*[False]().P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -788,7 +788,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a[False](1){a := 1}.P;");
+      _builder.append("P = a[False](){a := 1}.P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -826,7 +826,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("(Q,{a:=1,b:=1});");
       _builder.newLine();
-      _builder.append("P = a*[False](1){a := 1}.P;");
+      _builder.append("P = a*[False](){a := 1}.P;");
       _builder.newLine();
       _builder.append("Q = Q;");
       _builder.newLine();
@@ -867,9 +867,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("Shed = G|R;");
       _builder.newLine();
-      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<1>{bikes := this.bikes - 1; slots := this.slots + 1}.G;");
+      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<>{bikes := this.bikes - 1; slots := this.slots + 1}.G;");
       _builder.newLine();
-      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<1>{bikes := this.bikes + 1; slots := this.slots - 1}.R;");
+      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<>{bikes := this.bikes + 1; slots := this.slots - 1}.R;");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//people actions");
@@ -878,13 +878,13 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("//Uniform distribution \"U\"");
       _builder.newLine();
-      _builder.append("B = move*[False]<1>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<1>.WS;");
+      _builder.append("B = move*[False]<>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<>.WS;");
       _builder.newLine();
-      _builder.append("WS = ret[zone == this.zone](1).P;");
+      _builder.append("WS = ret[zone == this.zone]().P;");
       _builder.newLine();
-      _builder.append("P = go*[False]<1>.WB;");
+      _builder.append("P = go*[False]<>.WB;");
       _builder.newLine();
-      _builder.append("WB = get[zone == this.zone](1).B;");
+      _builder.append("WB = get[zone == this.zone]().B;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -980,9 +980,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("Shed = G|R;");
       _builder.newLine();
-      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<1>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;");
+      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;");
       _builder.newLine();
-      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<1>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;");
+      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//people actions");
@@ -991,13 +991,13 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("// notice the change to Pr here - probability:zone number");
       _builder.newLine();
-      _builder.append("B = move*[False]<1>{this.zone := Pr(0.25:1, 0.05:2, 0.40:3, 0.3:4)}.B + stop*[False]<1>.WS;");
+      _builder.append("B = move*[False]<>{this.zone := Pr(0.25:1, 0.05:2, 0.40:3, 0.3:4)}.B + stop*[False]<>.WS;");
       _builder.newLine();
-      _builder.append("WS = ret[zone == this.zone](1).P;");
+      _builder.append("WS = ret[zone == this.zone]().P;");
       _builder.newLine();
-      _builder.append("P = go*[False]<1>.WB;");
+      _builder.append("P = go*[False]<>.WB;");
       _builder.newLine();
-      _builder.append("WB = get[zone == this.zone](1).B;");
+      _builder.append("WB = get[zone == this.zone]().B;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);

@@ -116,7 +116,7 @@ public class ModelParserTest {
 	def void testSimpleActionUniIn(){
 		'''
 		(P,{a:=1});
-		P = a[False](1).P;
+		P = a[False]().P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -132,7 +132,7 @@ public class ModelParserTest {
 	def void testSimpleActionBroIn(){
 		'''
 		(P,{a:=1});
-		P = a*[False](1).P;
+		P = a*[False]().P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -148,7 +148,7 @@ public class ModelParserTest {
 	def void testSimpleActionUniInU(){
 		'''
 		(P,{a:=1});
-		P = a[False](1){this.a := 1}.P;
+		P = a[False](){this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -164,7 +164,7 @@ public class ModelParserTest {
 	def void testSimpleActionBroInU(){
 		'''
 		(P,{a:=1});
-		P = a*[False](1){this.a := 1}.P;
+		P = a*[False](){this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -241,7 +241,7 @@ public class ModelParserTest {
 	def void testSimpleActionUniIn2(){
 		'''
 		(P,{a:=1, b:=1});
-		P = a[False](1).P;
+		P = a[False]().P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -257,7 +257,7 @@ public class ModelParserTest {
 	def void testSimpleActionBroIn2(){
 		'''
 		(P,{a:=1, b:=1});
-		P = a*[False](1).P;
+		P = a*[False]().P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -273,7 +273,7 @@ public class ModelParserTest {
 	def void testSimpleActionUniInU2(){
 		'''
 		(P,{a:=1, b:=1});
-		P = a[False](1){this.a := 1}.P;
+		P = a[False](){this.a := 1}.P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -289,7 +289,7 @@ public class ModelParserTest {
 	def void testSimpleActionBroInU2(){
 		'''
 		(P,{a:=1, b:=1});
-		P = a*[False](1){a := 1}.P;
+		P = a*[False](){a := 1}.P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -382,7 +382,7 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
-		P = a[False](1).P;
+		P = a[False]().P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -402,7 +402,7 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
-		P = a*[False](1).P;
+		P = a*[False]().P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -422,7 +422,7 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
-		P = a[False](1){a := 1}.P;
+		P = a[False](){a := 1}.P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -442,7 +442,7 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
-		P = a*[False](1){a := 1}.P;
+		P = a*[False](){a := 1}.P;
 		Q = Q;
 		'''.parse.assertNoErrors
 	}
@@ -464,16 +464,16 @@ public class ModelParserTest {
 		
 		//shed actions
 		Shed = G|R;
-		G = [bikes > 0] 		get[zone == this.zone]<1>{bikes := this.bikes - 1; slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]<1>{bikes := this.bikes + 1; slots := this.slots - 1}.R;
+		G = [bikes > 0] 		get[zone == this.zone]<>{bikes := this.bikes - 1; slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<>{bikes := this.bikes + 1; slots := this.slots - 1}.R;
 		
 		//people actions
 		Q = B;
 		//Uniform distribution "U"
-		B = move*[False]<1>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<1>.WS;
-		WS = ret[zone == this.zone](1).P;
-		P = go*[False]<1>.WB;
-		WB = get[zone == this.zone](1).B;
+		B = move*[False]<>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<>.WS;
+		WS = ret[zone == this.zone]().P;
+		P = go*[False]<>.WB;
+		WB = get[zone == this.zone]().B;
 		'''.parse.assertNoErrors
 	}
 	
@@ -525,16 +525,16 @@ public class ModelParserTest {
 		
 		//shed actions
 		Shed = G|R;
-		G = [bikes > 0] 		get[zone == this.zone]<1>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]<1>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+		G = [bikes > 0] 		get[zone == this.zone]<>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
 		
 		//people actions
 		Q = B;
 		// notice the change to Pr here - probability:zone number
-		B = move*[False]<1>{this.zone := Pr(0.25:1, 0.05:2, 0.40:3, 0.3:4)}.B + stop*[False]<1>.WS;
-		WS = ret[zone == this.zone](1).P;
-		P = go*[False]<1>.WB;
-		WB = get[zone == this.zone](1).B;
+		B = move*[False]<>{this.zone := Pr(0.25:1, 0.05:2, 0.40:3, 0.3:4)}.B + stop*[False]<>.WS;
+		WS = ret[zone == this.zone]().P;
+		P = go*[False]<>.WB;
+		WB = get[zone == this.zone]().B;
 		'''.parse.assertNoErrors
 	}
 	
