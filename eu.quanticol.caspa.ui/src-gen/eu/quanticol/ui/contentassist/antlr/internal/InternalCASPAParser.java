@@ -6611,31 +6611,31 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReferencedStore__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2488:1: rule__ReferencedStore__Group__1__Impl : ( ( rule__ReferencedStore__NameAssignment_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2488:1: rule__ReferencedStore__Group__1__Impl : ( ( rule__ReferencedStore__RefAssignment_1 ) ) ;
     public final void rule__ReferencedStore__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2492:1: ( ( ( rule__ReferencedStore__NameAssignment_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2493:1: ( ( rule__ReferencedStore__NameAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2492:1: ( ( ( rule__ReferencedStore__RefAssignment_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2493:1: ( ( rule__ReferencedStore__RefAssignment_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2493:1: ( ( rule__ReferencedStore__NameAssignment_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2494:1: ( rule__ReferencedStore__NameAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2493:1: ( ( rule__ReferencedStore__RefAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2494:1: ( rule__ReferencedStore__RefAssignment_1 )
             {
-             before(grammarAccess.getReferencedStoreAccess().getNameAssignment_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2495:1: ( rule__ReferencedStore__NameAssignment_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2495:2: rule__ReferencedStore__NameAssignment_1
+             before(grammarAccess.getReferencedStoreAccess().getRefAssignment_1()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2495:1: ( rule__ReferencedStore__RefAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2495:2: rule__ReferencedStore__RefAssignment_1
             {
-            pushFollow(FOLLOW_rule__ReferencedStore__NameAssignment_1_in_rule__ReferencedStore__Group__1__Impl4922);
-            rule__ReferencedStore__NameAssignment_1();
+            pushFollow(FOLLOW_rule__ReferencedStore__RefAssignment_1_in_rule__ReferencedStore__Group__1__Impl4922);
+            rule__ReferencedStore__RefAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getReferencedStoreAccess().getNameAssignment_1()); 
+             after(grammarAccess.getReferencedStoreAccess().getRefAssignment_1()); 
 
             }
 
@@ -6841,31 +6841,31 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__SelfReferencedStore__Group__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2582:1: rule__SelfReferencedStore__Group__2__Impl : ( ( rule__SelfReferencedStore__NameAssignment_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2582:1: rule__SelfReferencedStore__Group__2__Impl : ( ( rule__SelfReferencedStore__RefAssignment_2 ) ) ;
     public final void rule__SelfReferencedStore__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2586:1: ( ( ( rule__SelfReferencedStore__NameAssignment_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2587:1: ( ( rule__SelfReferencedStore__NameAssignment_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2586:1: ( ( ( rule__SelfReferencedStore__RefAssignment_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2587:1: ( ( rule__SelfReferencedStore__RefAssignment_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2587:1: ( ( rule__SelfReferencedStore__NameAssignment_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2588:1: ( rule__SelfReferencedStore__NameAssignment_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2587:1: ( ( rule__SelfReferencedStore__RefAssignment_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2588:1: ( rule__SelfReferencedStore__RefAssignment_2 )
             {
-             before(grammarAccess.getSelfReferencedStoreAccess().getNameAssignment_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2589:1: ( rule__SelfReferencedStore__NameAssignment_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2589:2: rule__SelfReferencedStore__NameAssignment_2
+             before(grammarAccess.getSelfReferencedStoreAccess().getRefAssignment_2()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2589:1: ( rule__SelfReferencedStore__RefAssignment_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2589:2: rule__SelfReferencedStore__RefAssignment_2
             {
-            pushFollow(FOLLOW_rule__SelfReferencedStore__NameAssignment_2_in_rule__SelfReferencedStore__Group__2__Impl5106);
-            rule__SelfReferencedStore__NameAssignment_2();
+            pushFollow(FOLLOW_rule__SelfReferencedStore__RefAssignment_2_in_rule__SelfReferencedStore__Group__2__Impl5106);
+            rule__SelfReferencedStore__RefAssignment_2();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getSelfReferencedStoreAccess().getNameAssignment_2()); 
+             after(grammarAccess.getSelfReferencedStoreAccess().getRefAssignment_2()); 
 
             }
 
@@ -21182,31 +21182,31 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__ReferencedProcess__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8216:1: rule__ReferencedProcess__Group__1__Impl : ( ( rule__ReferencedProcess__NameAssignment_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8216:1: rule__ReferencedProcess__Group__1__Impl : ( ( rule__ReferencedProcess__RefAssignment_1 ) ) ;
     public final void rule__ReferencedProcess__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8220:1: ( ( ( rule__ReferencedProcess__NameAssignment_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8221:1: ( ( rule__ReferencedProcess__NameAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8220:1: ( ( ( rule__ReferencedProcess__RefAssignment_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8221:1: ( ( rule__ReferencedProcess__RefAssignment_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8221:1: ( ( rule__ReferencedProcess__NameAssignment_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8222:1: ( rule__ReferencedProcess__NameAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8221:1: ( ( rule__ReferencedProcess__RefAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8222:1: ( rule__ReferencedProcess__RefAssignment_1 )
             {
-             before(grammarAccess.getReferencedProcessAccess().getNameAssignment_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8223:1: ( rule__ReferencedProcess__NameAssignment_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8223:2: rule__ReferencedProcess__NameAssignment_1
+             before(grammarAccess.getReferencedProcessAccess().getRefAssignment_1()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8223:1: ( rule__ReferencedProcess__RefAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8223:2: rule__ReferencedProcess__RefAssignment_1
             {
-            pushFollow(FOLLOW_rule__ReferencedProcess__NameAssignment_1_in_rule__ReferencedProcess__Group__1__Impl16118);
-            rule__ReferencedProcess__NameAssignment_1();
+            pushFollow(FOLLOW_rule__ReferencedProcess__RefAssignment_1_in_rule__ReferencedProcess__Group__1__Impl16118);
+            rule__ReferencedProcess__RefAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getReferencedProcessAccess().getNameAssignment_1()); 
+             after(grammarAccess.getReferencedProcessAccess().getRefAssignment_1()); 
 
             }
 
@@ -21342,31 +21342,31 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Term__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8280:1: rule__Term__Group__1__Impl : ( ( rule__Term__ProcessesAssignment_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8280:1: rule__Term__Group__1__Impl : ( ( rule__Term__RefAssignment_1 ) ) ;
     public final void rule__Term__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8284:1: ( ( ( rule__Term__ProcessesAssignment_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8285:1: ( ( rule__Term__ProcessesAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8284:1: ( ( ( rule__Term__RefAssignment_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8285:1: ( ( rule__Term__RefAssignment_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8285:1: ( ( rule__Term__ProcessesAssignment_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8286:1: ( rule__Term__ProcessesAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8285:1: ( ( rule__Term__RefAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8286:1: ( rule__Term__RefAssignment_1 )
             {
-             before(grammarAccess.getTermAccess().getProcessesAssignment_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8287:1: ( rule__Term__ProcessesAssignment_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8287:2: rule__Term__ProcessesAssignment_1
+             before(grammarAccess.getTermAccess().getRefAssignment_1()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8287:1: ( rule__Term__RefAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8287:2: rule__Term__RefAssignment_1
             {
-            pushFollow(FOLLOW_rule__Term__ProcessesAssignment_1_in_rule__Term__Group__1__Impl16244);
-            rule__Term__ProcessesAssignment_1();
+            pushFollow(FOLLOW_rule__Term__RefAssignment_1_in_rule__Term__Group__1__Impl16244);
+            rule__Term__RefAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTermAccess().getProcessesAssignment_1()); 
+             after(grammarAccess.getTermAccess().getRefAssignment_1()); 
 
             }
 
@@ -23103,9 +23103,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__Store__ValueAssignment_3"
 
 
-    // $ANTLR start "rule__ReferencedStore__NameAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8972:1: rule__ReferencedStore__NameAssignment_1 : ( ( RULE_LOWER ) ) ;
-    public final void rule__ReferencedStore__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ReferencedStore__RefAssignment_1"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8972:1: rule__ReferencedStore__RefAssignment_1 : ( ( RULE_LOWER ) ) ;
+    public final void rule__ReferencedStore__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -23116,17 +23116,17 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8977:1: ( ( RULE_LOWER ) )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8978:1: ( RULE_LOWER )
             {
-             before(grammarAccess.getReferencedStoreAccess().getNameStoreCrossReference_1_0()); 
+             before(grammarAccess.getReferencedStoreAccess().getRefStoreCrossReference_1_0()); 
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8979:1: ( RULE_LOWER )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8980:1: RULE_LOWER
             {
-             before(grammarAccess.getReferencedStoreAccess().getNameStoreLOWERTerminalRuleCall_1_0_1()); 
-            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__ReferencedStore__NameAssignment_117610); 
-             after(grammarAccess.getReferencedStoreAccess().getNameStoreLOWERTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getReferencedStoreAccess().getRefStoreLOWERTerminalRuleCall_1_0_1()); 
+            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__ReferencedStore__RefAssignment_117610); 
+             after(grammarAccess.getReferencedStoreAccess().getRefStoreLOWERTerminalRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getReferencedStoreAccess().getNameStoreCrossReference_1_0()); 
+             after(grammarAccess.getReferencedStoreAccess().getRefStoreCrossReference_1_0()); 
 
             }
 
@@ -23145,12 +23145,12 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ReferencedStore__NameAssignment_1"
+    // $ANTLR end "rule__ReferencedStore__RefAssignment_1"
 
 
-    // $ANTLR start "rule__SelfReferencedStore__NameAssignment_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8991:1: rule__SelfReferencedStore__NameAssignment_2 : ( ( RULE_LOWER ) ) ;
-    public final void rule__SelfReferencedStore__NameAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__SelfReferencedStore__RefAssignment_2"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8991:1: rule__SelfReferencedStore__RefAssignment_2 : ( ( RULE_LOWER ) ) ;
+    public final void rule__SelfReferencedStore__RefAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -23161,17 +23161,17 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8996:1: ( ( RULE_LOWER ) )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8997:1: ( RULE_LOWER )
             {
-             before(grammarAccess.getSelfReferencedStoreAccess().getNameStoreCrossReference_2_0()); 
+             before(grammarAccess.getSelfReferencedStoreAccess().getRefStoreCrossReference_2_0()); 
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8998:1: ( RULE_LOWER )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:8999:1: RULE_LOWER
             {
-             before(grammarAccess.getSelfReferencedStoreAccess().getNameStoreLOWERTerminalRuleCall_2_0_1()); 
-            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__SelfReferencedStore__NameAssignment_217649); 
-             after(grammarAccess.getSelfReferencedStoreAccess().getNameStoreLOWERTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getSelfReferencedStoreAccess().getRefStoreLOWERTerminalRuleCall_2_0_1()); 
+            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__SelfReferencedStore__RefAssignment_217649); 
+             after(grammarAccess.getSelfReferencedStoreAccess().getRefStoreLOWERTerminalRuleCall_2_0_1()); 
 
             }
 
-             after(grammarAccess.getSelfReferencedStoreAccess().getNameStoreCrossReference_2_0()); 
+             after(grammarAccess.getSelfReferencedStoreAccess().getRefStoreCrossReference_2_0()); 
 
             }
 
@@ -23190,7 +23190,7 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__SelfReferencedStore__NameAssignment_2"
+    // $ANTLR end "rule__SelfReferencedStore__RefAssignment_2"
 
 
     // $ANTLR start "rule__Action__NameAssignment_0_0_1"
@@ -25370,9 +25370,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__ActionProcess__RefAssignment_2"
 
 
-    // $ANTLR start "rule__ReferencedProcess__NameAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9823:1: rule__ReferencedProcess__NameAssignment_1 : ( ( RULE_UPPER ) ) ;
-    public final void rule__ReferencedProcess__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__ReferencedProcess__RefAssignment_1"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9823:1: rule__ReferencedProcess__RefAssignment_1 : ( ( RULE_UPPER ) ) ;
+    public final void rule__ReferencedProcess__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -25383,17 +25383,17 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9828:1: ( ( RULE_UPPER ) )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9829:1: ( RULE_UPPER )
             {
-             before(grammarAccess.getReferencedProcessAccess().getNameProcessCrossReference_1_0()); 
+             before(grammarAccess.getReferencedProcessAccess().getRefProcessCrossReference_1_0()); 
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9830:1: ( RULE_UPPER )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9831:1: RULE_UPPER
             {
-             before(grammarAccess.getReferencedProcessAccess().getNameProcessUPPERTerminalRuleCall_1_0_1()); 
-            match(input,RULE_UPPER,FOLLOW_RULE_UPPER_in_rule__ReferencedProcess__NameAssignment_119361); 
-             after(grammarAccess.getReferencedProcessAccess().getNameProcessUPPERTerminalRuleCall_1_0_1()); 
+             before(grammarAccess.getReferencedProcessAccess().getRefProcessUPPERTerminalRuleCall_1_0_1()); 
+            match(input,RULE_UPPER,FOLLOW_RULE_UPPER_in_rule__ReferencedProcess__RefAssignment_119361); 
+             after(grammarAccess.getReferencedProcessAccess().getRefProcessUPPERTerminalRuleCall_1_0_1()); 
 
             }
 
-             after(grammarAccess.getReferencedProcessAccess().getNameProcessCrossReference_1_0()); 
+             after(grammarAccess.getReferencedProcessAccess().getRefProcessCrossReference_1_0()); 
 
             }
 
@@ -25412,12 +25412,12 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__ReferencedProcess__NameAssignment_1"
+    // $ANTLR end "rule__ReferencedProcess__RefAssignment_1"
 
 
-    // $ANTLR start "rule__Term__ProcessesAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9842:1: rule__Term__ProcessesAssignment_1 : ( ruleReferencedProcess ) ;
-    public final void rule__Term__ProcessesAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Term__RefAssignment_1"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9842:1: rule__Term__RefAssignment_1 : ( ruleReferencedProcess ) ;
+    public final void rule__Term__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -25428,13 +25428,13 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9847:1: ( ruleReferencedProcess )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9848:1: ruleReferencedProcess
             {
-             before(grammarAccess.getTermAccess().getProcessesReferencedProcessParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleReferencedProcess_in_rule__Term__ProcessesAssignment_119396);
+             before(grammarAccess.getTermAccess().getRefReferencedProcessParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleReferencedProcess_in_rule__Term__RefAssignment_119396);
             ruleReferencedProcess();
 
             state._fsp--;
 
-             after(grammarAccess.getTermAccess().getProcessesReferencedProcessParserRuleCall_1_0()); 
+             after(grammarAccess.getTermAccess().getRefReferencedProcessParserRuleCall_1_0()); 
 
             }
 
@@ -25453,7 +25453,7 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Term__ProcessesAssignment_1"
+    // $ANTLR end "rule__Term__RefAssignment_1"
 
 
     // $ANTLR start "rule__Term__StoresAssignment_4"
@@ -25752,14 +25752,14 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ReferencedStore__Group__0__Impl_in_rule__ReferencedStore__Group__04834 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__ReferencedStore__Group__1_in_rule__ReferencedStore__Group__04837 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ReferencedStore__Group__1__Impl_in_rule__ReferencedStore__Group__14895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReferencedStore__NameAssignment_1_in_rule__ReferencedStore__Group__1__Impl4922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReferencedStore__RefAssignment_1_in_rule__ReferencedStore__Group__1__Impl4922 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelfReferencedStore__Group__0__Impl_in_rule__SelfReferencedStore__Group__04956 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_rule__SelfReferencedStore__Group__1_in_rule__SelfReferencedStore__Group__04959 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelfReferencedStore__Group__1__Impl_in_rule__SelfReferencedStore__Group__15017 = new BitSet(new long[]{0x0000000000000020L});
     public static final BitSet FOLLOW_rule__SelfReferencedStore__Group__2_in_rule__SelfReferencedStore__Group__15020 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_rule__SelfReferencedStore__Group__1__Impl5048 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelfReferencedStore__Group__2__Impl_in_rule__SelfReferencedStore__Group__25079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__SelfReferencedStore__NameAssignment_2_in_rule__SelfReferencedStore__Group__2__Impl5106 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__SelfReferencedStore__RefAssignment_2_in_rule__SelfReferencedStore__Group__2__Impl5106 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Action__Group__0__Impl_in_rule__Action__Group__05142 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_rule__Action__Group__1_in_rule__Action__Group__05145 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Action__Alternatives_0_in_rule__Action__Group__0__Impl5172 = new BitSet(new long[]{0x0000000000000002L});
@@ -26195,13 +26195,13 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rule__ReferencedProcess__Group__0__Impl_in_rule__ReferencedProcess__Group__016030 = new BitSet(new long[]{0x0001800102000060L});
     public static final BitSet FOLLOW_rule__ReferencedProcess__Group__1_in_rule__ReferencedProcess__Group__016033 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__ReferencedProcess__Group__1__Impl_in_rule__ReferencedProcess__Group__116091 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReferencedProcess__NameAssignment_1_in_rule__ReferencedProcess__Group__1__Impl16118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReferencedProcess__RefAssignment_1_in_rule__ReferencedProcess__Group__1__Impl16118 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Term__Group__0__Impl_in_rule__Term__Group__016152 = new BitSet(new long[]{0x0001800102000060L});
     public static final BitSet FOLLOW_rule__Term__Group__1_in_rule__Term__Group__016155 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_32_in_rule__Term__Group__0__Impl16183 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Term__Group__1__Impl_in_rule__Term__Group__116214 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_rule__Term__Group__2_in_rule__Term__Group__116217 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Term__ProcessesAssignment_1_in_rule__Term__Group__1__Impl16244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Term__RefAssignment_1_in_rule__Term__Group__1__Impl16244 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Term__Group__2__Impl_in_rule__Term__Group__216274 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_rule__Term__Group__3_in_rule__Term__Group__216277 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_35_in_rule__Term__Group__2__Impl16305 = new BitSet(new long[]{0x0000000000000002L});
@@ -26257,8 +26257,8 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleProcess_in_rule__Model__ProcessesAssignment_117513 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LOWER_in_rule__Store__NameAssignment_117544 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNatural_in_rule__Store__ValueAssignment_317575 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_rule__ReferencedStore__NameAssignment_117610 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_rule__SelfReferencedStore__NameAssignment_217649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_rule__ReferencedStore__RefAssignment_117610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_rule__SelfReferencedStore__RefAssignment_217649 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_0_117684 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_1_117715 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePredicate_in_rule__Action__PredicateAssignment_117746 = new BitSet(new long[]{0x0000000000000002L});
@@ -26312,8 +26312,8 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_rulePrimaryProcess_in_rule__PredicateProcess__RefAssignment_219264 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAction_in_rule__ActionProcess__ActionAssignment_119295 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rulePrimaryProcess_in_rule__ActionProcess__RefAssignment_219326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_UPPER_in_rule__ReferencedProcess__NameAssignment_119361 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReferencedProcess_in_rule__Term__ProcessesAssignment_119396 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_UPPER_in_rule__ReferencedProcess__RefAssignment_119361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReferencedProcess_in_rule__Term__RefAssignment_119396 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStore_in_rule__Term__StoresAssignment_419427 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleStore_in_rule__Term__StoresAssignment_5_119458 = new BitSet(new long[]{0x0000000000000002L});
 

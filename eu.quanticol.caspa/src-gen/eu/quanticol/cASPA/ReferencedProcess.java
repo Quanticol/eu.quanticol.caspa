@@ -11,7 +11,7 @@ package eu.quanticol.cASPA;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.ReferencedProcess#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.ReferencedProcess#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package eu.quanticol.cASPA;
 public interface ReferencedProcess extends ProcessExpression
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' reference.
+   * Returns the value of the '<em><b>Ref</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' reference isn't clear,
+   * If the meaning of the '<em>Ref</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' reference.
-   * @see #setName(eu.quanticol.cASPA.Process)
-   * @see eu.quanticol.cASPA.CASPAPackage#getReferencedProcess_Name()
+   * @return the value of the '<em>Ref</em>' reference.
+   * @see #setRef(eu.quanticol.cASPA.Process)
+   * @see eu.quanticol.cASPA.CASPAPackage#getReferencedProcess_Ref()
    * @model
    * @generated
    */
-  eu.quanticol.cASPA.Process getName();
+  eu.quanticol.cASPA.Process getRef();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.ReferencedProcess#getName <em>Name</em>}' reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.ReferencedProcess#getRef <em>Ref</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Ref</em>' reference.
+   * @see #getRef()
    * @generated
    */
-  void setName(eu.quanticol.cASPA.Process value);
+  void setRef(eu.quanticol.cASPA.Process value);
 
 } // ReferencedProcess

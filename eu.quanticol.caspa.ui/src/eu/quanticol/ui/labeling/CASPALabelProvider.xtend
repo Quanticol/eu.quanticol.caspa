@@ -51,7 +51,7 @@ class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 //			temp = process.cTString
 //		}
 
-		temp = term.processes.cTString
+		temp = term.ref.cTString
 			
 		return "Term " + temp
 	}
@@ -70,7 +70,7 @@ class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 //	}
 	
 	def text(ReferencedProcess process){
-		process.name.cTString
+		process.ref.cTString
 	}
 	
 	def text(Store s){

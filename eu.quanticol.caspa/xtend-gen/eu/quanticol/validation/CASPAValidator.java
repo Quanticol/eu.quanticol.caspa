@@ -5,7 +5,11 @@ package eu.quanticol.validation;
 
 import com.google.common.base.Objects;
 import com.google.inject.Inject;
+import eu.quanticol.ModelUtil;
+import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.CASPAPackage;
+import eu.quanticol.cASPA.FreeVariable;
+import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Predicate;
@@ -19,6 +23,7 @@ import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateSub;
+import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.UpdateMul;
@@ -27,6 +32,8 @@ import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.typing.BaseType;
 import eu.quanticol.typing.TypeProvider;
 import eu.quanticol.validation.AbstractCASPAValidator;
+import java.util.HashSet;
+import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EReference;
@@ -45,9 +52,13 @@ public class CASPAValidator extends AbstractCASPAValidator {
   @Extension
   private TypeProvider _typeProvider;
   
-  public final static String WRONG_TYPE = "eu.quanticol.WrongType";
+  @Inject
+  @Extension
+  private ModelUtil _modelUtil;
   
   public final static String PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique";
+  
+  public final static String WRONG_TYPE = "eu.quanticol.WrongType";
   
   public final static String FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique";
   
@@ -242,5 +253,34 @@ public class CASPAValidator extends AbstractCASPAValidator {
       this.error("null type", reference, CASPAValidator.WRONG_TYPE);
     }
     return type;
+  }
+  
+  @Check
+  public void checkFreeVariableNamesUnique(final In in) {
+    Set<String> freeVariableNames = new HashSet<String>();
+    Set<String> allParentTermsStoreNames = new HashSet<String>();
+    Set<String> temp = new HashSet<String>();
+    EList<Arguments> _expressions = in.getExpressions();
+    for (final Arguments expression : _expressions) {
+      String _name = ((FreeVariable) expression).getName();
+      freeVariableNames.add(_name);
+    }
+    eu.quanticol.cASPA.Process _fromInGetProcess = this._modelUtil.fromInGetProcess(in);
+    Set<eu.quanticol.cASPA.Process> _fromProcessGetReferences = this._modelUtil.fromProcessGetReferences(_fromInGetProcess);
+    Set<Term> _parentTerms = this._modelUtil.getParentTerms(_fromProcessGetReferences);
+    Set<String> _storeNamesFromTerms = this._modelUtil.getStoreNamesFromTerms(_parentTerms);
+    allParentTermsStoreNames = _storeNamesFromTerms;
+    for (final String name : allParentTermsStoreNames) {
+      temp.add(name);
+    }
+    temp.removeAll(freeVariableNames);
+    int _size = temp.size();
+    int _size_1 = allParentTermsStoreNames.size();
+    boolean _notEquals = (_size != _size_1);
+    if (_notEquals) {
+      EReference _in_Expressions = CASPAPackage.eINSTANCE.getIn_Expressions();
+      this.error("Free variable names cannot be the same as local store names.", _in_Expressions, 
+        CASPAValidator.FREE_VARIABLES_UNIQUE);
+    }
   }
 }

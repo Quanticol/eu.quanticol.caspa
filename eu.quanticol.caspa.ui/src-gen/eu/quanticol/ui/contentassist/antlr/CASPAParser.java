@@ -128,8 +128,8 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getModelAccess().getProcessesAssignment_1(), "rule__Model__ProcessesAssignment_1");
 					put(grammarAccess.getStoreAccess().getNameAssignment_1(), "rule__Store__NameAssignment_1");
 					put(grammarAccess.getStoreAccess().getValueAssignment_3(), "rule__Store__ValueAssignment_3");
-					put(grammarAccess.getReferencedStoreAccess().getNameAssignment_1(), "rule__ReferencedStore__NameAssignment_1");
-					put(grammarAccess.getSelfReferencedStoreAccess().getNameAssignment_2(), "rule__SelfReferencedStore__NameAssignment_2");
+					put(grammarAccess.getReferencedStoreAccess().getRefAssignment_1(), "rule__ReferencedStore__RefAssignment_1");
+					put(grammarAccess.getSelfReferencedStoreAccess().getRefAssignment_2(), "rule__SelfReferencedStore__RefAssignment_2");
 					put(grammarAccess.getActionAccess().getNameAssignment_0_0_1(), "rule__Action__NameAssignment_0_0_1");
 					put(grammarAccess.getActionAccess().getNameAssignment_0_1_1(), "rule__Action__NameAssignment_0_1_1");
 					put(grammarAccess.getActionAccess().getPredicateAssignment_1(), "rule__Action__PredicateAssignment_1");
@@ -183,8 +183,8 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getPredicateProcessAccess().getRefAssignment_2(), "rule__PredicateProcess__RefAssignment_2");
 					put(grammarAccess.getActionProcessAccess().getActionAssignment_1(), "rule__ActionProcess__ActionAssignment_1");
 					put(grammarAccess.getActionProcessAccess().getRefAssignment_2(), "rule__ActionProcess__RefAssignment_2");
-					put(grammarAccess.getReferencedProcessAccess().getNameAssignment_1(), "rule__ReferencedProcess__NameAssignment_1");
-					put(grammarAccess.getTermAccess().getProcessesAssignment_1(), "rule__Term__ProcessesAssignment_1");
+					put(grammarAccess.getReferencedProcessAccess().getRefAssignment_1(), "rule__ReferencedProcess__RefAssignment_1");
+					put(grammarAccess.getTermAccess().getRefAssignment_1(), "rule__Term__RefAssignment_1");
 					put(grammarAccess.getTermAccess().getStoresAssignment_4(), "rule__Term__StoresAssignment_4");
 					put(grammarAccess.getTermAccess().getStoresAssignment_5_1(), "rule__Term__StoresAssignment_5_1");
 				}

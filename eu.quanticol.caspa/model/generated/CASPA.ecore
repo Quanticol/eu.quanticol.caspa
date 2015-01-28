@@ -35,7 +35,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcessExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Term">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="processes" eType="#//ProcessExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//ProcessExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="stores" upperBound="-1"
         eType="#//StoreExpression" containment="true"/>
@@ -49,10 +49,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferencedStore" eSuperTypes="#//StoreExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Store"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SelfReferencedStore" eSuperTypes="#//StoreExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Store"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Store"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Broadcast" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="Unicast" eSuperTypes="#//Action"/>
@@ -201,6 +201,6 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ReferencedProcess" eSuperTypes="#//ProcessExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//Process"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Process"/>
   </eClassifiers>
 </ecore:EPackage>

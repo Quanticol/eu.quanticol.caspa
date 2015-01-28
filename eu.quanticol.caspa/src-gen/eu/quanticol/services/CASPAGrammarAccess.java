@@ -87,28 +87,28 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferencedStore");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cReferencedStoreAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cNameStoreCrossReference_1_0 = (CrossReference)cNameAssignment_1.eContents().get(0);
-		private final RuleCall cNameStoreLOWERTerminalRuleCall_1_0_1 = (RuleCall)cNameStoreCrossReference_1_0.eContents().get(1);
+		private final Assignment cRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cRefStoreCrossReference_1_0 = (CrossReference)cRefAssignment_1.eContents().get(0);
+		private final RuleCall cRefStoreLOWERTerminalRuleCall_1_0_1 = (RuleCall)cRefStoreCrossReference_1_0.eContents().get(1);
 		
 		//ReferencedStore returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{ReferencedStore} name=[Store|LOWER];
+		//	{ReferencedStore} ref=[Store|LOWER];
 		public ParserRule getRule() { return rule; }
 
-		//{ReferencedStore} name=[Store|LOWER]
+		//{ReferencedStore} ref=[Store|LOWER]
 		public Group getGroup() { return cGroup; }
 
 		//{ReferencedStore}
 		public Action getReferencedStoreAction_0() { return cReferencedStoreAction_0; }
 
-		//name=[Store|LOWER]
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//ref=[Store|LOWER]
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
 
 		//[Store|LOWER]
-		public CrossReference getNameStoreCrossReference_1_0() { return cNameStoreCrossReference_1_0; }
+		public CrossReference getRefStoreCrossReference_1_0() { return cRefStoreCrossReference_1_0; }
 
 		//LOWER
-		public RuleCall getNameStoreLOWERTerminalRuleCall_1_0_1() { return cNameStoreLOWERTerminalRuleCall_1_0_1; }
+		public RuleCall getRefStoreLOWERTerminalRuleCall_1_0_1() { return cRefStoreLOWERTerminalRuleCall_1_0_1; }
 	}
 
 	public class SelfReferencedStoreElements extends AbstractParserRuleElementFinder {
@@ -116,15 +116,15 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cSelfReferencedStoreAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cThisKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cNameStoreCrossReference_2_0 = (CrossReference)cNameAssignment_2.eContents().get(0);
-		private final RuleCall cNameStoreLOWERTerminalRuleCall_2_0_1 = (RuleCall)cNameStoreCrossReference_2_0.eContents().get(1);
+		private final Assignment cRefAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cRefStoreCrossReference_2_0 = (CrossReference)cRefAssignment_2.eContents().get(0);
+		private final RuleCall cRefStoreLOWERTerminalRuleCall_2_0_1 = (RuleCall)cRefStoreCrossReference_2_0.eContents().get(1);
 		
 		//SelfReferencedStore returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{SelfReferencedStore} "this." name=[Store|LOWER];
+		//	{SelfReferencedStore} "this." ref=[Store|LOWER];
 		public ParserRule getRule() { return rule; }
 
-		//{SelfReferencedStore} "this." name=[Store|LOWER]
+		//{SelfReferencedStore} "this." ref=[Store|LOWER]
 		public Group getGroup() { return cGroup; }
 
 		//{SelfReferencedStore}
@@ -133,14 +133,14 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//"this."
 		public Keyword getThisKeyword_1() { return cThisKeyword_1; }
 
-		//name=[Store|LOWER]
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//ref=[Store|LOWER]
+		public Assignment getRefAssignment_2() { return cRefAssignment_2; }
 
 		//[Store|LOWER]
-		public CrossReference getNameStoreCrossReference_2_0() { return cNameStoreCrossReference_2_0; }
+		public CrossReference getRefStoreCrossReference_2_0() { return cRefStoreCrossReference_2_0; }
 
 		//LOWER
-		public RuleCall getNameStoreLOWERTerminalRuleCall_2_0_1() { return cNameStoreLOWERTerminalRuleCall_2_0_1; }
+		public RuleCall getRefStoreLOWERTerminalRuleCall_2_0_1() { return cRefStoreLOWERTerminalRuleCall_2_0_1; }
 	}
 
 	public class StoreRefElements extends AbstractParserRuleElementFinder {
@@ -1780,36 +1780,36 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ReferencedProcess");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cReferencedProcessAction_0 = (Action)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cNameProcessCrossReference_1_0 = (CrossReference)cNameAssignment_1.eContents().get(0);
-		private final RuleCall cNameProcessUPPERTerminalRuleCall_1_0_1 = (RuleCall)cNameProcessCrossReference_1_0.eContents().get(1);
+		private final Assignment cRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cRefProcessCrossReference_1_0 = (CrossReference)cRefAssignment_1.eContents().get(0);
+		private final RuleCall cRefProcessUPPERTerminalRuleCall_1_0_1 = (RuleCall)cRefProcessCrossReference_1_0.eContents().get(1);
 		
 		//ReferencedProcess returns ProcessExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{ReferencedProcess} name=[Process|UPPER];
+		//	{ReferencedProcess} ref=[Process|UPPER];
 		public ParserRule getRule() { return rule; }
 
-		//{ReferencedProcess} name=[Process|UPPER]
+		//{ReferencedProcess} ref=[Process|UPPER]
 		public Group getGroup() { return cGroup; }
 
 		//{ReferencedProcess}
 		public Action getReferencedProcessAction_0() { return cReferencedProcessAction_0; }
 
-		//name=[Process|UPPER]
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		//ref=[Process|UPPER]
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
 
 		//[Process|UPPER]
-		public CrossReference getNameProcessCrossReference_1_0() { return cNameProcessCrossReference_1_0; }
+		public CrossReference getRefProcessCrossReference_1_0() { return cRefProcessCrossReference_1_0; }
 
 		//UPPER
-		public RuleCall getNameProcessUPPERTerminalRuleCall_1_0_1() { return cNameProcessUPPERTerminalRuleCall_1_0_1; }
+		public RuleCall getRefProcessUPPERTerminalRuleCall_1_0_1() { return cRefProcessUPPERTerminalRuleCall_1_0_1; }
 	}
 
 	public class TermElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Term");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cProcessesAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cProcessesReferencedProcessParserRuleCall_1_0 = (RuleCall)cProcessesAssignment_1.eContents().get(0);
+		private final Assignment cRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRefReferencedProcessParserRuleCall_1_0 = (RuleCall)cRefAssignment_1.eContents().get(0);
 		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cStoresAssignment_4 = (Assignment)cGroup.eContents().get(4);
@@ -1824,20 +1824,20 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		
 		////TERMS
 		//Term hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	"(" processes=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
+		//	"(" ref=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"(" processes=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";"
+		//"(" ref=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"("
 		public Keyword getLeftParenthesisKeyword_0() { return cLeftParenthesisKeyword_0; }
 
-		//processes=ReferencedProcess
-		public Assignment getProcessesAssignment_1() { return cProcessesAssignment_1; }
+		//ref=ReferencedProcess
+		public Assignment getRefAssignment_1() { return cRefAssignment_1; }
 
 		//ReferencedProcess
-		public RuleCall getProcessesReferencedProcessParserRuleCall_1_0() { return cProcessesReferencedProcessParserRuleCall_1_0; }
+		public RuleCall getRefReferencedProcessParserRuleCall_1_0() { return cRefReferencedProcessParserRuleCall_1_0; }
 
 		//","
 		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
@@ -1885,13 +1885,6 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHyphenMinusKeyword_1_2_1 = (Keyword)cGroup_1_2.eContents().get(1);
 		private final RuleCall cINTTerminalRuleCall_1_2_2 = (RuleCall)cGroup_1_2.eContents().get(2);
 		
-		////TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-		////	TermProcessParallel
-		////;
-		////
-		////TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-		////	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
-		////;
 		////BASETYPES
 		//Double returns ecore::EDouble:
 		//	INT ("." INT ("^" "-"? INT)?)?;
@@ -2131,7 +2124,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReferencedStore returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{ReferencedStore} name=[Store|LOWER];
+	//	{ReferencedStore} ref=[Store|LOWER];
 	public ReferencedStoreElements getReferencedStoreAccess() {
 		return pReferencedStore;
 	}
@@ -2141,7 +2134,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//SelfReferencedStore returns StoreExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{SelfReferencedStore} "this." name=[Store|LOWER];
+	//	{SelfReferencedStore} "this." ref=[Store|LOWER];
 	public SelfReferencedStoreElements getSelfReferencedStoreAccess() {
 		return pSelfReferencedStore;
 	}
@@ -2634,7 +2627,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ReferencedProcess returns ProcessExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{ReferencedProcess} name=[Process|UPPER];
+	//	{ReferencedProcess} ref=[Process|UPPER];
 	public ReferencedProcessElements getReferencedProcessAccess() {
 		return pReferencedProcess;
 	}
@@ -2645,7 +2638,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	////TERMS
 	//Term hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	"(" processes=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
+	//	"(" ref=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
 	public TermElements getTermAccess() {
 		return pTerm;
 	}
@@ -2654,13 +2647,6 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		return getTermAccess().getRule();
 	}
 
-	////TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	////	TermProcessParallel
-	////;
-	////
-	////TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	////	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
-	////;
 	////BASETYPES
 	//Double returns ecore::EDouble:
 	//	INT ("." INT ("^" "-"? INT)?)?;

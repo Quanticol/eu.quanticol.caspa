@@ -243,7 +243,7 @@ ruleReferencedStore returns [EObject current=null]
         }
 	otherlv_1=RULE_LOWER
 	{
-		newLeafNode(otherlv_1, grammarAccess.getReferencedStoreAccess().getNameStoreCrossReference_1_0()); 
+		newLeafNode(otherlv_1, grammarAccess.getReferencedStoreAccess().getRefStoreCrossReference_1_0()); 
 	}
 
 )
@@ -297,7 +297,7 @@ ruleSelfReferencedStore returns [EObject current=null]
         }
 	otherlv_2=RULE_LOWER
 	{
-		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getNameStoreCrossReference_2_0()); 
+		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getRefStoreCrossReference_2_0()); 
 	}
 
 )
@@ -3381,7 +3381,7 @@ ruleReferencedProcess returns [EObject current=null]
         }
 	otherlv_1=RULE_UPPER
 	{
-		newLeafNode(otherlv_1, grammarAccess.getReferencedProcessAccess().getNameProcessCrossReference_1_0()); 
+		newLeafNode(otherlv_1, grammarAccess.getReferencedProcessAccess().getRefProcessCrossReference_1_0()); 
 	}
 
 )
@@ -3423,16 +3423,16 @@ ruleTerm returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTermAccess().getProcessesReferencedProcessParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getTermAccess().getRefReferencedProcessParserRuleCall_1_0()); 
 	    }
-		lv_processes_1_0=ruleReferencedProcess		{
+		lv_ref_1_0=ruleReferencedProcess		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getTermRule());
 	        }
        		set(
        			$current, 
-       			"processes",
-        		lv_processes_1_0, 
+       			"ref",
+        		lv_ref_1_0, 
         		"ReferencedProcess");
 	        afterParserOrEnumRuleCall();
 	    }

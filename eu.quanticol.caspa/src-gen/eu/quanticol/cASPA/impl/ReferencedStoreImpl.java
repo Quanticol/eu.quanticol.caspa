@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.impl.ReferencedStoreImpl#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.ReferencedStoreImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,14 +29,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ReferencedStoreImpl extends StoreExpressionImpl implements ReferencedStore
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
+   * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getRef()
    * @generated
    * @ordered
    */
-  protected Store name;
+  protected Store ref;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,19 +64,19 @@ public class ReferencedStoreImpl extends StoreExpressionImpl implements Referenc
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store getName()
+  public Store getRef()
   {
-    if (name != null && name.eIsProxy())
+    if (ref != null && ref.eIsProxy())
     {
-      InternalEObject oldName = (InternalEObject)name;
-      name = (Store)eResolveProxy(oldName);
-      if (name != oldName)
+      InternalEObject oldRef = (InternalEObject)ref;
+      ref = (Store)eResolveProxy(oldRef);
+      if (ref != oldRef)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.REFERENCED_STORE__NAME, oldName, name));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.REFERENCED_STORE__REF, oldRef, ref));
       }
     }
-    return name;
+    return ref;
   }
 
   /**
@@ -84,9 +84,9 @@ public class ReferencedStoreImpl extends StoreExpressionImpl implements Referenc
    * <!-- end-user-doc -->
    * @generated
    */
-  public Store basicGetName()
+  public Store basicGetRef()
   {
-    return name;
+    return ref;
   }
 
   /**
@@ -94,12 +94,12 @@ public class ReferencedStoreImpl extends StoreExpressionImpl implements Referenc
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(Store newName)
+  public void setRef(Store newRef)
   {
-    Store oldName = name;
-    name = newName;
+    Store oldRef = ref;
+    ref = newRef;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.REFERENCED_STORE__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.REFERENCED_STORE__REF, oldRef, ref));
   }
 
   /**
@@ -112,9 +112,9 @@ public class ReferencedStoreImpl extends StoreExpressionImpl implements Referenc
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_STORE__NAME:
-        if (resolve) return getName();
-        return basicGetName();
+      case CASPAPackage.REFERENCED_STORE__REF:
+        if (resolve) return getRef();
+        return basicGetRef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,8 +129,8 @@ public class ReferencedStoreImpl extends StoreExpressionImpl implements Referenc
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_STORE__NAME:
-        setName((Store)newValue);
+      case CASPAPackage.REFERENCED_STORE__REF:
+        setRef((Store)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +146,8 @@ public class ReferencedStoreImpl extends StoreExpressionImpl implements Referenc
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_STORE__NAME:
-        setName((Store)null);
+      case CASPAPackage.REFERENCED_STORE__REF:
+        setRef((Store)null);
         return;
     }
     super.eUnset(featureID);
@@ -163,8 +163,8 @@ public class ReferencedStoreImpl extends StoreExpressionImpl implements Referenc
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_STORE__NAME:
-        return name != null;
+      case CASPAPackage.REFERENCED_STORE__REF:
+        return ref != null;
     }
     return super.eIsSet(featureID);
   }

@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.impl.ReferencedProcessImpl#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.ReferencedProcessImpl#getRef <em>Ref</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,14 +28,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class ReferencedProcessImpl extends ProcessExpressionImpl implements ReferencedProcess
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' reference.
+   * The cached value of the '{@link #getRef() <em>Ref</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getRef()
    * @generated
    * @ordered
    */
-  protected eu.quanticol.cASPA.Process name;
+  protected eu.quanticol.cASPA.Process ref;
 
   /**
    * <!-- begin-user-doc -->
@@ -63,19 +63,19 @@ public class ReferencedProcessImpl extends ProcessExpressionImpl implements Refe
    * <!-- end-user-doc -->
    * @generated
    */
-  public eu.quanticol.cASPA.Process getName()
+  public eu.quanticol.cASPA.Process getRef()
   {
-    if (name != null && name.eIsProxy())
+    if (ref != null && ref.eIsProxy())
     {
-      InternalEObject oldName = (InternalEObject)name;
-      name = (eu.quanticol.cASPA.Process)eResolveProxy(oldName);
-      if (name != oldName)
+      InternalEObject oldRef = (InternalEObject)ref;
+      ref = (eu.quanticol.cASPA.Process)eResolveProxy(oldRef);
+      if (ref != oldRef)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.REFERENCED_PROCESS__NAME, oldName, name));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, CASPAPackage.REFERENCED_PROCESS__REF, oldRef, ref));
       }
     }
-    return name;
+    return ref;
   }
 
   /**
@@ -83,9 +83,9 @@ public class ReferencedProcessImpl extends ProcessExpressionImpl implements Refe
    * <!-- end-user-doc -->
    * @generated
    */
-  public eu.quanticol.cASPA.Process basicGetName()
+  public eu.quanticol.cASPA.Process basicGetRef()
   {
-    return name;
+    return ref;
   }
 
   /**
@@ -93,12 +93,12 @@ public class ReferencedProcessImpl extends ProcessExpressionImpl implements Refe
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(eu.quanticol.cASPA.Process newName)
+  public void setRef(eu.quanticol.cASPA.Process newRef)
   {
-    eu.quanticol.cASPA.Process oldName = name;
-    name = newName;
+    eu.quanticol.cASPA.Process oldRef = ref;
+    ref = newRef;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.REFERENCED_PROCESS__NAME, oldName, name));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.REFERENCED_PROCESS__REF, oldRef, ref));
   }
 
   /**
@@ -111,9 +111,9 @@ public class ReferencedProcessImpl extends ProcessExpressionImpl implements Refe
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_PROCESS__NAME:
-        if (resolve) return getName();
-        return basicGetName();
+      case CASPAPackage.REFERENCED_PROCESS__REF:
+        if (resolve) return getRef();
+        return basicGetRef();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -128,8 +128,8 @@ public class ReferencedProcessImpl extends ProcessExpressionImpl implements Refe
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_PROCESS__NAME:
-        setName((eu.quanticol.cASPA.Process)newValue);
+      case CASPAPackage.REFERENCED_PROCESS__REF:
+        setRef((eu.quanticol.cASPA.Process)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -145,8 +145,8 @@ public class ReferencedProcessImpl extends ProcessExpressionImpl implements Refe
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_PROCESS__NAME:
-        setName((eu.quanticol.cASPA.Process)null);
+      case CASPAPackage.REFERENCED_PROCESS__REF:
+        setRef((eu.quanticol.cASPA.Process)null);
         return;
     }
     super.eUnset(featureID);
@@ -162,8 +162,8 @@ public class ReferencedProcessImpl extends ProcessExpressionImpl implements Refe
   {
     switch (featureID)
     {
-      case CASPAPackage.REFERENCED_PROCESS__NAME:
-        return name != null;
+      case CASPAPackage.REFERENCED_PROCESS__REF:
+        return ref != null;
     }
     return super.eIsSet(featureID);
   }

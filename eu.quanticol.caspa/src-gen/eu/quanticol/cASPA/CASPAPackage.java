@@ -347,13 +347,13 @@ public interface CASPAPackage extends EPackage
   int TERM = 10;
 
   /**
-   * The feature id for the '<em><b>Processes</b></em>' containment reference.
+   * The feature id for the '<em><b>Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TERM__PROCESSES = 0;
+  int TERM__REF = 0;
 
   /**
    * The feature id for the '<em><b>Stores</b></em>' containment reference list.
@@ -449,13 +449,13 @@ public interface CASPAPackage extends EPackage
   int REFERENCED_STORE = 13;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
+   * The feature id for the '<em><b>Ref</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REFERENCED_STORE__NAME = STORE_EXPRESSION_FEATURE_COUNT + 0;
+  int REFERENCED_STORE__REF = STORE_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Referenced Store</em>' class.
@@ -477,13 +477,13 @@ public interface CASPAPackage extends EPackage
   int SELF_REFERENCED_STORE = 14;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
+   * The feature id for the '<em><b>Ref</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SELF_REFERENCED_STORE__NAME = STORE_EXPRESSION_FEATURE_COUNT + 0;
+  int SELF_REFERENCED_STORE__REF = STORE_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Self Referenced Store</em>' class.
@@ -1614,13 +1614,13 @@ public interface CASPAPackage extends EPackage
   int REFERENCED_PROCESS = 44;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' reference.
+   * The feature id for the '<em><b>Ref</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int REFERENCED_PROCESS__NAME = PROCESS_EXPRESSION_FEATURE_COUNT + 0;
+  int REFERENCED_PROCESS__REF = PROCESS_EXPRESSION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Referenced Process</em>' class.
@@ -1853,15 +1853,15 @@ public interface CASPAPackage extends EPackage
   EClass getTerm();
 
   /**
-   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Term#getProcesses <em>Processes</em>}'.
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Term#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Processes</em>'.
-   * @see eu.quanticol.cASPA.Term#getProcesses()
+   * @return the meta object for the containment reference '<em>Ref</em>'.
+   * @see eu.quanticol.cASPA.Term#getRef()
    * @see #getTerm()
    * @generated
    */
-  EReference getTerm_Processes();
+  EReference getTerm_Ref();
 
   /**
    * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Term#getStores <em>Stores</em>}'.
@@ -1938,15 +1938,15 @@ public interface CASPAPackage extends EPackage
   EClass getReferencedStore();
 
   /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.ReferencedStore#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.ReferencedStore#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.ReferencedStore#getName()
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see eu.quanticol.cASPA.ReferencedStore#getRef()
    * @see #getReferencedStore()
    * @generated
    */
-  EReference getReferencedStore_Name();
+  EReference getReferencedStore_Ref();
 
   /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
@@ -1959,15 +1959,15 @@ public interface CASPAPackage extends EPackage
   EClass getSelfReferencedStore();
 
   /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.SelfReferencedStore#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.SelfReferencedStore#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.SelfReferencedStore#getName()
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see eu.quanticol.cASPA.SelfReferencedStore#getRef()
    * @see #getSelfReferencedStore()
    * @generated
    */
-  EReference getSelfReferencedStore_Name();
+  EReference getSelfReferencedStore_Ref();
 
   /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.Broadcast <em>Broadcast</em>}'.
@@ -2809,15 +2809,15 @@ public interface CASPAPackage extends EPackage
   EClass getReferencedProcess();
 
   /**
-   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.ReferencedProcess#getName <em>Name</em>}'.
+   * Returns the meta object for the reference '{@link eu.quanticol.cASPA.ReferencedProcess#getRef <em>Ref</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.ReferencedProcess#getName()
+   * @return the meta object for the reference '<em>Ref</em>'.
+   * @see eu.quanticol.cASPA.ReferencedProcess#getRef()
    * @see #getReferencedProcess()
    * @generated
    */
-  EReference getReferencedProcess_Name();
+  EReference getReferencedProcess_Ref();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -3033,12 +3033,12 @@ public interface CASPAPackage extends EPackage
     EClass TERM = eINSTANCE.getTerm();
 
     /**
-     * The meta object literal for the '<em><b>Processes</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Ref</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TERM__PROCESSES = eINSTANCE.getTerm_Processes();
+    EReference TERM__REF = eINSTANCE.getTerm_Ref();
 
     /**
      * The meta object literal for the '<em><b>Stores</b></em>' containment reference list feature.
@@ -3103,12 +3103,12 @@ public interface CASPAPackage extends EPackage
     EClass REFERENCED_STORE = eINSTANCE.getReferencedStore();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REFERENCED_STORE__NAME = eINSTANCE.getReferencedStore_Name();
+    EReference REFERENCED_STORE__REF = eINSTANCE.getReferencedStore_Ref();
 
     /**
      * The meta object literal for the '{@link eu.quanticol.cASPA.impl.SelfReferencedStoreImpl <em>Self Referenced Store</em>}' class.
@@ -3121,12 +3121,12 @@ public interface CASPAPackage extends EPackage
     EClass SELF_REFERENCED_STORE = eINSTANCE.getSelfReferencedStore();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SELF_REFERENCED_STORE__NAME = eINSTANCE.getSelfReferencedStore_Name();
+    EReference SELF_REFERENCED_STORE__REF = eINSTANCE.getSelfReferencedStore_Ref();
 
     /**
      * The meta object literal for the '{@link eu.quanticol.cASPA.impl.BroadcastImpl <em>Broadcast</em>}' class.
@@ -3821,12 +3821,12 @@ public interface CASPAPackage extends EPackage
     EClass REFERENCED_PROCESS = eINSTANCE.getReferencedProcess();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Ref</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference REFERENCED_PROCESS__NAME = eINSTANCE.getReferencedProcess_Name();
+    EReference REFERENCED_PROCESS__REF = eINSTANCE.getReferencedProcess_Ref();
 
   }
 

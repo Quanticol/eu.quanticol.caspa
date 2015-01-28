@@ -1071,48 +1071,48 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     name=[Process|UPPER]
+	 *     ref=[Process|UPPER]
 	 */
 	protected void sequence_ReferencedProcess(EObject context, ReferencedProcess semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.REFERENCED_PROCESS__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.REFERENCED_PROCESS__NAME));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.REFERENCED_PROCESS__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.REFERENCED_PROCESS__REF));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReferencedProcessAccess().getNameProcessUPPERTerminalRuleCall_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getReferencedProcessAccess().getRefProcessUPPERTerminalRuleCall_1_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=[Store|LOWER]
+	 *     ref=[Store|LOWER]
 	 */
 	protected void sequence_ReferencedStore(EObject context, ReferencedStore semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.REFERENCED_STORE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.REFERENCED_STORE__NAME));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.REFERENCED_STORE__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.REFERENCED_STORE__REF));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getReferencedStoreAccess().getNameStoreLOWERTerminalRuleCall_1_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getReferencedStoreAccess().getRefStoreLOWERTerminalRuleCall_1_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     name=[Store|LOWER]
+	 *     ref=[Store|LOWER]
 	 */
 	protected void sequence_SelfReferencedStore(EObject context, SelfReferencedStore semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.SELF_REFERENCED_STORE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.SELF_REFERENCED_STORE__NAME));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.SELF_REFERENCED_STORE__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.SELF_REFERENCED_STORE__REF));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getSelfReferencedStoreAccess().getNameStoreLOWERTerminalRuleCall_2_0_1(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSelfReferencedStoreAccess().getRefStoreLOWERTerminalRuleCall_2_0_1(), semanticObject.getRef());
 		feeder.finish();
 	}
 	
@@ -1147,7 +1147,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (processes=ReferencedProcess stores+=Store stores+=Store*)
+	 *     (ref=ReferencedProcess stores+=Store stores+=Store*)
 	 */
 	protected void sequence_Term(EObject context, Term semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

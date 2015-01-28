@@ -15,11 +15,11 @@ Store returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 ReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{ReferencedStore} name=[Store|LOWER]
+	{ReferencedStore} ref=[Store|LOWER]
 ;
 
 SelfReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{SelfReferencedStore}   "this."name=[Store|LOWER]
+	{SelfReferencedStore}   "this."ref=[Store|LOWER]
 ;
 
 StoreRef returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -307,21 +307,13 @@ ActionProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 ReferencedProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{ReferencedProcess} name=[Process|UPPER]
+	{ReferencedProcess} ref=[Process|UPPER]
 ;
 
 //TERMS
 Term hidden(ML_COMMENT,SL_COMMENT,WS):
-	"(" processes=ReferencedProcess ",""{" stores+=Store ("," stores+=Store+)* "}" ")"";"
+	"(" ref=ReferencedProcess ",""{" stores+=Store ("," stores+=Store+)* "}" ")"";"
 ;
-
-//TermProcessExpression returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-//	TermProcessParallel
-//;
-//
-//TermProcessParallel returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-//	ReferencedProcess ({TPParallel.left=current}  "|" right=ReferencedProcess)*
-//;
 
 //BASETYPES
 

@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.Term#getProcesses <em>Processes</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.Term#getRef <em>Ref</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.Term#getStores <em>Stores</em>}</li>
  * </ul>
  * </p>
@@ -26,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Term extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Processes</b></em>' containment reference.
+   * Returns the value of the '<em><b>Ref</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Processes</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Ref</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Processes</em>' containment reference.
-   * @see #setProcesses(ProcessExpression)
-   * @see eu.quanticol.cASPA.CASPAPackage#getTerm_Processes()
+   * @return the value of the '<em>Ref</em>' containment reference.
+   * @see #setRef(ProcessExpression)
+   * @see eu.quanticol.cASPA.CASPAPackage#getTerm_Ref()
    * @model containment="true"
    * @generated
    */
-  ProcessExpression getProcesses();
+  ProcessExpression getRef();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.Term#getProcesses <em>Processes</em>}' containment reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.Term#getRef <em>Ref</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Processes</em>' containment reference.
-   * @see #getProcesses()
+   * @param value the new value of the '<em>Ref</em>' containment reference.
+   * @see #getRef()
    * @generated
    */
-  void setProcesses(ProcessExpression value);
+  void setRef(ProcessExpression value);
 
   /**
    * Returns the value of the '<em><b>Stores</b></em>' containment reference list.

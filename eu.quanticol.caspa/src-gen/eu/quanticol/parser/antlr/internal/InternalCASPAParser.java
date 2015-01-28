@@ -541,7 +541,7 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
                     
             otherlv_1=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleReferencedStore427); 
 
-            		newLeafNode(otherlv_1, grammarAccess.getReferencedStoreAccess().getNameStoreCrossReference_1_0()); 
+            		newLeafNode(otherlv_1, grammarAccess.getReferencedStoreAccess().getRefStoreCrossReference_1_0()); 
             	
 
             }
@@ -660,7 +660,7 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
                     
             otherlv_2=(Token)match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_ruleSelfReferencedStore553); 
 
-            		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getNameStoreCrossReference_2_0()); 
+            		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getRefStoreCrossReference_2_0()); 
             	
 
             }
@@ -8282,7 +8282,7 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
                     
             otherlv_1=(Token)match(input,RULE_UPPER,FOLLOW_RULE_UPPER_in_ruleReferencedProcess7330); 
 
-            		newLeafNode(otherlv_1, grammarAccess.getReferencedProcessAccess().getNameProcessCrossReference_1_0()); 
+            		newLeafNode(otherlv_1, grammarAccess.getReferencedProcessAccess().getRefProcessCrossReference_1_0()); 
             	
 
             }
@@ -8356,7 +8356,7 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleTerm"
-    // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3414:1: ruleTerm returns [EObject current=null] : (otherlv_0= '(' ( (lv_processes_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' ) ;
+    // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3414:1: ruleTerm returns [EObject current=null] : (otherlv_0= '(' ( (lv_ref_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' ) ;
     public final EObject ruleTerm() throws RecognitionException {
         EObject current = null;
 
@@ -8367,7 +8367,7 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
         Token otherlv_7=null;
         Token otherlv_8=null;
         Token otherlv_9=null;
-        EObject lv_processes_1_0 = null;
+        EObject lv_ref_1_0 = null;
 
         EObject lv_stores_4_0 = null;
 
@@ -8378,27 +8378,27 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
             
         try {
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3418:28: ( (otherlv_0= '(' ( (lv_processes_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' ) )
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3419:1: (otherlv_0= '(' ( (lv_processes_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' )
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3418:28: ( (otherlv_0= '(' ( (lv_ref_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' ) )
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3419:1: (otherlv_0= '(' ( (lv_ref_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' )
             {
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3419:1: (otherlv_0= '(' ( (lv_processes_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' )
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3419:3: otherlv_0= '(' ( (lv_processes_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';'
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3419:1: (otherlv_0= '(' ( (lv_ref_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';' )
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3419:3: otherlv_0= '(' ( (lv_ref_1_0= ruleReferencedProcess ) ) otherlv_2= ',' otherlv_3= '{' ( (lv_stores_4_0= ruleStore ) ) (otherlv_5= ',' ( (lv_stores_6_0= ruleStore ) )+ )* otherlv_7= '}' otherlv_8= ')' otherlv_9= ';'
             {
             otherlv_0=(Token)match(input,30,FOLLOW_30_in_ruleTerm7427); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getTermAccess().getLeftParenthesisKeyword_0());
                 
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3423:1: ( (lv_processes_1_0= ruleReferencedProcess ) )
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3424:1: (lv_processes_1_0= ruleReferencedProcess )
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3423:1: ( (lv_ref_1_0= ruleReferencedProcess ) )
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3424:1: (lv_ref_1_0= ruleReferencedProcess )
             {
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3424:1: (lv_processes_1_0= ruleReferencedProcess )
-            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3425:3: lv_processes_1_0= ruleReferencedProcess
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3424:1: (lv_ref_1_0= ruleReferencedProcess )
+            // ../eu.quanticol.caspa/src-gen/eu/quanticol/parser/antlr/internal/InternalCASPA.g:3425:3: lv_ref_1_0= ruleReferencedProcess
             {
              
-            	        newCompositeNode(grammarAccess.getTermAccess().getProcessesReferencedProcessParserRuleCall_1_0()); 
+            	        newCompositeNode(grammarAccess.getTermAccess().getRefReferencedProcessParserRuleCall_1_0()); 
             	    
             pushFollow(FOLLOW_ruleReferencedProcess_in_ruleTerm7448);
-            lv_processes_1_0=ruleReferencedProcess();
+            lv_ref_1_0=ruleReferencedProcess();
 
             state._fsp--;
 
@@ -8408,8 +8408,8 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
             	        }
                    		set(
                    			current, 
-                   			"processes",
-                    		lv_processes_1_0, 
+                   			"ref",
+                    		lv_ref_1_0, 
                     		"ReferencedProcess");
             	        afterParserOrEnumRuleCall();
             	    

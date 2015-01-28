@@ -30,6 +30,11 @@ import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.validation.Check
 
 import static org.eclipse.xtext.EcoreUtil2.*
+import eu.quanticol.cASPA.In
+import eu.quanticol.cASPA.FreeVariable
+import eu.quanticol.ModelUtil
+import java.util.Set
+import java.util.HashSet
 
 /**
  * Custom validation rules. 
@@ -39,9 +44,11 @@ import static org.eclipse.xtext.EcoreUtil2.*
 class CASPAValidator extends AbstractCASPAValidator  {
 	
 	@Inject extension TypeProvider
+	@Inject extension ModelUtil
 	
-	public static val WRONG_TYPE = "eu.quanticol.WrongType"
+	
 	public static val PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique"
+	public static val WRONG_TYPE = "eu.quanticol.WrongType"
 	public static val FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique"
 	
 	@Check
@@ -202,6 +209,35 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		if (type == null)
 			error("null type", reference, WRONG_TYPE)
 		return type;
+	}
+	
+	@Check
+	def checkFreeVariableNamesUnique(In in){
+		
+		var Set<String> freeVariableNames = new HashSet<String>()
+		var Set<String> allParentTermsStoreNames = new HashSet<String>()
+		var Set<String> temp = new HashSet<String>()
+		
+		for(expression : in.expressions)
+			freeVariableNames.add((expression as FreeVariable).name)
+		
+		allParentTermsStoreNames = in.fromInGetProcess.fromProcessGetReferences.getParentTerms.storeNamesFromTerms
+		
+		for(name : allParentTermsStoreNames)
+			temp.add(name)
+		
+		temp.removeAll(freeVariableNames)
+		
+		if(temp.size != allParentTermsStoreNames.size){
+			error("Free variable names cannot be the same as local store names.",
+			CASPAPackage::eINSTANCE.in_Expressions,
+			FREE_VARIABLES_UNIQUE)
+		}
+		
+		
+		
+		
+			
 	}
 
 }

@@ -657,7 +657,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getTerm_Processes()
+  public EReference getTerm_Ref()
   {
     return (EReference)termEClass.getEStructuralFeatures().get(0);
   }
@@ -737,7 +737,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReferencedStore_Name()
+  public EReference getReferencedStore_Ref()
   {
     return (EReference)referencedStoreEClass.getEStructuralFeatures().get(0);
   }
@@ -757,7 +757,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSelfReferencedStore_Name()
+  public EReference getSelfReferencedStore_Ref()
   {
     return (EReference)selfReferencedStoreEClass.getEStructuralFeatures().get(0);
   }
@@ -1557,7 +1557,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getReferencedProcess_Name()
+  public EReference getReferencedProcess_Ref()
   {
     return (EReference)referencedProcessEClass.getEStructuralFeatures().get(0);
   }
@@ -1623,7 +1623,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     processExpressionEClass = createEClass(PROCESS_EXPRESSION);
 
     termEClass = createEClass(TERM);
-    createEReference(termEClass, TERM__PROCESSES);
+    createEReference(termEClass, TERM__REF);
     createEReference(termEClass, TERM__STORES);
 
     booleanConstantEClass = createEClass(BOOLEAN_CONSTANT);
@@ -1634,10 +1634,10 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     createEAttribute(storeEClass, STORE__VALUE);
 
     referencedStoreEClass = createEClass(REFERENCED_STORE);
-    createEReference(referencedStoreEClass, REFERENCED_STORE__NAME);
+    createEReference(referencedStoreEClass, REFERENCED_STORE__REF);
 
     selfReferencedStoreEClass = createEClass(SELF_REFERENCED_STORE);
-    createEReference(selfReferencedStoreEClass, SELF_REFERENCED_STORE__NAME);
+    createEReference(selfReferencedStoreEClass, SELF_REFERENCED_STORE__REF);
 
     broadcastEClass = createEClass(BROADCAST);
 
@@ -1747,7 +1747,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     createEReference(actionProcessEClass, ACTION_PROCESS__REF);
 
     referencedProcessEClass = createEClass(REFERENCED_PROCESS);
-    createEReference(referencedProcessEClass, REFERENCED_PROCESS__NAME);
+    createEReference(referencedProcessEClass, REFERENCED_PROCESS__REF);
   }
 
   /**
@@ -1851,7 +1851,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEClass(processExpressionEClass, ProcessExpression.class, "ProcessExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getTerm_Processes(), this.getProcessExpression(), null, "processes", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTerm_Ref(), this.getProcessExpression(), null, "ref", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTerm_Stores(), this.getStoreExpression(), null, "stores", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanConstantEClass, BooleanConstant.class, "BooleanConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1862,10 +1862,10 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEAttribute(getStore_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referencedStoreEClass, ReferencedStore.class, "ReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferencedStore_Name(), this.getStore(), null, "name", null, 0, 1, ReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferencedStore_Ref(), this.getStore(), null, "ref", null, 0, 1, ReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(selfReferencedStoreEClass, SelfReferencedStore.class, "SelfReferencedStore", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSelfReferencedStore_Name(), this.getStore(), null, "name", null, 0, 1, SelfReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSelfReferencedStore_Ref(), this.getStore(), null, "ref", null, 0, 1, SelfReferencedStore.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(broadcastEClass, Broadcast.class, "Broadcast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1975,7 +1975,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEReference(getActionProcess_Ref(), this.getProcessExpression(), null, "ref", null, 0, 1, ActionProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(referencedProcessEClass, ReferencedProcess.class, "ReferencedProcess", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getReferencedProcess_Name(), this.getProcess(), null, "name", null, 0, 1, ReferencedProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReferencedProcess_Ref(), this.getProcess(), null, "ref", null, 0, 1, ReferencedProcess.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

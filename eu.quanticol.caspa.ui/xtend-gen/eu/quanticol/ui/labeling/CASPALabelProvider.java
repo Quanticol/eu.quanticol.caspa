@@ -48,8 +48,8 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
   
   public String text(final Term term) {
     String temp = null;
-    ProcessExpression _processes = term.getProcesses();
-    String _cTString = this._modelUtil.cTString(_processes);
+    ProcessExpression _ref = term.getRef();
+    String _cTString = this._modelUtil.cTString(_ref);
     temp = _cTString;
     return ("Term " + temp);
   }
@@ -63,8 +63,8 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
   }
   
   public String text(final ReferencedProcess process) {
-    eu.quanticol.cASPA.Process _name = process.getName();
-    return this._modelUtil.cTString(_name);
+    eu.quanticol.cASPA.Process _ref = process.getRef();
+    return this._modelUtil.cTString(_ref);
   }
   
   public String text(final Store s) {

@@ -33,7 +33,7 @@
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//ProcessExpression"/>
     <genClasses ecoreClass="CASPA.ecore#//Term">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/processes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/ref"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/stores"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//BooleanConstant">
@@ -44,10 +44,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Store/value"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//ReferencedStore">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ReferencedStore/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ReferencedStore/ref"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//SelfReferencedStore">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//SelfReferencedStore/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//SelfReferencedStore/ref"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//Broadcast"/>
     <genClasses ecoreClass="CASPA.ecore#//Unicast"/>
@@ -155,7 +155,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//ActionProcess/ref"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//ReferencedProcess">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ReferencedProcess/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference CASPA.ecore#//ReferencedProcess/ref"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -1,23 +1,36 @@
-//package eu.quanticol.caspa.tests
+package eu.quanticol.caspa.tests
 //
-//import com.google.inject.Inject
-//import eu.quanticol.CASPAInjectorProvider
-//import eu.quanticol.cASPA.CASPAPackage
-//import eu.quanticol.cASPA.Model
-//import eu.quanticol.validation.CASPAValidator
-//import org.eclipse.xtext.junit4.InjectWith
-//import org.eclipse.xtext.junit4.XtextRunner
-//import org.eclipse.xtext.junit4.util.ParseHelper
-//import org.eclipse.xtext.junit4.validation.ValidationTestHelper
-//import org.junit.Test
-//import org.junit.runner.RunWith
+import com.google.inject.Inject
+import eu.quanticol.CASPAInjectorProvider
+import org.eclipse.xtext.junit4.InjectWith
+import org.eclipse.xtext.junit4.XtextRunner
+import org.eclipse.xtext.junit4.util.ParseHelper
+import org.eclipse.xtext.junit4.validation.ValidationTestHelper
+import org.junit.Test
+import org.junit.runner.RunWith
+import eu.quanticol.cASPA.CASPAPackage
+import eu.quanticol.validation.CASPAValidator
+import eu.quanticol.cASPA.Model
+
 //
-//@RunWith(typeof(XtextRunner))
-//@InjectWith(typeof(CASPAInjectorProvider))
-//class ValidationTest {
-//	
-//	@Inject extension ParseHelper<Model>
-//	@Inject extension ValidationTestHelper
+@RunWith(typeof(XtextRunner))
+@InjectWith(typeof(CASPAInjectorProvider))
+class ValidationTest {
+	
+	@Inject extension ParseHelper<Model>
+	@Inject extension ValidationTestHelper
+	
+	@Test
+	def void testFreeVariableNotUniqueFromStore(){
+		'''
+		(Q,{a:=1});
+		Q = P;
+		P = action1[True](a).P;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.in,
+			CASPAValidator::FREE_VARIABLES_UNIQUE,
+			"Free variable names cannot be the same as local store names.")
+	}
+	
 //	
 //	@Test
 //	def void testStoreIsConstant(){
@@ -410,4 +423,4 @@
 //	}
 //	
 //	
-//}
+}
