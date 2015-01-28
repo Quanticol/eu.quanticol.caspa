@@ -13,6 +13,6 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface StoreExpression extends PredicateExpression, Arguments, UpdateExpression
+public interface StoreExpression extends PredicateExpression, Arguments, Updates, UpdateExpression
 {
 } // StoreExpression

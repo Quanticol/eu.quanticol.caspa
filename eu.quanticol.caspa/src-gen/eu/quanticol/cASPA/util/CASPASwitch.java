@@ -12,13 +12,15 @@ import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
-import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.DistributionNatural;
+import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Out;
+import eu.quanticol.cASPA.OutStoreReference;
 import eu.quanticol.cASPA.Parallel;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -31,20 +33,24 @@ import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
+import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
+import eu.quanticol.cASPA.Reference;
 import eu.quanticol.cASPA.ReferencedProcess;
-import eu.quanticol.cASPA.ReferencedStore;
-import eu.quanticol.cASPA.SelfReferencedStore;
+import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
-import eu.quanticol.cASPA.Uniform;
+import eu.quanticol.cASPA.UniformNatural;
+import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateExpressionStoreReference;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
+import eu.quanticol.cASPA.UpdateStoreReference;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
 
@@ -129,6 +135,7 @@ public class CASPASwitch<T> extends Switch<T>
         T result = caseStoreExpression(storeExpression);
         if (result == null) result = casePredicateExpression(storeExpression);
         if (result == null) result = caseArguments(storeExpression);
+        if (result == null) result = caseUpdates(storeExpression);
         if (result == null) result = caseUpdateExpression(storeExpression);
         if (result == null) result = defaultCase(theEObject);
         return result;
@@ -211,29 +218,32 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = caseStoreExpression(store);
         if (result == null) result = casePredicateExpression(store);
         if (result == null) result = caseArguments(store);
+        if (result == null) result = caseUpdates(store);
         if (result == null) result = caseUpdateExpression(store);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.REFERENCED_STORE:
+      case CASPAPackage.REFERENCE:
       {
-        ReferencedStore referencedStore = (ReferencedStore)theEObject;
-        T result = caseReferencedStore(referencedStore);
-        if (result == null) result = caseStoreExpression(referencedStore);
-        if (result == null) result = casePredicateExpression(referencedStore);
-        if (result == null) result = caseArguments(referencedStore);
-        if (result == null) result = caseUpdateExpression(referencedStore);
+        Reference reference = (Reference)theEObject;
+        T result = caseReference(reference);
+        if (result == null) result = caseStoreExpression(reference);
+        if (result == null) result = casePredicateExpression(reference);
+        if (result == null) result = caseArguments(reference);
+        if (result == null) result = caseUpdates(reference);
+        if (result == null) result = caseUpdateExpression(reference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.SELF_REFERENCED_STORE:
+      case CASPAPackage.SELF_REFERENCE:
       {
-        SelfReferencedStore selfReferencedStore = (SelfReferencedStore)theEObject;
-        T result = caseSelfReferencedStore(selfReferencedStore);
-        if (result == null) result = caseStoreExpression(selfReferencedStore);
-        if (result == null) result = casePredicateExpression(selfReferencedStore);
-        if (result == null) result = caseArguments(selfReferencedStore);
-        if (result == null) result = caseUpdateExpression(selfReferencedStore);
+        SelfReference selfReference = (SelfReference)theEObject;
+        T result = caseSelfReference(selfReference);
+        if (result == null) result = caseStoreExpression(selfReference);
+        if (result == null) result = casePredicateExpression(selfReference);
+        if (result == null) result = caseArguments(selfReference);
+        if (result == null) result = caseUpdates(selfReference);
+        if (result == null) result = caseUpdateExpression(selfReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -335,6 +345,18 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CASPAPackage.PREDICATE_STORE_REFERENCE:
+      {
+        PredicateStoreReference predicateStoreReference = (PredicateStoreReference)theEObject;
+        T result = casePredicateStoreReference(predicateStoreReference);
+        if (result == null) result = caseStoreExpression(predicateStoreReference);
+        if (result == null) result = casePredicateExpression(predicateStoreReference);
+        if (result == null) result = caseArguments(predicateStoreReference);
+        if (result == null) result = caseUpdates(predicateStoreReference);
+        if (result == null) result = caseUpdateExpression(predicateStoreReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CASPAPackage.IN:
       {
         In in = (In)theEObject;
@@ -348,6 +370,18 @@ public class CASPASwitch<T> extends Switch<T>
         Out out = (Out)theEObject;
         T result = caseOut(out);
         if (result == null) result = caseArguments(out);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.OUT_STORE_REFERENCE:
+      {
+        OutStoreReference outStoreReference = (OutStoreReference)theEObject;
+        T result = caseOutStoreReference(outStoreReference);
+        if (result == null) result = caseStoreExpression(outStoreReference);
+        if (result == null) result = casePredicateExpression(outStoreReference);
+        if (result == null) result = caseArguments(outStoreReference);
+        if (result == null) result = caseUpdates(outStoreReference);
+        if (result == null) result = caseUpdateExpression(outStoreReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -383,19 +417,55 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.DISTRIBUTION:
+      case CASPAPackage.UPDATE_STORE_REFERENCE:
       {
-        Distribution distribution = (Distribution)theEObject;
-        T result = caseDistribution(distribution);
-        if (result == null) result = caseUpdates(distribution);
+        UpdateStoreReference updateStoreReference = (UpdateStoreReference)theEObject;
+        T result = caseUpdateStoreReference(updateStoreReference);
+        if (result == null) result = caseStoreExpression(updateStoreReference);
+        if (result == null) result = casePredicateExpression(updateStoreReference);
+        if (result == null) result = caseArguments(updateStoreReference);
+        if (result == null) result = caseUpdates(updateStoreReference);
+        if (result == null) result = caseUpdateExpression(updateStoreReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case CASPAPackage.UNIFORM:
+      case CASPAPackage.DISTRIBUTION_NATURAL:
       {
-        Uniform uniform = (Uniform)theEObject;
-        T result = caseUniform(uniform);
-        if (result == null) result = caseUpdates(uniform);
+        DistributionNatural distributionNatural = (DistributionNatural)theEObject;
+        T result = caseDistributionNatural(distributionNatural);
+        if (result == null) result = caseUpdates(distributionNatural);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.DISTRIBUTION_REFERENCE:
+      {
+        DistributionReference distributionReference = (DistributionReference)theEObject;
+        T result = caseDistributionReference(distributionReference);
+        if (result == null) result = caseStoreExpression(distributionReference);
+        if (result == null) result = casePredicateExpression(distributionReference);
+        if (result == null) result = caseArguments(distributionReference);
+        if (result == null) result = caseUpdates(distributionReference);
+        if (result == null) result = caseUpdateExpression(distributionReference);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.UNIFORM_NATURAL:
+      {
+        UniformNatural uniformNatural = (UniformNatural)theEObject;
+        T result = caseUniformNatural(uniformNatural);
+        if (result == null) result = caseUpdates(uniformNatural);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.UNIFORM_REFERENCE:
+      {
+        UniformReference uniformReference = (UniformReference)theEObject;
+        T result = caseUniformReference(uniformReference);
+        if (result == null) result = caseStoreExpression(uniformReference);
+        if (result == null) result = casePredicateExpression(uniformReference);
+        if (result == null) result = caseArguments(uniformReference);
+        if (result == null) result = caseUpdates(uniformReference);
+        if (result == null) result = caseUpdateExpression(uniformReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -428,6 +498,18 @@ public class CASPASwitch<T> extends Switch<T>
         UpdateDiv updateDiv = (UpdateDiv)theEObject;
         T result = caseUpdateDiv(updateDiv);
         if (result == null) result = caseUpdateExpression(updateDiv);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.UPDATE_EXPRESSION_STORE_REFERENCE:
+      {
+        UpdateExpressionStoreReference updateExpressionStoreReference = (UpdateExpressionStoreReference)theEObject;
+        T result = caseUpdateExpressionStoreReference(updateExpressionStoreReference);
+        if (result == null) result = caseStoreExpression(updateExpressionStoreReference);
+        if (result == null) result = casePredicateExpression(updateExpressionStoreReference);
+        if (result == null) result = caseArguments(updateExpressionStoreReference);
+        if (result == null) result = caseUpdates(updateExpressionStoreReference);
+        if (result == null) result = caseUpdateExpression(updateExpressionStoreReference);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -692,33 +774,33 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Referenced Store</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseReferencedStore(ReferencedStore object)
+  public T caseReference(Reference object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Self Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Self Referenced Store</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Self Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSelfReferencedStore(SelfReferencedStore object)
+  public T caseSelfReference(SelfReference object)
   {
     return null;
   }
@@ -916,6 +998,22 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Predicate Store Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Predicate Store Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePredicateStoreReference(PredicateStoreReference object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>In</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -943,6 +1041,22 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOut(Out object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Out Store Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Out Store Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseOutStoreReference(OutStoreReference object)
   {
     return null;
   }
@@ -1012,33 +1126,81 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Distribution</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Update Store Reference</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Distribution</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Update Store Reference</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseDistribution(Distribution object)
+  public T caseUpdateStoreReference(UpdateStoreReference object)
   {
     return null;
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Uniform</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Distribution Natural</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Uniform</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Distribution Natural</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseUniform(Uniform object)
+  public T caseDistributionNatural(DistributionNatural object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Distribution Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Distribution Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseDistributionReference(DistributionReference object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Uniform Natural</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Uniform Natural</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUniformNatural(UniformNatural object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Uniform Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Uniform Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUniformReference(UniformReference object)
   {
     return null;
   }
@@ -1103,6 +1265,22 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseUpdateDiv(UpdateDiv object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Update Expression Store Reference</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Update Expression Store Reference</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseUpdateExpressionStoreReference(UpdateExpressionStoreReference object)
   {
     return null;
   }

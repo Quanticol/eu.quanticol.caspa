@@ -4,40 +4,39 @@
 package eu.quanticol.ui.labeling
 
 import com.google.inject.Inject
-import eu.quanticol.cASPA.Term
+import eu.quanticol.ModelUtil
+import eu.quanticol.cASPA.Action
+import eu.quanticol.cASPA.ActionProcess
+import eu.quanticol.cASPA.Arguments
+import eu.quanticol.cASPA.BooleanConstant
+import eu.quanticol.cASPA.Constant
+import eu.quanticol.cASPA.DistributedEventUpdateProbability
+import eu.quanticol.cASPA.DistributedEventUpdateUniform
+import eu.quanticol.cASPA.DistributionNatural
+import eu.quanticol.cASPA.LocalSingleEventUpdate
+import eu.quanticol.cASPA.Predicate
+import eu.quanticol.cASPA.PredicateExpression
+import eu.quanticol.cASPA.PredicateProcess
 import eu.quanticol.cASPA.Process
 import eu.quanticol.cASPA.ProcessExpression
 import eu.quanticol.cASPA.ReferencedProcess
-import eu.quanticol.ModelUtil
-//import eu.quanticol.cASPA.TPParallel
 import eu.quanticol.cASPA.Store
-import eu.quanticol.cASPA.SelfReferencedStore
-import eu.quanticol.cASPA.ReferencedStore
-import eu.quanticol.cASPA.Predicate
-import eu.quanticol.cASPA.PredicateExpression
-import eu.quanticol.cASPA.Constant
-import eu.quanticol.cASPA.BooleanConstant
-import eu.quanticol.cASPA.Action
-import eu.quanticol.cASPA.Arguments
-import eu.quanticol.cASPA.Updates
+import eu.quanticol.cASPA.Term
+import eu.quanticol.cASPA.UniformNatural
 import eu.quanticol.cASPA.UpdateExpression
-import eu.quanticol.cASPA.Uniform
-import eu.quanticol.cASPA.Distribution
-import eu.quanticol.cASPA.DistributedEventUpdateUniform
-import eu.quanticol.cASPA.DistributedEventUpdateProbability
-import eu.quanticol.cASPA.LocalSingleEventUpdate
-import eu.quanticol.cASPA.PredicateProcess
-import eu.quanticol.cASPA.ActionProcess
+import eu.quanticol.cASPA.Updates
+import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
+import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 
 /**
  * Provides labels for a EObjects.
  * 
  * see http://www.eclipse.org/Xtext/documentation.html#labelProvider
  */
-class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider {
+class CASPALabelProvider extends DefaultEObjectLabelProvider {
 
 	@Inject
-	new(org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider delegate) {
+	new(AdapterFactoryLabelProvider delegate) {
 		super(delegate);
 	}
 
@@ -77,13 +76,13 @@ class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 		s.cTString
 	}
 	
-	def text(SelfReferencedStore s){
-		s.cTString
-	}
-	
-	def text(ReferencedStore s){
-		s.cTString
-	}
+//	def text(SelfReferencedStore s){
+//		s.cTString
+//	}
+//	
+//	def text(ReferencedStore s){
+//		s.cTString
+//	}
 	
 	def text(Predicate p){
 		p.cTString
@@ -125,11 +124,11 @@ class CASPALabelProvider extends org.eclipse.xtext.ui.label.DefaultEObjectLabelP
 		u.cTString
 	}
 	
-	def text(Distribution u){ 
+	def text(DistributionNatural u){ 
 		u.cTString
 	}
 	
-	def text(Uniform u){ 
+	def text(UniformNatural u){ 
 		u.cTString
 	} 
 	

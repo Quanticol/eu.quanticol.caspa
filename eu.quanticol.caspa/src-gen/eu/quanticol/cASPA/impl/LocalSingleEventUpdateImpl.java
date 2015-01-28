@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl#getName <em>Name</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl#getExpression <em>Expression</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl#getAssignee <em>Assignee</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl#getAssigner <em>Assigner</em>}</li>
  * </ul>
  * </p>
  *
@@ -32,24 +32,24 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSingleEventUpdate
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The cached value of the '{@link #getAssignee() <em>Assignee</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAssignee()
    * @generated
    * @ordered
    */
-  protected StoreExpression name;
+  protected StoreExpression assignee;
 
   /**
-   * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
+   * The cached value of the '{@link #getAssigner() <em>Assigner</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getExpression()
+   * @see #getAssigner()
    * @generated
    * @ordered
    */
-  protected UpdateExpression expression;
+  protected UpdateExpression assigner;
 
   /**
    * <!-- begin-user-doc -->
@@ -77,9 +77,9 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
    * <!-- end-user-doc -->
    * @generated
    */
-  public StoreExpression getName()
+  public StoreExpression getAssignee()
   {
-    return name;
+    return assignee;
   }
 
   /**
@@ -87,13 +87,13 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(StoreExpression newName, NotificationChain msgs)
+  public NotificationChain basicSetAssignee(StoreExpression newAssignee, NotificationChain msgs)
   {
-    StoreExpression oldName = name;
-    name = newName;
+    StoreExpression oldAssignee = assignee;
+    assignee = newAssignee;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME, oldName, newName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE, oldAssignee, newAssignee);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -104,20 +104,20 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(StoreExpression newName)
+  public void setAssignee(StoreExpression newAssignee)
   {
-    if (newName != name)
+    if (newAssignee != assignee)
     {
       NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
+      if (assignee != null)
+        msgs = ((InternalEObject)assignee).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE, null, msgs);
+      if (newAssignee != null)
+        msgs = ((InternalEObject)newAssignee).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE, null, msgs);
+      msgs = basicSetAssignee(newAssignee, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE, newAssignee, newAssignee));
   }
 
   /**
@@ -125,9 +125,9 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
    * <!-- end-user-doc -->
    * @generated
    */
-  public UpdateExpression getExpression()
+  public UpdateExpression getAssigner()
   {
-    return expression;
+    return assigner;
   }
 
   /**
@@ -135,13 +135,13 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetExpression(UpdateExpression newExpression, NotificationChain msgs)
+  public NotificationChain basicSetAssigner(UpdateExpression newAssigner, NotificationChain msgs)
   {
-    UpdateExpression oldExpression = expression;
-    expression = newExpression;
+    UpdateExpression oldAssigner = assigner;
+    assigner = newAssigner;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION, oldExpression, newExpression);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER, oldAssigner, newAssigner);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -152,20 +152,20 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setExpression(UpdateExpression newExpression)
+  public void setAssigner(UpdateExpression newAssigner)
   {
-    if (newExpression != expression)
+    if (newAssigner != assigner)
     {
       NotificationChain msgs = null;
-      if (expression != null)
-        msgs = ((InternalEObject)expression).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION, null, msgs);
-      if (newExpression != null)
-        msgs = ((InternalEObject)newExpression).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION, null, msgs);
-      msgs = basicSetExpression(newExpression, msgs);
+      if (assigner != null)
+        msgs = ((InternalEObject)assigner).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER, null, msgs);
+      if (newAssigner != null)
+        msgs = ((InternalEObject)newAssigner).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER, null, msgs);
+      msgs = basicSetAssigner(newAssigner, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION, newExpression, newExpression));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER, newAssigner, newAssigner));
   }
 
   /**
@@ -178,10 +178,10 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
   {
     switch (featureID)
     {
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME:
-        return basicSetName(null, msgs);
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION:
-        return basicSetExpression(null, msgs);
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE:
+        return basicSetAssignee(null, msgs);
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER:
+        return basicSetAssigner(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -196,10 +196,10 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
   {
     switch (featureID)
     {
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME:
-        return getName();
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION:
-        return getExpression();
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE:
+        return getAssignee();
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER:
+        return getAssigner();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -214,11 +214,11 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
   {
     switch (featureID)
     {
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME:
-        setName((StoreExpression)newValue);
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE:
+        setAssignee((StoreExpression)newValue);
         return;
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION:
-        setExpression((UpdateExpression)newValue);
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER:
+        setAssigner((UpdateExpression)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -234,11 +234,11 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
   {
     switch (featureID)
     {
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME:
-        setName((StoreExpression)null);
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE:
+        setAssignee((StoreExpression)null);
         return;
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION:
-        setExpression((UpdateExpression)null);
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER:
+        setAssigner((UpdateExpression)null);
         return;
     }
     super.eUnset(featureID);
@@ -254,10 +254,10 @@ public class LocalSingleEventUpdateImpl extends UpdatesImpl implements LocalSing
   {
     switch (featureID)
     {
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__NAME:
-        return name != null;
-      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION:
-        return expression != null;
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE:
+        return assignee != null;
+      case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER:
+        return assigner != null;
     }
     return super.eIsSet(featureID);
   }

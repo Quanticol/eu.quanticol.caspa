@@ -4,8 +4,8 @@ import eu.quanticol.cASPA.ProcessExpression
 import eu.quanticol.cASPA.Process
 import eu.quanticol.cASPA.ReferencedProcess
 import eu.quanticol.cASPA.Store
-import eu.quanticol.cASPA.SelfReferencedStore
-import eu.quanticol.cASPA.ReferencedStore
+//import eu.quanticol.cASPA.SelfReferencedStore
+//import eu.quanticol.cASPA.ReferencedStore
 import eu.quanticol.cASPA.StoreExpression
 import eu.quanticol.cASPA.Parallel
 import eu.quanticol.cASPA.Choice
@@ -33,8 +33,6 @@ import eu.quanticol.cASPA.Updates
 import eu.quanticol.cASPA.LocalSingleEventUpdate
 import eu.quanticol.cASPA.DistributedEventUpdateProbability
 import eu.quanticol.cASPA.DistributedEventUpdateUniform
-import eu.quanticol.cASPA.Distribution
-import eu.quanticol.cASPA.Uniform
 import eu.quanticol.cASPA.UpdateExpression
 import eu.quanticol.cASPA.UpdateSub
 import eu.quanticol.cASPA.UpdatePlu
@@ -50,6 +48,11 @@ import eu.quanticol.cASPA.Model
 import org.eclipse.emf.common.util.EList
 import java.util.Set
 import java.util.HashSet
+import eu.quanticol.cASPA.SelfReference
+import eu.quanticol.cASPA.Reference
+import eu.quanticol.cASPA.DistributionNatural
+import eu.quanticol.cASPA.UniformNatural
+import java.util.HashMap
 
 class ModelUtil {
 	
@@ -82,8 +85,8 @@ class ModelUtil {
 			PredicateNot:			"!" + pe.expression.cTString
 			Constant:				(pe as Constant).cTString
 			BooleanConstant:		(pe as BooleanConstant).cTString
-			ReferencedStore:		(pe as ReferencedStore).cTString
-			SelfReferencedStore:	(pe as SelfReferencedStore).cTString
+			Reference:				(pe as Reference).cTString
+			SelfReference:			(pe as SelfReference).cTString
 		}.toString
 		
 	}
@@ -122,8 +125,8 @@ class ModelUtil {
 										} 
 										temp = temp + " " + " >"
 										return temp}
-			SelfReferencedStore:		(a as StoreExpression).cTString
-			ReferencedStore:			(a as StoreExpression).cTString
+			SelfReference:				(a as StoreExpression).cTString
+			Reference:					(a as StoreExpression).cTString
 			Constant:					(a as Constant).cTString
 			
 		}.toString
@@ -137,8 +140,8 @@ class ModelUtil {
 	def String cTString(StoreExpression s){
 		switch(s){
 			Store:					"" + s.name + " = " + s.value
-			SelfReferencedStore:	(s.ref as StoreExpression).cTString
-			ReferencedStore:		(s.ref as StoreExpression).cTString
+			SelfReference:			"" + s.name
+			Reference:				"" + s.name
 		}.toString
 	}
 	
@@ -155,28 +158,28 @@ class ModelUtil {
 	}
 	
 	def String cTString(LocalSingleEventUpdate u){
-		u.name.cTString + " := " + u.expression.cTString
+		u.assignee.cTString + " := " + u.assigner.cTString
 	}
 	
 	def String cTString(DistributedEventUpdateProbability u){
 		var String temp
 		for(distribution : u.distribution){
 			temp = temp + " " distribution.cTString} + ", "
-		u.name.cTString + " :=  Pr( " + temp + " )"
+		u.assignee.cTString + " :=  Pr( " + temp + " )"
 	}
 	
 	def String cTString(DistributedEventUpdateUniform u){
 		var String temp
 		for(distribution : u.distribution){
 			temp = temp + " " distribution.cTString} + ", "
-		u.name.cTString + " :=  U( " + temp + " )"
+		u.assignee.cTString + " :=  U( " + temp + " )"
 	}
 	
-	def String cTString(Distribution u){
+	def String cTString(DistributionNatural u){
 		"" + u.prob.toString + " : " u.expression.toString
 	}
 	
-	def String cTString(Uniform u){
+	def String cTString(UniformNatural u){
 		u.expression.toString
 	}
 	
@@ -187,8 +190,8 @@ class ModelUtil {
 			UpdateMul:				ue.left.cTString + " * "  + ue.right.cTString 
 			UpdateDiv:				ue.left.cTString + " / "  + ue.right.cTString 
 			Constant:				(ue as Constant).cTString
-			ReferencedStore:		(ue as StoreExpression).cTString
-			SelfReferencedStore:	(ue as StoreExpression).cTString
+			Reference:				(ue as StoreExpression).cTString
+			SelfReference:			(ue as StoreExpression).cTString
 		}.toString
 	}
 	
@@ -273,29 +276,82 @@ class ModelUtil {
 	}
 	
 	
+	def Set<Process> getParentProcesses(StoreExpression sr){
+		
+		var processes = sr.getContainerOfType(typeof(Model)).processes
+		var p = sr.getContainerOfType(typeof(Process))
+		var Set<Process> refProcesses = new HashSet<Process>()
+		var Set<Process> lastRefProcesses = new HashSet<Process>()
+		
+		println(p)
+		
+		refProcesses.add(p)
+		
+		while(refProcesses.size > lastRefProcesses.size){
+			
+			for(rp : refProcesses)
+					lastRefProcesses.add(rp)
+			
+			for(process : processes){
+				for(rp : lastRefProcesses)
+					process.value.getReferencedProcess(refProcesses,rp)
+			}
+			
+		}
+		
+		println(refProcesses)
+		
+		return refProcesses
+	}
 	
-	/*
-	 * Has the reference been defined before?
-	 */
-//	def static variablesHaveBeenDefinedBefore(ReferencedStore e) {
-//		val allElements = 
-//			e.getContainerOfType(typeof(Model)).stores
-//		return allElements
-//	}
-//	
-//	def static variablesHaveBeenDefinedBefore(SelfReferencedStore e) {
-//		val allElements = 
-//			e.getContainerOfType(typeof(Model)).stores
-//		return allElements
-//	}
-//	
-//	/*
-//	 * Is there a store that references itself?
-//	 */
-//	def static selfReferencedStores(ReferencedStore e) {
-//		val allElements = 
-//			e.getContainerOfType(typeof(Model)).
-//				stores
-//		allElements.findFirst[isAncestor(it, e)]
-//	}
+	
+	def HashMap<Integer,Term> getParentTermsHash(Set<Process> processes){
+		
+		
+		var terms = processes.get(0).getContainerOfType(typeof(Model)).terms
+		var Set<String> names = new HashSet<String>()
+		var HashMap<Integer,Term> results = new HashMap<Integer,Term>()
+		var Integer count = 0
+		
+		for(process : processes)
+			names.add(process.name)
+			
+			
+		for(term : terms)
+			for(name : names)
+				if((term.ref as ReferencedProcess).ref.name.equals(name)){
+					results.put(count,term)
+					count++
+				}
+					
+		
+		return results
+		
+	}
+	
+	def HashMap<Integer,ArrayList<String>> getStoreNamesFromTermsHashMap(HashMap<Integer,Term> terms){
+		
+		var HashMap<Integer,ArrayList<String>> names = new HashMap<Integer,ArrayList<String>>()
+		
+		for(i : terms.keySet)
+			for(store : terms.get(i).stores){
+				if(names.get(i) == null){
+					names.put(i,new ArrayList<String>())
+					
+				} 
+				names.get(i).add((store as Store).name)
+			}
+		
+		return names
+		
+	}
+	
+	def boolean isInMap(String name, HashMap<Integer,ArrayList<String>> theList){
+		var boolean result = true
+		
+		for(i : theList.keySet)
+				result = result && theList.get(i).contains(name)
+		
+		return result
+	}
 }

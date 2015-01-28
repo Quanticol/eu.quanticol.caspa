@@ -140,22 +140,22 @@ public interface CASPAFactory extends EFactory
   Store createStore();
 
   /**
-   * Returns a new object of class '<em>Referenced Store</em>'.
+   * Returns a new object of class '<em>Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Referenced Store</em>'.
+   * @return a new object of class '<em>Reference</em>'.
    * @generated
    */
-  ReferencedStore createReferencedStore();
+  Reference createReference();
 
   /**
-   * Returns a new object of class '<em>Self Referenced Store</em>'.
+   * Returns a new object of class '<em>Self Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Self Referenced Store</em>'.
+   * @return a new object of class '<em>Self Reference</em>'.
    * @generated
    */
-  SelfReferencedStore createSelfReferencedStore();
+  SelfReference createSelfReference();
 
   /**
    * Returns a new object of class '<em>Broadcast</em>'.
@@ -266,6 +266,15 @@ public interface CASPAFactory extends EFactory
   Constant createConstant();
 
   /**
+   * Returns a new object of class '<em>Predicate Store Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Predicate Store Reference</em>'.
+   * @generated
+   */
+  PredicateStoreReference createPredicateStoreReference();
+
+  /**
    * Returns a new object of class '<em>In</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -282,6 +291,15 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   Out createOut();
+
+  /**
+   * Returns a new object of class '<em>Out Store Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Out Store Reference</em>'.
+   * @generated
+   */
+  OutStoreReference createOutStoreReference();
 
   /**
    * Returns a new object of class '<em>Free Variable</em>'.
@@ -320,22 +338,49 @@ public interface CASPAFactory extends EFactory
   DistributedEventUpdateUniform createDistributedEventUpdateUniform();
 
   /**
-   * Returns a new object of class '<em>Distribution</em>'.
+   * Returns a new object of class '<em>Update Store Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Distribution</em>'.
+   * @return a new object of class '<em>Update Store Reference</em>'.
    * @generated
    */
-  Distribution createDistribution();
+  UpdateStoreReference createUpdateStoreReference();
 
   /**
-   * Returns a new object of class '<em>Uniform</em>'.
+   * Returns a new object of class '<em>Distribution Natural</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Uniform</em>'.
+   * @return a new object of class '<em>Distribution Natural</em>'.
    * @generated
    */
-  Uniform createUniform();
+  DistributionNatural createDistributionNatural();
+
+  /**
+   * Returns a new object of class '<em>Distribution Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Distribution Reference</em>'.
+   * @generated
+   */
+  DistributionReference createDistributionReference();
+
+  /**
+   * Returns a new object of class '<em>Uniform Natural</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Uniform Natural</em>'.
+   * @generated
+   */
+  UniformNatural createUniformNatural();
+
+  /**
+   * Returns a new object of class '<em>Uniform Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Uniform Reference</em>'.
+   * @generated
+   */
+  UniformReference createUniformReference();
 
   /**
    * Returns a new object of class '<em>Update Sub</em>'.
@@ -372,6 +417,15 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   UpdateDiv createUpdateDiv();
+
+  /**
+   * Returns a new object of class '<em>Update Expression Store Reference</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Update Expression Store Reference</em>'.
+   * @generated
+   */
+  UpdateExpressionStoreReference createUpdateExpressionStoreReference();
 
   /**
    * Returns a new object of class '<em>Parallel</em>'.

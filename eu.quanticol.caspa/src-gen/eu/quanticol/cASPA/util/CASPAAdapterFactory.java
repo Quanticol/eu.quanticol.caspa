@@ -12,13 +12,15 @@ import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
-import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.DistributionNatural;
+import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Out;
+import eu.quanticol.cASPA.OutStoreReference;
 import eu.quanticol.cASPA.Parallel;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -31,20 +33,24 @@ import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
+import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
+import eu.quanticol.cASPA.Reference;
 import eu.quanticol.cASPA.ReferencedProcess;
-import eu.quanticol.cASPA.ReferencedStore;
-import eu.quanticol.cASPA.SelfReferencedStore;
+import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
-import eu.quanticol.cASPA.Uniform;
+import eu.quanticol.cASPA.UniformNatural;
+import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateExpressionStoreReference;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
+import eu.quanticol.cASPA.UpdateStoreReference;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
 
@@ -184,14 +190,14 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
         return createStoreAdapter();
       }
       @Override
-      public Adapter caseReferencedStore(ReferencedStore object)
+      public Adapter caseReference(Reference object)
       {
-        return createReferencedStoreAdapter();
+        return createReferenceAdapter();
       }
       @Override
-      public Adapter caseSelfReferencedStore(SelfReferencedStore object)
+      public Adapter caseSelfReference(SelfReference object)
       {
-        return createSelfReferencedStoreAdapter();
+        return createSelfReferenceAdapter();
       }
       @Override
       public Adapter caseBroadcast(Broadcast object)
@@ -254,6 +260,11 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
         return createConstantAdapter();
       }
       @Override
+      public Adapter casePredicateStoreReference(PredicateStoreReference object)
+      {
+        return createPredicateStoreReferenceAdapter();
+      }
+      @Override
       public Adapter caseIn(In object)
       {
         return createInAdapter();
@@ -262,6 +273,11 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseOut(Out object)
       {
         return createOutAdapter();
+      }
+      @Override
+      public Adapter caseOutStoreReference(OutStoreReference object)
+      {
+        return createOutStoreReferenceAdapter();
       }
       @Override
       public Adapter caseFreeVariable(FreeVariable object)
@@ -284,14 +300,29 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
         return createDistributedEventUpdateUniformAdapter();
       }
       @Override
-      public Adapter caseDistribution(Distribution object)
+      public Adapter caseUpdateStoreReference(UpdateStoreReference object)
       {
-        return createDistributionAdapter();
+        return createUpdateStoreReferenceAdapter();
       }
       @Override
-      public Adapter caseUniform(Uniform object)
+      public Adapter caseDistributionNatural(DistributionNatural object)
       {
-        return createUniformAdapter();
+        return createDistributionNaturalAdapter();
+      }
+      @Override
+      public Adapter caseDistributionReference(DistributionReference object)
+      {
+        return createDistributionReferenceAdapter();
+      }
+      @Override
+      public Adapter caseUniformNatural(UniformNatural object)
+      {
+        return createUniformNaturalAdapter();
+      }
+      @Override
+      public Adapter caseUniformReference(UniformReference object)
+      {
+        return createUniformReferenceAdapter();
       }
       @Override
       public Adapter caseUpdateSub(UpdateSub object)
@@ -312,6 +343,11 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseUpdateDiv(UpdateDiv object)
       {
         return createUpdateDivAdapter();
+      }
+      @Override
+      public Adapter caseUpdateExpressionStoreReference(UpdateExpressionStoreReference object)
+      {
+        return createUpdateExpressionStoreReferenceAdapter();
       }
       @Override
       public Adapter caseParallel(Parallel object)
@@ -561,31 +597,31 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.ReferencedStore <em>Referenced Store</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Reference <em>Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.ReferencedStore
+   * @see eu.quanticol.cASPA.Reference
    * @generated
    */
-  public Adapter createReferencedStoreAdapter()
+  public Adapter createReferenceAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.SelfReferencedStore <em>Self Referenced Store</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.SelfReference <em>Self Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.SelfReferencedStore
+   * @see eu.quanticol.cASPA.SelfReference
    * @generated
    */
-  public Adapter createSelfReferencedStoreAdapter()
+  public Adapter createSelfReferenceAdapter()
   {
     return null;
   }
@@ -771,6 +807,21 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.PredicateStoreReference <em>Predicate Store Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.PredicateStoreReference
+   * @generated
+   */
+  public Adapter createPredicateStoreReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.In <em>In</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -796,6 +847,21 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOutAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.OutStoreReference <em>Out Store Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.OutStoreReference
+   * @generated
+   */
+  public Adapter createOutStoreReferenceAdapter()
   {
     return null;
   }
@@ -861,31 +927,76 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Distribution <em>Distribution</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateStoreReference <em>Update Store Reference</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Distribution
+   * @see eu.quanticol.cASPA.UpdateStoreReference
    * @generated
    */
-  public Adapter createDistributionAdapter()
+  public Adapter createUpdateStoreReferenceAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Uniform <em>Uniform</em>}'.
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.DistributionNatural <em>Distribution Natural</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see eu.quanticol.cASPA.Uniform
+   * @see eu.quanticol.cASPA.DistributionNatural
    * @generated
    */
-  public Adapter createUniformAdapter()
+  public Adapter createDistributionNaturalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.DistributionReference <em>Distribution Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.DistributionReference
+   * @generated
+   */
+  public Adapter createDistributionReferenceAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UniformNatural <em>Uniform Natural</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UniformNatural
+   * @generated
+   */
+  public Adapter createUniformNaturalAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UniformReference <em>Uniform Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UniformReference
+   * @generated
+   */
+  public Adapter createUniformReferenceAdapter()
   {
     return null;
   }
@@ -946,6 +1057,21 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createUpdateDivAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.UpdateExpressionStoreReference <em>Update Expression Store Reference</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.UpdateExpressionStoreReference
+   * @generated
+   */
+  public Adapter createUpdateExpressionStoreReferenceAdapter()
   {
     return null;
   }

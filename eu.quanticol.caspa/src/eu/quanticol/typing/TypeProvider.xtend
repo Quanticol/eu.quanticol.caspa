@@ -1,8 +1,6 @@
 package eu.quanticol.typing
 
 import eu.quanticol.cASPA.Constant
-import eu.quanticol.cASPA.ReferencedStore
-import eu.quanticol.cASPA.SelfReferencedStore
 import eu.quanticol.cASPA.PredicateExpression
 import eu.quanticol.cASPA.PredicateOr
 import eu.quanticol.cASPA.PredicateAnd
@@ -24,6 +22,10 @@ import eu.quanticol.cASPA.Arguments
 import eu.quanticol.cASPA.StoreExpression
 import eu.quanticol.cASPA.Store
 import eu.quanticol.cASPA.LocalSingleEventUpdate
+import eu.quanticol.cASPA.FreeVariable
+import eu.quanticol.cASPA.SelfReference
+import eu.quanticol.cASPA.Reference
+
 
 class TypeProvider {
 	
@@ -53,8 +55,8 @@ class TypeProvider {
 			PredicateNot:			boolConstantType
 			Constant:				constantType
 			Store:					(e as StoreExpression)?.typeFor
-			ReferencedStore:		(e as StoreExpression)?.typeFor
-			SelfReferencedStore:	(e as StoreExpression)?.typeFor
+			Reference:				(e as StoreExpression)?.typeFor
+			SelfReference:			(e as StoreExpression)?.typeFor
 		}
 	}
 	
@@ -66,8 +68,8 @@ class TypeProvider {
 	def BaseType typeFor(StoreExpression s){
 		switch(s){
 			Store:					constantType
-			SelfReferencedStore:	constantType
-			ReferencedStore:		constantType
+			SelfReference:			constantType
+			Reference:				constantType
 		}
 	}
 	
@@ -77,9 +79,8 @@ class TypeProvider {
 			UpdatePlu:			constantType
 			UpdateMul:			constantType
 			UpdateDiv:			constantType
-			Store:					(e as StoreExpression)?.typeFor
-			ReferencedStore:		(e as StoreExpression)?.typeFor
-			SelfReferencedStore:	(e as StoreExpression)?.typeFor
+			Store:				(e as StoreExpression)?.typeFor
+			FreeVariable:		constantType
 		}
 	}
 	

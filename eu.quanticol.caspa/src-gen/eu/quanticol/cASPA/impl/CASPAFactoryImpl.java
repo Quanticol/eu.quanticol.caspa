@@ -13,13 +13,15 @@ import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
-import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.DistributionNatural;
+import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Out;
+import eu.quanticol.cASPA.OutStoreReference;
 import eu.quanticol.cASPA.Parallel;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -32,20 +34,24 @@ import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
+import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
+import eu.quanticol.cASPA.Reference;
 import eu.quanticol.cASPA.ReferencedProcess;
-import eu.quanticol.cASPA.ReferencedStore;
-import eu.quanticol.cASPA.SelfReferencedStore;
+import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
-import eu.quanticol.cASPA.Uniform;
+import eu.quanticol.cASPA.UniformNatural;
+import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateExpressionStoreReference;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
+import eu.quanticol.cASPA.UpdateStoreReference;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
 
@@ -122,8 +128,8 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.TERM: return createTerm();
       case CASPAPackage.BOOLEAN_CONSTANT: return createBooleanConstant();
       case CASPAPackage.STORE: return createStore();
-      case CASPAPackage.REFERENCED_STORE: return createReferencedStore();
-      case CASPAPackage.SELF_REFERENCED_STORE: return createSelfReferencedStore();
+      case CASPAPackage.REFERENCE: return createReference();
+      case CASPAPackage.SELF_REFERENCE: return createSelfReference();
       case CASPAPackage.BROADCAST: return createBroadcast();
       case CASPAPackage.UNICAST: return createUnicast();
       case CASPAPackage.PREDICATE_OR: return createPredicateOr();
@@ -136,18 +142,24 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.PREDICATE_DIV: return createPredicateDiv();
       case CASPAPackage.PREDICATE_NOT: return createPredicateNot();
       case CASPAPackage.CONSTANT: return createConstant();
+      case CASPAPackage.PREDICATE_STORE_REFERENCE: return createPredicateStoreReference();
       case CASPAPackage.IN: return createIn();
       case CASPAPackage.OUT: return createOut();
+      case CASPAPackage.OUT_STORE_REFERENCE: return createOutStoreReference();
       case CASPAPackage.FREE_VARIABLE: return createFreeVariable();
       case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE: return createLocalSingleEventUpdate();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY: return createDistributedEventUpdateProbability();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_UNIFORM: return createDistributedEventUpdateUniform();
-      case CASPAPackage.DISTRIBUTION: return createDistribution();
-      case CASPAPackage.UNIFORM: return createUniform();
+      case CASPAPackage.UPDATE_STORE_REFERENCE: return createUpdateStoreReference();
+      case CASPAPackage.DISTRIBUTION_NATURAL: return createDistributionNatural();
+      case CASPAPackage.DISTRIBUTION_REFERENCE: return createDistributionReference();
+      case CASPAPackage.UNIFORM_NATURAL: return createUniformNatural();
+      case CASPAPackage.UNIFORM_REFERENCE: return createUniformReference();
       case CASPAPackage.UPDATE_SUB: return createUpdateSub();
       case CASPAPackage.UPDATE_PLU: return createUpdatePlu();
       case CASPAPackage.UPDATE_MUL: return createUpdateMul();
       case CASPAPackage.UPDATE_DIV: return createUpdateDiv();
+      case CASPAPackage.UPDATE_EXPRESSION_STORE_REFERENCE: return createUpdateExpressionStoreReference();
       case CASPAPackage.PARALLEL: return createParallel();
       case CASPAPackage.CHOICE: return createChoice();
       case CASPAPackage.LEAF: return createLeaf();
@@ -307,10 +319,10 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public ReferencedStore createReferencedStore()
+  public Reference createReference()
   {
-    ReferencedStoreImpl referencedStore = new ReferencedStoreImpl();
-    return referencedStore;
+    ReferenceImpl reference = new ReferenceImpl();
+    return reference;
   }
 
   /**
@@ -318,10 +330,10 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public SelfReferencedStore createSelfReferencedStore()
+  public SelfReference createSelfReference()
   {
-    SelfReferencedStoreImpl selfReferencedStore = new SelfReferencedStoreImpl();
-    return selfReferencedStore;
+    SelfReferenceImpl selfReference = new SelfReferenceImpl();
+    return selfReference;
   }
 
   /**
@@ -461,6 +473,17 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public PredicateStoreReference createPredicateStoreReference()
+  {
+    PredicateStoreReferenceImpl predicateStoreReference = new PredicateStoreReferenceImpl();
+    return predicateStoreReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public In createIn()
   {
     InImpl in = new InImpl();
@@ -476,6 +499,17 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     OutImpl out = new OutImpl();
     return out;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public OutStoreReference createOutStoreReference()
+  {
+    OutStoreReferenceImpl outStoreReference = new OutStoreReferenceImpl();
+    return outStoreReference;
   }
 
   /**
@@ -527,10 +561,10 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Distribution createDistribution()
+  public UpdateStoreReference createUpdateStoreReference()
   {
-    DistributionImpl distribution = new DistributionImpl();
-    return distribution;
+    UpdateStoreReferenceImpl updateStoreReference = new UpdateStoreReferenceImpl();
+    return updateStoreReference;
   }
 
   /**
@@ -538,10 +572,43 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Uniform createUniform()
+  public DistributionNatural createDistributionNatural()
   {
-    UniformImpl uniform = new UniformImpl();
-    return uniform;
+    DistributionNaturalImpl distributionNatural = new DistributionNaturalImpl();
+    return distributionNatural;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public DistributionReference createDistributionReference()
+  {
+    DistributionReferenceImpl distributionReference = new DistributionReferenceImpl();
+    return distributionReference;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UniformNatural createUniformNatural()
+  {
+    UniformNaturalImpl uniformNatural = new UniformNaturalImpl();
+    return uniformNatural;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UniformReference createUniformReference()
+  {
+    UniformReferenceImpl uniformReference = new UniformReferenceImpl();
+    return uniformReference;
   }
 
   /**
@@ -586,6 +653,17 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     UpdateDivImpl updateDiv = new UpdateDivImpl();
     return updateDiv;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public UpdateExpressionStoreReference createUpdateExpressionStoreReference()
+  {
+    UpdateExpressionStoreReferenceImpl updateExpressionStoreReference = new UpdateExpressionStoreReferenceImpl();
+    return updateExpressionStoreReference;
   }
 
   /**

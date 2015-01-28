@@ -501,10 +501,10 @@ public class ModelParserTest {
 		
 		//people actions
 		Q = B;
-		B = move*[False]<1>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<1>.WS;
-		WS = ret[zone == this.zone](bikes){this.bikes := this.bikes + bikes}.P;
-		P = go*[False]<1>.WB;
-		WB = get[zone == this.zone](slots){this.slots := this.slots + slots}.B;
+		B = move*[False]<>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<>.WS;
+		WS = ret[zone == this.zone](b){this.bikes := this.bikes + b}.P;
+		P = go*[False]<>.WB;
+		WB = get[zone == this.zone](s){this.slots := this.slots + s}.B;
 		'''.parse.assertNoErrors
 	}
 	
@@ -608,7 +608,7 @@ public class ModelParserTest {
 		 
 		//can miss out updates:
 		T = msg1[True]<this.a>.P;
-		W = msg1[True](a).Q;
+		W = msg1[True]().Q;
 		'''.parse.assertNoErrors
 	}
 	

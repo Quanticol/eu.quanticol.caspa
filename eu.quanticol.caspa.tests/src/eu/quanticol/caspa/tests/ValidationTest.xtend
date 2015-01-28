@@ -31,6 +31,22 @@ class ValidationTest {
 			"Free variable names cannot be the same as local store names.")
 	}
 	
+	@Test
+	def void testSelfReferencePredicate(){
+		'''
+		(Q,{a:=1});
+		(Q,{a:=2, z:=3});
+		Q = R;
+		//S = T;
+		R = action[this.c < 1]<this.d>{this.e := this.f, 
+		this.g := U(this.h), 
+		this.i := Pr(0.25:this.j)}.Q;
+		//T = [this.b > 0]T;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.reference,
+			CASPAValidator::SELF_REFERENCE_HAS_REFERENCE,
+			"This reference does not refer to a declared store.")
+	}
+	
 //	
 //	@Test
 //	def void testStoreIsConstant(){

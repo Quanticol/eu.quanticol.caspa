@@ -29,7 +29,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl#getAssignee <em>Assignee</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl#getAssigner <em>Assigner</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.impl.DistributedEventUpdateProbabilityImpl#getDistribution <em>Distribution</em>}</li>
  * </ul>
  * </p>
@@ -39,14 +40,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
 public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implements DistributedEventUpdateProbability
 {
   /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' containment reference.
+   * The cached value of the '{@link #getAssignee() <em>Assignee</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getName()
+   * @see #getAssignee()
    * @generated
    * @ordered
    */
-  protected StoreExpression name;
+  protected StoreExpression assignee;
+
+  /**
+   * The cached value of the '{@link #getAssigner() <em>Assigner</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAssigner()
+   * @generated
+   * @ordered
+   */
+  protected EList<Updates> assigner;
 
   /**
    * The cached value of the '{@link #getDistribution() <em>Distribution</em>}' containment reference list.
@@ -84,9 +95,9 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public StoreExpression getName()
+  public StoreExpression getAssignee()
   {
-    return name;
+    return assignee;
   }
 
   /**
@@ -94,13 +105,13 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetName(StoreExpression newName, NotificationChain msgs)
+  public NotificationChain basicSetAssignee(StoreExpression newAssignee, NotificationChain msgs)
   {
-    StoreExpression oldName = name;
-    name = newName;
+    StoreExpression oldAssignee = assignee;
+    assignee = newAssignee;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME, oldName, newName);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE, oldAssignee, newAssignee);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -111,20 +122,34 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setName(StoreExpression newName)
+  public void setAssignee(StoreExpression newAssignee)
   {
-    if (newName != name)
+    if (newAssignee != assignee)
     {
       NotificationChain msgs = null;
-      if (name != null)
-        msgs = ((InternalEObject)name).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME, null, msgs);
-      if (newName != null)
-        msgs = ((InternalEObject)newName).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME, null, msgs);
-      msgs = basicSetName(newName, msgs);
+      if (assignee != null)
+        msgs = ((InternalEObject)assignee).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE, null, msgs);
+      if (newAssignee != null)
+        msgs = ((InternalEObject)newAssignee).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE, null, msgs);
+      msgs = basicSetAssignee(newAssignee, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME, newName, newName));
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE, newAssignee, newAssignee));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Updates> getAssigner()
+  {
+    if (assigner == null)
+    {
+      assigner = new EObjectContainmentEList<Updates>(Updates.class, this, CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNER);
+    }
+    return assigner;
   }
 
   /**
@@ -151,8 +176,10 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
   {
     switch (featureID)
     {
-      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME:
-        return basicSetName(null, msgs);
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE:
+        return basicSetAssignee(null, msgs);
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNER:
+        return ((InternalEList<?>)getAssigner()).basicRemove(otherEnd, msgs);
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION:
         return ((InternalEList<?>)getDistribution()).basicRemove(otherEnd, msgs);
     }
@@ -169,8 +196,10 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
   {
     switch (featureID)
     {
-      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME:
-        return getName();
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE:
+        return getAssignee();
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNER:
+        return getAssigner();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION:
         return getDistribution();
     }
@@ -188,8 +217,12 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
   {
     switch (featureID)
     {
-      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME:
-        setName((StoreExpression)newValue);
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE:
+        setAssignee((StoreExpression)newValue);
+        return;
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNER:
+        getAssigner().clear();
+        getAssigner().addAll((Collection<? extends Updates>)newValue);
         return;
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION:
         getDistribution().clear();
@@ -209,8 +242,11 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
   {
     switch (featureID)
     {
-      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME:
-        setName((StoreExpression)null);
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE:
+        setAssignee((StoreExpression)null);
+        return;
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNER:
+        getAssigner().clear();
         return;
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION:
         getDistribution().clear();
@@ -229,8 +265,10 @@ public class DistributedEventUpdateProbabilityImpl extends UpdatesImpl implement
   {
     switch (featureID)
     {
-      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__NAME:
-        return name != null;
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNEE:
+        return assignee != null;
+      case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__ASSIGNER:
+        return assigner != null && !assigner.isEmpty();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY__DISTRIBUTION:
         return distribution != null && !distribution.isEmpty();
     }

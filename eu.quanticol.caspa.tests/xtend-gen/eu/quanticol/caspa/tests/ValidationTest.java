@@ -47,4 +47,34 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+  
+  @Test
+  public void testSelfReferencePredicate() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a:=2, z:=3});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("//S = T;");
+      _builder.newLine();
+      _builder.append("R = action[this.c < 1]<this.d>{this.e := this.f, ");
+      _builder.newLine();
+      _builder.append("this.g := U(this.h), ");
+      _builder.newLine();
+      _builder.append("this.i := Pr(0.25:this.j)}.Q;");
+      _builder.newLine();
+      _builder.append("//T = [this.b > 0]T;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _reference = CASPAPackage.eINSTANCE.getReference();
+      this._validationTestHelper.assertError(_parse, _reference, 
+        CASPAValidator.SELF_REFERENCE_HAS_REFERENCE, 
+        "This reference does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

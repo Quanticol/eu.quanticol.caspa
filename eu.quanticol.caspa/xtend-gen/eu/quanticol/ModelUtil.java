@@ -1,5 +1,6 @@
 package eu.quanticol;
 
+import com.google.common.base.Objects;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
@@ -8,7 +9,7 @@ import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
-import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.DistributionNatural;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
@@ -28,24 +29,27 @@ import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
+import eu.quanticol.cASPA.Reference;
 import eu.quanticol.cASPA.ReferencedProcess;
-import eu.quanticol.cASPA.ReferencedStore;
-import eu.quanticol.cASPA.SelfReferencedStore;
+import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Term;
-import eu.quanticol.cASPA.Uniform;
+import eu.quanticol.cASPA.UniformNatural;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class ModelUtil {
@@ -232,15 +236,15 @@ public class ModelUtil {
       }
     }
     if (!_matched) {
-      if (pe instanceof ReferencedStore) {
+      if (pe instanceof Reference) {
         _matched=true;
-        _switchResult = this.cTString(((ReferencedStore) pe));
+        _switchResult = this.cTString(((Reference) pe));
       }
     }
     if (!_matched) {
-      if (pe instanceof SelfReferencedStore) {
+      if (pe instanceof SelfReference) {
         _matched=true;
-        _switchResult = this.cTString(((SelfReferencedStore) pe));
+        _switchResult = this.cTString(((SelfReference) pe));
       }
     }
     return _switchResult.toString();
@@ -307,13 +311,13 @@ public class ModelUtil {
       }
     }
     if (!_matched) {
-      if (a instanceof SelfReferencedStore) {
+      if (a instanceof SelfReference) {
         _matched=true;
         _switchResult = this.cTString(((StoreExpression) a));
       }
     }
     if (!_matched) {
-      if (a instanceof ReferencedStore) {
+      if (a instanceof Reference) {
         _matched=true;
         _switchResult = this.cTString(((StoreExpression) a));
       }
@@ -346,17 +350,17 @@ public class ModelUtil {
       }
     }
     if (!_matched) {
-      if (s instanceof SelfReferencedStore) {
+      if (s instanceof SelfReference) {
         _matched=true;
-        Store _ref = ((SelfReferencedStore)s).getRef();
-        _switchResult = this.cTString(((StoreExpression) _ref));
+        String _name = ((SelfReference)s).getName();
+        _switchResult = ("" + _name);
       }
     }
     if (!_matched) {
-      if (s instanceof ReferencedStore) {
+      if (s instanceof Reference) {
         _matched=true;
-        Store _ref = ((ReferencedStore)s).getRef();
-        _switchResult = this.cTString(((StoreExpression) _ref));
+        String _name = ((Reference)s).getName();
+        _switchResult = ("" + _name);
       }
     }
     return _switchResult.toString();
@@ -383,11 +387,11 @@ public class ModelUtil {
   }
   
   public String cTString(final LocalSingleEventUpdate u) {
-    StoreExpression _name = u.getName();
-    String _cTString = this.cTString(_name);
+    StoreExpression _assignee = u.getAssignee();
+    String _cTString = this.cTString(_assignee);
     String _plus = (_cTString + " := ");
-    UpdateExpression _expression = u.getExpression();
-    String _cTString_1 = this.cTString(_expression);
+    UpdateExpression _assigner = u.getAssigner();
+    String _cTString_1 = this.cTString(_assigner);
     return (_plus + _cTString_1);
   }
   
@@ -404,8 +408,8 @@ public class ModelUtil {
         }
         /* (_xblockexpression_1 + ", "); */
       }
-      StoreExpression _name = u.getName();
-      String _cTString = this.cTString(_name);
+      StoreExpression _assignee = u.getAssignee();
+      String _cTString = this.cTString(_assignee);
       String _plus = (_cTString + " :=  Pr( ");
       String _plus_1 = (_plus + temp);
       _xblockexpression = (_plus_1 + " )");
@@ -426,8 +430,8 @@ public class ModelUtil {
         }
         /* (_xblockexpression_1 + ", "); */
       }
-      StoreExpression _name = u.getName();
-      String _cTString = this.cTString(_name);
+      StoreExpression _assignee = u.getAssignee();
+      String _cTString = this.cTString(_assignee);
       String _plus = (_cTString + " :=  U( ");
       String _plus_1 = (_plus + temp);
       _xblockexpression = (_plus_1 + " )");
@@ -435,7 +439,7 @@ public class ModelUtil {
     return _xblockexpression;
   }
   
-  public String cTString(final Distribution u) {
+  public String cTString(final DistributionNatural u) {
     String _xblockexpression = null;
     {
       double _prob = u.getProb();
@@ -448,7 +452,7 @@ public class ModelUtil {
     return _xblockexpression;
   }
   
-  public String cTString(final Uniform u) {
+  public String cTString(final UniformNatural u) {
     int _expression = u.getExpression();
     return Integer.valueOf(_expression).toString();
   }
@@ -507,13 +511,13 @@ public class ModelUtil {
       }
     }
     if (!_matched) {
-      if (ue instanceof ReferencedStore) {
+      if (ue instanceof Reference) {
         _matched=true;
         _switchResult = this.cTString(((StoreExpression) ue));
       }
     }
     if (!_matched) {
-      if (ue instanceof SelfReferencedStore) {
+      if (ue instanceof SelfReference) {
         _matched=true;
         _switchResult = this.cTString(((StoreExpression) ue));
       }
@@ -630,5 +634,96 @@ public class ModelUtil {
         }
       }
     }
+  }
+  
+  public Set<eu.quanticol.cASPA.Process> getParentProcesses(final StoreExpression sr) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(sr, Model.class);
+    EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
+    eu.quanticol.cASPA.Process p = EcoreUtil2.<eu.quanticol.cASPA.Process>getContainerOfType(sr, eu.quanticol.cASPA.Process.class);
+    Set<eu.quanticol.cASPA.Process> refProcesses = new HashSet<eu.quanticol.cASPA.Process>();
+    Set<eu.quanticol.cASPA.Process> lastRefProcesses = new HashSet<eu.quanticol.cASPA.Process>();
+    InputOutput.<eu.quanticol.cASPA.Process>println(p);
+    refProcesses.add(p);
+    while ((refProcesses.size() > lastRefProcesses.size())) {
+      {
+        for (final eu.quanticol.cASPA.Process rp : refProcesses) {
+          lastRefProcesses.add(rp);
+        }
+        for (final eu.quanticol.cASPA.Process process : processes) {
+          for (final eu.quanticol.cASPA.Process rp_1 : lastRefProcesses) {
+            ProcessExpression _value = process.getValue();
+            this.getReferencedProcess(_value, refProcesses, rp_1);
+          }
+        }
+      }
+    }
+    InputOutput.<Set<eu.quanticol.cASPA.Process>>println(refProcesses);
+    return refProcesses;
+  }
+  
+  public HashMap<Integer, Term> getParentTermsHash(final Set<eu.quanticol.cASPA.Process> processes) {
+    eu.quanticol.cASPA.Process _get = ((eu.quanticol.cASPA.Process[])Conversions.unwrapArray(processes, eu.quanticol.cASPA.Process.class))[0];
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(_get, Model.class);
+    EList<Term> terms = _containerOfType.getTerms();
+    Set<String> names = new HashSet<String>();
+    HashMap<Integer, Term> results = new HashMap<Integer, Term>();
+    Integer count = Integer.valueOf(0);
+    for (final eu.quanticol.cASPA.Process process : processes) {
+      String _name = process.getName();
+      names.add(_name);
+    }
+    for (final Term term : terms) {
+      for (final String name : names) {
+        ProcessExpression _ref = term.getRef();
+        eu.quanticol.cASPA.Process _ref_1 = ((ReferencedProcess) _ref).getRef();
+        String _name_1 = _ref_1.getName();
+        boolean _equals = _name_1.equals(name);
+        if (_equals) {
+          results.put(count, term);
+          count++;
+        }
+      }
+    }
+    return results;
+  }
+  
+  public HashMap<Integer, ArrayList<String>> getStoreNamesFromTermsHashMap(final HashMap<Integer, Term> terms) {
+    HashMap<Integer, ArrayList<String>> names = new HashMap<Integer, ArrayList<String>>();
+    Set<Integer> _keySet = terms.keySet();
+    for (final Integer i : _keySet) {
+      Term _get = terms.get(i);
+      EList<StoreExpression> _stores = _get.getStores();
+      for (final StoreExpression store : _stores) {
+        {
+          ArrayList<String> _get_1 = names.get(i);
+          boolean _equals = Objects.equal(_get_1, null);
+          if (_equals) {
+            ArrayList<String> _arrayList = new ArrayList<String>();
+            names.put(i, _arrayList);
+          }
+          ArrayList<String> _get_2 = names.get(i);
+          String _name = ((Store) store).getName();
+          _get_2.add(_name);
+        }
+      }
+    }
+    return names;
+  }
+  
+  public boolean isInMap(final String name, final HashMap<Integer, ArrayList<String>> theList) {
+    boolean result = true;
+    Set<Integer> _keySet = theList.keySet();
+    for (final Integer i : _keySet) {
+      boolean _and = false;
+      if (!result) {
+        _and = false;
+      } else {
+        ArrayList<String> _get = theList.get(i);
+        boolean _contains = _get.contains(name);
+        _and = _contains;
+      }
+      result = _and;
+    }
+    return result;
   }
 }

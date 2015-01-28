@@ -14,6 +14,7 @@ Store returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Store} name=LOWER ":=" value=Natural
 ;
 
+/*
 ReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{ReferencedStore} ref=[Store|LOWER]
 ;
@@ -22,9 +23,21 @@ SelfReferencedStore returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{SelfReferencedStore}   "this."ref=[Store|LOWER]
 ;
 
-StoreRef returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	ReferencedStore | SelfReferencedStore
+FreeVariableRef returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{FreeVariableRef} "$"ref=[FreeVariable|LOWER]
+;*/
+
+Reference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{Reference} name=LOWER
 ;
+
+SelfReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{SelfReference} "this."name=LOWER
+;
+
+Ref returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	Reference | SelfReference
+; 
 
 /**  Old Store expressions
 StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -166,8 +179,11 @@ PredicatePrimary returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 PredicateAtomic returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Constant} 	value=Natural |
 	{BooleanConstant} value=Bool |
-	ReferencedStore |
-	SelfReferencedStore
+	PredicateStoreReference
+;
+
+PredicateStoreReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{PredicateStoreReference} ref=Ref
 ;
 
 //ARGUMENTS
@@ -187,8 +203,12 @@ OutArguments returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 Expressions returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
-	StoreRef |
+	OutStoreReference |
 	{Constant} 	value=Natural
+;
+
+OutStoreReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{OutStoreReference} ref=Ref
 ;
 
 Variables returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -202,7 +222,7 @@ FreeVariable returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 
 //UPDATES
 Updates returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Updates} "{" updates+=Update ( ";" updates+=Update+)* "}"
+	{Updates} "{" updates+=Update ( "," updates+=Update+)* "}"
 ;
 
 
@@ -212,20 +232,34 @@ Update returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 SingleEventUpdate returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{LocalSingleEventUpdate} name=StoreRef ":=" expression=UpdateExpression
+	{LocalSingleEventUpdate} assignee=UpdateReference ":=" assigner=UpdateExpression
 ;
 
 DistributedEventUpdate returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{DistributedEventUpdateProbability} name=StoreRef ":=" "Pr" "(" distribution+=Distribution ( "," distribution+=Distribution+)* ")" |
-	{DistributedEventUpdateUniform} name=StoreRef ":=" "U" "(" distribution+=Uniform ( "," distribution+=Uniform+)* ")"
+	{DistributedEventUpdateProbability} assignee=UpdateReference ":=" "Pr" "(" assigner+=Distribution ( "," distribution+=Distribution+)* ")" |
+	{DistributedEventUpdateUniform} assignee=UpdateReference ":=" "U" "(" assigner+=Uniform ( "," distribution+=Uniform+)* ")"
+;
+
+UpdateReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{UpdateStoreReference} ref=Ref
 ;
 
 Distribution returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Distribution} prob=Double ":" expression=Natural
+	{DistributionNatural} prob=Double ":" expression=Natural |
+	DistributionReference 
+;
+
+DistributionReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{DistributionReference} prob=Double ":" ref=Ref
 ;
 
 Uniform returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
-	{Uniform} expression=Natural
+	{UniformNatural} expression=Natural |
+	UniformReference
+;
+
+UniformReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{UniformReference} ref=Ref
 ;
 
 UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -263,9 +297,12 @@ UpdatePrimary returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 UpdateAtomic returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Constant} 	value=Natural |
-	StoreRef
+	UpdateExpressionStoreReference
 ;
 
+UpdateExpressionStoreReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{UpdateExpressionStoreReference} ref=Ref 
+;
 
 //PROCESSES
 Process hidden(ML_COMMENT,SL_COMMENT,WS):

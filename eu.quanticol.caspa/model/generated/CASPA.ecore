@@ -7,7 +7,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="processes" upperBound="-1"
         eType="#//Process" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StoreExpression" eSuperTypes="#//PredicateExpression #//Arguments #//UpdateExpression"/>
+  <eClassifiers xsi:type="ecore:EClass" name="StoreExpression" eSuperTypes="#//PredicateExpression #//Arguments #//Updates #//UpdateExpression"/>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="predicate" eType="#//Predicate"
@@ -48,11 +48,11 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ReferencedStore" eSuperTypes="#//StoreExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Store"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Reference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SelfReferencedStore" eSuperTypes="#//StoreExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//Store"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SelfReference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Broadcast" eSuperTypes="#//Action"/>
   <eClassifiers xsi:type="ecore:EClass" name="Unicast" eSuperTypes="#//Action"/>
@@ -113,6 +113,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//PredicateExpression #//Arguments #//UpdateExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PredicateStoreReference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//StoreExpression"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="In" eSuperTypes="#//Arguments">
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
         eType="#//Arguments" containment="true"/>
@@ -121,33 +125,54 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="expressions" upperBound="-1"
         eType="#//Arguments" containment="true"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OutStoreReference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//StoreExpression"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="FreeVariable" eSuperTypes="#//Arguments">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="LocalSingleEventUpdate" eSuperTypes="#//Updates">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//StoreExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignee" eType="#//StoreExpression"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//UpdateExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assigner" eType="#//UpdateExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DistributedEventUpdateProbability" eSuperTypes="#//Updates">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//StoreExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignee" eType="#//StoreExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assigner" upperBound="-1"
+        eType="#//Updates" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="distribution" upperBound="-1"
         eType="#//Updates" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DistributedEventUpdateUniform" eSuperTypes="#//Updates">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="name" eType="#//StoreExpression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignee" eType="#//StoreExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assigner" upperBound="-1"
+        eType="#//Updates" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="distribution" upperBound="-1"
         eType="#//Updates" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Distribution" eSuperTypes="#//Updates">
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateStoreReference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//StoreExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DistributionNatural" eSuperTypes="#//Updates">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="prob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Uniform" eSuperTypes="#//Updates">
+  <eClassifiers xsi:type="ecore:EClass" name="DistributionReference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prob" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//StoreExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UniformNatural" eSuperTypes="#//Updates">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="expression" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UniformReference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//StoreExpression"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="UpdateSub" eSuperTypes="#//UpdateExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//UpdateExpression"
@@ -171,6 +196,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//UpdateExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//UpdateExpression"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UpdateExpressionStoreReference" eSuperTypes="#//StoreExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//StoreExpression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parallel" eSuperTypes="#//ProcessExpression">

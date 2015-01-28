@@ -2,6 +2,7 @@ package eu.quanticol.typing;
 
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Constant;
+import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -14,8 +15,8 @@ import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateSub;
-import eu.quanticol.cASPA.ReferencedStore;
-import eu.quanticol.cASPA.SelfReferencedStore;
+import eu.quanticol.cASPA.Reference;
+import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.UpdateDiv;
@@ -120,7 +121,7 @@ public class TypeProvider {
       }
     }
     if (!_matched) {
-      if (e instanceof ReferencedStore) {
+      if (e instanceof Reference) {
         _matched=true;
         BaseType _typeFor = null;
         if (((StoreExpression) e)!=null) {
@@ -130,7 +131,7 @@ public class TypeProvider {
       }
     }
     if (!_matched) {
-      if (e instanceof SelfReferencedStore) {
+      if (e instanceof SelfReference) {
         _matched=true;
         BaseType _typeFor = null;
         if (((StoreExpression) e)!=null) {
@@ -156,13 +157,13 @@ public class TypeProvider {
       }
     }
     if (!_matched) {
-      if (s instanceof SelfReferencedStore) {
+      if (s instanceof SelfReference) {
         _matched=true;
         _switchResult = TypeProvider.constantType;
       }
     }
     if (!_matched) {
-      if (s instanceof ReferencedStore) {
+      if (s instanceof Reference) {
         _matched=true;
         _switchResult = TypeProvider.constantType;
       }
@@ -208,23 +209,9 @@ public class TypeProvider {
       }
     }
     if (!_matched) {
-      if (e instanceof ReferencedStore) {
+      if (e instanceof FreeVariable) {
         _matched=true;
-        BaseType _typeFor = null;
-        if (((StoreExpression) e)!=null) {
-          _typeFor=this.typeFor(((StoreExpression) e));
-        }
-        _switchResult = _typeFor;
-      }
-    }
-    if (!_matched) {
-      if (e instanceof SelfReferencedStore) {
-        _matched=true;
-        BaseType _typeFor = null;
-        if (((StoreExpression) e)!=null) {
-          _typeFor=this.typeFor(((StoreExpression) e));
-        }
-        _switchResult = _typeFor;
+        _switchResult = TypeProvider.constantType;
       }
     }
     return _switchResult;

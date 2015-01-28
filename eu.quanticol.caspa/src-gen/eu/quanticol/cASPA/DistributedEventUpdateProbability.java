@@ -12,7 +12,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.DistributedEventUpdateProbability#getName <em>Name</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.DistributedEventUpdateProbability#getAssignee <em>Assignee</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.DistributedEventUpdateProbability#getAssigner <em>Assigner</em>}</li>
  *   <li>{@link eu.quanticol.cASPA.DistributedEventUpdateProbability#getDistribution <em>Distribution</em>}</li>
  * </ul>
  * </p>
@@ -24,30 +25,46 @@ import org.eclipse.emf.common.util.EList;
 public interface DistributedEventUpdateProbability extends Updates
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Assignee</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Assignee</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(StoreExpression)
-   * @see eu.quanticol.cASPA.CASPAPackage#getDistributedEventUpdateProbability_Name()
+   * @return the value of the '<em>Assignee</em>' containment reference.
+   * @see #setAssignee(StoreExpression)
+   * @see eu.quanticol.cASPA.CASPAPackage#getDistributedEventUpdateProbability_Assignee()
    * @model containment="true"
    * @generated
    */
-  StoreExpression getName();
+  StoreExpression getAssignee();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.DistributedEventUpdateProbability#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.DistributedEventUpdateProbability#getAssignee <em>Assignee</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Assignee</em>' containment reference.
+   * @see #getAssignee()
    * @generated
    */
-  void setName(StoreExpression value);
+  void setAssignee(StoreExpression value);
+
+  /**
+   * Returns the value of the '<em><b>Assigner</b></em>' containment reference list.
+   * The list contents are of type {@link eu.quanticol.cASPA.Updates}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Assigner</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Assigner</em>' containment reference list.
+   * @see eu.quanticol.cASPA.CASPAPackage#getDistributedEventUpdateProbability_Assigner()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Updates> getAssigner();
 
   /**
    * Returns the value of the '<em><b>Distribution</b></em>' containment reference list.

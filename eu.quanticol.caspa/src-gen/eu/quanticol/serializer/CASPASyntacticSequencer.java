@@ -30,7 +30,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_Term_CommaKeyword_5_0_q;
 	protected AbstractElementAlias match_UpdatePrimary_LeftParenthesisKeyword_0_0_a;
 	protected AbstractElementAlias match_UpdatePrimary_LeftParenthesisKeyword_0_0_p;
-	protected AbstractElementAlias match_Updates_SemicolonKeyword_3_0_q;
+	protected AbstractElementAlias match_Updates_CommaKeyword_3_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
@@ -47,7 +47,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 		match_Term_CommaKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getTermAccess().getCommaKeyword_5_0());
 		match_UpdatePrimary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getUpdatePrimaryAccess().getLeftParenthesisKeyword_0_0());
 		match_UpdatePrimary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getUpdatePrimaryAccess().getLeftParenthesisKeyword_0_0());
-		match_Updates_SemicolonKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getUpdatesAccess().getSemicolonKeyword_3_0());
+		match_Updates_CommaKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getUpdatesAccess().getCommaKeyword_3_0());
 	}
 	
 	@Override
@@ -86,8 +86,8 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_UpdatePrimary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_UpdatePrimary_LeftParenthesisKeyword_0_0_p.equals(syntax))
 				emit_UpdatePrimary_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Updates_SemicolonKeyword_3_0_q.equals(syntax))
-				emit_Updates_SemicolonKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Updates_CommaKeyword_3_0_q.equals(syntax))
+				emit_Updates_CommaKeyword_3_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -190,9 +190,9 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	/**
 	 * Syntax:
-	 *     ';'?
+	 *     ','?
 	 */
-	protected void emit_Updates_SemicolonKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Updates_CommaKeyword_3_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -28,13 +28,26 @@ import eu.quanticol.typing.BaseType
 import eu.quanticol.typing.TypeProvider
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.validation.Check
-
-import static org.eclipse.xtext.EcoreUtil2.*
+import static extension org.eclipse.xtext.EcoreUtil2.*
+import static org.eclipse.emf.ecore.util.EcoreUtil.*
 import eu.quanticol.cASPA.In
 import eu.quanticol.cASPA.FreeVariable
 import eu.quanticol.ModelUtil
 import java.util.Set
 import java.util.HashSet
+import eu.quanticol.cASPA.SelfReference
+import eu.quanticol.cASPA.Action
+import eu.quanticol.cASPA.Arguments
+import eu.quanticol.cASPA.Out
+import eu.quanticol.cASPA.DistributedEventUpdateProbability
+import eu.quanticol.cASPA.DistributedEventUpdateUniform
+import eu.quanticol.cASPA.Updates
+import eu.quanticol.cASPA.StoreExpression
+import eu.quanticol.cASPA.PredicateStoreReference
+import eu.quanticol.cASPA.OutStoreReference
+import eu.quanticol.cASPA.UpdateExpressionStoreReference
+import eu.quanticol.cASPA.DistributionReference
+import eu.quanticol.cASPA.UniformReference
 
 /**
  * Custom validation rules. 
@@ -50,6 +63,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	public static val PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique"
 	public static val WRONG_TYPE = "eu.quanticol.WrongType"
 	public static val FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique"
+	public static val SELF_REFERENCE_HAS_REFERENCE = "eu.quanticol.selfReferenceHasReference"
 	
 	@Check
 	def checkProcessNamesUnique(Process process){
@@ -160,7 +174,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	
 	@Check
 	def checkType(LocalSingleEventUpdate update){
-		checkExpectedInt(update.expression, CASPAPackage.Literals::LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION)
+		checkExpectedInt(update.assigner, CASPAPackage.Literals::LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER)
 	}
 	
 
@@ -233,11 +247,42 @@ class CASPAValidator extends AbstractCASPAValidator  {
 			CASPAPackage::eINSTANCE.in_Expressions,
 			FREE_VARIABLES_UNIQUE)
 		}
-		
-		
-		
-		
-			
 	}
-
+	
+	@Check
+	def checkSelfReferences(StoreExpression sr){
+		
+		var String result = ""
+		
+		switch(sr){
+			PredicateStoreReference: sr.test
+			OutStoreReference: println("osr " + sr)
+			UpdateExpressionStoreReference: println("uesr " + sr)
+			DistributionReference: println("dr " + sr)
+			UniformReference: println("ur " + sr)
+		}	
+		
+		if(result.length != 0)
+			error(result,
+			CASPAPackage::eINSTANCE.reference_Name,
+			SELF_REFERENCE_HAS_REFERENCE)
+	}
+	
+	def String test(PredicateStoreReference sr){
+		if(!sr.allReferencesAreSeen)
+			return "This reference does not refer to a declared store."
+		else
+			return ""
+	}
+	
+	def boolean allReferencesAreSeen(PredicateStoreReference sr){
+		(sr.ref as SelfReference).name.isInMap(sr.parentProcesses.parentTermsHash.storeNamesFromTermsHashMap)
+	}
+	
+	//1) all store references are seen in parent Terms
+	//	look up parent terms
+	//	get parent term's store names
+	//	check my name is in the list
+	//2) all references are seen either in parent Term or () IFF action == input
+		
 }

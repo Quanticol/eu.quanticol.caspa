@@ -11,8 +11,8 @@ package eu.quanticol.cASPA;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getName <em>Name</em>}</li>
- *   <li>{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getExpression <em>Expression</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getAssignee <em>Assignee</em>}</li>
+ *   <li>{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getAssigner <em>Assigner</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,55 +23,55 @@ package eu.quanticol.cASPA;
 public interface LocalSingleEventUpdate extends Updates
 {
   /**
-   * Returns the value of the '<em><b>Name</b></em>' containment reference.
+   * Returns the value of the '<em><b>Assignee</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Name</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Assignee</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Name</em>' containment reference.
-   * @see #setName(StoreExpression)
-   * @see eu.quanticol.cASPA.CASPAPackage#getLocalSingleEventUpdate_Name()
+   * @return the value of the '<em>Assignee</em>' containment reference.
+   * @see #setAssignee(StoreExpression)
+   * @see eu.quanticol.cASPA.CASPAPackage#getLocalSingleEventUpdate_Assignee()
    * @model containment="true"
    * @generated
    */
-  StoreExpression getName();
+  StoreExpression getAssignee();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getName <em>Name</em>}' containment reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getAssignee <em>Assignee</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Name</em>' containment reference.
-   * @see #getName()
+   * @param value the new value of the '<em>Assignee</em>' containment reference.
+   * @see #getAssignee()
    * @generated
    */
-  void setName(StoreExpression value);
+  void setAssignee(StoreExpression value);
 
   /**
-   * Returns the value of the '<em><b>Expression</b></em>' containment reference.
+   * Returns the value of the '<em><b>Assigner</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Expression</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Assigner</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Expression</em>' containment reference.
-   * @see #setExpression(UpdateExpression)
-   * @see eu.quanticol.cASPA.CASPAPackage#getLocalSingleEventUpdate_Expression()
+   * @return the value of the '<em>Assigner</em>' containment reference.
+   * @see #setAssigner(UpdateExpression)
+   * @see eu.quanticol.cASPA.CASPAPackage#getLocalSingleEventUpdate_Assigner()
    * @model containment="true"
    * @generated
    */
-  UpdateExpression getExpression();
+  UpdateExpression getAssigner();
 
   /**
-   * Sets the value of the '{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getExpression <em>Expression</em>}' containment reference.
+   * Sets the value of the '{@link eu.quanticol.cASPA.LocalSingleEventUpdate#getAssigner <em>Assigner</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Expression</em>' containment reference.
-   * @see #getExpression()
+   * @param value the new value of the '<em>Assigner</em>' containment reference.
+   * @see #getAssigner()
    * @generated
    */
-  void setExpression(UpdateExpression value);
+  void setAssigner(UpdateExpression value);
 
 } // LocalSingleEventUpdate

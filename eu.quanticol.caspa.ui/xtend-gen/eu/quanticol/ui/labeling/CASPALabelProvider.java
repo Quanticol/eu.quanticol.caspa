@@ -12,18 +12,16 @@ import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
-import eu.quanticol.cASPA.Distribution;
+import eu.quanticol.cASPA.DistributionNatural;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateExpression;
 import eu.quanticol.cASPA.PredicateProcess;
 import eu.quanticol.cASPA.ProcessExpression;
 import eu.quanticol.cASPA.ReferencedProcess;
-import eu.quanticol.cASPA.ReferencedStore;
-import eu.quanticol.cASPA.SelfReferencedStore;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.Term;
-import eu.quanticol.cASPA.Uniform;
+import eu.quanticol.cASPA.UniformNatural;
 import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.Updates;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
@@ -71,14 +69,6 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
     return this._modelUtil.cTString(s);
   }
   
-  public String text(final SelfReferencedStore s) {
-    return this._modelUtil.cTString(s);
-  }
-  
-  public String text(final ReferencedStore s) {
-    return this._modelUtil.cTString(s);
-  }
-  
   public String text(final Predicate p) {
     return this._modelUtil.cTString(p);
   }
@@ -119,11 +109,11 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
     return this._modelUtil.cTString(u);
   }
   
-  public String text(final Distribution u) {
+  public String text(final DistributionNatural u) {
     return this._modelUtil.cTString(u);
   }
   
-  public String text(final Uniform u) {
+  public String text(final UniformNatural u) {
     return this._modelUtil.cTString(u);
   }
   

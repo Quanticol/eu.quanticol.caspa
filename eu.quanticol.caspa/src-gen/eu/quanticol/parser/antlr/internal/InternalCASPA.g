@@ -207,23 +207,23 @@ finally {
 
 
 
-// Entry rule entryRuleReferencedStore
-entryRuleReferencedStore returns [EObject current=null] 
+// Entry rule entryRuleReference
+entryRuleReference returns [EObject current=null] 
 	@init { 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 	}
 	:
-	{ newCompositeNode(grammarAccess.getReferencedStoreRule()); }
-	 iv_ruleReferencedStore=ruleReferencedStore 
-	 { $current=$iv_ruleReferencedStore.current; } 
+	{ newCompositeNode(grammarAccess.getReferenceRule()); }
+	 iv_ruleReference=ruleReference 
+	 { $current=$iv_ruleReference.current; } 
 	 EOF 
 ;
 finally {
 	myHiddenTokenState.restore();
 }
 
-// Rule ReferencedStore
-ruleReferencedStore returns [EObject current=null] 
+// Rule Reference
+ruleReference returns [EObject current=null] 
     @init { enterRule(); 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
     }
@@ -231,20 +231,25 @@ ruleReferencedStore returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getReferencedStoreAccess().getReferencedStoreAction_0(),
+            grammarAccess.getReferenceAccess().getReferenceAction_0(),
             $current);
     }
 )(
 (
+		lv_name_1_0=RULE_LOWER
 		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getReferencedStoreRule());
+			newLeafNode(lv_name_1_0, grammarAccess.getReferenceAccess().getNameLOWERTerminalRuleCall_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getReferenceRule());
 	        }
-        }
-	otherlv_1=RULE_LOWER
-	{
-		newLeafNode(otherlv_1, grammarAccess.getReferencedStoreAccess().getRefStoreCrossReference_1_0()); 
-	}
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_1_0, 
+        		"LOWER");
+	    }
 
 )
 ))
@@ -257,23 +262,23 @@ finally {
 
 
 
-// Entry rule entryRuleSelfReferencedStore
-entryRuleSelfReferencedStore returns [EObject current=null] 
+// Entry rule entryRuleSelfReference
+entryRuleSelfReference returns [EObject current=null] 
 	@init { 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 	}
 	:
-	{ newCompositeNode(grammarAccess.getSelfReferencedStoreRule()); }
-	 iv_ruleSelfReferencedStore=ruleSelfReferencedStore 
-	 { $current=$iv_ruleSelfReferencedStore.current; } 
+	{ newCompositeNode(grammarAccess.getSelfReferenceRule()); }
+	 iv_ruleSelfReference=ruleSelfReference 
+	 { $current=$iv_ruleSelfReference.current; } 
 	 EOF 
 ;
 finally {
 	myHiddenTokenState.restore();
 }
 
-// Rule SelfReferencedStore
-ruleSelfReferencedStore returns [EObject current=null] 
+// Rule SelfReference
+ruleSelfReference returns [EObject current=null] 
     @init { enterRule(); 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
     }
@@ -281,24 +286,29 @@ ruleSelfReferencedStore returns [EObject current=null]
 ((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getSelfReferencedStoreAccess().getSelfReferencedStoreAction_0(),
+            grammarAccess.getSelfReferenceAccess().getSelfReferenceAction_0(),
             $current);
     }
 )	otherlv_1='this.' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getSelfReferencedStoreAccess().getThisKeyword_1());
+    	newLeafNode(otherlv_1, grammarAccess.getSelfReferenceAccess().getThisKeyword_1());
     }
 (
 (
+		lv_name_2_0=RULE_LOWER
 		{
-			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getSelfReferencedStoreRule());
+			newLeafNode(lv_name_2_0, grammarAccess.getSelfReferenceAccess().getNameLOWERTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getSelfReferenceRule());
 	        }
-        }
-	otherlv_2=RULE_LOWER
-	{
-		newLeafNode(otherlv_2, grammarAccess.getSelfReferencedStoreAccess().getRefStoreCrossReference_2_0()); 
-	}
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"LOWER");
+	    }
 
 )
 ))
@@ -311,44 +321,44 @@ finally {
 
 
 
-// Entry rule entryRuleStoreRef
-entryRuleStoreRef returns [EObject current=null] 
+// Entry rule entryRuleRef
+entryRuleRef returns [EObject current=null] 
 	@init { 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 	}
 	:
-	{ newCompositeNode(grammarAccess.getStoreRefRule()); }
-	 iv_ruleStoreRef=ruleStoreRef 
-	 { $current=$iv_ruleStoreRef.current; } 
+	{ newCompositeNode(grammarAccess.getRefRule()); }
+	 iv_ruleRef=ruleRef 
+	 { $current=$iv_ruleRef.current; } 
 	 EOF 
 ;
 finally {
 	myHiddenTokenState.restore();
 }
 
-// Rule StoreRef
-ruleStoreRef returns [EObject current=null] 
+// Rule Ref
+ruleRef returns [EObject current=null] 
     @init { enterRule(); 
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
     }
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getStoreRefAccess().getReferencedStoreParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getRefAccess().getReferenceParserRuleCall_0()); 
     }
-    this_ReferencedStore_0=ruleReferencedStore
+    this_Reference_0=ruleReference
     { 
-        $current = $this_ReferencedStore_0.current; 
+        $current = $this_Reference_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getStoreRefAccess().getSelfReferencedStoreParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getRefAccess().getSelfReferenceParserRuleCall_1()); 
     }
-    this_SelfReferencedStore_1=ruleSelfReferencedStore
+    this_SelfReference_1=ruleSelfReference
     { 
-        $current = $this_SelfReferencedStore_1.current; 
+        $current = $this_SelfReference_1.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1386,24 +1396,69 @@ rulePredicateAtomic returns [EObject current=null]
 ))
     |
     { 
-        newCompositeNode(grammarAccess.getPredicateAtomicAccess().getReferencedStoreParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getPredicateAtomicAccess().getPredicateStoreReferenceParserRuleCall_2()); 
     }
-    this_ReferencedStore_4=ruleReferencedStore
+    this_PredicateStoreReference_4=rulePredicateStoreReference
     { 
-        $current = $this_ReferencedStore_4.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getPredicateAtomicAccess().getSelfReferencedStoreParserRuleCall_3()); 
-    }
-    this_SelfReferencedStore_5=ruleSelfReferencedStore
-    { 
-        $current = $this_SelfReferencedStore_5.current; 
+        $current = $this_PredicateStoreReference_4.current; 
         afterParserOrEnumRuleCall();
     }
 )
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRulePredicateStoreReference
+entryRulePredicateStoreReference returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getPredicateStoreReferenceRule()); }
+	 iv_rulePredicateStoreReference=rulePredicateStoreReference 
+	 { $current=$iv_rulePredicateStoreReference.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule PredicateStoreReference
+rulePredicateStoreReference returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getPredicateStoreReferenceAccess().getPredicateStoreReferenceAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getPredicateStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
+	    }
+		lv_ref_1_0=ruleRef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getPredicateStoreReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"ref",
+        		lv_ref_1_0, 
+        		"Ref");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -1678,11 +1733,11 @@ ruleExpressions returns [EObject current=null]
     @after { leaveRule(); }:
 (
     { 
-        newCompositeNode(grammarAccess.getExpressionsAccess().getStoreRefParserRuleCall_0()); 
+        newCompositeNode(grammarAccess.getExpressionsAccess().getOutStoreReferenceParserRuleCall_0()); 
     }
-    this_StoreRef_0=ruleStoreRef
+    this_OutStoreReference_0=ruleOutStoreReference
     { 
-        $current = $this_StoreRef_0.current; 
+        $current = $this_OutStoreReference_0.current; 
         afterParserOrEnumRuleCall();
     }
 
@@ -1711,6 +1766,61 @@ ruleExpressions returns [EObject current=null]
 
 )
 )))
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleOutStoreReference
+entryRuleOutStoreReference returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getOutStoreReferenceRule()); }
+	 iv_ruleOutStoreReference=ruleOutStoreReference 
+	 { $current=$iv_ruleOutStoreReference.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule OutStoreReference
+ruleOutStoreReference returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getOutStoreReferenceAccess().getOutStoreReferenceAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getOutStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
+	    }
+		lv_ref_1_0=ruleRef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getOutStoreReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"ref",
+        		lv_ref_1_0, 
+        		"Ref");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 finally {
 	myHiddenTokenState.restore();
@@ -1864,9 +1974,9 @@ ruleUpdates returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_3=';' 
+)(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getUpdatesAccess().getSemicolonKeyword_3_0());
+    	newLeafNode(otherlv_3, grammarAccess.getUpdatesAccess().getCommaKeyword_3_0());
     }
 (
 (
@@ -1980,17 +2090,17 @@ ruleSingleEventUpdate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSingleEventUpdateAccess().getNameStoreRefParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getSingleEventUpdateAccess().getAssigneeUpdateReferenceParserRuleCall_1_0()); 
 	    }
-		lv_name_1_0=ruleStoreRef		{
+		lv_assignee_1_0=ruleUpdateReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSingleEventUpdateRule());
 	        }
        		set(
        			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"StoreRef");
+       			"assignee",
+        		lv_assignee_1_0, 
+        		"UpdateReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2002,16 +2112,16 @@ ruleSingleEventUpdate returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getSingleEventUpdateAccess().getExpressionUpdateExpressionParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getSingleEventUpdateAccess().getAssignerUpdateExpressionParserRuleCall_3_0()); 
 	    }
-		lv_expression_3_0=ruleUpdateExpression		{
+		lv_assigner_3_0=ruleUpdateExpression		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getSingleEventUpdateRule());
 	        }
        		set(
        			$current, 
-       			"expression",
-        		lv_expression_3_0, 
+       			"assigner",
+        		lv_assigner_3_0, 
         		"UpdateExpression");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2057,17 +2167,17 @@ ruleDistributedEventUpdate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getNameStoreRefParserRuleCall_0_1_0()); 
+	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getAssigneeUpdateReferenceParserRuleCall_0_1_0()); 
 	    }
-		lv_name_1_0=ruleStoreRef		{
+		lv_assignee_1_0=ruleUpdateReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDistributedEventUpdateRule());
 	        }
        		set(
        			$current, 
-       			"name",
-        		lv_name_1_0, 
-        		"StoreRef");
+       			"assignee",
+        		lv_assignee_1_0, 
+        		"UpdateReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2087,16 +2197,16 @@ ruleDistributedEventUpdate returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getDistributionDistributionParserRuleCall_0_5_0()); 
+	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getAssignerDistributionParserRuleCall_0_5_0()); 
 	    }
-		lv_distribution_5_0=ruleDistribution		{
+		lv_assigner_5_0=ruleDistribution		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDistributedEventUpdateRule());
 	        }
        		add(
        			$current, 
-       			"distribution",
-        		lv_distribution_5_0, 
+       			"assigner",
+        		lv_assigner_5_0, 
         		"Distribution");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2138,17 +2248,17 @@ ruleDistributedEventUpdate returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getNameStoreRefParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getAssigneeUpdateReferenceParserRuleCall_1_1_0()); 
 	    }
-		lv_name_10_0=ruleStoreRef		{
+		lv_assignee_10_0=ruleUpdateReference		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDistributedEventUpdateRule());
 	        }
        		set(
        			$current, 
-       			"name",
-        		lv_name_10_0, 
-        		"StoreRef");
+       			"assignee",
+        		lv_assignee_10_0, 
+        		"UpdateReference");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2168,16 +2278,16 @@ ruleDistributedEventUpdate returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getDistributionUniformParserRuleCall_1_5_0()); 
+	        newCompositeNode(grammarAccess.getDistributedEventUpdateAccess().getAssignerUniformParserRuleCall_1_5_0()); 
 	    }
-		lv_distribution_14_0=ruleUniform		{
+		lv_assigner_14_0=ruleUniform		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getDistributedEventUpdateRule());
 	        }
        		add(
        			$current, 
-       			"distribution",
-        		lv_distribution_14_0, 
+       			"assigner",
+        		lv_assigner_14_0, 
         		"Uniform");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -2219,6 +2329,61 @@ finally {
 
 
 
+// Entry rule entryRuleUpdateReference
+entryRuleUpdateReference returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getUpdateReferenceRule()); }
+	 iv_ruleUpdateReference=ruleUpdateReference 
+	 { $current=$iv_ruleUpdateReference.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule UpdateReference
+ruleUpdateReference returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getUpdateReferenceAccess().getUpdateStoreReferenceAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getUpdateReferenceAccess().getRefRefParserRuleCall_1_0()); 
+	    }
+		lv_ref_1_0=ruleRef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getUpdateReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"ref",
+        		lv_ref_1_0, 
+        		"Ref");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
 // Entry rule entryRuleDistribution
 entryRuleDistribution returns [EObject current=null] 
 	@init { 
@@ -2240,16 +2405,16 @@ ruleDistribution returns [EObject current=null]
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
     }
     @after { leaveRule(); }:
-((
+(((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getDistributionAccess().getDistributionAction_0(),
+            grammarAccess.getDistributionAccess().getDistributionNaturalAction_0_0(),
             $current);
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributionAccess().getProbDoubleParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getDistributionAccess().getProbDoubleParserRuleCall_0_1_0()); 
 	    }
 		lv_prob_1_0=ruleDouble		{
 	        if ($current==null) {
@@ -2266,12 +2431,12 @@ ruleDistribution returns [EObject current=null]
 )
 )	otherlv_2=':' 
     {
-    	newLeafNode(otherlv_2, grammarAccess.getDistributionAccess().getColonKeyword_2());
+    	newLeafNode(otherlv_2, grammarAccess.getDistributionAccess().getColonKeyword_0_2());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getDistributionAccess().getExpressionNaturalParserRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getDistributionAccess().getExpressionNaturalParserRuleCall_0_3_0()); 
 	    }
 		lv_expression_3_0=ruleNatural		{
 	        if ($current==null) {
@@ -2282,6 +2447,93 @@ ruleDistribution returns [EObject current=null]
        			"expression",
         		lv_expression_3_0, 
         		"Natural");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |
+    { 
+        newCompositeNode(grammarAccess.getDistributionAccess().getDistributionReferenceParserRuleCall_1()); 
+    }
+    this_DistributionReference_4=ruleDistributionReference
+    { 
+        $current = $this_DistributionReference_4.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleDistributionReference
+entryRuleDistributionReference returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getDistributionReferenceRule()); }
+	 iv_ruleDistributionReference=ruleDistributionReference 
+	 { $current=$iv_ruleDistributionReference.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule DistributionReference
+ruleDistributionReference returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getDistributionReferenceAccess().getDistributionReferenceAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDistributionReferenceAccess().getProbDoubleParserRuleCall_1_0()); 
+	    }
+		lv_prob_1_0=ruleDouble		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDistributionReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"prob",
+        		lv_prob_1_0, 
+        		"Double");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_2=':' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getDistributionReferenceAccess().getColonKeyword_2());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDistributionReferenceAccess().getRefRefParserRuleCall_3_0()); 
+	    }
+		lv_ref_3_0=ruleRef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDistributionReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"ref",
+        		lv_ref_3_0, 
+        		"Ref");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2317,16 +2569,16 @@ ruleUniform returns [EObject current=null]
 		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
     }
     @after { leaveRule(); }:
-((
+(((
     {
         $current = forceCreateModelElement(
-            grammarAccess.getUniformAccess().getUniformAction_0(),
+            grammarAccess.getUniformAccess().getUniformNaturalAction_0_0(),
             $current);
     }
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getUniformAccess().getExpressionNaturalParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getUniformAccess().getExpressionNaturalParserRuleCall_0_1_0()); 
 	    }
 		lv_expression_1_0=ruleNatural		{
 	        if ($current==null) {
@@ -2337,6 +2589,71 @@ ruleUniform returns [EObject current=null]
        			"expression",
         		lv_expression_1_0, 
         		"Natural");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+    |
+    { 
+        newCompositeNode(grammarAccess.getUniformAccess().getUniformReferenceParserRuleCall_1()); 
+    }
+    this_UniformReference_2=ruleUniformReference
+    { 
+        $current = $this_UniformReference_2.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleUniformReference
+entryRuleUniformReference returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getUniformReferenceRule()); }
+	 iv_ruleUniformReference=ruleUniformReference 
+	 { $current=$iv_ruleUniformReference.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule UniformReference
+ruleUniformReference returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getUniformReferenceAccess().getUniformReferenceAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getUniformReferenceAccess().getRefRefParserRuleCall_1_0()); 
+	    }
+		lv_ref_1_0=ruleRef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getUniformReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"ref",
+        		lv_ref_1_0, 
+        		"Ref");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2769,14 +3086,69 @@ ruleUpdateAtomic returns [EObject current=null]
 ))
     |
     { 
-        newCompositeNode(grammarAccess.getUpdateAtomicAccess().getStoreRefParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getUpdateAtomicAccess().getUpdateExpressionStoreReferenceParserRuleCall_1()); 
     }
-    this_StoreRef_2=ruleStoreRef
+    this_UpdateExpressionStoreReference_2=ruleUpdateExpressionStoreReference
     { 
-        $current = $this_StoreRef_2.current; 
+        $current = $this_UpdateExpressionStoreReference_2.current; 
         afterParserOrEnumRuleCall();
     }
 )
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleUpdateExpressionStoreReference
+entryRuleUpdateExpressionStoreReference returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getUpdateExpressionStoreReferenceRule()); }
+	 iv_ruleUpdateExpressionStoreReference=ruleUpdateExpressionStoreReference 
+	 { $current=$iv_ruleUpdateExpressionStoreReference.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule UpdateExpressionStoreReference
+ruleUpdateExpressionStoreReference returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+((
+    {
+        $current = forceCreateModelElement(
+            grammarAccess.getUpdateExpressionStoreReferenceAccess().getUpdateExpressionStoreReferenceAction_0(),
+            $current);
+    }
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getUpdateExpressionStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
+	    }
+		lv_ref_1_0=ruleRef		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getUpdateExpressionStoreReferenceRule());
+	        }
+       		set(
+       			$current, 
+       			"ref",
+        		lv_ref_1_0, 
+        		"Ref");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
 ;
 finally {
 	myHiddenTokenState.restore();

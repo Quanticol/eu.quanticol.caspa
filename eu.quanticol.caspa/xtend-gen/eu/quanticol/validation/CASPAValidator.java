@@ -8,10 +8,12 @@ import com.google.inject.Inject;
 import eu.quanticol.ModelUtil;
 import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.CASPAPackage;
+import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
+import eu.quanticol.cASPA.OutStoreReference;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
 import eu.quanticol.cASPA.PredicateComparison;
@@ -22,16 +24,23 @@ import eu.quanticol.cASPA.PredicateMul;
 import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
+import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
+import eu.quanticol.cASPA.SelfReference;
+import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Term;
+import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateExpressionStoreReference;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.typing.BaseType;
 import eu.quanticol.typing.TypeProvider;
 import eu.quanticol.validation.AbstractCASPAValidator;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
@@ -40,6 +49,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * Custom validation rules.
@@ -61,6 +71,8 @@ public class CASPAValidator extends AbstractCASPAValidator {
   public final static String WRONG_TYPE = "eu.quanticol.WrongType";
   
   public final static String FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique";
+  
+  public final static String SELF_REFERENCE_HAS_REFERENCE = "eu.quanticol.selfReferenceHasReference";
   
   @Check
   public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
@@ -194,8 +206,8 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   @Check
   public void checkType(final LocalSingleEventUpdate update) {
-    UpdateExpression _expression = update.getExpression();
-    this.checkExpectedInt(_expression, CASPAPackage.Literals.LOCAL_SINGLE_EVENT_UPDATE__EXPRESSION);
+    UpdateExpression _assigner = update.getAssigner();
+    this.checkExpectedInt(_assigner, CASPAPackage.Literals.LOCAL_SINGLE_EVENT_UPDATE__ASSIGNER);
   }
   
   @Check
@@ -282,5 +294,67 @@ public class CASPAValidator extends AbstractCASPAValidator {
       this.error("Free variable names cannot be the same as local store names.", _in_Expressions, 
         CASPAValidator.FREE_VARIABLES_UNIQUE);
     }
+  }
+  
+  @Check
+  public void checkSelfReferences(final StoreExpression sr) {
+    String result = "";
+    boolean _matched = false;
+    if (!_matched) {
+      if (sr instanceof PredicateStoreReference) {
+        _matched=true;
+        this.test(((PredicateStoreReference)sr));
+      }
+    }
+    if (!_matched) {
+      if (sr instanceof OutStoreReference) {
+        _matched=true;
+        InputOutput.<String>println(("osr " + sr));
+      }
+    }
+    if (!_matched) {
+      if (sr instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        InputOutput.<String>println(("uesr " + sr));
+      }
+    }
+    if (!_matched) {
+      if (sr instanceof DistributionReference) {
+        _matched=true;
+        InputOutput.<String>println(("dr " + sr));
+      }
+    }
+    if (!_matched) {
+      if (sr instanceof UniformReference) {
+        _matched=true;
+        InputOutput.<String>println(("ur " + sr));
+      }
+    }
+    int _length = result.length();
+    boolean _notEquals = (_length != 0);
+    if (_notEquals) {
+      EAttribute _reference_Name = CASPAPackage.eINSTANCE.getReference_Name();
+      this.error(result, _reference_Name, 
+        CASPAValidator.SELF_REFERENCE_HAS_REFERENCE);
+    }
+  }
+  
+  public String test(final PredicateStoreReference sr) {
+    boolean _allReferencesAreSeen = this.allReferencesAreSeen(sr);
+    boolean _not = (!_allReferencesAreSeen);
+    if (_not) {
+      return "This reference does not refer to a declared store.";
+    } else {
+      return "";
+    }
+  }
+  
+  public boolean allReferencesAreSeen(final PredicateStoreReference sr) {
+    StoreExpression _ref = sr.getRef();
+    String _name = ((SelfReference) _ref).getName();
+    Set<eu.quanticol.cASPA.Process> _parentProcesses = this._modelUtil.getParentProcesses(sr);
+    HashMap<Integer, Term> _parentTermsHash = this._modelUtil.getParentTermsHash(_parentProcesses);
+    HashMap<Integer, ArrayList<String>> _storeNamesFromTermsHashMap = this._modelUtil.getStoreNamesFromTermsHashMap(_parentTermsHash);
+    return this._modelUtil.isInMap(_name, _storeNamesFromTermsHashMap);
   }
 }

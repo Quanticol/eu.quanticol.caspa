@@ -935,13 +935,13 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("Q = B;");
       _builder.newLine();
-      _builder.append("B = move*[False]<1>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<1>.WS;");
+      _builder.append("B = move*[False]<>{this.zone := U(1, 2, 3, 4)}.B + stop*[False]<>.WS;");
       _builder.newLine();
-      _builder.append("WS = ret[zone == this.zone](bikes){this.bikes := this.bikes + bikes}.P;");
+      _builder.append("WS = ret[zone == this.zone](b){this.bikes := this.bikes + b}.P;");
       _builder.newLine();
-      _builder.append("P = go*[False]<1>.WB;");
+      _builder.append("P = go*[False]<>.WB;");
       _builder.newLine();
-      _builder.append("WB = get[zone == this.zone](slots){this.slots := this.slots + slots}.B;");
+      _builder.append("WB = get[zone == this.zone](s){this.slots := this.slots + s}.B;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
@@ -1182,7 +1182,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("T = msg1[True]<this.a>.P;");
       _builder.newLine();
-      _builder.append("W = msg1[True](a).Q;");
+      _builder.append("W = msg1[True]().Q;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       this._validationTestHelper.assertNoErrors(_parse);
