@@ -687,7 +687,6 @@ public class ModelParserTest {
 		 
 		(P,{a:=1}); 		// (@CDW VALIDATIONCHECK:Does the store ever get used? 	27.01.15)
 		(P,{a:=1}); 		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
-		(P,{a:=1,a:=1}); 	// (@CDW VALIDATIONCHECK:This is a STORE repetition. 	27.01.15)
 		(P,{a:=1,b:=1});
 		(P,{b:=1,a:=1});		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
 		 

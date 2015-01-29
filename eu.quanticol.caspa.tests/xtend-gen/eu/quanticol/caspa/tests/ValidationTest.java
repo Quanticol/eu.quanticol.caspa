@@ -327,4 +327,22 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+  
+  @Test
+  public void testNoDuplicateStoresInTerms() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1,a:=1});");
+      _builder.newLine();
+      _builder.append("P=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _store = CASPAPackage.eINSTANCE.getStore();
+      this._validationTestHelper.assertError(_parse, _store, 
+        CASPAValidator.NO_DUPLICATE_STORES_IN_TERMS, 
+        "Store names cannot be repeated in Terms.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

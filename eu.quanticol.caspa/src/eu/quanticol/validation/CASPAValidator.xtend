@@ -54,6 +54,8 @@ import org.eclipse.emf.ecore.EObject
 import eu.quanticol.cASPA.Store
 import org.eclipse.emf.ecore.EAttribute
 import eu.quanticol.cASPA.UpdateStoreReference
+import eu.quanticol.cASPA.Term
+import java.util.ArrayList
 
 /**
  * Custom validation rules. 
@@ -70,6 +72,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	public static val WRONG_TYPE = "eu.quanticol.WrongType"
 	public static val FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique"
 	public static val REFERENCE_HAS_NO_REFERENCE = "eu.quanticol.ReferenceHasNoReference"
+	public static val NO_DUPLICATE_STORES_IN_TERMS = "eu.quanticol.noDuplicateStoresInTerms"
 	
 	@Check
 	def checkProcessNamesUnique(Process process){
@@ -387,6 +390,22 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	
 	def boolean isReferenceSeenInInputArguments(StoreExpression sr){
 		sr.getName.isInList(sr.fromStoreExpressionGetProcessInArgs)
+	}
+	
+	@Check
+	def checkNoDuplicateStoresInTerms(Store store){
+		
+		var int count = 0
+		for(st : store.getContainerOfType(Term).stores)
+			if(store.name.equals((st as Store).name))
+				count++
+		
+		if(count > 1){
+			error("Store names cannot be repeated in Terms.",
+			CASPAPackage::eINSTANCE.store_Name,
+			NO_DUPLICATE_STORES_IN_TERMS)
+		}
+		
 	}
 	
 	

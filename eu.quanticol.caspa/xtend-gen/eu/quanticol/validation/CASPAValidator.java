@@ -79,6 +79,8 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   public final static String REFERENCE_HAS_NO_REFERENCE = "eu.quanticol.ReferenceHasNoReference";
   
+  public final static String NO_DUPLICATE_STORES_IN_TERMS = "eu.quanticol.noDuplicateStoresInTerms";
+  
   @Check
   public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
@@ -679,5 +681,25 @@ public class CASPAValidator extends AbstractCASPAValidator {
     String _name = this.getName(sr);
     ArrayList<String> _fromStoreExpressionGetProcessInArgs = this._modelUtil.fromStoreExpressionGetProcessInArgs(sr);
     return this._modelUtil.isInList(_name, _fromStoreExpressionGetProcessInArgs);
+  }
+  
+  @Check
+  public void checkNoDuplicateStoresInTerms(final Store store) {
+    int count = 0;
+    Term _containerOfType = EcoreUtil2.<Term>getContainerOfType(store, Term.class);
+    EList<StoreExpression> _stores = _containerOfType.getStores();
+    for (final StoreExpression st : _stores) {
+      String _name = store.getName();
+      String _name_1 = ((Store) st).getName();
+      boolean _equals = _name.equals(_name_1);
+      if (_equals) {
+        count++;
+      }
+    }
+    if ((count > 1)) {
+      EAttribute _store_Name = CASPAPackage.eINSTANCE.getStore_Name();
+      this.error("Store names cannot be repeated in Terms.", _store_Name, 
+        CASPAValidator.NO_DUPLICATE_STORES_IN_TERMS);
+    }
   }
 }

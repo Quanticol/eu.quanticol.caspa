@@ -1362,8 +1362,6 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("(P,{a:=1}); \t\t// (@CDW VALIDATIONCHECK:This is a TERM repetition. \t27.01.15)");
       _builder.newLine();
-      _builder.append("(P,{a:=1,a:=1}); \t// (@CDW VALIDATIONCHECK:This is a STORE repetition. \t27.01.15)");
-      _builder.newLine();
       _builder.append("(P,{a:=1,b:=1});");
       _builder.newLine();
       _builder.append("(P,{b:=1,a:=1});\t\t// (@CDW VALIDATIONCHECK:This is a TERM repetition. \t27.01.15)");

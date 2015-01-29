@@ -185,6 +185,16 @@ class ValidationTest {
 			"Reference 'c' does not refer to a declared store or free variable.")
 	}
 	
+	@Test
+	def void testNoDuplicateStoresInTerms(){
+		'''
+		(P,{a:=1,a:=1});
+		P=P;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.store,
+			CASPAValidator::NO_DUPLICATE_STORES_IN_TERMS,
+			"Store names cannot be repeated in Terms.")
+	}
+	
 	
 //			DistributionReference: se.check
 //			UniformReference: se.check
