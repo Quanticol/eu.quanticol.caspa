@@ -8,7 +8,7 @@ import eu.quanticol.ModelUtil;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
-import eu.quanticol.cASPA.BooleanConstant;
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
@@ -81,7 +81,7 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
     return this._modelUtil.cTString(c);
   }
   
-  public String text(final BooleanConstant bc) {
+  public String text(final Bool bc) {
     return this._modelUtil.cTString(bc);
   }
   

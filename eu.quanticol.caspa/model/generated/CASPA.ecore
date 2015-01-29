@@ -44,10 +44,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="stores" upperBound="-1"
         eType="#//StoreExpression" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BooleanConstant" eSuperTypes="#//PredicateExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//BooleanConstant"
-        containment="true"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BooleanConstant"/>
   <eClassifiers xsi:type="ecore:EClass" name="Store" eSuperTypes="#//StoreExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -119,6 +116,10 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constant" eSuperTypes="#//PredicateExpression #//Arguments #//UpdateExpression">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Bool" eSuperTypes="#//PredicateExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" eType="#//BooleanConstant"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PredicateStoreReference" eSuperTypes="#//StoreExpression">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//StoreExpression"

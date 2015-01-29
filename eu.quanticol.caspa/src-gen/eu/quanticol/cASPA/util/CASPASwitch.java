@@ -5,6 +5,7 @@ package eu.quanticol.cASPA.util;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
@@ -215,7 +216,6 @@ public class CASPASwitch<T> extends Switch<T>
       {
         BooleanConstant booleanConstant = (BooleanConstant)theEObject;
         T result = caseBooleanConstant(booleanConstant);
-        if (result == null) result = casePredicateExpression(booleanConstant);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -362,6 +362,14 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = casePredicateExpression(constant);
         if (result == null) result = caseArguments(constant);
         if (result == null) result = caseUpdateExpression(constant);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.BOOL:
+      {
+        Bool bool = (Bool)theEObject;
+        T result = caseBool(bool);
+        if (result == null) result = casePredicateExpression(bool);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -1037,6 +1045,22 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstant(Constant object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Bool</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBool(Bool object)
   {
     return null;
   }

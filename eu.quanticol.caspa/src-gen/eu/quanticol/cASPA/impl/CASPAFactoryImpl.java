@@ -5,6 +5,7 @@ package eu.quanticol.cASPA.impl;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAFactory;
@@ -145,6 +146,7 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.PREDICATE_DIV: return createPredicateDiv();
       case CASPAPackage.PREDICATE_NOT: return createPredicateNot();
       case CASPAPackage.CONSTANT: return createConstant();
+      case CASPAPackage.BOOL: return createBool();
       case CASPAPackage.PREDICATE_STORE_REFERENCE: return createPredicateStoreReference();
       case CASPAPackage.IN: return createIn();
       case CASPAPackage.OUT: return createOut();
@@ -490,6 +492,17 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     ConstantImpl constant = new ConstantImpl();
     return constant;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Bool createBool()
+  {
+    BoolImpl bool = new BoolImpl();
+    return bool;
   }
 
   /**

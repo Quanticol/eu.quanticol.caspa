@@ -226,12 +226,21 @@ class ValidationTest {
 		P=P;
 		'''.parse.assertWarning(CASPAPackage::eINSTANCE.store,
 			CASPAValidator::STORE_NEVER_USED,
-			"Store never used.")
+			"Store never used locally.")
 		
 	}
 	
-//			DistributionReference: se.check
-//			UniformReference: se.check
+	@Test
+	def void actionPartner(){
+		'''
+		(P,{a:=1});
+		P = a[a == 1]<>.P;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
+			CASPAValidator::NO_ACTION_PARTNER,
+			"No receiving or sending partner action")
+		
+	}
+	
 	
 //	
 //	@Test

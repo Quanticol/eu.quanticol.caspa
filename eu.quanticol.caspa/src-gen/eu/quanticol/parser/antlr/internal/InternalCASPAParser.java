@@ -3403,7 +3403,7 @@ public class InternalCASPAParser extends AbstractInternalAntlrParser {
                     {
 
                             current = forceCreateModelElement(
-                                grammarAccess.getPredicateAtomicAccess().getBooleanConstantAction_1_0(),
+                                grammarAccess.getPredicateAtomicAccess().getBoolAction_1_0(),
                                 current);
                         
 

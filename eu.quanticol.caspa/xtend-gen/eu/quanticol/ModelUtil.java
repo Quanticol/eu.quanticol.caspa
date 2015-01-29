@@ -4,6 +4,7 @@ import com.google.common.base.Objects;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
@@ -232,9 +233,9 @@ public class ModelUtil {
       }
     }
     if (!_matched) {
-      if (pe instanceof BooleanConstant) {
+      if (pe instanceof Bool) {
         _matched=true;
-        _switchResult = this.cTString(((BooleanConstant) pe));
+        _switchResult = this.cTString(((Bool) pe));
       }
     }
     if (!_matched) {
@@ -257,7 +258,7 @@ public class ModelUtil {
     return ("" + Integer.valueOf(_value));
   }
   
-  public String cTString(final BooleanConstant bc) {
+  public String cTString(final Bool bc) {
     BooleanConstant _value = bc.getValue();
     return ("" + _value);
   }

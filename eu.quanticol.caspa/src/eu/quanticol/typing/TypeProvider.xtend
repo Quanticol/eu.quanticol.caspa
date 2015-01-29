@@ -1,35 +1,35 @@
 package eu.quanticol.typing
 
-import eu.quanticol.cASPA.Constant
-import eu.quanticol.cASPA.PredicateExpression
-import eu.quanticol.cASPA.PredicateOr
-import eu.quanticol.cASPA.PredicateAnd
-import eu.quanticol.cASPA.PredicateEquality
-import eu.quanticol.cASPA.PredicateComparison
-import eu.quanticol.cASPA.PredicateSub
-import eu.quanticol.cASPA.PredicatePlu
-import eu.quanticol.cASPA.PredicateMul
-import eu.quanticol.cASPA.PredicateDiv
-import eu.quanticol.cASPA.PredicateNot
-import eu.quanticol.cASPA.Predicate
+import eu.quanticol.cASPA.Bool
 import eu.quanticol.cASPA.BooleanConstant
-import eu.quanticol.cASPA.UpdateExpression
-import eu.quanticol.cASPA.UpdateSub
-import eu.quanticol.cASPA.UpdatePlu
-import eu.quanticol.cASPA.UpdateMul
-import eu.quanticol.cASPA.UpdateDiv
-import eu.quanticol.cASPA.Arguments
-import eu.quanticol.cASPA.StoreExpression
-import eu.quanticol.cASPA.Store
-import eu.quanticol.cASPA.LocalSingleEventUpdate
-import eu.quanticol.cASPA.FreeVariable
-import eu.quanticol.cASPA.SelfReference
-import eu.quanticol.cASPA.Reference
-import eu.quanticol.cASPA.PredicateStoreReference
-import eu.quanticol.cASPA.OutStoreReference
-import eu.quanticol.cASPA.UpdateExpressionStoreReference
+import eu.quanticol.cASPA.Constant
 import eu.quanticol.cASPA.DistributionReference
+import eu.quanticol.cASPA.FreeVariable
+import eu.quanticol.cASPA.LocalSingleEventUpdate
+import eu.quanticol.cASPA.OutStoreReference
+import eu.quanticol.cASPA.Predicate
+import eu.quanticol.cASPA.PredicateAnd
+import eu.quanticol.cASPA.PredicateComparison
+import eu.quanticol.cASPA.PredicateDiv
+import eu.quanticol.cASPA.PredicateEquality
+import eu.quanticol.cASPA.PredicateExpression
+import eu.quanticol.cASPA.PredicateMul
+import eu.quanticol.cASPA.PredicateNot
+import eu.quanticol.cASPA.PredicateOr
+import eu.quanticol.cASPA.PredicatePlu
+import eu.quanticol.cASPA.PredicateStoreReference
+import eu.quanticol.cASPA.PredicateSub
+import eu.quanticol.cASPA.Reference
+import eu.quanticol.cASPA.SelfReference
+import eu.quanticol.cASPA.Store
+import eu.quanticol.cASPA.StoreExpression
 import eu.quanticol.cASPA.UniformReference
+import eu.quanticol.cASPA.UpdateDiv
+import eu.quanticol.cASPA.UpdateExpression
+import eu.quanticol.cASPA.UpdateExpressionStoreReference
+import eu.quanticol.cASPA.UpdateMul
+import eu.quanticol.cASPA.UpdatePlu
+import eu.quanticol.cASPA.UpdateSub
 
 class TypeProvider {
 	
@@ -39,6 +39,10 @@ class TypeProvider {
 	public static val constantType = new ConstantType
 	
 	def dispatch BaseType typeFor(BooleanConstant b) {
+		boolConstantType
+	}
+	
+	def dispatch BaseType typeFor(Bool b) {
 		boolConstantType
 	}
 	
@@ -87,7 +91,7 @@ class TypeProvider {
 		return boolConstantType
 	}
 	
-	def BaseType typeFor(StoreExpression s){
+	def dispatch BaseType typeFor(StoreExpression s){
 		switch(s){
 			Store:							constantType
 			SelfReference:					constantType

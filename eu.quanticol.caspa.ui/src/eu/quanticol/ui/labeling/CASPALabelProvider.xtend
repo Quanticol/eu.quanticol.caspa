@@ -27,6 +27,7 @@ import eu.quanticol.cASPA.UpdateExpression
 import eu.quanticol.cASPA.Updates
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import eu.quanticol.cASPA.Bool
 
 /**
  * Provides labels for a EObjects.
@@ -96,7 +97,7 @@ class CASPALabelProvider extends DefaultEObjectLabelProvider {
 		c.cTString
 	}
 	
-	def text(BooleanConstant bc){
+	def text(Bool bc){
 		bc.cTString
 	}
 	

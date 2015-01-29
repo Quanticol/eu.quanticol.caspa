@@ -5,6 +5,7 @@ package eu.quanticol.cASPA.util;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
@@ -269,6 +270,11 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseConstant(Constant object)
       {
         return createConstantAdapter();
+      }
+      @Override
+      public Adapter caseBool(Bool object)
+      {
+        return createBoolAdapter();
       }
       @Override
       public Adapter casePredicateStoreReference(PredicateStoreReference object)
@@ -838,6 +844,21 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConstantAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Bool <em>Bool</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Bool
+   * @generated
+   */
+  public Adapter createBoolAdapter()
   {
     return null;
   }

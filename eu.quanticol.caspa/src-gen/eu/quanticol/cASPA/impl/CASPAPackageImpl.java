@@ -5,6 +5,7 @@ package eu.quanticol.cASPA.impl;
 import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAFactory;
@@ -273,6 +274,13 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * @generated
    */
   private EClass constantEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass boolEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -763,16 +771,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getBooleanConstant_Value()
-  {
-    return (EReference)booleanConstantEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getStore()
   {
     return storeEClass;
@@ -1176,6 +1174,26 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EAttribute getConstant_Value()
   {
     return (EAttribute)constantEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getBool()
+  {
+    return boolEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getBool_Value()
+  {
+    return (EReference)boolEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1856,7 +1874,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     createEReference(storesEClass, STORES__STORES);
 
     booleanConstantEClass = createEClass(BOOLEAN_CONSTANT);
-    createEReference(booleanConstantEClass, BOOLEAN_CONSTANT__VALUE);
 
     storeEClass = createEClass(STORE);
     createEAttribute(storeEClass, STORE__NAME);
@@ -1914,6 +1931,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     constantEClass = createEClass(CONSTANT);
     createEAttribute(constantEClass, CONSTANT__VALUE);
+
+    boolEClass = createEClass(BOOL);
+    createEReference(boolEClass, BOOL__VALUE);
 
     predicateStoreReferenceEClass = createEClass(PREDICATE_STORE_REFERENCE);
     createEReference(predicateStoreReferenceEClass, PREDICATE_STORE_REFERENCE__REF);
@@ -2033,7 +2053,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     storeExpressionEClass.getESuperTypes().add(this.getArguments());
     storeExpressionEClass.getESuperTypes().add(this.getUpdates());
     storeExpressionEClass.getESuperTypes().add(this.getUpdateExpression());
-    booleanConstantEClass.getESuperTypes().add(this.getPredicateExpression());
     storeEClass.getESuperTypes().add(this.getStoreExpression());
     referenceEClass.getESuperTypes().add(this.getStoreExpression());
     selfReferenceEClass.getESuperTypes().add(this.getStoreExpression());
@@ -2052,6 +2071,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     constantEClass.getESuperTypes().add(this.getPredicateExpression());
     constantEClass.getESuperTypes().add(this.getArguments());
     constantEClass.getESuperTypes().add(this.getUpdateExpression());
+    boolEClass.getESuperTypes().add(this.getPredicateExpression());
     predicateStoreReferenceEClass.getESuperTypes().add(this.getStoreExpression());
     inEClass.getESuperTypes().add(this.getArguments());
     outEClass.getESuperTypes().add(this.getArguments());
@@ -2115,7 +2135,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEReference(getStores_Stores(), this.getStoreExpression(), null, "stores", null, 0, -1, Stores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanConstantEClass, BooleanConstant.class, "BooleanConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBooleanConstant_Value(), this.getBooleanConstant(), null, "value", null, 0, 1, BooleanConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(storeEClass, Store.class, "Store", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getStore_Name(), ecorePackage.getEString(), "name", null, 0, 1, Store.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2173,6 +2192,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     initEClass(constantEClass, Constant.class, "Constant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, Constant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(boolEClass, Bool.class, "Bool", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getBool_Value(), this.getBooleanConstant(), null, "value", null, 0, 1, Bool.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(predicateStoreReferenceEClass, PredicateStoreReference.class, "PredicateStoreReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getPredicateStoreReference_Ref(), this.getStoreExpression(), null, "ref", null, 0, 1, PredicateStoreReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -398,7 +398,25 @@ public class ValidationTest {
       EClass _store = CASPAPackage.eINSTANCE.getStore();
       this._validationTestHelper.assertWarning(_parse, _store, 
         CASPAValidator.STORE_NEVER_USED, 
-        "Store never used.");
+        "Store never used locally.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void actionPartner() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = a[a == 1]<>.P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _action = CASPAPackage.eINSTANCE.getAction();
+      this._validationTestHelper.assertError(_parse, _action, 
+        CASPAValidator.NO_ACTION_PARTNER, 
+        "No receiving or sending partner action");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

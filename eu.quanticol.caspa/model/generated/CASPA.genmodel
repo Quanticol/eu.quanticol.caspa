@@ -39,9 +39,7 @@
     <genClasses ecoreClass="CASPA.ecore#//Stores">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Stores/stores"/>
     </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//BooleanConstant">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//BooleanConstant/value"/>
-    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//BooleanConstant"/>
     <genClasses ecoreClass="CASPA.ecore#//Store">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Store/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Store/value"/>
@@ -96,6 +94,9 @@
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//Constant">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//Constant/value"/>
+    </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Bool">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Bool/value"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//PredicateStoreReference">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//PredicateStoreReference/ref"/>

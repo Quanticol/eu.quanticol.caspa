@@ -3,6 +3,7 @@ package eu.quanticol.serializer;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 import eu.quanticol.cASPA.ActionProcess;
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Broadcast;
 import eu.quanticol.cASPA.CASPAPackage;
@@ -82,12 +83,8 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 					return; 
 				}
 				else break;
-			case CASPAPackage.BOOLEAN_CONSTANT:
-				if(context == grammarAccess.getBoolRule()) {
-					sequence_Bool(context, (BooleanConstant) semanticObject); 
-					return; 
-				}
-				else if(context == grammarAccess.getPredicateAdditionRule() ||
+			case CASPAPackage.BOOL:
+				if(context == grammarAccess.getPredicateAdditionRule() ||
 				   context == grammarAccess.getPredicateAdditionAccess().getPredicatePluLeftAction_1_0() ||
 				   context == grammarAccess.getPredicateAndRule() ||
 				   context == grammarAccess.getPredicateAndAccess().getPredicateAndLeftAction_1_0() ||
@@ -106,7 +103,13 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				   context == grammarAccess.getPredicatePrimaryRule() ||
 				   context == grammarAccess.getPredicateSubtractionRule() ||
 				   context == grammarAccess.getPredicateSubtractionAccess().getPredicateSubLeftAction_1_0()) {
-					sequence_PredicateAtomic(context, (BooleanConstant) semanticObject); 
+					sequence_PredicateAtomic(context, (Bool) semanticObject); 
+					return; 
+				}
+				else break;
+			case CASPAPackage.BOOLEAN_CONSTANT:
+				if(context == grammarAccess.getBoolRule()) {
+					sequence_Bool(context, (BooleanConstant) semanticObject); 
 					return; 
 				}
 				else break;
@@ -907,10 +910,10 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 * Constraint:
 	 *     value=Bool
 	 */
-	protected void sequence_PredicateAtomic(EObject context, BooleanConstant semanticObject) {
+	protected void sequence_PredicateAtomic(EObject context, Bool semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.BOOLEAN_CONSTANT__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.BOOLEAN_CONSTANT__VALUE));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.BOOL__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.BOOL__VALUE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);

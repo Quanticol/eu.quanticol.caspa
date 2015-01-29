@@ -108,7 +108,9 @@ public class ModelParserTest {
 	def void testSimpleActionUniOut(){
 		'''
 		(P,{a:=1});
-		P = a[True]<1>.P;
+		(Q,{a:=1});
+		P = a[True]<>.P;
+		Q = a[True]().Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -116,7 +118,8 @@ public class ModelParserTest {
 	def void testSimpleActionUniIn(){
 		'''
 		(P,{a:=1});
-		P = a[False]().P;
+		P = a[False]().Q;
+		Q = a[False]<>.P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -140,7 +143,9 @@ public class ModelParserTest {
 	def void testSimpleActionUniOutU(){
 		'''
 		(P,{a:=1});
-		P = a[True]<1>{this.a := 1}.P;
+		(Q,{a:=1});
+		P = a[True]<>{this.a := 1}.P;
+		Q = a[True](){this.a := 1}.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -148,7 +153,9 @@ public class ModelParserTest {
 	def void testSimpleActionUniInU(){
 		'''
 		(P,{a:=1});
+		(Q,{a:=1});
 		P = a[False](){this.a := 1}.P;
+		Q = a[False]<>{this.a := 1}.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -233,7 +240,9 @@ public class ModelParserTest {
 	def void testSimpleActionUniOut2(){
 		'''
 		(P,{a:=1, b:=1});
-		P = a[True]<1>.P;
+		(Q,{a:=1, b:=1});
+		P = a[True]<>.P;
+		Q = a[True]().Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -241,7 +250,9 @@ public class ModelParserTest {
 	def void testSimpleActionUniIn2(){
 		'''
 		(P,{a:=1, b:=1});
+		(Q,{a:=1, b:=1});
 		P = a[False]().P;
+		Q = a[False]<>.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -265,7 +276,9 @@ public class ModelParserTest {
 	def void testSimpleActionUniOutU2(){
 		'''
 		(P,{a:=1, b:=1});
-		P = a[True]<1>{this.a := 1}.P;
+		(Q,{a:=1, b:=1});
+		P = a[True]<>{this.a := 1}.P;
+		Q = a[True](){this.a := 1}.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -273,7 +286,9 @@ public class ModelParserTest {
 	def void testSimpleActionUniInU2(){
 		'''
 		(P,{a:=1, b:=1});
+		(Q,{a:=1, b:=1});
 		P = a[False](){this.a := 1}.P;
+		Q = a[False]<>{this.a := 1}.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -281,7 +296,9 @@ public class ModelParserTest {
 	def void testSimpleActionBroOutU2(){
 		'''
 		(P,{a:=1, b:=1});
-		P = a*[True]<1>{a := 1}.P;
+		(Q,{a:=1, b:=1});
+		P = a*[True]<>{a := 1}.P;
+		Q = a*[True](){a := 1}.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -372,8 +389,8 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
-		P = a[True]<1>.P;
-		Q = Q;
+		P = a[True]<>.P;
+		Q = a[True]().Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -383,7 +400,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = a[False]().P;
-		Q = Q;
+		Q = a[True]<>.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -412,8 +429,8 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
-		P = a[True]<1>{a := 1}.P;
-		Q = Q;
+		P = a[True]<>{a := 1}.P;
+		Q = a[True](){a := 1}.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -423,7 +440,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = a[False](){a := 1}.P;
-		Q = Q;
+		Q = a[False]<>{a := 1}.Q;
 		'''.parse.assertNoErrors
 	}
 	
@@ -748,10 +765,12 @@ public class ModelParserTest {
 		G = kill;
 		
 		//Action
-		H = a[True]<1>.H;
+		H = a[True]<>.H;
 		
 		//UNUSED
 		I = I;	//(@CDW VALIDATIONCHECK 27.01.15 - this goes unused, need a check for this?)
+		
+		J = a[True]().J;
 		'''.parse.assertNoErrors
 	}
 	

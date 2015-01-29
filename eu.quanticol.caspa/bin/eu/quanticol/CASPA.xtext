@@ -182,7 +182,7 @@ PredicatePrimary returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 PredicateAtomic returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{Constant} 	value=Natural |
-	{BooleanConstant} value=Bool |
+	{Bool} value=Bool |
 	PredicateStoreReference
 ;
 

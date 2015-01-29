@@ -761,16 +761,16 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cValueAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cValueNaturalParserRuleCall_0_1_0 = (RuleCall)cValueAssignment_0_1.eContents().get(0);
 		private final Group cGroup_1 = (Group)cAlternatives.eContents().get(1);
-		private final Action cBooleanConstantAction_1_0 = (Action)cGroup_1.eContents().get(0);
+		private final Action cBoolAction_1_0 = (Action)cGroup_1.eContents().get(0);
 		private final Assignment cValueAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cValueBoolParserRuleCall_1_1_0 = (RuleCall)cValueAssignment_1_1.eContents().get(0);
 		private final RuleCall cPredicateStoreReferenceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//PredicateAtomic returns PredicateExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	{Constant} value=Natural | {BooleanConstant} value=Bool | PredicateStoreReference;
+		//	{Constant} value=Natural | {Bool} value=Bool | PredicateStoreReference;
 		public ParserRule getRule() { return rule; }
 
-		//{Constant} value=Natural | {BooleanConstant} value=Bool | PredicateStoreReference
+		//{Constant} value=Natural | {Bool} value=Bool | PredicateStoreReference
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//{Constant} value=Natural
@@ -785,11 +785,11 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//Natural
 		public RuleCall getValueNaturalParserRuleCall_0_1_0() { return cValueNaturalParserRuleCall_0_1_0; }
 
-		//{BooleanConstant} value=Bool
+		//{Bool} value=Bool
 		public Group getGroup_1() { return cGroup_1; }
 
-		//{BooleanConstant}
-		public Action getBooleanConstantAction_1_0() { return cBooleanConstantAction_1_0; }
+		//{Bool}
+		public Action getBoolAction_1_0() { return cBoolAction_1_0; }
 
 		//value=Bool
 		public Assignment getValueAssignment_1_1() { return cValueAssignment_1_1; }
@@ -2568,7 +2568,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//PredicateAtomic returns PredicateExpression hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	{Constant} value=Natural | {BooleanConstant} value=Bool | PredicateStoreReference;
+	//	{Constant} value=Natural | {Bool} value=Bool | PredicateStoreReference;
 	public PredicateAtomicElements getPredicateAtomicAccess() {
 		return pPredicateAtomic;
 	}

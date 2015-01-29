@@ -284,6 +284,15 @@ public interface CASPAFactory extends EFactory
   Constant createConstant();
 
   /**
+   * Returns a new object of class '<em>Bool</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Bool</em>'.
+   * @generated
+   */
+  Bool createBool();
+
+  /**
    * Returns a new object of class '<em>Predicate Store Reference</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

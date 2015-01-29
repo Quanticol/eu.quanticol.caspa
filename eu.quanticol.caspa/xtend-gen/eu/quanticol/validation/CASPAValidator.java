@@ -13,6 +13,7 @@ import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
+import eu.quanticol.cASPA.Out;
 import eu.quanticol.cASPA.OutStoreReference;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -34,6 +35,7 @@ import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
+import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
@@ -86,6 +88,10 @@ public class CASPAValidator extends AbstractCASPAValidator {
   public final static String REQUIRE_UNIQUE_TERMS = "eu.quanticol.requireUniqueTerms";
   
   public final static String STORE_NEVER_USED = "eu.quanticol.storeNeverUsed";
+  
+  public final static String ARGUMENTS_MATCH = "eu.quanticol.argumentsMatch";
+  
+  public final static String NO_ACTION_PARTNER = "eu.quanticol.noActionPartner";
   
   @Check
   public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
@@ -788,9 +794,60 @@ public class CASPAValidator extends AbstractCASPAValidator {
       }
     }
     if ((!exists)) {
-      this.warning("Store never used.", 
+      this.warning("Store never used locally.", 
         CASPAPackage.Literals.STORE__NAME, 
         CASPAValidator.STORE_NEVER_USED);
     }
+  }
+  
+  @Check
+  public void checkActionHasPartner(final Unicast action) {
+    boolean fails = true;
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(action, Model.class);
+    EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
+    String name = action.getName();
+    Arguments _arguments = action.getArguments();
+    String inputOutput = this.inputOrOutputArgument(_arguments);
+    int count = 0;
+    for (final eu.quanticol.cASPA.Process p : processes) {
+      List<Unicast> _allContentsOfType = EcoreUtil2.<Unicast>getAllContentsOfType(p, Unicast.class);
+      for (final Unicast u : _allContentsOfType) {
+        Arguments _arguments_1 = u.getArguments();
+        String _inputOrOutputArgument = this.inputOrOutputArgument(_arguments_1);
+        boolean _equals = _inputOrOutputArgument.equals(inputOutput);
+        boolean _not = (!_equals);
+        if (_not) {
+          String _name = u.getName();
+          boolean _equals_1 = _name.equals(name);
+          if (_equals_1) {
+            count++;
+          }
+        }
+      }
+    }
+    fails = (count == 0);
+    if (fails) {
+      this.error("No receiving or sending partner action", 
+        CASPAPackage.Literals.ACTION__NAME, 
+        CASPAValidator.NO_ACTION_PARTNER);
+    }
+  }
+  
+  public String inputOrOutputArgument(final Arguments arg) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (arg instanceof In) {
+        _matched=true;
+        _switchResult = "In";
+      }
+    }
+    if (!_matched) {
+      if (arg instanceof Out) {
+        _matched=true;
+        _switchResult = "Out";
+      }
+    }
+    return _switchResult;
   }
 }

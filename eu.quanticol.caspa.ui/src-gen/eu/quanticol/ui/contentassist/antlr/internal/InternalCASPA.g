@@ -4924,11 +4924,11 @@ rule__PredicateAtomic__Group_1__0__Impl
     }
 :
 (
-{ before(grammarAccess.getPredicateAtomicAccess().getBooleanConstantAction_1_0()); }
+{ before(grammarAccess.getPredicateAtomicAccess().getBoolAction_1_0()); }
 (
 
 )
-{ after(grammarAccess.getPredicateAtomicAccess().getBooleanConstantAction_1_0()); }
+{ after(grammarAccess.getPredicateAtomicAccess().getBoolAction_1_0()); }
 )
 
 ;

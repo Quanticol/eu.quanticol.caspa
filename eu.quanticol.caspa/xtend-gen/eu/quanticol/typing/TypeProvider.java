@@ -1,5 +1,6 @@
 package eu.quanticol.typing;
 
+import eu.quanticol.cASPA.Bool;
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributionReference;
@@ -45,6 +46,10 @@ public class TypeProvider {
   public final static ConstantType constantType = new ConstantType();
   
   protected BaseType _typeFor(final BooleanConstant b) {
+    return TypeProvider.boolConstantType;
+  }
+  
+  protected BaseType _typeFor(final Bool b) {
     return TypeProvider.boolConstantType;
   }
   
@@ -224,7 +229,7 @@ public class TypeProvider {
     return TypeProvider.boolConstantType;
   }
   
-  public BaseType typeFor(final StoreExpression s) {
+  protected BaseType _typeFor(final StoreExpression s) {
     ConstantType _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
@@ -415,12 +420,16 @@ public class TypeProvider {
       return _typeFor((Reference)c);
     } else if (c instanceof SelfReference) {
       return _typeFor((SelfReference)c);
-    } else if (c instanceof BooleanConstant) {
-      return _typeFor((BooleanConstant)c);
+    } else if (c instanceof Bool) {
+      return _typeFor((Bool)c);
     } else if (c instanceof Constant) {
       return _typeFor((Constant)c);
     } else if (c instanceof LocalSingleEventUpdate) {
       return _typeFor((LocalSingleEventUpdate)c);
+    } else if (c instanceof StoreExpression) {
+      return _typeFor((StoreExpression)c);
+    } else if (c instanceof BooleanConstant) {
+      return _typeFor((BooleanConstant)c);
     } else if (c instanceof Predicate) {
       return _typeFor((Predicate)c);
     } else if (c instanceof PredicateExpression) {

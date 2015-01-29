@@ -12818,13 +12818,13 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4926:1: ( () )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4927:1: ()
             {
-             before(grammarAccess.getPredicateAtomicAccess().getBooleanConstantAction_1_0()); 
+             before(grammarAccess.getPredicateAtomicAccess().getBoolAction_1_0()); 
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4928:1: ()
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4930:1: 
             {
             }
 
-             after(grammarAccess.getPredicateAtomicAccess().getBooleanConstantAction_1_0()); 
+             after(grammarAccess.getPredicateAtomicAccess().getBoolAction_1_0()); 
 
             }
 

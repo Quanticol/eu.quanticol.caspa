@@ -28,20 +28,14 @@ import eu.quanticol.typing.BaseType
 import eu.quanticol.typing.TypeProvider
 import org.eclipse.emf.ecore.EReference
 import org.eclipse.xtext.validation.Check
-import static extension org.eclipse.xtext.EcoreUtil2.*
 import static org.eclipse.emf.ecore.util.EcoreUtil.*
+import static extension org.eclipse.xtext.EcoreUtil2.*
 import eu.quanticol.cASPA.In
 import eu.quanticol.cASPA.FreeVariable
 import eu.quanticol.ModelUtil
 import java.util.Set
 import java.util.HashSet
 import eu.quanticol.cASPA.SelfReference
-import eu.quanticol.cASPA.Action
-import eu.quanticol.cASPA.Arguments
-import eu.quanticol.cASPA.Out
-import eu.quanticol.cASPA.DistributedEventUpdateProbability
-import eu.quanticol.cASPA.DistributedEventUpdateUniform
-import eu.quanticol.cASPA.Updates
 import eu.quanticol.cASPA.StoreExpression
 import eu.quanticol.cASPA.PredicateStoreReference
 import eu.quanticol.cASPA.OutStoreReference
@@ -50,14 +44,17 @@ import eu.quanticol.cASPA.DistributionReference
 import eu.quanticol.cASPA.UniformReference
 import eu.quanticol.cASPA.ProcessExpression
 import eu.quanticol.cASPA.Reference
-import org.eclipse.emf.ecore.EObject
 import eu.quanticol.cASPA.Store
-import org.eclipse.emf.ecore.EAttribute
 import eu.quanticol.cASPA.UpdateStoreReference
 import eu.quanticol.cASPA.Term
-import java.util.ArrayList
 import eu.quanticol.cASPA.ReferencedProcess
-import org.eclipse.emf.common.util.EList
+import eu.quanticol.cASPA.Bool
+import eu.quanticol.cASPA.Action
+import eu.quanticol.cASPA.Unicast
+import java.util.List
+import java.util.ArrayList
+import eu.quanticol.cASPA.Arguments
+import eu.quanticol.cASPA.Out
 
 /**
  * Custom validation rules. 
@@ -77,6 +74,8 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	public static val NO_DUPLICATE_STORES_IN_TERMS = "eu.quanticol.noDuplicateStoresInTerms"
 	public static val REQUIRE_UNIQUE_TERMS = "eu.quanticol.requireUniqueTerms"
 	public static val STORE_NEVER_USED = "eu.quanticol.storeNeverUsed"
+	public static val ARGUMENTS_MATCH = "eu.quanticol.argumentsMatch"
+	public static val NO_ACTION_PARTNER = "eu.quanticol.noActionPartner"
 	
 	@Check
 	def checkProcessNamesUnique(Process process){
@@ -461,9 +460,58 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		
 		
 		if(!exists){
-			warning("Store never used.",
+			warning("Store never used locally.",
 			CASPAPackage::Literals.STORE__NAME,
 			STORE_NEVER_USED)
+		}
+		
+	}
+	
+//	@Check
+//	def checkArgumentsMatch(Action action){
+//		
+//		var boolean fails = true
+//		
+//		if(fails){
+//			error("There must exist an action with matching arguments",
+//			CASPAPackage::Literals.ACTION__ARGUMENTS,
+//			ARGUMENTS_MATCH)
+//		}
+//		
+//	}
+	
+	@Check
+	def checkActionHasPartner(Unicast action){
+		
+		var boolean fails = true
+		
+		var processes = action.getContainerOfType(Model).processes
+		var String name = action.name
+		var String inputOutput = action.arguments.inputOrOutputArgument
+		var int count = 0
+		
+		for(p : processes)
+			for(u : p.getAllContentsOfType(Unicast)){
+				if(!u.arguments.inputOrOutputArgument.equals(inputOutput)){
+					if(u.name.equals(name)){
+						count++
+					}
+				}
+			 }
+		fails = count == 0
+			 
+		if(fails){
+			error("No receiving or sending partner action",
+			CASPAPackage::Literals.ACTION__NAME,
+			NO_ACTION_PARTNER)
+		}
+		
+	}
+	
+	def String inputOrOutputArgument(Arguments arg){
+		switch(arg){
+			In: 	"In"
+			Out:	"Out"	
 		}
 		
 	}

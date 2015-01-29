@@ -4,8 +4,6 @@ import eu.quanticol.cASPA.ProcessExpression
 import eu.quanticol.cASPA.Process
 import eu.quanticol.cASPA.ReferencedProcess
 import eu.quanticol.cASPA.Store
-//import eu.quanticol.cASPA.SelfReferencedStore
-//import eu.quanticol.cASPA.ReferencedStore
 import eu.quanticol.cASPA.StoreExpression
 import eu.quanticol.cASPA.Parallel
 import eu.quanticol.cASPA.Choice
@@ -25,7 +23,6 @@ import eu.quanticol.cASPA.PredicateMul
 import eu.quanticol.cASPA.PredicateDiv
 import eu.quanticol.cASPA.PredicateNot
 import eu.quanticol.cASPA.Constant
-import eu.quanticol.cASPA.BooleanConstant
 import eu.quanticol.cASPA.Arguments
 import eu.quanticol.cASPA.In
 import eu.quanticol.cASPA.Out
@@ -39,13 +36,10 @@ import eu.quanticol.cASPA.UpdatePlu
 import eu.quanticol.cASPA.UpdateMul
 import eu.quanticol.cASPA.UpdateDiv
 
-import static org.eclipse.emf.ecore.util.EcoreUtil.*
 import static extension org.eclipse.xtext.EcoreUtil2.*
 import eu.quanticol.cASPA.Term
 import java.util.ArrayList
-import eu.quanticol.cASPA.CASPAPackage
 import eu.quanticol.cASPA.Model
-import org.eclipse.emf.common.util.EList
 import java.util.Set
 import java.util.HashSet
 import eu.quanticol.cASPA.SelfReference
@@ -54,7 +48,7 @@ import eu.quanticol.cASPA.DistributionNatural
 import eu.quanticol.cASPA.UniformNatural
 import java.util.HashMap
 import eu.quanticol.cASPA.FreeVariable
-import java.lang.reflect.Array
+import eu.quanticol.cASPA.Bool
 
 class ModelUtil {
 	
@@ -86,7 +80,7 @@ class ModelUtil {
 			PredicateDiv:			pe.left.cTString + " / "  + pe.right.cTString 
 			PredicateNot:			"!" + pe.expression.cTString
 			Constant:				(pe as Constant).cTString
-			BooleanConstant:		(pe as BooleanConstant).cTString
+			Bool:					(pe as Bool).cTString
 			Reference:				(pe as Reference).cTString
 			SelfReference:			(pe as SelfReference).cTString
 		}.toString
@@ -97,7 +91,7 @@ class ModelUtil {
 		"" + c.value
 	}
 	
-	def String cTString(BooleanConstant bc){
+	def String cTString(Bool bc){
 		"" + bc.value
 	}
 	
