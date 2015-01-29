@@ -77,6 +77,8 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	public static val STORE_NEVER_USED = "eu.quanticol.storeNeverUsed"
 	public static val ARGUMENTS_MATCH = "eu.quanticol.argumentsMatch"
 	public static val NO_ACTION_PARTNER = "eu.quanticol.noActionPartner"
+	public static val PROCESS_NEVER_USED = "eu.quanticol.processNeverUsed"
+	public static val PROCESSEXPRESSION_NOT_JUST_REFERENCES = "eu.quanticol.processExpressionsNotJustReferences"
 	
 	@Check
 	def checkProcessNamesUnique(Process process){
@@ -508,7 +510,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 			 }
 		fails = count == 0
 		if(fails){
-			error("No partner action with matching number of arguments",
+			error("No partner action with matching number of arguments.",
 			CASPAPackage::Literals.ACTION__NAME,
 			ARGUMENTS_MATCH)
 		}
@@ -536,7 +538,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		fails = count == 0
 			 
 		if(fails){
-			error("No receiving or sending partner action",
+			error("No receiving or sending partner action.",
 			CASPAPackage::Literals.ACTION__NAME,
 			NO_ACTION_PARTNER)
 		}
@@ -549,6 +551,47 @@ class CASPAValidator extends AbstractCASPAValidator  {
 			Out:	"Out"	
 		}
 		
+	}
+	
+	@Check
+	def checkProcessIsUsed(Process process){
+		
+		var boolean fails = true
+		
+		var terms = process.getContainerOfType(Model).terms
+		var ArrayList<String> referencedProcesses = new ArrayList<String>()
+		
+		var allProcesses = process.fromProcessGetProcesses
+		
+		for(term : terms)
+			for( rp : term.getAllContentsOfType(ReferencedProcess))
+				referencedProcesses.add(rp.ref.name)
+			
+		fails = !referencedProcesses.contains(process.name) && (allProcesses.size == 1)
+		
+		if(fails){
+			warning("Process is never used.",
+			CASPAPackage::Literals.PROCESS__NAME,
+			PROCESS_NEVER_USED)
+		}
+		
+	}
+	
+	@Check
+	def checkProcessExpressionsAreMoreThanJustReferences(Process p){
+		var boolean fails = false
+		
+		var allProcesses = p.fromProcessGetProcesses
+		
+		for(process : allProcesses){
+			fails = (process.value.isReferencedProcess(process) || fails)
+		}
+		
+		if(fails){
+			error("Expression has looping process references.",
+			CASPAPackage::Literals.PROCESS__VALUE,
+			PROCESSEXPRESSION_NOT_JUST_REFERENCES)
+		}
 	}
 	
 	

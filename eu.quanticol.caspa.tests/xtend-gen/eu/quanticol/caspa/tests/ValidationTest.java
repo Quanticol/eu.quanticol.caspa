@@ -416,7 +416,7 @@ public class ValidationTest {
       EClass _action = CASPAPackage.eINSTANCE.getAction();
       this._validationTestHelper.assertError(_parse, _action, 
         CASPAValidator.NO_ACTION_PARTNER, 
-        "No receiving or sending partner action");
+        "No receiving or sending partner action.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -438,7 +438,7 @@ public class ValidationTest {
       EClass _action = CASPAPackage.eINSTANCE.getAction();
       this._validationTestHelper.assertError(_parse, _action, 
         CASPAValidator.ARGUMENTS_MATCH, 
-        "No partner action with matching number of arguments");
+        "No partner action with matching number of arguments.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -460,7 +460,7 @@ public class ValidationTest {
       EClass _action = CASPAPackage.eINSTANCE.getAction();
       this._validationTestHelper.assertError(_parse, _action, 
         CASPAValidator.ARGUMENTS_MATCH, 
-        "No partner action with matching number of arguments");
+        "No partner action with matching number of arguments.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -482,7 +482,67 @@ public class ValidationTest {
       EClass _action = CASPAPackage.eINSTANCE.getAction();
       this._validationTestHelper.assertError(_parse, _action, 
         CASPAValidator.ARGUMENTS_MATCH, 
-        "No partner action with matching number of arguments");
+        "No partner action with matching number of arguments.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void processesUsed() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = P;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertWarning(_parse, _process, 
+        CASPAValidator.PROCESS_NEVER_USED, 
+        "Process is never used.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void allReferencedProcesses() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = [a > 0]Q;");
+      _builder.newLine();
+      _builder.append("Q = Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertError(_parse, _process, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
+        "Expression has looping process references.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void allReferencedProcesses2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1,b:=1});");
+      _builder.newLine();
+      _builder.append("P=Q;");
+      _builder.newLine();
+      _builder.append("Q=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertError(_parse, _process, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
+        "Expression has looping process references.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

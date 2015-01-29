@@ -94,6 +94,10 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   public final static String NO_ACTION_PARTNER = "eu.quanticol.noActionPartner";
   
+  public final static String PROCESS_NEVER_USED = "eu.quanticol.processNeverUsed";
+  
+  public final static String PROCESSEXPRESSION_NOT_JUST_REFERENCES = "eu.quanticol.processExpressionsNotJustReferences";
+  
   @Check
   public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
@@ -884,7 +888,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
     fails = (count == 0);
     if (fails) {
-      this.error("No partner action with matching number of arguments", 
+      this.error("No partner action with matching number of arguments.", 
         CASPAPackage.Literals.ACTION__NAME, 
         CASPAValidator.ARGUMENTS_MATCH);
     }
@@ -917,7 +921,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
     fails = (count == 0);
     if (fails) {
-      this.error("No receiving or sending partner action", 
+      this.error("No receiving or sending partner action.", 
         CASPAPackage.Literals.ACTION__NAME, 
         CASPAValidator.NO_ACTION_PARTNER);
     }
@@ -939,5 +943,61 @@ public class CASPAValidator extends AbstractCASPAValidator {
       }
     }
     return _switchResult;
+  }
+  
+  @Check
+  public void checkProcessIsUsed(final eu.quanticol.cASPA.Process process) {
+    boolean fails = true;
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
+    EList<Term> terms = _containerOfType.getTerms();
+    ArrayList<String> referencedProcesses = new ArrayList<String>();
+    Set<eu.quanticol.cASPA.Process> allProcesses = this._modelUtil.fromProcessGetProcesses(process);
+    for (final Term term : terms) {
+      List<ReferencedProcess> _allContentsOfType = EcoreUtil2.<ReferencedProcess>getAllContentsOfType(term, ReferencedProcess.class);
+      for (final ReferencedProcess rp : _allContentsOfType) {
+        eu.quanticol.cASPA.Process _ref = rp.getRef();
+        String _name = _ref.getName();
+        referencedProcesses.add(_name);
+      }
+    }
+    boolean _and = false;
+    String _name_1 = process.getName();
+    boolean _contains = referencedProcesses.contains(_name_1);
+    boolean _not = (!_contains);
+    if (!_not) {
+      _and = false;
+    } else {
+      int _size = allProcesses.size();
+      boolean _equals = (_size == 1);
+      _and = _equals;
+    }
+    fails = _and;
+    if (fails) {
+      this.warning("Process is never used.", 
+        CASPAPackage.Literals.PROCESS__NAME, 
+        CASPAValidator.PROCESS_NEVER_USED);
+    }
+  }
+  
+  @Check
+  public void checkProcessExpressionsAreMoreThanJustReferences(final eu.quanticol.cASPA.Process p) {
+    boolean fails = false;
+    Set<eu.quanticol.cASPA.Process> allProcesses = this._modelUtil.fromProcessGetProcesses(p);
+    for (final eu.quanticol.cASPA.Process process : allProcesses) {
+      boolean _or = false;
+      ProcessExpression _value = process.getValue();
+      boolean _isReferencedProcess = this._modelUtil.isReferencedProcess(_value, process);
+      if (_isReferencedProcess) {
+        _or = true;
+      } else {
+        _or = fails;
+      }
+      fails = _or;
+    }
+    if (fails) {
+      this.error("Expression has looping process references.", 
+        CASPAPackage.Literals.PROCESS__VALUE, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES);
+    }
   }
 }

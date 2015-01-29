@@ -237,7 +237,7 @@ class ValidationTest {
 		P = a[a == 1]<>.P;
 		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
 			CASPAValidator::NO_ACTION_PARTNER,
-			"No receiving or sending partner action")
+			"No receiving or sending partner action.")
 		
 	}
 	
@@ -250,7 +250,7 @@ class ValidationTest {
 		Q = a[a == 1](b).Q;
 		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
 			CASPAValidator::ARGUMENTS_MATCH,
-			"No partner action with matching number of arguments")
+			"No partner action with matching number of arguments.")
 		
 	}
 	
@@ -263,7 +263,7 @@ class ValidationTest {
 		Q = a[a == 1]().Q;
 		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
 			CASPAValidator::ARGUMENTS_MATCH,
-			"No partner action with matching number of arguments")
+			"No partner action with matching number of arguments.")
 		
 	}
 	
@@ -276,7 +276,43 @@ class ValidationTest {
 		Q = a[a == 1](c).Q;
 		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
 			CASPAValidator::ARGUMENTS_MATCH,
-			"No partner action with matching number of arguments")
+			"No partner action with matching number of arguments.")
+		
+	}
+	
+	@Test
+	def void processesUsed(){
+		'''
+		(P,{a:=1});
+		P = P;
+		Q = Q;
+		'''.parse.assertWarning(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESS_NEVER_USED,
+			"Process is never used.")
+		
+	}
+	
+	@Test
+	def void allReferencedProcesses(){
+		'''
+		(P,{a:=1});
+		P = [a > 0]Q;
+		Q = Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
+			"Expression has looping process references.")
+		
+	}
+	
+	@Test
+	def void allReferencedProcesses2(){
+		'''
+		(P,{a:=1,b:=1});
+		P=Q;
+		Q=P;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
+			"Expression has looping process references.")
 		
 	}
 	

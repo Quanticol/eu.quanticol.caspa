@@ -271,6 +271,44 @@ class ModelUtil {
 		}
 	}
 	
+	def boolean isReferencedProcess(ProcessExpression pe, Process p){
+		switch(pe){
+			Parallel: 			{pe.left.isReferencedProcess(p) ||
+								pe.right.isReferencedProcess(p)}
+			Choice: 			{pe.left.isReferencedProcess(p) ||
+								pe.right.isReferencedProcess(p)}
+			ReferencedProcess:	{
+				(pe.ref as Process).name.equals(p.name)
+			}
+			PredicateProcess: 	false
+			ActionProcess:		false
+			default:			false
+		}
+	}
+	
+	def Set<Process> fromProcessGetProcesses(Process p){
+		
+		var processes = p.getContainerOfType(typeof(Model)).processes
+		var Set<Process> refProcesses = new HashSet<Process>()
+		var Set<Process> lastRefProcesses = new HashSet<Process>()
+		
+		refProcesses.add(p)
+		
+		while(refProcesses.size > lastRefProcesses.size){
+			
+			for(rp : refProcesses)
+					lastRefProcesses.add(rp)
+			
+			for(process : processes){
+				for(rp : lastRefProcesses)
+					process.value.getReferencedProcess(refProcesses,rp)
+			}
+			
+		}
+		
+		return refProcesses
+	}
+	
 	
 	def Set<Process> fromStoreExpressionGetProcesses(StoreExpression sr){
 		

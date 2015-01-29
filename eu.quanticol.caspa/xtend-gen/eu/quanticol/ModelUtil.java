@@ -640,6 +640,90 @@ public class ModelUtil {
     }
   }
   
+  public boolean isReferencedProcess(final ProcessExpression pe, final eu.quanticol.cASPA.Process p) {
+    boolean _switchResult = false;
+    boolean _matched = false;
+    if (!_matched) {
+      if (pe instanceof Parallel) {
+        _matched=true;
+        boolean _or = false;
+        ProcessExpression _left = ((Parallel)pe).getLeft();
+        boolean _isReferencedProcess = this.isReferencedProcess(_left, p);
+        if (_isReferencedProcess) {
+          _or = true;
+        } else {
+          ProcessExpression _right = ((Parallel)pe).getRight();
+          boolean _isReferencedProcess_1 = this.isReferencedProcess(_right, p);
+          _or = _isReferencedProcess_1;
+        }
+        _switchResult = _or;
+      }
+    }
+    if (!_matched) {
+      if (pe instanceof Choice) {
+        _matched=true;
+        boolean _or = false;
+        ProcessExpression _left = ((Choice)pe).getLeft();
+        boolean _isReferencedProcess = this.isReferencedProcess(_left, p);
+        if (_isReferencedProcess) {
+          _or = true;
+        } else {
+          ProcessExpression _right = ((Choice)pe).getRight();
+          boolean _isReferencedProcess_1 = this.isReferencedProcess(_right, p);
+          _or = _isReferencedProcess_1;
+        }
+        _switchResult = _or;
+      }
+    }
+    if (!_matched) {
+      if (pe instanceof ReferencedProcess) {
+        _matched=true;
+        eu.quanticol.cASPA.Process _ref = ((ReferencedProcess)pe).getRef();
+        String _name = ((eu.quanticol.cASPA.Process) _ref).getName();
+        String _name_1 = p.getName();
+        _switchResult = _name.equals(_name_1);
+      }
+    }
+    if (!_matched) {
+      if (pe instanceof PredicateProcess) {
+        _matched=true;
+        _switchResult = false;
+      }
+    }
+    if (!_matched) {
+      if (pe instanceof ActionProcess) {
+        _matched=true;
+        _switchResult = false;
+      }
+    }
+    if (!_matched) {
+      _switchResult = false;
+    }
+    return _switchResult;
+  }
+  
+  public Set<eu.quanticol.cASPA.Process> fromProcessGetProcesses(final eu.quanticol.cASPA.Process p) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(p, Model.class);
+    EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
+    Set<eu.quanticol.cASPA.Process> refProcesses = new HashSet<eu.quanticol.cASPA.Process>();
+    Set<eu.quanticol.cASPA.Process> lastRefProcesses = new HashSet<eu.quanticol.cASPA.Process>();
+    refProcesses.add(p);
+    while ((refProcesses.size() > lastRefProcesses.size())) {
+      {
+        for (final eu.quanticol.cASPA.Process rp : refProcesses) {
+          lastRefProcesses.add(rp);
+        }
+        for (final eu.quanticol.cASPA.Process process : processes) {
+          for (final eu.quanticol.cASPA.Process rp_1 : lastRefProcesses) {
+            ProcessExpression _value = process.getValue();
+            this.getReferencedProcess(_value, refProcesses, rp_1);
+          }
+        }
+      }
+    }
+    return refProcesses;
+  }
+  
   public Set<eu.quanticol.cASPA.Process> fromStoreExpressionGetProcesses(final StoreExpression sr) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(sr, Model.class);
     EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();

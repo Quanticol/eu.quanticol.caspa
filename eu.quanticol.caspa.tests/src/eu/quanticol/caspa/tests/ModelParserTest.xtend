@@ -21,7 +21,8 @@ public class ModelParserTest {
 	def void testSimple(){
 		'''
 		(P,{a:=1});
-		P=P;
+		P=Q;
+		Q=P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -29,7 +30,8 @@ public class ModelParserTest {
 	def void testSimple2(){
 		'''
 		(P,{a:=1,b:=1});
-		P=P;
+		P=Q;
+		Q=P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -38,8 +40,8 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
-		P=P;
-		Q=Q;
+		P=Q;
+		Q=P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -57,8 +59,8 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1});
 		P = A | B;
-		A = A;
-		B = B;
+		A = B;
+		B = A;
 		'''.parse.assertNoErrors
 	}
 	
@@ -67,8 +69,8 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1});
 		P = A + B;
-		A = A;
-		B = B;
+		A = B;
+		B = A;
 		'''.parse.assertNoErrors
 	}
 	
@@ -189,8 +191,8 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1, b:=1});
 		P = A | B;
-		A = A;
-		B = B;
+		A = B;
+		B = A;
 		'''.parse.assertNoErrors
 	}
 	
@@ -199,8 +201,8 @@ public class ModelParserTest {
 		'''
 		(P,{a:=1, b:=1});
 		P = A + B;
-		A = A;
-		B = B;
+		A = [True]A;
+		B = [True]B;
 		'''.parse.assertNoErrors
 	}
 	
@@ -326,9 +328,9 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = A | B;
-		A = A;
-		B = B;
-		Q = Q;
+		A = B;
+		B = A;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -338,9 +340,9 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = A + B;
-		A = A;
-		B = B;
-		Q = Q;
+		A = B;
+		B = A;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -350,7 +352,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = nil;
-		Q = Q;
+		Q = nil;
 		'''.parse.assertNoErrors
 	}
 	
@@ -360,7 +362,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = kill;
-		Q = Q;
+		Q = kill;
 		'''.parse.assertNoErrors
 	}
 	
@@ -370,7 +372,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = [True]P;
-		Q = Q;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -380,7 +382,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = [False]P;
-		Q = Q;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -410,7 +412,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = a*[True]<1>.P;
-		Q = Q;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -420,7 +422,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = a*[False]().P;
-		Q = Q;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -450,7 +452,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = a*[True]<1>{a := 1}.P;
-		Q = Q;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -460,7 +462,7 @@ public class ModelParserTest {
 		(P,{a:=1,b:=1});
 		(Q,{a:=1,b:=1});
 		P = a*[False](){a := 1}.P;
-		Q = Q;
+		Q = P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -689,7 +691,8 @@ public class ModelParserTest {
 		//demonstration using global reference
 		W = [(this.a - this.b) == c]P;
 		 
-		Z = Z;
+		Z = X;
+		X = Z;
 		'''.parse.assertNoErrors
 	}
 	
@@ -707,7 +710,8 @@ public class ModelParserTest {
 		(P,{a:=1,c:=1});
 		(P,{b:=1,a:=1});		// (@CDW VALIDATIONCHECK:This is a TERM repetition. 	27.01.15)
 		 
-		P=P;
+		P=Q;
+		Q=P;
 		'''.parse.assertNoErrors
 	}
 	
@@ -742,10 +746,10 @@ public class ModelParserTest {
 		(H, {a:=1});
 		
 		//simplistic processes
-		P = P;
-		Q = Q;
-		R = R;
-		S = S;
+		P = Q;
+		Q = R;
+		R = S;
+		S = P;
 		
 		//Parallel
 		A = P|Q;
@@ -768,7 +772,7 @@ public class ModelParserTest {
 		H = a[True]<>.H;
 		
 		//UNUSED
-		I = I;	//(@CDW VALIDATIONCHECK 27.01.15 - this goes unused, need a check for this?)
+		I = J;	//(@CDW VALIDATIONCHECK 27.01.15 - this goes unused, need a check for this?)
 		
 		J = a[True]().J;
 		'''.parse.assertNoErrors
