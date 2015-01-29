@@ -592,8 +592,8 @@ public class ModelParserTest {
 		 * 
 		 * Compulsory In/Out?
 		 * 
-		 * P = a<1>{this.x := this.x + 1}.P
-		 * Q = a(1){this.x := this.x + 1}.Q
+		 * P = a<>{this.x := this.x + 1}.P
+		 * Q = a(){this.x := this.x + 1}.Q
 		 * 
 		 */
 		
@@ -624,7 +624,7 @@ public class ModelParserTest {
 		S = msg*[True](a){this.c := this.c + a}.W;
 		 
 		//can miss out updates:
-		T = msg1[True]<this.a>.P;
+		T = msg1[True]<>.P;
 		W = msg1[True]().Q;
 		'''.parse.assertNoErrors
 	}

@@ -421,4 +421,70 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+  
+  @Test
+  public void actionMatchingArgs() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = a[a == 1]<a, 1>.P;");
+      _builder.newLine();
+      _builder.append("Q = a[a == 1](b).Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _action = CASPAPackage.eINSTANCE.getAction();
+      this._validationTestHelper.assertError(_parse, _action, 
+        CASPAValidator.ARGUMENTS_MATCH, 
+        "No partner action with matching number of arguments");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void actionMatchingArgs1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = a[a == 1]<1>.P;");
+      _builder.newLine();
+      _builder.append("Q = a[a == 1]().Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _action = CASPAPackage.eINSTANCE.getAction();
+      this._validationTestHelper.assertError(_parse, _action, 
+        CASPAValidator.ARGUMENTS_MATCH, 
+        "No partner action with matching number of arguments");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void actionMatchingArgs2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = a[a == 1]<>.P;");
+      _builder.newLine();
+      _builder.append("Q = a[a == 1](c).Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _action = CASPAPackage.eINSTANCE.getAction();
+      this._validationTestHelper.assertError(_parse, _action, 
+        CASPAValidator.ARGUMENTS_MATCH, 
+        "No partner action with matching number of arguments");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

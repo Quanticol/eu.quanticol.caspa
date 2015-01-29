@@ -55,6 +55,7 @@ import java.util.List
 import java.util.ArrayList
 import eu.quanticol.cASPA.Arguments
 import eu.quanticol.cASPA.Out
+import eu.quanticol.cASPA.Constant
 
 /**
  * Custom validation rules. 
@@ -467,18 +468,52 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		
 	}
 	
-//	@Check
-//	def checkArgumentsMatch(Action action){
-//		
-//		var boolean fails = true
-//		
-//		if(fails){
-//			error("There must exist an action with matching arguments",
-//			CASPAPackage::Literals.ACTION__ARGUMENTS,
-//			ARGUMENTS_MATCH)
-//		}
-//		
-//	}
+	@Check
+	def checkArgumentsMatch(Unicast action){
+		
+		var boolean fails = true
+		var processes = action.getContainerOfType(Model).processes
+		var String name = action.name
+		var String inputOutput = action.arguments.inputOrOutputArgument
+		var int args = 0
+		var int count = 0
+		
+		if(action.arguments.inputOrOutputArgument.equals("In"))
+			args = action.arguments.getAllContentsOfType(FreeVariable).size
+		else {
+			args = action.arguments.getAllContentsOfType(Constant).size
+			args = args + action.arguments.getAllContentsOfType(Reference).size
+			args = args + action.arguments.getAllContentsOfType(SelfReference).size
+			}
+			
+		for(p : processes)
+			for(u : p.getAllContentsOfType(Unicast)){
+				
+				if(!u.arguments.inputOrOutputArgument.equals(inputOutput)){
+					
+					var int temp = 0
+					
+					if(u.arguments.inputOrOutputArgument.equals("In")){
+						temp = u.arguments.getAllContentsOfType(FreeVariable).size
+					}else{
+						temp = u.arguments.getAllContentsOfType(Constant).size
+						temp = temp + u.arguments.getAllContentsOfType(Reference).size
+						temp = temp + u.arguments.getAllContentsOfType(SelfReference).size
+					}
+					
+					if(u.name.equals(name) && temp == args){
+						count++
+					}
+				}
+			 }
+		fails = count == 0
+		if(fails){
+			error("No partner action with matching number of arguments",
+			CASPAPackage::Literals.ACTION__NAME,
+			ARGUMENTS_MATCH)
+		}
+		
+	}
 	
 	@Check
 	def checkActionHasPartner(Unicast action){

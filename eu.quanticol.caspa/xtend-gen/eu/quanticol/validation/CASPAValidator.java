@@ -8,6 +8,7 @@ import com.google.inject.Inject;
 import eu.quanticol.ModelUtil;
 import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.CASPAPackage;
+import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
@@ -797,6 +798,95 @@ public class CASPAValidator extends AbstractCASPAValidator {
       this.warning("Store never used locally.", 
         CASPAPackage.Literals.STORE__NAME, 
         CASPAValidator.STORE_NEVER_USED);
+    }
+  }
+  
+  @Check
+  public void checkArgumentsMatch(final Unicast action) {
+    boolean fails = true;
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(action, Model.class);
+    EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
+    String name = action.getName();
+    Arguments _arguments = action.getArguments();
+    String inputOutput = this.inputOrOutputArgument(_arguments);
+    int args = 0;
+    int count = 0;
+    Arguments _arguments_1 = action.getArguments();
+    String _inputOrOutputArgument = this.inputOrOutputArgument(_arguments_1);
+    boolean _equals = _inputOrOutputArgument.equals("In");
+    if (_equals) {
+      Arguments _arguments_2 = action.getArguments();
+      List<FreeVariable> _allContentsOfType = EcoreUtil2.<FreeVariable>getAllContentsOfType(_arguments_2, FreeVariable.class);
+      int _size = _allContentsOfType.size();
+      args = _size;
+    } else {
+      Arguments _arguments_3 = action.getArguments();
+      List<Constant> _allContentsOfType_1 = EcoreUtil2.<Constant>getAllContentsOfType(_arguments_3, Constant.class);
+      int _size_1 = _allContentsOfType_1.size();
+      args = _size_1;
+      Arguments _arguments_4 = action.getArguments();
+      List<Reference> _allContentsOfType_2 = EcoreUtil2.<Reference>getAllContentsOfType(_arguments_4, Reference.class);
+      int _size_2 = _allContentsOfType_2.size();
+      int _plus = (args + _size_2);
+      args = _plus;
+      Arguments _arguments_5 = action.getArguments();
+      List<SelfReference> _allContentsOfType_3 = EcoreUtil2.<SelfReference>getAllContentsOfType(_arguments_5, SelfReference.class);
+      int _size_3 = _allContentsOfType_3.size();
+      int _plus_1 = (args + _size_3);
+      args = _plus_1;
+    }
+    for (final eu.quanticol.cASPA.Process p : processes) {
+      List<Unicast> _allContentsOfType_4 = EcoreUtil2.<Unicast>getAllContentsOfType(p, Unicast.class);
+      for (final Unicast u : _allContentsOfType_4) {
+        Arguments _arguments_6 = u.getArguments();
+        String _inputOrOutputArgument_1 = this.inputOrOutputArgument(_arguments_6);
+        boolean _equals_1 = _inputOrOutputArgument_1.equals(inputOutput);
+        boolean _not = (!_equals_1);
+        if (_not) {
+          int temp = 0;
+          Arguments _arguments_7 = u.getArguments();
+          String _inputOrOutputArgument_2 = this.inputOrOutputArgument(_arguments_7);
+          boolean _equals_2 = _inputOrOutputArgument_2.equals("In");
+          if (_equals_2) {
+            Arguments _arguments_8 = u.getArguments();
+            List<FreeVariable> _allContentsOfType_5 = EcoreUtil2.<FreeVariable>getAllContentsOfType(_arguments_8, FreeVariable.class);
+            int _size_4 = _allContentsOfType_5.size();
+            temp = _size_4;
+          } else {
+            Arguments _arguments_9 = u.getArguments();
+            List<Constant> _allContentsOfType_6 = EcoreUtil2.<Constant>getAllContentsOfType(_arguments_9, Constant.class);
+            int _size_5 = _allContentsOfType_6.size();
+            temp = _size_5;
+            Arguments _arguments_10 = u.getArguments();
+            List<Reference> _allContentsOfType_7 = EcoreUtil2.<Reference>getAllContentsOfType(_arguments_10, Reference.class);
+            int _size_6 = _allContentsOfType_7.size();
+            int _plus_2 = (temp + _size_6);
+            temp = _plus_2;
+            Arguments _arguments_11 = u.getArguments();
+            List<SelfReference> _allContentsOfType_8 = EcoreUtil2.<SelfReference>getAllContentsOfType(_arguments_11, SelfReference.class);
+            int _size_7 = _allContentsOfType_8.size();
+            int _plus_3 = (temp + _size_7);
+            temp = _plus_3;
+          }
+          boolean _and = false;
+          String _name = u.getName();
+          boolean _equals_3 = _name.equals(name);
+          if (!_equals_3) {
+            _and = false;
+          } else {
+            _and = (temp == args);
+          }
+          if (_and) {
+            count++;
+          }
+        }
+      }
+    }
+    fails = (count == 0);
+    if (fails) {
+      this.error("No partner action with matching number of arguments", 
+        CASPAPackage.Literals.ACTION__NAME, 
+        CASPAValidator.ARGUMENTS_MATCH);
     }
   }
   

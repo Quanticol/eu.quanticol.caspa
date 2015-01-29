@@ -1138,10 +1138,10 @@ public class ModelParserTest {
       _builder.append("* ");
       _builder.newLine();
       _builder.append(" ");
-      _builder.append("* P = a<1>{this.x := this.x + 1}.P");
+      _builder.append("* P = a<>{this.x := this.x + 1}.P");
       _builder.newLine();
       _builder.append(" ");
-      _builder.append("* Q = a(1){this.x := this.x + 1}.Q");
+      _builder.append("* Q = a(){this.x := this.x + 1}.Q");
       _builder.newLine();
       _builder.append(" ");
       _builder.append("* ");
@@ -1214,7 +1214,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("//can miss out updates:");
       _builder.newLine();
-      _builder.append("T = msg1[True]<this.a>.P;");
+      _builder.append("T = msg1[True]<>.P;");
       _builder.newLine();
       _builder.append("W = msg1[True]().Q;");
       _builder.newLine();

@@ -241,6 +241,45 @@ class ValidationTest {
 		
 	}
 	
+	@Test
+	def void actionMatchingArgs(){
+		'''
+		(P,{a:=1});
+		(Q,{a:=1});
+		P = a[a == 1]<a, 1>.P;
+		Q = a[a == 1](b).Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
+			CASPAValidator::ARGUMENTS_MATCH,
+			"No partner action with matching number of arguments")
+		
+	}
+	
+	@Test
+	def void actionMatchingArgs1(){
+		'''
+		(P,{a:=1});
+		(Q,{a:=1});
+		P = a[a == 1]<1>.P;
+		Q = a[a == 1]().Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
+			CASPAValidator::ARGUMENTS_MATCH,
+			"No partner action with matching number of arguments")
+		
+	}
+	
+	@Test
+	def void actionMatchingArgs2(){
+		'''
+		(P,{a:=1});
+		(Q,{a:=1});
+		P = a[a == 1]<>.P;
+		Q = a[a == 1](c).Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
+			CASPAValidator::ARGUMENTS_MATCH,
+			"No partner action with matching number of arguments")
+		
+	}
+	
 	
 //	
 //	@Test
