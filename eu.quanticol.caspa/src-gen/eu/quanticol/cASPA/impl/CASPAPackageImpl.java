@@ -42,6 +42,7 @@ import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.UniformNatural;
@@ -146,6 +147,13 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * @generated
    */
   private EClass termEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass storesEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -718,6 +726,26 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EReference getTerm_Stores()
   {
     return (EReference)termEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getStores()
+  {
+    return storesEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getStores_Stores()
+  {
+    return (EReference)storesEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1824,6 +1852,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     createEReference(termEClass, TERM__REF);
     createEReference(termEClass, TERM__STORES);
 
+    storesEClass = createEClass(STORES);
+    createEReference(storesEClass, STORES__STORES);
+
     booleanConstantEClass = createEClass(BOOLEAN_CONSTANT);
     createEReference(booleanConstantEClass, BOOLEAN_CONSTANT__VALUE);
 
@@ -2078,7 +2109,10 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     initEClass(termEClass, Term.class, "Term", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTerm_Ref(), this.getProcessExpression(), null, "ref", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTerm_Stores(), this.getStoreExpression(), null, "stores", null, 0, -1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTerm_Stores(), this.getStores(), null, "stores", null, 0, 1, Term.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(storesEClass, Stores.class, "Stores", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getStores_Stores(), this.getStoreExpression(), null, "stores", null, 0, -1, Stores.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(booleanConstantEClass, BooleanConstant.class, "BooleanConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getBooleanConstant_Value(), this.getBooleanConstant(), null, "value", null, 0, 1, BooleanConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -56,6 +56,8 @@ import org.eclipse.emf.ecore.EAttribute
 import eu.quanticol.cASPA.UpdateStoreReference
 import eu.quanticol.cASPA.Term
 import java.util.ArrayList
+import eu.quanticol.cASPA.ReferencedProcess
+import org.eclipse.emf.common.util.EList
 
 /**
  * Custom validation rules. 
@@ -73,6 +75,8 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	public static val FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique"
 	public static val REFERENCE_HAS_NO_REFERENCE = "eu.quanticol.ReferenceHasNoReference"
 	public static val NO_DUPLICATE_STORES_IN_TERMS = "eu.quanticol.noDuplicateStoresInTerms"
+	public static val REQUIRE_UNIQUE_TERMS = "eu.quanticol.requireUniqueTerms"
+	public static val STORE_NEVER_USED = "eu.quanticol.storeNeverUsed"
 	
 	@Check
 	def checkProcessNamesUnique(Process process){
@@ -396,7 +400,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	def checkNoDuplicateStoresInTerms(Store store){
 		
 		var int count = 0
-		for(st : store.getContainerOfType(Term).stores)
+		for(st : store.getContainerOfType(Term).stores.stores)
 			if(store.name.equals((st as Store).name))
 				count++
 		
@@ -404,6 +408,62 @@ class CASPAValidator extends AbstractCASPAValidator  {
 			error("Store names cannot be repeated in Terms.",
 			CASPAPackage::eINSTANCE.store_Name,
 			NO_DUPLICATE_STORES_IN_TERMS)
+		}
+		
+	}
+	
+	@Check
+	def checkUniqueTerms(Term term){
+		
+		var terms = term.getContainerOfType(Model).terms
+		var name = ((term.ref as ReferencedProcess).ref as Process).name
+		var Set<String> myStoreNames = new HashSet<String>()
+		var int count = 0;
+		
+		for(s : term.stores.stores)
+			myStoreNames.add((s as Store).name + (s as Store).value)
+			
+		for(t : terms){
+			
+			var String tName = ((t.ref as ReferencedProcess).ref as Process).name
+			var Set<String> temp = new HashSet<String>()
+			for(s : t.stores.stores)
+				temp.add((s as Store).name + (s as Store).value)
+				
+			if(myStoreNames.equals(temp) && name.equals(tName)){
+				count++
+			}
+		}
+		
+		if(count > 1){
+			error("Terms must be unique.",
+			CASPAPackage::Literals.TERM__STORES,
+			REQUIRE_UNIQUE_TERMS)
+		}
+		
+	}
+	
+	@Check
+	def checkStoresAreUsed(Store store){
+		
+		var processes = store.getContainerOfType(Model).processes
+		var name = store.name
+		var boolean exists = false
+		
+		for(process : processes){
+			for(sr : process.getAllContentsOfType(SelfReference))
+				if(sr.name.equals(name))
+					exists = true
+			for(r : process.getAllContentsOfType(Reference))
+				if(r.name.equals(name))
+					exists = true
+		}
+		
+		
+		if(!exists){
+			warning("Store never used.",
+			CASPAPackage::Literals.STORE__NAME,
+			STORE_NEVER_USED)
 		}
 		
 	}

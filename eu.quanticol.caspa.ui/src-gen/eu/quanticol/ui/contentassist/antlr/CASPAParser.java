@@ -127,7 +127,8 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionProcessAccess().getGroup(), "rule__ActionProcess__Group__0");
 					put(grammarAccess.getReferencedProcessAccess().getGroup(), "rule__ReferencedProcess__Group__0");
 					put(grammarAccess.getTermAccess().getGroup(), "rule__Term__Group__0");
-					put(grammarAccess.getTermAccess().getGroup_5(), "rule__Term__Group_5__0");
+					put(grammarAccess.getStoresAccess().getGroup(), "rule__Stores__Group__0");
+					put(grammarAccess.getStoresAccess().getGroup_2(), "rule__Stores__Group_2__0");
 					put(grammarAccess.getDoubleAccess().getGroup(), "rule__Double__Group__0");
 					put(grammarAccess.getDoubleAccess().getGroup_1(), "rule__Double__Group_1__0");
 					put(grammarAccess.getDoubleAccess().getGroup_1_2(), "rule__Double__Group_1_2__0");
@@ -200,8 +201,9 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getActionProcessAccess().getRefAssignment_2(), "rule__ActionProcess__RefAssignment_2");
 					put(grammarAccess.getReferencedProcessAccess().getRefAssignment_1(), "rule__ReferencedProcess__RefAssignment_1");
 					put(grammarAccess.getTermAccess().getRefAssignment_1(), "rule__Term__RefAssignment_1");
-					put(grammarAccess.getTermAccess().getStoresAssignment_4(), "rule__Term__StoresAssignment_4");
-					put(grammarAccess.getTermAccess().getStoresAssignment_5_1(), "rule__Term__StoresAssignment_5_1");
+					put(grammarAccess.getTermAccess().getStoresAssignment_3(), "rule__Term__StoresAssignment_3");
+					put(grammarAccess.getStoresAccess().getStoresAssignment_1(), "rule__Stores__StoresAssignment_1");
+					put(grammarAccess.getStoresAccess().getStoresAssignment_2_1(), "rule__Stores__StoresAssignment_2_1");
 				}
 			};
 		}

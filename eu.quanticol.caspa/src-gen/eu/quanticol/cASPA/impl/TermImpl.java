@@ -4,24 +4,17 @@ package eu.quanticol.cASPA.impl;
 
 import eu.quanticol.cASPA.CASPAPackage;
 import eu.quanticol.cASPA.ProcessExpression;
-import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
-
-import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -50,14 +43,14 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
   protected ProcessExpression ref;
 
   /**
-   * The cached value of the '{@link #getStores() <em>Stores</em>}' containment reference list.
+   * The cached value of the '{@link #getStores() <em>Stores</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getStores()
    * @generated
    * @ordered
    */
-  protected EList<StoreExpression> stores;
+  protected Stores stores;
 
   /**
    * <!-- begin-user-doc -->
@@ -133,13 +126,47 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<StoreExpression> getStores()
+  public Stores getStores()
   {
-    if (stores == null)
-    {
-      stores = new EObjectContainmentEList<StoreExpression>(StoreExpression.class, this, CASPAPackage.TERM__STORES);
-    }
     return stores;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetStores(Stores newStores, NotificationChain msgs)
+  {
+    Stores oldStores = stores;
+    stores = newStores;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, CASPAPackage.TERM__STORES, oldStores, newStores);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setStores(Stores newStores)
+  {
+    if (newStores != stores)
+    {
+      NotificationChain msgs = null;
+      if (stores != null)
+        msgs = ((InternalEObject)stores).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.TERM__STORES, null, msgs);
+      if (newStores != null)
+        msgs = ((InternalEObject)newStores).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - CASPAPackage.TERM__STORES, null, msgs);
+      msgs = basicSetStores(newStores, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, CASPAPackage.TERM__STORES, newStores, newStores));
   }
 
   /**
@@ -155,7 +182,7 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
       case CASPAPackage.TERM__REF:
         return basicSetRef(null, msgs);
       case CASPAPackage.TERM__STORES:
-        return ((InternalEList<?>)getStores()).basicRemove(otherEnd, msgs);
+        return basicSetStores(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -183,7 +210,6 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -193,8 +219,7 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
         setRef((ProcessExpression)newValue);
         return;
       case CASPAPackage.TERM__STORES:
-        getStores().clear();
-        getStores().addAll((Collection<? extends StoreExpression>)newValue);
+        setStores((Stores)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -214,7 +239,7 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
         setRef((ProcessExpression)null);
         return;
       case CASPAPackage.TERM__STORES:
-        getStores().clear();
+        setStores((Stores)null);
         return;
     }
     super.eUnset(featureID);
@@ -233,7 +258,7 @@ public class TermImpl extends MinimalEObjectImpl.Container implements Term
       case CASPAPackage.TERM__REF:
         return ref != null;
       case CASPAPackage.TERM__STORES:
-        return stores != null && !stores.isEmpty();
+        return stores != null;
     }
     return super.eIsSet(featureID);
   }

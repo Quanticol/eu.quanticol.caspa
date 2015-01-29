@@ -1983,23 +1983,17 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRefAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cRefReferencedProcessParserRuleCall_1_0 = (RuleCall)cRefAssignment_1.eContents().get(0);
 		private final Keyword cCommaKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cStoresAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cStoresStoreParserRuleCall_4_0 = (RuleCall)cStoresAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cCommaKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cStoresAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cStoresStoreParserRuleCall_5_1_0 = (RuleCall)cStoresAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cSemicolonKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cStoresAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cStoresStoresParserRuleCall_3_0 = (RuleCall)cStoresAssignment_3.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cSemicolonKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		////TERMS
 		//Term hidden(ML_COMMENT, SL_COMMENT, WS):
-		//	"(" ref=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
+		//	"(" ref=ReferencedProcess "," stores=Stores ")" ";";
 		public ParserRule getRule() { return rule; }
 
-		//"(" ref=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";"
+		//"(" ref=ReferencedProcess "," stores=Stores ")" ";"
 		public Group getGroup() { return cGroup; }
 
 		//"("
@@ -2014,35 +2008,61 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		//","
 		public Keyword getCommaKeyword_2() { return cCommaKeyword_2; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//stores=Stores
+		public Assignment getStoresAssignment_3() { return cStoresAssignment_3; }
 
-		//stores+=Store
-		public Assignment getStoresAssignment_4() { return cStoresAssignment_4; }
-
-		//Store
-		public RuleCall getStoresStoreParserRuleCall_4_0() { return cStoresStoreParserRuleCall_4_0; }
-
-		//("," stores+=Store+)*
-		public Group getGroup_5() { return cGroup_5; }
-
-		//","
-		public Keyword getCommaKeyword_5_0() { return cCommaKeyword_5_0; }
-
-		//stores+=Store+
-		public Assignment getStoresAssignment_5_1() { return cStoresAssignment_5_1; }
-
-		//Store
-		public RuleCall getStoresStoreParserRuleCall_5_1_0() { return cStoresStoreParserRuleCall_5_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		//Stores
+		public RuleCall getStoresStoresParserRuleCall_3_0() { return cStoresStoresParserRuleCall_3_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_4() { return cRightParenthesisKeyword_4; }
 
 		//";"
-		public Keyword getSemicolonKeyword_8() { return cSemicolonKeyword_8; }
+		public Keyword getSemicolonKeyword_5() { return cSemicolonKeyword_5; }
+	}
+
+	public class StoresElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Stores");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cStoresAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cStoresStoreParserRuleCall_1_0 = (RuleCall)cStoresAssignment_1.eContents().get(0);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cStoresAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cStoresStoreParserRuleCall_2_1_0 = (RuleCall)cStoresAssignment_2_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//Stores hidden(ML_COMMENT, SL_COMMENT, WS):
+		//	"{" stores+=Store ("," stores+=Store+)* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"{" stores+=Store ("," stores+=Store+)* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_0() { return cLeftCurlyBracketKeyword_0; }
+
+		//stores+=Store
+		public Assignment getStoresAssignment_1() { return cStoresAssignment_1; }
+
+		//Store
+		public RuleCall getStoresStoreParserRuleCall_1_0() { return cStoresStoreParserRuleCall_1_0; }
+
+		//("," stores+=Store+)*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//stores+=Store+
+		public Assignment getStoresAssignment_2_1() { return cStoresAssignment_2_1; }
+
+		//Store
+		public RuleCall getStoresStoreParserRuleCall_2_1_0() { return cStoresStoreParserRuleCall_2_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3() { return cRightCurlyBracketKeyword_3; }
 	}
 
 	public class DoubleElements extends AbstractParserRuleElementFinder {
@@ -2184,6 +2204,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 	private final ActionProcessElements pActionProcess;
 	private final ReferencedProcessElements pReferencedProcess;
 	private final TermElements pTerm;
+	private final StoresElements pStores;
 	private final DoubleElements pDouble;
 	private final NaturalElements pNatural;
 	private final BoolElements pBool;
@@ -2252,6 +2273,7 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 		this.pActionProcess = new ActionProcessElements();
 		this.pReferencedProcess = new ReferencedProcessElements();
 		this.pTerm = new TermElements();
+		this.pStores = new StoresElements();
 		this.pDouble = new DoubleElements();
 		this.pNatural = new NaturalElements();
 		this.pBool = new BoolElements();
@@ -2893,13 +2915,23 @@ public class CASPAGrammarAccess extends AbstractGrammarElementFinder {
 
 	////TERMS
 	//Term hidden(ML_COMMENT, SL_COMMENT, WS):
-	//	"(" ref=ReferencedProcess "," "{" stores+=Store ("," stores+=Store+)* "}" ")" ";";
+	//	"(" ref=ReferencedProcess "," stores=Stores ")" ";";
 	public TermElements getTermAccess() {
 		return pTerm;
 	}
 	
 	public ParserRule getTermRule() {
 		return getTermAccess().getRule();
+	}
+
+	//Stores hidden(ML_COMMENT, SL_COMMENT, WS):
+	//	"{" stores+=Store ("," stores+=Store+)* "}";
+	public StoresElements getStoresAccess() {
+		return pStores;
+	}
+	
+	public ParserRule getStoresRule() {
+		return getStoresAccess().getRule();
 	}
 
 	////BASETYPES

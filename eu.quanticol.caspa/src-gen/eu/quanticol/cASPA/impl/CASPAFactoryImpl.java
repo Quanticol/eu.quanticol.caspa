@@ -42,6 +42,7 @@ import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.UniformNatural;
@@ -126,6 +127,7 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.PROCESS: return createProcess();
       case CASPAPackage.PROCESS_EXPRESSION: return createProcessExpression();
       case CASPAPackage.TERM: return createTerm();
+      case CASPAPackage.STORES: return createStores();
       case CASPAPackage.BOOLEAN_CONSTANT: return createBooleanConstant();
       case CASPAPackage.STORE: return createStore();
       case CASPAPackage.REFERENCE: return createReference();
@@ -290,6 +292,17 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     TermImpl term = new TermImpl();
     return term;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Stores createStores()
+  {
+    StoresImpl stores = new StoresImpl();
+    return stores;
   }
 
   /**

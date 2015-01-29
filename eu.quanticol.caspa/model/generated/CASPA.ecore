@@ -37,6 +37,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Term">
     <eStructuralFeatures xsi:type="ecore:EReference" name="ref" eType="#//ProcessExpression"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="stores" eType="#//Stores"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Stores">
     <eStructuralFeatures xsi:type="ecore:EReference" name="stores" upperBound="-1"
         eType="#//StoreExpression" containment="true"/>
   </eClassifiers>

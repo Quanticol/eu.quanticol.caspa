@@ -122,6 +122,15 @@ public interface CASPAFactory extends EFactory
   Term createTerm();
 
   /**
+   * Returns a new object of class '<em>Stores</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Stores</em>'.
+   * @generated
+   */
+  Stores createStores();
+
+  /**
    * Returns a new object of class '<em>Boolean Constant</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

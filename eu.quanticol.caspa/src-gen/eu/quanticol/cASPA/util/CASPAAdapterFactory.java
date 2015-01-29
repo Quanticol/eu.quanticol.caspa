@@ -41,6 +41,7 @@ import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.UniformNatural;
@@ -178,6 +179,11 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
       public Adapter caseTerm(Term object)
       {
         return createTermAdapter();
+      }
+      @Override
+      public Adapter caseStores(Stores object)
+      {
+        return createStoresAdapter();
       }
       @Override
       public Adapter caseBooleanConstant(BooleanConstant object)
@@ -562,6 +568,21 @@ public class CASPAAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createTermAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link eu.quanticol.cASPA.Stores <em>Stores</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see eu.quanticol.cASPA.Stores
+   * @generated
+   */
+  public Adapter createStoresAdapter()
   {
     return null;
   }

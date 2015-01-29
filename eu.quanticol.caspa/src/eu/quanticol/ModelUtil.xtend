@@ -250,7 +250,7 @@ class ModelUtil {
 		var Set<String> names = new HashSet<String>()
 		
 		for(term : terms)
-			for(store : term.stores)
+			for(store : term.stores.stores)
 				names.add((store as Store).name)
 		
 		return names
@@ -332,7 +332,7 @@ class ModelUtil {
 		var HashMap<Integer,ArrayList<String>> names = new HashMap<Integer,ArrayList<String>>()
 		
 		for(i : terms.keySet)
-			for(store : terms.get(i).stores){
+			for(store : terms.get(i).stores.stores){
 				if(names.get(i) == null){
 					names.put(i,new ArrayList<String>())
 					

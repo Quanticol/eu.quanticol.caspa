@@ -27,7 +27,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	protected AbstractElementAlias match_PredicatePrimary_LeftParenthesisKeyword_0_0_p;
 	protected AbstractElementAlias match_PrimaryProcess_LeftParenthesisKeyword_0_0_a;
 	protected AbstractElementAlias match_PrimaryProcess_LeftParenthesisKeyword_0_0_p;
-	protected AbstractElementAlias match_Term_CommaKeyword_5_0_q;
+	protected AbstractElementAlias match_Stores_CommaKeyword_2_0_q;
 	protected AbstractElementAlias match_UpdatePrimary_LeftParenthesisKeyword_0_0_a;
 	protected AbstractElementAlias match_UpdatePrimary_LeftParenthesisKeyword_0_0_p;
 	protected AbstractElementAlias match_Updates_CommaKeyword_3_0_q;
@@ -44,7 +44,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 		match_PredicatePrimary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPredicatePrimaryAccess().getLeftParenthesisKeyword_0_0());
 		match_PrimaryProcess_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getPrimaryProcessAccess().getLeftParenthesisKeyword_0_0());
 		match_PrimaryProcess_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getPrimaryProcessAccess().getLeftParenthesisKeyword_0_0());
-		match_Term_CommaKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getTermAccess().getCommaKeyword_5_0());
+		match_Stores_CommaKeyword_2_0_q = new TokenAlias(false, true, grammarAccess.getStoresAccess().getCommaKeyword_2_0());
 		match_UpdatePrimary_LeftParenthesisKeyword_0_0_a = new TokenAlias(true, true, grammarAccess.getUpdatePrimaryAccess().getLeftParenthesisKeyword_0_0());
 		match_UpdatePrimary_LeftParenthesisKeyword_0_0_p = new TokenAlias(true, false, grammarAccess.getUpdatePrimaryAccess().getLeftParenthesisKeyword_0_0());
 		match_Updates_CommaKeyword_3_0_q = new TokenAlias(false, true, grammarAccess.getUpdatesAccess().getCommaKeyword_3_0());
@@ -80,8 +80,8 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 				emit_PrimaryProcess_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_PrimaryProcess_LeftParenthesisKeyword_0_0_p.equals(syntax))
 				emit_PrimaryProcess_LeftParenthesisKeyword_0_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Term_CommaKeyword_5_0_q.equals(syntax))
-				emit_Term_CommaKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Stores_CommaKeyword_2_0_q.equals(syntax))
+				emit_Stores_CommaKeyword_2_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_UpdatePrimary_LeftParenthesisKeyword_0_0_a.equals(syntax))
 				emit_UpdatePrimary_LeftParenthesisKeyword_0_0_a(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_UpdatePrimary_LeftParenthesisKeyword_0_0_p.equals(syntax))
@@ -168,7 +168,7 @@ public class CASPASyntacticSequencer extends AbstractSyntacticSequencer {
 	 * Syntax:
 	 *     ','?
 	 */
-	protected void emit_Term_CommaKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Stores_CommaKeyword_2_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -195,6 +195,40 @@ class ValidationTest {
 			"Store names cannot be repeated in Terms.")
 	}
 	
+	@Test
+	def void requireUniqueTerms1(){
+		'''
+		(P,{a:=1});
+		(P,{a:=1});
+		P=P;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.term,
+			CASPAValidator::REQUIRE_UNIQUE_TERMS,
+			"Terms must be unique.")
+	}
+	
+	@Test
+	def void requireUniqueTerms2(){
+		'''
+		(P,{a:=1,b:=1});
+		(P,{b:=1,a:=1});
+		P=P;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.term,
+			CASPAValidator::REQUIRE_UNIQUE_TERMS,
+			"Terms must be unique.")
+		
+	}
+	
+	
+	@Test
+	def void storeNeverUsed(){
+		'''
+		(P,{a:=1});
+		P=P;
+		'''.parse.assertWarning(CASPAPackage::eINSTANCE.store,
+			CASPAValidator::STORE_NEVER_USED,
+			"Store never used.")
+		
+	}
 	
 //			DistributionReference: se.check
 //			UniformReference: se.check

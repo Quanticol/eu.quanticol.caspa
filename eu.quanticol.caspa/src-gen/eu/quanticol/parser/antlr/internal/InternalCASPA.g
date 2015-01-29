@@ -3814,61 +3814,110 @@ ruleTerm returns [EObject current=null]
     {
     	newLeafNode(otherlv_2, grammarAccess.getTermAccess().getCommaKeyword_2());
     }
-	otherlv_3='{' 
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getTermAccess().getStoresStoresParserRuleCall_3_0()); 
+	    }
+		lv_stores_3_0=ruleStores		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getTermRule());
+	        }
+       		set(
+       			$current, 
+       			"stores",
+        		lv_stores_3_0, 
+        		"Stores");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_4=')' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getTermAccess().getLeftCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_4, grammarAccess.getTermAccess().getRightParenthesisKeyword_4());
+    }
+	otherlv_5=';' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getTermAccess().getSemicolonKeyword_5());
+    }
+)
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+
+
+
+
+// Entry rule entryRuleStores
+entryRuleStores returns [EObject current=null] 
+	@init { 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+	}
+	:
+	{ newCompositeNode(grammarAccess.getStoresRule()); }
+	 iv_ruleStores=ruleStores 
+	 { $current=$iv_ruleStores.current; } 
+	 EOF 
+;
+finally {
+	myHiddenTokenState.restore();
+}
+
+// Rule Stores
+ruleStores returns [EObject current=null] 
+    @init { enterRule(); 
+		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+    }
+    @after { leaveRule(); }:
+(	otherlv_0='{' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getStoresAccess().getLeftCurlyBracketKeyword_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTermAccess().getStoresStoreParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getStoresAccess().getStoresStoreParserRuleCall_1_0()); 
 	    }
-		lv_stores_4_0=ruleStore		{
+		lv_stores_1_0=ruleStore		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTermRule());
+	            $current = createModelElementForParent(grammarAccess.getStoresRule());
 	        }
        		add(
        			$current, 
        			"stores",
-        		lv_stores_4_0, 
+        		lv_stores_1_0, 
         		"Store");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)(	otherlv_5=',' 
+)(	otherlv_2=',' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getTermAccess().getCommaKeyword_5_0());
+    	newLeafNode(otherlv_2, grammarAccess.getStoresAccess().getCommaKeyword_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getTermAccess().getStoresStoreParserRuleCall_5_1_0()); 
+	        newCompositeNode(grammarAccess.getStoresAccess().getStoresStoreParserRuleCall_2_1_0()); 
 	    }
-		lv_stores_6_0=ruleStore		{
+		lv_stores_3_0=ruleStore		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getTermRule());
+	            $current = createModelElementForParent(grammarAccess.getStoresRule());
 	        }
        		add(
        			$current, 
        			"stores",
-        		lv_stores_6_0, 
+        		lv_stores_3_0, 
         		"Store");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)+)*	otherlv_7='}' 
+)+)*	otherlv_4='}' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getTermAccess().getRightCurlyBracketKeyword_6());
-    }
-	otherlv_8=')' 
-    {
-    	newLeafNode(otherlv_8, grammarAccess.getTermAccess().getRightParenthesisKeyword_7());
-    }
-	otherlv_9=';' 
-    {
-    	newLeafNode(otherlv_9, grammarAccess.getTermAccess().getSemicolonKeyword_8());
+    	newLeafNode(otherlv_4, grammarAccess.getStoresAccess().getRightCurlyBracketKeyword_3());
     }
 )
 ;

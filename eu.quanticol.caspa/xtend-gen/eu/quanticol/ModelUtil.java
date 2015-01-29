@@ -35,6 +35,7 @@ import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.UniformNatural;
 import eu.quanticol.cASPA.UpdateDiv;
@@ -579,8 +580,9 @@ public class ModelUtil {
   public Set<String> fromTermsGetStoreNames(final Set<Term> terms) {
     Set<String> names = new HashSet<String>();
     for (final Term term : terms) {
-      EList<StoreExpression> _stores = term.getStores();
-      for (final StoreExpression store : _stores) {
+      Stores _stores = term.getStores();
+      EList<StoreExpression> _stores_1 = _stores.getStores();
+      for (final StoreExpression store : _stores_1) {
         String _name = ((Store) store).getName();
         names.add(_name);
       }
@@ -691,8 +693,9 @@ public class ModelUtil {
     Set<Integer> _keySet = terms.keySet();
     for (final Integer i : _keySet) {
       Term _get = terms.get(i);
-      EList<StoreExpression> _stores = _get.getStores();
-      for (final StoreExpression store : _stores) {
+      Stores _stores = _get.getStores();
+      EList<StoreExpression> _stores_1 = _stores.getStores();
+      for (final StoreExpression store : _stores_1) {
         {
           ArrayList<String> _get_1 = names.get(i);
           boolean _equals = Objects.equal(_get_1, null);

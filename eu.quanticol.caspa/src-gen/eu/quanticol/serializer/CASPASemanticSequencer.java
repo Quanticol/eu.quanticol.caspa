@@ -36,6 +36,7 @@ import eu.quanticol.cASPA.Reference;
 import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.UniformNatural;
@@ -547,6 +548,12 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case CASPAPackage.STORE:
 				if(context == grammarAccess.getStoreRule()) {
 					sequence_Store(context, (Store) semanticObject); 
+					return; 
+				}
+				else break;
+			case CASPAPackage.STORES:
+				if(context == grammarAccess.getStoresRule()) {
+					sequence_Stores(context, (Stores) semanticObject); 
 					return; 
 				}
 				else break;
@@ -1155,10 +1162,29 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (ref=ReferencedProcess stores+=Store stores+=Store*)
+	 *     (stores+=Store stores+=Store*)
+	 */
+	protected void sequence_Stores(EObject context, Stores semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (ref=ReferencedProcess stores=Stores)
 	 */
 	protected void sequence_Term(EObject context, Term semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.TERM__REF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.TERM__REF));
+			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.TERM__STORES) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.TERM__STORES));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getTermAccess().getRefReferencedProcessParserRuleCall_1_0(), semanticObject.getRef());
+		feeder.accept(grammarAccess.getTermAccess().getStoresStoresParserRuleCall_3_0(), semanticObject.getStores());
+		feeder.finish();
 	}
 	
 	

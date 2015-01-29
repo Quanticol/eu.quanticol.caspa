@@ -345,4 +345,62 @@ public class ValidationTest {
       throw Exceptions.sneakyThrow(_e);
     }
   }
+  
+  @Test
+  public void requireUniqueTerms1() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("P=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _term = CASPAPackage.eINSTANCE.getTerm();
+      this._validationTestHelper.assertError(_parse, _term, 
+        CASPAValidator.REQUIRE_UNIQUE_TERMS, 
+        "Terms must be unique.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void requireUniqueTerms2() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1,b:=1});");
+      _builder.newLine();
+      _builder.append("(P,{b:=1,a:=1});");
+      _builder.newLine();
+      _builder.append("P=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _term = CASPAPackage.eINSTANCE.getTerm();
+      this._validationTestHelper.assertError(_parse, _term, 
+        CASPAValidator.REQUIRE_UNIQUE_TERMS, 
+        "Terms must be unique.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void storeNeverUsed() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("P=P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _store = CASPAPackage.eINSTANCE.getStore();
+      this._validationTestHelper.assertWarning(_parse, _store, 
+        CASPAValidator.STORE_NEVER_USED, 
+        "Store never used.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
 }

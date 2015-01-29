@@ -28,9 +28,11 @@ import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
 import eu.quanticol.cASPA.Reference;
+import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
@@ -80,6 +82,10 @@ public class CASPAValidator extends AbstractCASPAValidator {
   public final static String REFERENCE_HAS_NO_REFERENCE = "eu.quanticol.ReferenceHasNoReference";
   
   public final static String NO_DUPLICATE_STORES_IN_TERMS = "eu.quanticol.noDuplicateStoresInTerms";
+  
+  public final static String REQUIRE_UNIQUE_TERMS = "eu.quanticol.requireUniqueTerms";
+  
+  public final static String STORE_NEVER_USED = "eu.quanticol.storeNeverUsed";
   
   @Check
   public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
@@ -687,8 +693,9 @@ public class CASPAValidator extends AbstractCASPAValidator {
   public void checkNoDuplicateStoresInTerms(final Store store) {
     int count = 0;
     Term _containerOfType = EcoreUtil2.<Term>getContainerOfType(store, Term.class);
-    EList<StoreExpression> _stores = _containerOfType.getStores();
-    for (final StoreExpression st : _stores) {
+    Stores _stores = _containerOfType.getStores();
+    EList<StoreExpression> _stores_1 = _stores.getStores();
+    for (final StoreExpression st : _stores_1) {
       String _name = store.getName();
       String _name_1 = ((Store) st).getName();
       boolean _equals = _name.equals(_name_1);
@@ -700,6 +707,90 @@ public class CASPAValidator extends AbstractCASPAValidator {
       EAttribute _store_Name = CASPAPackage.eINSTANCE.getStore_Name();
       this.error("Store names cannot be repeated in Terms.", _store_Name, 
         CASPAValidator.NO_DUPLICATE_STORES_IN_TERMS);
+    }
+  }
+  
+  @Check
+  public void checkUniqueTerms(final Term term) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(term, Model.class);
+    EList<Term> terms = _containerOfType.getTerms();
+    ProcessExpression _ref = term.getRef();
+    eu.quanticol.cASPA.Process _ref_1 = ((ReferencedProcess) _ref).getRef();
+    String name = ((eu.quanticol.cASPA.Process) _ref_1).getName();
+    Set<String> myStoreNames = new HashSet<String>();
+    int count = 0;
+    Stores _stores = term.getStores();
+    EList<StoreExpression> _stores_1 = _stores.getStores();
+    for (final StoreExpression s : _stores_1) {
+      String _name = ((Store) s).getName();
+      int _value = ((Store) s).getValue();
+      String _plus = (_name + Integer.valueOf(_value));
+      myStoreNames.add(_plus);
+    }
+    for (final Term t : terms) {
+      {
+        ProcessExpression _ref_2 = t.getRef();
+        eu.quanticol.cASPA.Process _ref_3 = ((ReferencedProcess) _ref_2).getRef();
+        String tName = ((eu.quanticol.cASPA.Process) _ref_3).getName();
+        Set<String> temp = new HashSet<String>();
+        Stores _stores_2 = t.getStores();
+        EList<StoreExpression> _stores_3 = _stores_2.getStores();
+        for (final StoreExpression s_1 : _stores_3) {
+          String _name_1 = ((Store) s_1).getName();
+          int _value_1 = ((Store) s_1).getValue();
+          String _plus_1 = (_name_1 + Integer.valueOf(_value_1));
+          temp.add(_plus_1);
+        }
+        boolean _and = false;
+        boolean _equals = myStoreNames.equals(temp);
+        if (!_equals) {
+          _and = false;
+        } else {
+          boolean _equals_1 = name.equals(tName);
+          _and = _equals_1;
+        }
+        if (_and) {
+          count++;
+        }
+      }
+    }
+    if ((count > 1)) {
+      this.error("Terms must be unique.", 
+        CASPAPackage.Literals.TERM__STORES, 
+        CASPAValidator.REQUIRE_UNIQUE_TERMS);
+    }
+  }
+  
+  @Check
+  public void checkStoresAreUsed(final Store store) {
+    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(store, Model.class);
+    EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
+    String name = store.getName();
+    boolean exists = false;
+    for (final eu.quanticol.cASPA.Process process : processes) {
+      {
+        List<SelfReference> _allContentsOfType = EcoreUtil2.<SelfReference>getAllContentsOfType(process, SelfReference.class);
+        for (final SelfReference sr : _allContentsOfType) {
+          String _name = sr.getName();
+          boolean _equals = _name.equals(name);
+          if (_equals) {
+            exists = true;
+          }
+        }
+        List<Reference> _allContentsOfType_1 = EcoreUtil2.<Reference>getAllContentsOfType(process, Reference.class);
+        for (final Reference r : _allContentsOfType_1) {
+          String _name_1 = r.getName();
+          boolean _equals_1 = _name_1.equals(name);
+          if (_equals_1) {
+            exists = true;
+          }
+        }
+      }
+    }
+    if ((!exists)) {
+      this.warning("Store never used.", 
+        CASPAPackage.Literals.STORE__NAME, 
+        CASPAValidator.STORE_NEVER_USED);
     }
   }
 }

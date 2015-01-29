@@ -349,7 +349,11 @@ ReferencedProcess returns ProcessExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 
 //TERMS
 Term hidden(ML_COMMENT,SL_COMMENT,WS):
-	"(" ref=ReferencedProcess ",""{" stores+=Store ("," stores+=Store+)* "}" ")"";"
+	"(" ref=ReferencedProcess ","  stores=Stores ")" ";"
+;
+
+Stores hidden(ML_COMMENT,SL_COMMENT,WS):
+	"{" stores+=Store ("," stores+=Store+)* "}"
 ;
 
 //BASETYPES

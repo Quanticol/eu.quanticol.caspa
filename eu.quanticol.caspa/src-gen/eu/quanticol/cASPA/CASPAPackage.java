@@ -365,7 +365,7 @@ public interface CASPAPackage extends EPackage
   int TERM__REF = 0;
 
   /**
-   * The feature id for the '<em><b>Stores</b></em>' containment reference list.
+   * The feature id for the '<em><b>Stores</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -383,6 +383,34 @@ public interface CASPAPackage extends EPackage
   int TERM_FEATURE_COUNT = 2;
 
   /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.StoresImpl <em>Stores</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.StoresImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getStores()
+   * @generated
+   */
+  int STORES = 11;
+
+  /**
+   * The feature id for the '<em><b>Stores</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STORES__STORES = 0;
+
+  /**
+   * The number of structural features of the '<em>Stores</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int STORES_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link eu.quanticol.cASPA.impl.BooleanConstantImpl <em>Boolean Constant</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -390,7 +418,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBooleanConstant()
    * @generated
    */
-  int BOOLEAN_CONSTANT = 11;
+  int BOOLEAN_CONSTANT = 12;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -418,7 +446,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getStore()
    * @generated
    */
-  int STORE = 12;
+  int STORE = 13;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -464,7 +492,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getReference()
    * @generated
    */
-  int REFERENCE = 13;
+  int REFERENCE = 14;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -501,7 +529,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getSelfReference()
    * @generated
    */
-  int SELF_REFERENCE = 14;
+  int SELF_REFERENCE = 15;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -538,7 +566,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeVariable()
    * @generated
    */
-  int FREE_VARIABLE = 15;
+  int FREE_VARIABLE = 16;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -575,7 +603,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBroadcast()
    * @generated
    */
-  int BROADCAST = 16;
+  int BROADCAST = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -630,7 +658,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUnicast()
    * @generated
    */
-  int UNICAST = 17;
+  int UNICAST = 18;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -685,7 +713,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateOr()
    * @generated
    */
-  int PREDICATE_OR = 18;
+  int PREDICATE_OR = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -722,7 +750,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateAnd()
    * @generated
    */
-  int PREDICATE_AND = 19;
+  int PREDICATE_AND = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -759,7 +787,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateEquality()
    * @generated
    */
-  int PREDICATE_EQUALITY = 20;
+  int PREDICATE_EQUALITY = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -805,7 +833,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateComparison()
    * @generated
    */
-  int PREDICATE_COMPARISON = 21;
+  int PREDICATE_COMPARISON = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -851,7 +879,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateSub()
    * @generated
    */
-  int PREDICATE_SUB = 22;
+  int PREDICATE_SUB = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -888,7 +916,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicatePlu()
    * @generated
    */
-  int PREDICATE_PLU = 23;
+  int PREDICATE_PLU = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -925,7 +953,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateMul()
    * @generated
    */
-  int PREDICATE_MUL = 24;
+  int PREDICATE_MUL = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -962,7 +990,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateDiv()
    * @generated
    */
-  int PREDICATE_DIV = 25;
+  int PREDICATE_DIV = 26;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -999,7 +1027,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateNot()
    * @generated
    */
-  int PREDICATE_NOT = 26;
+  int PREDICATE_NOT = 27;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -1027,7 +1055,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getConstant()
    * @generated
    */
-  int CONSTANT = 27;
+  int CONSTANT = 28;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1055,7 +1083,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateStoreReference()
    * @generated
    */
-  int PREDICATE_STORE_REFERENCE = 28;
+  int PREDICATE_STORE_REFERENCE = 29;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1092,7 +1120,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getIn()
    * @generated
    */
-  int IN = 29;
+  int IN = 30;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -1120,7 +1148,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOut()
    * @generated
    */
-  int OUT = 30;
+  int OUT = 31;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -1148,7 +1176,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOutStoreReference()
    * @generated
    */
-  int OUT_STORE_REFERENCE = 31;
+  int OUT_STORE_REFERENCE = 32;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1185,7 +1213,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLocalSingleEventUpdate()
    * @generated
    */
-  int LOCAL_SINGLE_EVENT_UPDATE = 32;
+  int LOCAL_SINGLE_EVENT_UPDATE = 33;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1231,7 +1259,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdateProbability()
    * @generated
    */
-  int DISTRIBUTED_EVENT_UPDATE_PROBABILITY = 33;
+  int DISTRIBUTED_EVENT_UPDATE_PROBABILITY = 34;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1286,7 +1314,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributedEventUpdateUniform()
    * @generated
    */
-  int DISTRIBUTED_EVENT_UPDATE_UNIFORM = 34;
+  int DISTRIBUTED_EVENT_UPDATE_UNIFORM = 35;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1341,7 +1369,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateStoreReference()
    * @generated
    */
-  int UPDATE_STORE_REFERENCE = 35;
+  int UPDATE_STORE_REFERENCE = 36;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1378,7 +1406,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributionNatural()
    * @generated
    */
-  int DISTRIBUTION_NATURAL = 36;
+  int DISTRIBUTION_NATURAL = 37;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1424,7 +1452,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getDistributionReference()
    * @generated
    */
-  int DISTRIBUTION_REFERENCE = 37;
+  int DISTRIBUTION_REFERENCE = 38;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1470,7 +1498,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUniformNatural()
    * @generated
    */
-  int UNIFORM_NATURAL = 38;
+  int UNIFORM_NATURAL = 39;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1507,7 +1535,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUniformReference()
    * @generated
    */
-  int UNIFORM_REFERENCE = 39;
+  int UNIFORM_REFERENCE = 40;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1544,7 +1572,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateSub()
    * @generated
    */
-  int UPDATE_SUB = 40;
+  int UPDATE_SUB = 41;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1581,7 +1609,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdatePlu()
    * @generated
    */
-  int UPDATE_PLU = 41;
+  int UPDATE_PLU = 42;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1618,7 +1646,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateMul()
    * @generated
    */
-  int UPDATE_MUL = 42;
+  int UPDATE_MUL = 43;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1655,7 +1683,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateDiv()
    * @generated
    */
-  int UPDATE_DIV = 43;
+  int UPDATE_DIV = 44;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1692,7 +1720,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUpdateExpressionStoreReference()
    * @generated
    */
-  int UPDATE_EXPRESSION_STORE_REFERENCE = 44;
+  int UPDATE_EXPRESSION_STORE_REFERENCE = 45;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1729,7 +1757,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getParallel()
    * @generated
    */
-  int PARALLEL = 45;
+  int PARALLEL = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1766,7 +1794,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getChoice()
    * @generated
    */
-  int CHOICE = 46;
+  int CHOICE = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1803,7 +1831,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getLeaf()
    * @generated
    */
-  int LEAF = 47;
+  int LEAF = 48;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1831,7 +1859,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateProcess()
    * @generated
    */
-  int PREDICATE_PROCESS = 48;
+  int PREDICATE_PROCESS = 49;
 
   /**
    * The feature id for the '<em><b>Predicate</b></em>' containment reference.
@@ -1868,7 +1896,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getActionProcess()
    * @generated
    */
-  int ACTION_PROCESS = 49;
+  int ACTION_PROCESS = 50;
 
   /**
    * The feature id for the '<em><b>Action</b></em>' containment reference.
@@ -1905,7 +1933,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getReferencedProcess()
    * @generated
    */
-  int REFERENCED_PROCESS = 50;
+  int REFERENCED_PROCESS = 51;
 
   /**
    * The feature id for the '<em><b>Ref</b></em>' reference.
@@ -2158,15 +2186,36 @@ public interface CASPAPackage extends EPackage
   EReference getTerm_Ref();
 
   /**
-   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Term#getStores <em>Stores</em>}'.
+   * Returns the meta object for the containment reference '{@link eu.quanticol.cASPA.Term#getStores <em>Stores</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Stores</em>'.
+   * @return the meta object for the containment reference '<em>Stores</em>'.
    * @see eu.quanticol.cASPA.Term#getStores()
    * @see #getTerm()
    * @generated
    */
   EReference getTerm_Stores();
+
+  /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.Stores <em>Stores</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Stores</em>'.
+   * @see eu.quanticol.cASPA.Stores
+   * @generated
+   */
+  EClass getStores();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link eu.quanticol.cASPA.Stores#getStores <em>Stores</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Stores</em>'.
+   * @see eu.quanticol.cASPA.Stores#getStores()
+   * @see #getStores()
+   * @generated
+   */
+  EReference getStores_Stores();
 
   /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.BooleanConstant <em>Boolean Constant</em>}'.
@@ -3494,12 +3543,30 @@ public interface CASPAPackage extends EPackage
     EReference TERM__REF = eINSTANCE.getTerm_Ref();
 
     /**
-     * The meta object literal for the '<em><b>Stores</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Stores</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference TERM__STORES = eINSTANCE.getTerm_Stores();
+
+    /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.StoresImpl <em>Stores</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.StoresImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getStores()
+     * @generated
+     */
+    EClass STORES = eINSTANCE.getStores();
+
+    /**
+     * The meta object literal for the '<em><b>Stores</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference STORES__STORES = eINSTANCE.getStores_Stores();
 
     /**
      * The meta object literal for the '{@link eu.quanticol.cASPA.impl.BooleanConstantImpl <em>Boolean Constant</em>}' class.

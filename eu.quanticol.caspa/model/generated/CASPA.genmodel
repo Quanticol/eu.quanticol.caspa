@@ -36,6 +36,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/ref"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Term/stores"/>
     </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//Stores">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//Stores/stores"/>
+    </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//BooleanConstant">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//BooleanConstant/value"/>
     </genClasses>

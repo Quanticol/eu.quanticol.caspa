@@ -41,6 +41,7 @@ import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.Unicast;
 import eu.quanticol.cASPA.UniformNatural;
@@ -200,6 +201,13 @@ public class CASPASwitch<T> extends Switch<T>
       {
         Term term = (Term)theEObject;
         T result = caseTerm(term);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case CASPAPackage.STORES:
+      {
+        Stores stores = (Stores)theEObject;
+        T result = caseStores(stores);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -741,6 +749,22 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseTerm(Term object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Stores</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Stores</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseStores(Stores object)
   {
     return null;
   }
