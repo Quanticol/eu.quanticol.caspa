@@ -10,6 +10,7 @@ import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.DistributionNatural;
+import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
@@ -45,11 +46,11 @@ import eu.quanticol.cASPA.Updates;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.xbase.lib.Conversions;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class ModelUtil {
@@ -551,7 +552,7 @@ public class ModelUtil {
     return refProcesses;
   }
   
-  public Set<Term> getParentTerms(final Set<eu.quanticol.cASPA.Process> processes) {
+  public Set<Term> fromProcessesGetParentTerms(final Set<eu.quanticol.cASPA.Process> processes) {
     eu.quanticol.cASPA.Process _get = ((eu.quanticol.cASPA.Process[])Conversions.unwrapArray(processes, eu.quanticol.cASPA.Process.class))[0];
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(_get, Model.class);
     EList<Term> terms = _containerOfType.getTerms();
@@ -575,7 +576,7 @@ public class ModelUtil {
     return results;
   }
   
-  public Set<String> getStoreNamesFromTerms(final Set<Term> terms) {
+  public Set<String> fromTermsGetStoreNames(final Set<Term> terms) {
     Set<String> names = new HashSet<String>();
     for (final Term term : terms) {
       EList<StoreExpression> _stores = term.getStores();
@@ -636,13 +637,12 @@ public class ModelUtil {
     }
   }
   
-  public Set<eu.quanticol.cASPA.Process> getParentProcesses(final StoreExpression sr) {
+  public Set<eu.quanticol.cASPA.Process> fromStoreExpressionGetProcesses(final StoreExpression sr) {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(sr, Model.class);
     EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
     eu.quanticol.cASPA.Process p = EcoreUtil2.<eu.quanticol.cASPA.Process>getContainerOfType(sr, eu.quanticol.cASPA.Process.class);
     Set<eu.quanticol.cASPA.Process> refProcesses = new HashSet<eu.quanticol.cASPA.Process>();
     Set<eu.quanticol.cASPA.Process> lastRefProcesses = new HashSet<eu.quanticol.cASPA.Process>();
-    InputOutput.<eu.quanticol.cASPA.Process>println(p);
     refProcesses.add(p);
     while ((refProcesses.size() > lastRefProcesses.size())) {
       {
@@ -657,11 +657,10 @@ public class ModelUtil {
         }
       }
     }
-    InputOutput.<Set<eu.quanticol.cASPA.Process>>println(refProcesses);
     return refProcesses;
   }
   
-  public HashMap<Integer, Term> getParentTermsHash(final Set<eu.quanticol.cASPA.Process> processes) {
+  public HashMap<Integer, Term> fromProcessesGetHashMapOfTerms(final Set<eu.quanticol.cASPA.Process> processes) {
     eu.quanticol.cASPA.Process _get = ((eu.quanticol.cASPA.Process[])Conversions.unwrapArray(processes, eu.quanticol.cASPA.Process.class))[0];
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(_get, Model.class);
     EList<Term> terms = _containerOfType.getTerms();
@@ -687,7 +686,7 @@ public class ModelUtil {
     return results;
   }
   
-  public HashMap<Integer, ArrayList<String>> getStoreNamesFromTermsHashMap(final HashMap<Integer, Term> terms) {
+  public HashMap<Integer, ArrayList<String>> fromHashMapOfTermsGetStoreNames(final HashMap<Integer, Term> terms) {
     HashMap<Integer, ArrayList<String>> names = new HashMap<Integer, ArrayList<String>>();
     Set<Integer> _keySet = terms.keySet();
     for (final Integer i : _keySet) {
@@ -712,6 +711,11 @@ public class ModelUtil {
   
   public boolean isInMap(final String name, final HashMap<Integer, ArrayList<String>> theList) {
     boolean result = true;
+    int _size = theList.size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      result = false;
+    }
     Set<Integer> _keySet = theList.keySet();
     for (final Integer i : _keySet) {
       boolean _and = false;
@@ -721,6 +725,37 @@ public class ModelUtil {
         ArrayList<String> _get = theList.get(i);
         boolean _contains = _get.contains(name);
         _and = _contains;
+      }
+      result = _and;
+    }
+    return result;
+  }
+  
+  public ArrayList<String> fromStoreExpressionGetProcessInArgs(final StoreExpression sr) {
+    ProcessExpression p = EcoreUtil2.<ProcessExpression>getContainerOfType(sr, ProcessExpression.class);
+    ArrayList<String> results = new ArrayList<String>();
+    List<FreeVariable> freeVariables = EcoreUtil2.<FreeVariable>eAllOfType(p, FreeVariable.class);
+    for (final FreeVariable fv : freeVariables) {
+      String _name = fv.getName();
+      results.add(_name);
+    }
+    return results;
+  }
+  
+  public boolean isInList(final String name, final ArrayList<String> theList) {
+    boolean result = true;
+    int _length = ((Object[])Conversions.unwrapArray(theList, Object.class)).length;
+    boolean _equals = (_length == 0);
+    if (_equals) {
+      result = false;
+    }
+    for (final String nameOf : theList) {
+      boolean _and = false;
+      if (!result) {
+        _and = false;
+      } else {
+        boolean _equals_1 = nameOf.equals(name);
+        _and = _equals_1;
       }
       result = _and;
     }

@@ -25,7 +25,11 @@ import eu.quanticol.cASPA.LocalSingleEventUpdate
 import eu.quanticol.cASPA.FreeVariable
 import eu.quanticol.cASPA.SelfReference
 import eu.quanticol.cASPA.Reference
-
+import eu.quanticol.cASPA.PredicateStoreReference
+import eu.quanticol.cASPA.OutStoreReference
+import eu.quanticol.cASPA.UpdateExpressionStoreReference
+import eu.quanticol.cASPA.DistributionReference
+import eu.quanticol.cASPA.UniformReference
 
 class TypeProvider {
 	
@@ -41,22 +45,40 @@ class TypeProvider {
 	def dispatch BaseType typeFor(Constant c){
 		constantType
 	}
+	
+	def dispatch BaseType typeFor(Reference c){
+		constantType
+	}
+	
+	def dispatch BaseType typeFor(SelfReference c){
+		constantType
+	}
+	
+	def dispatch BaseType typeFor(FreeVariable c){
+		constantType
+	}
 
 	def dispatch BaseType typeFor(PredicateExpression e){
 		switch(e){
-			PredicateOr: 			boolConstantType
-			PredicateAnd: 			boolConstantType
-			PredicateEquality: 		boolConstantType
-			PredicateComparison:	boolConstantType
-			PredicateSub:			constantType
-			PredicatePlu:			constantType
-			PredicateMul:			constantType
-			PredicateDiv:			constantType
-			PredicateNot:			boolConstantType
-			Constant:				constantType
-			Store:					(e as StoreExpression)?.typeFor
-			Reference:				(e as StoreExpression)?.typeFor
-			SelfReference:			(e as StoreExpression)?.typeFor
+			PredicateOr: 					boolConstantType
+			PredicateAnd: 					boolConstantType
+			PredicateEquality: 				boolConstantType
+			PredicateComparison:			boolConstantType
+			PredicateSub:					constantType
+			PredicatePlu:					constantType
+			PredicateMul:					constantType
+			PredicateDiv:					constantType
+			PredicateNot:					boolConstantType
+			Constant:						constantType
+			Store:							(e as StoreExpression)?.typeFor
+			FreeVariable:					(e as StoreExpression)?.typeFor
+			Reference:						(e as StoreExpression)?.typeFor
+			SelfReference:					(e as StoreExpression)?.typeFor
+			PredicateStoreReference:		(e as StoreExpression)?.typeFor
+			OutStoreReference:				(e as StoreExpression)?.typeFor
+			UpdateExpressionStoreReference: (e as StoreExpression)?.typeFor
+			DistributionReference: 			(e as StoreExpression)?.typeFor
+			UniformReference: 				(e as StoreExpression)?.typeFor
 		}
 	}
 	
@@ -67,9 +89,15 @@ class TypeProvider {
 	
 	def BaseType typeFor(StoreExpression s){
 		switch(s){
-			Store:					constantType
-			SelfReference:			constantType
-			Reference:				constantType
+			Store:							constantType
+			SelfReference:					constantType
+			Reference:						constantType
+			FreeVariable:					constantType
+			PredicateStoreReference:		constantType
+			OutStoreReference:				constantType
+			UpdateExpressionStoreReference: constantType
+			DistributionReference: 			constantType
+			UniformReference: 				constantType
 		}
 	}
 	
@@ -79,8 +107,15 @@ class TypeProvider {
 			UpdatePlu:			constantType
 			UpdateMul:			constantType
 			UpdateDiv:			constantType
-			Store:				(e as StoreExpression)?.typeFor
-			FreeVariable:		constantType
+			Store:							(e as StoreExpression)?.typeFor
+			FreeVariable:					(e as StoreExpression)?.typeFor
+			Reference:						(e as StoreExpression)?.typeFor
+			SelfReference:					(e as StoreExpression)?.typeFor
+			PredicateStoreReference:		(e as StoreExpression)?.typeFor
+			OutStoreReference:				(e as StoreExpression)?.typeFor
+			UpdateExpressionStoreReference: (e as StoreExpression)?.typeFor
+			DistributionReference: 			(e as StoreExpression)?.typeFor
+			UniformReference: 				(e as StoreExpression)?.typeFor
 		}
 	}
 	

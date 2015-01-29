@@ -130,6 +130,7 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.STORE: return createStore();
       case CASPAPackage.REFERENCE: return createReference();
       case CASPAPackage.SELF_REFERENCE: return createSelfReference();
+      case CASPAPackage.FREE_VARIABLE: return createFreeVariable();
       case CASPAPackage.BROADCAST: return createBroadcast();
       case CASPAPackage.UNICAST: return createUnicast();
       case CASPAPackage.PREDICATE_OR: return createPredicateOr();
@@ -146,7 +147,6 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
       case CASPAPackage.IN: return createIn();
       case CASPAPackage.OUT: return createOut();
       case CASPAPackage.OUT_STORE_REFERENCE: return createOutStoreReference();
-      case CASPAPackage.FREE_VARIABLE: return createFreeVariable();
       case CASPAPackage.LOCAL_SINGLE_EVENT_UPDATE: return createLocalSingleEventUpdate();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_PROBABILITY: return createDistributedEventUpdateProbability();
       case CASPAPackage.DISTRIBUTED_EVENT_UPDATE_UNIFORM: return createDistributedEventUpdateUniform();
@@ -341,6 +341,17 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public FreeVariable createFreeVariable()
+  {
+    FreeVariableImpl freeVariable = new FreeVariableImpl();
+    return freeVariable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Broadcast createBroadcast()
   {
     BroadcastImpl broadcast = new BroadcastImpl();
@@ -510,17 +521,6 @@ public class CASPAFactoryImpl extends EFactoryImpl implements CASPAFactory
   {
     OutStoreReferenceImpl outStoreReference = new OutStoreReferenceImpl();
     return outStoreReference;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public FreeVariable createFreeVariable()
-  {
-    FreeVariableImpl freeVariable = new FreeVariableImpl();
-    return freeVariable;
   }
 
   /**

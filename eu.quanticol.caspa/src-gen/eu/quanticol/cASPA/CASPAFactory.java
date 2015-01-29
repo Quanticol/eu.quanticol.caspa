@@ -158,6 +158,15 @@ public interface CASPAFactory extends EFactory
   SelfReference createSelfReference();
 
   /**
+   * Returns a new object of class '<em>Free Variable</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Free Variable</em>'.
+   * @generated
+   */
+  FreeVariable createFreeVariable();
+
+  /**
    * Returns a new object of class '<em>Broadcast</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -300,15 +309,6 @@ public interface CASPAFactory extends EFactory
    * @generated
    */
   OutStoreReference createOutStoreReference();
-
-  /**
-   * Returns a new object of class '<em>Free Variable</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Free Variable</em>'.
-   * @generated
-   */
-  FreeVariable createFreeVariable();
 
   /**
    * Returns a new object of class '<em>Local Single Event Update</em>'.

@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *
  * @generated
  */
-public class FreeVariableImpl extends ArgumentsImpl implements FreeVariable
+public class FreeVariableImpl extends StoreExpressionImpl implements FreeVariable
 {
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.

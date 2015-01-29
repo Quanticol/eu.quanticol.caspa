@@ -54,25 +54,275 @@ public class ValidationTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(Q,{a:=1});");
       _builder.newLine();
-      _builder.append("(Q,{a:=2, z:=3});");
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[this.c < 1]().Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _predicateStoreReference = CASPAPackage.eINSTANCE.getPredicateStoreReference();
+      this._validationTestHelper.assertError(_parse, _predicateStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReferencePredicate() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
       _builder.newLine();
       _builder.append("Q = R;");
       _builder.newLine();
-      _builder.append("//S = T;");
-      _builder.newLine();
-      _builder.append("R = action[this.c < 1]<this.d>{this.e := this.f, ");
-      _builder.newLine();
-      _builder.append("this.g := U(this.h), ");
-      _builder.newLine();
-      _builder.append("this.i := Pr(0.25:this.j)}.Q;");
-      _builder.newLine();
-      _builder.append("//T = [this.b > 0]T;");
+      _builder.append("R = action[c < 1]().Q;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
-      EClass _reference = CASPAPackage.eINSTANCE.getReference();
-      this._validationTestHelper.assertError(_parse, _reference, 
-        CASPAValidator.SELF_REFERENCE_HAS_REFERENCE, 
-        "This reference does not refer to a declared store.");
+      EClass _predicateStoreReference = CASPAPackage.eINSTANCE.getPredicateStoreReference();
+      this._validationTestHelper.assertError(_parse, _predicateStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSelfReferenceOut() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<this.c>.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _outStoreReference = CASPAPackage.eINSTANCE.getOutStoreReference();
+      this._validationTestHelper.assertError(_parse, _outStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReferenceOut() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<this.c>.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _outStoreReference = CASPAPackage.eINSTANCE.getOutStoreReference();
+      this._validationTestHelper.assertError(_parse, _outStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSelfReferenceUpdate() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{this.c := 1}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _updateStoreReference = CASPAPackage.eINSTANCE.getUpdateStoreReference();
+      this._validationTestHelper.assertError(_parse, _updateStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReferenceUpdate() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{c := 1}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _updateStoreReference = CASPAPackage.eINSTANCE.getUpdateStoreReference();
+      this._validationTestHelper.assertError(_parse, _updateStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSelfReferenceUpdateExpressionOut() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{a := this.c}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _updateExpressionStoreReference = CASPAPackage.eINSTANCE.getUpdateExpressionStoreReference();
+      this._validationTestHelper.assertError(_parse, _updateExpressionStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReferenceUpdateUpdateExpressionOut() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{a := c}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _updateExpressionStoreReference = CASPAPackage.eINSTANCE.getUpdateExpressionStoreReference();
+      this._validationTestHelper.assertError(_parse, _updateExpressionStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSelfReferenceUpdateExpressionIn() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True](){a := this.c}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _updateExpressionStoreReference = CASPAPackage.eINSTANCE.getUpdateExpressionStoreReference();
+      this._validationTestHelper.assertError(_parse, _updateExpressionStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReferenceUpdateUpdateExpressionIn() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True](){a := c}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _updateExpressionStoreReference = CASPAPackage.eINSTANCE.getUpdateExpressionStoreReference();
+      this._validationTestHelper.assertError(_parse, _updateExpressionStoreReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store or free variable.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSelfReferenceDistribution() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{a := U(this.c)}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _uniformReference = CASPAPackage.eINSTANCE.getUniformReference();
+      this._validationTestHelper.assertError(_parse, _uniformReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReferenceUpdateDistribution() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{a := U(c)}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _uniformReference = CASPAPackage.eINSTANCE.getUniformReference();
+      this._validationTestHelper.assertError(_parse, _uniformReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store or free variable.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testSelfReferencePr() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{a := Pr(0.5:this.c)}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _distributionReference = CASPAPackage.eINSTANCE.getDistributionReference();
+      this._validationTestHelper.assertError(_parse, _distributionReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testReferenceUpdatePr() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(Q,{a:=1});");
+      _builder.newLine();
+      _builder.append("Q = R;");
+      _builder.newLine();
+      _builder.append("R = action[True]<>{a := Pr(0.5:c)}.Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _distributionReference = CASPAPackage.eINSTANCE.getDistributionReference();
+      this._validationTestHelper.assertError(_parse, _distributionReference, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE, 
+        "Reference \'c\' does not refer to a declared store or free variable.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }

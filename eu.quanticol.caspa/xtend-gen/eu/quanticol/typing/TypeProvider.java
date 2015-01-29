@@ -2,8 +2,10 @@ package eu.quanticol.typing;
 
 import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Constant;
+import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
+import eu.quanticol.cASPA.OutStoreReference;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
 import eu.quanticol.cASPA.PredicateComparison;
@@ -14,13 +16,16 @@ import eu.quanticol.cASPA.PredicateMul;
 import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
+import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.Reference;
 import eu.quanticol.cASPA.SelfReference;
 import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateExpressionStoreReference;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
 import eu.quanticol.cASPA.UpdateSub;
@@ -44,6 +49,18 @@ public class TypeProvider {
   }
   
   protected BaseType _typeFor(final Constant c) {
+    return TypeProvider.constantType;
+  }
+  
+  protected BaseType _typeFor(final Reference c) {
+    return TypeProvider.constantType;
+  }
+  
+  protected BaseType _typeFor(final SelfReference c) {
+    return TypeProvider.constantType;
+  }
+  
+  protected BaseType _typeFor(final FreeVariable c) {
     return TypeProvider.constantType;
   }
   
@@ -121,6 +138,16 @@ public class TypeProvider {
       }
     }
     if (!_matched) {
+      if (e instanceof FreeVariable) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
       if (e instanceof Reference) {
         _matched=true;
         BaseType _typeFor = null;
@@ -132,6 +159,56 @@ public class TypeProvider {
     }
     if (!_matched) {
       if (e instanceof SelfReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof PredicateStoreReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof OutStoreReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof DistributionReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof UniformReference) {
         _matched=true;
         BaseType _typeFor = null;
         if (((StoreExpression) e)!=null) {
@@ -164,6 +241,42 @@ public class TypeProvider {
     }
     if (!_matched) {
       if (s instanceof Reference) {
+        _matched=true;
+        _switchResult = TypeProvider.constantType;
+      }
+    }
+    if (!_matched) {
+      if (s instanceof FreeVariable) {
+        _matched=true;
+        _switchResult = TypeProvider.constantType;
+      }
+    }
+    if (!_matched) {
+      if (s instanceof PredicateStoreReference) {
+        _matched=true;
+        _switchResult = TypeProvider.constantType;
+      }
+    }
+    if (!_matched) {
+      if (s instanceof OutStoreReference) {
+        _matched=true;
+        _switchResult = TypeProvider.constantType;
+      }
+    }
+    if (!_matched) {
+      if (s instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        _switchResult = TypeProvider.constantType;
+      }
+    }
+    if (!_matched) {
+      if (s instanceof DistributionReference) {
+        _matched=true;
+        _switchResult = TypeProvider.constantType;
+      }
+    }
+    if (!_matched) {
+      if (s instanceof UniformReference) {
         _matched=true;
         _switchResult = TypeProvider.constantType;
       }
@@ -211,7 +324,81 @@ public class TypeProvider {
     if (!_matched) {
       if (e instanceof FreeVariable) {
         _matched=true;
-        _switchResult = TypeProvider.constantType;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof Reference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof SelfReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof PredicateStoreReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof OutStoreReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof DistributionReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
+      }
+    }
+    if (!_matched) {
+      if (e instanceof UniformReference) {
+        _matched=true;
+        BaseType _typeFor = null;
+        if (((StoreExpression) e)!=null) {
+          _typeFor=this.typeFor(((StoreExpression) e));
+        }
+        _switchResult = _typeFor;
       }
     }
     return _switchResult;
@@ -221,22 +408,28 @@ public class TypeProvider {
     return TypeProvider.constantType;
   }
   
-  public BaseType typeFor(final EObject b) {
-    if (b instanceof BooleanConstant) {
-      return _typeFor((BooleanConstant)b);
-    } else if (b instanceof Constant) {
-      return _typeFor((Constant)b);
-    } else if (b instanceof LocalSingleEventUpdate) {
-      return _typeFor((LocalSingleEventUpdate)b);
-    } else if (b instanceof Predicate) {
-      return _typeFor((Predicate)b);
-    } else if (b instanceof PredicateExpression) {
-      return _typeFor((PredicateExpression)b);
-    } else if (b instanceof UpdateExpression) {
-      return _typeFor((UpdateExpression)b);
+  public BaseType typeFor(final EObject c) {
+    if (c instanceof FreeVariable) {
+      return _typeFor((FreeVariable)c);
+    } else if (c instanceof Reference) {
+      return _typeFor((Reference)c);
+    } else if (c instanceof SelfReference) {
+      return _typeFor((SelfReference)c);
+    } else if (c instanceof BooleanConstant) {
+      return _typeFor((BooleanConstant)c);
+    } else if (c instanceof Constant) {
+      return _typeFor((Constant)c);
+    } else if (c instanceof LocalSingleEventUpdate) {
+      return _typeFor((LocalSingleEventUpdate)c);
+    } else if (c instanceof Predicate) {
+      return _typeFor((Predicate)c);
+    } else if (c instanceof PredicateExpression) {
+      return _typeFor((PredicateExpression)c);
+    } else if (c instanceof UpdateExpression) {
+      return _typeFor((UpdateExpression)c);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(b).toString());
+        Arrays.<Object>asList(c).toString());
     }
   }
 }

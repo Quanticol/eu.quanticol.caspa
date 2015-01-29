@@ -531,6 +531,43 @@ public interface CASPAPackage extends EPackage
   int SELF_REFERENCE_FEATURE_COUNT = STORE_EXPRESSION_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link eu.quanticol.cASPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see eu.quanticol.cASPA.impl.FreeVariableImpl
+   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeVariable()
+   * @generated
+   */
+  int FREE_VARIABLE = 15;
+
+  /**
+   * The feature id for the '<em><b>Updates</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_VARIABLE__UPDATES = STORE_EXPRESSION__UPDATES;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_VARIABLE__NAME = STORE_EXPRESSION_FEATURE_COUNT + 0;
+
+  /**
+   * The number of structural features of the '<em>Free Variable</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FREE_VARIABLE_FEATURE_COUNT = STORE_EXPRESSION_FEATURE_COUNT + 1;
+
+  /**
    * The meta object id for the '{@link eu.quanticol.cASPA.impl.BroadcastImpl <em>Broadcast</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -538,7 +575,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getBroadcast()
    * @generated
    */
-  int BROADCAST = 15;
+  int BROADCAST = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -593,7 +630,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getUnicast()
    * @generated
    */
-  int UNICAST = 16;
+  int UNICAST = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -648,7 +685,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateOr()
    * @generated
    */
-  int PREDICATE_OR = 17;
+  int PREDICATE_OR = 18;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -685,7 +722,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateAnd()
    * @generated
    */
-  int PREDICATE_AND = 18;
+  int PREDICATE_AND = 19;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -722,7 +759,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateEquality()
    * @generated
    */
-  int PREDICATE_EQUALITY = 19;
+  int PREDICATE_EQUALITY = 20;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -768,7 +805,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateComparison()
    * @generated
    */
-  int PREDICATE_COMPARISON = 20;
+  int PREDICATE_COMPARISON = 21;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -814,7 +851,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateSub()
    * @generated
    */
-  int PREDICATE_SUB = 21;
+  int PREDICATE_SUB = 22;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -851,7 +888,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicatePlu()
    * @generated
    */
-  int PREDICATE_PLU = 22;
+  int PREDICATE_PLU = 23;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -888,7 +925,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateMul()
    * @generated
    */
-  int PREDICATE_MUL = 23;
+  int PREDICATE_MUL = 24;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -925,7 +962,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateDiv()
    * @generated
    */
-  int PREDICATE_DIV = 24;
+  int PREDICATE_DIV = 25;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -962,7 +999,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateNot()
    * @generated
    */
-  int PREDICATE_NOT = 25;
+  int PREDICATE_NOT = 26;
 
   /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
@@ -990,7 +1027,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getConstant()
    * @generated
    */
-  int CONSTANT = 26;
+  int CONSTANT = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1018,7 +1055,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getPredicateStoreReference()
    * @generated
    */
-  int PREDICATE_STORE_REFERENCE = 27;
+  int PREDICATE_STORE_REFERENCE = 28;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1055,7 +1092,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getIn()
    * @generated
    */
-  int IN = 28;
+  int IN = 29;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -1083,7 +1120,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOut()
    * @generated
    */
-  int OUT = 29;
+  int OUT = 30;
 
   /**
    * The feature id for the '<em><b>Expressions</b></em>' containment reference list.
@@ -1111,7 +1148,7 @@ public interface CASPAPackage extends EPackage
    * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getOutStoreReference()
    * @generated
    */
-  int OUT_STORE_REFERENCE = 30;
+  int OUT_STORE_REFERENCE = 31;
 
   /**
    * The feature id for the '<em><b>Updates</b></em>' containment reference list.
@@ -1139,34 +1176,6 @@ public interface CASPAPackage extends EPackage
    * @ordered
    */
   int OUT_STORE_REFERENCE_FEATURE_COUNT = STORE_EXPRESSION_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link eu.quanticol.cASPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see eu.quanticol.cASPA.impl.FreeVariableImpl
-   * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeVariable()
-   * @generated
-   */
-  int FREE_VARIABLE = 31;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE__NAME = ARGUMENTS_FEATURE_COUNT + 0;
-
-  /**
-   * The number of structural features of the '<em>Free Variable</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FREE_VARIABLE_FEATURE_COUNT = ARGUMENTS_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl <em>Local Single Event Update</em>}' class.
@@ -2255,6 +2264,27 @@ public interface CASPAPackage extends EPackage
   EAttribute getSelfReference_Name();
 
   /**
+   * Returns the meta object for class '{@link eu.quanticol.cASPA.FreeVariable <em>Free Variable</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Free Variable</em>'.
+   * @see eu.quanticol.cASPA.FreeVariable
+   * @generated
+   */
+  EClass getFreeVariable();
+
+  /**
+   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.FreeVariable#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see eu.quanticol.cASPA.FreeVariable#getName()
+   * @see #getFreeVariable()
+   * @generated
+   */
+  EAttribute getFreeVariable_Name();
+
+  /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.Broadcast <em>Broadcast</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2677,27 +2707,6 @@ public interface CASPAPackage extends EPackage
    * @generated
    */
   EReference getOutStoreReference_Ref();
-
-  /**
-   * Returns the meta object for class '{@link eu.quanticol.cASPA.FreeVariable <em>Free Variable</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Free Variable</em>'.
-   * @see eu.quanticol.cASPA.FreeVariable
-   * @generated
-   */
-  EClass getFreeVariable();
-
-  /**
-   * Returns the meta object for the attribute '{@link eu.quanticol.cASPA.FreeVariable#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see eu.quanticol.cASPA.FreeVariable#getName()
-   * @see #getFreeVariable()
-   * @generated
-   */
-  EAttribute getFreeVariable_Name();
 
   /**
    * Returns the meta object for class '{@link eu.quanticol.cASPA.LocalSingleEventUpdate <em>Local Single Event Update</em>}'.
@@ -3573,6 +3582,24 @@ public interface CASPAPackage extends EPackage
     EAttribute SELF_REFERENCE__NAME = eINSTANCE.getSelfReference_Name();
 
     /**
+     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see eu.quanticol.cASPA.impl.FreeVariableImpl
+     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeVariable()
+     * @generated
+     */
+    EClass FREE_VARIABLE = eINSTANCE.getFreeVariable();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FREE_VARIABLE__NAME = eINSTANCE.getFreeVariable_Name();
+
+    /**
      * The meta object literal for the '{@link eu.quanticol.cASPA.impl.BroadcastImpl <em>Broadcast</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3923,24 +3950,6 @@ public interface CASPAPackage extends EPackage
      * @generated
      */
     EReference OUT_STORE_REFERENCE__REF = eINSTANCE.getOutStoreReference_Ref();
-
-    /**
-     * The meta object literal for the '{@link eu.quanticol.cASPA.impl.FreeVariableImpl <em>Free Variable</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see eu.quanticol.cASPA.impl.FreeVariableImpl
-     * @see eu.quanticol.cASPA.impl.CASPAPackageImpl#getFreeVariable()
-     * @generated
-     */
-    EClass FREE_VARIABLE = eINSTANCE.getFreeVariable();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FREE_VARIABLE__NAME = eINSTANCE.getFreeVariable_Name();
 
     /**
      * The meta object literal for the '{@link eu.quanticol.cASPA.impl.LocalSingleEventUpdateImpl <em>Local Single Event Update</em>}' class.

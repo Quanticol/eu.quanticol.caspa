@@ -464,8 +464,8 @@ public class ModelParserTest {
 		
 		//shed actions
 		Shed = G|R;
-		G = [bikes > 0] 		get[zone == this.zone]<>{bikes := this.bikes - 1; slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]<>{bikes := this.bikes + 1; slots := this.slots - 1}.R;
+		G = [bikes > 0] 		get[zone == this.zone]<>{bikes := this.bikes - 1, slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<>{bikes := this.bikes + 1, slots := this.slots - 1}.R;
 		
 		//people actions
 		Q = B;
@@ -496,8 +496,8 @@ public class ModelParserTest {
 		
 		//shed actions
 		Shed = G|R;
-		G = [bikes > 0] 		get[zone == this.zone]<this.slots>{bikes := bikes - 1; slots := slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]<this.bikes>{bikes := bikes + 1; slots := slots - 1}.R;
+		G = [bikes > 0] 		get[zone == this.zone]<this.slots>{bikes := bikes - 1, slots := slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<this.bikes>{bikes := bikes + 1, slots := slots - 1}.R;
 		
 		//people actions
 		Q = B;
@@ -525,8 +525,8 @@ public class ModelParserTest {
 		
 		//shed actions
 		Shed = G|R;
-		G = [bikes > 0] 		get[zone == this.zone]<>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;
-		R = [slots > bikes] 	ret[zone == this.zone]<>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;
+		G = [bikes > 0] 		get[zone == this.zone]<>{this.bikes := this.bikes - 1, this.slots := this.slots + 1}.G;
+		R = [slots > bikes] 	ret[zone == this.zone]<>{this.bikes := this.bikes + 1, this.slots := this.slots - 1}.R;
 		
 		//people actions
 		Q = B;
@@ -636,7 +636,7 @@ public class ModelParserTest {
 		 */
 		 
 		 
-		(P,{a:=1,b:=1});
+		(P,{a:=1,b:=1, c:=1});
 		(Z,{c:=1});
 		 
 		//Demonstration of Predicate expressions - not real examples

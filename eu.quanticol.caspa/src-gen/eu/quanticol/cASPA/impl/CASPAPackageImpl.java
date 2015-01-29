@@ -180,6 +180,13 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass freeVariableEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass broadcastEClass = null;
 
   /**
@@ -286,13 +293,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * @generated
    */
   private EClass outStoreReferenceEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass freeVariableEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -815,6 +815,26 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getFreeVariable()
+  {
+    return freeVariableEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getFreeVariable_Name()
+  {
+    return (EAttribute)freeVariableEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getBroadcast()
   {
     return broadcastEClass;
@@ -1208,26 +1228,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
   public EReference getOutStoreReference_Ref()
   {
     return (EReference)outStoreReferenceEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getFreeVariable()
-  {
-    return freeVariableEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFreeVariable_Name()
-  {
-    return (EAttribute)freeVariableEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1837,6 +1837,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     selfReferenceEClass = createEClass(SELF_REFERENCE);
     createEAttribute(selfReferenceEClass, SELF_REFERENCE__NAME);
 
+    freeVariableEClass = createEClass(FREE_VARIABLE);
+    createEAttribute(freeVariableEClass, FREE_VARIABLE__NAME);
+
     broadcastEClass = createEClass(BROADCAST);
 
     unicastEClass = createEClass(UNICAST);
@@ -1892,9 +1895,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     outStoreReferenceEClass = createEClass(OUT_STORE_REFERENCE);
     createEReference(outStoreReferenceEClass, OUT_STORE_REFERENCE__REF);
-
-    freeVariableEClass = createEClass(FREE_VARIABLE);
-    createEAttribute(freeVariableEClass, FREE_VARIABLE__NAME);
 
     localSingleEventUpdateEClass = createEClass(LOCAL_SINGLE_EVENT_UPDATE);
     createEReference(localSingleEventUpdateEClass, LOCAL_SINGLE_EVENT_UPDATE__ASSIGNEE);
@@ -2006,6 +2006,7 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     storeEClass.getESuperTypes().add(this.getStoreExpression());
     referenceEClass.getESuperTypes().add(this.getStoreExpression());
     selfReferenceEClass.getESuperTypes().add(this.getStoreExpression());
+    freeVariableEClass.getESuperTypes().add(this.getStoreExpression());
     broadcastEClass.getESuperTypes().add(this.getAction());
     unicastEClass.getESuperTypes().add(this.getAction());
     predicateOrEClass.getESuperTypes().add(this.getPredicateExpression());
@@ -2024,7 +2025,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     inEClass.getESuperTypes().add(this.getArguments());
     outEClass.getESuperTypes().add(this.getArguments());
     outStoreReferenceEClass.getESuperTypes().add(this.getStoreExpression());
-    freeVariableEClass.getESuperTypes().add(this.getArguments());
     localSingleEventUpdateEClass.getESuperTypes().add(this.getUpdates());
     distributedEventUpdateProbabilityEClass.getESuperTypes().add(this.getUpdates());
     distributedEventUpdateUniformEClass.getESuperTypes().add(this.getUpdates());
@@ -2093,6 +2093,9 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
     initEClass(selfReferenceEClass, SelfReference.class, "SelfReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSelfReference_Name(), ecorePackage.getEString(), "name", null, 0, 1, SelfReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(freeVariableEClass, FreeVariable.class, "FreeVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFreeVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, FreeVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(broadcastEClass, Broadcast.class, "Broadcast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(unicastEClass, Unicast.class, "Unicast", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2148,9 +2151,6 @@ public class CASPAPackageImpl extends EPackageImpl implements CASPAPackage
 
     initEClass(outStoreReferenceEClass, OutStoreReference.class, "OutStoreReference", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOutStoreReference_Ref(), this.getStoreExpression(), null, "ref", null, 0, 1, OutStoreReference.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(freeVariableEClass, FreeVariable.class, "FreeVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFreeVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, FreeVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(localSingleEventUpdateEClass, LocalSingleEventUpdate.class, "LocalSingleEventUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getLocalSingleEventUpdate_Assignee(), this.getStoreExpression(), null, "assignee", null, 0, 1, LocalSingleEventUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

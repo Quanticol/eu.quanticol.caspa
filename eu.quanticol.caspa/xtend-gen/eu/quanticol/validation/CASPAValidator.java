@@ -26,7 +26,10 @@ import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
+import eu.quanticol.cASPA.ProcessExpression;
+import eu.quanticol.cASPA.Reference;
 import eu.quanticol.cASPA.SelfReference;
+import eu.quanticol.cASPA.Store;
 import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.UniformReference;
@@ -35,6 +38,7 @@ import eu.quanticol.cASPA.UpdateExpression;
 import eu.quanticol.cASPA.UpdateExpressionStoreReference;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
+import eu.quanticol.cASPA.UpdateStoreReference;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.typing.BaseType;
 import eu.quanticol.typing.TypeProvider;
@@ -42,14 +46,15 @@ import eu.quanticol.validation.AbstractCASPAValidator;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.Conversions;
 import org.eclipse.xtext.xbase.lib.Extension;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 
 /**
  * Custom validation rules.
@@ -72,7 +77,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   public final static String FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique";
   
-  public final static String SELF_REFERENCE_HAS_REFERENCE = "eu.quanticol.selfReferenceHasReference";
+  public final static String REFERENCE_HAS_NO_REFERENCE = "eu.quanticol.ReferenceHasNoReference";
   
   @Check
   public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
@@ -279,9 +284,9 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
     eu.quanticol.cASPA.Process _fromInGetProcess = this._modelUtil.fromInGetProcess(in);
     Set<eu.quanticol.cASPA.Process> _fromProcessGetReferences = this._modelUtil.fromProcessGetReferences(_fromInGetProcess);
-    Set<Term> _parentTerms = this._modelUtil.getParentTerms(_fromProcessGetReferences);
-    Set<String> _storeNamesFromTerms = this._modelUtil.getStoreNamesFromTerms(_parentTerms);
-    allParentTermsStoreNames = _storeNamesFromTerms;
+    Set<Term> _fromProcessesGetParentTerms = this._modelUtil.fromProcessesGetParentTerms(_fromProcessGetReferences);
+    Set<String> _fromTermsGetStoreNames = this._modelUtil.fromTermsGetStoreNames(_fromProcessesGetParentTerms);
+    allParentTermsStoreNames = _fromTermsGetStoreNames;
     for (final String name : allParentTermsStoreNames) {
       temp.add(name);
     }
@@ -297,64 +302,382 @@ public class CASPAValidator extends AbstractCASPAValidator {
   }
   
   @Check
-  public void checkSelfReferences(final StoreExpression sr) {
-    String result = "";
-    boolean _matched = false;
-    if (!_matched) {
-      if (sr instanceof PredicateStoreReference) {
-        _matched=true;
-        this.test(((PredicateStoreReference)sr));
-      }
-    }
-    if (!_matched) {
-      if (sr instanceof OutStoreReference) {
-        _matched=true;
-        InputOutput.<String>println(("osr " + sr));
-      }
-    }
-    if (!_matched) {
-      if (sr instanceof UpdateExpressionStoreReference) {
-        _matched=true;
-        InputOutput.<String>println(("uesr " + sr));
-      }
-    }
-    if (!_matched) {
-      if (sr instanceof DistributionReference) {
-        _matched=true;
-        InputOutput.<String>println(("dr " + sr));
-      }
-    }
-    if (!_matched) {
-      if (sr instanceof UniformReference) {
-        _matched=true;
-        InputOutput.<String>println(("ur " + sr));
-      }
-    }
+  public void checkReference(final StoreExpression se) {
+    String result = this.getResult(se);
+    String name = this.getName(se);
     int _length = result.length();
-    boolean _notEquals = (_length != 0);
-    if (_notEquals) {
-      EAttribute _reference_Name = CASPAPackage.eINSTANCE.getReference_Name();
-      this.error(result, _reference_Name, 
-        CASPAValidator.SELF_REFERENCE_HAS_REFERENCE);
+    boolean _greaterThan = (_length > 1);
+    if (_greaterThan) {
+      EReference _type = this.getType(se);
+      this.error((("Reference \'" + name) + result), _type, 
+        CASPAValidator.REFERENCE_HAS_NO_REFERENCE);
     }
   }
   
-  public String test(final PredicateStoreReference sr) {
-    boolean _allReferencesAreSeen = this.allReferencesAreSeen(sr);
-    boolean _not = (!_allReferencesAreSeen);
+  public String getResult(final StoreExpression se) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (se instanceof Store) {
+        _matched=true;
+        _switchResult = "\'";
+      }
+    }
+    if (!_matched) {
+      if (se instanceof SelfReference) {
+        _matched=true;
+        _switchResult = "\'";
+      }
+    }
+    if (!_matched) {
+      if (se instanceof Reference) {
+        _matched=true;
+        _switchResult = "\'";
+      }
+    }
+    if (!_matched) {
+      if (se instanceof PredicateStoreReference) {
+        _matched=true;
+        _switchResult = this.check(((PredicateStoreReference)se));
+      }
+    }
+    if (!_matched) {
+      if (se instanceof OutStoreReference) {
+        _matched=true;
+        _switchResult = this.check(((OutStoreReference)se));
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateStoreReference) {
+        _matched=true;
+        _switchResult = this.check(((UpdateStoreReference)se));
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        _switchResult = this.check(((UpdateExpressionStoreReference)se));
+      }
+    }
+    if (!_matched) {
+      if (se instanceof DistributionReference) {
+        _matched=true;
+        _switchResult = this.check(((DistributionReference)se));
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UniformReference) {
+        _matched=true;
+        _switchResult = this.check(((UniformReference)se));
+      }
+    }
+    return _switchResult;
+  }
+  
+  public EReference getType(final StoreExpression se) {
+    EReference _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (se instanceof PredicateStoreReference) {
+        _matched=true;
+        _switchResult = CASPAPackage.eINSTANCE.getPredicateStoreReference_Ref();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof OutStoreReference) {
+        _matched=true;
+        _switchResult = CASPAPackage.eINSTANCE.getOutStoreReference_Ref();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateStoreReference) {
+        _matched=true;
+        _switchResult = CASPAPackage.eINSTANCE.getUpdateStoreReference_Ref();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        _switchResult = CASPAPackage.eINSTANCE.getUpdateExpressionStoreReference_Ref();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof DistributionReference) {
+        _matched=true;
+        _switchResult = CASPAPackage.eINSTANCE.getDistributionReference_Ref();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UniformReference) {
+        _matched=true;
+        _switchResult = CASPAPackage.eINSTANCE.getUniformReference_Ref();
+      }
+    }
+    return _switchResult;
+  }
+  
+  public String getName(final StoreExpression se) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (se instanceof Store) {
+        _matched=true;
+        _switchResult = ((Store)se).getName();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof Reference) {
+        _matched=true;
+        _switchResult = ((Reference)se).getName();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof SelfReference) {
+        _matched=true;
+        _switchResult = ((SelfReference)se).getName();
+      }
+    }
+    if (!_matched) {
+      if (se instanceof PredicateStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((PredicateStoreReference)se).getRef();
+        _switchResult = this.getName(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof OutStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((OutStoreReference)se).getRef();
+        _switchResult = this.getName(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((UpdateStoreReference)se).getRef();
+        _switchResult = this.getName(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((UpdateExpressionStoreReference)se).getRef();
+        _switchResult = this.getName(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof DistributionReference) {
+        _matched=true;
+        StoreExpression _ref = ((DistributionReference)se).getRef();
+        _switchResult = this.getName(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UniformReference) {
+        _matched=true;
+        StoreExpression _ref = ((UniformReference)se).getRef();
+        _switchResult = this.getName(_ref);
+      }
+    }
+    return _switchResult;
+  }
+  
+  public String getStoreType(final StoreExpression se) {
+    String _switchResult = null;
+    boolean _matched = false;
+    if (!_matched) {
+      if (se instanceof Store) {
+        _matched=true;
+        _switchResult = "sto";
+      }
+    }
+    if (!_matched) {
+      if (se instanceof Reference) {
+        _matched=true;
+        _switchResult = "ref";
+      }
+    }
+    if (!_matched) {
+      if (se instanceof SelfReference) {
+        _matched=true;
+        _switchResult = "sel";
+      }
+    }
+    if (!_matched) {
+      if (se instanceof PredicateStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((PredicateStoreReference)se).getRef();
+        _switchResult = this.getStoreType(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof OutStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((OutStoreReference)se).getRef();
+        _switchResult = this.getStoreType(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((UpdateStoreReference)se).getRef();
+        _switchResult = this.getStoreType(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((UpdateExpressionStoreReference)se).getRef();
+        _switchResult = this.getStoreType(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof DistributionReference) {
+        _matched=true;
+        StoreExpression _ref = ((DistributionReference)se).getRef();
+        _switchResult = this.getStoreType(_ref);
+      }
+    }
+    if (!_matched) {
+      if (se instanceof UniformReference) {
+        _matched=true;
+        StoreExpression _ref = ((UniformReference)se).getRef();
+        _switchResult = this.getStoreType(_ref);
+      }
+    }
+    return _switchResult;
+  }
+  
+  public String check(final PredicateStoreReference sr) {
+    StoreExpression _ref = sr.getRef();
+    boolean _isReferenceSeenInTerms = this.isReferenceSeenInTerms(_ref);
+    boolean _not = (!_isReferenceSeenInTerms);
     if (_not) {
-      return "This reference does not refer to a declared store.";
+      return "\' does not refer to a declared store.";
+    }
+    return "";
+  }
+  
+  public String check(final OutStoreReference sr) {
+    StoreExpression _ref = sr.getRef();
+    boolean _isReferenceSeenInTerms = this.isReferenceSeenInTerms(_ref);
+    boolean _not = (!_isReferenceSeenInTerms);
+    if (_not) {
+      return "\' does not refer to a declared store.";
+    }
+    return "";
+  }
+  
+  public String check(final UpdateStoreReference sr) {
+    StoreExpression _ref = sr.getRef();
+    boolean _isReferenceSeenInTerms = this.isReferenceSeenInTerms(_ref);
+    boolean _not = (!_isReferenceSeenInTerms);
+    if (_not) {
+      return "\' does not refer to a declared store.";
+    }
+    return "";
+  }
+  
+  public boolean isReferenceSeenInTerms(final StoreExpression sr) {
+    String _name = this.getName(sr);
+    Set<eu.quanticol.cASPA.Process> _fromStoreExpressionGetProcesses = this._modelUtil.fromStoreExpressionGetProcesses(sr);
+    HashMap<Integer, Term> _fromProcessesGetHashMapOfTerms = this._modelUtil.fromProcessesGetHashMapOfTerms(_fromStoreExpressionGetProcesses);
+    HashMap<Integer, ArrayList<String>> _fromHashMapOfTermsGetStoreNames = this._modelUtil.fromHashMapOfTermsGetStoreNames(_fromProcessesGetHashMapOfTerms);
+    return this._modelUtil.isInMap(_name, _fromHashMapOfTermsGetStoreNames);
+  }
+  
+  public String check(final UpdateExpressionStoreReference sr) {
+    ProcessExpression _containerOfType = EcoreUtil2.<ProcessExpression>getContainerOfType(sr, ProcessExpression.class);
+    List<In> _allContentsOfType = EcoreUtil2.<In>getAllContentsOfType(_containerOfType, In.class);
+    int _length = ((Object[])Conversions.unwrapArray(_allContentsOfType, Object.class)).length;
+    boolean _greaterThan = (_length > 0);
+    if (_greaterThan) {
+      String _storeType = this.getStoreType(sr);
+      boolean _equals = _storeType.equals("sel");
+      if (_equals) {
+        StoreExpression _ref = sr.getRef();
+        boolean _isReferenceSeenInTerms = this.isReferenceSeenInTerms(_ref);
+        boolean _not = (!_isReferenceSeenInTerms);
+        if (_not) {
+          return "\' does not refer to a declared store.";
+        }
+      }
+      StoreExpression _ref_1 = sr.getRef();
+      boolean _isReferenceSeenInTerms_1 = this.isReferenceSeenInTerms(_ref_1);
+      boolean _not_1 = (!_isReferenceSeenInTerms_1);
+      if (_not_1) {
+        StoreExpression _ref_2 = sr.getRef();
+        boolean _isReferenceSeenInInputArguments = this.isReferenceSeenInInputArguments(_ref_2);
+        boolean _not_2 = (!_isReferenceSeenInInputArguments);
+        if (_not_2) {
+          return "\' does not refer to a declared store or free variable.";
+        }
+      }
+      return "";
     } else {
+      StoreExpression _ref_3 = sr.getRef();
+      boolean _isReferenceSeenInTerms_2 = this.isReferenceSeenInTerms(_ref_3);
+      boolean _not_3 = (!_isReferenceSeenInTerms_2);
+      if (_not_3) {
+        return "\' does not refer to a declared store.";
+      }
       return "";
     }
   }
   
-  public boolean allReferencesAreSeen(final PredicateStoreReference sr) {
+  public String check(final DistributionReference sr) {
     StoreExpression _ref = sr.getRef();
-    String _name = ((SelfReference) _ref).getName();
-    Set<eu.quanticol.cASPA.Process> _parentProcesses = this._modelUtil.getParentProcesses(sr);
-    HashMap<Integer, Term> _parentTermsHash = this._modelUtil.getParentTermsHash(_parentProcesses);
-    HashMap<Integer, ArrayList<String>> _storeNamesFromTermsHashMap = this._modelUtil.getStoreNamesFromTermsHashMap(_parentTermsHash);
-    return this._modelUtil.isInMap(_name, _storeNamesFromTermsHashMap);
+    boolean _isReferenceSeenInTerms = this.isReferenceSeenInTerms(_ref);
+    boolean _not = (!_isReferenceSeenInTerms);
+    if (_not) {
+      String _storeType = this.getStoreType(sr);
+      boolean _equals = _storeType.equals("sel");
+      if (_equals) {
+        StoreExpression _ref_1 = sr.getRef();
+        boolean _isReferenceSeenInTerms_1 = this.isReferenceSeenInTerms(_ref_1);
+        boolean _not_1 = (!_isReferenceSeenInTerms_1);
+        if (_not_1) {
+          return "\' does not refer to a declared store.";
+        }
+      }
+    }
+    StoreExpression _ref_2 = sr.getRef();
+    boolean _isReferenceSeenInInputArguments = this.isReferenceSeenInInputArguments(_ref_2);
+    boolean _not_2 = (!_isReferenceSeenInInputArguments);
+    if (_not_2) {
+      return "\' does not refer to a declared store or free variable.";
+    }
+    return "";
+  }
+  
+  public String check(final UniformReference sr) {
+    StoreExpression _ref = sr.getRef();
+    boolean _isReferenceSeenInTerms = this.isReferenceSeenInTerms(_ref);
+    boolean _not = (!_isReferenceSeenInTerms);
+    if (_not) {
+      String _storeType = this.getStoreType(sr);
+      boolean _equals = _storeType.equals("sel");
+      if (_equals) {
+        StoreExpression _ref_1 = sr.getRef();
+        boolean _isReferenceSeenInTerms_1 = this.isReferenceSeenInTerms(_ref_1);
+        boolean _not_1 = (!_isReferenceSeenInTerms_1);
+        if (_not_1) {
+          return "\' does not refer to a declared store.";
+        }
+      }
+    }
+    StoreExpression _ref_2 = sr.getRef();
+    boolean _isReferenceSeenInInputArguments = this.isReferenceSeenInInputArguments(_ref_2);
+    boolean _not_2 = (!_isReferenceSeenInInputArguments);
+    if (_not_2) {
+      return "\' does not refer to a declared store or free variable.";
+    }
+    return "";
+  }
+  
+  public boolean isReferenceSeenInInputArguments(final StoreExpression sr) {
+    String _name = this.getName(sr);
+    ArrayList<String> _fromStoreExpressionGetProcessInArgs = this._modelUtil.fromStoreExpressionGetProcessInArgs(sr);
+    return this._modelUtil.isInList(_name, _fromStoreExpressionGetProcessInArgs);
   }
 }

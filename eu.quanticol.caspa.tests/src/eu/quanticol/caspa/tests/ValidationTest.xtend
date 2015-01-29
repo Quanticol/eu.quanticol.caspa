@@ -35,17 +35,159 @@ class ValidationTest {
 	def void testSelfReferencePredicate(){
 		'''
 		(Q,{a:=1});
-		(Q,{a:=2, z:=3});
 		Q = R;
-		//S = T;
-		R = action[this.c < 1]<this.d>{this.e := this.f, 
-		this.g := U(this.h), 
-		this.i := Pr(0.25:this.j)}.Q;
-		//T = [this.b > 0]T;
-		'''.parse.assertError(CASPAPackage::eINSTANCE.reference,
-			CASPAValidator::SELF_REFERENCE_HAS_REFERENCE,
-			"This reference does not refer to a declared store.")
+		R = action[this.c < 1]().Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.predicateStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
 	}
+	
+	@Test
+	def void testReferencePredicate(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[c < 1]().Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.predicateStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testSelfReferenceOut(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<this.c>.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.outStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testReferenceOut(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<this.c>.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.outStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testSelfReferenceUpdate(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{this.c := 1}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.updateStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testReferenceUpdate(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{c := 1}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.updateStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testSelfReferenceUpdateExpressionOut(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{a := this.c}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.updateExpressionStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testReferenceUpdateUpdateExpressionOut(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{a := c}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.updateExpressionStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testSelfReferenceUpdateExpressionIn(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True](){a := this.c}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.updateExpressionStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testReferenceUpdateUpdateExpressionIn(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True](){a := c}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.updateExpressionStoreReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store or free variable.")
+	}
+	
+	@Test
+	def void testSelfReferenceDistribution(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{a := U(this.c)}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.uniformReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testReferenceUpdateDistribution(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{a := U(c)}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.uniformReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store or free variable.")
+	}
+	
+	@Test
+	def void testSelfReferencePr(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{a := Pr(0.5:this.c)}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.distributionReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store.")
+	}
+	
+	@Test
+	def void testReferenceUpdatePr(){
+		'''
+		(Q,{a:=1});
+		Q = R;
+		R = action[True]<>{a := Pr(0.5:c)}.Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.distributionReference,
+			CASPAValidator::REFERENCE_HAS_NO_REFERENCE,
+			"Reference 'c' does not refer to a declared store or free variable.")
+	}
+	
+	
+//			DistributionReference: se.check
+//			UniformReference: se.check
 	
 //	
 //	@Test

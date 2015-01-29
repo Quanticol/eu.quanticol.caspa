@@ -867,9 +867,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("Shed = G|R;");
       _builder.newLine();
-      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<>{bikes := this.bikes - 1; slots := this.slots + 1}.G;");
+      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<>{bikes := this.bikes - 1, slots := this.slots + 1}.G;");
       _builder.newLine();
-      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<>{bikes := this.bikes + 1; slots := this.slots - 1}.R;");
+      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<>{bikes := this.bikes + 1, slots := this.slots - 1}.R;");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//people actions");
@@ -926,9 +926,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("Shed = G|R;");
       _builder.newLine();
-      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<this.slots>{bikes := bikes - 1; slots := slots + 1}.G;");
+      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<this.slots>{bikes := bikes - 1, slots := slots + 1}.G;");
       _builder.newLine();
-      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<this.bikes>{bikes := bikes + 1; slots := slots - 1}.R;");
+      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<this.bikes>{bikes := bikes + 1, slots := slots - 1}.R;");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//people actions");
@@ -980,9 +980,9 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append("Shed = G|R;");
       _builder.newLine();
-      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<>{this.bikes := this.bikes - 1; this.slots := this.slots + 1}.G;");
+      _builder.append("G = [bikes > 0] \t\tget[zone == this.zone]<>{this.bikes := this.bikes - 1, this.slots := this.slots + 1}.G;");
       _builder.newLine();
-      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<>{this.bikes := this.bikes + 1; this.slots := this.slots - 1}.R;");
+      _builder.append("R = [slots > bikes] \tret[zone == this.zone]<>{this.bikes := this.bikes + 1, this.slots := this.slots - 1}.R;");
       _builder.newLine();
       _builder.newLine();
       _builder.append("//people actions");
@@ -1245,7 +1245,7 @@ public class ModelParserTest {
       _builder.newLine();
       _builder.append(" ");
       _builder.newLine();
-      _builder.append("(P,{a:=1,b:=1});");
+      _builder.append("(P,{a:=1,b:=1, c:=1});");
       _builder.newLine();
       _builder.append("(Z,{c:=1});");
       _builder.newLine();

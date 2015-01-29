@@ -49,6 +49,9 @@
     <genClasses ecoreClass="CASPA.ecore#//SelfReference">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//SelfReference/name"/>
     </genClasses>
+    <genClasses ecoreClass="CASPA.ecore#//FreeVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//FreeVariable/name"/>
+    </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//Broadcast"/>
     <genClasses ecoreClass="CASPA.ecore#//Unicast"/>
     <genClasses ecoreClass="CASPA.ecore#//PredicateOr">
@@ -102,9 +105,6 @@
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//OutStoreReference">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//OutStoreReference/ref"/>
-    </genClasses>
-    <genClasses ecoreClass="CASPA.ecore#//FreeVariable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute CASPA.ecore#//FreeVariable/name"/>
     </genClasses>
     <genClasses ecoreClass="CASPA.ecore#//LocalSingleEventUpdate">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference CASPA.ecore#//LocalSingleEventUpdate/assignee"/>

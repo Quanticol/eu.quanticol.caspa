@@ -37,7 +37,7 @@ public class CASPAParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getRefAccess().getAlternatives(), "rule__Ref__Alternatives");
+					put(grammarAccess.getStoreExpressionAccess().getAlternatives(), "rule__StoreExpression__Alternatives");
 					put(grammarAccess.getActionAccess().getAlternatives_0(), "rule__Action__Alternatives_0");
 					put(grammarAccess.getPredicateEqualityAccess().getOpAlternatives_1_1_0(), "rule__PredicateEquality__OpAlternatives_1_1_0");
 					put(grammarAccess.getPredicateComparisonAccess().getOpAlternatives_1_1_0(), "rule__PredicateComparison__OpAlternatives_1_1_0");
@@ -58,6 +58,7 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStoreAccess().getGroup(), "rule__Store__Group__0");
 					put(grammarAccess.getReferenceAccess().getGroup(), "rule__Reference__Group__0");
 					put(grammarAccess.getSelfReferenceAccess().getGroup(), "rule__SelfReference__Group__0");
+					put(grammarAccess.getFreeVariableAccess().getGroup(), "rule__FreeVariable__Group__0");
 					put(grammarAccess.getActionAccess().getGroup(), "rule__Action__Group__0");
 					put(grammarAccess.getActionAccess().getGroup_0_0(), "rule__Action__Group_0_0__0");
 					put(grammarAccess.getActionAccess().getGroup_0_1(), "rule__Action__Group_0_1__0");
@@ -91,7 +92,6 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArgumentsAccess().getGroup_3(), "rule__Arguments__Group_3__0");
 					put(grammarAccess.getExpressionsAccess().getGroup_1(), "rule__Expressions__Group_1__0");
 					put(grammarAccess.getOutStoreReferenceAccess().getGroup(), "rule__OutStoreReference__Group__0");
-					put(grammarAccess.getFreeVariableAccess().getGroup(), "rule__FreeVariable__Group__0");
 					put(grammarAccess.getUpdatesAccess().getGroup(), "rule__Updates__Group__0");
 					put(grammarAccess.getUpdatesAccess().getGroup_3(), "rule__Updates__Group_3__0");
 					put(grammarAccess.getSingleEventUpdateAccess().getGroup(), "rule__SingleEventUpdate__Group__0");
@@ -138,6 +138,7 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStoreAccess().getValueAssignment_3(), "rule__Store__ValueAssignment_3");
 					put(grammarAccess.getReferenceAccess().getNameAssignment_1(), "rule__Reference__NameAssignment_1");
 					put(grammarAccess.getSelfReferenceAccess().getNameAssignment_2(), "rule__SelfReference__NameAssignment_2");
+					put(grammarAccess.getFreeVariableAccess().getNameAssignment_1(), "rule__FreeVariable__NameAssignment_1");
 					put(grammarAccess.getActionAccess().getNameAssignment_0_0_1(), "rule__Action__NameAssignment_0_0_1");
 					put(grammarAccess.getActionAccess().getNameAssignment_0_1_1(), "rule__Action__NameAssignment_0_1_1");
 					put(grammarAccess.getActionAccess().getPredicateAssignment_1(), "rule__Action__PredicateAssignment_1");
@@ -164,7 +165,6 @@ public class CASPAParser extends AbstractContentAssistParser {
 					put(grammarAccess.getArgumentsAccess().getExpressionsAssignment_2_3_1(), "rule__Arguments__ExpressionsAssignment_2_3_1");
 					put(grammarAccess.getExpressionsAccess().getValueAssignment_1_1(), "rule__Expressions__ValueAssignment_1_1");
 					put(grammarAccess.getOutStoreReferenceAccess().getRefAssignment_1(), "rule__OutStoreReference__RefAssignment_1");
-					put(grammarAccess.getFreeVariableAccess().getNameAssignment_1(), "rule__FreeVariable__NameAssignment_1");
 					put(grammarAccess.getUpdatesAccess().getUpdatesAssignment_2(), "rule__Updates__UpdatesAssignment_2");
 					put(grammarAccess.getUpdatesAccess().getUpdatesAssignment_3_1(), "rule__Updates__UpdatesAssignment_3_1");
 					put(grammarAccess.getSingleEventUpdateAccess().getAssigneeAssignment_1(), "rule__SingleEventUpdate__AssigneeAssignment_1");

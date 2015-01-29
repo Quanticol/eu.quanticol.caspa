@@ -19,7 +19,7 @@ package eu.quanticol.cASPA;
  * @model
  * @generated
  */
-public interface FreeVariable extends Arguments
+public interface FreeVariable extends StoreExpression
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

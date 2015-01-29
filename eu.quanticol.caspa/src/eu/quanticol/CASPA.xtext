@@ -35,7 +35,11 @@ SelfReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	{SelfReference} "this."name=LOWER
 ;
 
-Ref returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+FreeVariable returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
+	{FreeVariable} name=LOWER
+;
+
+StoreExpression returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 	Reference | SelfReference
 ; 
 
@@ -183,7 +187,7 @@ PredicateAtomic returns PredicateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 PredicateStoreReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{PredicateStoreReference} ref=Ref
+	{PredicateStoreReference} ref=StoreExpression
 ;
 
 //ARGUMENTS
@@ -208,16 +212,12 @@ Expressions returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 OutStoreReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{OutStoreReference} ref=Ref
+	{OutStoreReference} ref=StoreExpression
 ;
 
 Variables returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
 	FreeVariable
 	
-;
-
-FreeVariable returns Arguments hidden(ML_COMMENT,SL_COMMENT,WS):
-	{FreeVariable} name=LOWER
 ;
 
 //UPDATES
@@ -241,7 +241,7 @@ DistributedEventUpdate returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 UpdateReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{UpdateStoreReference} ref=Ref
+	{UpdateStoreReference} ref=StoreExpression
 ;
 
 Distribution returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -250,7 +250,7 @@ Distribution returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 DistributionReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{DistributionReference} prob=Double ":" ref=Ref
+	{DistributionReference} prob=Double ":" ref=StoreExpression
 ;
 
 Uniform returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -259,7 +259,7 @@ Uniform returns Updates hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 UniformReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{UniformReference} ref=Ref
+	{UniformReference} ref=StoreExpression
 ;
 
 UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
@@ -301,7 +301,7 @@ UpdateAtomic returns UpdateExpression hidden(ML_COMMENT,SL_COMMENT,WS):
 ;
 
 UpdateExpressionStoreReference returns StoreExpression hidden(ML_COMMENT,SL_COMMENT,WS):
-	{UpdateExpressionStoreReference} ref=Ref 
+	{UpdateExpressionStoreReference} ref=StoreExpression
 ;
 
 //PROCESSES

@@ -53,6 +53,8 @@ import eu.quanticol.cASPA.Reference
 import eu.quanticol.cASPA.DistributionNatural
 import eu.quanticol.cASPA.UniformNatural
 import java.util.HashMap
+import eu.quanticol.cASPA.FreeVariable
+import java.lang.reflect.Array
 
 class ModelUtil {
 	
@@ -222,7 +224,7 @@ class ModelUtil {
 		return refProcesses
 	}
 	
-	def Set<Term> getParentTerms(Set<Process> processes){
+	def Set<Term> fromProcessesGetParentTerms(Set<Process> processes){
 		
 		
 		var terms = processes.get(0).getContainerOfType(typeof(Model)).terms
@@ -243,7 +245,7 @@ class ModelUtil {
 		
 	}
 	
-	def Set<String> getStoreNamesFromTerms(Set<Term> terms){
+	def Set<String> fromTermsGetStoreNames(Set<Term> terms){
 		
 		var Set<String> names = new HashSet<String>()
 		
@@ -276,14 +278,12 @@ class ModelUtil {
 	}
 	
 	
-	def Set<Process> getParentProcesses(StoreExpression sr){
+	def Set<Process> fromStoreExpressionGetProcesses(StoreExpression sr){
 		
 		var processes = sr.getContainerOfType(typeof(Model)).processes
 		var p = sr.getContainerOfType(typeof(Process))
 		var Set<Process> refProcesses = new HashSet<Process>()
 		var Set<Process> lastRefProcesses = new HashSet<Process>()
-		
-		println(p)
 		
 		refProcesses.add(p)
 		
@@ -299,13 +299,11 @@ class ModelUtil {
 			
 		}
 		
-		println(refProcesses)
-		
 		return refProcesses
 	}
 	
 	
-	def HashMap<Integer,Term> getParentTermsHash(Set<Process> processes){
+	def HashMap<Integer,Term> fromProcessesGetHashMapOfTerms(Set<Process> processes){
 		
 		
 		var terms = processes.get(0).getContainerOfType(typeof(Model)).terms
@@ -329,7 +327,7 @@ class ModelUtil {
 		
 	}
 	
-	def HashMap<Integer,ArrayList<String>> getStoreNamesFromTermsHashMap(HashMap<Integer,Term> terms){
+	def HashMap<Integer,ArrayList<String>> fromHashMapOfTermsGetStoreNames(HashMap<Integer,Term> terms){
 		
 		var HashMap<Integer,ArrayList<String>> names = new HashMap<Integer,ArrayList<String>>()
 		
@@ -349,8 +347,37 @@ class ModelUtil {
 	def boolean isInMap(String name, HashMap<Integer,ArrayList<String>> theList){
 		var boolean result = true
 		
+		if(theList.size == 0)
+			result = false
+		
 		for(i : theList.keySet)
 				result = result && theList.get(i).contains(name)
+		
+		return result
+	}
+	
+	def ArrayList<String> fromStoreExpressionGetProcessInArgs(StoreExpression sr){
+		
+		var p = sr.getContainerOfType(typeof(ProcessExpression))
+		var ArrayList<String> results = new ArrayList<String>()
+		
+		var freeVariables = p.eAllOfType(FreeVariable)
+		
+		for(fv : freeVariables)
+			results.add(fv.name)
+		
+		return results
+	}
+	
+	
+	def boolean isInList(String name, ArrayList<String> theList){
+		var boolean result = true
+		
+		if(theList.length == 0)
+			result = false
+		
+		for(nameOf : theList)
+				result = result && nameOf.equals(name)
 		
 		return result
 	}

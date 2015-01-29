@@ -247,6 +247,18 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case CASPAPackage.FREE_VARIABLE:
+      {
+        FreeVariable freeVariable = (FreeVariable)theEObject;
+        T result = caseFreeVariable(freeVariable);
+        if (result == null) result = caseStoreExpression(freeVariable);
+        if (result == null) result = casePredicateExpression(freeVariable);
+        if (result == null) result = caseArguments(freeVariable);
+        if (result == null) result = caseUpdates(freeVariable);
+        if (result == null) result = caseUpdateExpression(freeVariable);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case CASPAPackage.BROADCAST:
       {
         Broadcast broadcast = (Broadcast)theEObject;
@@ -382,14 +394,6 @@ public class CASPASwitch<T> extends Switch<T>
         if (result == null) result = caseArguments(outStoreReference);
         if (result == null) result = caseUpdates(outStoreReference);
         if (result == null) result = caseUpdateExpression(outStoreReference);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case CASPAPackage.FREE_VARIABLE:
-      {
-        FreeVariable freeVariable = (FreeVariable)theEObject;
-        T result = caseFreeVariable(freeVariable);
-        if (result == null) result = caseArguments(freeVariable);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -806,6 +810,22 @@ public class CASPASwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Free Variable</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Free Variable</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFreeVariable(FreeVariable object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Broadcast</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -1057,22 +1077,6 @@ public class CASPASwitch<T> extends Switch<T>
    * @generated
    */
   public T caseOutStoreReference(OutStoreReference object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Free Variable</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Free Variable</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFreeVariable(FreeVariable object)
   {
     return null;
   }

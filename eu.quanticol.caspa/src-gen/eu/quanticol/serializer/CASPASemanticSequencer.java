@@ -518,8 +518,8 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case CASPAPackage.REFERENCE:
-				if(context == grammarAccess.getRefRule() ||
-				   context == grammarAccess.getReferenceRule()) {
+				if(context == grammarAccess.getReferenceRule() ||
+				   context == grammarAccess.getStoreExpressionRule()) {
 					sequence_Reference(context, (Reference) semanticObject); 
 					return; 
 				}
@@ -538,8 +538,8 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 				}
 				else break;
 			case CASPAPackage.SELF_REFERENCE:
-				if(context == grammarAccess.getRefRule() ||
-				   context == grammarAccess.getSelfReferenceRule()) {
+				if(context == grammarAccess.getSelfReferenceRule() ||
+				   context == grammarAccess.getStoreExpressionRule()) {
 					sequence_SelfReference(context, (SelfReference) semanticObject); 
 					return; 
 				}
@@ -780,7 +780,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     (prob=Double ref=Ref)
+	 *     (prob=Double ref=StoreExpression)
 	 */
 	protected void sequence_DistributionReference(EObject context, DistributionReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -817,14 +817,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     name=LOWER
 	 */
 	protected void sequence_FreeVariable(EObject context, FreeVariable semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, CASPAPackage.Literals.FREE_VARIABLE__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, CASPAPackage.Literals.FREE_VARIABLE__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getFreeVariableAccess().getNameLOWERTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -839,7 +832,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ref=Ref
+	 *     ref=StoreExpression
 	 */
 	protected void sequence_OutStoreReference(EObject context, OutStoreReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1047,7 +1040,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ref=Ref
+	 *     ref=StoreExpression
 	 */
 	protected void sequence_PredicateStoreReference(EObject context, PredicateStoreReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1171,7 +1164,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ref=Ref
+	 *     ref=StoreExpression
 	 */
 	protected void sequence_UniformReference(EObject context, UniformReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1243,7 +1236,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ref=Ref
+	 *     ref=StoreExpression
 	 */
 	protected void sequence_UpdateExpressionStoreReference(EObject context, UpdateExpressionStoreReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -1271,7 +1264,7 @@ public class CASPASemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Constraint:
-	 *     ref=Ref
+	 *     ref=StoreExpression
 	 */
 	protected void sequence_UpdateReference(EObject context, UpdateStoreReference semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -48,6 +48,12 @@ import eu.quanticol.cASPA.OutStoreReference
 import eu.quanticol.cASPA.UpdateExpressionStoreReference
 import eu.quanticol.cASPA.DistributionReference
 import eu.quanticol.cASPA.UniformReference
+import eu.quanticol.cASPA.ProcessExpression
+import eu.quanticol.cASPA.Reference
+import org.eclipse.emf.ecore.EObject
+import eu.quanticol.cASPA.Store
+import org.eclipse.emf.ecore.EAttribute
+import eu.quanticol.cASPA.UpdateStoreReference
 
 /**
  * Custom validation rules. 
@@ -63,7 +69,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	public static val PROCESS_NAMES_UNIQUE = "eu.quanticol.processNamesUnique"
 	public static val WRONG_TYPE = "eu.quanticol.WrongType"
 	public static val FREE_VARIABLES_UNIQUE = "eu.quanticol.freeVariablesUnique"
-	public static val SELF_REFERENCE_HAS_REFERENCE = "eu.quanticol.selfReferenceHasReference"
+	public static val REFERENCE_HAS_NO_REFERENCE = "eu.quanticol.ReferenceHasNoReference"
 	
 	@Check
 	def checkProcessNamesUnique(Process process){
@@ -235,7 +241,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		for(expression : in.expressions)
 			freeVariableNames.add((expression as FreeVariable).name)
 		
-		allParentTermsStoreNames = in.fromInGetProcess.fromProcessGetReferences.getParentTerms.storeNamesFromTerms
+		allParentTermsStoreNames = in.fromInGetProcess.fromProcessGetReferences.fromProcessesGetParentTerms.fromTermsGetStoreNames
 		
 		for(name : allParentTermsStoreNames)
 			temp.add(name)
@@ -250,39 +256,138 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	}
 	
 	@Check
-	def checkSelfReferences(StoreExpression sr){
+	def checkReference(StoreExpression se){
 		
-		var String result = ""
+		var String result = se.getResult
+		var String name = se.getName
 		
-		switch(sr){
-			PredicateStoreReference: sr.test
-			OutStoreReference: println("osr " + sr)
-			UpdateExpressionStoreReference: println("uesr " + sr)
-			DistributionReference: println("dr " + sr)
-			UniformReference: println("ur " + sr)
-		}	
+//		println(se)
+//		println("Reference '" + name + result)
 		
-		if(result.length != 0)
-			error(result,
-			CASPAPackage::eINSTANCE.reference_Name,
-			SELF_REFERENCE_HAS_REFERENCE)
+		if(result.length > 1)
+			error("Reference '" + name + result,
+			se.getType,
+			REFERENCE_HAS_NO_REFERENCE)
 	}
 	
-	def String test(PredicateStoreReference sr){
-		if(!sr.allReferencesAreSeen)
-			return "This reference does not refer to a declared store."
-		else
+	def String getResult(StoreExpression se){
+		switch(se){
+			Store: "'"
+			SelfReference: "'"
+			Reference: "'"
+			PredicateStoreReference: se.check
+			OutStoreReference: se.check
+			UpdateStoreReference: se.check
+			UpdateExpressionStoreReference: se.check
+			DistributionReference: se.check
+			UniformReference: se.check
+		}
+	}
+	
+	def EReference getType(StoreExpression se){
+		switch(se){
+			PredicateStoreReference: CASPAPackage::eINSTANCE.predicateStoreReference_Ref
+			OutStoreReference: CASPAPackage::eINSTANCE.outStoreReference_Ref
+			UpdateStoreReference: CASPAPackage::eINSTANCE.updateStoreReference_Ref
+			UpdateExpressionStoreReference: CASPAPackage::eINSTANCE.updateExpressionStoreReference_Ref
+			DistributionReference: CASPAPackage::eINSTANCE.distributionReference_Ref
+			UniformReference: CASPAPackage::eINSTANCE.uniformReference_Ref
+		}
+	}
+	
+	def String getName(StoreExpression se){
+		switch(se){
+			Store: se.name
+			Reference: se.name
+			SelfReference: se.name
+			PredicateStoreReference: se.ref.getName
+			OutStoreReference: se.ref.getName
+			UpdateStoreReference: se.ref.getName
+			UpdateExpressionStoreReference: se.ref.getName
+			DistributionReference: se.ref.getName
+			UniformReference: se.ref.getName
+		}
+	}
+	
+	def String getStoreType(StoreExpression se){
+		switch(se){
+			Store: "sto"
+			Reference: "ref"
+			SelfReference: "sel"
+			PredicateStoreReference: se.ref.getStoreType
+			OutStoreReference: se.ref.getStoreType
+			UpdateStoreReference: se.ref.getStoreType
+			UpdateExpressionStoreReference: se.ref.getStoreType
+			DistributionReference: se.ref.getStoreType
+			UniformReference: se.ref.getStoreType
+		}
+	}
+	
+	def String check(PredicateStoreReference sr){
+		
+		if(!sr.ref.isReferenceSeenInTerms)
+			return  "' does not refer to a declared store."
+		return ""	
+	}
+	
+	def String check(OutStoreReference sr){
+		if(!sr.ref.referenceSeenInTerms)
+			return "' does not refer to a declared store."
+		return ""
+	}
+	
+	def String check(UpdateStoreReference sr){
+		if(!sr.ref.referenceSeenInTerms)
+			return "' does not refer to a declared store."
+		return ""
+	}
+		
+	def boolean isReferenceSeenInTerms(StoreExpression sr){
+		sr.getName.isInMap(sr.fromStoreExpressionGetProcesses.fromProcessesGetHashMapOfTerms.fromHashMapOfTermsGetStoreNames)
+	}
+	
+	def String check(UpdateExpressionStoreReference sr){
+		
+		if(sr.getContainerOfType(ProcessExpression).getAllContentsOfType(In).length > 0){
+			if(sr.getStoreType.equals("sel"))
+				if(!sr.ref.referenceSeenInTerms)
+					return "' does not refer to a declared store."
+			//then we can have free variables
+			if(!sr.ref.referenceSeenInTerms)
+				if(!sr.ref.isReferenceSeenInInputArguments){
+					return "' does not refer to a declared store or free variable."}
+			return ""
+		} else {
+			//then we can't have free variables
+			if(!sr.ref.referenceSeenInTerms)
+				return "' does not refer to a declared store."
+			return ""
+		}
+	}
+	
+	def String check(DistributionReference sr){
+		if(!sr.ref.referenceSeenInTerms)
+			if(sr.getStoreType.equals("sel"))
+				if(!sr.ref.referenceSeenInTerms)
+					return "' does not refer to a declared store."
+			if(!sr.ref.isReferenceSeenInInputArguments)
+				return "' does not refer to a declared store or free variable."
 			return ""
 	}
 	
-	def boolean allReferencesAreSeen(PredicateStoreReference sr){
-		(sr.ref as SelfReference).name.isInMap(sr.parentProcesses.parentTermsHash.storeNamesFromTermsHashMap)
+	def String check(UniformReference sr){
+		if(!sr.ref.referenceSeenInTerms)
+			if(sr.getStoreType.equals("sel"))
+				if(!sr.ref.referenceSeenInTerms)
+					return "' does not refer to a declared store."
+			if(!sr.ref.isReferenceSeenInInputArguments)
+				return "' does not refer to a declared store or free variable."
+			return ""
 	}
 	
-	//1) all store references are seen in parent Terms
-	//	look up parent terms
-	//	get parent term's store names
-	//	check my name is in the list
-	//2) all references are seen either in parent Term or () IFF action == input
-		
+	def boolean isReferenceSeenInInputArguments(StoreExpression sr){
+		sr.getName.isInList(sr.fromStoreExpressionGetProcessInArgs)
+	}
+	
+	
 }

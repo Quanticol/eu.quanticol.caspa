@@ -448,24 +448,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleSelfReference"
 
 
-    // $ANTLR start "entryRuleRef"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:204:1: entryRuleRef : ruleRef EOF ;
-    public final void entryRuleRef() throws RecognitionException {
+    // $ANTLR start "entryRuleFreeVariable"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:204:1: entryRuleFreeVariable : ruleFreeVariable EOF ;
+    public final void entryRuleFreeVariable() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:208:1: ( ruleRef EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:209:1: ruleRef EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:208:1: ( ruleFreeVariable EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:209:1: ruleFreeVariable EOF
             {
-             before(grammarAccess.getRefRule()); 
-            pushFollow(FOLLOW_ruleRef_in_entryRuleRef342);
-            ruleRef();
+             before(grammarAccess.getFreeVariableRule()); 
+            pushFollow(FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable342);
+            ruleFreeVariable();
 
             state._fsp--;
 
-             after(grammarAccess.getRefRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleRef349); 
+             after(grammarAccess.getFreeVariableRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFreeVariable349); 
 
             }
 
@@ -481,36 +481,36 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "entryRuleRef"
+    // $ANTLR end "entryRuleFreeVariable"
 
 
-    // $ANTLR start "ruleRef"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:219:1: ruleRef : ( ( rule__Ref__Alternatives ) ) ;
-    public final void ruleRef() throws RecognitionException {
+    // $ANTLR start "ruleFreeVariable"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:219:1: ruleFreeVariable : ( ( rule__FreeVariable__Group__0 ) ) ;
+    public final void ruleFreeVariable() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:224:2: ( ( ( rule__Ref__Alternatives ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:225:1: ( ( rule__Ref__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:224:2: ( ( ( rule__FreeVariable__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:225:1: ( ( rule__FreeVariable__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:225:1: ( ( rule__Ref__Alternatives ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:226:1: ( rule__Ref__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:225:1: ( ( rule__FreeVariable__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:226:1: ( rule__FreeVariable__Group__0 )
             {
-             before(grammarAccess.getRefAccess().getAlternatives()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:227:1: ( rule__Ref__Alternatives )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:227:2: rule__Ref__Alternatives
+             before(grammarAccess.getFreeVariableAccess().getGroup()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:227:1: ( rule__FreeVariable__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:227:2: rule__FreeVariable__Group__0
             {
-            pushFollow(FOLLOW_rule__Ref__Alternatives_in_ruleRef379);
-            rule__Ref__Alternatives();
+            pushFollow(FOLLOW_rule__FreeVariable__Group__0_in_ruleFreeVariable379);
+            rule__FreeVariable__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getRefAccess().getAlternatives()); 
+             after(grammarAccess.getFreeVariableAccess().getGroup()); 
 
             }
 
@@ -530,27 +530,112 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "ruleRef"
+    // $ANTLR end "ruleFreeVariable"
+
+
+    // $ANTLR start "entryRuleStoreExpression"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:240:1: entryRuleStoreExpression : ruleStoreExpression EOF ;
+    public final void entryRuleStoreExpression() throws RecognitionException {
+
+        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+
+        try {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:244:1: ( ruleStoreExpression EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:245:1: ruleStoreExpression EOF
+            {
+             before(grammarAccess.getStoreExpressionRule()); 
+            pushFollow(FOLLOW_ruleStoreExpression_in_entryRuleStoreExpression411);
+            ruleStoreExpression();
+
+            state._fsp--;
+
+             after(grammarAccess.getStoreExpressionRule()); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStoreExpression418); 
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	myHiddenTokenState.restore();
+
+        }
+        return ;
+    }
+    // $ANTLR end "entryRuleStoreExpression"
+
+
+    // $ANTLR start "ruleStoreExpression"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:255:1: ruleStoreExpression : ( ( rule__StoreExpression__Alternatives ) ) ;
+    public final void ruleStoreExpression() throws RecognitionException {
+
+        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:260:2: ( ( ( rule__StoreExpression__Alternatives ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:261:1: ( ( rule__StoreExpression__Alternatives ) )
+            {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:261:1: ( ( rule__StoreExpression__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:262:1: ( rule__StoreExpression__Alternatives )
+            {
+             before(grammarAccess.getStoreExpressionAccess().getAlternatives()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:263:1: ( rule__StoreExpression__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:263:2: rule__StoreExpression__Alternatives
+            {
+            pushFollow(FOLLOW_rule__StoreExpression__Alternatives_in_ruleStoreExpression448);
+            rule__StoreExpression__Alternatives();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getStoreExpressionAccess().getAlternatives()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+            	myHiddenTokenState.restore();
+
+        }
+        return ;
+    }
+    // $ANTLR end "ruleStoreExpression"
 
 
     // $ANTLR start "entryRuleAction"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:240:1: entryRuleAction : ruleAction EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:276:1: entryRuleAction : ruleAction EOF ;
     public final void entryRuleAction() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:244:1: ( ruleAction EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:245:1: ruleAction EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:280:1: ( ruleAction EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:281:1: ruleAction EOF
             {
              before(grammarAccess.getActionRule()); 
-            pushFollow(FOLLOW_ruleAction_in_entryRuleAction411);
+            pushFollow(FOLLOW_ruleAction_in_entryRuleAction480);
             ruleAction();
 
             state._fsp--;
 
              after(grammarAccess.getActionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAction418); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAction487); 
 
             }
 
@@ -570,24 +655,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleAction"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:255:1: ruleAction : ( ( rule__Action__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:291:1: ruleAction : ( ( rule__Action__Group__0 ) ) ;
     public final void ruleAction() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:260:2: ( ( ( rule__Action__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:261:1: ( ( rule__Action__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:296:2: ( ( ( rule__Action__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:297:1: ( ( rule__Action__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:261:1: ( ( rule__Action__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:262:1: ( rule__Action__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:297:1: ( ( rule__Action__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:298:1: ( rule__Action__Group__0 )
             {
              before(grammarAccess.getActionAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:263:1: ( rule__Action__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:263:2: rule__Action__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:299:1: ( rule__Action__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:299:2: rule__Action__Group__0
             {
-            pushFollow(FOLLOW_rule__Action__Group__0_in_ruleAction448);
+            pushFollow(FOLLOW_rule__Action__Group__0_in_ruleAction517);
             rule__Action__Group__0();
 
             state._fsp--;
@@ -619,23 +704,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicate"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:276:1: entryRulePredicate : rulePredicate EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:312:1: entryRulePredicate : rulePredicate EOF ;
     public final void entryRulePredicate() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:280:1: ( rulePredicate EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:281:1: rulePredicate EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:316:1: ( rulePredicate EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:317:1: rulePredicate EOF
             {
              before(grammarAccess.getPredicateRule()); 
-            pushFollow(FOLLOW_rulePredicate_in_entryRulePredicate480);
+            pushFollow(FOLLOW_rulePredicate_in_entryRulePredicate549);
             rulePredicate();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicate487); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicate556); 
 
             }
 
@@ -655,24 +740,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicate"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:291:1: rulePredicate : ( ( rule__Predicate__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:327:1: rulePredicate : ( ( rule__Predicate__Group__0 ) ) ;
     public final void rulePredicate() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:296:2: ( ( ( rule__Predicate__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:297:1: ( ( rule__Predicate__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:332:2: ( ( ( rule__Predicate__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:333:1: ( ( rule__Predicate__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:297:1: ( ( rule__Predicate__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:298:1: ( rule__Predicate__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:333:1: ( ( rule__Predicate__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:334:1: ( rule__Predicate__Group__0 )
             {
              before(grammarAccess.getPredicateAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:299:1: ( rule__Predicate__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:299:2: rule__Predicate__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:335:1: ( rule__Predicate__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:335:2: rule__Predicate__Group__0
             {
-            pushFollow(FOLLOW_rule__Predicate__Group__0_in_rulePredicate517);
+            pushFollow(FOLLOW_rule__Predicate__Group__0_in_rulePredicate586);
             rule__Predicate__Group__0();
 
             state._fsp--;
@@ -704,23 +789,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateExpression"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:312:1: entryRulePredicateExpression : rulePredicateExpression EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:348:1: entryRulePredicateExpression : rulePredicateExpression EOF ;
     public final void entryRulePredicateExpression() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:316:1: ( rulePredicateExpression EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:317:1: rulePredicateExpression EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:352:1: ( rulePredicateExpression EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:353:1: rulePredicateExpression EOF
             {
              before(grammarAccess.getPredicateExpressionRule()); 
-            pushFollow(FOLLOW_rulePredicateExpression_in_entryRulePredicateExpression549);
+            pushFollow(FOLLOW_rulePredicateExpression_in_entryRulePredicateExpression618);
             rulePredicateExpression();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateExpressionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateExpression556); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateExpression625); 
 
             }
 
@@ -740,21 +825,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateExpression"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:327:1: rulePredicateExpression : ( rulePredicateOr ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:363:1: rulePredicateExpression : ( rulePredicateOr ) ;
     public final void rulePredicateExpression() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:332:2: ( ( rulePredicateOr ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:333:1: ( rulePredicateOr )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:368:2: ( ( rulePredicateOr ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:369:1: ( rulePredicateOr )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:333:1: ( rulePredicateOr )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:334:1: rulePredicateOr
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:369:1: ( rulePredicateOr )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:370:1: rulePredicateOr
             {
              before(grammarAccess.getPredicateExpressionAccess().getPredicateOrParserRuleCall()); 
-            pushFollow(FOLLOW_rulePredicateOr_in_rulePredicateExpression586);
+            pushFollow(FOLLOW_rulePredicateOr_in_rulePredicateExpression655);
             rulePredicateOr();
 
             state._fsp--;
@@ -783,23 +868,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateOr"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:348:1: entryRulePredicateOr : rulePredicateOr EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:384:1: entryRulePredicateOr : rulePredicateOr EOF ;
     public final void entryRulePredicateOr() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:352:1: ( rulePredicateOr EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:353:1: rulePredicateOr EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:388:1: ( rulePredicateOr EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:389:1: rulePredicateOr EOF
             {
              before(grammarAccess.getPredicateOrRule()); 
-            pushFollow(FOLLOW_rulePredicateOr_in_entryRulePredicateOr617);
+            pushFollow(FOLLOW_rulePredicateOr_in_entryRulePredicateOr686);
             rulePredicateOr();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateOrRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateOr624); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateOr693); 
 
             }
 
@@ -819,24 +904,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateOr"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:363:1: rulePredicateOr : ( ( rule__PredicateOr__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:399:1: rulePredicateOr : ( ( rule__PredicateOr__Group__0 ) ) ;
     public final void rulePredicateOr() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:368:2: ( ( ( rule__PredicateOr__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:369:1: ( ( rule__PredicateOr__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:404:2: ( ( ( rule__PredicateOr__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:405:1: ( ( rule__PredicateOr__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:369:1: ( ( rule__PredicateOr__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:370:1: ( rule__PredicateOr__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:405:1: ( ( rule__PredicateOr__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:406:1: ( rule__PredicateOr__Group__0 )
             {
              before(grammarAccess.getPredicateOrAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:371:1: ( rule__PredicateOr__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:371:2: rule__PredicateOr__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:407:1: ( rule__PredicateOr__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:407:2: rule__PredicateOr__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateOr__Group__0_in_rulePredicateOr654);
+            pushFollow(FOLLOW_rule__PredicateOr__Group__0_in_rulePredicateOr723);
             rule__PredicateOr__Group__0();
 
             state._fsp--;
@@ -868,23 +953,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateAnd"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:384:1: entryRulePredicateAnd : rulePredicateAnd EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:420:1: entryRulePredicateAnd : rulePredicateAnd EOF ;
     public final void entryRulePredicateAnd() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:388:1: ( rulePredicateAnd EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:389:1: rulePredicateAnd EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:424:1: ( rulePredicateAnd EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:425:1: rulePredicateAnd EOF
             {
              before(grammarAccess.getPredicateAndRule()); 
-            pushFollow(FOLLOW_rulePredicateAnd_in_entryRulePredicateAnd686);
+            pushFollow(FOLLOW_rulePredicateAnd_in_entryRulePredicateAnd755);
             rulePredicateAnd();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateAndRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateAnd693); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateAnd762); 
 
             }
 
@@ -904,24 +989,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateAnd"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:399:1: rulePredicateAnd : ( ( rule__PredicateAnd__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:435:1: rulePredicateAnd : ( ( rule__PredicateAnd__Group__0 ) ) ;
     public final void rulePredicateAnd() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:404:2: ( ( ( rule__PredicateAnd__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:405:1: ( ( rule__PredicateAnd__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:440:2: ( ( ( rule__PredicateAnd__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:441:1: ( ( rule__PredicateAnd__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:405:1: ( ( rule__PredicateAnd__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:406:1: ( rule__PredicateAnd__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:441:1: ( ( rule__PredicateAnd__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:442:1: ( rule__PredicateAnd__Group__0 )
             {
              before(grammarAccess.getPredicateAndAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:407:1: ( rule__PredicateAnd__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:407:2: rule__PredicateAnd__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:443:1: ( rule__PredicateAnd__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:443:2: rule__PredicateAnd__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateAnd__Group__0_in_rulePredicateAnd723);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group__0_in_rulePredicateAnd792);
             rule__PredicateAnd__Group__0();
 
             state._fsp--;
@@ -953,23 +1038,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateEquality"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:420:1: entryRulePredicateEquality : rulePredicateEquality EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:456:1: entryRulePredicateEquality : rulePredicateEquality EOF ;
     public final void entryRulePredicateEquality() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:424:1: ( rulePredicateEquality EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:425:1: rulePredicateEquality EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:460:1: ( rulePredicateEquality EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:461:1: rulePredicateEquality EOF
             {
              before(grammarAccess.getPredicateEqualityRule()); 
-            pushFollow(FOLLOW_rulePredicateEquality_in_entryRulePredicateEquality755);
+            pushFollow(FOLLOW_rulePredicateEquality_in_entryRulePredicateEquality824);
             rulePredicateEquality();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateEqualityRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateEquality762); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateEquality831); 
 
             }
 
@@ -989,24 +1074,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateEquality"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:435:1: rulePredicateEquality : ( ( rule__PredicateEquality__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:471:1: rulePredicateEquality : ( ( rule__PredicateEquality__Group__0 ) ) ;
     public final void rulePredicateEquality() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:440:2: ( ( ( rule__PredicateEquality__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:441:1: ( ( rule__PredicateEquality__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:476:2: ( ( ( rule__PredicateEquality__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:477:1: ( ( rule__PredicateEquality__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:441:1: ( ( rule__PredicateEquality__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:442:1: ( rule__PredicateEquality__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:477:1: ( ( rule__PredicateEquality__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:478:1: ( rule__PredicateEquality__Group__0 )
             {
              before(grammarAccess.getPredicateEqualityAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:443:1: ( rule__PredicateEquality__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:443:2: rule__PredicateEquality__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:479:1: ( rule__PredicateEquality__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:479:2: rule__PredicateEquality__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__Group__0_in_rulePredicateEquality792);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group__0_in_rulePredicateEquality861);
             rule__PredicateEquality__Group__0();
 
             state._fsp--;
@@ -1038,23 +1123,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateComparison"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:456:1: entryRulePredicateComparison : rulePredicateComparison EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:492:1: entryRulePredicateComparison : rulePredicateComparison EOF ;
     public final void entryRulePredicateComparison() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:460:1: ( rulePredicateComparison EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:461:1: rulePredicateComparison EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:496:1: ( rulePredicateComparison EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:497:1: rulePredicateComparison EOF
             {
              before(grammarAccess.getPredicateComparisonRule()); 
-            pushFollow(FOLLOW_rulePredicateComparison_in_entryRulePredicateComparison824);
+            pushFollow(FOLLOW_rulePredicateComparison_in_entryRulePredicateComparison893);
             rulePredicateComparison();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateComparisonRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateComparison831); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateComparison900); 
 
             }
 
@@ -1074,24 +1159,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateComparison"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:471:1: rulePredicateComparison : ( ( rule__PredicateComparison__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:507:1: rulePredicateComparison : ( ( rule__PredicateComparison__Group__0 ) ) ;
     public final void rulePredicateComparison() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:476:2: ( ( ( rule__PredicateComparison__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:477:1: ( ( rule__PredicateComparison__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:512:2: ( ( ( rule__PredicateComparison__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:513:1: ( ( rule__PredicateComparison__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:477:1: ( ( rule__PredicateComparison__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:478:1: ( rule__PredicateComparison__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:513:1: ( ( rule__PredicateComparison__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:514:1: ( rule__PredicateComparison__Group__0 )
             {
              before(grammarAccess.getPredicateComparisonAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:479:1: ( rule__PredicateComparison__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:479:2: rule__PredicateComparison__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:515:1: ( rule__PredicateComparison__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:515:2: rule__PredicateComparison__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__Group__0_in_rulePredicateComparison861);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group__0_in_rulePredicateComparison930);
             rule__PredicateComparison__Group__0();
 
             state._fsp--;
@@ -1123,23 +1208,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateSubtraction"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:492:1: entryRulePredicateSubtraction : rulePredicateSubtraction EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:528:1: entryRulePredicateSubtraction : rulePredicateSubtraction EOF ;
     public final void entryRulePredicateSubtraction() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:496:1: ( rulePredicateSubtraction EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:497:1: rulePredicateSubtraction EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:532:1: ( rulePredicateSubtraction EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:533:1: rulePredicateSubtraction EOF
             {
              before(grammarAccess.getPredicateSubtractionRule()); 
-            pushFollow(FOLLOW_rulePredicateSubtraction_in_entryRulePredicateSubtraction893);
+            pushFollow(FOLLOW_rulePredicateSubtraction_in_entryRulePredicateSubtraction962);
             rulePredicateSubtraction();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateSubtractionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateSubtraction900); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateSubtraction969); 
 
             }
 
@@ -1159,24 +1244,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateSubtraction"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:507:1: rulePredicateSubtraction : ( ( rule__PredicateSubtraction__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:543:1: rulePredicateSubtraction : ( ( rule__PredicateSubtraction__Group__0 ) ) ;
     public final void rulePredicateSubtraction() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:512:2: ( ( ( rule__PredicateSubtraction__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:513:1: ( ( rule__PredicateSubtraction__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:548:2: ( ( ( rule__PredicateSubtraction__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:549:1: ( ( rule__PredicateSubtraction__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:513:1: ( ( rule__PredicateSubtraction__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:514:1: ( rule__PredicateSubtraction__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:549:1: ( ( rule__PredicateSubtraction__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:550:1: ( rule__PredicateSubtraction__Group__0 )
             {
              before(grammarAccess.getPredicateSubtractionAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:515:1: ( rule__PredicateSubtraction__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:515:2: rule__PredicateSubtraction__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:551:1: ( rule__PredicateSubtraction__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:551:2: rule__PredicateSubtraction__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__0_in_rulePredicateSubtraction930);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__0_in_rulePredicateSubtraction999);
             rule__PredicateSubtraction__Group__0();
 
             state._fsp--;
@@ -1208,23 +1293,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateAddition"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:528:1: entryRulePredicateAddition : rulePredicateAddition EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:564:1: entryRulePredicateAddition : rulePredicateAddition EOF ;
     public final void entryRulePredicateAddition() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:532:1: ( rulePredicateAddition EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:533:1: rulePredicateAddition EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:568:1: ( rulePredicateAddition EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:569:1: rulePredicateAddition EOF
             {
              before(grammarAccess.getPredicateAdditionRule()); 
-            pushFollow(FOLLOW_rulePredicateAddition_in_entryRulePredicateAddition962);
+            pushFollow(FOLLOW_rulePredicateAddition_in_entryRulePredicateAddition1031);
             rulePredicateAddition();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateAdditionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateAddition969); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateAddition1038); 
 
             }
 
@@ -1244,24 +1329,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateAddition"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:543:1: rulePredicateAddition : ( ( rule__PredicateAddition__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:579:1: rulePredicateAddition : ( ( rule__PredicateAddition__Group__0 ) ) ;
     public final void rulePredicateAddition() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:548:2: ( ( ( rule__PredicateAddition__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:549:1: ( ( rule__PredicateAddition__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:584:2: ( ( ( rule__PredicateAddition__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:585:1: ( ( rule__PredicateAddition__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:549:1: ( ( rule__PredicateAddition__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:550:1: ( rule__PredicateAddition__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:585:1: ( ( rule__PredicateAddition__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:586:1: ( rule__PredicateAddition__Group__0 )
             {
              before(grammarAccess.getPredicateAdditionAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:551:1: ( rule__PredicateAddition__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:551:2: rule__PredicateAddition__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:587:1: ( rule__PredicateAddition__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:587:2: rule__PredicateAddition__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateAddition__Group__0_in_rulePredicateAddition999);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group__0_in_rulePredicateAddition1068);
             rule__PredicateAddition__Group__0();
 
             state._fsp--;
@@ -1293,23 +1378,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateMultiplication"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:564:1: entryRulePredicateMultiplication : rulePredicateMultiplication EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:600:1: entryRulePredicateMultiplication : rulePredicateMultiplication EOF ;
     public final void entryRulePredicateMultiplication() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:568:1: ( rulePredicateMultiplication EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:569:1: rulePredicateMultiplication EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:604:1: ( rulePredicateMultiplication EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:605:1: rulePredicateMultiplication EOF
             {
              before(grammarAccess.getPredicateMultiplicationRule()); 
-            pushFollow(FOLLOW_rulePredicateMultiplication_in_entryRulePredicateMultiplication1031);
+            pushFollow(FOLLOW_rulePredicateMultiplication_in_entryRulePredicateMultiplication1100);
             rulePredicateMultiplication();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateMultiplicationRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateMultiplication1038); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateMultiplication1107); 
 
             }
 
@@ -1329,24 +1414,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateMultiplication"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:579:1: rulePredicateMultiplication : ( ( rule__PredicateMultiplication__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:615:1: rulePredicateMultiplication : ( ( rule__PredicateMultiplication__Group__0 ) ) ;
     public final void rulePredicateMultiplication() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:584:2: ( ( ( rule__PredicateMultiplication__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:585:1: ( ( rule__PredicateMultiplication__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:620:2: ( ( ( rule__PredicateMultiplication__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:621:1: ( ( rule__PredicateMultiplication__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:585:1: ( ( rule__PredicateMultiplication__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:586:1: ( rule__PredicateMultiplication__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:621:1: ( ( rule__PredicateMultiplication__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:622:1: ( rule__PredicateMultiplication__Group__0 )
             {
              before(grammarAccess.getPredicateMultiplicationAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:587:1: ( rule__PredicateMultiplication__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:587:2: rule__PredicateMultiplication__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:623:1: ( rule__PredicateMultiplication__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:623:2: rule__PredicateMultiplication__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__0_in_rulePredicateMultiplication1068);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__0_in_rulePredicateMultiplication1137);
             rule__PredicateMultiplication__Group__0();
 
             state._fsp--;
@@ -1378,23 +1463,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateDivision"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:600:1: entryRulePredicateDivision : rulePredicateDivision EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:636:1: entryRulePredicateDivision : rulePredicateDivision EOF ;
     public final void entryRulePredicateDivision() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:604:1: ( rulePredicateDivision EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:605:1: rulePredicateDivision EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:640:1: ( rulePredicateDivision EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:641:1: rulePredicateDivision EOF
             {
              before(grammarAccess.getPredicateDivisionRule()); 
-            pushFollow(FOLLOW_rulePredicateDivision_in_entryRulePredicateDivision1100);
+            pushFollow(FOLLOW_rulePredicateDivision_in_entryRulePredicateDivision1169);
             rulePredicateDivision();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateDivisionRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateDivision1107); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateDivision1176); 
 
             }
 
@@ -1414,24 +1499,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateDivision"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:615:1: rulePredicateDivision : ( ( rule__PredicateDivision__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:651:1: rulePredicateDivision : ( ( rule__PredicateDivision__Group__0 ) ) ;
     public final void rulePredicateDivision() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:620:2: ( ( ( rule__PredicateDivision__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:621:1: ( ( rule__PredicateDivision__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:656:2: ( ( ( rule__PredicateDivision__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:657:1: ( ( rule__PredicateDivision__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:621:1: ( ( rule__PredicateDivision__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:622:1: ( rule__PredicateDivision__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:657:1: ( ( rule__PredicateDivision__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:658:1: ( rule__PredicateDivision__Group__0 )
             {
              before(grammarAccess.getPredicateDivisionAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:623:1: ( rule__PredicateDivision__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:623:2: rule__PredicateDivision__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:659:1: ( rule__PredicateDivision__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:659:2: rule__PredicateDivision__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateDivision__Group__0_in_rulePredicateDivision1137);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group__0_in_rulePredicateDivision1206);
             rule__PredicateDivision__Group__0();
 
             state._fsp--;
@@ -1463,23 +1548,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicatePrimary"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:636:1: entryRulePredicatePrimary : rulePredicatePrimary EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:672:1: entryRulePredicatePrimary : rulePredicatePrimary EOF ;
     public final void entryRulePredicatePrimary() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:640:1: ( rulePredicatePrimary EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:641:1: rulePredicatePrimary EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:676:1: ( rulePredicatePrimary EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:677:1: rulePredicatePrimary EOF
             {
              before(grammarAccess.getPredicatePrimaryRule()); 
-            pushFollow(FOLLOW_rulePredicatePrimary_in_entryRulePredicatePrimary1169);
+            pushFollow(FOLLOW_rulePredicatePrimary_in_entryRulePredicatePrimary1238);
             rulePredicatePrimary();
 
             state._fsp--;
 
              after(grammarAccess.getPredicatePrimaryRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicatePrimary1176); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicatePrimary1245); 
 
             }
 
@@ -1499,24 +1584,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicatePrimary"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:651:1: rulePredicatePrimary : ( ( rule__PredicatePrimary__Alternatives ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:687:1: rulePredicatePrimary : ( ( rule__PredicatePrimary__Alternatives ) ) ;
     public final void rulePredicatePrimary() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:656:2: ( ( ( rule__PredicatePrimary__Alternatives ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:657:1: ( ( rule__PredicatePrimary__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:692:2: ( ( ( rule__PredicatePrimary__Alternatives ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:693:1: ( ( rule__PredicatePrimary__Alternatives ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:657:1: ( ( rule__PredicatePrimary__Alternatives ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:658:1: ( rule__PredicatePrimary__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:693:1: ( ( rule__PredicatePrimary__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:694:1: ( rule__PredicatePrimary__Alternatives )
             {
              before(grammarAccess.getPredicatePrimaryAccess().getAlternatives()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:659:1: ( rule__PredicatePrimary__Alternatives )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:659:2: rule__PredicatePrimary__Alternatives
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:695:1: ( rule__PredicatePrimary__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:695:2: rule__PredicatePrimary__Alternatives
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__Alternatives_in_rulePredicatePrimary1206);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Alternatives_in_rulePredicatePrimary1275);
             rule__PredicatePrimary__Alternatives();
 
             state._fsp--;
@@ -1548,23 +1633,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateAtomic"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:672:1: entryRulePredicateAtomic : rulePredicateAtomic EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:708:1: entryRulePredicateAtomic : rulePredicateAtomic EOF ;
     public final void entryRulePredicateAtomic() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:676:1: ( rulePredicateAtomic EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:677:1: rulePredicateAtomic EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:712:1: ( rulePredicateAtomic EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:713:1: rulePredicateAtomic EOF
             {
              before(grammarAccess.getPredicateAtomicRule()); 
-            pushFollow(FOLLOW_rulePredicateAtomic_in_entryRulePredicateAtomic1238);
+            pushFollow(FOLLOW_rulePredicateAtomic_in_entryRulePredicateAtomic1307);
             rulePredicateAtomic();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateAtomicRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateAtomic1245); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateAtomic1314); 
 
             }
 
@@ -1584,24 +1669,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateAtomic"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:687:1: rulePredicateAtomic : ( ( rule__PredicateAtomic__Alternatives ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:723:1: rulePredicateAtomic : ( ( rule__PredicateAtomic__Alternatives ) ) ;
     public final void rulePredicateAtomic() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:692:2: ( ( ( rule__PredicateAtomic__Alternatives ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:693:1: ( ( rule__PredicateAtomic__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:728:2: ( ( ( rule__PredicateAtomic__Alternatives ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:729:1: ( ( rule__PredicateAtomic__Alternatives ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:693:1: ( ( rule__PredicateAtomic__Alternatives ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:694:1: ( rule__PredicateAtomic__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:729:1: ( ( rule__PredicateAtomic__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:730:1: ( rule__PredicateAtomic__Alternatives )
             {
              before(grammarAccess.getPredicateAtomicAccess().getAlternatives()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:695:1: ( rule__PredicateAtomic__Alternatives )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:695:2: rule__PredicateAtomic__Alternatives
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:731:1: ( rule__PredicateAtomic__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:731:2: rule__PredicateAtomic__Alternatives
             {
-            pushFollow(FOLLOW_rule__PredicateAtomic__Alternatives_in_rulePredicateAtomic1275);
+            pushFollow(FOLLOW_rule__PredicateAtomic__Alternatives_in_rulePredicateAtomic1344);
             rule__PredicateAtomic__Alternatives();
 
             state._fsp--;
@@ -1633,23 +1718,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRulePredicateStoreReference"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:708:1: entryRulePredicateStoreReference : rulePredicateStoreReference EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:744:1: entryRulePredicateStoreReference : rulePredicateStoreReference EOF ;
     public final void entryRulePredicateStoreReference() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:712:1: ( rulePredicateStoreReference EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:713:1: rulePredicateStoreReference EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:748:1: ( rulePredicateStoreReference EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:749:1: rulePredicateStoreReference EOF
             {
              before(grammarAccess.getPredicateStoreReferenceRule()); 
-            pushFollow(FOLLOW_rulePredicateStoreReference_in_entryRulePredicateStoreReference1307);
+            pushFollow(FOLLOW_rulePredicateStoreReference_in_entryRulePredicateStoreReference1376);
             rulePredicateStoreReference();
 
             state._fsp--;
 
              after(grammarAccess.getPredicateStoreReferenceRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateStoreReference1314); 
+            match(input,EOF,FOLLOW_EOF_in_entryRulePredicateStoreReference1383); 
 
             }
 
@@ -1669,24 +1754,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rulePredicateStoreReference"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:723:1: rulePredicateStoreReference : ( ( rule__PredicateStoreReference__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:759:1: rulePredicateStoreReference : ( ( rule__PredicateStoreReference__Group__0 ) ) ;
     public final void rulePredicateStoreReference() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:728:2: ( ( ( rule__PredicateStoreReference__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:729:1: ( ( rule__PredicateStoreReference__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:764:2: ( ( ( rule__PredicateStoreReference__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:765:1: ( ( rule__PredicateStoreReference__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:729:1: ( ( rule__PredicateStoreReference__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:730:1: ( rule__PredicateStoreReference__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:765:1: ( ( rule__PredicateStoreReference__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:766:1: ( rule__PredicateStoreReference__Group__0 )
             {
              before(grammarAccess.getPredicateStoreReferenceAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:731:1: ( rule__PredicateStoreReference__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:731:2: rule__PredicateStoreReference__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:767:1: ( rule__PredicateStoreReference__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:767:2: rule__PredicateStoreReference__Group__0
             {
-            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__0_in_rulePredicateStoreReference1344);
+            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__0_in_rulePredicateStoreReference1413);
             rule__PredicateStoreReference__Group__0();
 
             state._fsp--;
@@ -1718,23 +1803,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleArguments"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:744:1: entryRuleArguments : ruleArguments EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:780:1: entryRuleArguments : ruleArguments EOF ;
     public final void entryRuleArguments() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:748:1: ( ruleArguments EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:749:1: ruleArguments EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:784:1: ( ruleArguments EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:785:1: ruleArguments EOF
             {
              before(grammarAccess.getArgumentsRule()); 
-            pushFollow(FOLLOW_ruleArguments_in_entryRuleArguments1376);
+            pushFollow(FOLLOW_ruleArguments_in_entryRuleArguments1445);
             ruleArguments();
 
             state._fsp--;
 
              after(grammarAccess.getArgumentsRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleArguments1383); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleArguments1452); 
 
             }
 
@@ -1754,24 +1839,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleArguments"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:759:1: ruleArguments : ( ( rule__Arguments__Alternatives ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:795:1: ruleArguments : ( ( rule__Arguments__Alternatives ) ) ;
     public final void ruleArguments() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:764:2: ( ( ( rule__Arguments__Alternatives ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:765:1: ( ( rule__Arguments__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:800:2: ( ( ( rule__Arguments__Alternatives ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:801:1: ( ( rule__Arguments__Alternatives ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:765:1: ( ( rule__Arguments__Alternatives ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:766:1: ( rule__Arguments__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:801:1: ( ( rule__Arguments__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:802:1: ( rule__Arguments__Alternatives )
             {
              before(grammarAccess.getArgumentsAccess().getAlternatives()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:767:1: ( rule__Arguments__Alternatives )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:767:2: rule__Arguments__Alternatives
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:803:1: ( rule__Arguments__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:803:2: rule__Arguments__Alternatives
             {
-            pushFollow(FOLLOW_rule__Arguments__Alternatives_in_ruleArguments1413);
+            pushFollow(FOLLOW_rule__Arguments__Alternatives_in_ruleArguments1482);
             rule__Arguments__Alternatives();
 
             state._fsp--;
@@ -1803,23 +1888,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleInArguments"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:780:1: entryRuleInArguments : ruleInArguments EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:816:1: entryRuleInArguments : ruleInArguments EOF ;
     public final void entryRuleInArguments() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:784:1: ( ruleInArguments EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:785:1: ruleInArguments EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:820:1: ( ruleInArguments EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:821:1: ruleInArguments EOF
             {
              before(grammarAccess.getInArgumentsRule()); 
-            pushFollow(FOLLOW_ruleInArguments_in_entryRuleInArguments1445);
+            pushFollow(FOLLOW_ruleInArguments_in_entryRuleInArguments1514);
             ruleInArguments();
 
             state._fsp--;
 
              after(grammarAccess.getInArgumentsRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInArguments1452); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInArguments1521); 
 
             }
 
@@ -1839,21 +1924,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleInArguments"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:795:1: ruleInArguments : ( ruleVariables ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:831:1: ruleInArguments : ( ruleVariables ) ;
     public final void ruleInArguments() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:800:2: ( ( ruleVariables ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:801:1: ( ruleVariables )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:836:2: ( ( ruleVariables ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:837:1: ( ruleVariables )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:801:1: ( ruleVariables )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:802:1: ruleVariables
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:837:1: ( ruleVariables )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:838:1: ruleVariables
             {
              before(grammarAccess.getInArgumentsAccess().getVariablesParserRuleCall()); 
-            pushFollow(FOLLOW_ruleVariables_in_ruleInArguments1482);
+            pushFollow(FOLLOW_ruleVariables_in_ruleInArguments1551);
             ruleVariables();
 
             state._fsp--;
@@ -1882,23 +1967,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleOutArguments"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:816:1: entryRuleOutArguments : ruleOutArguments EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:852:1: entryRuleOutArguments : ruleOutArguments EOF ;
     public final void entryRuleOutArguments() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:820:1: ( ruleOutArguments EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:821:1: ruleOutArguments EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:856:1: ( ruleOutArguments EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:857:1: ruleOutArguments EOF
             {
              before(grammarAccess.getOutArgumentsRule()); 
-            pushFollow(FOLLOW_ruleOutArguments_in_entryRuleOutArguments1513);
+            pushFollow(FOLLOW_ruleOutArguments_in_entryRuleOutArguments1582);
             ruleOutArguments();
 
             state._fsp--;
 
              after(grammarAccess.getOutArgumentsRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutArguments1520); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOutArguments1589); 
 
             }
 
@@ -1918,21 +2003,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleOutArguments"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:831:1: ruleOutArguments : ( ruleExpressions ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:867:1: ruleOutArguments : ( ruleExpressions ) ;
     public final void ruleOutArguments() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:836:2: ( ( ruleExpressions ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:837:1: ( ruleExpressions )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:872:2: ( ( ruleExpressions ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:873:1: ( ruleExpressions )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:837:1: ( ruleExpressions )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:838:1: ruleExpressions
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:873:1: ( ruleExpressions )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:874:1: ruleExpressions
             {
              before(grammarAccess.getOutArgumentsAccess().getExpressionsParserRuleCall()); 
-            pushFollow(FOLLOW_ruleExpressions_in_ruleOutArguments1550);
+            pushFollow(FOLLOW_ruleExpressions_in_ruleOutArguments1619);
             ruleExpressions();
 
             state._fsp--;
@@ -1961,23 +2046,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleExpressions"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:852:1: entryRuleExpressions : ruleExpressions EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:888:1: entryRuleExpressions : ruleExpressions EOF ;
     public final void entryRuleExpressions() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:856:1: ( ruleExpressions EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:857:1: ruleExpressions EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:892:1: ( ruleExpressions EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:893:1: ruleExpressions EOF
             {
              before(grammarAccess.getExpressionsRule()); 
-            pushFollow(FOLLOW_ruleExpressions_in_entryRuleExpressions1581);
+            pushFollow(FOLLOW_ruleExpressions_in_entryRuleExpressions1650);
             ruleExpressions();
 
             state._fsp--;
 
              after(grammarAccess.getExpressionsRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressions1588); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExpressions1657); 
 
             }
 
@@ -1997,24 +2082,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleExpressions"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:867:1: ruleExpressions : ( ( rule__Expressions__Alternatives ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:903:1: ruleExpressions : ( ( rule__Expressions__Alternatives ) ) ;
     public final void ruleExpressions() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:872:2: ( ( ( rule__Expressions__Alternatives ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:873:1: ( ( rule__Expressions__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:908:2: ( ( ( rule__Expressions__Alternatives ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:909:1: ( ( rule__Expressions__Alternatives ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:873:1: ( ( rule__Expressions__Alternatives ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:874:1: ( rule__Expressions__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:909:1: ( ( rule__Expressions__Alternatives ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:910:1: ( rule__Expressions__Alternatives )
             {
              before(grammarAccess.getExpressionsAccess().getAlternatives()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:875:1: ( rule__Expressions__Alternatives )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:875:2: rule__Expressions__Alternatives
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:911:1: ( rule__Expressions__Alternatives )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:911:2: rule__Expressions__Alternatives
             {
-            pushFollow(FOLLOW_rule__Expressions__Alternatives_in_ruleExpressions1618);
+            pushFollow(FOLLOW_rule__Expressions__Alternatives_in_ruleExpressions1687);
             rule__Expressions__Alternatives();
 
             state._fsp--;
@@ -2046,23 +2131,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleOutStoreReference"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:888:1: entryRuleOutStoreReference : ruleOutStoreReference EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:924:1: entryRuleOutStoreReference : ruleOutStoreReference EOF ;
     public final void entryRuleOutStoreReference() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:892:1: ( ruleOutStoreReference EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:893:1: ruleOutStoreReference EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:928:1: ( ruleOutStoreReference EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:929:1: ruleOutStoreReference EOF
             {
              before(grammarAccess.getOutStoreReferenceRule()); 
-            pushFollow(FOLLOW_ruleOutStoreReference_in_entryRuleOutStoreReference1650);
+            pushFollow(FOLLOW_ruleOutStoreReference_in_entryRuleOutStoreReference1719);
             ruleOutStoreReference();
 
             state._fsp--;
 
              after(grammarAccess.getOutStoreReferenceRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOutStoreReference1657); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOutStoreReference1726); 
 
             }
 
@@ -2082,24 +2167,24 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleOutStoreReference"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:903:1: ruleOutStoreReference : ( ( rule__OutStoreReference__Group__0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:939:1: ruleOutStoreReference : ( ( rule__OutStoreReference__Group__0 ) ) ;
     public final void ruleOutStoreReference() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:908:2: ( ( ( rule__OutStoreReference__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:909:1: ( ( rule__OutStoreReference__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:944:2: ( ( ( rule__OutStoreReference__Group__0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:945:1: ( ( rule__OutStoreReference__Group__0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:909:1: ( ( rule__OutStoreReference__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:910:1: ( rule__OutStoreReference__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:945:1: ( ( rule__OutStoreReference__Group__0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:946:1: ( rule__OutStoreReference__Group__0 )
             {
              before(grammarAccess.getOutStoreReferenceAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:911:1: ( rule__OutStoreReference__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:911:2: rule__OutStoreReference__Group__0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:947:1: ( rule__OutStoreReference__Group__0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:947:2: rule__OutStoreReference__Group__0
             {
-            pushFollow(FOLLOW_rule__OutStoreReference__Group__0_in_ruleOutStoreReference1687);
+            pushFollow(FOLLOW_rule__OutStoreReference__Group__0_in_ruleOutStoreReference1756);
             rule__OutStoreReference__Group__0();
 
             state._fsp--;
@@ -2131,23 +2216,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "entryRuleVariables"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:924:1: entryRuleVariables : ruleVariables EOF ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:960:1: entryRuleVariables : ruleVariables EOF ;
     public final void entryRuleVariables() throws RecognitionException {
 
         	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
 
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:928:1: ( ruleVariables EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:929:1: ruleVariables EOF
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:964:1: ( ruleVariables EOF )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:965:1: ruleVariables EOF
             {
              before(grammarAccess.getVariablesRule()); 
-            pushFollow(FOLLOW_ruleVariables_in_entryRuleVariables1719);
+            pushFollow(FOLLOW_ruleVariables_in_entryRuleVariables1788);
             ruleVariables();
 
             state._fsp--;
 
              after(grammarAccess.getVariablesRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariables1726); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariables1795); 
 
             }
 
@@ -2167,21 +2252,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "ruleVariables"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:939:1: ruleVariables : ( ruleFreeVariable ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:975:1: ruleVariables : ( ruleFreeVariable ) ;
     public final void ruleVariables() throws RecognitionException {
 
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:944:2: ( ( ruleFreeVariable ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:945:1: ( ruleFreeVariable )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:980:2: ( ( ruleFreeVariable ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:981:1: ( ruleFreeVariable )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:945:1: ( ruleFreeVariable )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:946:1: ruleFreeVariable
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:981:1: ( ruleFreeVariable )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:982:1: ruleFreeVariable
             {
              before(grammarAccess.getVariablesAccess().getFreeVariableParserRuleCall()); 
-            pushFollow(FOLLOW_ruleFreeVariable_in_ruleVariables1756);
+            pushFollow(FOLLOW_ruleFreeVariable_in_ruleVariables1825);
             ruleFreeVariable();
 
             state._fsp--;
@@ -2207,91 +2292,6 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "ruleVariables"
-
-
-    // $ANTLR start "entryRuleFreeVariable"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:960:1: entryRuleFreeVariable : ruleFreeVariable EOF ;
-    public final void entryRuleFreeVariable() throws RecognitionException {
-
-        	HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-
-        try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:964:1: ( ruleFreeVariable EOF )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:965:1: ruleFreeVariable EOF
-            {
-             before(grammarAccess.getFreeVariableRule()); 
-            pushFollow(FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable1787);
-            ruleFreeVariable();
-
-            state._fsp--;
-
-             after(grammarAccess.getFreeVariableRule()); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFreeVariable1794); 
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	myHiddenTokenState.restore();
-
-        }
-        return ;
-    }
-    // $ANTLR end "entryRuleFreeVariable"
-
-
-    // $ANTLR start "ruleFreeVariable"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:975:1: ruleFreeVariable : ( ( rule__FreeVariable__Group__0 ) ) ;
-    public final void ruleFreeVariable() throws RecognitionException {
-
-        		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens("RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS");
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:980:2: ( ( ( rule__FreeVariable__Group__0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:981:1: ( ( rule__FreeVariable__Group__0 ) )
-            {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:981:1: ( ( rule__FreeVariable__Group__0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:982:1: ( rule__FreeVariable__Group__0 )
-            {
-             before(grammarAccess.getFreeVariableAccess().getGroup()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:983:1: ( rule__FreeVariable__Group__0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:983:2: rule__FreeVariable__Group__0
-            {
-            pushFollow(FOLLOW_rule__FreeVariable__Group__0_in_ruleFreeVariable1824);
-            rule__FreeVariable__Group__0();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFreeVariableAccess().getGroup()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-            	myHiddenTokenState.restore();
-
-        }
-        return ;
-    }
-    // $ANTLR end "ruleFreeVariable"
 
 
     // $ANTLR start "entryRuleUpdates"
@@ -4798,9 +4798,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "ruleBool"
 
 
-    // $ANTLR start "rule__Ref__Alternatives"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2052:1: rule__Ref__Alternatives : ( ( ruleReference ) | ( ruleSelfReference ) );
-    public final void rule__Ref__Alternatives() throws RecognitionException {
+    // $ANTLR start "rule__StoreExpression__Alternatives"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2052:1: rule__StoreExpression__Alternatives : ( ( ruleReference ) | ( ruleSelfReference ) );
+    public final void rule__StoreExpression__Alternatives() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -4828,13 +4828,13 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
                     // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2057:1: ( ruleReference )
                     // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2058:1: ruleReference
                     {
-                     before(grammarAccess.getRefAccess().getReferenceParserRuleCall_0()); 
-                    pushFollow(FOLLOW_ruleReference_in_rule__Ref__Alternatives3900);
+                     before(grammarAccess.getStoreExpressionAccess().getReferenceParserRuleCall_0()); 
+                    pushFollow(FOLLOW_ruleReference_in_rule__StoreExpression__Alternatives3900);
                     ruleReference();
 
                     state._fsp--;
 
-                     after(grammarAccess.getRefAccess().getReferenceParserRuleCall_0()); 
+                     after(grammarAccess.getStoreExpressionAccess().getReferenceParserRuleCall_0()); 
 
                     }
 
@@ -4847,13 +4847,13 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
                     // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2063:6: ( ruleSelfReference )
                     // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2064:1: ruleSelfReference
                     {
-                     before(grammarAccess.getRefAccess().getSelfReferenceParserRuleCall_1()); 
-                    pushFollow(FOLLOW_ruleSelfReference_in_rule__Ref__Alternatives3917);
+                     before(grammarAccess.getStoreExpressionAccess().getSelfReferenceParserRuleCall_1()); 
+                    pushFollow(FOLLOW_ruleSelfReference_in_rule__StoreExpression__Alternatives3917);
                     ruleSelfReference();
 
                     state._fsp--;
 
-                     after(grammarAccess.getRefAccess().getSelfReferenceParserRuleCall_1()); 
+                     after(grammarAccess.getStoreExpressionAccess().getSelfReferenceParserRuleCall_1()); 
 
                     }
 
@@ -4874,7 +4874,7 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         }
         return ;
     }
-    // $ANTLR end "rule__Ref__Alternatives"
+    // $ANTLR end "rule__StoreExpression__Alternatives"
 
 
     // $ANTLR start "rule__Action__Alternatives_0"
@@ -7531,22 +7531,177 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SelfReference__Group__2__Impl"
 
 
+    // $ANTLR start "rule__FreeVariable__Group__0"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2859:1: rule__FreeVariable__Group__0 : rule__FreeVariable__Group__0__Impl rule__FreeVariable__Group__1 ;
+    public final void rule__FreeVariable__Group__0() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2863:1: ( rule__FreeVariable__Group__0__Impl rule__FreeVariable__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2864:2: rule__FreeVariable__Group__0__Impl rule__FreeVariable__Group__1
+            {
+            pushFollow(FOLLOW_rule__FreeVariable__Group__0__Impl_in_rule__FreeVariable__Group__05639);
+            rule__FreeVariable__Group__0__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__FreeVariable__Group__1_in_rule__FreeVariable__Group__05642);
+            rule__FreeVariable__Group__1();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FreeVariable__Group__0"
+
+
+    // $ANTLR start "rule__FreeVariable__Group__0__Impl"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2871:1: rule__FreeVariable__Group__0__Impl : ( () ) ;
+    public final void rule__FreeVariable__Group__0__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2875:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2876:1: ( () )
+            {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2876:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2877:1: ()
+            {
+             before(grammarAccess.getFreeVariableAccess().getFreeVariableAction_0()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2878:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2880:1: 
+            {
+            }
+
+             after(grammarAccess.getFreeVariableAccess().getFreeVariableAction_0()); 
+
+            }
+
+
+            }
+
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FreeVariable__Group__0__Impl"
+
+
+    // $ANTLR start "rule__FreeVariable__Group__1"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2890:1: rule__FreeVariable__Group__1 : rule__FreeVariable__Group__1__Impl ;
+    public final void rule__FreeVariable__Group__1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2894:1: ( rule__FreeVariable__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2895:2: rule__FreeVariable__Group__1__Impl
+            {
+            pushFollow(FOLLOW_rule__FreeVariable__Group__1__Impl_in_rule__FreeVariable__Group__15700);
+            rule__FreeVariable__Group__1__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FreeVariable__Group__1"
+
+
+    // $ANTLR start "rule__FreeVariable__Group__1__Impl"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2901:1: rule__FreeVariable__Group__1__Impl : ( ( rule__FreeVariable__NameAssignment_1 ) ) ;
+    public final void rule__FreeVariable__Group__1__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2905:1: ( ( ( rule__FreeVariable__NameAssignment_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2906:1: ( ( rule__FreeVariable__NameAssignment_1 ) )
+            {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2906:1: ( ( rule__FreeVariable__NameAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2907:1: ( rule__FreeVariable__NameAssignment_1 )
+            {
+             before(grammarAccess.getFreeVariableAccess().getNameAssignment_1()); 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2908:1: ( rule__FreeVariable__NameAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2908:2: rule__FreeVariable__NameAssignment_1
+            {
+            pushFollow(FOLLOW_rule__FreeVariable__NameAssignment_1_in_rule__FreeVariable__Group__1__Impl5727);
+            rule__FreeVariable__NameAssignment_1();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getFreeVariableAccess().getNameAssignment_1()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FreeVariable__Group__1__Impl"
+
+
     // $ANTLR start "rule__Action__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2859:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2922:1: rule__Action__Group__0 : rule__Action__Group__0__Impl rule__Action__Group__1 ;
     public final void rule__Action__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2863:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2864:2: rule__Action__Group__0__Impl rule__Action__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2926:1: ( rule__Action__Group__0__Impl rule__Action__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2927:2: rule__Action__Group__0__Impl rule__Action__Group__1
             {
-            pushFollow(FOLLOW_rule__Action__Group__0__Impl_in_rule__Action__Group__05639);
+            pushFollow(FOLLOW_rule__Action__Group__0__Impl_in_rule__Action__Group__05761);
             rule__Action__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Action__Group__1_in_rule__Action__Group__05642);
+            pushFollow(FOLLOW_rule__Action__Group__1_in_rule__Action__Group__05764);
             rule__Action__Group__1();
 
             state._fsp--;
@@ -7570,23 +7725,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2871:1: rule__Action__Group__0__Impl : ( ( rule__Action__Alternatives_0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2934:1: rule__Action__Group__0__Impl : ( ( rule__Action__Alternatives_0 ) ) ;
     public final void rule__Action__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2875:1: ( ( ( rule__Action__Alternatives_0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2876:1: ( ( rule__Action__Alternatives_0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2938:1: ( ( ( rule__Action__Alternatives_0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2939:1: ( ( rule__Action__Alternatives_0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2876:1: ( ( rule__Action__Alternatives_0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2877:1: ( rule__Action__Alternatives_0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2939:1: ( ( rule__Action__Alternatives_0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2940:1: ( rule__Action__Alternatives_0 )
             {
              before(grammarAccess.getActionAccess().getAlternatives_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2878:1: ( rule__Action__Alternatives_0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2878:2: rule__Action__Alternatives_0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2941:1: ( rule__Action__Alternatives_0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2941:2: rule__Action__Alternatives_0
             {
-            pushFollow(FOLLOW_rule__Action__Alternatives_0_in_rule__Action__Group__0__Impl5669);
+            pushFollow(FOLLOW_rule__Action__Alternatives_0_in_rule__Action__Group__0__Impl5791);
             rule__Action__Alternatives_0();
 
             state._fsp--;
@@ -7617,21 +7772,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2888:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2951:1: rule__Action__Group__1 : rule__Action__Group__1__Impl rule__Action__Group__2 ;
     public final void rule__Action__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2892:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2893:2: rule__Action__Group__1__Impl rule__Action__Group__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2955:1: ( rule__Action__Group__1__Impl rule__Action__Group__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2956:2: rule__Action__Group__1__Impl rule__Action__Group__2
             {
-            pushFollow(FOLLOW_rule__Action__Group__1__Impl_in_rule__Action__Group__15699);
+            pushFollow(FOLLOW_rule__Action__Group__1__Impl_in_rule__Action__Group__15821);
             rule__Action__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Action__Group__2_in_rule__Action__Group__15702);
+            pushFollow(FOLLOW_rule__Action__Group__2_in_rule__Action__Group__15824);
             rule__Action__Group__2();
 
             state._fsp--;
@@ -7655,23 +7810,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2900:1: rule__Action__Group__1__Impl : ( ( rule__Action__PredicateAssignment_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2963:1: rule__Action__Group__1__Impl : ( ( rule__Action__PredicateAssignment_1 ) ) ;
     public final void rule__Action__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2904:1: ( ( ( rule__Action__PredicateAssignment_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2905:1: ( ( rule__Action__PredicateAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2967:1: ( ( ( rule__Action__PredicateAssignment_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2968:1: ( ( rule__Action__PredicateAssignment_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2905:1: ( ( rule__Action__PredicateAssignment_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2906:1: ( rule__Action__PredicateAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2968:1: ( ( rule__Action__PredicateAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2969:1: ( rule__Action__PredicateAssignment_1 )
             {
              before(grammarAccess.getActionAccess().getPredicateAssignment_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2907:1: ( rule__Action__PredicateAssignment_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2907:2: rule__Action__PredicateAssignment_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2970:1: ( rule__Action__PredicateAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2970:2: rule__Action__PredicateAssignment_1
             {
-            pushFollow(FOLLOW_rule__Action__PredicateAssignment_1_in_rule__Action__Group__1__Impl5729);
+            pushFollow(FOLLOW_rule__Action__PredicateAssignment_1_in_rule__Action__Group__1__Impl5851);
             rule__Action__PredicateAssignment_1();
 
             state._fsp--;
@@ -7702,21 +7857,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2917:1: rule__Action__Group__2 : rule__Action__Group__2__Impl rule__Action__Group__3 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2980:1: rule__Action__Group__2 : rule__Action__Group__2__Impl rule__Action__Group__3 ;
     public final void rule__Action__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2921:1: ( rule__Action__Group__2__Impl rule__Action__Group__3 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2922:2: rule__Action__Group__2__Impl rule__Action__Group__3
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2984:1: ( rule__Action__Group__2__Impl rule__Action__Group__3 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2985:2: rule__Action__Group__2__Impl rule__Action__Group__3
             {
-            pushFollow(FOLLOW_rule__Action__Group__2__Impl_in_rule__Action__Group__25759);
+            pushFollow(FOLLOW_rule__Action__Group__2__Impl_in_rule__Action__Group__25881);
             rule__Action__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Action__Group__3_in_rule__Action__Group__25762);
+            pushFollow(FOLLOW_rule__Action__Group__3_in_rule__Action__Group__25884);
             rule__Action__Group__3();
 
             state._fsp--;
@@ -7740,23 +7895,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2929:1: rule__Action__Group__2__Impl : ( ( rule__Action__ArgumentsAssignment_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2992:1: rule__Action__Group__2__Impl : ( ( rule__Action__ArgumentsAssignment_2 ) ) ;
     public final void rule__Action__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2933:1: ( ( ( rule__Action__ArgumentsAssignment_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2934:1: ( ( rule__Action__ArgumentsAssignment_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2996:1: ( ( ( rule__Action__ArgumentsAssignment_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2997:1: ( ( rule__Action__ArgumentsAssignment_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2934:1: ( ( rule__Action__ArgumentsAssignment_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2935:1: ( rule__Action__ArgumentsAssignment_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2997:1: ( ( rule__Action__ArgumentsAssignment_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2998:1: ( rule__Action__ArgumentsAssignment_2 )
             {
              before(grammarAccess.getActionAccess().getArgumentsAssignment_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2936:1: ( rule__Action__ArgumentsAssignment_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2936:2: rule__Action__ArgumentsAssignment_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2999:1: ( rule__Action__ArgumentsAssignment_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2999:2: rule__Action__ArgumentsAssignment_2
             {
-            pushFollow(FOLLOW_rule__Action__ArgumentsAssignment_2_in_rule__Action__Group__2__Impl5789);
+            pushFollow(FOLLOW_rule__Action__ArgumentsAssignment_2_in_rule__Action__Group__2__Impl5911);
             rule__Action__ArgumentsAssignment_2();
 
             state._fsp--;
@@ -7787,21 +7942,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__3"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2946:1: rule__Action__Group__3 : rule__Action__Group__3__Impl rule__Action__Group__4 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3009:1: rule__Action__Group__3 : rule__Action__Group__3__Impl rule__Action__Group__4 ;
     public final void rule__Action__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2950:1: ( rule__Action__Group__3__Impl rule__Action__Group__4 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2951:2: rule__Action__Group__3__Impl rule__Action__Group__4
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3013:1: ( rule__Action__Group__3__Impl rule__Action__Group__4 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3014:2: rule__Action__Group__3__Impl rule__Action__Group__4
             {
-            pushFollow(FOLLOW_rule__Action__Group__3__Impl_in_rule__Action__Group__35819);
+            pushFollow(FOLLOW_rule__Action__Group__3__Impl_in_rule__Action__Group__35941);
             rule__Action__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Action__Group__4_in_rule__Action__Group__35822);
+            pushFollow(FOLLOW_rule__Action__Group__4_in_rule__Action__Group__35944);
             rule__Action__Group__4();
 
             state._fsp--;
@@ -7825,20 +7980,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__3__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2958:1: rule__Action__Group__3__Impl : ( ( rule__Action__UpdatesAssignment_3 )? ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3021:1: rule__Action__Group__3__Impl : ( ( rule__Action__UpdatesAssignment_3 )? ) ;
     public final void rule__Action__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2962:1: ( ( ( rule__Action__UpdatesAssignment_3 )? ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2963:1: ( ( rule__Action__UpdatesAssignment_3 )? )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3025:1: ( ( ( rule__Action__UpdatesAssignment_3 )? ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3026:1: ( ( rule__Action__UpdatesAssignment_3 )? )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2963:1: ( ( rule__Action__UpdatesAssignment_3 )? )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2964:1: ( rule__Action__UpdatesAssignment_3 )?
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3026:1: ( ( rule__Action__UpdatesAssignment_3 )? )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3027:1: ( rule__Action__UpdatesAssignment_3 )?
             {
              before(grammarAccess.getActionAccess().getUpdatesAssignment_3()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2965:1: ( rule__Action__UpdatesAssignment_3 )?
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3028:1: ( rule__Action__UpdatesAssignment_3 )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -7847,9 +8002,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
             }
             switch (alt20) {
                 case 1 :
-                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2965:2: rule__Action__UpdatesAssignment_3
+                    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3028:2: rule__Action__UpdatesAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__Action__UpdatesAssignment_3_in_rule__Action__Group__3__Impl5849);
+                    pushFollow(FOLLOW_rule__Action__UpdatesAssignment_3_in_rule__Action__Group__3__Impl5971);
                     rule__Action__UpdatesAssignment_3();
 
                     state._fsp--;
@@ -7883,16 +8038,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__4"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2975:1: rule__Action__Group__4 : rule__Action__Group__4__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3038:1: rule__Action__Group__4 : rule__Action__Group__4__Impl ;
     public final void rule__Action__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2979:1: ( rule__Action__Group__4__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2980:2: rule__Action__Group__4__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3042:1: ( rule__Action__Group__4__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3043:2: rule__Action__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Action__Group__4__Impl_in_rule__Action__Group__45880);
+            pushFollow(FOLLOW_rule__Action__Group__4__Impl_in_rule__Action__Group__46002);
             rule__Action__Group__4__Impl();
 
             state._fsp--;
@@ -7916,20 +8071,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group__4__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2986:1: rule__Action__Group__4__Impl : ( '.' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3049:1: rule__Action__Group__4__Impl : ( '.' ) ;
     public final void rule__Action__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2990:1: ( ( '.' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2991:1: ( '.' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3053:1: ( ( '.' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3054:1: ( '.' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2991:1: ( '.' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:2992:1: '.'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3054:1: ( '.' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3055:1: '.'
             {
              before(grammarAccess.getActionAccess().getFullStopKeyword_4()); 
-            match(input,23,FOLLOW_23_in_rule__Action__Group__4__Impl5908); 
+            match(input,23,FOLLOW_23_in_rule__Action__Group__4__Impl6030); 
              after(grammarAccess.getActionAccess().getFullStopKeyword_4()); 
 
             }
@@ -7953,21 +8108,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_0__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3015:1: rule__Action__Group_0_0__0 : rule__Action__Group_0_0__0__Impl rule__Action__Group_0_0__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3078:1: rule__Action__Group_0_0__0 : rule__Action__Group_0_0__0__Impl rule__Action__Group_0_0__1 ;
     public final void rule__Action__Group_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3019:1: ( rule__Action__Group_0_0__0__Impl rule__Action__Group_0_0__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3020:2: rule__Action__Group_0_0__0__Impl rule__Action__Group_0_0__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3082:1: ( rule__Action__Group_0_0__0__Impl rule__Action__Group_0_0__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3083:2: rule__Action__Group_0_0__0__Impl rule__Action__Group_0_0__1
             {
-            pushFollow(FOLLOW_rule__Action__Group_0_0__0__Impl_in_rule__Action__Group_0_0__05949);
+            pushFollow(FOLLOW_rule__Action__Group_0_0__0__Impl_in_rule__Action__Group_0_0__06071);
             rule__Action__Group_0_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Action__Group_0_0__1_in_rule__Action__Group_0_0__05952);
+            pushFollow(FOLLOW_rule__Action__Group_0_0__1_in_rule__Action__Group_0_0__06074);
             rule__Action__Group_0_0__1();
 
             state._fsp--;
@@ -7991,21 +8146,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_0__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3027:1: rule__Action__Group_0_0__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3090:1: rule__Action__Group_0_0__0__Impl : ( () ) ;
     public final void rule__Action__Group_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3031:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3032:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3094:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3095:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3032:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3033:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3095:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3096:1: ()
             {
              before(grammarAccess.getActionAccess().getBroadcastAction_0_0_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3034:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3036:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3097:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3099:1: 
             {
             }
 
@@ -8028,21 +8183,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_0__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3046:1: rule__Action__Group_0_0__1 : rule__Action__Group_0_0__1__Impl rule__Action__Group_0_0__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3109:1: rule__Action__Group_0_0__1 : rule__Action__Group_0_0__1__Impl rule__Action__Group_0_0__2 ;
     public final void rule__Action__Group_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3050:1: ( rule__Action__Group_0_0__1__Impl rule__Action__Group_0_0__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3051:2: rule__Action__Group_0_0__1__Impl rule__Action__Group_0_0__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3113:1: ( rule__Action__Group_0_0__1__Impl rule__Action__Group_0_0__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3114:2: rule__Action__Group_0_0__1__Impl rule__Action__Group_0_0__2
             {
-            pushFollow(FOLLOW_rule__Action__Group_0_0__1__Impl_in_rule__Action__Group_0_0__16010);
+            pushFollow(FOLLOW_rule__Action__Group_0_0__1__Impl_in_rule__Action__Group_0_0__16132);
             rule__Action__Group_0_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Action__Group_0_0__2_in_rule__Action__Group_0_0__16013);
+            pushFollow(FOLLOW_rule__Action__Group_0_0__2_in_rule__Action__Group_0_0__16135);
             rule__Action__Group_0_0__2();
 
             state._fsp--;
@@ -8066,23 +8221,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_0__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3058:1: rule__Action__Group_0_0__1__Impl : ( ( rule__Action__NameAssignment_0_0_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3121:1: rule__Action__Group_0_0__1__Impl : ( ( rule__Action__NameAssignment_0_0_1 ) ) ;
     public final void rule__Action__Group_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3062:1: ( ( ( rule__Action__NameAssignment_0_0_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3063:1: ( ( rule__Action__NameAssignment_0_0_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3125:1: ( ( ( rule__Action__NameAssignment_0_0_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3126:1: ( ( rule__Action__NameAssignment_0_0_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3063:1: ( ( rule__Action__NameAssignment_0_0_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3064:1: ( rule__Action__NameAssignment_0_0_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3126:1: ( ( rule__Action__NameAssignment_0_0_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3127:1: ( rule__Action__NameAssignment_0_0_1 )
             {
              before(grammarAccess.getActionAccess().getNameAssignment_0_0_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3065:1: ( rule__Action__NameAssignment_0_0_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3065:2: rule__Action__NameAssignment_0_0_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3128:1: ( rule__Action__NameAssignment_0_0_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3128:2: rule__Action__NameAssignment_0_0_1
             {
-            pushFollow(FOLLOW_rule__Action__NameAssignment_0_0_1_in_rule__Action__Group_0_0__1__Impl6040);
+            pushFollow(FOLLOW_rule__Action__NameAssignment_0_0_1_in_rule__Action__Group_0_0__1__Impl6162);
             rule__Action__NameAssignment_0_0_1();
 
             state._fsp--;
@@ -8113,16 +8268,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_0__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3075:1: rule__Action__Group_0_0__2 : rule__Action__Group_0_0__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3138:1: rule__Action__Group_0_0__2 : rule__Action__Group_0_0__2__Impl ;
     public final void rule__Action__Group_0_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3079:1: ( rule__Action__Group_0_0__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3080:2: rule__Action__Group_0_0__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3142:1: ( rule__Action__Group_0_0__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3143:2: rule__Action__Group_0_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__Action__Group_0_0__2__Impl_in_rule__Action__Group_0_0__26070);
+            pushFollow(FOLLOW_rule__Action__Group_0_0__2__Impl_in_rule__Action__Group_0_0__26192);
             rule__Action__Group_0_0__2__Impl();
 
             state._fsp--;
@@ -8146,20 +8301,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_0__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3086:1: rule__Action__Group_0_0__2__Impl : ( '*' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3149:1: rule__Action__Group_0_0__2__Impl : ( '*' ) ;
     public final void rule__Action__Group_0_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3090:1: ( ( '*' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3091:1: ( '*' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3153:1: ( ( '*' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3154:1: ( '*' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3091:1: ( '*' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3092:1: '*'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3154:1: ( '*' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3155:1: '*'
             {
              before(grammarAccess.getActionAccess().getAsteriskKeyword_0_0_2()); 
-            match(input,24,FOLLOW_24_in_rule__Action__Group_0_0__2__Impl6098); 
+            match(input,24,FOLLOW_24_in_rule__Action__Group_0_0__2__Impl6220); 
              after(grammarAccess.getActionAccess().getAsteriskKeyword_0_0_2()); 
 
             }
@@ -8183,21 +8338,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3111:1: rule__Action__Group_0_1__0 : rule__Action__Group_0_1__0__Impl rule__Action__Group_0_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3174:1: rule__Action__Group_0_1__0 : rule__Action__Group_0_1__0__Impl rule__Action__Group_0_1__1 ;
     public final void rule__Action__Group_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3115:1: ( rule__Action__Group_0_1__0__Impl rule__Action__Group_0_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3116:2: rule__Action__Group_0_1__0__Impl rule__Action__Group_0_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3178:1: ( rule__Action__Group_0_1__0__Impl rule__Action__Group_0_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3179:2: rule__Action__Group_0_1__0__Impl rule__Action__Group_0_1__1
             {
-            pushFollow(FOLLOW_rule__Action__Group_0_1__0__Impl_in_rule__Action__Group_0_1__06135);
+            pushFollow(FOLLOW_rule__Action__Group_0_1__0__Impl_in_rule__Action__Group_0_1__06257);
             rule__Action__Group_0_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Action__Group_0_1__1_in_rule__Action__Group_0_1__06138);
+            pushFollow(FOLLOW_rule__Action__Group_0_1__1_in_rule__Action__Group_0_1__06260);
             rule__Action__Group_0_1__1();
 
             state._fsp--;
@@ -8221,21 +8376,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3123:1: rule__Action__Group_0_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3186:1: rule__Action__Group_0_1__0__Impl : ( () ) ;
     public final void rule__Action__Group_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3127:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3128:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3190:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3191:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3128:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3129:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3191:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3192:1: ()
             {
              before(grammarAccess.getActionAccess().getUnicastAction_0_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3130:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3132:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3193:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3195:1: 
             {
             }
 
@@ -8258,16 +8413,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3142:1: rule__Action__Group_0_1__1 : rule__Action__Group_0_1__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3205:1: rule__Action__Group_0_1__1 : rule__Action__Group_0_1__1__Impl ;
     public final void rule__Action__Group_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3146:1: ( rule__Action__Group_0_1__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3147:2: rule__Action__Group_0_1__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3209:1: ( rule__Action__Group_0_1__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3210:2: rule__Action__Group_0_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Action__Group_0_1__1__Impl_in_rule__Action__Group_0_1__16196);
+            pushFollow(FOLLOW_rule__Action__Group_0_1__1__Impl_in_rule__Action__Group_0_1__16318);
             rule__Action__Group_0_1__1__Impl();
 
             state._fsp--;
@@ -8291,23 +8446,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__Group_0_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3153:1: rule__Action__Group_0_1__1__Impl : ( ( rule__Action__NameAssignment_0_1_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3216:1: rule__Action__Group_0_1__1__Impl : ( ( rule__Action__NameAssignment_0_1_1 ) ) ;
     public final void rule__Action__Group_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3157:1: ( ( ( rule__Action__NameAssignment_0_1_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3158:1: ( ( rule__Action__NameAssignment_0_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3220:1: ( ( ( rule__Action__NameAssignment_0_1_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3221:1: ( ( rule__Action__NameAssignment_0_1_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3158:1: ( ( rule__Action__NameAssignment_0_1_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3159:1: ( rule__Action__NameAssignment_0_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3221:1: ( ( rule__Action__NameAssignment_0_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3222:1: ( rule__Action__NameAssignment_0_1_1 )
             {
              before(grammarAccess.getActionAccess().getNameAssignment_0_1_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3160:1: ( rule__Action__NameAssignment_0_1_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3160:2: rule__Action__NameAssignment_0_1_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3223:1: ( rule__Action__NameAssignment_0_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3223:2: rule__Action__NameAssignment_0_1_1
             {
-            pushFollow(FOLLOW_rule__Action__NameAssignment_0_1_1_in_rule__Action__Group_0_1__1__Impl6223);
+            pushFollow(FOLLOW_rule__Action__NameAssignment_0_1_1_in_rule__Action__Group_0_1__1__Impl6345);
             rule__Action__NameAssignment_0_1_1();
 
             state._fsp--;
@@ -8338,21 +8493,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3174:1: rule__Predicate__Group__0 : rule__Predicate__Group__0__Impl rule__Predicate__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3237:1: rule__Predicate__Group__0 : rule__Predicate__Group__0__Impl rule__Predicate__Group__1 ;
     public final void rule__Predicate__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3178:1: ( rule__Predicate__Group__0__Impl rule__Predicate__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3179:2: rule__Predicate__Group__0__Impl rule__Predicate__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3241:1: ( rule__Predicate__Group__0__Impl rule__Predicate__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3242:2: rule__Predicate__Group__0__Impl rule__Predicate__Group__1
             {
-            pushFollow(FOLLOW_rule__Predicate__Group__0__Impl_in_rule__Predicate__Group__06257);
+            pushFollow(FOLLOW_rule__Predicate__Group__0__Impl_in_rule__Predicate__Group__06379);
             rule__Predicate__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Predicate__Group__1_in_rule__Predicate__Group__06260);
+            pushFollow(FOLLOW_rule__Predicate__Group__1_in_rule__Predicate__Group__06382);
             rule__Predicate__Group__1();
 
             state._fsp--;
@@ -8376,21 +8531,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3186:1: rule__Predicate__Group__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3249:1: rule__Predicate__Group__0__Impl : ( () ) ;
     public final void rule__Predicate__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3190:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3191:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3253:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3254:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3191:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3192:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3254:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3255:1: ()
             {
              before(grammarAccess.getPredicateAccess().getPredicateAction_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3193:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3195:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3256:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3258:1: 
             {
             }
 
@@ -8413,21 +8568,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3205:1: rule__Predicate__Group__1 : rule__Predicate__Group__1__Impl rule__Predicate__Group__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3268:1: rule__Predicate__Group__1 : rule__Predicate__Group__1__Impl rule__Predicate__Group__2 ;
     public final void rule__Predicate__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3209:1: ( rule__Predicate__Group__1__Impl rule__Predicate__Group__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3210:2: rule__Predicate__Group__1__Impl rule__Predicate__Group__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3272:1: ( rule__Predicate__Group__1__Impl rule__Predicate__Group__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3273:2: rule__Predicate__Group__1__Impl rule__Predicate__Group__2
             {
-            pushFollow(FOLLOW_rule__Predicate__Group__1__Impl_in_rule__Predicate__Group__16318);
+            pushFollow(FOLLOW_rule__Predicate__Group__1__Impl_in_rule__Predicate__Group__16440);
             rule__Predicate__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Predicate__Group__2_in_rule__Predicate__Group__16321);
+            pushFollow(FOLLOW_rule__Predicate__Group__2_in_rule__Predicate__Group__16443);
             rule__Predicate__Group__2();
 
             state._fsp--;
@@ -8451,20 +8606,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3217:1: rule__Predicate__Group__1__Impl : ( '[' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3280:1: rule__Predicate__Group__1__Impl : ( '[' ) ;
     public final void rule__Predicate__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3221:1: ( ( '[' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3222:1: ( '[' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3284:1: ( ( '[' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3285:1: ( '[' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3222:1: ( '[' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3223:1: '['
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3285:1: ( '[' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3286:1: '['
             {
              before(grammarAccess.getPredicateAccess().getLeftSquareBracketKeyword_1()); 
-            match(input,25,FOLLOW_25_in_rule__Predicate__Group__1__Impl6349); 
+            match(input,25,FOLLOW_25_in_rule__Predicate__Group__1__Impl6471); 
              after(grammarAccess.getPredicateAccess().getLeftSquareBracketKeyword_1()); 
 
             }
@@ -8488,21 +8643,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3236:1: rule__Predicate__Group__2 : rule__Predicate__Group__2__Impl rule__Predicate__Group__3 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3299:1: rule__Predicate__Group__2 : rule__Predicate__Group__2__Impl rule__Predicate__Group__3 ;
     public final void rule__Predicate__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3240:1: ( rule__Predicate__Group__2__Impl rule__Predicate__Group__3 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3241:2: rule__Predicate__Group__2__Impl rule__Predicate__Group__3
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3303:1: ( rule__Predicate__Group__2__Impl rule__Predicate__Group__3 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3304:2: rule__Predicate__Group__2__Impl rule__Predicate__Group__3
             {
-            pushFollow(FOLLOW_rule__Predicate__Group__2__Impl_in_rule__Predicate__Group__26380);
+            pushFollow(FOLLOW_rule__Predicate__Group__2__Impl_in_rule__Predicate__Group__26502);
             rule__Predicate__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Predicate__Group__3_in_rule__Predicate__Group__26383);
+            pushFollow(FOLLOW_rule__Predicate__Group__3_in_rule__Predicate__Group__26505);
             rule__Predicate__Group__3();
 
             state._fsp--;
@@ -8526,23 +8681,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3248:1: rule__Predicate__Group__2__Impl : ( ( rule__Predicate__PredicateAssignment_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3311:1: rule__Predicate__Group__2__Impl : ( ( rule__Predicate__PredicateAssignment_2 ) ) ;
     public final void rule__Predicate__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3252:1: ( ( ( rule__Predicate__PredicateAssignment_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3253:1: ( ( rule__Predicate__PredicateAssignment_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3315:1: ( ( ( rule__Predicate__PredicateAssignment_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3316:1: ( ( rule__Predicate__PredicateAssignment_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3253:1: ( ( rule__Predicate__PredicateAssignment_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3254:1: ( rule__Predicate__PredicateAssignment_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3316:1: ( ( rule__Predicate__PredicateAssignment_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3317:1: ( rule__Predicate__PredicateAssignment_2 )
             {
              before(grammarAccess.getPredicateAccess().getPredicateAssignment_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3255:1: ( rule__Predicate__PredicateAssignment_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3255:2: rule__Predicate__PredicateAssignment_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3318:1: ( rule__Predicate__PredicateAssignment_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3318:2: rule__Predicate__PredicateAssignment_2
             {
-            pushFollow(FOLLOW_rule__Predicate__PredicateAssignment_2_in_rule__Predicate__Group__2__Impl6410);
+            pushFollow(FOLLOW_rule__Predicate__PredicateAssignment_2_in_rule__Predicate__Group__2__Impl6532);
             rule__Predicate__PredicateAssignment_2();
 
             state._fsp--;
@@ -8573,16 +8728,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__3"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3265:1: rule__Predicate__Group__3 : rule__Predicate__Group__3__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3328:1: rule__Predicate__Group__3 : rule__Predicate__Group__3__Impl ;
     public final void rule__Predicate__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3269:1: ( rule__Predicate__Group__3__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3270:2: rule__Predicate__Group__3__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3332:1: ( rule__Predicate__Group__3__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3333:2: rule__Predicate__Group__3__Impl
             {
-            pushFollow(FOLLOW_rule__Predicate__Group__3__Impl_in_rule__Predicate__Group__36440);
+            pushFollow(FOLLOW_rule__Predicate__Group__3__Impl_in_rule__Predicate__Group__36562);
             rule__Predicate__Group__3__Impl();
 
             state._fsp--;
@@ -8606,20 +8761,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__Group__3__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3276:1: rule__Predicate__Group__3__Impl : ( ']' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3339:1: rule__Predicate__Group__3__Impl : ( ']' ) ;
     public final void rule__Predicate__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3280:1: ( ( ']' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3281:1: ( ']' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3343:1: ( ( ']' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3344:1: ( ']' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3281:1: ( ']' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3282:1: ']'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3344:1: ( ']' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3345:1: ']'
             {
              before(grammarAccess.getPredicateAccess().getRightSquareBracketKeyword_3()); 
-            match(input,26,FOLLOW_26_in_rule__Predicate__Group__3__Impl6468); 
+            match(input,26,FOLLOW_26_in_rule__Predicate__Group__3__Impl6590); 
              after(grammarAccess.getPredicateAccess().getRightSquareBracketKeyword_3()); 
 
             }
@@ -8643,21 +8798,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3303:1: rule__PredicateOr__Group__0 : rule__PredicateOr__Group__0__Impl rule__PredicateOr__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3366:1: rule__PredicateOr__Group__0 : rule__PredicateOr__Group__0__Impl rule__PredicateOr__Group__1 ;
     public final void rule__PredicateOr__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3307:1: ( rule__PredicateOr__Group__0__Impl rule__PredicateOr__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3308:2: rule__PredicateOr__Group__0__Impl rule__PredicateOr__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3370:1: ( rule__PredicateOr__Group__0__Impl rule__PredicateOr__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3371:2: rule__PredicateOr__Group__0__Impl rule__PredicateOr__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateOr__Group__0__Impl_in_rule__PredicateOr__Group__06507);
+            pushFollow(FOLLOW_rule__PredicateOr__Group__0__Impl_in_rule__PredicateOr__Group__06629);
             rule__PredicateOr__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateOr__Group__1_in_rule__PredicateOr__Group__06510);
+            pushFollow(FOLLOW_rule__PredicateOr__Group__1_in_rule__PredicateOr__Group__06632);
             rule__PredicateOr__Group__1();
 
             state._fsp--;
@@ -8681,20 +8836,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3315:1: rule__PredicateOr__Group__0__Impl : ( rulePredicateAnd ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3378:1: rule__PredicateOr__Group__0__Impl : ( rulePredicateAnd ) ;
     public final void rule__PredicateOr__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3319:1: ( ( rulePredicateAnd ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3320:1: ( rulePredicateAnd )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3382:1: ( ( rulePredicateAnd ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3383:1: ( rulePredicateAnd )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3320:1: ( rulePredicateAnd )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3321:1: rulePredicateAnd
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3383:1: ( rulePredicateAnd )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3384:1: rulePredicateAnd
             {
              before(grammarAccess.getPredicateOrAccess().getPredicateAndParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicateAnd_in_rule__PredicateOr__Group__0__Impl6537);
+            pushFollow(FOLLOW_rulePredicateAnd_in_rule__PredicateOr__Group__0__Impl6659);
             rulePredicateAnd();
 
             state._fsp--;
@@ -8722,16 +8877,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3332:1: rule__PredicateOr__Group__1 : rule__PredicateOr__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3395:1: rule__PredicateOr__Group__1 : rule__PredicateOr__Group__1__Impl ;
     public final void rule__PredicateOr__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3336:1: ( rule__PredicateOr__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3337:2: rule__PredicateOr__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3399:1: ( rule__PredicateOr__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3400:2: rule__PredicateOr__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateOr__Group__1__Impl_in_rule__PredicateOr__Group__16566);
+            pushFollow(FOLLOW_rule__PredicateOr__Group__1__Impl_in_rule__PredicateOr__Group__16688);
             rule__PredicateOr__Group__1__Impl();
 
             state._fsp--;
@@ -8755,20 +8910,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3343:1: rule__PredicateOr__Group__1__Impl : ( ( rule__PredicateOr__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3406:1: rule__PredicateOr__Group__1__Impl : ( ( rule__PredicateOr__Group_1__0 )* ) ;
     public final void rule__PredicateOr__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3347:1: ( ( ( rule__PredicateOr__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3348:1: ( ( rule__PredicateOr__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3410:1: ( ( ( rule__PredicateOr__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3411:1: ( ( rule__PredicateOr__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3348:1: ( ( rule__PredicateOr__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3349:1: ( rule__PredicateOr__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3411:1: ( ( rule__PredicateOr__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3412:1: ( rule__PredicateOr__Group_1__0 )*
             {
              before(grammarAccess.getPredicateOrAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3350:1: ( rule__PredicateOr__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3413:1: ( rule__PredicateOr__Group_1__0 )*
             loop21:
             do {
                 int alt21=2;
@@ -8781,9 +8936,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt21) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3350:2: rule__PredicateOr__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3413:2: rule__PredicateOr__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateOr__Group_1__0_in_rule__PredicateOr__Group__1__Impl6593);
+            	    pushFollow(FOLLOW_rule__PredicateOr__Group_1__0_in_rule__PredicateOr__Group__1__Impl6715);
             	    rule__PredicateOr__Group_1__0();
 
             	    state._fsp--;
@@ -8820,21 +8975,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3364:1: rule__PredicateOr__Group_1__0 : rule__PredicateOr__Group_1__0__Impl rule__PredicateOr__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3427:1: rule__PredicateOr__Group_1__0 : rule__PredicateOr__Group_1__0__Impl rule__PredicateOr__Group_1__1 ;
     public final void rule__PredicateOr__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3368:1: ( rule__PredicateOr__Group_1__0__Impl rule__PredicateOr__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3369:2: rule__PredicateOr__Group_1__0__Impl rule__PredicateOr__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3431:1: ( rule__PredicateOr__Group_1__0__Impl rule__PredicateOr__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3432:2: rule__PredicateOr__Group_1__0__Impl rule__PredicateOr__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateOr__Group_1__0__Impl_in_rule__PredicateOr__Group_1__06628);
+            pushFollow(FOLLOW_rule__PredicateOr__Group_1__0__Impl_in_rule__PredicateOr__Group_1__06750);
             rule__PredicateOr__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateOr__Group_1__1_in_rule__PredicateOr__Group_1__06631);
+            pushFollow(FOLLOW_rule__PredicateOr__Group_1__1_in_rule__PredicateOr__Group_1__06753);
             rule__PredicateOr__Group_1__1();
 
             state._fsp--;
@@ -8858,21 +9013,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3376:1: rule__PredicateOr__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3439:1: rule__PredicateOr__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateOr__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3380:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3381:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3443:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3444:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3381:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3382:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3444:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3445:1: ()
             {
              before(grammarAccess.getPredicateOrAccess().getPredicateOrLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3383:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3385:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3446:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3448:1: 
             {
             }
 
@@ -8895,21 +9050,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3395:1: rule__PredicateOr__Group_1__1 : rule__PredicateOr__Group_1__1__Impl rule__PredicateOr__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3458:1: rule__PredicateOr__Group_1__1 : rule__PredicateOr__Group_1__1__Impl rule__PredicateOr__Group_1__2 ;
     public final void rule__PredicateOr__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3399:1: ( rule__PredicateOr__Group_1__1__Impl rule__PredicateOr__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3400:2: rule__PredicateOr__Group_1__1__Impl rule__PredicateOr__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3462:1: ( rule__PredicateOr__Group_1__1__Impl rule__PredicateOr__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3463:2: rule__PredicateOr__Group_1__1__Impl rule__PredicateOr__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateOr__Group_1__1__Impl_in_rule__PredicateOr__Group_1__16689);
+            pushFollow(FOLLOW_rule__PredicateOr__Group_1__1__Impl_in_rule__PredicateOr__Group_1__16811);
             rule__PredicateOr__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateOr__Group_1__2_in_rule__PredicateOr__Group_1__16692);
+            pushFollow(FOLLOW_rule__PredicateOr__Group_1__2_in_rule__PredicateOr__Group_1__16814);
             rule__PredicateOr__Group_1__2();
 
             state._fsp--;
@@ -8933,20 +9088,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3407:1: rule__PredicateOr__Group_1__1__Impl : ( '||' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3470:1: rule__PredicateOr__Group_1__1__Impl : ( '||' ) ;
     public final void rule__PredicateOr__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3411:1: ( ( '||' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3412:1: ( '||' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3474:1: ( ( '||' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3475:1: ( '||' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3412:1: ( '||' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3413:1: '||'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3475:1: ( '||' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3476:1: '||'
             {
              before(grammarAccess.getPredicateOrAccess().getVerticalLineVerticalLineKeyword_1_1()); 
-            match(input,27,FOLLOW_27_in_rule__PredicateOr__Group_1__1__Impl6720); 
+            match(input,27,FOLLOW_27_in_rule__PredicateOr__Group_1__1__Impl6842); 
              after(grammarAccess.getPredicateOrAccess().getVerticalLineVerticalLineKeyword_1_1()); 
 
             }
@@ -8970,16 +9125,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3426:1: rule__PredicateOr__Group_1__2 : rule__PredicateOr__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3489:1: rule__PredicateOr__Group_1__2 : rule__PredicateOr__Group_1__2__Impl ;
     public final void rule__PredicateOr__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3430:1: ( rule__PredicateOr__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3431:2: rule__PredicateOr__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3493:1: ( rule__PredicateOr__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3494:2: rule__PredicateOr__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateOr__Group_1__2__Impl_in_rule__PredicateOr__Group_1__26751);
+            pushFollow(FOLLOW_rule__PredicateOr__Group_1__2__Impl_in_rule__PredicateOr__Group_1__26873);
             rule__PredicateOr__Group_1__2__Impl();
 
             state._fsp--;
@@ -9003,23 +9158,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3437:1: rule__PredicateOr__Group_1__2__Impl : ( ( rule__PredicateOr__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3500:1: rule__PredicateOr__Group_1__2__Impl : ( ( rule__PredicateOr__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateOr__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3441:1: ( ( ( rule__PredicateOr__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3442:1: ( ( rule__PredicateOr__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3504:1: ( ( ( rule__PredicateOr__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3505:1: ( ( rule__PredicateOr__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3442:1: ( ( rule__PredicateOr__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3443:1: ( rule__PredicateOr__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3505:1: ( ( rule__PredicateOr__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3506:1: ( rule__PredicateOr__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateOrAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3444:1: ( rule__PredicateOr__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3444:2: rule__PredicateOr__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3507:1: ( rule__PredicateOr__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3507:2: rule__PredicateOr__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateOr__RightAssignment_1_2_in_rule__PredicateOr__Group_1__2__Impl6778);
+            pushFollow(FOLLOW_rule__PredicateOr__RightAssignment_1_2_in_rule__PredicateOr__Group_1__2__Impl6900);
             rule__PredicateOr__RightAssignment_1_2();
 
             state._fsp--;
@@ -9050,21 +9205,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3460:1: rule__PredicateAnd__Group__0 : rule__PredicateAnd__Group__0__Impl rule__PredicateAnd__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3523:1: rule__PredicateAnd__Group__0 : rule__PredicateAnd__Group__0__Impl rule__PredicateAnd__Group__1 ;
     public final void rule__PredicateAnd__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3464:1: ( rule__PredicateAnd__Group__0__Impl rule__PredicateAnd__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3465:2: rule__PredicateAnd__Group__0__Impl rule__PredicateAnd__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3527:1: ( rule__PredicateAnd__Group__0__Impl rule__PredicateAnd__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3528:2: rule__PredicateAnd__Group__0__Impl rule__PredicateAnd__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateAnd__Group__0__Impl_in_rule__PredicateAnd__Group__06814);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group__0__Impl_in_rule__PredicateAnd__Group__06936);
             rule__PredicateAnd__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAnd__Group__1_in_rule__PredicateAnd__Group__06817);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group__1_in_rule__PredicateAnd__Group__06939);
             rule__PredicateAnd__Group__1();
 
             state._fsp--;
@@ -9088,20 +9243,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3472:1: rule__PredicateAnd__Group__0__Impl : ( rulePredicateEquality ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3535:1: rule__PredicateAnd__Group__0__Impl : ( rulePredicateEquality ) ;
     public final void rule__PredicateAnd__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3476:1: ( ( rulePredicateEquality ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3477:1: ( rulePredicateEquality )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3539:1: ( ( rulePredicateEquality ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3540:1: ( rulePredicateEquality )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3477:1: ( rulePredicateEquality )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3478:1: rulePredicateEquality
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3540:1: ( rulePredicateEquality )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3541:1: rulePredicateEquality
             {
              before(grammarAccess.getPredicateAndAccess().getPredicateEqualityParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__Group__0__Impl6844);
+            pushFollow(FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__Group__0__Impl6966);
             rulePredicateEquality();
 
             state._fsp--;
@@ -9129,16 +9284,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3489:1: rule__PredicateAnd__Group__1 : rule__PredicateAnd__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3552:1: rule__PredicateAnd__Group__1 : rule__PredicateAnd__Group__1__Impl ;
     public final void rule__PredicateAnd__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3493:1: ( rule__PredicateAnd__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3494:2: rule__PredicateAnd__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3556:1: ( rule__PredicateAnd__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3557:2: rule__PredicateAnd__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateAnd__Group__1__Impl_in_rule__PredicateAnd__Group__16873);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group__1__Impl_in_rule__PredicateAnd__Group__16995);
             rule__PredicateAnd__Group__1__Impl();
 
             state._fsp--;
@@ -9162,20 +9317,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3500:1: rule__PredicateAnd__Group__1__Impl : ( ( rule__PredicateAnd__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3563:1: rule__PredicateAnd__Group__1__Impl : ( ( rule__PredicateAnd__Group_1__0 )* ) ;
     public final void rule__PredicateAnd__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3504:1: ( ( ( rule__PredicateAnd__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3505:1: ( ( rule__PredicateAnd__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3567:1: ( ( ( rule__PredicateAnd__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3568:1: ( ( rule__PredicateAnd__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3505:1: ( ( rule__PredicateAnd__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3506:1: ( rule__PredicateAnd__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3568:1: ( ( rule__PredicateAnd__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3569:1: ( rule__PredicateAnd__Group_1__0 )*
             {
              before(grammarAccess.getPredicateAndAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3507:1: ( rule__PredicateAnd__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3570:1: ( rule__PredicateAnd__Group_1__0 )*
             loop22:
             do {
                 int alt22=2;
@@ -9188,9 +9343,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt22) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3507:2: rule__PredicateAnd__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3570:2: rule__PredicateAnd__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateAnd__Group_1__0_in_rule__PredicateAnd__Group__1__Impl6900);
+            	    pushFollow(FOLLOW_rule__PredicateAnd__Group_1__0_in_rule__PredicateAnd__Group__1__Impl7022);
             	    rule__PredicateAnd__Group_1__0();
 
             	    state._fsp--;
@@ -9227,21 +9382,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3521:1: rule__PredicateAnd__Group_1__0 : rule__PredicateAnd__Group_1__0__Impl rule__PredicateAnd__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3584:1: rule__PredicateAnd__Group_1__0 : rule__PredicateAnd__Group_1__0__Impl rule__PredicateAnd__Group_1__1 ;
     public final void rule__PredicateAnd__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3525:1: ( rule__PredicateAnd__Group_1__0__Impl rule__PredicateAnd__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3526:2: rule__PredicateAnd__Group_1__0__Impl rule__PredicateAnd__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3588:1: ( rule__PredicateAnd__Group_1__0__Impl rule__PredicateAnd__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3589:2: rule__PredicateAnd__Group_1__0__Impl rule__PredicateAnd__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__0__Impl_in_rule__PredicateAnd__Group_1__06935);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__0__Impl_in_rule__PredicateAnd__Group_1__07057);
             rule__PredicateAnd__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__1_in_rule__PredicateAnd__Group_1__06938);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__1_in_rule__PredicateAnd__Group_1__07060);
             rule__PredicateAnd__Group_1__1();
 
             state._fsp--;
@@ -9265,21 +9420,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3533:1: rule__PredicateAnd__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3596:1: rule__PredicateAnd__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateAnd__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3537:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3538:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3600:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3601:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3538:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3539:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3601:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3602:1: ()
             {
              before(grammarAccess.getPredicateAndAccess().getPredicateAndLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3540:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3542:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3603:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3605:1: 
             {
             }
 
@@ -9302,21 +9457,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3552:1: rule__PredicateAnd__Group_1__1 : rule__PredicateAnd__Group_1__1__Impl rule__PredicateAnd__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3615:1: rule__PredicateAnd__Group_1__1 : rule__PredicateAnd__Group_1__1__Impl rule__PredicateAnd__Group_1__2 ;
     public final void rule__PredicateAnd__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3556:1: ( rule__PredicateAnd__Group_1__1__Impl rule__PredicateAnd__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3557:2: rule__PredicateAnd__Group_1__1__Impl rule__PredicateAnd__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3619:1: ( rule__PredicateAnd__Group_1__1__Impl rule__PredicateAnd__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3620:2: rule__PredicateAnd__Group_1__1__Impl rule__PredicateAnd__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__1__Impl_in_rule__PredicateAnd__Group_1__16996);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__1__Impl_in_rule__PredicateAnd__Group_1__17118);
             rule__PredicateAnd__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__2_in_rule__PredicateAnd__Group_1__16999);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__2_in_rule__PredicateAnd__Group_1__17121);
             rule__PredicateAnd__Group_1__2();
 
             state._fsp--;
@@ -9340,20 +9495,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3564:1: rule__PredicateAnd__Group_1__1__Impl : ( '&&' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3627:1: rule__PredicateAnd__Group_1__1__Impl : ( '&&' ) ;
     public final void rule__PredicateAnd__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3568:1: ( ( '&&' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3569:1: ( '&&' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3631:1: ( ( '&&' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3632:1: ( '&&' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3569:1: ( '&&' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3570:1: '&&'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3632:1: ( '&&' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3633:1: '&&'
             {
              before(grammarAccess.getPredicateAndAccess().getAmpersandAmpersandKeyword_1_1()); 
-            match(input,28,FOLLOW_28_in_rule__PredicateAnd__Group_1__1__Impl7027); 
+            match(input,28,FOLLOW_28_in_rule__PredicateAnd__Group_1__1__Impl7149); 
              after(grammarAccess.getPredicateAndAccess().getAmpersandAmpersandKeyword_1_1()); 
 
             }
@@ -9377,16 +9532,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3583:1: rule__PredicateAnd__Group_1__2 : rule__PredicateAnd__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3646:1: rule__PredicateAnd__Group_1__2 : rule__PredicateAnd__Group_1__2__Impl ;
     public final void rule__PredicateAnd__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3587:1: ( rule__PredicateAnd__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3588:2: rule__PredicateAnd__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3650:1: ( rule__PredicateAnd__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3651:2: rule__PredicateAnd__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__2__Impl_in_rule__PredicateAnd__Group_1__27058);
+            pushFollow(FOLLOW_rule__PredicateAnd__Group_1__2__Impl_in_rule__PredicateAnd__Group_1__27180);
             rule__PredicateAnd__Group_1__2__Impl();
 
             state._fsp--;
@@ -9410,23 +9565,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3594:1: rule__PredicateAnd__Group_1__2__Impl : ( ( rule__PredicateAnd__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3657:1: rule__PredicateAnd__Group_1__2__Impl : ( ( rule__PredicateAnd__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateAnd__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3598:1: ( ( ( rule__PredicateAnd__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3599:1: ( ( rule__PredicateAnd__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3661:1: ( ( ( rule__PredicateAnd__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3662:1: ( ( rule__PredicateAnd__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3599:1: ( ( rule__PredicateAnd__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3600:1: ( rule__PredicateAnd__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3662:1: ( ( rule__PredicateAnd__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3663:1: ( rule__PredicateAnd__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateAndAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3601:1: ( rule__PredicateAnd__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3601:2: rule__PredicateAnd__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3664:1: ( rule__PredicateAnd__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3664:2: rule__PredicateAnd__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateAnd__RightAssignment_1_2_in_rule__PredicateAnd__Group_1__2__Impl7085);
+            pushFollow(FOLLOW_rule__PredicateAnd__RightAssignment_1_2_in_rule__PredicateAnd__Group_1__2__Impl7207);
             rule__PredicateAnd__RightAssignment_1_2();
 
             state._fsp--;
@@ -9457,21 +9612,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3617:1: rule__PredicateEquality__Group__0 : rule__PredicateEquality__Group__0__Impl rule__PredicateEquality__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3680:1: rule__PredicateEquality__Group__0 : rule__PredicateEquality__Group__0__Impl rule__PredicateEquality__Group__1 ;
     public final void rule__PredicateEquality__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3621:1: ( rule__PredicateEquality__Group__0__Impl rule__PredicateEquality__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3622:2: rule__PredicateEquality__Group__0__Impl rule__PredicateEquality__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3684:1: ( rule__PredicateEquality__Group__0__Impl rule__PredicateEquality__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3685:2: rule__PredicateEquality__Group__0__Impl rule__PredicateEquality__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__Group__0__Impl_in_rule__PredicateEquality__Group__07121);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group__0__Impl_in_rule__PredicateEquality__Group__07243);
             rule__PredicateEquality__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateEquality__Group__1_in_rule__PredicateEquality__Group__07124);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group__1_in_rule__PredicateEquality__Group__07246);
             rule__PredicateEquality__Group__1();
 
             state._fsp--;
@@ -9495,20 +9650,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3629:1: rule__PredicateEquality__Group__0__Impl : ( rulePredicateComparison ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3692:1: rule__PredicateEquality__Group__0__Impl : ( rulePredicateComparison ) ;
     public final void rule__PredicateEquality__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3633:1: ( ( rulePredicateComparison ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3634:1: ( rulePredicateComparison )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3696:1: ( ( rulePredicateComparison ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3697:1: ( rulePredicateComparison )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3634:1: ( rulePredicateComparison )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3635:1: rulePredicateComparison
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3697:1: ( rulePredicateComparison )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3698:1: rulePredicateComparison
             {
              before(grammarAccess.getPredicateEqualityAccess().getPredicateComparisonParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__Group__0__Impl7151);
+            pushFollow(FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__Group__0__Impl7273);
             rulePredicateComparison();
 
             state._fsp--;
@@ -9536,16 +9691,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3646:1: rule__PredicateEquality__Group__1 : rule__PredicateEquality__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3709:1: rule__PredicateEquality__Group__1 : rule__PredicateEquality__Group__1__Impl ;
     public final void rule__PredicateEquality__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3650:1: ( rule__PredicateEquality__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3651:2: rule__PredicateEquality__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3713:1: ( rule__PredicateEquality__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3714:2: rule__PredicateEquality__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__Group__1__Impl_in_rule__PredicateEquality__Group__17180);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group__1__Impl_in_rule__PredicateEquality__Group__17302);
             rule__PredicateEquality__Group__1__Impl();
 
             state._fsp--;
@@ -9569,20 +9724,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3657:1: rule__PredicateEquality__Group__1__Impl : ( ( rule__PredicateEquality__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3720:1: rule__PredicateEquality__Group__1__Impl : ( ( rule__PredicateEquality__Group_1__0 )* ) ;
     public final void rule__PredicateEquality__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3661:1: ( ( ( rule__PredicateEquality__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3662:1: ( ( rule__PredicateEquality__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3724:1: ( ( ( rule__PredicateEquality__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3725:1: ( ( rule__PredicateEquality__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3662:1: ( ( rule__PredicateEquality__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3663:1: ( rule__PredicateEquality__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3725:1: ( ( rule__PredicateEquality__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3726:1: ( rule__PredicateEquality__Group_1__0 )*
             {
              before(grammarAccess.getPredicateEqualityAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3664:1: ( rule__PredicateEquality__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3727:1: ( rule__PredicateEquality__Group_1__0 )*
             loop23:
             do {
                 int alt23=2;
@@ -9595,9 +9750,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt23) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3664:2: rule__PredicateEquality__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3727:2: rule__PredicateEquality__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateEquality__Group_1__0_in_rule__PredicateEquality__Group__1__Impl7207);
+            	    pushFollow(FOLLOW_rule__PredicateEquality__Group_1__0_in_rule__PredicateEquality__Group__1__Impl7329);
             	    rule__PredicateEquality__Group_1__0();
 
             	    state._fsp--;
@@ -9634,21 +9789,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3678:1: rule__PredicateEquality__Group_1__0 : rule__PredicateEquality__Group_1__0__Impl rule__PredicateEquality__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3741:1: rule__PredicateEquality__Group_1__0 : rule__PredicateEquality__Group_1__0__Impl rule__PredicateEquality__Group_1__1 ;
     public final void rule__PredicateEquality__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3682:1: ( rule__PredicateEquality__Group_1__0__Impl rule__PredicateEquality__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3683:2: rule__PredicateEquality__Group_1__0__Impl rule__PredicateEquality__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3745:1: ( rule__PredicateEquality__Group_1__0__Impl rule__PredicateEquality__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3746:2: rule__PredicateEquality__Group_1__0__Impl rule__PredicateEquality__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__0__Impl_in_rule__PredicateEquality__Group_1__07242);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__0__Impl_in_rule__PredicateEquality__Group_1__07364);
             rule__PredicateEquality__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__1_in_rule__PredicateEquality__Group_1__07245);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__1_in_rule__PredicateEquality__Group_1__07367);
             rule__PredicateEquality__Group_1__1();
 
             state._fsp--;
@@ -9672,21 +9827,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3690:1: rule__PredicateEquality__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3753:1: rule__PredicateEquality__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateEquality__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3694:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3695:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3757:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3758:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3695:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3696:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3758:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3759:1: ()
             {
              before(grammarAccess.getPredicateEqualityAccess().getPredicateEqualityLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3697:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3699:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3760:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3762:1: 
             {
             }
 
@@ -9709,21 +9864,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3709:1: rule__PredicateEquality__Group_1__1 : rule__PredicateEquality__Group_1__1__Impl rule__PredicateEquality__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3772:1: rule__PredicateEquality__Group_1__1 : rule__PredicateEquality__Group_1__1__Impl rule__PredicateEquality__Group_1__2 ;
     public final void rule__PredicateEquality__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3713:1: ( rule__PredicateEquality__Group_1__1__Impl rule__PredicateEquality__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3714:2: rule__PredicateEquality__Group_1__1__Impl rule__PredicateEquality__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3776:1: ( rule__PredicateEquality__Group_1__1__Impl rule__PredicateEquality__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3777:2: rule__PredicateEquality__Group_1__1__Impl rule__PredicateEquality__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__1__Impl_in_rule__PredicateEquality__Group_1__17303);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__1__Impl_in_rule__PredicateEquality__Group_1__17425);
             rule__PredicateEquality__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__2_in_rule__PredicateEquality__Group_1__17306);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__2_in_rule__PredicateEquality__Group_1__17428);
             rule__PredicateEquality__Group_1__2();
 
             state._fsp--;
@@ -9747,23 +9902,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3721:1: rule__PredicateEquality__Group_1__1__Impl : ( ( rule__PredicateEquality__OpAssignment_1_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3784:1: rule__PredicateEquality__Group_1__1__Impl : ( ( rule__PredicateEquality__OpAssignment_1_1 ) ) ;
     public final void rule__PredicateEquality__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3725:1: ( ( ( rule__PredicateEquality__OpAssignment_1_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3726:1: ( ( rule__PredicateEquality__OpAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3788:1: ( ( ( rule__PredicateEquality__OpAssignment_1_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3789:1: ( ( rule__PredicateEquality__OpAssignment_1_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3726:1: ( ( rule__PredicateEquality__OpAssignment_1_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3727:1: ( rule__PredicateEquality__OpAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3789:1: ( ( rule__PredicateEquality__OpAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3790:1: ( rule__PredicateEquality__OpAssignment_1_1 )
             {
              before(grammarAccess.getPredicateEqualityAccess().getOpAssignment_1_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3728:1: ( rule__PredicateEquality__OpAssignment_1_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3728:2: rule__PredicateEquality__OpAssignment_1_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3791:1: ( rule__PredicateEquality__OpAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3791:2: rule__PredicateEquality__OpAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__OpAssignment_1_1_in_rule__PredicateEquality__Group_1__1__Impl7333);
+            pushFollow(FOLLOW_rule__PredicateEquality__OpAssignment_1_1_in_rule__PredicateEquality__Group_1__1__Impl7455);
             rule__PredicateEquality__OpAssignment_1_1();
 
             state._fsp--;
@@ -9794,16 +9949,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3738:1: rule__PredicateEquality__Group_1__2 : rule__PredicateEquality__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3801:1: rule__PredicateEquality__Group_1__2 : rule__PredicateEquality__Group_1__2__Impl ;
     public final void rule__PredicateEquality__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3742:1: ( rule__PredicateEquality__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3743:2: rule__PredicateEquality__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3805:1: ( rule__PredicateEquality__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3806:2: rule__PredicateEquality__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__2__Impl_in_rule__PredicateEquality__Group_1__27363);
+            pushFollow(FOLLOW_rule__PredicateEquality__Group_1__2__Impl_in_rule__PredicateEquality__Group_1__27485);
             rule__PredicateEquality__Group_1__2__Impl();
 
             state._fsp--;
@@ -9827,23 +9982,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3749:1: rule__PredicateEquality__Group_1__2__Impl : ( ( rule__PredicateEquality__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3812:1: rule__PredicateEquality__Group_1__2__Impl : ( ( rule__PredicateEquality__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateEquality__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3753:1: ( ( ( rule__PredicateEquality__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3754:1: ( ( rule__PredicateEquality__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3816:1: ( ( ( rule__PredicateEquality__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3817:1: ( ( rule__PredicateEquality__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3754:1: ( ( rule__PredicateEquality__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3755:1: ( rule__PredicateEquality__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3817:1: ( ( rule__PredicateEquality__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3818:1: ( rule__PredicateEquality__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateEqualityAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3756:1: ( rule__PredicateEquality__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3756:2: rule__PredicateEquality__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3819:1: ( rule__PredicateEquality__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3819:2: rule__PredicateEquality__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__RightAssignment_1_2_in_rule__PredicateEquality__Group_1__2__Impl7390);
+            pushFollow(FOLLOW_rule__PredicateEquality__RightAssignment_1_2_in_rule__PredicateEquality__Group_1__2__Impl7512);
             rule__PredicateEquality__RightAssignment_1_2();
 
             state._fsp--;
@@ -9874,21 +10029,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3772:1: rule__PredicateComparison__Group__0 : rule__PredicateComparison__Group__0__Impl rule__PredicateComparison__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3835:1: rule__PredicateComparison__Group__0 : rule__PredicateComparison__Group__0__Impl rule__PredicateComparison__Group__1 ;
     public final void rule__PredicateComparison__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3776:1: ( rule__PredicateComparison__Group__0__Impl rule__PredicateComparison__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3777:2: rule__PredicateComparison__Group__0__Impl rule__PredicateComparison__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3839:1: ( rule__PredicateComparison__Group__0__Impl rule__PredicateComparison__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3840:2: rule__PredicateComparison__Group__0__Impl rule__PredicateComparison__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__Group__0__Impl_in_rule__PredicateComparison__Group__07426);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group__0__Impl_in_rule__PredicateComparison__Group__07548);
             rule__PredicateComparison__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateComparison__Group__1_in_rule__PredicateComparison__Group__07429);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group__1_in_rule__PredicateComparison__Group__07551);
             rule__PredicateComparison__Group__1();
 
             state._fsp--;
@@ -9912,20 +10067,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3784:1: rule__PredicateComparison__Group__0__Impl : ( rulePredicateSubtraction ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3847:1: rule__PredicateComparison__Group__0__Impl : ( rulePredicateSubtraction ) ;
     public final void rule__PredicateComparison__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3788:1: ( ( rulePredicateSubtraction ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3789:1: ( rulePredicateSubtraction )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3851:1: ( ( rulePredicateSubtraction ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3852:1: ( rulePredicateSubtraction )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3789:1: ( rulePredicateSubtraction )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3790:1: rulePredicateSubtraction
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3852:1: ( rulePredicateSubtraction )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3853:1: rulePredicateSubtraction
             {
              before(grammarAccess.getPredicateComparisonAccess().getPredicateSubtractionParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__Group__0__Impl7456);
+            pushFollow(FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__Group__0__Impl7578);
             rulePredicateSubtraction();
 
             state._fsp--;
@@ -9953,16 +10108,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3801:1: rule__PredicateComparison__Group__1 : rule__PredicateComparison__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3864:1: rule__PredicateComparison__Group__1 : rule__PredicateComparison__Group__1__Impl ;
     public final void rule__PredicateComparison__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3805:1: ( rule__PredicateComparison__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3806:2: rule__PredicateComparison__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3868:1: ( rule__PredicateComparison__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3869:2: rule__PredicateComparison__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__Group__1__Impl_in_rule__PredicateComparison__Group__17485);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group__1__Impl_in_rule__PredicateComparison__Group__17607);
             rule__PredicateComparison__Group__1__Impl();
 
             state._fsp--;
@@ -9986,20 +10141,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3812:1: rule__PredicateComparison__Group__1__Impl : ( ( rule__PredicateComparison__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3875:1: rule__PredicateComparison__Group__1__Impl : ( ( rule__PredicateComparison__Group_1__0 )* ) ;
     public final void rule__PredicateComparison__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3816:1: ( ( ( rule__PredicateComparison__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3817:1: ( ( rule__PredicateComparison__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3879:1: ( ( ( rule__PredicateComparison__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3880:1: ( ( rule__PredicateComparison__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3817:1: ( ( rule__PredicateComparison__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3818:1: ( rule__PredicateComparison__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3880:1: ( ( rule__PredicateComparison__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3881:1: ( rule__PredicateComparison__Group_1__0 )*
             {
              before(grammarAccess.getPredicateComparisonAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3819:1: ( rule__PredicateComparison__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3882:1: ( rule__PredicateComparison__Group_1__0 )*
             loop24:
             do {
                 int alt24=2;
@@ -10012,9 +10167,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt24) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3819:2: rule__PredicateComparison__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3882:2: rule__PredicateComparison__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateComparison__Group_1__0_in_rule__PredicateComparison__Group__1__Impl7512);
+            	    pushFollow(FOLLOW_rule__PredicateComparison__Group_1__0_in_rule__PredicateComparison__Group__1__Impl7634);
             	    rule__PredicateComparison__Group_1__0();
 
             	    state._fsp--;
@@ -10051,21 +10206,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3833:1: rule__PredicateComparison__Group_1__0 : rule__PredicateComparison__Group_1__0__Impl rule__PredicateComparison__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3896:1: rule__PredicateComparison__Group_1__0 : rule__PredicateComparison__Group_1__0__Impl rule__PredicateComparison__Group_1__1 ;
     public final void rule__PredicateComparison__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3837:1: ( rule__PredicateComparison__Group_1__0__Impl rule__PredicateComparison__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3838:2: rule__PredicateComparison__Group_1__0__Impl rule__PredicateComparison__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3900:1: ( rule__PredicateComparison__Group_1__0__Impl rule__PredicateComparison__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3901:2: rule__PredicateComparison__Group_1__0__Impl rule__PredicateComparison__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__0__Impl_in_rule__PredicateComparison__Group_1__07547);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__0__Impl_in_rule__PredicateComparison__Group_1__07669);
             rule__PredicateComparison__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__1_in_rule__PredicateComparison__Group_1__07550);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__1_in_rule__PredicateComparison__Group_1__07672);
             rule__PredicateComparison__Group_1__1();
 
             state._fsp--;
@@ -10089,21 +10244,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3845:1: rule__PredicateComparison__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3908:1: rule__PredicateComparison__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateComparison__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3849:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3850:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3912:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3913:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3850:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3851:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3913:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3914:1: ()
             {
              before(grammarAccess.getPredicateComparisonAccess().getPredicateComparisonLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3852:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3854:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3915:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3917:1: 
             {
             }
 
@@ -10126,21 +10281,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3864:1: rule__PredicateComparison__Group_1__1 : rule__PredicateComparison__Group_1__1__Impl rule__PredicateComparison__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3927:1: rule__PredicateComparison__Group_1__1 : rule__PredicateComparison__Group_1__1__Impl rule__PredicateComparison__Group_1__2 ;
     public final void rule__PredicateComparison__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3868:1: ( rule__PredicateComparison__Group_1__1__Impl rule__PredicateComparison__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3869:2: rule__PredicateComparison__Group_1__1__Impl rule__PredicateComparison__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3931:1: ( rule__PredicateComparison__Group_1__1__Impl rule__PredicateComparison__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3932:2: rule__PredicateComparison__Group_1__1__Impl rule__PredicateComparison__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__1__Impl_in_rule__PredicateComparison__Group_1__17608);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__1__Impl_in_rule__PredicateComparison__Group_1__17730);
             rule__PredicateComparison__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__2_in_rule__PredicateComparison__Group_1__17611);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__2_in_rule__PredicateComparison__Group_1__17733);
             rule__PredicateComparison__Group_1__2();
 
             state._fsp--;
@@ -10164,23 +10319,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3876:1: rule__PredicateComparison__Group_1__1__Impl : ( ( rule__PredicateComparison__OpAssignment_1_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3939:1: rule__PredicateComparison__Group_1__1__Impl : ( ( rule__PredicateComparison__OpAssignment_1_1 ) ) ;
     public final void rule__PredicateComparison__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3880:1: ( ( ( rule__PredicateComparison__OpAssignment_1_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3881:1: ( ( rule__PredicateComparison__OpAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3943:1: ( ( ( rule__PredicateComparison__OpAssignment_1_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3944:1: ( ( rule__PredicateComparison__OpAssignment_1_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3881:1: ( ( rule__PredicateComparison__OpAssignment_1_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3882:1: ( rule__PredicateComparison__OpAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3944:1: ( ( rule__PredicateComparison__OpAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3945:1: ( rule__PredicateComparison__OpAssignment_1_1 )
             {
              before(grammarAccess.getPredicateComparisonAccess().getOpAssignment_1_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3883:1: ( rule__PredicateComparison__OpAssignment_1_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3883:2: rule__PredicateComparison__OpAssignment_1_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3946:1: ( rule__PredicateComparison__OpAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3946:2: rule__PredicateComparison__OpAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__OpAssignment_1_1_in_rule__PredicateComparison__Group_1__1__Impl7638);
+            pushFollow(FOLLOW_rule__PredicateComparison__OpAssignment_1_1_in_rule__PredicateComparison__Group_1__1__Impl7760);
             rule__PredicateComparison__OpAssignment_1_1();
 
             state._fsp--;
@@ -10211,16 +10366,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3893:1: rule__PredicateComparison__Group_1__2 : rule__PredicateComparison__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3956:1: rule__PredicateComparison__Group_1__2 : rule__PredicateComparison__Group_1__2__Impl ;
     public final void rule__PredicateComparison__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3897:1: ( rule__PredicateComparison__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3898:2: rule__PredicateComparison__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3960:1: ( rule__PredicateComparison__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3961:2: rule__PredicateComparison__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__2__Impl_in_rule__PredicateComparison__Group_1__27668);
+            pushFollow(FOLLOW_rule__PredicateComparison__Group_1__2__Impl_in_rule__PredicateComparison__Group_1__27790);
             rule__PredicateComparison__Group_1__2__Impl();
 
             state._fsp--;
@@ -10244,23 +10399,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3904:1: rule__PredicateComparison__Group_1__2__Impl : ( ( rule__PredicateComparison__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3967:1: rule__PredicateComparison__Group_1__2__Impl : ( ( rule__PredicateComparison__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateComparison__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3908:1: ( ( ( rule__PredicateComparison__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3909:1: ( ( rule__PredicateComparison__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3971:1: ( ( ( rule__PredicateComparison__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3972:1: ( ( rule__PredicateComparison__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3909:1: ( ( rule__PredicateComparison__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3910:1: ( rule__PredicateComparison__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3972:1: ( ( rule__PredicateComparison__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3973:1: ( rule__PredicateComparison__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateComparisonAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3911:1: ( rule__PredicateComparison__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3911:2: rule__PredicateComparison__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3974:1: ( rule__PredicateComparison__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3974:2: rule__PredicateComparison__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__RightAssignment_1_2_in_rule__PredicateComparison__Group_1__2__Impl7695);
+            pushFollow(FOLLOW_rule__PredicateComparison__RightAssignment_1_2_in_rule__PredicateComparison__Group_1__2__Impl7817);
             rule__PredicateComparison__RightAssignment_1_2();
 
             state._fsp--;
@@ -10291,21 +10446,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3927:1: rule__PredicateSubtraction__Group__0 : rule__PredicateSubtraction__Group__0__Impl rule__PredicateSubtraction__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3990:1: rule__PredicateSubtraction__Group__0 : rule__PredicateSubtraction__Group__0__Impl rule__PredicateSubtraction__Group__1 ;
     public final void rule__PredicateSubtraction__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3931:1: ( rule__PredicateSubtraction__Group__0__Impl rule__PredicateSubtraction__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3932:2: rule__PredicateSubtraction__Group__0__Impl rule__PredicateSubtraction__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3994:1: ( rule__PredicateSubtraction__Group__0__Impl rule__PredicateSubtraction__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3995:2: rule__PredicateSubtraction__Group__0__Impl rule__PredicateSubtraction__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__0__Impl_in_rule__PredicateSubtraction__Group__07731);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__0__Impl_in_rule__PredicateSubtraction__Group__07853);
             rule__PredicateSubtraction__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__1_in_rule__PredicateSubtraction__Group__07734);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__1_in_rule__PredicateSubtraction__Group__07856);
             rule__PredicateSubtraction__Group__1();
 
             state._fsp--;
@@ -10329,20 +10484,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3939:1: rule__PredicateSubtraction__Group__0__Impl : ( rulePredicateAddition ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4002:1: rule__PredicateSubtraction__Group__0__Impl : ( rulePredicateAddition ) ;
     public final void rule__PredicateSubtraction__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3943:1: ( ( rulePredicateAddition ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3944:1: ( rulePredicateAddition )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4006:1: ( ( rulePredicateAddition ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4007:1: ( rulePredicateAddition )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3944:1: ( rulePredicateAddition )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3945:1: rulePredicateAddition
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4007:1: ( rulePredicateAddition )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4008:1: rulePredicateAddition
             {
              before(grammarAccess.getPredicateSubtractionAccess().getPredicateAdditionParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__Group__0__Impl7761);
+            pushFollow(FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__Group__0__Impl7883);
             rulePredicateAddition();
 
             state._fsp--;
@@ -10370,16 +10525,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3956:1: rule__PredicateSubtraction__Group__1 : rule__PredicateSubtraction__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4019:1: rule__PredicateSubtraction__Group__1 : rule__PredicateSubtraction__Group__1__Impl ;
     public final void rule__PredicateSubtraction__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3960:1: ( rule__PredicateSubtraction__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3961:2: rule__PredicateSubtraction__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4023:1: ( rule__PredicateSubtraction__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4024:2: rule__PredicateSubtraction__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__1__Impl_in_rule__PredicateSubtraction__Group__17790);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group__1__Impl_in_rule__PredicateSubtraction__Group__17912);
             rule__PredicateSubtraction__Group__1__Impl();
 
             state._fsp--;
@@ -10403,20 +10558,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3967:1: rule__PredicateSubtraction__Group__1__Impl : ( ( rule__PredicateSubtraction__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4030:1: rule__PredicateSubtraction__Group__1__Impl : ( ( rule__PredicateSubtraction__Group_1__0 )* ) ;
     public final void rule__PredicateSubtraction__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3971:1: ( ( ( rule__PredicateSubtraction__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3972:1: ( ( rule__PredicateSubtraction__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4034:1: ( ( ( rule__PredicateSubtraction__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4035:1: ( ( rule__PredicateSubtraction__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3972:1: ( ( rule__PredicateSubtraction__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3973:1: ( rule__PredicateSubtraction__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4035:1: ( ( rule__PredicateSubtraction__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4036:1: ( rule__PredicateSubtraction__Group_1__0 )*
             {
              before(grammarAccess.getPredicateSubtractionAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3974:1: ( rule__PredicateSubtraction__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4037:1: ( rule__PredicateSubtraction__Group_1__0 )*
             loop25:
             do {
                 int alt25=2;
@@ -10429,9 +10584,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt25) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3974:2: rule__PredicateSubtraction__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4037:2: rule__PredicateSubtraction__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__0_in_rule__PredicateSubtraction__Group__1__Impl7817);
+            	    pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__0_in_rule__PredicateSubtraction__Group__1__Impl7939);
             	    rule__PredicateSubtraction__Group_1__0();
 
             	    state._fsp--;
@@ -10468,21 +10623,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3988:1: rule__PredicateSubtraction__Group_1__0 : rule__PredicateSubtraction__Group_1__0__Impl rule__PredicateSubtraction__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4051:1: rule__PredicateSubtraction__Group_1__0 : rule__PredicateSubtraction__Group_1__0__Impl rule__PredicateSubtraction__Group_1__1 ;
     public final void rule__PredicateSubtraction__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3992:1: ( rule__PredicateSubtraction__Group_1__0__Impl rule__PredicateSubtraction__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:3993:2: rule__PredicateSubtraction__Group_1__0__Impl rule__PredicateSubtraction__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4055:1: ( rule__PredicateSubtraction__Group_1__0__Impl rule__PredicateSubtraction__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4056:2: rule__PredicateSubtraction__Group_1__0__Impl rule__PredicateSubtraction__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__0__Impl_in_rule__PredicateSubtraction__Group_1__07852);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__0__Impl_in_rule__PredicateSubtraction__Group_1__07974);
             rule__PredicateSubtraction__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__1_in_rule__PredicateSubtraction__Group_1__07855);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__1_in_rule__PredicateSubtraction__Group_1__07977);
             rule__PredicateSubtraction__Group_1__1();
 
             state._fsp--;
@@ -10506,21 +10661,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4000:1: rule__PredicateSubtraction__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4063:1: rule__PredicateSubtraction__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateSubtraction__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4004:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4005:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4067:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4068:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4005:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4006:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4068:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4069:1: ()
             {
              before(grammarAccess.getPredicateSubtractionAccess().getPredicateSubLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4007:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4009:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4070:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4072:1: 
             {
             }
 
@@ -10543,21 +10698,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4019:1: rule__PredicateSubtraction__Group_1__1 : rule__PredicateSubtraction__Group_1__1__Impl rule__PredicateSubtraction__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4082:1: rule__PredicateSubtraction__Group_1__1 : rule__PredicateSubtraction__Group_1__1__Impl rule__PredicateSubtraction__Group_1__2 ;
     public final void rule__PredicateSubtraction__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4023:1: ( rule__PredicateSubtraction__Group_1__1__Impl rule__PredicateSubtraction__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4024:2: rule__PredicateSubtraction__Group_1__1__Impl rule__PredicateSubtraction__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4086:1: ( rule__PredicateSubtraction__Group_1__1__Impl rule__PredicateSubtraction__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4087:2: rule__PredicateSubtraction__Group_1__1__Impl rule__PredicateSubtraction__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__1__Impl_in_rule__PredicateSubtraction__Group_1__17913);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__1__Impl_in_rule__PredicateSubtraction__Group_1__18035);
             rule__PredicateSubtraction__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__2_in_rule__PredicateSubtraction__Group_1__17916);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__2_in_rule__PredicateSubtraction__Group_1__18038);
             rule__PredicateSubtraction__Group_1__2();
 
             state._fsp--;
@@ -10581,20 +10736,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4031:1: rule__PredicateSubtraction__Group_1__1__Impl : ( '-' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4094:1: rule__PredicateSubtraction__Group_1__1__Impl : ( '-' ) ;
     public final void rule__PredicateSubtraction__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4035:1: ( ( '-' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4036:1: ( '-' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4098:1: ( ( '-' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4099:1: ( '-' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4036:1: ( '-' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4037:1: '-'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4099:1: ( '-' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4100:1: '-'
             {
              before(grammarAccess.getPredicateSubtractionAccess().getHyphenMinusKeyword_1_1()); 
-            match(input,29,FOLLOW_29_in_rule__PredicateSubtraction__Group_1__1__Impl7944); 
+            match(input,29,FOLLOW_29_in_rule__PredicateSubtraction__Group_1__1__Impl8066); 
              after(grammarAccess.getPredicateSubtractionAccess().getHyphenMinusKeyword_1_1()); 
 
             }
@@ -10618,16 +10773,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4050:1: rule__PredicateSubtraction__Group_1__2 : rule__PredicateSubtraction__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4113:1: rule__PredicateSubtraction__Group_1__2 : rule__PredicateSubtraction__Group_1__2__Impl ;
     public final void rule__PredicateSubtraction__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4054:1: ( rule__PredicateSubtraction__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4055:2: rule__PredicateSubtraction__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4117:1: ( rule__PredicateSubtraction__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4118:2: rule__PredicateSubtraction__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__2__Impl_in_rule__PredicateSubtraction__Group_1__27975);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__Group_1__2__Impl_in_rule__PredicateSubtraction__Group_1__28097);
             rule__PredicateSubtraction__Group_1__2__Impl();
 
             state._fsp--;
@@ -10651,23 +10806,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4061:1: rule__PredicateSubtraction__Group_1__2__Impl : ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4124:1: rule__PredicateSubtraction__Group_1__2__Impl : ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateSubtraction__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4065:1: ( ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4066:1: ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4128:1: ( ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4129:1: ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4066:1: ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4067:1: ( rule__PredicateSubtraction__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4129:1: ( ( rule__PredicateSubtraction__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4130:1: ( rule__PredicateSubtraction__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateSubtractionAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4068:1: ( rule__PredicateSubtraction__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4068:2: rule__PredicateSubtraction__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4131:1: ( rule__PredicateSubtraction__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4131:2: rule__PredicateSubtraction__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateSubtraction__RightAssignment_1_2_in_rule__PredicateSubtraction__Group_1__2__Impl8002);
+            pushFollow(FOLLOW_rule__PredicateSubtraction__RightAssignment_1_2_in_rule__PredicateSubtraction__Group_1__2__Impl8124);
             rule__PredicateSubtraction__RightAssignment_1_2();
 
             state._fsp--;
@@ -10698,21 +10853,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4084:1: rule__PredicateAddition__Group__0 : rule__PredicateAddition__Group__0__Impl rule__PredicateAddition__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4147:1: rule__PredicateAddition__Group__0 : rule__PredicateAddition__Group__0__Impl rule__PredicateAddition__Group__1 ;
     public final void rule__PredicateAddition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4088:1: ( rule__PredicateAddition__Group__0__Impl rule__PredicateAddition__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4089:2: rule__PredicateAddition__Group__0__Impl rule__PredicateAddition__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4151:1: ( rule__PredicateAddition__Group__0__Impl rule__PredicateAddition__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4152:2: rule__PredicateAddition__Group__0__Impl rule__PredicateAddition__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateAddition__Group__0__Impl_in_rule__PredicateAddition__Group__08038);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group__0__Impl_in_rule__PredicateAddition__Group__08160);
             rule__PredicateAddition__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAddition__Group__1_in_rule__PredicateAddition__Group__08041);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group__1_in_rule__PredicateAddition__Group__08163);
             rule__PredicateAddition__Group__1();
 
             state._fsp--;
@@ -10736,20 +10891,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4096:1: rule__PredicateAddition__Group__0__Impl : ( rulePredicateMultiplication ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4159:1: rule__PredicateAddition__Group__0__Impl : ( rulePredicateMultiplication ) ;
     public final void rule__PredicateAddition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4100:1: ( ( rulePredicateMultiplication ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4101:1: ( rulePredicateMultiplication )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4163:1: ( ( rulePredicateMultiplication ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4164:1: ( rulePredicateMultiplication )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4101:1: ( rulePredicateMultiplication )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4102:1: rulePredicateMultiplication
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4164:1: ( rulePredicateMultiplication )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4165:1: rulePredicateMultiplication
             {
              before(grammarAccess.getPredicateAdditionAccess().getPredicateMultiplicationParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__Group__0__Impl8068);
+            pushFollow(FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__Group__0__Impl8190);
             rulePredicateMultiplication();
 
             state._fsp--;
@@ -10777,16 +10932,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4113:1: rule__PredicateAddition__Group__1 : rule__PredicateAddition__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4176:1: rule__PredicateAddition__Group__1 : rule__PredicateAddition__Group__1__Impl ;
     public final void rule__PredicateAddition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4117:1: ( rule__PredicateAddition__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4118:2: rule__PredicateAddition__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4180:1: ( rule__PredicateAddition__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4181:2: rule__PredicateAddition__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateAddition__Group__1__Impl_in_rule__PredicateAddition__Group__18097);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group__1__Impl_in_rule__PredicateAddition__Group__18219);
             rule__PredicateAddition__Group__1__Impl();
 
             state._fsp--;
@@ -10810,20 +10965,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4124:1: rule__PredicateAddition__Group__1__Impl : ( ( rule__PredicateAddition__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4187:1: rule__PredicateAddition__Group__1__Impl : ( ( rule__PredicateAddition__Group_1__0 )* ) ;
     public final void rule__PredicateAddition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4128:1: ( ( ( rule__PredicateAddition__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4129:1: ( ( rule__PredicateAddition__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4191:1: ( ( ( rule__PredicateAddition__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4192:1: ( ( rule__PredicateAddition__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4129:1: ( ( rule__PredicateAddition__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4130:1: ( rule__PredicateAddition__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4192:1: ( ( rule__PredicateAddition__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4193:1: ( rule__PredicateAddition__Group_1__0 )*
             {
              before(grammarAccess.getPredicateAdditionAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4131:1: ( rule__PredicateAddition__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4194:1: ( rule__PredicateAddition__Group_1__0 )*
             loop26:
             do {
                 int alt26=2;
@@ -10836,9 +10991,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt26) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4131:2: rule__PredicateAddition__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4194:2: rule__PredicateAddition__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateAddition__Group_1__0_in_rule__PredicateAddition__Group__1__Impl8124);
+            	    pushFollow(FOLLOW_rule__PredicateAddition__Group_1__0_in_rule__PredicateAddition__Group__1__Impl8246);
             	    rule__PredicateAddition__Group_1__0();
 
             	    state._fsp--;
@@ -10875,21 +11030,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4145:1: rule__PredicateAddition__Group_1__0 : rule__PredicateAddition__Group_1__0__Impl rule__PredicateAddition__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4208:1: rule__PredicateAddition__Group_1__0 : rule__PredicateAddition__Group_1__0__Impl rule__PredicateAddition__Group_1__1 ;
     public final void rule__PredicateAddition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4149:1: ( rule__PredicateAddition__Group_1__0__Impl rule__PredicateAddition__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4150:2: rule__PredicateAddition__Group_1__0__Impl rule__PredicateAddition__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4212:1: ( rule__PredicateAddition__Group_1__0__Impl rule__PredicateAddition__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4213:2: rule__PredicateAddition__Group_1__0__Impl rule__PredicateAddition__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__0__Impl_in_rule__PredicateAddition__Group_1__08159);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__0__Impl_in_rule__PredicateAddition__Group_1__08281);
             rule__PredicateAddition__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__1_in_rule__PredicateAddition__Group_1__08162);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__1_in_rule__PredicateAddition__Group_1__08284);
             rule__PredicateAddition__Group_1__1();
 
             state._fsp--;
@@ -10913,21 +11068,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4157:1: rule__PredicateAddition__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4220:1: rule__PredicateAddition__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateAddition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4161:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4162:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4224:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4225:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4162:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4163:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4225:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4226:1: ()
             {
              before(grammarAccess.getPredicateAdditionAccess().getPredicatePluLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4164:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4166:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4227:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4229:1: 
             {
             }
 
@@ -10950,21 +11105,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4176:1: rule__PredicateAddition__Group_1__1 : rule__PredicateAddition__Group_1__1__Impl rule__PredicateAddition__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4239:1: rule__PredicateAddition__Group_1__1 : rule__PredicateAddition__Group_1__1__Impl rule__PredicateAddition__Group_1__2 ;
     public final void rule__PredicateAddition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4180:1: ( rule__PredicateAddition__Group_1__1__Impl rule__PredicateAddition__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4181:2: rule__PredicateAddition__Group_1__1__Impl rule__PredicateAddition__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4243:1: ( rule__PredicateAddition__Group_1__1__Impl rule__PredicateAddition__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4244:2: rule__PredicateAddition__Group_1__1__Impl rule__PredicateAddition__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__1__Impl_in_rule__PredicateAddition__Group_1__18220);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__1__Impl_in_rule__PredicateAddition__Group_1__18342);
             rule__PredicateAddition__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__2_in_rule__PredicateAddition__Group_1__18223);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__2_in_rule__PredicateAddition__Group_1__18345);
             rule__PredicateAddition__Group_1__2();
 
             state._fsp--;
@@ -10988,20 +11143,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4188:1: rule__PredicateAddition__Group_1__1__Impl : ( '+' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4251:1: rule__PredicateAddition__Group_1__1__Impl : ( '+' ) ;
     public final void rule__PredicateAddition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4192:1: ( ( '+' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4193:1: ( '+' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4255:1: ( ( '+' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4256:1: ( '+' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4193:1: ( '+' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4194:1: '+'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4256:1: ( '+' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4257:1: '+'
             {
              before(grammarAccess.getPredicateAdditionAccess().getPlusSignKeyword_1_1()); 
-            match(input,30,FOLLOW_30_in_rule__PredicateAddition__Group_1__1__Impl8251); 
+            match(input,30,FOLLOW_30_in_rule__PredicateAddition__Group_1__1__Impl8373); 
              after(grammarAccess.getPredicateAdditionAccess().getPlusSignKeyword_1_1()); 
 
             }
@@ -11025,16 +11180,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4207:1: rule__PredicateAddition__Group_1__2 : rule__PredicateAddition__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4270:1: rule__PredicateAddition__Group_1__2 : rule__PredicateAddition__Group_1__2__Impl ;
     public final void rule__PredicateAddition__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4211:1: ( rule__PredicateAddition__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4212:2: rule__PredicateAddition__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4274:1: ( rule__PredicateAddition__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4275:2: rule__PredicateAddition__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__2__Impl_in_rule__PredicateAddition__Group_1__28282);
+            pushFollow(FOLLOW_rule__PredicateAddition__Group_1__2__Impl_in_rule__PredicateAddition__Group_1__28404);
             rule__PredicateAddition__Group_1__2__Impl();
 
             state._fsp--;
@@ -11058,23 +11213,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4218:1: rule__PredicateAddition__Group_1__2__Impl : ( ( rule__PredicateAddition__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4281:1: rule__PredicateAddition__Group_1__2__Impl : ( ( rule__PredicateAddition__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateAddition__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4222:1: ( ( ( rule__PredicateAddition__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4223:1: ( ( rule__PredicateAddition__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4285:1: ( ( ( rule__PredicateAddition__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4286:1: ( ( rule__PredicateAddition__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4223:1: ( ( rule__PredicateAddition__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4224:1: ( rule__PredicateAddition__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4286:1: ( ( rule__PredicateAddition__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4287:1: ( rule__PredicateAddition__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateAdditionAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4225:1: ( rule__PredicateAddition__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4225:2: rule__PredicateAddition__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4288:1: ( rule__PredicateAddition__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4288:2: rule__PredicateAddition__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateAddition__RightAssignment_1_2_in_rule__PredicateAddition__Group_1__2__Impl8309);
+            pushFollow(FOLLOW_rule__PredicateAddition__RightAssignment_1_2_in_rule__PredicateAddition__Group_1__2__Impl8431);
             rule__PredicateAddition__RightAssignment_1_2();
 
             state._fsp--;
@@ -11105,21 +11260,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4241:1: rule__PredicateMultiplication__Group__0 : rule__PredicateMultiplication__Group__0__Impl rule__PredicateMultiplication__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4304:1: rule__PredicateMultiplication__Group__0 : rule__PredicateMultiplication__Group__0__Impl rule__PredicateMultiplication__Group__1 ;
     public final void rule__PredicateMultiplication__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4245:1: ( rule__PredicateMultiplication__Group__0__Impl rule__PredicateMultiplication__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4246:2: rule__PredicateMultiplication__Group__0__Impl rule__PredicateMultiplication__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4308:1: ( rule__PredicateMultiplication__Group__0__Impl rule__PredicateMultiplication__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4309:2: rule__PredicateMultiplication__Group__0__Impl rule__PredicateMultiplication__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__0__Impl_in_rule__PredicateMultiplication__Group__08345);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__0__Impl_in_rule__PredicateMultiplication__Group__08467);
             rule__PredicateMultiplication__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__1_in_rule__PredicateMultiplication__Group__08348);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__1_in_rule__PredicateMultiplication__Group__08470);
             rule__PredicateMultiplication__Group__1();
 
             state._fsp--;
@@ -11143,20 +11298,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4253:1: rule__PredicateMultiplication__Group__0__Impl : ( rulePredicateDivision ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4316:1: rule__PredicateMultiplication__Group__0__Impl : ( rulePredicateDivision ) ;
     public final void rule__PredicateMultiplication__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4257:1: ( ( rulePredicateDivision ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4258:1: ( rulePredicateDivision )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4320:1: ( ( rulePredicateDivision ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4321:1: ( rulePredicateDivision )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4258:1: ( rulePredicateDivision )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4259:1: rulePredicateDivision
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4321:1: ( rulePredicateDivision )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4322:1: rulePredicateDivision
             {
              before(grammarAccess.getPredicateMultiplicationAccess().getPredicateDivisionParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__Group__0__Impl8375);
+            pushFollow(FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__Group__0__Impl8497);
             rulePredicateDivision();
 
             state._fsp--;
@@ -11184,16 +11339,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4270:1: rule__PredicateMultiplication__Group__1 : rule__PredicateMultiplication__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4333:1: rule__PredicateMultiplication__Group__1 : rule__PredicateMultiplication__Group__1__Impl ;
     public final void rule__PredicateMultiplication__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4274:1: ( rule__PredicateMultiplication__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4275:2: rule__PredicateMultiplication__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4337:1: ( rule__PredicateMultiplication__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4338:2: rule__PredicateMultiplication__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__1__Impl_in_rule__PredicateMultiplication__Group__18404);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group__1__Impl_in_rule__PredicateMultiplication__Group__18526);
             rule__PredicateMultiplication__Group__1__Impl();
 
             state._fsp--;
@@ -11217,20 +11372,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4281:1: rule__PredicateMultiplication__Group__1__Impl : ( ( rule__PredicateMultiplication__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4344:1: rule__PredicateMultiplication__Group__1__Impl : ( ( rule__PredicateMultiplication__Group_1__0 )* ) ;
     public final void rule__PredicateMultiplication__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4285:1: ( ( ( rule__PredicateMultiplication__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4286:1: ( ( rule__PredicateMultiplication__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4348:1: ( ( ( rule__PredicateMultiplication__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4349:1: ( ( rule__PredicateMultiplication__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4286:1: ( ( rule__PredicateMultiplication__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4287:1: ( rule__PredicateMultiplication__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4349:1: ( ( rule__PredicateMultiplication__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4350:1: ( rule__PredicateMultiplication__Group_1__0 )*
             {
              before(grammarAccess.getPredicateMultiplicationAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4288:1: ( rule__PredicateMultiplication__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4351:1: ( rule__PredicateMultiplication__Group_1__0 )*
             loop27:
             do {
                 int alt27=2;
@@ -11243,9 +11398,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt27) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4288:2: rule__PredicateMultiplication__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4351:2: rule__PredicateMultiplication__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__0_in_rule__PredicateMultiplication__Group__1__Impl8431);
+            	    pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__0_in_rule__PredicateMultiplication__Group__1__Impl8553);
             	    rule__PredicateMultiplication__Group_1__0();
 
             	    state._fsp--;
@@ -11282,21 +11437,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4302:1: rule__PredicateMultiplication__Group_1__0 : rule__PredicateMultiplication__Group_1__0__Impl rule__PredicateMultiplication__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4365:1: rule__PredicateMultiplication__Group_1__0 : rule__PredicateMultiplication__Group_1__0__Impl rule__PredicateMultiplication__Group_1__1 ;
     public final void rule__PredicateMultiplication__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4306:1: ( rule__PredicateMultiplication__Group_1__0__Impl rule__PredicateMultiplication__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4307:2: rule__PredicateMultiplication__Group_1__0__Impl rule__PredicateMultiplication__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4369:1: ( rule__PredicateMultiplication__Group_1__0__Impl rule__PredicateMultiplication__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4370:2: rule__PredicateMultiplication__Group_1__0__Impl rule__PredicateMultiplication__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__0__Impl_in_rule__PredicateMultiplication__Group_1__08466);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__0__Impl_in_rule__PredicateMultiplication__Group_1__08588);
             rule__PredicateMultiplication__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__1_in_rule__PredicateMultiplication__Group_1__08469);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__1_in_rule__PredicateMultiplication__Group_1__08591);
             rule__PredicateMultiplication__Group_1__1();
 
             state._fsp--;
@@ -11320,21 +11475,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4314:1: rule__PredicateMultiplication__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4377:1: rule__PredicateMultiplication__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateMultiplication__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4318:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4319:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4381:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4382:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4319:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4320:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4382:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4383:1: ()
             {
              before(grammarAccess.getPredicateMultiplicationAccess().getPredicateMulLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4321:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4323:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4384:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4386:1: 
             {
             }
 
@@ -11357,21 +11512,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4333:1: rule__PredicateMultiplication__Group_1__1 : rule__PredicateMultiplication__Group_1__1__Impl rule__PredicateMultiplication__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4396:1: rule__PredicateMultiplication__Group_1__1 : rule__PredicateMultiplication__Group_1__1__Impl rule__PredicateMultiplication__Group_1__2 ;
     public final void rule__PredicateMultiplication__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4337:1: ( rule__PredicateMultiplication__Group_1__1__Impl rule__PredicateMultiplication__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4338:2: rule__PredicateMultiplication__Group_1__1__Impl rule__PredicateMultiplication__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4400:1: ( rule__PredicateMultiplication__Group_1__1__Impl rule__PredicateMultiplication__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4401:2: rule__PredicateMultiplication__Group_1__1__Impl rule__PredicateMultiplication__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__1__Impl_in_rule__PredicateMultiplication__Group_1__18527);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__1__Impl_in_rule__PredicateMultiplication__Group_1__18649);
             rule__PredicateMultiplication__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__2_in_rule__PredicateMultiplication__Group_1__18530);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__2_in_rule__PredicateMultiplication__Group_1__18652);
             rule__PredicateMultiplication__Group_1__2();
 
             state._fsp--;
@@ -11395,20 +11550,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4345:1: rule__PredicateMultiplication__Group_1__1__Impl : ( '*' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4408:1: rule__PredicateMultiplication__Group_1__1__Impl : ( '*' ) ;
     public final void rule__PredicateMultiplication__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4349:1: ( ( '*' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4350:1: ( '*' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4412:1: ( ( '*' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4413:1: ( '*' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4350:1: ( '*' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4351:1: '*'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4413:1: ( '*' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4414:1: '*'
             {
              before(grammarAccess.getPredicateMultiplicationAccess().getAsteriskKeyword_1_1()); 
-            match(input,24,FOLLOW_24_in_rule__PredicateMultiplication__Group_1__1__Impl8558); 
+            match(input,24,FOLLOW_24_in_rule__PredicateMultiplication__Group_1__1__Impl8680); 
              after(grammarAccess.getPredicateMultiplicationAccess().getAsteriskKeyword_1_1()); 
 
             }
@@ -11432,16 +11587,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4364:1: rule__PredicateMultiplication__Group_1__2 : rule__PredicateMultiplication__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4427:1: rule__PredicateMultiplication__Group_1__2 : rule__PredicateMultiplication__Group_1__2__Impl ;
     public final void rule__PredicateMultiplication__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4368:1: ( rule__PredicateMultiplication__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4369:2: rule__PredicateMultiplication__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4431:1: ( rule__PredicateMultiplication__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4432:2: rule__PredicateMultiplication__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__2__Impl_in_rule__PredicateMultiplication__Group_1__28589);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__Group_1__2__Impl_in_rule__PredicateMultiplication__Group_1__28711);
             rule__PredicateMultiplication__Group_1__2__Impl();
 
             state._fsp--;
@@ -11465,23 +11620,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4375:1: rule__PredicateMultiplication__Group_1__2__Impl : ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4438:1: rule__PredicateMultiplication__Group_1__2__Impl : ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateMultiplication__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4379:1: ( ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4380:1: ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4442:1: ( ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4443:1: ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4380:1: ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4381:1: ( rule__PredicateMultiplication__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4443:1: ( ( rule__PredicateMultiplication__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4444:1: ( rule__PredicateMultiplication__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateMultiplicationAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4382:1: ( rule__PredicateMultiplication__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4382:2: rule__PredicateMultiplication__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4445:1: ( rule__PredicateMultiplication__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4445:2: rule__PredicateMultiplication__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateMultiplication__RightAssignment_1_2_in_rule__PredicateMultiplication__Group_1__2__Impl8616);
+            pushFollow(FOLLOW_rule__PredicateMultiplication__RightAssignment_1_2_in_rule__PredicateMultiplication__Group_1__2__Impl8738);
             rule__PredicateMultiplication__RightAssignment_1_2();
 
             state._fsp--;
@@ -11512,21 +11667,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4398:1: rule__PredicateDivision__Group__0 : rule__PredicateDivision__Group__0__Impl rule__PredicateDivision__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4461:1: rule__PredicateDivision__Group__0 : rule__PredicateDivision__Group__0__Impl rule__PredicateDivision__Group__1 ;
     public final void rule__PredicateDivision__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4402:1: ( rule__PredicateDivision__Group__0__Impl rule__PredicateDivision__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4403:2: rule__PredicateDivision__Group__0__Impl rule__PredicateDivision__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4465:1: ( rule__PredicateDivision__Group__0__Impl rule__PredicateDivision__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4466:2: rule__PredicateDivision__Group__0__Impl rule__PredicateDivision__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateDivision__Group__0__Impl_in_rule__PredicateDivision__Group__08652);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group__0__Impl_in_rule__PredicateDivision__Group__08774);
             rule__PredicateDivision__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateDivision__Group__1_in_rule__PredicateDivision__Group__08655);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group__1_in_rule__PredicateDivision__Group__08777);
             rule__PredicateDivision__Group__1();
 
             state._fsp--;
@@ -11550,20 +11705,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4410:1: rule__PredicateDivision__Group__0__Impl : ( rulePredicatePrimary ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4473:1: rule__PredicateDivision__Group__0__Impl : ( rulePredicatePrimary ) ;
     public final void rule__PredicateDivision__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4414:1: ( ( rulePredicatePrimary ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4415:1: ( rulePredicatePrimary )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4477:1: ( ( rulePredicatePrimary ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4478:1: ( rulePredicatePrimary )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4415:1: ( rulePredicatePrimary )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4416:1: rulePredicatePrimary
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4478:1: ( rulePredicatePrimary )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4479:1: rulePredicatePrimary
             {
              before(grammarAccess.getPredicateDivisionAccess().getPredicatePrimaryParserRuleCall_0()); 
-            pushFollow(FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__Group__0__Impl8682);
+            pushFollow(FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__Group__0__Impl8804);
             rulePredicatePrimary();
 
             state._fsp--;
@@ -11591,16 +11746,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4427:1: rule__PredicateDivision__Group__1 : rule__PredicateDivision__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4490:1: rule__PredicateDivision__Group__1 : rule__PredicateDivision__Group__1__Impl ;
     public final void rule__PredicateDivision__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4431:1: ( rule__PredicateDivision__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4432:2: rule__PredicateDivision__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4494:1: ( rule__PredicateDivision__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4495:2: rule__PredicateDivision__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateDivision__Group__1__Impl_in_rule__PredicateDivision__Group__18711);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group__1__Impl_in_rule__PredicateDivision__Group__18833);
             rule__PredicateDivision__Group__1__Impl();
 
             state._fsp--;
@@ -11624,20 +11779,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4438:1: rule__PredicateDivision__Group__1__Impl : ( ( rule__PredicateDivision__Group_1__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4501:1: rule__PredicateDivision__Group__1__Impl : ( ( rule__PredicateDivision__Group_1__0 )* ) ;
     public final void rule__PredicateDivision__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4442:1: ( ( ( rule__PredicateDivision__Group_1__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4443:1: ( ( rule__PredicateDivision__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4505:1: ( ( ( rule__PredicateDivision__Group_1__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4506:1: ( ( rule__PredicateDivision__Group_1__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4443:1: ( ( rule__PredicateDivision__Group_1__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4444:1: ( rule__PredicateDivision__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4506:1: ( ( rule__PredicateDivision__Group_1__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4507:1: ( rule__PredicateDivision__Group_1__0 )*
             {
              before(grammarAccess.getPredicateDivisionAccess().getGroup_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4445:1: ( rule__PredicateDivision__Group_1__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4508:1: ( rule__PredicateDivision__Group_1__0 )*
             loop28:
             do {
                 int alt28=2;
@@ -11650,9 +11805,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt28) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4445:2: rule__PredicateDivision__Group_1__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4508:2: rule__PredicateDivision__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__PredicateDivision__Group_1__0_in_rule__PredicateDivision__Group__1__Impl8738);
+            	    pushFollow(FOLLOW_rule__PredicateDivision__Group_1__0_in_rule__PredicateDivision__Group__1__Impl8860);
             	    rule__PredicateDivision__Group_1__0();
 
             	    state._fsp--;
@@ -11689,21 +11844,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4459:1: rule__PredicateDivision__Group_1__0 : rule__PredicateDivision__Group_1__0__Impl rule__PredicateDivision__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4522:1: rule__PredicateDivision__Group_1__0 : rule__PredicateDivision__Group_1__0__Impl rule__PredicateDivision__Group_1__1 ;
     public final void rule__PredicateDivision__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4463:1: ( rule__PredicateDivision__Group_1__0__Impl rule__PredicateDivision__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4464:2: rule__PredicateDivision__Group_1__0__Impl rule__PredicateDivision__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4526:1: ( rule__PredicateDivision__Group_1__0__Impl rule__PredicateDivision__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4527:2: rule__PredicateDivision__Group_1__0__Impl rule__PredicateDivision__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__0__Impl_in_rule__PredicateDivision__Group_1__08773);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__0__Impl_in_rule__PredicateDivision__Group_1__08895);
             rule__PredicateDivision__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__1_in_rule__PredicateDivision__Group_1__08776);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__1_in_rule__PredicateDivision__Group_1__08898);
             rule__PredicateDivision__Group_1__1();
 
             state._fsp--;
@@ -11727,21 +11882,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4471:1: rule__PredicateDivision__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4534:1: rule__PredicateDivision__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateDivision__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4475:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4476:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4538:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4539:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4476:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4477:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4539:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4540:1: ()
             {
              before(grammarAccess.getPredicateDivisionAccess().getPredicateDivLeftAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4478:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4480:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4541:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4543:1: 
             {
             }
 
@@ -11764,21 +11919,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4490:1: rule__PredicateDivision__Group_1__1 : rule__PredicateDivision__Group_1__1__Impl rule__PredicateDivision__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4553:1: rule__PredicateDivision__Group_1__1 : rule__PredicateDivision__Group_1__1__Impl rule__PredicateDivision__Group_1__2 ;
     public final void rule__PredicateDivision__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4494:1: ( rule__PredicateDivision__Group_1__1__Impl rule__PredicateDivision__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4495:2: rule__PredicateDivision__Group_1__1__Impl rule__PredicateDivision__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4557:1: ( rule__PredicateDivision__Group_1__1__Impl rule__PredicateDivision__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4558:2: rule__PredicateDivision__Group_1__1__Impl rule__PredicateDivision__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__1__Impl_in_rule__PredicateDivision__Group_1__18834);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__1__Impl_in_rule__PredicateDivision__Group_1__18956);
             rule__PredicateDivision__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__2_in_rule__PredicateDivision__Group_1__18837);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__2_in_rule__PredicateDivision__Group_1__18959);
             rule__PredicateDivision__Group_1__2();
 
             state._fsp--;
@@ -11802,20 +11957,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4502:1: rule__PredicateDivision__Group_1__1__Impl : ( '/' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4565:1: rule__PredicateDivision__Group_1__1__Impl : ( '/' ) ;
     public final void rule__PredicateDivision__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4506:1: ( ( '/' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4507:1: ( '/' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4569:1: ( ( '/' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4570:1: ( '/' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4507:1: ( '/' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4508:1: '/'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4570:1: ( '/' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4571:1: '/'
             {
              before(grammarAccess.getPredicateDivisionAccess().getSolidusKeyword_1_1()); 
-            match(input,31,FOLLOW_31_in_rule__PredicateDivision__Group_1__1__Impl8865); 
+            match(input,31,FOLLOW_31_in_rule__PredicateDivision__Group_1__1__Impl8987); 
              after(grammarAccess.getPredicateDivisionAccess().getSolidusKeyword_1_1()); 
 
             }
@@ -11839,16 +11994,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4521:1: rule__PredicateDivision__Group_1__2 : rule__PredicateDivision__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4584:1: rule__PredicateDivision__Group_1__2 : rule__PredicateDivision__Group_1__2__Impl ;
     public final void rule__PredicateDivision__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4525:1: ( rule__PredicateDivision__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4526:2: rule__PredicateDivision__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4588:1: ( rule__PredicateDivision__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4589:2: rule__PredicateDivision__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__2__Impl_in_rule__PredicateDivision__Group_1__28896);
+            pushFollow(FOLLOW_rule__PredicateDivision__Group_1__2__Impl_in_rule__PredicateDivision__Group_1__29018);
             rule__PredicateDivision__Group_1__2__Impl();
 
             state._fsp--;
@@ -11872,23 +12027,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4532:1: rule__PredicateDivision__Group_1__2__Impl : ( ( rule__PredicateDivision__RightAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4595:1: rule__PredicateDivision__Group_1__2__Impl : ( ( rule__PredicateDivision__RightAssignment_1_2 ) ) ;
     public final void rule__PredicateDivision__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4536:1: ( ( ( rule__PredicateDivision__RightAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4537:1: ( ( rule__PredicateDivision__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4599:1: ( ( ( rule__PredicateDivision__RightAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4600:1: ( ( rule__PredicateDivision__RightAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4537:1: ( ( rule__PredicateDivision__RightAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4538:1: ( rule__PredicateDivision__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4600:1: ( ( rule__PredicateDivision__RightAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4601:1: ( rule__PredicateDivision__RightAssignment_1_2 )
             {
              before(grammarAccess.getPredicateDivisionAccess().getRightAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4539:1: ( rule__PredicateDivision__RightAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4539:2: rule__PredicateDivision__RightAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4602:1: ( rule__PredicateDivision__RightAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4602:2: rule__PredicateDivision__RightAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicateDivision__RightAssignment_1_2_in_rule__PredicateDivision__Group_1__2__Impl8923);
+            pushFollow(FOLLOW_rule__PredicateDivision__RightAssignment_1_2_in_rule__PredicateDivision__Group_1__2__Impl9045);
             rule__PredicateDivision__RightAssignment_1_2();
 
             state._fsp--;
@@ -11919,21 +12074,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_0__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4555:1: rule__PredicatePrimary__Group_0__0 : rule__PredicatePrimary__Group_0__0__Impl rule__PredicatePrimary__Group_0__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4618:1: rule__PredicatePrimary__Group_0__0 : rule__PredicatePrimary__Group_0__0__Impl rule__PredicatePrimary__Group_0__1 ;
     public final void rule__PredicatePrimary__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4559:1: ( rule__PredicatePrimary__Group_0__0__Impl rule__PredicatePrimary__Group_0__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4560:2: rule__PredicatePrimary__Group_0__0__Impl rule__PredicatePrimary__Group_0__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4622:1: ( rule__PredicatePrimary__Group_0__0__Impl rule__PredicatePrimary__Group_0__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4623:2: rule__PredicatePrimary__Group_0__0__Impl rule__PredicatePrimary__Group_0__1
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__0__Impl_in_rule__PredicatePrimary__Group_0__08959);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__0__Impl_in_rule__PredicatePrimary__Group_0__09081);
             rule__PredicatePrimary__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__1_in_rule__PredicatePrimary__Group_0__08962);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__1_in_rule__PredicatePrimary__Group_0__09084);
             rule__PredicatePrimary__Group_0__1();
 
             state._fsp--;
@@ -11957,20 +12112,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_0__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4567:1: rule__PredicatePrimary__Group_0__0__Impl : ( '(' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4630:1: rule__PredicatePrimary__Group_0__0__Impl : ( '(' ) ;
     public final void rule__PredicatePrimary__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4571:1: ( ( '(' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4572:1: ( '(' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4634:1: ( ( '(' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4635:1: ( '(' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4572:1: ( '(' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4573:1: '('
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4635:1: ( '(' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4636:1: '('
             {
              before(grammarAccess.getPredicatePrimaryAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,32,FOLLOW_32_in_rule__PredicatePrimary__Group_0__0__Impl8990); 
+            match(input,32,FOLLOW_32_in_rule__PredicatePrimary__Group_0__0__Impl9112); 
              after(grammarAccess.getPredicatePrimaryAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -11994,21 +12149,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_0__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4586:1: rule__PredicatePrimary__Group_0__1 : rule__PredicatePrimary__Group_0__1__Impl rule__PredicatePrimary__Group_0__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4649:1: rule__PredicatePrimary__Group_0__1 : rule__PredicatePrimary__Group_0__1__Impl rule__PredicatePrimary__Group_0__2 ;
     public final void rule__PredicatePrimary__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4590:1: ( rule__PredicatePrimary__Group_0__1__Impl rule__PredicatePrimary__Group_0__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4591:2: rule__PredicatePrimary__Group_0__1__Impl rule__PredicatePrimary__Group_0__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4653:1: ( rule__PredicatePrimary__Group_0__1__Impl rule__PredicatePrimary__Group_0__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4654:2: rule__PredicatePrimary__Group_0__1__Impl rule__PredicatePrimary__Group_0__2
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__1__Impl_in_rule__PredicatePrimary__Group_0__19021);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__1__Impl_in_rule__PredicatePrimary__Group_0__19143);
             rule__PredicatePrimary__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__2_in_rule__PredicatePrimary__Group_0__19024);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__2_in_rule__PredicatePrimary__Group_0__19146);
             rule__PredicatePrimary__Group_0__2();
 
             state._fsp--;
@@ -12032,20 +12187,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_0__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4598:1: rule__PredicatePrimary__Group_0__1__Impl : ( rulePredicateExpression ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4661:1: rule__PredicatePrimary__Group_0__1__Impl : ( rulePredicateExpression ) ;
     public final void rule__PredicatePrimary__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4602:1: ( ( rulePredicateExpression ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4603:1: ( rulePredicateExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4665:1: ( ( rulePredicateExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4666:1: ( rulePredicateExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4603:1: ( rulePredicateExpression )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4604:1: rulePredicateExpression
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4666:1: ( rulePredicateExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4667:1: rulePredicateExpression
             {
              before(grammarAccess.getPredicatePrimaryAccess().getPredicateExpressionParserRuleCall_0_1()); 
-            pushFollow(FOLLOW_rulePredicateExpression_in_rule__PredicatePrimary__Group_0__1__Impl9051);
+            pushFollow(FOLLOW_rulePredicateExpression_in_rule__PredicatePrimary__Group_0__1__Impl9173);
             rulePredicateExpression();
 
             state._fsp--;
@@ -12073,16 +12228,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_0__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4615:1: rule__PredicatePrimary__Group_0__2 : rule__PredicatePrimary__Group_0__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4678:1: rule__PredicatePrimary__Group_0__2 : rule__PredicatePrimary__Group_0__2__Impl ;
     public final void rule__PredicatePrimary__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4619:1: ( rule__PredicatePrimary__Group_0__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4620:2: rule__PredicatePrimary__Group_0__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4682:1: ( rule__PredicatePrimary__Group_0__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4683:2: rule__PredicatePrimary__Group_0__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__2__Impl_in_rule__PredicatePrimary__Group_0__29080);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_0__2__Impl_in_rule__PredicatePrimary__Group_0__29202);
             rule__PredicatePrimary__Group_0__2__Impl();
 
             state._fsp--;
@@ -12106,20 +12261,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_0__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4626:1: rule__PredicatePrimary__Group_0__2__Impl : ( ')' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4689:1: rule__PredicatePrimary__Group_0__2__Impl : ( ')' ) ;
     public final void rule__PredicatePrimary__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4630:1: ( ( ')' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4631:1: ( ')' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4693:1: ( ( ')' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4694:1: ( ')' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4631:1: ( ')' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4632:1: ')'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4694:1: ( ')' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4695:1: ')'
             {
              before(grammarAccess.getPredicatePrimaryAccess().getRightParenthesisKeyword_0_2()); 
-            match(input,33,FOLLOW_33_in_rule__PredicatePrimary__Group_0__2__Impl9108); 
+            match(input,33,FOLLOW_33_in_rule__PredicatePrimary__Group_0__2__Impl9230); 
              after(grammarAccess.getPredicatePrimaryAccess().getRightParenthesisKeyword_0_2()); 
 
             }
@@ -12143,21 +12298,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4651:1: rule__PredicatePrimary__Group_1__0 : rule__PredicatePrimary__Group_1__0__Impl rule__PredicatePrimary__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4714:1: rule__PredicatePrimary__Group_1__0 : rule__PredicatePrimary__Group_1__0__Impl rule__PredicatePrimary__Group_1__1 ;
     public final void rule__PredicatePrimary__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4655:1: ( rule__PredicatePrimary__Group_1__0__Impl rule__PredicatePrimary__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4656:2: rule__PredicatePrimary__Group_1__0__Impl rule__PredicatePrimary__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4718:1: ( rule__PredicatePrimary__Group_1__0__Impl rule__PredicatePrimary__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4719:2: rule__PredicatePrimary__Group_1__0__Impl rule__PredicatePrimary__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__0__Impl_in_rule__PredicatePrimary__Group_1__09145);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__0__Impl_in_rule__PredicatePrimary__Group_1__09267);
             rule__PredicatePrimary__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__1_in_rule__PredicatePrimary__Group_1__09148);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__1_in_rule__PredicatePrimary__Group_1__09270);
             rule__PredicatePrimary__Group_1__1();
 
             state._fsp--;
@@ -12181,21 +12336,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4663:1: rule__PredicatePrimary__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4726:1: rule__PredicatePrimary__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicatePrimary__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4667:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4668:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4730:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4731:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4668:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4669:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4731:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4732:1: ()
             {
              before(grammarAccess.getPredicatePrimaryAccess().getPredicateNotAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4670:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4672:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4733:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4735:1: 
             {
             }
 
@@ -12218,21 +12373,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4682:1: rule__PredicatePrimary__Group_1__1 : rule__PredicatePrimary__Group_1__1__Impl rule__PredicatePrimary__Group_1__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4745:1: rule__PredicatePrimary__Group_1__1 : rule__PredicatePrimary__Group_1__1__Impl rule__PredicatePrimary__Group_1__2 ;
     public final void rule__PredicatePrimary__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4686:1: ( rule__PredicatePrimary__Group_1__1__Impl rule__PredicatePrimary__Group_1__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4687:2: rule__PredicatePrimary__Group_1__1__Impl rule__PredicatePrimary__Group_1__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4749:1: ( rule__PredicatePrimary__Group_1__1__Impl rule__PredicatePrimary__Group_1__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4750:2: rule__PredicatePrimary__Group_1__1__Impl rule__PredicatePrimary__Group_1__2
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__1__Impl_in_rule__PredicatePrimary__Group_1__19206);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__1__Impl_in_rule__PredicatePrimary__Group_1__19328);
             rule__PredicatePrimary__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__2_in_rule__PredicatePrimary__Group_1__19209);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__2_in_rule__PredicatePrimary__Group_1__19331);
             rule__PredicatePrimary__Group_1__2();
 
             state._fsp--;
@@ -12256,20 +12411,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4694:1: rule__PredicatePrimary__Group_1__1__Impl : ( '!' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4757:1: rule__PredicatePrimary__Group_1__1__Impl : ( '!' ) ;
     public final void rule__PredicatePrimary__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4698:1: ( ( '!' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4699:1: ( '!' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4761:1: ( ( '!' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4762:1: ( '!' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4699:1: ( '!' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4700:1: '!'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4762:1: ( '!' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4763:1: '!'
             {
              before(grammarAccess.getPredicatePrimaryAccess().getExclamationMarkKeyword_1_1()); 
-            match(input,34,FOLLOW_34_in_rule__PredicatePrimary__Group_1__1__Impl9237); 
+            match(input,34,FOLLOW_34_in_rule__PredicatePrimary__Group_1__1__Impl9359); 
              after(grammarAccess.getPredicatePrimaryAccess().getExclamationMarkKeyword_1_1()); 
 
             }
@@ -12293,16 +12448,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_1__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4713:1: rule__PredicatePrimary__Group_1__2 : rule__PredicatePrimary__Group_1__2__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4776:1: rule__PredicatePrimary__Group_1__2 : rule__PredicatePrimary__Group_1__2__Impl ;
     public final void rule__PredicatePrimary__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4717:1: ( rule__PredicatePrimary__Group_1__2__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4718:2: rule__PredicatePrimary__Group_1__2__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4780:1: ( rule__PredicatePrimary__Group_1__2__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4781:2: rule__PredicatePrimary__Group_1__2__Impl
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__2__Impl_in_rule__PredicatePrimary__Group_1__29268);
+            pushFollow(FOLLOW_rule__PredicatePrimary__Group_1__2__Impl_in_rule__PredicatePrimary__Group_1__29390);
             rule__PredicatePrimary__Group_1__2__Impl();
 
             state._fsp--;
@@ -12326,23 +12481,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__Group_1__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4724:1: rule__PredicatePrimary__Group_1__2__Impl : ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4787:1: rule__PredicatePrimary__Group_1__2__Impl : ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) ) ;
     public final void rule__PredicatePrimary__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4728:1: ( ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4729:1: ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4791:1: ( ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4792:1: ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4729:1: ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4730:1: ( rule__PredicatePrimary__ExpressionAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4792:1: ( ( rule__PredicatePrimary__ExpressionAssignment_1_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4793:1: ( rule__PredicatePrimary__ExpressionAssignment_1_2 )
             {
              before(grammarAccess.getPredicatePrimaryAccess().getExpressionAssignment_1_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4731:1: ( rule__PredicatePrimary__ExpressionAssignment_1_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4731:2: rule__PredicatePrimary__ExpressionAssignment_1_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4794:1: ( rule__PredicatePrimary__ExpressionAssignment_1_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4794:2: rule__PredicatePrimary__ExpressionAssignment_1_2
             {
-            pushFollow(FOLLOW_rule__PredicatePrimary__ExpressionAssignment_1_2_in_rule__PredicatePrimary__Group_1__2__Impl9295);
+            pushFollow(FOLLOW_rule__PredicatePrimary__ExpressionAssignment_1_2_in_rule__PredicatePrimary__Group_1__2__Impl9417);
             rule__PredicatePrimary__ExpressionAssignment_1_2();
 
             state._fsp--;
@@ -12373,21 +12528,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_0__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4747:1: rule__PredicateAtomic__Group_0__0 : rule__PredicateAtomic__Group_0__0__Impl rule__PredicateAtomic__Group_0__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4810:1: rule__PredicateAtomic__Group_0__0 : rule__PredicateAtomic__Group_0__0__Impl rule__PredicateAtomic__Group_0__1 ;
     public final void rule__PredicateAtomic__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4751:1: ( rule__PredicateAtomic__Group_0__0__Impl rule__PredicateAtomic__Group_0__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4752:2: rule__PredicateAtomic__Group_0__0__Impl rule__PredicateAtomic__Group_0__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4814:1: ( rule__PredicateAtomic__Group_0__0__Impl rule__PredicateAtomic__Group_0__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4815:2: rule__PredicateAtomic__Group_0__0__Impl rule__PredicateAtomic__Group_0__1
             {
-            pushFollow(FOLLOW_rule__PredicateAtomic__Group_0__0__Impl_in_rule__PredicateAtomic__Group_0__09331);
+            pushFollow(FOLLOW_rule__PredicateAtomic__Group_0__0__Impl_in_rule__PredicateAtomic__Group_0__09453);
             rule__PredicateAtomic__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAtomic__Group_0__1_in_rule__PredicateAtomic__Group_0__09334);
+            pushFollow(FOLLOW_rule__PredicateAtomic__Group_0__1_in_rule__PredicateAtomic__Group_0__09456);
             rule__PredicateAtomic__Group_0__1();
 
             state._fsp--;
@@ -12411,21 +12566,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_0__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4759:1: rule__PredicateAtomic__Group_0__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4822:1: rule__PredicateAtomic__Group_0__0__Impl : ( () ) ;
     public final void rule__PredicateAtomic__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4763:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4764:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4826:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4827:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4764:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4765:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4827:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4828:1: ()
             {
              before(grammarAccess.getPredicateAtomicAccess().getConstantAction_0_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4766:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4768:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4829:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4831:1: 
             {
             }
 
@@ -12448,16 +12603,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_0__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4778:1: rule__PredicateAtomic__Group_0__1 : rule__PredicateAtomic__Group_0__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4841:1: rule__PredicateAtomic__Group_0__1 : rule__PredicateAtomic__Group_0__1__Impl ;
     public final void rule__PredicateAtomic__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4782:1: ( rule__PredicateAtomic__Group_0__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4783:2: rule__PredicateAtomic__Group_0__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4845:1: ( rule__PredicateAtomic__Group_0__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4846:2: rule__PredicateAtomic__Group_0__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateAtomic__Group_0__1__Impl_in_rule__PredicateAtomic__Group_0__19392);
+            pushFollow(FOLLOW_rule__PredicateAtomic__Group_0__1__Impl_in_rule__PredicateAtomic__Group_0__19514);
             rule__PredicateAtomic__Group_0__1__Impl();
 
             state._fsp--;
@@ -12481,23 +12636,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_0__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4789:1: rule__PredicateAtomic__Group_0__1__Impl : ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4852:1: rule__PredicateAtomic__Group_0__1__Impl : ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) ) ;
     public final void rule__PredicateAtomic__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4793:1: ( ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4794:1: ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4856:1: ( ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4857:1: ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4794:1: ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4795:1: ( rule__PredicateAtomic__ValueAssignment_0_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4857:1: ( ( rule__PredicateAtomic__ValueAssignment_0_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4858:1: ( rule__PredicateAtomic__ValueAssignment_0_1 )
             {
              before(grammarAccess.getPredicateAtomicAccess().getValueAssignment_0_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4796:1: ( rule__PredicateAtomic__ValueAssignment_0_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4796:2: rule__PredicateAtomic__ValueAssignment_0_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4859:1: ( rule__PredicateAtomic__ValueAssignment_0_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4859:2: rule__PredicateAtomic__ValueAssignment_0_1
             {
-            pushFollow(FOLLOW_rule__PredicateAtomic__ValueAssignment_0_1_in_rule__PredicateAtomic__Group_0__1__Impl9419);
+            pushFollow(FOLLOW_rule__PredicateAtomic__ValueAssignment_0_1_in_rule__PredicateAtomic__Group_0__1__Impl9541);
             rule__PredicateAtomic__ValueAssignment_0_1();
 
             state._fsp--;
@@ -12528,21 +12683,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4810:1: rule__PredicateAtomic__Group_1__0 : rule__PredicateAtomic__Group_1__0__Impl rule__PredicateAtomic__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4873:1: rule__PredicateAtomic__Group_1__0 : rule__PredicateAtomic__Group_1__0__Impl rule__PredicateAtomic__Group_1__1 ;
     public final void rule__PredicateAtomic__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4814:1: ( rule__PredicateAtomic__Group_1__0__Impl rule__PredicateAtomic__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4815:2: rule__PredicateAtomic__Group_1__0__Impl rule__PredicateAtomic__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4877:1: ( rule__PredicateAtomic__Group_1__0__Impl rule__PredicateAtomic__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4878:2: rule__PredicateAtomic__Group_1__0__Impl rule__PredicateAtomic__Group_1__1
             {
-            pushFollow(FOLLOW_rule__PredicateAtomic__Group_1__0__Impl_in_rule__PredicateAtomic__Group_1__09453);
+            pushFollow(FOLLOW_rule__PredicateAtomic__Group_1__0__Impl_in_rule__PredicateAtomic__Group_1__09575);
             rule__PredicateAtomic__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateAtomic__Group_1__1_in_rule__PredicateAtomic__Group_1__09456);
+            pushFollow(FOLLOW_rule__PredicateAtomic__Group_1__1_in_rule__PredicateAtomic__Group_1__09578);
             rule__PredicateAtomic__Group_1__1();
 
             state._fsp--;
@@ -12566,21 +12721,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4822:1: rule__PredicateAtomic__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4885:1: rule__PredicateAtomic__Group_1__0__Impl : ( () ) ;
     public final void rule__PredicateAtomic__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4826:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4827:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4889:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4890:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4827:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4828:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4890:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4891:1: ()
             {
              before(grammarAccess.getPredicateAtomicAccess().getBooleanConstantAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4829:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4831:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4892:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4894:1: 
             {
             }
 
@@ -12603,16 +12758,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4841:1: rule__PredicateAtomic__Group_1__1 : rule__PredicateAtomic__Group_1__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4904:1: rule__PredicateAtomic__Group_1__1 : rule__PredicateAtomic__Group_1__1__Impl ;
     public final void rule__PredicateAtomic__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4845:1: ( rule__PredicateAtomic__Group_1__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4846:2: rule__PredicateAtomic__Group_1__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4908:1: ( rule__PredicateAtomic__Group_1__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4909:2: rule__PredicateAtomic__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateAtomic__Group_1__1__Impl_in_rule__PredicateAtomic__Group_1__19514);
+            pushFollow(FOLLOW_rule__PredicateAtomic__Group_1__1__Impl_in_rule__PredicateAtomic__Group_1__19636);
             rule__PredicateAtomic__Group_1__1__Impl();
 
             state._fsp--;
@@ -12636,23 +12791,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4852:1: rule__PredicateAtomic__Group_1__1__Impl : ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4915:1: rule__PredicateAtomic__Group_1__1__Impl : ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) ) ;
     public final void rule__PredicateAtomic__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4856:1: ( ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4857:1: ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4919:1: ( ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4920:1: ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4857:1: ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4858:1: ( rule__PredicateAtomic__ValueAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4920:1: ( ( rule__PredicateAtomic__ValueAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4921:1: ( rule__PredicateAtomic__ValueAssignment_1_1 )
             {
              before(grammarAccess.getPredicateAtomicAccess().getValueAssignment_1_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4859:1: ( rule__PredicateAtomic__ValueAssignment_1_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4859:2: rule__PredicateAtomic__ValueAssignment_1_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4922:1: ( rule__PredicateAtomic__ValueAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4922:2: rule__PredicateAtomic__ValueAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__PredicateAtomic__ValueAssignment_1_1_in_rule__PredicateAtomic__Group_1__1__Impl9541);
+            pushFollow(FOLLOW_rule__PredicateAtomic__ValueAssignment_1_1_in_rule__PredicateAtomic__Group_1__1__Impl9663);
             rule__PredicateAtomic__ValueAssignment_1_1();
 
             state._fsp--;
@@ -12683,21 +12838,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateStoreReference__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4873:1: rule__PredicateStoreReference__Group__0 : rule__PredicateStoreReference__Group__0__Impl rule__PredicateStoreReference__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4936:1: rule__PredicateStoreReference__Group__0 : rule__PredicateStoreReference__Group__0__Impl rule__PredicateStoreReference__Group__1 ;
     public final void rule__PredicateStoreReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4877:1: ( rule__PredicateStoreReference__Group__0__Impl rule__PredicateStoreReference__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4878:2: rule__PredicateStoreReference__Group__0__Impl rule__PredicateStoreReference__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4940:1: ( rule__PredicateStoreReference__Group__0__Impl rule__PredicateStoreReference__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4941:2: rule__PredicateStoreReference__Group__0__Impl rule__PredicateStoreReference__Group__1
             {
-            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__0__Impl_in_rule__PredicateStoreReference__Group__09575);
+            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__0__Impl_in_rule__PredicateStoreReference__Group__09697);
             rule__PredicateStoreReference__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__1_in_rule__PredicateStoreReference__Group__09578);
+            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__1_in_rule__PredicateStoreReference__Group__09700);
             rule__PredicateStoreReference__Group__1();
 
             state._fsp--;
@@ -12721,21 +12876,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateStoreReference__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4885:1: rule__PredicateStoreReference__Group__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4948:1: rule__PredicateStoreReference__Group__0__Impl : ( () ) ;
     public final void rule__PredicateStoreReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4889:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4890:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4952:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4953:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4890:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4891:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4953:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4954:1: ()
             {
              before(grammarAccess.getPredicateStoreReferenceAccess().getPredicateStoreReferenceAction_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4892:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4894:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4955:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4957:1: 
             {
             }
 
@@ -12758,16 +12913,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateStoreReference__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4904:1: rule__PredicateStoreReference__Group__1 : rule__PredicateStoreReference__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4967:1: rule__PredicateStoreReference__Group__1 : rule__PredicateStoreReference__Group__1__Impl ;
     public final void rule__PredicateStoreReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4908:1: ( rule__PredicateStoreReference__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4909:2: rule__PredicateStoreReference__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4971:1: ( rule__PredicateStoreReference__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4972:2: rule__PredicateStoreReference__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__1__Impl_in_rule__PredicateStoreReference__Group__19636);
+            pushFollow(FOLLOW_rule__PredicateStoreReference__Group__1__Impl_in_rule__PredicateStoreReference__Group__19758);
             rule__PredicateStoreReference__Group__1__Impl();
 
             state._fsp--;
@@ -12791,23 +12946,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateStoreReference__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4915:1: rule__PredicateStoreReference__Group__1__Impl : ( ( rule__PredicateStoreReference__RefAssignment_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4978:1: rule__PredicateStoreReference__Group__1__Impl : ( ( rule__PredicateStoreReference__RefAssignment_1 ) ) ;
     public final void rule__PredicateStoreReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4919:1: ( ( ( rule__PredicateStoreReference__RefAssignment_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4920:1: ( ( rule__PredicateStoreReference__RefAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4982:1: ( ( ( rule__PredicateStoreReference__RefAssignment_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4983:1: ( ( rule__PredicateStoreReference__RefAssignment_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4920:1: ( ( rule__PredicateStoreReference__RefAssignment_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4921:1: ( rule__PredicateStoreReference__RefAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4983:1: ( ( rule__PredicateStoreReference__RefAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4984:1: ( rule__PredicateStoreReference__RefAssignment_1 )
             {
              before(grammarAccess.getPredicateStoreReferenceAccess().getRefAssignment_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4922:1: ( rule__PredicateStoreReference__RefAssignment_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4922:2: rule__PredicateStoreReference__RefAssignment_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4985:1: ( rule__PredicateStoreReference__RefAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4985:2: rule__PredicateStoreReference__RefAssignment_1
             {
-            pushFollow(FOLLOW_rule__PredicateStoreReference__RefAssignment_1_in_rule__PredicateStoreReference__Group__1__Impl9663);
+            pushFollow(FOLLOW_rule__PredicateStoreReference__RefAssignment_1_in_rule__PredicateStoreReference__Group__1__Impl9785);
             rule__PredicateStoreReference__RefAssignment_1();
 
             state._fsp--;
@@ -12838,21 +12993,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4936:1: rule__Arguments__Group_0__0 : rule__Arguments__Group_0__0__Impl rule__Arguments__Group_0__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4999:1: rule__Arguments__Group_0__0 : rule__Arguments__Group_0__0__Impl rule__Arguments__Group_0__1 ;
     public final void rule__Arguments__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4940:1: ( rule__Arguments__Group_0__0__Impl rule__Arguments__Group_0__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4941:2: rule__Arguments__Group_0__0__Impl rule__Arguments__Group_0__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5003:1: ( rule__Arguments__Group_0__0__Impl rule__Arguments__Group_0__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5004:2: rule__Arguments__Group_0__0__Impl rule__Arguments__Group_0__1
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_0__0__Impl_in_rule__Arguments__Group_0__09697);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__0__Impl_in_rule__Arguments__Group_0__09819);
             rule__Arguments__Group_0__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_0__1_in_rule__Arguments__Group_0__09700);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__1_in_rule__Arguments__Group_0__09822);
             rule__Arguments__Group_0__1();
 
             state._fsp--;
@@ -12876,20 +13031,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4948:1: rule__Arguments__Group_0__0__Impl : ( '(' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5011:1: rule__Arguments__Group_0__0__Impl : ( '(' ) ;
     public final void rule__Arguments__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4952:1: ( ( '(' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4953:1: ( '(' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5015:1: ( ( '(' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5016:1: ( '(' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4953:1: ( '(' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4954:1: '('
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5016:1: ( '(' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5017:1: '('
             {
              before(grammarAccess.getArgumentsAccess().getLeftParenthesisKeyword_0_0()); 
-            match(input,32,FOLLOW_32_in_rule__Arguments__Group_0__0__Impl9728); 
+            match(input,32,FOLLOW_32_in_rule__Arguments__Group_0__0__Impl9850); 
              after(grammarAccess.getArgumentsAccess().getLeftParenthesisKeyword_0_0()); 
 
             }
@@ -12913,21 +13068,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4967:1: rule__Arguments__Group_0__1 : rule__Arguments__Group_0__1__Impl rule__Arguments__Group_0__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5030:1: rule__Arguments__Group_0__1 : rule__Arguments__Group_0__1__Impl rule__Arguments__Group_0__2 ;
     public final void rule__Arguments__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4971:1: ( rule__Arguments__Group_0__1__Impl rule__Arguments__Group_0__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4972:2: rule__Arguments__Group_0__1__Impl rule__Arguments__Group_0__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5034:1: ( rule__Arguments__Group_0__1__Impl rule__Arguments__Group_0__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5035:2: rule__Arguments__Group_0__1__Impl rule__Arguments__Group_0__2
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_0__1__Impl_in_rule__Arguments__Group_0__19759);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__1__Impl_in_rule__Arguments__Group_0__19881);
             rule__Arguments__Group_0__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_0__2_in_rule__Arguments__Group_0__19762);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__2_in_rule__Arguments__Group_0__19884);
             rule__Arguments__Group_0__2();
 
             state._fsp--;
@@ -12951,21 +13106,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4979:1: rule__Arguments__Group_0__1__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5042:1: rule__Arguments__Group_0__1__Impl : ( () ) ;
     public final void rule__Arguments__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4983:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4984:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5046:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5047:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4984:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4985:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5047:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5048:1: ()
             {
              before(grammarAccess.getArgumentsAccess().getInAction_0_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4986:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4988:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5049:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5051:1: 
             {
             }
 
@@ -12988,21 +13143,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:4998:1: rule__Arguments__Group_0__2 : rule__Arguments__Group_0__2__Impl rule__Arguments__Group_0__3 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5061:1: rule__Arguments__Group_0__2 : rule__Arguments__Group_0__2__Impl rule__Arguments__Group_0__3 ;
     public final void rule__Arguments__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5002:1: ( rule__Arguments__Group_0__2__Impl rule__Arguments__Group_0__3 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5003:2: rule__Arguments__Group_0__2__Impl rule__Arguments__Group_0__3
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5065:1: ( rule__Arguments__Group_0__2__Impl rule__Arguments__Group_0__3 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5066:2: rule__Arguments__Group_0__2__Impl rule__Arguments__Group_0__3
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_0__2__Impl_in_rule__Arguments__Group_0__29820);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__2__Impl_in_rule__Arguments__Group_0__29942);
             rule__Arguments__Group_0__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_0__3_in_rule__Arguments__Group_0__29823);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__3_in_rule__Arguments__Group_0__29945);
             rule__Arguments__Group_0__3();
 
             state._fsp--;
@@ -13026,23 +13181,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5010:1: rule__Arguments__Group_0__2__Impl : ( ( rule__Arguments__ExpressionsAssignment_0_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5073:1: rule__Arguments__Group_0__2__Impl : ( ( rule__Arguments__ExpressionsAssignment_0_2 ) ) ;
     public final void rule__Arguments__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5014:1: ( ( ( rule__Arguments__ExpressionsAssignment_0_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5015:1: ( ( rule__Arguments__ExpressionsAssignment_0_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5077:1: ( ( ( rule__Arguments__ExpressionsAssignment_0_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5078:1: ( ( rule__Arguments__ExpressionsAssignment_0_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5015:1: ( ( rule__Arguments__ExpressionsAssignment_0_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5016:1: ( rule__Arguments__ExpressionsAssignment_0_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5078:1: ( ( rule__Arguments__ExpressionsAssignment_0_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5079:1: ( rule__Arguments__ExpressionsAssignment_0_2 )
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsAssignment_0_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5017:1: ( rule__Arguments__ExpressionsAssignment_0_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5017:2: rule__Arguments__ExpressionsAssignment_0_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5080:1: ( rule__Arguments__ExpressionsAssignment_0_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5080:2: rule__Arguments__ExpressionsAssignment_0_2
             {
-            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_0_2_in_rule__Arguments__Group_0__2__Impl9850);
+            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_0_2_in_rule__Arguments__Group_0__2__Impl9972);
             rule__Arguments__ExpressionsAssignment_0_2();
 
             state._fsp--;
@@ -13073,21 +13228,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__3"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5027:1: rule__Arguments__Group_0__3 : rule__Arguments__Group_0__3__Impl rule__Arguments__Group_0__4 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5090:1: rule__Arguments__Group_0__3 : rule__Arguments__Group_0__3__Impl rule__Arguments__Group_0__4 ;
     public final void rule__Arguments__Group_0__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5031:1: ( rule__Arguments__Group_0__3__Impl rule__Arguments__Group_0__4 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5032:2: rule__Arguments__Group_0__3__Impl rule__Arguments__Group_0__4
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5094:1: ( rule__Arguments__Group_0__3__Impl rule__Arguments__Group_0__4 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5095:2: rule__Arguments__Group_0__3__Impl rule__Arguments__Group_0__4
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_0__3__Impl_in_rule__Arguments__Group_0__39880);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__3__Impl_in_rule__Arguments__Group_0__310002);
             rule__Arguments__Group_0__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_0__4_in_rule__Arguments__Group_0__39883);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__4_in_rule__Arguments__Group_0__310005);
             rule__Arguments__Group_0__4();
 
             state._fsp--;
@@ -13111,20 +13266,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__3__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5039:1: rule__Arguments__Group_0__3__Impl : ( ( rule__Arguments__Group_0_3__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5102:1: rule__Arguments__Group_0__3__Impl : ( ( rule__Arguments__Group_0_3__0 )* ) ;
     public final void rule__Arguments__Group_0__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5043:1: ( ( ( rule__Arguments__Group_0_3__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5044:1: ( ( rule__Arguments__Group_0_3__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5106:1: ( ( ( rule__Arguments__Group_0_3__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5107:1: ( ( rule__Arguments__Group_0_3__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5044:1: ( ( rule__Arguments__Group_0_3__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5045:1: ( rule__Arguments__Group_0_3__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5107:1: ( ( rule__Arguments__Group_0_3__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5108:1: ( rule__Arguments__Group_0_3__0 )*
             {
              before(grammarAccess.getArgumentsAccess().getGroup_0_3()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5046:1: ( rule__Arguments__Group_0_3__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5109:1: ( rule__Arguments__Group_0_3__0 )*
             loop29:
             do {
                 int alt29=2;
@@ -13137,9 +13292,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt29) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5046:2: rule__Arguments__Group_0_3__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5109:2: rule__Arguments__Group_0_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__Arguments__Group_0_3__0_in_rule__Arguments__Group_0__3__Impl9910);
+            	    pushFollow(FOLLOW_rule__Arguments__Group_0_3__0_in_rule__Arguments__Group_0__3__Impl10032);
             	    rule__Arguments__Group_0_3__0();
 
             	    state._fsp--;
@@ -13176,16 +13331,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__4"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5056:1: rule__Arguments__Group_0__4 : rule__Arguments__Group_0__4__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5119:1: rule__Arguments__Group_0__4 : rule__Arguments__Group_0__4__Impl ;
     public final void rule__Arguments__Group_0__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5060:1: ( rule__Arguments__Group_0__4__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5061:2: rule__Arguments__Group_0__4__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5123:1: ( rule__Arguments__Group_0__4__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5124:2: rule__Arguments__Group_0__4__Impl
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_0__4__Impl_in_rule__Arguments__Group_0__49941);
+            pushFollow(FOLLOW_rule__Arguments__Group_0__4__Impl_in_rule__Arguments__Group_0__410063);
             rule__Arguments__Group_0__4__Impl();
 
             state._fsp--;
@@ -13209,20 +13364,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0__4__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5067:1: rule__Arguments__Group_0__4__Impl : ( ')' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5130:1: rule__Arguments__Group_0__4__Impl : ( ')' ) ;
     public final void rule__Arguments__Group_0__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5071:1: ( ( ')' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5072:1: ( ')' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5134:1: ( ( ')' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5135:1: ( ')' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5072:1: ( ')' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5073:1: ')'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5135:1: ( ')' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5136:1: ')'
             {
              before(grammarAccess.getArgumentsAccess().getRightParenthesisKeyword_0_4()); 
-            match(input,33,FOLLOW_33_in_rule__Arguments__Group_0__4__Impl9969); 
+            match(input,33,FOLLOW_33_in_rule__Arguments__Group_0__4__Impl10091); 
              after(grammarAccess.getArgumentsAccess().getRightParenthesisKeyword_0_4()); 
 
             }
@@ -13246,21 +13401,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0_3__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5096:1: rule__Arguments__Group_0_3__0 : rule__Arguments__Group_0_3__0__Impl rule__Arguments__Group_0_3__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5159:1: rule__Arguments__Group_0_3__0 : rule__Arguments__Group_0_3__0__Impl rule__Arguments__Group_0_3__1 ;
     public final void rule__Arguments__Group_0_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5100:1: ( rule__Arguments__Group_0_3__0__Impl rule__Arguments__Group_0_3__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5101:2: rule__Arguments__Group_0_3__0__Impl rule__Arguments__Group_0_3__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5163:1: ( rule__Arguments__Group_0_3__0__Impl rule__Arguments__Group_0_3__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5164:2: rule__Arguments__Group_0_3__0__Impl rule__Arguments__Group_0_3__1
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_0_3__0__Impl_in_rule__Arguments__Group_0_3__010010);
+            pushFollow(FOLLOW_rule__Arguments__Group_0_3__0__Impl_in_rule__Arguments__Group_0_3__010132);
             rule__Arguments__Group_0_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_0_3__1_in_rule__Arguments__Group_0_3__010013);
+            pushFollow(FOLLOW_rule__Arguments__Group_0_3__1_in_rule__Arguments__Group_0_3__010135);
             rule__Arguments__Group_0_3__1();
 
             state._fsp--;
@@ -13284,20 +13439,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0_3__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5108:1: rule__Arguments__Group_0_3__0__Impl : ( ',' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5171:1: rule__Arguments__Group_0_3__0__Impl : ( ',' ) ;
     public final void rule__Arguments__Group_0_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5112:1: ( ( ',' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5113:1: ( ',' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5175:1: ( ( ',' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5176:1: ( ',' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5113:1: ( ',' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5114:1: ','
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5176:1: ( ',' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5177:1: ','
             {
              before(grammarAccess.getArgumentsAccess().getCommaKeyword_0_3_0()); 
-            match(input,35,FOLLOW_35_in_rule__Arguments__Group_0_3__0__Impl10041); 
+            match(input,35,FOLLOW_35_in_rule__Arguments__Group_0_3__0__Impl10163); 
              after(grammarAccess.getArgumentsAccess().getCommaKeyword_0_3_0()); 
 
             }
@@ -13321,16 +13476,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0_3__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5127:1: rule__Arguments__Group_0_3__1 : rule__Arguments__Group_0_3__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5190:1: rule__Arguments__Group_0_3__1 : rule__Arguments__Group_0_3__1__Impl ;
     public final void rule__Arguments__Group_0_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5131:1: ( rule__Arguments__Group_0_3__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5132:2: rule__Arguments__Group_0_3__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5194:1: ( rule__Arguments__Group_0_3__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5195:2: rule__Arguments__Group_0_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_0_3__1__Impl_in_rule__Arguments__Group_0_3__110072);
+            pushFollow(FOLLOW_rule__Arguments__Group_0_3__1__Impl_in_rule__Arguments__Group_0_3__110194);
             rule__Arguments__Group_0_3__1__Impl();
 
             state._fsp--;
@@ -13354,26 +13509,26 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_0_3__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5138:1: rule__Arguments__Group_0_3__1__Impl : ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5201:1: rule__Arguments__Group_0_3__1__Impl : ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) ) ;
     public final void rule__Arguments__Group_0_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5142:1: ( ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5143:1: ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5205:1: ( ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5206:1: ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5143:1: ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5144:1: ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5206:1: ( ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5207:1: ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5144:1: ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5145:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5207:1: ( ( rule__Arguments__ExpressionsAssignment_0_3_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5208:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsAssignment_0_3_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5146:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5146:2: rule__Arguments__ExpressionsAssignment_0_3_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5209:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5209:2: rule__Arguments__ExpressionsAssignment_0_3_1
             {
-            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10101);
+            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10223);
             rule__Arguments__ExpressionsAssignment_0_3_1();
 
             state._fsp--;
@@ -13385,11 +13540,11 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5149:1: ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5150:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5212:1: ( ( rule__Arguments__ExpressionsAssignment_0_3_1 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5213:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )*
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsAssignment_0_3_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5151:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5214:1: ( rule__Arguments__ExpressionsAssignment_0_3_1 )*
             loop30:
             do {
                 int alt30=2;
@@ -13402,9 +13557,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt30) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5151:2: rule__Arguments__ExpressionsAssignment_0_3_1
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5214:2: rule__Arguments__ExpressionsAssignment_0_3_1
             	    {
-            	    pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10113);
+            	    pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10235);
             	    rule__Arguments__ExpressionsAssignment_0_3_1();
 
             	    state._fsp--;
@@ -13444,21 +13599,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5166:1: rule__Arguments__Group_1__0 : rule__Arguments__Group_1__0__Impl rule__Arguments__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5229:1: rule__Arguments__Group_1__0 : rule__Arguments__Group_1__0__Impl rule__Arguments__Group_1__1 ;
     public final void rule__Arguments__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5170:1: ( rule__Arguments__Group_1__0__Impl rule__Arguments__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5171:2: rule__Arguments__Group_1__0__Impl rule__Arguments__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5233:1: ( rule__Arguments__Group_1__0__Impl rule__Arguments__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5234:2: rule__Arguments__Group_1__0__Impl rule__Arguments__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_1__0__Impl_in_rule__Arguments__Group_1__010150);
+            pushFollow(FOLLOW_rule__Arguments__Group_1__0__Impl_in_rule__Arguments__Group_1__010272);
             rule__Arguments__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_1__1_in_rule__Arguments__Group_1__010153);
+            pushFollow(FOLLOW_rule__Arguments__Group_1__1_in_rule__Arguments__Group_1__010275);
             rule__Arguments__Group_1__1();
 
             state._fsp--;
@@ -13482,21 +13637,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5178:1: rule__Arguments__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5241:1: rule__Arguments__Group_1__0__Impl : ( () ) ;
     public final void rule__Arguments__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5182:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5183:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5245:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5246:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5183:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5184:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5246:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5247:1: ()
             {
              before(grammarAccess.getArgumentsAccess().getInAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5185:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5187:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5248:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5250:1: 
             {
             }
 
@@ -13519,16 +13674,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5197:1: rule__Arguments__Group_1__1 : rule__Arguments__Group_1__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5260:1: rule__Arguments__Group_1__1 : rule__Arguments__Group_1__1__Impl ;
     public final void rule__Arguments__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5201:1: ( rule__Arguments__Group_1__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5202:2: rule__Arguments__Group_1__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5264:1: ( rule__Arguments__Group_1__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5265:2: rule__Arguments__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_1__1__Impl_in_rule__Arguments__Group_1__110211);
+            pushFollow(FOLLOW_rule__Arguments__Group_1__1__Impl_in_rule__Arguments__Group_1__110333);
             rule__Arguments__Group_1__1__Impl();
 
             state._fsp--;
@@ -13552,20 +13707,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5208:1: rule__Arguments__Group_1__1__Impl : ( '()' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5271:1: rule__Arguments__Group_1__1__Impl : ( '()' ) ;
     public final void rule__Arguments__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5212:1: ( ( '()' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5213:1: ( '()' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5275:1: ( ( '()' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5276:1: ( '()' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5213:1: ( '()' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5214:1: '()'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5276:1: ( '()' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5277:1: '()'
             {
              before(grammarAccess.getArgumentsAccess().getLeftParenthesisRightParenthesisKeyword_1_1()); 
-            match(input,36,FOLLOW_36_in_rule__Arguments__Group_1__1__Impl10239); 
+            match(input,36,FOLLOW_36_in_rule__Arguments__Group_1__1__Impl10361); 
              after(grammarAccess.getArgumentsAccess().getLeftParenthesisRightParenthesisKeyword_1_1()); 
 
             }
@@ -13589,21 +13744,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5231:1: rule__Arguments__Group_2__0 : rule__Arguments__Group_2__0__Impl rule__Arguments__Group_2__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5294:1: rule__Arguments__Group_2__0 : rule__Arguments__Group_2__0__Impl rule__Arguments__Group_2__1 ;
     public final void rule__Arguments__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5235:1: ( rule__Arguments__Group_2__0__Impl rule__Arguments__Group_2__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5236:2: rule__Arguments__Group_2__0__Impl rule__Arguments__Group_2__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5298:1: ( rule__Arguments__Group_2__0__Impl rule__Arguments__Group_2__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5299:2: rule__Arguments__Group_2__0__Impl rule__Arguments__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_2__0__Impl_in_rule__Arguments__Group_2__010274);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__0__Impl_in_rule__Arguments__Group_2__010396);
             rule__Arguments__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_2__1_in_rule__Arguments__Group_2__010277);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__1_in_rule__Arguments__Group_2__010399);
             rule__Arguments__Group_2__1();
 
             state._fsp--;
@@ -13627,20 +13782,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5243:1: rule__Arguments__Group_2__0__Impl : ( '<' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5306:1: rule__Arguments__Group_2__0__Impl : ( '<' ) ;
     public final void rule__Arguments__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5247:1: ( ( '<' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5248:1: ( '<' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5310:1: ( ( '<' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5311:1: ( '<' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5248:1: ( '<' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5249:1: '<'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5311:1: ( '<' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5312:1: '<'
             {
              before(grammarAccess.getArgumentsAccess().getLessThanSignKeyword_2_0()); 
-            match(input,18,FOLLOW_18_in_rule__Arguments__Group_2__0__Impl10305); 
+            match(input,18,FOLLOW_18_in_rule__Arguments__Group_2__0__Impl10427); 
              after(grammarAccess.getArgumentsAccess().getLessThanSignKeyword_2_0()); 
 
             }
@@ -13664,21 +13819,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5262:1: rule__Arguments__Group_2__1 : rule__Arguments__Group_2__1__Impl rule__Arguments__Group_2__2 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5325:1: rule__Arguments__Group_2__1 : rule__Arguments__Group_2__1__Impl rule__Arguments__Group_2__2 ;
     public final void rule__Arguments__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5266:1: ( rule__Arguments__Group_2__1__Impl rule__Arguments__Group_2__2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5267:2: rule__Arguments__Group_2__1__Impl rule__Arguments__Group_2__2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5329:1: ( rule__Arguments__Group_2__1__Impl rule__Arguments__Group_2__2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5330:2: rule__Arguments__Group_2__1__Impl rule__Arguments__Group_2__2
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_2__1__Impl_in_rule__Arguments__Group_2__110336);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__1__Impl_in_rule__Arguments__Group_2__110458);
             rule__Arguments__Group_2__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_2__2_in_rule__Arguments__Group_2__110339);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__2_in_rule__Arguments__Group_2__110461);
             rule__Arguments__Group_2__2();
 
             state._fsp--;
@@ -13702,21 +13857,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5274:1: rule__Arguments__Group_2__1__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5337:1: rule__Arguments__Group_2__1__Impl : ( () ) ;
     public final void rule__Arguments__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5278:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5279:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5341:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5342:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5279:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5280:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5342:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5343:1: ()
             {
              before(grammarAccess.getArgumentsAccess().getOutAction_2_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5281:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5283:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5344:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5346:1: 
             {
             }
 
@@ -13739,21 +13894,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5293:1: rule__Arguments__Group_2__2 : rule__Arguments__Group_2__2__Impl rule__Arguments__Group_2__3 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5356:1: rule__Arguments__Group_2__2 : rule__Arguments__Group_2__2__Impl rule__Arguments__Group_2__3 ;
     public final void rule__Arguments__Group_2__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5297:1: ( rule__Arguments__Group_2__2__Impl rule__Arguments__Group_2__3 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5298:2: rule__Arguments__Group_2__2__Impl rule__Arguments__Group_2__3
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5360:1: ( rule__Arguments__Group_2__2__Impl rule__Arguments__Group_2__3 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5361:2: rule__Arguments__Group_2__2__Impl rule__Arguments__Group_2__3
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_2__2__Impl_in_rule__Arguments__Group_2__210397);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__2__Impl_in_rule__Arguments__Group_2__210519);
             rule__Arguments__Group_2__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_2__3_in_rule__Arguments__Group_2__210400);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__3_in_rule__Arguments__Group_2__210522);
             rule__Arguments__Group_2__3();
 
             state._fsp--;
@@ -13777,23 +13932,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__2__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5305:1: rule__Arguments__Group_2__2__Impl : ( ( rule__Arguments__ExpressionsAssignment_2_2 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5368:1: rule__Arguments__Group_2__2__Impl : ( ( rule__Arguments__ExpressionsAssignment_2_2 ) ) ;
     public final void rule__Arguments__Group_2__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5309:1: ( ( ( rule__Arguments__ExpressionsAssignment_2_2 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5310:1: ( ( rule__Arguments__ExpressionsAssignment_2_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5372:1: ( ( ( rule__Arguments__ExpressionsAssignment_2_2 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5373:1: ( ( rule__Arguments__ExpressionsAssignment_2_2 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5310:1: ( ( rule__Arguments__ExpressionsAssignment_2_2 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5311:1: ( rule__Arguments__ExpressionsAssignment_2_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5373:1: ( ( rule__Arguments__ExpressionsAssignment_2_2 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5374:1: ( rule__Arguments__ExpressionsAssignment_2_2 )
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsAssignment_2_2()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5312:1: ( rule__Arguments__ExpressionsAssignment_2_2 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5312:2: rule__Arguments__ExpressionsAssignment_2_2
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5375:1: ( rule__Arguments__ExpressionsAssignment_2_2 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5375:2: rule__Arguments__ExpressionsAssignment_2_2
             {
-            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_2_2_in_rule__Arguments__Group_2__2__Impl10427);
+            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_2_2_in_rule__Arguments__Group_2__2__Impl10549);
             rule__Arguments__ExpressionsAssignment_2_2();
 
             state._fsp--;
@@ -13824,21 +13979,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__3"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5322:1: rule__Arguments__Group_2__3 : rule__Arguments__Group_2__3__Impl rule__Arguments__Group_2__4 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5385:1: rule__Arguments__Group_2__3 : rule__Arguments__Group_2__3__Impl rule__Arguments__Group_2__4 ;
     public final void rule__Arguments__Group_2__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5326:1: ( rule__Arguments__Group_2__3__Impl rule__Arguments__Group_2__4 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5327:2: rule__Arguments__Group_2__3__Impl rule__Arguments__Group_2__4
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5389:1: ( rule__Arguments__Group_2__3__Impl rule__Arguments__Group_2__4 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5390:2: rule__Arguments__Group_2__3__Impl rule__Arguments__Group_2__4
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_2__3__Impl_in_rule__Arguments__Group_2__310457);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__3__Impl_in_rule__Arguments__Group_2__310579);
             rule__Arguments__Group_2__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_2__4_in_rule__Arguments__Group_2__310460);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__4_in_rule__Arguments__Group_2__310582);
             rule__Arguments__Group_2__4();
 
             state._fsp--;
@@ -13862,20 +14017,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__3__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5334:1: rule__Arguments__Group_2__3__Impl : ( ( rule__Arguments__Group_2_3__0 )* ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5397:1: rule__Arguments__Group_2__3__Impl : ( ( rule__Arguments__Group_2_3__0 )* ) ;
     public final void rule__Arguments__Group_2__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5338:1: ( ( ( rule__Arguments__Group_2_3__0 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5339:1: ( ( rule__Arguments__Group_2_3__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5401:1: ( ( ( rule__Arguments__Group_2_3__0 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5402:1: ( ( rule__Arguments__Group_2_3__0 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5339:1: ( ( rule__Arguments__Group_2_3__0 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5340:1: ( rule__Arguments__Group_2_3__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5402:1: ( ( rule__Arguments__Group_2_3__0 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5403:1: ( rule__Arguments__Group_2_3__0 )*
             {
              before(grammarAccess.getArgumentsAccess().getGroup_2_3()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5341:1: ( rule__Arguments__Group_2_3__0 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5404:1: ( rule__Arguments__Group_2_3__0 )*
             loop31:
             do {
                 int alt31=2;
@@ -13888,9 +14043,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt31) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5341:2: rule__Arguments__Group_2_3__0
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5404:2: rule__Arguments__Group_2_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__Arguments__Group_2_3__0_in_rule__Arguments__Group_2__3__Impl10487);
+            	    pushFollow(FOLLOW_rule__Arguments__Group_2_3__0_in_rule__Arguments__Group_2__3__Impl10609);
             	    rule__Arguments__Group_2_3__0();
 
             	    state._fsp--;
@@ -13927,16 +14082,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__4"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5351:1: rule__Arguments__Group_2__4 : rule__Arguments__Group_2__4__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5414:1: rule__Arguments__Group_2__4 : rule__Arguments__Group_2__4__Impl ;
     public final void rule__Arguments__Group_2__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5355:1: ( rule__Arguments__Group_2__4__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5356:2: rule__Arguments__Group_2__4__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5418:1: ( rule__Arguments__Group_2__4__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5419:2: rule__Arguments__Group_2__4__Impl
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_2__4__Impl_in_rule__Arguments__Group_2__410518);
+            pushFollow(FOLLOW_rule__Arguments__Group_2__4__Impl_in_rule__Arguments__Group_2__410640);
             rule__Arguments__Group_2__4__Impl();
 
             state._fsp--;
@@ -13960,20 +14115,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2__4__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5362:1: rule__Arguments__Group_2__4__Impl : ( '>' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5425:1: rule__Arguments__Group_2__4__Impl : ( '>' ) ;
     public final void rule__Arguments__Group_2__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5366:1: ( ( '>' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5367:1: ( '>' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5429:1: ( ( '>' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5430:1: ( '>' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5367:1: ( '>' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5368:1: '>'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5430:1: ( '>' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5431:1: '>'
             {
              before(grammarAccess.getArgumentsAccess().getGreaterThanSignKeyword_2_4()); 
-            match(input,17,FOLLOW_17_in_rule__Arguments__Group_2__4__Impl10546); 
+            match(input,17,FOLLOW_17_in_rule__Arguments__Group_2__4__Impl10668); 
              after(grammarAccess.getArgumentsAccess().getGreaterThanSignKeyword_2_4()); 
 
             }
@@ -13997,21 +14152,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2_3__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5391:1: rule__Arguments__Group_2_3__0 : rule__Arguments__Group_2_3__0__Impl rule__Arguments__Group_2_3__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5454:1: rule__Arguments__Group_2_3__0 : rule__Arguments__Group_2_3__0__Impl rule__Arguments__Group_2_3__1 ;
     public final void rule__Arguments__Group_2_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5395:1: ( rule__Arguments__Group_2_3__0__Impl rule__Arguments__Group_2_3__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5396:2: rule__Arguments__Group_2_3__0__Impl rule__Arguments__Group_2_3__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5458:1: ( rule__Arguments__Group_2_3__0__Impl rule__Arguments__Group_2_3__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5459:2: rule__Arguments__Group_2_3__0__Impl rule__Arguments__Group_2_3__1
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_2_3__0__Impl_in_rule__Arguments__Group_2_3__010587);
+            pushFollow(FOLLOW_rule__Arguments__Group_2_3__0__Impl_in_rule__Arguments__Group_2_3__010709);
             rule__Arguments__Group_2_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_2_3__1_in_rule__Arguments__Group_2_3__010590);
+            pushFollow(FOLLOW_rule__Arguments__Group_2_3__1_in_rule__Arguments__Group_2_3__010712);
             rule__Arguments__Group_2_3__1();
 
             state._fsp--;
@@ -14035,20 +14190,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2_3__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5403:1: rule__Arguments__Group_2_3__0__Impl : ( ',' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5466:1: rule__Arguments__Group_2_3__0__Impl : ( ',' ) ;
     public final void rule__Arguments__Group_2_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5407:1: ( ( ',' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5408:1: ( ',' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5470:1: ( ( ',' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5471:1: ( ',' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5408:1: ( ',' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5409:1: ','
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5471:1: ( ',' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5472:1: ','
             {
              before(grammarAccess.getArgumentsAccess().getCommaKeyword_2_3_0()); 
-            match(input,35,FOLLOW_35_in_rule__Arguments__Group_2_3__0__Impl10618); 
+            match(input,35,FOLLOW_35_in_rule__Arguments__Group_2_3__0__Impl10740); 
              after(grammarAccess.getArgumentsAccess().getCommaKeyword_2_3_0()); 
 
             }
@@ -14072,16 +14227,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2_3__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5422:1: rule__Arguments__Group_2_3__1 : rule__Arguments__Group_2_3__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5485:1: rule__Arguments__Group_2_3__1 : rule__Arguments__Group_2_3__1__Impl ;
     public final void rule__Arguments__Group_2_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5426:1: ( rule__Arguments__Group_2_3__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5427:2: rule__Arguments__Group_2_3__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5489:1: ( rule__Arguments__Group_2_3__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5490:2: rule__Arguments__Group_2_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_2_3__1__Impl_in_rule__Arguments__Group_2_3__110649);
+            pushFollow(FOLLOW_rule__Arguments__Group_2_3__1__Impl_in_rule__Arguments__Group_2_3__110771);
             rule__Arguments__Group_2_3__1__Impl();
 
             state._fsp--;
@@ -14105,26 +14260,26 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_2_3__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5433:1: rule__Arguments__Group_2_3__1__Impl : ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5496:1: rule__Arguments__Group_2_3__1__Impl : ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) ) ;
     public final void rule__Arguments__Group_2_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5437:1: ( ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5438:1: ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5500:1: ( ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5501:1: ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5438:1: ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5439:1: ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5501:1: ( ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5502:1: ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) ) ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5439:1: ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5440:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5502:1: ( ( rule__Arguments__ExpressionsAssignment_2_3_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5503:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsAssignment_2_3_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5441:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5441:2: rule__Arguments__ExpressionsAssignment_2_3_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5504:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5504:2: rule__Arguments__ExpressionsAssignment_2_3_1
             {
-            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10678);
+            pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10800);
             rule__Arguments__ExpressionsAssignment_2_3_1();
 
             state._fsp--;
@@ -14136,11 +14291,11 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
             }
 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5444:1: ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5445:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5507:1: ( ( rule__Arguments__ExpressionsAssignment_2_3_1 )* )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5508:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )*
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsAssignment_2_3_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5446:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )*
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5509:1: ( rule__Arguments__ExpressionsAssignment_2_3_1 )*
             loop32:
             do {
                 int alt32=2;
@@ -14153,9 +14308,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
                 switch (alt32) {
             	case 1 :
-            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5446:2: rule__Arguments__ExpressionsAssignment_2_3_1
+            	    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5509:2: rule__Arguments__ExpressionsAssignment_2_3_1
             	    {
-            	    pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10690);
+            	    pushFollow(FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10812);
             	    rule__Arguments__ExpressionsAssignment_2_3_1();
 
             	    state._fsp--;
@@ -14195,21 +14350,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_3__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5461:1: rule__Arguments__Group_3__0 : rule__Arguments__Group_3__0__Impl rule__Arguments__Group_3__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5524:1: rule__Arguments__Group_3__0 : rule__Arguments__Group_3__0__Impl rule__Arguments__Group_3__1 ;
     public final void rule__Arguments__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5465:1: ( rule__Arguments__Group_3__0__Impl rule__Arguments__Group_3__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5466:2: rule__Arguments__Group_3__0__Impl rule__Arguments__Group_3__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5528:1: ( rule__Arguments__Group_3__0__Impl rule__Arguments__Group_3__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5529:2: rule__Arguments__Group_3__0__Impl rule__Arguments__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_3__0__Impl_in_rule__Arguments__Group_3__010727);
+            pushFollow(FOLLOW_rule__Arguments__Group_3__0__Impl_in_rule__Arguments__Group_3__010849);
             rule__Arguments__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Arguments__Group_3__1_in_rule__Arguments__Group_3__010730);
+            pushFollow(FOLLOW_rule__Arguments__Group_3__1_in_rule__Arguments__Group_3__010852);
             rule__Arguments__Group_3__1();
 
             state._fsp--;
@@ -14233,21 +14388,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_3__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5473:1: rule__Arguments__Group_3__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5536:1: rule__Arguments__Group_3__0__Impl : ( () ) ;
     public final void rule__Arguments__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5477:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5478:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5540:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5541:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5478:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5479:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5541:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5542:1: ()
             {
              before(grammarAccess.getArgumentsAccess().getOutAction_3_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5480:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5482:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5543:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5545:1: 
             {
             }
 
@@ -14270,16 +14425,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_3__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5492:1: rule__Arguments__Group_3__1 : rule__Arguments__Group_3__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5555:1: rule__Arguments__Group_3__1 : rule__Arguments__Group_3__1__Impl ;
     public final void rule__Arguments__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5496:1: ( rule__Arguments__Group_3__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5497:2: rule__Arguments__Group_3__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5559:1: ( rule__Arguments__Group_3__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5560:2: rule__Arguments__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Arguments__Group_3__1__Impl_in_rule__Arguments__Group_3__110788);
+            pushFollow(FOLLOW_rule__Arguments__Group_3__1__Impl_in_rule__Arguments__Group_3__110910);
             rule__Arguments__Group_3__1__Impl();
 
             state._fsp--;
@@ -14303,20 +14458,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__Group_3__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5503:1: rule__Arguments__Group_3__1__Impl : ( '<>' ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5566:1: rule__Arguments__Group_3__1__Impl : ( '<>' ) ;
     public final void rule__Arguments__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5507:1: ( ( '<>' ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5508:1: ( '<>' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5570:1: ( ( '<>' ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5571:1: ( '<>' )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5508:1: ( '<>' )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5509:1: '<>'
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5571:1: ( '<>' )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5572:1: '<>'
             {
              before(grammarAccess.getArgumentsAccess().getLessThanSignGreaterThanSignKeyword_3_1()); 
-            match(input,37,FOLLOW_37_in_rule__Arguments__Group_3__1__Impl10816); 
+            match(input,37,FOLLOW_37_in_rule__Arguments__Group_3__1__Impl10938); 
              after(grammarAccess.getArgumentsAccess().getLessThanSignGreaterThanSignKeyword_3_1()); 
 
             }
@@ -14340,21 +14495,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressions__Group_1__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5526:1: rule__Expressions__Group_1__0 : rule__Expressions__Group_1__0__Impl rule__Expressions__Group_1__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5589:1: rule__Expressions__Group_1__0 : rule__Expressions__Group_1__0__Impl rule__Expressions__Group_1__1 ;
     public final void rule__Expressions__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5530:1: ( rule__Expressions__Group_1__0__Impl rule__Expressions__Group_1__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5531:2: rule__Expressions__Group_1__0__Impl rule__Expressions__Group_1__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5593:1: ( rule__Expressions__Group_1__0__Impl rule__Expressions__Group_1__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5594:2: rule__Expressions__Group_1__0__Impl rule__Expressions__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Expressions__Group_1__0__Impl_in_rule__Expressions__Group_1__010851);
+            pushFollow(FOLLOW_rule__Expressions__Group_1__0__Impl_in_rule__Expressions__Group_1__010973);
             rule__Expressions__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Expressions__Group_1__1_in_rule__Expressions__Group_1__010854);
+            pushFollow(FOLLOW_rule__Expressions__Group_1__1_in_rule__Expressions__Group_1__010976);
             rule__Expressions__Group_1__1();
 
             state._fsp--;
@@ -14378,21 +14533,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressions__Group_1__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5538:1: rule__Expressions__Group_1__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5601:1: rule__Expressions__Group_1__0__Impl : ( () ) ;
     public final void rule__Expressions__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5542:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5543:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5605:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5606:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5543:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5544:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5606:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5607:1: ()
             {
              before(grammarAccess.getExpressionsAccess().getConstantAction_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5545:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5547:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5608:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5610:1: 
             {
             }
 
@@ -14415,16 +14570,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressions__Group_1__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5557:1: rule__Expressions__Group_1__1 : rule__Expressions__Group_1__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5620:1: rule__Expressions__Group_1__1 : rule__Expressions__Group_1__1__Impl ;
     public final void rule__Expressions__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5561:1: ( rule__Expressions__Group_1__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5562:2: rule__Expressions__Group_1__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5624:1: ( rule__Expressions__Group_1__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5625:2: rule__Expressions__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Expressions__Group_1__1__Impl_in_rule__Expressions__Group_1__110912);
+            pushFollow(FOLLOW_rule__Expressions__Group_1__1__Impl_in_rule__Expressions__Group_1__111034);
             rule__Expressions__Group_1__1__Impl();
 
             state._fsp--;
@@ -14448,23 +14603,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressions__Group_1__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5568:1: rule__Expressions__Group_1__1__Impl : ( ( rule__Expressions__ValueAssignment_1_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5631:1: rule__Expressions__Group_1__1__Impl : ( ( rule__Expressions__ValueAssignment_1_1 ) ) ;
     public final void rule__Expressions__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5572:1: ( ( ( rule__Expressions__ValueAssignment_1_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5573:1: ( ( rule__Expressions__ValueAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5635:1: ( ( ( rule__Expressions__ValueAssignment_1_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5636:1: ( ( rule__Expressions__ValueAssignment_1_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5573:1: ( ( rule__Expressions__ValueAssignment_1_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5574:1: ( rule__Expressions__ValueAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5636:1: ( ( rule__Expressions__ValueAssignment_1_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5637:1: ( rule__Expressions__ValueAssignment_1_1 )
             {
              before(grammarAccess.getExpressionsAccess().getValueAssignment_1_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5575:1: ( rule__Expressions__ValueAssignment_1_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5575:2: rule__Expressions__ValueAssignment_1_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5638:1: ( rule__Expressions__ValueAssignment_1_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5638:2: rule__Expressions__ValueAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__Expressions__ValueAssignment_1_1_in_rule__Expressions__Group_1__1__Impl10939);
+            pushFollow(FOLLOW_rule__Expressions__ValueAssignment_1_1_in_rule__Expressions__Group_1__1__Impl11061);
             rule__Expressions__ValueAssignment_1_1();
 
             state._fsp--;
@@ -14495,21 +14650,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutStoreReference__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5589:1: rule__OutStoreReference__Group__0 : rule__OutStoreReference__Group__0__Impl rule__OutStoreReference__Group__1 ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5652:1: rule__OutStoreReference__Group__0 : rule__OutStoreReference__Group__0__Impl rule__OutStoreReference__Group__1 ;
     public final void rule__OutStoreReference__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5593:1: ( rule__OutStoreReference__Group__0__Impl rule__OutStoreReference__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5594:2: rule__OutStoreReference__Group__0__Impl rule__OutStoreReference__Group__1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5656:1: ( rule__OutStoreReference__Group__0__Impl rule__OutStoreReference__Group__1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5657:2: rule__OutStoreReference__Group__0__Impl rule__OutStoreReference__Group__1
             {
-            pushFollow(FOLLOW_rule__OutStoreReference__Group__0__Impl_in_rule__OutStoreReference__Group__010973);
+            pushFollow(FOLLOW_rule__OutStoreReference__Group__0__Impl_in_rule__OutStoreReference__Group__011095);
             rule__OutStoreReference__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OutStoreReference__Group__1_in_rule__OutStoreReference__Group__010976);
+            pushFollow(FOLLOW_rule__OutStoreReference__Group__1_in_rule__OutStoreReference__Group__011098);
             rule__OutStoreReference__Group__1();
 
             state._fsp--;
@@ -14533,21 +14688,21 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutStoreReference__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5601:1: rule__OutStoreReference__Group__0__Impl : ( () ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5664:1: rule__OutStoreReference__Group__0__Impl : ( () ) ;
     public final void rule__OutStoreReference__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5605:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5606:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5668:1: ( ( () ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5669:1: ( () )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5606:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5607:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5669:1: ( () )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5670:1: ()
             {
              before(grammarAccess.getOutStoreReferenceAccess().getOutStoreReferenceAction_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5608:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5610:1: 
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5671:1: ()
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5673:1: 
             {
             }
 
@@ -14570,16 +14725,16 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutStoreReference__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5620:1: rule__OutStoreReference__Group__1 : rule__OutStoreReference__Group__1__Impl ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5683:1: rule__OutStoreReference__Group__1 : rule__OutStoreReference__Group__1__Impl ;
     public final void rule__OutStoreReference__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5624:1: ( rule__OutStoreReference__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5625:2: rule__OutStoreReference__Group__1__Impl
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5687:1: ( rule__OutStoreReference__Group__1__Impl )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5688:2: rule__OutStoreReference__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__OutStoreReference__Group__1__Impl_in_rule__OutStoreReference__Group__111034);
+            pushFollow(FOLLOW_rule__OutStoreReference__Group__1__Impl_in_rule__OutStoreReference__Group__111156);
             rule__OutStoreReference__Group__1__Impl();
 
             state._fsp--;
@@ -14603,23 +14758,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutStoreReference__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5631:1: rule__OutStoreReference__Group__1__Impl : ( ( rule__OutStoreReference__RefAssignment_1 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5694:1: rule__OutStoreReference__Group__1__Impl : ( ( rule__OutStoreReference__RefAssignment_1 ) ) ;
     public final void rule__OutStoreReference__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5635:1: ( ( ( rule__OutStoreReference__RefAssignment_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5636:1: ( ( rule__OutStoreReference__RefAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5698:1: ( ( ( rule__OutStoreReference__RefAssignment_1 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5699:1: ( ( rule__OutStoreReference__RefAssignment_1 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5636:1: ( ( rule__OutStoreReference__RefAssignment_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5637:1: ( rule__OutStoreReference__RefAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5699:1: ( ( rule__OutStoreReference__RefAssignment_1 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5700:1: ( rule__OutStoreReference__RefAssignment_1 )
             {
              before(grammarAccess.getOutStoreReferenceAccess().getRefAssignment_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5638:1: ( rule__OutStoreReference__RefAssignment_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5638:2: rule__OutStoreReference__RefAssignment_1
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5701:1: ( rule__OutStoreReference__RefAssignment_1 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5701:2: rule__OutStoreReference__RefAssignment_1
             {
-            pushFollow(FOLLOW_rule__OutStoreReference__RefAssignment_1_in_rule__OutStoreReference__Group__1__Impl11061);
+            pushFollow(FOLLOW_rule__OutStoreReference__RefAssignment_1_in_rule__OutStoreReference__Group__1__Impl11183);
             rule__OutStoreReference__RefAssignment_1();
 
             state._fsp--;
@@ -14647,161 +14802,6 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__OutStoreReference__Group__1__Impl"
-
-
-    // $ANTLR start "rule__FreeVariable__Group__0"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5652:1: rule__FreeVariable__Group__0 : rule__FreeVariable__Group__0__Impl rule__FreeVariable__Group__1 ;
-    public final void rule__FreeVariable__Group__0() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5656:1: ( rule__FreeVariable__Group__0__Impl rule__FreeVariable__Group__1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5657:2: rule__FreeVariable__Group__0__Impl rule__FreeVariable__Group__1
-            {
-            pushFollow(FOLLOW_rule__FreeVariable__Group__0__Impl_in_rule__FreeVariable__Group__011095);
-            rule__FreeVariable__Group__0__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_rule__FreeVariable__Group__1_in_rule__FreeVariable__Group__011098);
-            rule__FreeVariable__Group__1();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FreeVariable__Group__0"
-
-
-    // $ANTLR start "rule__FreeVariable__Group__0__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5664:1: rule__FreeVariable__Group__0__Impl : ( () ) ;
-    public final void rule__FreeVariable__Group__0__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5668:1: ( ( () ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5669:1: ( () )
-            {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5669:1: ( () )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5670:1: ()
-            {
-             before(grammarAccess.getFreeVariableAccess().getFreeVariableAction_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5671:1: ()
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5673:1: 
-            {
-            }
-
-             after(grammarAccess.getFreeVariableAccess().getFreeVariableAction_0()); 
-
-            }
-
-
-            }
-
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FreeVariable__Group__0__Impl"
-
-
-    // $ANTLR start "rule__FreeVariable__Group__1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5683:1: rule__FreeVariable__Group__1 : rule__FreeVariable__Group__1__Impl ;
-    public final void rule__FreeVariable__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5687:1: ( rule__FreeVariable__Group__1__Impl )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5688:2: rule__FreeVariable__Group__1__Impl
-            {
-            pushFollow(FOLLOW_rule__FreeVariable__Group__1__Impl_in_rule__FreeVariable__Group__111156);
-            rule__FreeVariable__Group__1__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FreeVariable__Group__1"
-
-
-    // $ANTLR start "rule__FreeVariable__Group__1__Impl"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5694:1: rule__FreeVariable__Group__1__Impl : ( ( rule__FreeVariable__NameAssignment_1 ) ) ;
-    public final void rule__FreeVariable__Group__1__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5698:1: ( ( ( rule__FreeVariable__NameAssignment_1 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5699:1: ( ( rule__FreeVariable__NameAssignment_1 ) )
-            {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5699:1: ( ( rule__FreeVariable__NameAssignment_1 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5700:1: ( rule__FreeVariable__NameAssignment_1 )
-            {
-             before(grammarAccess.getFreeVariableAccess().getNameAssignment_1()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5701:1: ( rule__FreeVariable__NameAssignment_1 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:5701:2: rule__FreeVariable__NameAssignment_1
-            {
-            pushFollow(FOLLOW_rule__FreeVariable__NameAssignment_1_in_rule__FreeVariable__Group__1__Impl11183);
-            rule__FreeVariable__NameAssignment_1();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getFreeVariableAccess().getNameAssignment_1()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FreeVariable__Group__1__Impl"
 
 
     // $ANTLR start "rule__Updates__Group__0"
@@ -24911,9 +24911,9 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     // $ANTLR end "rule__SelfReference__NameAssignment_2"
 
 
-    // $ANTLR start "rule__Action__NameAssignment_0_0_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9698:1: rule__Action__NameAssignment_0_0_1 : ( RULE_LOWER ) ;
-    public final void rule__Action__NameAssignment_0_0_1() throws RecognitionException {
+    // $ANTLR start "rule__FreeVariable__NameAssignment_1"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9698:1: rule__FreeVariable__NameAssignment_1 : ( RULE_LOWER ) ;
+    public final void rule__FreeVariable__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -24924,8 +24924,45 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9703:1: ( RULE_LOWER )
             // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9704:1: RULE_LOWER
             {
+             before(grammarAccess.getFreeVariableAccess().getNameLOWERTerminalRuleCall_1_0()); 
+            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__FreeVariable__NameAssignment_119023); 
+             after(grammarAccess.getFreeVariableAccess().getNameLOWERTerminalRuleCall_1_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__FreeVariable__NameAssignment_1"
+
+
+    // $ANTLR start "rule__Action__NameAssignment_0_0_1"
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9713:1: rule__Action__NameAssignment_0_0_1 : ( RULE_LOWER ) ;
+    public final void rule__Action__NameAssignment_0_0_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9717:1: ( ( RULE_LOWER ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9718:1: ( RULE_LOWER )
+            {
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9718:1: ( RULE_LOWER )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9719:1: RULE_LOWER
+            {
              before(grammarAccess.getActionAccess().getNameLOWERTerminalRuleCall_0_0_1_0()); 
-            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_0_119023); 
+            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_0_119054); 
              after(grammarAccess.getActionAccess().getNameLOWERTerminalRuleCall_0_0_1_0()); 
 
             }
@@ -24949,20 +24986,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__NameAssignment_0_1_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9713:1: rule__Action__NameAssignment_0_1_1 : ( RULE_LOWER ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9728:1: rule__Action__NameAssignment_0_1_1 : ( RULE_LOWER ) ;
     public final void rule__Action__NameAssignment_0_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9717:1: ( ( RULE_LOWER ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9718:1: ( RULE_LOWER )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9732:1: ( ( RULE_LOWER ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9733:1: ( RULE_LOWER )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9718:1: ( RULE_LOWER )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9719:1: RULE_LOWER
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9733:1: ( RULE_LOWER )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9734:1: RULE_LOWER
             {
              before(grammarAccess.getActionAccess().getNameLOWERTerminalRuleCall_0_1_1_0()); 
-            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_1_119054); 
+            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_1_119085); 
              after(grammarAccess.getActionAccess().getNameLOWERTerminalRuleCall_0_1_1_0()); 
 
             }
@@ -24986,20 +25023,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__PredicateAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9728:1: rule__Action__PredicateAssignment_1 : ( rulePredicate ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9743:1: rule__Action__PredicateAssignment_1 : ( rulePredicate ) ;
     public final void rule__Action__PredicateAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9732:1: ( ( rulePredicate ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9733:1: ( rulePredicate )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9747:1: ( ( rulePredicate ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9748:1: ( rulePredicate )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9733:1: ( rulePredicate )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9734:1: rulePredicate
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9748:1: ( rulePredicate )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9749:1: rulePredicate
             {
              before(grammarAccess.getActionAccess().getPredicatePredicateParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_rulePredicate_in_rule__Action__PredicateAssignment_119085);
+            pushFollow(FOLLOW_rulePredicate_in_rule__Action__PredicateAssignment_119116);
             rulePredicate();
 
             state._fsp--;
@@ -25027,20 +25064,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__ArgumentsAssignment_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9743:1: rule__Action__ArgumentsAssignment_2 : ( ruleArguments ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9758:1: rule__Action__ArgumentsAssignment_2 : ( ruleArguments ) ;
     public final void rule__Action__ArgumentsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9747:1: ( ( ruleArguments ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9748:1: ( ruleArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9762:1: ( ( ruleArguments ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9763:1: ( ruleArguments )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9748:1: ( ruleArguments )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9749:1: ruleArguments
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9763:1: ( ruleArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9764:1: ruleArguments
             {
              before(grammarAccess.getActionAccess().getArgumentsArgumentsParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleArguments_in_rule__Action__ArgumentsAssignment_219116);
+            pushFollow(FOLLOW_ruleArguments_in_rule__Action__ArgumentsAssignment_219147);
             ruleArguments();
 
             state._fsp--;
@@ -25068,20 +25105,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Action__UpdatesAssignment_3"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9758:1: rule__Action__UpdatesAssignment_3 : ( ruleUpdates ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9773:1: rule__Action__UpdatesAssignment_3 : ( ruleUpdates ) ;
     public final void rule__Action__UpdatesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9762:1: ( ( ruleUpdates ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9763:1: ( ruleUpdates )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9777:1: ( ( ruleUpdates ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9778:1: ( ruleUpdates )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9763:1: ( ruleUpdates )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9764:1: ruleUpdates
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9778:1: ( ruleUpdates )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9779:1: ruleUpdates
             {
              before(grammarAccess.getActionAccess().getUpdatesUpdatesParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleUpdates_in_rule__Action__UpdatesAssignment_319147);
+            pushFollow(FOLLOW_ruleUpdates_in_rule__Action__UpdatesAssignment_319178);
             ruleUpdates();
 
             state._fsp--;
@@ -25109,20 +25146,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Predicate__PredicateAssignment_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9773:1: rule__Predicate__PredicateAssignment_2 : ( rulePredicateExpression ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9788:1: rule__Predicate__PredicateAssignment_2 : ( rulePredicateExpression ) ;
     public final void rule__Predicate__PredicateAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9777:1: ( ( rulePredicateExpression ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9778:1: ( rulePredicateExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9792:1: ( ( rulePredicateExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9793:1: ( rulePredicateExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9778:1: ( rulePredicateExpression )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9779:1: rulePredicateExpression
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9793:1: ( rulePredicateExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9794:1: rulePredicateExpression
             {
              before(grammarAccess.getPredicateAccess().getPredicatePredicateExpressionParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_rulePredicateExpression_in_rule__Predicate__PredicateAssignment_219178);
+            pushFollow(FOLLOW_rulePredicateExpression_in_rule__Predicate__PredicateAssignment_219209);
             rulePredicateExpression();
 
             state._fsp--;
@@ -25150,20 +25187,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateOr__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9788:1: rule__PredicateOr__RightAssignment_1_2 : ( rulePredicateAnd ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9803:1: rule__PredicateOr__RightAssignment_1_2 : ( rulePredicateAnd ) ;
     public final void rule__PredicateOr__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9792:1: ( ( rulePredicateAnd ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9793:1: ( rulePredicateAnd )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9807:1: ( ( rulePredicateAnd ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9808:1: ( rulePredicateAnd )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9793:1: ( rulePredicateAnd )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9794:1: rulePredicateAnd
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9808:1: ( rulePredicateAnd )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9809:1: rulePredicateAnd
             {
              before(grammarAccess.getPredicateOrAccess().getRightPredicateAndParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicateAnd_in_rule__PredicateOr__RightAssignment_1_219209);
+            pushFollow(FOLLOW_rulePredicateAnd_in_rule__PredicateOr__RightAssignment_1_219240);
             rulePredicateAnd();
 
             state._fsp--;
@@ -25191,20 +25228,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAnd__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9803:1: rule__PredicateAnd__RightAssignment_1_2 : ( rulePredicateEquality ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9818:1: rule__PredicateAnd__RightAssignment_1_2 : ( rulePredicateEquality ) ;
     public final void rule__PredicateAnd__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9807:1: ( ( rulePredicateEquality ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9808:1: ( rulePredicateEquality )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9822:1: ( ( rulePredicateEquality ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9823:1: ( rulePredicateEquality )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9808:1: ( rulePredicateEquality )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9809:1: rulePredicateEquality
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9823:1: ( rulePredicateEquality )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9824:1: rulePredicateEquality
             {
              before(grammarAccess.getPredicateAndAccess().getRightPredicateEqualityParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__RightAssignment_1_219240);
+            pushFollow(FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__RightAssignment_1_219271);
             rulePredicateEquality();
 
             state._fsp--;
@@ -25232,23 +25269,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__OpAssignment_1_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9818:1: rule__PredicateEquality__OpAssignment_1_1 : ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9833:1: rule__PredicateEquality__OpAssignment_1_1 : ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) ) ;
     public final void rule__PredicateEquality__OpAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9822:1: ( ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9823:1: ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9837:1: ( ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9838:1: ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9823:1: ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9824:1: ( rule__PredicateEquality__OpAlternatives_1_1_0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9838:1: ( ( rule__PredicateEquality__OpAlternatives_1_1_0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9839:1: ( rule__PredicateEquality__OpAlternatives_1_1_0 )
             {
              before(grammarAccess.getPredicateEqualityAccess().getOpAlternatives_1_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9825:1: ( rule__PredicateEquality__OpAlternatives_1_1_0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9825:2: rule__PredicateEquality__OpAlternatives_1_1_0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9840:1: ( rule__PredicateEquality__OpAlternatives_1_1_0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9840:2: rule__PredicateEquality__OpAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__PredicateEquality__OpAlternatives_1_1_0_in_rule__PredicateEquality__OpAssignment_1_119271);
+            pushFollow(FOLLOW_rule__PredicateEquality__OpAlternatives_1_1_0_in_rule__PredicateEquality__OpAssignment_1_119302);
             rule__PredicateEquality__OpAlternatives_1_1_0();
 
             state._fsp--;
@@ -25279,20 +25316,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateEquality__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9834:1: rule__PredicateEquality__RightAssignment_1_2 : ( rulePredicateComparison ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9849:1: rule__PredicateEquality__RightAssignment_1_2 : ( rulePredicateComparison ) ;
     public final void rule__PredicateEquality__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9838:1: ( ( rulePredicateComparison ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9839:1: ( rulePredicateComparison )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9853:1: ( ( rulePredicateComparison ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9854:1: ( rulePredicateComparison )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9839:1: ( rulePredicateComparison )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9840:1: rulePredicateComparison
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9854:1: ( rulePredicateComparison )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9855:1: rulePredicateComparison
             {
              before(grammarAccess.getPredicateEqualityAccess().getRightPredicateComparisonParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__RightAssignment_1_219304);
+            pushFollow(FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__RightAssignment_1_219335);
             rulePredicateComparison();
 
             state._fsp--;
@@ -25320,23 +25357,23 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__OpAssignment_1_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9849:1: rule__PredicateComparison__OpAssignment_1_1 : ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9864:1: rule__PredicateComparison__OpAssignment_1_1 : ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) ) ;
     public final void rule__PredicateComparison__OpAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9853:1: ( ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9854:1: ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9868:1: ( ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9869:1: ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9854:1: ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9855:1: ( rule__PredicateComparison__OpAlternatives_1_1_0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9869:1: ( ( rule__PredicateComparison__OpAlternatives_1_1_0 ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9870:1: ( rule__PredicateComparison__OpAlternatives_1_1_0 )
             {
              before(grammarAccess.getPredicateComparisonAccess().getOpAlternatives_1_1_0()); 
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9856:1: ( rule__PredicateComparison__OpAlternatives_1_1_0 )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9856:2: rule__PredicateComparison__OpAlternatives_1_1_0
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9871:1: ( rule__PredicateComparison__OpAlternatives_1_1_0 )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9871:2: rule__PredicateComparison__OpAlternatives_1_1_0
             {
-            pushFollow(FOLLOW_rule__PredicateComparison__OpAlternatives_1_1_0_in_rule__PredicateComparison__OpAssignment_1_119335);
+            pushFollow(FOLLOW_rule__PredicateComparison__OpAlternatives_1_1_0_in_rule__PredicateComparison__OpAssignment_1_119366);
             rule__PredicateComparison__OpAlternatives_1_1_0();
 
             state._fsp--;
@@ -25367,20 +25404,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateComparison__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9865:1: rule__PredicateComparison__RightAssignment_1_2 : ( rulePredicateSubtraction ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9880:1: rule__PredicateComparison__RightAssignment_1_2 : ( rulePredicateSubtraction ) ;
     public final void rule__PredicateComparison__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9869:1: ( ( rulePredicateSubtraction ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9870:1: ( rulePredicateSubtraction )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9884:1: ( ( rulePredicateSubtraction ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9885:1: ( rulePredicateSubtraction )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9870:1: ( rulePredicateSubtraction )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9871:1: rulePredicateSubtraction
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9885:1: ( rulePredicateSubtraction )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9886:1: rulePredicateSubtraction
             {
              before(grammarAccess.getPredicateComparisonAccess().getRightPredicateSubtractionParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__RightAssignment_1_219368);
+            pushFollow(FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__RightAssignment_1_219399);
             rulePredicateSubtraction();
 
             state._fsp--;
@@ -25408,20 +25445,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateSubtraction__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9880:1: rule__PredicateSubtraction__RightAssignment_1_2 : ( rulePredicateAddition ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:1: rule__PredicateSubtraction__RightAssignment_1_2 : ( rulePredicateAddition ) ;
     public final void rule__PredicateSubtraction__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9884:1: ( ( rulePredicateAddition ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9885:1: ( rulePredicateAddition )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9899:1: ( ( rulePredicateAddition ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9900:1: ( rulePredicateAddition )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9885:1: ( rulePredicateAddition )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9886:1: rulePredicateAddition
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9900:1: ( rulePredicateAddition )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9901:1: rulePredicateAddition
             {
              before(grammarAccess.getPredicateSubtractionAccess().getRightPredicateAdditionParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__RightAssignment_1_219399);
+            pushFollow(FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__RightAssignment_1_219430);
             rulePredicateAddition();
 
             state._fsp--;
@@ -25449,20 +25486,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAddition__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9895:1: rule__PredicateAddition__RightAssignment_1_2 : ( rulePredicateMultiplication ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9910:1: rule__PredicateAddition__RightAssignment_1_2 : ( rulePredicateMultiplication ) ;
     public final void rule__PredicateAddition__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9899:1: ( ( rulePredicateMultiplication ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9900:1: ( rulePredicateMultiplication )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9914:1: ( ( rulePredicateMultiplication ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9915:1: ( rulePredicateMultiplication )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9900:1: ( rulePredicateMultiplication )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9901:1: rulePredicateMultiplication
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9915:1: ( rulePredicateMultiplication )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9916:1: rulePredicateMultiplication
             {
              before(grammarAccess.getPredicateAdditionAccess().getRightPredicateMultiplicationParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__RightAssignment_1_219430);
+            pushFollow(FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__RightAssignment_1_219461);
             rulePredicateMultiplication();
 
             state._fsp--;
@@ -25490,20 +25527,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateMultiplication__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9910:1: rule__PredicateMultiplication__RightAssignment_1_2 : ( rulePredicateDivision ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9925:1: rule__PredicateMultiplication__RightAssignment_1_2 : ( rulePredicateDivision ) ;
     public final void rule__PredicateMultiplication__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9914:1: ( ( rulePredicateDivision ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9915:1: ( rulePredicateDivision )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9929:1: ( ( rulePredicateDivision ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9930:1: ( rulePredicateDivision )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9915:1: ( rulePredicateDivision )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9916:1: rulePredicateDivision
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9930:1: ( rulePredicateDivision )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9931:1: rulePredicateDivision
             {
              before(grammarAccess.getPredicateMultiplicationAccess().getRightPredicateDivisionParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__RightAssignment_1_219461);
+            pushFollow(FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__RightAssignment_1_219492);
             rulePredicateDivision();
 
             state._fsp--;
@@ -25531,20 +25568,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateDivision__RightAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9925:1: rule__PredicateDivision__RightAssignment_1_2 : ( rulePredicatePrimary ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9940:1: rule__PredicateDivision__RightAssignment_1_2 : ( rulePredicatePrimary ) ;
     public final void rule__PredicateDivision__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9929:1: ( ( rulePredicatePrimary ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9930:1: ( rulePredicatePrimary )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9944:1: ( ( rulePredicatePrimary ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9945:1: ( rulePredicatePrimary )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9930:1: ( rulePredicatePrimary )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9931:1: rulePredicatePrimary
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9945:1: ( rulePredicatePrimary )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9946:1: rulePredicatePrimary
             {
              before(grammarAccess.getPredicateDivisionAccess().getRightPredicatePrimaryParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__RightAssignment_1_219492);
+            pushFollow(FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__RightAssignment_1_219523);
             rulePredicatePrimary();
 
             state._fsp--;
@@ -25572,20 +25609,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicatePrimary__ExpressionAssignment_1_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9940:1: rule__PredicatePrimary__ExpressionAssignment_1_2 : ( rulePredicatePrimary ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9955:1: rule__PredicatePrimary__ExpressionAssignment_1_2 : ( rulePredicatePrimary ) ;
     public final void rule__PredicatePrimary__ExpressionAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9944:1: ( ( rulePredicatePrimary ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9945:1: ( rulePredicatePrimary )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9959:1: ( ( rulePredicatePrimary ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9960:1: ( rulePredicatePrimary )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9945:1: ( rulePredicatePrimary )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9946:1: rulePredicatePrimary
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9960:1: ( rulePredicatePrimary )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9961:1: rulePredicatePrimary
             {
              before(grammarAccess.getPredicatePrimaryAccess().getExpressionPredicatePrimaryParserRuleCall_1_2_0()); 
-            pushFollow(FOLLOW_rulePredicatePrimary_in_rule__PredicatePrimary__ExpressionAssignment_1_219523);
+            pushFollow(FOLLOW_rulePredicatePrimary_in_rule__PredicatePrimary__ExpressionAssignment_1_219554);
             rulePredicatePrimary();
 
             state._fsp--;
@@ -25613,20 +25650,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__ValueAssignment_0_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9955:1: rule__PredicateAtomic__ValueAssignment_0_1 : ( ruleNatural ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9970:1: rule__PredicateAtomic__ValueAssignment_0_1 : ( ruleNatural ) ;
     public final void rule__PredicateAtomic__ValueAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9959:1: ( ( ruleNatural ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9960:1: ( ruleNatural )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9974:1: ( ( ruleNatural ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9975:1: ( ruleNatural )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9960:1: ( ruleNatural )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9961:1: ruleNatural
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9975:1: ( ruleNatural )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9976:1: ruleNatural
             {
              before(grammarAccess.getPredicateAtomicAccess().getValueNaturalParserRuleCall_0_1_0()); 
-            pushFollow(FOLLOW_ruleNatural_in_rule__PredicateAtomic__ValueAssignment_0_119554);
+            pushFollow(FOLLOW_ruleNatural_in_rule__PredicateAtomic__ValueAssignment_0_119585);
             ruleNatural();
 
             state._fsp--;
@@ -25654,20 +25691,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateAtomic__ValueAssignment_1_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9970:1: rule__PredicateAtomic__ValueAssignment_1_1 : ( ruleBool ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9985:1: rule__PredicateAtomic__ValueAssignment_1_1 : ( ruleBool ) ;
     public final void rule__PredicateAtomic__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9974:1: ( ( ruleBool ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9975:1: ( ruleBool )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9989:1: ( ( ruleBool ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9990:1: ( ruleBool )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9975:1: ( ruleBool )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9976:1: ruleBool
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9990:1: ( ruleBool )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9991:1: ruleBool
             {
              before(grammarAccess.getPredicateAtomicAccess().getValueBoolParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleBool_in_rule__PredicateAtomic__ValueAssignment_1_119585);
+            pushFollow(FOLLOW_ruleBool_in_rule__PredicateAtomic__ValueAssignment_1_119616);
             ruleBool();
 
             state._fsp--;
@@ -25695,25 +25732,25 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__PredicateStoreReference__RefAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9985:1: rule__PredicateStoreReference__RefAssignment_1 : ( ruleRef ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10000:1: rule__PredicateStoreReference__RefAssignment_1 : ( ruleStoreExpression ) ;
     public final void rule__PredicateStoreReference__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9989:1: ( ( ruleRef ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9990:1: ( ruleRef )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10004:1: ( ( ruleStoreExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10005:1: ( ruleStoreExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9990:1: ( ruleRef )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:9991:1: ruleRef
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10005:1: ( ruleStoreExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10006:1: ruleStoreExpression
             {
-             before(grammarAccess.getPredicateStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRef_in_rule__PredicateStoreReference__RefAssignment_119616);
-            ruleRef();
+             before(grammarAccess.getPredicateStoreReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleStoreExpression_in_rule__PredicateStoreReference__RefAssignment_119647);
+            ruleStoreExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getPredicateStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
+             after(grammarAccess.getPredicateStoreReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -25736,20 +25773,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__ExpressionsAssignment_0_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10000:1: rule__Arguments__ExpressionsAssignment_0_2 : ( ruleInArguments ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10015:1: rule__Arguments__ExpressionsAssignment_0_2 : ( ruleInArguments ) ;
     public final void rule__Arguments__ExpressionsAssignment_0_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10004:1: ( ( ruleInArguments ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10005:1: ( ruleInArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10019:1: ( ( ruleInArguments ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10020:1: ( ruleInArguments )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10005:1: ( ruleInArguments )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10006:1: ruleInArguments
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10020:1: ( ruleInArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10021:1: ruleInArguments
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsInArgumentsParserRuleCall_0_2_0()); 
-            pushFollow(FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_219647);
+            pushFollow(FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_219678);
             ruleInArguments();
 
             state._fsp--;
@@ -25777,20 +25814,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__ExpressionsAssignment_0_3_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10015:1: rule__Arguments__ExpressionsAssignment_0_3_1 : ( ruleInArguments ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10030:1: rule__Arguments__ExpressionsAssignment_0_3_1 : ( ruleInArguments ) ;
     public final void rule__Arguments__ExpressionsAssignment_0_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10019:1: ( ( ruleInArguments ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10020:1: ( ruleInArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10034:1: ( ( ruleInArguments ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10035:1: ( ruleInArguments )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10020:1: ( ruleInArguments )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10021:1: ruleInArguments
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10035:1: ( ruleInArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10036:1: ruleInArguments
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsInArgumentsParserRuleCall_0_3_1_0()); 
-            pushFollow(FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_3_119678);
+            pushFollow(FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_3_119709);
             ruleInArguments();
 
             state._fsp--;
@@ -25818,20 +25855,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__ExpressionsAssignment_2_2"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10030:1: rule__Arguments__ExpressionsAssignment_2_2 : ( ruleOutArguments ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10045:1: rule__Arguments__ExpressionsAssignment_2_2 : ( ruleOutArguments ) ;
     public final void rule__Arguments__ExpressionsAssignment_2_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10034:1: ( ( ruleOutArguments ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10035:1: ( ruleOutArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10049:1: ( ( ruleOutArguments ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10050:1: ( ruleOutArguments )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10035:1: ( ruleOutArguments )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10036:1: ruleOutArguments
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10050:1: ( ruleOutArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10051:1: ruleOutArguments
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsOutArgumentsParserRuleCall_2_2_0()); 
-            pushFollow(FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_219709);
+            pushFollow(FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_219740);
             ruleOutArguments();
 
             state._fsp--;
@@ -25859,20 +25896,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Arguments__ExpressionsAssignment_2_3_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10045:1: rule__Arguments__ExpressionsAssignment_2_3_1 : ( ruleOutArguments ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10060:1: rule__Arguments__ExpressionsAssignment_2_3_1 : ( ruleOutArguments ) ;
     public final void rule__Arguments__ExpressionsAssignment_2_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10049:1: ( ( ruleOutArguments ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10050:1: ( ruleOutArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10064:1: ( ( ruleOutArguments ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10065:1: ( ruleOutArguments )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10050:1: ( ruleOutArguments )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10051:1: ruleOutArguments
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10065:1: ( ruleOutArguments )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10066:1: ruleOutArguments
             {
              before(grammarAccess.getArgumentsAccess().getExpressionsOutArgumentsParserRuleCall_2_3_1_0()); 
-            pushFollow(FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_3_119740);
+            pushFollow(FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_3_119771);
             ruleOutArguments();
 
             state._fsp--;
@@ -25900,20 +25937,20 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__Expressions__ValueAssignment_1_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10060:1: rule__Expressions__ValueAssignment_1_1 : ( ruleNatural ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10075:1: rule__Expressions__ValueAssignment_1_1 : ( ruleNatural ) ;
     public final void rule__Expressions__ValueAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10064:1: ( ( ruleNatural ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10065:1: ( ruleNatural )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10079:1: ( ( ruleNatural ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10080:1: ( ruleNatural )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10065:1: ( ruleNatural )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10066:1: ruleNatural
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10080:1: ( ruleNatural )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10081:1: ruleNatural
             {
              before(grammarAccess.getExpressionsAccess().getValueNaturalParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleNatural_in_rule__Expressions__ValueAssignment_1_119771);
+            pushFollow(FOLLOW_ruleNatural_in_rule__Expressions__ValueAssignment_1_119802);
             ruleNatural();
 
             state._fsp--;
@@ -25941,25 +25978,25 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__OutStoreReference__RefAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10075:1: rule__OutStoreReference__RefAssignment_1 : ( ruleRef ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10090:1: rule__OutStoreReference__RefAssignment_1 : ( ruleStoreExpression ) ;
     public final void rule__OutStoreReference__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10079:1: ( ( ruleRef ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10080:1: ( ruleRef )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10094:1: ( ( ruleStoreExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10095:1: ( ruleStoreExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10080:1: ( ruleRef )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10081:1: ruleRef
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10095:1: ( ruleStoreExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10096:1: ruleStoreExpression
             {
-             before(grammarAccess.getOutStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRef_in_rule__OutStoreReference__RefAssignment_119802);
-            ruleRef();
+             before(grammarAccess.getOutStoreReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleStoreExpression_in_rule__OutStoreReference__RefAssignment_119833);
+            ruleStoreExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getOutStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
+             after(grammarAccess.getOutStoreReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -25979,43 +26016,6 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
         return ;
     }
     // $ANTLR end "rule__OutStoreReference__RefAssignment_1"
-
-
-    // $ANTLR start "rule__FreeVariable__NameAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10090:1: rule__FreeVariable__NameAssignment_1 : ( RULE_LOWER ) ;
-    public final void rule__FreeVariable__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-            
-        try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10094:1: ( ( RULE_LOWER ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10095:1: ( RULE_LOWER )
-            {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10095:1: ( RULE_LOWER )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10096:1: RULE_LOWER
-            {
-             before(grammarAccess.getFreeVariableAccess().getNameLOWERTerminalRuleCall_1_0()); 
-            match(input,RULE_LOWER,FOLLOW_RULE_LOWER_in_rule__FreeVariable__NameAssignment_119833); 
-             after(grammarAccess.getFreeVariableAccess().getNameLOWERTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__FreeVariable__NameAssignment_1"
 
 
     // $ANTLR start "rule__Updates__UpdatesAssignment_2"
@@ -26429,25 +26429,25 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateReference__RefAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10255:1: rule__UpdateReference__RefAssignment_1 : ( ruleRef ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10255:1: rule__UpdateReference__RefAssignment_1 : ( ruleStoreExpression ) ;
     public final void rule__UpdateReference__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10259:1: ( ( ruleRef ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10260:1: ( ruleRef )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10259:1: ( ( ruleStoreExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10260:1: ( ruleStoreExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10260:1: ( ruleRef )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10261:1: ruleRef
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10260:1: ( ruleStoreExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10261:1: ruleStoreExpression
             {
-             before(grammarAccess.getUpdateReferenceAccess().getRefRefParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRef_in_rule__UpdateReference__RefAssignment_120174);
-            ruleRef();
+             before(grammarAccess.getUpdateReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleStoreExpression_in_rule__UpdateReference__RefAssignment_120174);
+            ruleStoreExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getUpdateReferenceAccess().getRefRefParserRuleCall_1_0()); 
+             after(grammarAccess.getUpdateReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -26593,25 +26593,25 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__DistributionReference__RefAssignment_3"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10315:1: rule__DistributionReference__RefAssignment_3 : ( ruleRef ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10315:1: rule__DistributionReference__RefAssignment_3 : ( ruleStoreExpression ) ;
     public final void rule__DistributionReference__RefAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10319:1: ( ( ruleRef ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10320:1: ( ruleRef )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10319:1: ( ( ruleStoreExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10320:1: ( ruleStoreExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10320:1: ( ruleRef )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10321:1: ruleRef
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10320:1: ( ruleStoreExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10321:1: ruleStoreExpression
             {
-             before(grammarAccess.getDistributionReferenceAccess().getRefRefParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleRef_in_rule__DistributionReference__RefAssignment_320298);
-            ruleRef();
+             before(grammarAccess.getDistributionReferenceAccess().getRefStoreExpressionParserRuleCall_3_0()); 
+            pushFollow(FOLLOW_ruleStoreExpression_in_rule__DistributionReference__RefAssignment_320298);
+            ruleStoreExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getDistributionReferenceAccess().getRefRefParserRuleCall_3_0()); 
+             after(grammarAccess.getDistributionReferenceAccess().getRefStoreExpressionParserRuleCall_3_0()); 
 
             }
 
@@ -26675,25 +26675,25 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UniformReference__RefAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10345:1: rule__UniformReference__RefAssignment_1 : ( ruleRef ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10345:1: rule__UniformReference__RefAssignment_1 : ( ruleStoreExpression ) ;
     public final void rule__UniformReference__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10349:1: ( ( ruleRef ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10350:1: ( ruleRef )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10349:1: ( ( ruleStoreExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10350:1: ( ruleStoreExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10350:1: ( ruleRef )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10351:1: ruleRef
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10350:1: ( ruleStoreExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10351:1: ruleStoreExpression
             {
-             before(grammarAccess.getUniformReferenceAccess().getRefRefParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRef_in_rule__UniformReference__RefAssignment_120360);
-            ruleRef();
+             before(grammarAccess.getUniformReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleStoreExpression_in_rule__UniformReference__RefAssignment_120360);
+            ruleStoreExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getUniformReferenceAccess().getRefRefParserRuleCall_1_0()); 
+             after(grammarAccess.getUniformReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -26921,25 +26921,25 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
 
 
     // $ANTLR start "rule__UpdateExpressionStoreReference__RefAssignment_1"
-    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10435:1: rule__UpdateExpressionStoreReference__RefAssignment_1 : ( ruleRef ) ;
+    // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10435:1: rule__UpdateExpressionStoreReference__RefAssignment_1 : ( ruleStoreExpression ) ;
     public final void rule__UpdateExpressionStoreReference__RefAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10439:1: ( ( ruleRef ) )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10440:1: ( ruleRef )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10439:1: ( ( ruleStoreExpression ) )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10440:1: ( ruleStoreExpression )
             {
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10440:1: ( ruleRef )
-            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10441:1: ruleRef
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10440:1: ( ruleStoreExpression )
+            // ../eu.quanticol.caspa.ui/src-gen/eu/quanticol/ui/contentassist/antlr/internal/InternalCASPA.g:10441:1: ruleStoreExpression
             {
-             before(grammarAccess.getUpdateExpressionStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleRef_in_rule__UpdateExpressionStoreReference__RefAssignment_120546);
-            ruleRef();
+             before(grammarAccess.getUpdateExpressionStoreReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
+            pushFollow(FOLLOW_ruleStoreExpression_in_rule__UpdateExpressionStoreReference__RefAssignment_120546);
+            ruleStoreExpression();
 
             state._fsp--;
 
-             after(grammarAccess.getUpdateExpressionStoreReferenceAccess().getRefRefParserRuleCall_1_0()); 
+             after(grammarAccess.getUpdateExpressionStoreReferenceAccess().getRefStoreExpressionParserRuleCall_1_0()); 
 
             }
 
@@ -27618,72 +27618,72 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleSelfReference_in_entryRuleSelfReference273 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleSelfReference280 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelfReference__Group__0_in_ruleSelfReference310 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRef_in_entryRuleRef342 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleRef349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Ref__Alternatives_in_ruleRef379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAction_in_entryRuleAction411 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAction418 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group__0_in_ruleAction448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate480 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicate487 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__0_in_rulePredicate517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateExpression_in_entryRulePredicateExpression549 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateExpression556 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateOr_in_rulePredicateExpression586 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateOr_in_entryRulePredicateOr617 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateOr624 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group__0_in_rulePredicateOr654 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateAnd_in_entryRulePredicateAnd686 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateAnd693 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group__0_in_rulePredicateAnd723 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateEquality_in_entryRulePredicateEquality755 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateEquality762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group__0_in_rulePredicateEquality792 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateComparison_in_entryRulePredicateComparison824 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateComparison831 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group__0_in_rulePredicateComparison861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateSubtraction_in_entryRulePredicateSubtraction893 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateSubtraction900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__0_in_rulePredicateSubtraction930 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateAddition_in_entryRulePredicateAddition962 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateAddition969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group__0_in_rulePredicateAddition999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateMultiplication_in_entryRulePredicateMultiplication1031 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateMultiplication1038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__0_in_rulePredicateMultiplication1068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateDivision_in_entryRulePredicateDivision1100 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateDivision1107 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group__0_in_rulePredicateDivision1137 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicatePrimary_in_entryRulePredicatePrimary1169 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicatePrimary1176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Alternatives_in_rulePredicatePrimary1206 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateAtomic_in_entryRulePredicateAtomic1238 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateAtomic1245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__Alternatives_in_rulePredicateAtomic1275 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateStoreReference_in_entryRulePredicateStoreReference1307 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRulePredicateStoreReference1314 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__0_in_rulePredicateStoreReference1344 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArguments_in_entryRuleArguments1376 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleArguments1383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Alternatives_in_ruleArguments1413 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInArguments_in_entryRuleInArguments1445 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInArguments1452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariables_in_ruleInArguments1482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutArguments_in_entryRuleOutArguments1513 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutArguments1520 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressions_in_ruleOutArguments1550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExpressions_in_entryRuleExpressions1581 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExpressions1588 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expressions__Alternatives_in_ruleExpressions1618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutStoreReference_in_entryRuleOutStoreReference1650 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOutStoreReference1657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OutStoreReference__Group__0_in_ruleOutStoreReference1687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariables_in_entryRuleVariables1719 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariables1726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFreeVariable_in_ruleVariables1756 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable1787 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFreeVariable1794 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FreeVariable__Group__0_in_ruleFreeVariable1824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFreeVariable_in_entryRuleFreeVariable342 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFreeVariable349 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FreeVariable__Group__0_in_ruleFreeVariable379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStoreExpression_in_entryRuleStoreExpression411 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStoreExpression418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StoreExpression__Alternatives_in_ruleStoreExpression448 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAction_in_entryRuleAction480 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAction487 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group__0_in_ruleAction517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicate_in_entryRulePredicate549 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicate556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__0_in_rulePredicate586 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateExpression_in_entryRulePredicateExpression618 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateExpression625 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateOr_in_rulePredicateExpression655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateOr_in_entryRulePredicateOr686 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateOr693 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group__0_in_rulePredicateOr723 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateAnd_in_entryRulePredicateAnd755 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateAnd762 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group__0_in_rulePredicateAnd792 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateEquality_in_entryRulePredicateEquality824 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateEquality831 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group__0_in_rulePredicateEquality861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateComparison_in_entryRulePredicateComparison893 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateComparison900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group__0_in_rulePredicateComparison930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateSubtraction_in_entryRulePredicateSubtraction962 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateSubtraction969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__0_in_rulePredicateSubtraction999 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateAddition_in_entryRulePredicateAddition1031 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateAddition1038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group__0_in_rulePredicateAddition1068 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateMultiplication_in_entryRulePredicateMultiplication1100 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateMultiplication1107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__0_in_rulePredicateMultiplication1137 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateDivision_in_entryRulePredicateDivision1169 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateDivision1176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group__0_in_rulePredicateDivision1206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicatePrimary_in_entryRulePredicatePrimary1238 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicatePrimary1245 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Alternatives_in_rulePredicatePrimary1275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateAtomic_in_entryRulePredicateAtomic1307 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateAtomic1314 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__Alternatives_in_rulePredicateAtomic1344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateStoreReference_in_entryRulePredicateStoreReference1376 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRulePredicateStoreReference1383 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__0_in_rulePredicateStoreReference1413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArguments_in_entryRuleArguments1445 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleArguments1452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Alternatives_in_ruleArguments1482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInArguments_in_entryRuleInArguments1514 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInArguments1521 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariables_in_ruleInArguments1551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutArguments_in_entryRuleOutArguments1582 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOutArguments1589 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressions_in_ruleOutArguments1619 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExpressions_in_entryRuleExpressions1650 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExpressions1657 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expressions__Alternatives_in_ruleExpressions1687 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutStoreReference_in_entryRuleOutStoreReference1719 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOutStoreReference1726 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OutStoreReference__Group__0_in_ruleOutStoreReference1756 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariables_in_entryRuleVariables1788 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariables1795 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFreeVariable_in_ruleVariables1825 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdates_in_entryRuleUpdates1856 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleUpdates1863 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Updates__Group__0_in_ruleUpdates1893 = new BitSet(new long[]{0x0000000000000002L});
@@ -27774,8 +27774,8 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleBool_in_entryRuleBool3831 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleBool3838 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Bool__Group__0_in_ruleBool3864 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReference_in_rule__Ref__Alternatives3900 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleSelfReference_in_rule__Ref__Alternatives3917 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReference_in_rule__StoreExpression__Alternatives3900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleSelfReference_in_rule__StoreExpression__Alternatives3917 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Action__Group_0_0__0_in_rule__Action__Alternatives_03949 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Action__Group_0_1__0_in_rule__Action__Alternatives_03967 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_13_in_rule__PredicateEquality__OpAlternatives_1_1_04001 = new BitSet(new long[]{0x0000000000000002L});
@@ -27845,222 +27845,222 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_22_in_rule__SelfReference__Group__1__Impl5545 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelfReference__Group__2__Impl_in_rule__SelfReference__Group__25576 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__SelfReference__NameAssignment_2_in_rule__SelfReference__Group__2__Impl5603 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group__0__Impl_in_rule__Action__Group__05639 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Action__Group__1_in_rule__Action__Group__05642 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Alternatives_0_in_rule__Action__Group__0__Impl5669 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group__1__Impl_in_rule__Action__Group__15699 = new BitSet(new long[]{0x0000003100040000L});
-    public static final BitSet FOLLOW_rule__Action__Group__2_in_rule__Action__Group__15702 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__PredicateAssignment_1_in_rule__Action__Group__1__Impl5729 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group__2__Impl_in_rule__Action__Group__25759 = new BitSet(new long[]{0x0000004000800000L});
-    public static final BitSet FOLLOW_rule__Action__Group__3_in_rule__Action__Group__25762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__ArgumentsAssignment_2_in_rule__Action__Group__2__Impl5789 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group__3__Impl_in_rule__Action__Group__35819 = new BitSet(new long[]{0x0000004000800000L});
-    public static final BitSet FOLLOW_rule__Action__Group__4_in_rule__Action__Group__35822 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__UpdatesAssignment_3_in_rule__Action__Group__3__Impl5849 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group__4__Impl_in_rule__Action__Group__45880 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_23_in_rule__Action__Group__4__Impl5908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_0__0__Impl_in_rule__Action__Group_0_0__05949 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_0__1_in_rule__Action__Group_0_0__05952 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_0__1__Impl_in_rule__Action__Group_0_0__16010 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_0__2_in_rule__Action__Group_0_0__16013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__NameAssignment_0_0_1_in_rule__Action__Group_0_0__1__Impl6040 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_0__2__Impl_in_rule__Action__Group_0_0__26070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__Action__Group_0_0__2__Impl6098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_1__0__Impl_in_rule__Action__Group_0_1__06135 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_1__1_in_rule__Action__Group_0_1__06138 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__Group_0_1__1__Impl_in_rule__Action__Group_0_1__16196 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Action__NameAssignment_0_1_1_in_rule__Action__Group_0_1__1__Impl6223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__0__Impl_in_rule__Predicate__Group__06257 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__1_in_rule__Predicate__Group__06260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__1__Impl_in_rule__Predicate__Group__16318 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__2_in_rule__Predicate__Group__16321 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_25_in_rule__Predicate__Group__1__Impl6349 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__2__Impl_in_rule__Predicate__Group__26380 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__3_in_rule__Predicate__Group__26383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Predicate__PredicateAssignment_2_in_rule__Predicate__Group__2__Impl6410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Predicate__Group__3__Impl_in_rule__Predicate__Group__36440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_26_in_rule__Predicate__Group__3__Impl6468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group__0__Impl_in_rule__PredicateOr__Group__06507 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group__1_in_rule__PredicateOr__Group__06510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateAnd_in_rule__PredicateOr__Group__0__Impl6537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group__1__Impl_in_rule__PredicateOr__Group__16566 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__0_in_rule__PredicateOr__Group__1__Impl6593 = new BitSet(new long[]{0x0000000008000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__0__Impl_in_rule__PredicateOr__Group_1__06628 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__1_in_rule__PredicateOr__Group_1__06631 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__1__Impl_in_rule__PredicateOr__Group_1__16689 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__2_in_rule__PredicateOr__Group_1__16692 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_27_in_rule__PredicateOr__Group_1__1__Impl6720 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__2__Impl_in_rule__PredicateOr__Group_1__26751 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateOr__RightAssignment_1_2_in_rule__PredicateOr__Group_1__2__Impl6778 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group__0__Impl_in_rule__PredicateAnd__Group__06814 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group__1_in_rule__PredicateAnd__Group__06817 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__Group__0__Impl6844 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group__1__Impl_in_rule__PredicateAnd__Group__16873 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__0_in_rule__PredicateAnd__Group__1__Impl6900 = new BitSet(new long[]{0x0000000010000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__0__Impl_in_rule__PredicateAnd__Group_1__06935 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__1_in_rule__PredicateAnd__Group_1__06938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__1__Impl_in_rule__PredicateAnd__Group_1__16996 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__2_in_rule__PredicateAnd__Group_1__16999 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_28_in_rule__PredicateAnd__Group_1__1__Impl7027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__2__Impl_in_rule__PredicateAnd__Group_1__27058 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAnd__RightAssignment_1_2_in_rule__PredicateAnd__Group_1__2__Impl7085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group__0__Impl_in_rule__PredicateEquality__Group__07121 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group__1_in_rule__PredicateEquality__Group__07124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__Group__0__Impl7151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group__1__Impl_in_rule__PredicateEquality__Group__17180 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__0_in_rule__PredicateEquality__Group__1__Impl7207 = new BitSet(new long[]{0x0000000000006002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__0__Impl_in_rule__PredicateEquality__Group_1__07242 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__1_in_rule__PredicateEquality__Group_1__07245 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__1__Impl_in_rule__PredicateEquality__Group_1__17303 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__2_in_rule__PredicateEquality__Group_1__17306 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__OpAssignment_1_1_in_rule__PredicateEquality__Group_1__1__Impl7333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__2__Impl_in_rule__PredicateEquality__Group_1__27363 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__RightAssignment_1_2_in_rule__PredicateEquality__Group_1__2__Impl7390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group__0__Impl_in_rule__PredicateComparison__Group__07426 = new BitSet(new long[]{0x0000000000078000L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group__1_in_rule__PredicateComparison__Group__07429 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__Group__0__Impl7456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group__1__Impl_in_rule__PredicateComparison__Group__17485 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__0_in_rule__PredicateComparison__Group__1__Impl7512 = new BitSet(new long[]{0x0000000000078002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__0__Impl_in_rule__PredicateComparison__Group_1__07547 = new BitSet(new long[]{0x0000000000078000L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__1_in_rule__PredicateComparison__Group_1__07550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__1__Impl_in_rule__PredicateComparison__Group_1__17608 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__2_in_rule__PredicateComparison__Group_1__17611 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__OpAssignment_1_1_in_rule__PredicateComparison__Group_1__1__Impl7638 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__2__Impl_in_rule__PredicateComparison__Group_1__27668 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__RightAssignment_1_2_in_rule__PredicateComparison__Group_1__2__Impl7695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__0__Impl_in_rule__PredicateSubtraction__Group__07731 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__1_in_rule__PredicateSubtraction__Group__07734 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__Group__0__Impl7761 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__1__Impl_in_rule__PredicateSubtraction__Group__17790 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__0_in_rule__PredicateSubtraction__Group__1__Impl7817 = new BitSet(new long[]{0x0000000020000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__0__Impl_in_rule__PredicateSubtraction__Group_1__07852 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__1_in_rule__PredicateSubtraction__Group_1__07855 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__1__Impl_in_rule__PredicateSubtraction__Group_1__17913 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__2_in_rule__PredicateSubtraction__Group_1__17916 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_29_in_rule__PredicateSubtraction__Group_1__1__Impl7944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__2__Impl_in_rule__PredicateSubtraction__Group_1__27975 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateSubtraction__RightAssignment_1_2_in_rule__PredicateSubtraction__Group_1__2__Impl8002 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group__0__Impl_in_rule__PredicateAddition__Group__08038 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group__1_in_rule__PredicateAddition__Group__08041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__Group__0__Impl8068 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group__1__Impl_in_rule__PredicateAddition__Group__18097 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__0_in_rule__PredicateAddition__Group__1__Impl8124 = new BitSet(new long[]{0x0000000040000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__0__Impl_in_rule__PredicateAddition__Group_1__08159 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__1_in_rule__PredicateAddition__Group_1__08162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__1__Impl_in_rule__PredicateAddition__Group_1__18220 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__2_in_rule__PredicateAddition__Group_1__18223 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_30_in_rule__PredicateAddition__Group_1__1__Impl8251 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__2__Impl_in_rule__PredicateAddition__Group_1__28282 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAddition__RightAssignment_1_2_in_rule__PredicateAddition__Group_1__2__Impl8309 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__0__Impl_in_rule__PredicateMultiplication__Group__08345 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__1_in_rule__PredicateMultiplication__Group__08348 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__Group__0__Impl8375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__1__Impl_in_rule__PredicateMultiplication__Group__18404 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__0_in_rule__PredicateMultiplication__Group__1__Impl8431 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__0__Impl_in_rule__PredicateMultiplication__Group_1__08466 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__1_in_rule__PredicateMultiplication__Group_1__08469 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__1__Impl_in_rule__PredicateMultiplication__Group_1__18527 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__2_in_rule__PredicateMultiplication__Group_1__18530 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_24_in_rule__PredicateMultiplication__Group_1__1__Impl8558 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__2__Impl_in_rule__PredicateMultiplication__Group_1__28589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateMultiplication__RightAssignment_1_2_in_rule__PredicateMultiplication__Group_1__2__Impl8616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group__0__Impl_in_rule__PredicateDivision__Group__08652 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group__1_in_rule__PredicateDivision__Group__08655 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__Group__0__Impl8682 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group__1__Impl_in_rule__PredicateDivision__Group__18711 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__0_in_rule__PredicateDivision__Group__1__Impl8738 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__0__Impl_in_rule__PredicateDivision__Group_1__08773 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__1_in_rule__PredicateDivision__Group_1__08776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__1__Impl_in_rule__PredicateDivision__Group_1__18834 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__2_in_rule__PredicateDivision__Group_1__18837 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_31_in_rule__PredicateDivision__Group_1__1__Impl8865 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__2__Impl_in_rule__PredicateDivision__Group_1__28896 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateDivision__RightAssignment_1_2_in_rule__PredicateDivision__Group_1__2__Impl8923 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__0__Impl_in_rule__PredicatePrimary__Group_0__08959 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__1_in_rule__PredicatePrimary__Group_0__08962 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__PredicatePrimary__Group_0__0__Impl8990 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__1__Impl_in_rule__PredicatePrimary__Group_0__19021 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__2_in_rule__PredicatePrimary__Group_0__19024 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateExpression_in_rule__PredicatePrimary__Group_0__1__Impl9051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__2__Impl_in_rule__PredicatePrimary__Group_0__29080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__PredicatePrimary__Group_0__2__Impl9108 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__0__Impl_in_rule__PredicatePrimary__Group_1__09145 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__1_in_rule__PredicatePrimary__Group_1__09148 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__1__Impl_in_rule__PredicatePrimary__Group_1__19206 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__2_in_rule__PredicatePrimary__Group_1__19209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__PredicatePrimary__Group_1__1__Impl9237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__2__Impl_in_rule__PredicatePrimary__Group_1__29268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicatePrimary__ExpressionAssignment_1_2_in_rule__PredicatePrimary__Group_1__2__Impl9295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_0__0__Impl_in_rule__PredicateAtomic__Group_0__09331 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_0__1_in_rule__PredicateAtomic__Group_0__09334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_0__1__Impl_in_rule__PredicateAtomic__Group_0__19392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__ValueAssignment_0_1_in_rule__PredicateAtomic__Group_0__1__Impl9419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_1__0__Impl_in_rule__PredicateAtomic__Group_1__09453 = new BitSet(new long[]{0x0000000000180000L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_1__1_in_rule__PredicateAtomic__Group_1__09456 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_1__1__Impl_in_rule__PredicateAtomic__Group_1__19514 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateAtomic__ValueAssignment_1_1_in_rule__PredicateAtomic__Group_1__1__Impl9541 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__0__Impl_in_rule__PredicateStoreReference__Group__09575 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__1_in_rule__PredicateStoreReference__Group__09578 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__1__Impl_in_rule__PredicateStoreReference__Group__19636 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateStoreReference__RefAssignment_1_in_rule__PredicateStoreReference__Group__1__Impl9663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__0__Impl_in_rule__Arguments__Group_0__09697 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__1_in_rule__Arguments__Group_0__09700 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_32_in_rule__Arguments__Group_0__0__Impl9728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__1__Impl_in_rule__Arguments__Group_0__19759 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__2_in_rule__Arguments__Group_0__19762 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__2__Impl_in_rule__Arguments__Group_0__29820 = new BitSet(new long[]{0x0000000A00000000L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__3_in_rule__Arguments__Group_0__29823 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_0_2_in_rule__Arguments__Group_0__2__Impl9850 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__3__Impl_in_rule__Arguments__Group_0__39880 = new BitSet(new long[]{0x0000000A00000000L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__4_in_rule__Arguments__Group_0__39883 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__0_in_rule__Arguments__Group_0__3__Impl9910 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0__4__Impl_in_rule__Arguments__Group_0__49941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__Arguments__Group_0__4__Impl9969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__0__Impl_in_rule__Arguments__Group_0_3__010010 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__1_in_rule__Arguments__Group_0_3__010013 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Arguments__Group_0_3__0__Impl10041 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__1__Impl_in_rule__Arguments__Group_0_3__110072 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10101 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10113 = new BitSet(new long[]{0x0000000000000022L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_1__0__Impl_in_rule__Arguments__Group_1__010150 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_1__1_in_rule__Arguments__Group_1__010153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_1__1__Impl_in_rule__Arguments__Group_1__110211 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_36_in_rule__Arguments__Group_1__1__Impl10239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__0__Impl_in_rule__Arguments__Group_2__010274 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__1_in_rule__Arguments__Group_2__010277 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_rule__Arguments__Group_2__0__Impl10305 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__1__Impl_in_rule__Arguments__Group_2__110336 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__2_in_rule__Arguments__Group_2__110339 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__2__Impl_in_rule__Arguments__Group_2__210397 = new BitSet(new long[]{0x0000000800020000L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__3_in_rule__Arguments__Group_2__210400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_2_2_in_rule__Arguments__Group_2__2__Impl10427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__3__Impl_in_rule__Arguments__Group_2__310457 = new BitSet(new long[]{0x0000000800020000L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__4_in_rule__Arguments__Group_2__310460 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__0_in_rule__Arguments__Group_2__3__Impl10487 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2__4__Impl_in_rule__Arguments__Group_2__410518 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Arguments__Group_2__4__Impl10546 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__0__Impl_in_rule__Arguments__Group_2_3__010587 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__1_in_rule__Arguments__Group_2_3__010590 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Arguments__Group_2_3__0__Impl10618 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__1__Impl_in_rule__Arguments__Group_2_3__110649 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10678 = new BitSet(new long[]{0x0000000500580032L});
-    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10690 = new BitSet(new long[]{0x0000000500580032L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_3__0__Impl_in_rule__Arguments__Group_3__010727 = new BitSet(new long[]{0x0000003100040000L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_3__1_in_rule__Arguments__Group_3__010730 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Arguments__Group_3__1__Impl_in_rule__Arguments__Group_3__110788 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_37_in_rule__Arguments__Group_3__1__Impl10816 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expressions__Group_1__0__Impl_in_rule__Expressions__Group_1__010851 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__Expressions__Group_1__1_in_rule__Expressions__Group_1__010854 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expressions__Group_1__1__Impl_in_rule__Expressions__Group_1__110912 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Expressions__ValueAssignment_1_1_in_rule__Expressions__Group_1__1__Impl10939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OutStoreReference__Group__0__Impl_in_rule__OutStoreReference__Group__010973 = new BitSet(new long[]{0x0000000500580030L});
-    public static final BitSet FOLLOW_rule__OutStoreReference__Group__1_in_rule__OutStoreReference__Group__010976 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OutStoreReference__Group__1__Impl_in_rule__OutStoreReference__Group__111034 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OutStoreReference__RefAssignment_1_in_rule__OutStoreReference__Group__1__Impl11061 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FreeVariable__Group__0__Impl_in_rule__FreeVariable__Group__011095 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_rule__FreeVariable__Group__1_in_rule__FreeVariable__Group__011098 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FreeVariable__Group__1__Impl_in_rule__FreeVariable__Group__111156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FreeVariable__NameAssignment_1_in_rule__FreeVariable__Group__1__Impl11183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FreeVariable__Group__0__Impl_in_rule__FreeVariable__Group__05639 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__FreeVariable__Group__1_in_rule__FreeVariable__Group__05642 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FreeVariable__Group__1__Impl_in_rule__FreeVariable__Group__15700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FreeVariable__NameAssignment_1_in_rule__FreeVariable__Group__1__Impl5727 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group__0__Impl_in_rule__Action__Group__05761 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Action__Group__1_in_rule__Action__Group__05764 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Alternatives_0_in_rule__Action__Group__0__Impl5791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group__1__Impl_in_rule__Action__Group__15821 = new BitSet(new long[]{0x0000003100040000L});
+    public static final BitSet FOLLOW_rule__Action__Group__2_in_rule__Action__Group__15824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__PredicateAssignment_1_in_rule__Action__Group__1__Impl5851 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group__2__Impl_in_rule__Action__Group__25881 = new BitSet(new long[]{0x0000004000800000L});
+    public static final BitSet FOLLOW_rule__Action__Group__3_in_rule__Action__Group__25884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__ArgumentsAssignment_2_in_rule__Action__Group__2__Impl5911 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group__3__Impl_in_rule__Action__Group__35941 = new BitSet(new long[]{0x0000004000800000L});
+    public static final BitSet FOLLOW_rule__Action__Group__4_in_rule__Action__Group__35944 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__UpdatesAssignment_3_in_rule__Action__Group__3__Impl5971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group__4__Impl_in_rule__Action__Group__46002 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_23_in_rule__Action__Group__4__Impl6030 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_0__0__Impl_in_rule__Action__Group_0_0__06071 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_0__1_in_rule__Action__Group_0_0__06074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_0__1__Impl_in_rule__Action__Group_0_0__16132 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_0__2_in_rule__Action__Group_0_0__16135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__NameAssignment_0_0_1_in_rule__Action__Group_0_0__1__Impl6162 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_0__2__Impl_in_rule__Action__Group_0_0__26192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__Action__Group_0_0__2__Impl6220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_1__0__Impl_in_rule__Action__Group_0_1__06257 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_1__1_in_rule__Action__Group_0_1__06260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__Group_0_1__1__Impl_in_rule__Action__Group_0_1__16318 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Action__NameAssignment_0_1_1_in_rule__Action__Group_0_1__1__Impl6345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__0__Impl_in_rule__Predicate__Group__06379 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__1_in_rule__Predicate__Group__06382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__1__Impl_in_rule__Predicate__Group__16440 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__2_in_rule__Predicate__Group__16443 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_25_in_rule__Predicate__Group__1__Impl6471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__2__Impl_in_rule__Predicate__Group__26502 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__3_in_rule__Predicate__Group__26505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Predicate__PredicateAssignment_2_in_rule__Predicate__Group__2__Impl6532 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Predicate__Group__3__Impl_in_rule__Predicate__Group__36562 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_26_in_rule__Predicate__Group__3__Impl6590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group__0__Impl_in_rule__PredicateOr__Group__06629 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group__1_in_rule__PredicateOr__Group__06632 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateAnd_in_rule__PredicateOr__Group__0__Impl6659 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group__1__Impl_in_rule__PredicateOr__Group__16688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__0_in_rule__PredicateOr__Group__1__Impl6715 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__0__Impl_in_rule__PredicateOr__Group_1__06750 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__1_in_rule__PredicateOr__Group_1__06753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__1__Impl_in_rule__PredicateOr__Group_1__16811 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__2_in_rule__PredicateOr__Group_1__16814 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_27_in_rule__PredicateOr__Group_1__1__Impl6842 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__Group_1__2__Impl_in_rule__PredicateOr__Group_1__26873 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateOr__RightAssignment_1_2_in_rule__PredicateOr__Group_1__2__Impl6900 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group__0__Impl_in_rule__PredicateAnd__Group__06936 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group__1_in_rule__PredicateAnd__Group__06939 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__Group__0__Impl6966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group__1__Impl_in_rule__PredicateAnd__Group__16995 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__0_in_rule__PredicateAnd__Group__1__Impl7022 = new BitSet(new long[]{0x0000000010000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__0__Impl_in_rule__PredicateAnd__Group_1__07057 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__1_in_rule__PredicateAnd__Group_1__07060 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__1__Impl_in_rule__PredicateAnd__Group_1__17118 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__2_in_rule__PredicateAnd__Group_1__17121 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_28_in_rule__PredicateAnd__Group_1__1__Impl7149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__Group_1__2__Impl_in_rule__PredicateAnd__Group_1__27180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAnd__RightAssignment_1_2_in_rule__PredicateAnd__Group_1__2__Impl7207 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group__0__Impl_in_rule__PredicateEquality__Group__07243 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group__1_in_rule__PredicateEquality__Group__07246 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__Group__0__Impl7273 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group__1__Impl_in_rule__PredicateEquality__Group__17302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__0_in_rule__PredicateEquality__Group__1__Impl7329 = new BitSet(new long[]{0x0000000000006002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__0__Impl_in_rule__PredicateEquality__Group_1__07364 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__1_in_rule__PredicateEquality__Group_1__07367 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__1__Impl_in_rule__PredicateEquality__Group_1__17425 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__2_in_rule__PredicateEquality__Group_1__17428 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__OpAssignment_1_1_in_rule__PredicateEquality__Group_1__1__Impl7455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__Group_1__2__Impl_in_rule__PredicateEquality__Group_1__27485 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__RightAssignment_1_2_in_rule__PredicateEquality__Group_1__2__Impl7512 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group__0__Impl_in_rule__PredicateComparison__Group__07548 = new BitSet(new long[]{0x0000000000078000L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group__1_in_rule__PredicateComparison__Group__07551 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__Group__0__Impl7578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group__1__Impl_in_rule__PredicateComparison__Group__17607 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__0_in_rule__PredicateComparison__Group__1__Impl7634 = new BitSet(new long[]{0x0000000000078002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__0__Impl_in_rule__PredicateComparison__Group_1__07669 = new BitSet(new long[]{0x0000000000078000L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__1_in_rule__PredicateComparison__Group_1__07672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__1__Impl_in_rule__PredicateComparison__Group_1__17730 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__2_in_rule__PredicateComparison__Group_1__17733 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__OpAssignment_1_1_in_rule__PredicateComparison__Group_1__1__Impl7760 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__Group_1__2__Impl_in_rule__PredicateComparison__Group_1__27790 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__RightAssignment_1_2_in_rule__PredicateComparison__Group_1__2__Impl7817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__0__Impl_in_rule__PredicateSubtraction__Group__07853 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__1_in_rule__PredicateSubtraction__Group__07856 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__Group__0__Impl7883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group__1__Impl_in_rule__PredicateSubtraction__Group__17912 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__0_in_rule__PredicateSubtraction__Group__1__Impl7939 = new BitSet(new long[]{0x0000000020000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__0__Impl_in_rule__PredicateSubtraction__Group_1__07974 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__1_in_rule__PredicateSubtraction__Group_1__07977 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__1__Impl_in_rule__PredicateSubtraction__Group_1__18035 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__2_in_rule__PredicateSubtraction__Group_1__18038 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_29_in_rule__PredicateSubtraction__Group_1__1__Impl8066 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__Group_1__2__Impl_in_rule__PredicateSubtraction__Group_1__28097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateSubtraction__RightAssignment_1_2_in_rule__PredicateSubtraction__Group_1__2__Impl8124 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group__0__Impl_in_rule__PredicateAddition__Group__08160 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group__1_in_rule__PredicateAddition__Group__08163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__Group__0__Impl8190 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group__1__Impl_in_rule__PredicateAddition__Group__18219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__0_in_rule__PredicateAddition__Group__1__Impl8246 = new BitSet(new long[]{0x0000000040000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__0__Impl_in_rule__PredicateAddition__Group_1__08281 = new BitSet(new long[]{0x0000000040000000L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__1_in_rule__PredicateAddition__Group_1__08284 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__1__Impl_in_rule__PredicateAddition__Group_1__18342 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__2_in_rule__PredicateAddition__Group_1__18345 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_30_in_rule__PredicateAddition__Group_1__1__Impl8373 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__Group_1__2__Impl_in_rule__PredicateAddition__Group_1__28404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAddition__RightAssignment_1_2_in_rule__PredicateAddition__Group_1__2__Impl8431 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__0__Impl_in_rule__PredicateMultiplication__Group__08467 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__1_in_rule__PredicateMultiplication__Group__08470 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__Group__0__Impl8497 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group__1__Impl_in_rule__PredicateMultiplication__Group__18526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__0_in_rule__PredicateMultiplication__Group__1__Impl8553 = new BitSet(new long[]{0x0000000001000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__0__Impl_in_rule__PredicateMultiplication__Group_1__08588 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__1_in_rule__PredicateMultiplication__Group_1__08591 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__1__Impl_in_rule__PredicateMultiplication__Group_1__18649 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__2_in_rule__PredicateMultiplication__Group_1__18652 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_24_in_rule__PredicateMultiplication__Group_1__1__Impl8680 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__Group_1__2__Impl_in_rule__PredicateMultiplication__Group_1__28711 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateMultiplication__RightAssignment_1_2_in_rule__PredicateMultiplication__Group_1__2__Impl8738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group__0__Impl_in_rule__PredicateDivision__Group__08774 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group__1_in_rule__PredicateDivision__Group__08777 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__Group__0__Impl8804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group__1__Impl_in_rule__PredicateDivision__Group__18833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__0_in_rule__PredicateDivision__Group__1__Impl8860 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__0__Impl_in_rule__PredicateDivision__Group_1__08895 = new BitSet(new long[]{0x0000000080000000L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__1_in_rule__PredicateDivision__Group_1__08898 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__1__Impl_in_rule__PredicateDivision__Group_1__18956 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__2_in_rule__PredicateDivision__Group_1__18959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_31_in_rule__PredicateDivision__Group_1__1__Impl8987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__Group_1__2__Impl_in_rule__PredicateDivision__Group_1__29018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateDivision__RightAssignment_1_2_in_rule__PredicateDivision__Group_1__2__Impl9045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__0__Impl_in_rule__PredicatePrimary__Group_0__09081 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__1_in_rule__PredicatePrimary__Group_0__09084 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__PredicatePrimary__Group_0__0__Impl9112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__1__Impl_in_rule__PredicatePrimary__Group_0__19143 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__2_in_rule__PredicatePrimary__Group_0__19146 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateExpression_in_rule__PredicatePrimary__Group_0__1__Impl9173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_0__2__Impl_in_rule__PredicatePrimary__Group_0__29202 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__PredicatePrimary__Group_0__2__Impl9230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__0__Impl_in_rule__PredicatePrimary__Group_1__09267 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__1_in_rule__PredicatePrimary__Group_1__09270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__1__Impl_in_rule__PredicatePrimary__Group_1__19328 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__2_in_rule__PredicatePrimary__Group_1__19331 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__PredicatePrimary__Group_1__1__Impl9359 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__Group_1__2__Impl_in_rule__PredicatePrimary__Group_1__29390 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicatePrimary__ExpressionAssignment_1_2_in_rule__PredicatePrimary__Group_1__2__Impl9417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_0__0__Impl_in_rule__PredicateAtomic__Group_0__09453 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_0__1_in_rule__PredicateAtomic__Group_0__09456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_0__1__Impl_in_rule__PredicateAtomic__Group_0__19514 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__ValueAssignment_0_1_in_rule__PredicateAtomic__Group_0__1__Impl9541 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_1__0__Impl_in_rule__PredicateAtomic__Group_1__09575 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_1__1_in_rule__PredicateAtomic__Group_1__09578 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__Group_1__1__Impl_in_rule__PredicateAtomic__Group_1__19636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateAtomic__ValueAssignment_1_1_in_rule__PredicateAtomic__Group_1__1__Impl9663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__0__Impl_in_rule__PredicateStoreReference__Group__09697 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__1_in_rule__PredicateStoreReference__Group__09700 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateStoreReference__Group__1__Impl_in_rule__PredicateStoreReference__Group__19758 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateStoreReference__RefAssignment_1_in_rule__PredicateStoreReference__Group__1__Impl9785 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__0__Impl_in_rule__Arguments__Group_0__09819 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__1_in_rule__Arguments__Group_0__09822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_32_in_rule__Arguments__Group_0__0__Impl9850 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__1__Impl_in_rule__Arguments__Group_0__19881 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__2_in_rule__Arguments__Group_0__19884 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__2__Impl_in_rule__Arguments__Group_0__29942 = new BitSet(new long[]{0x0000000A00000000L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__3_in_rule__Arguments__Group_0__29945 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_0_2_in_rule__Arguments__Group_0__2__Impl9972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__3__Impl_in_rule__Arguments__Group_0__310002 = new BitSet(new long[]{0x0000000A00000000L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__4_in_rule__Arguments__Group_0__310005 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__0_in_rule__Arguments__Group_0__3__Impl10032 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0__4__Impl_in_rule__Arguments__Group_0__410063 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__Arguments__Group_0__4__Impl10091 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__0__Impl_in_rule__Arguments__Group_0_3__010132 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__1_in_rule__Arguments__Group_0_3__010135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Arguments__Group_0_3__0__Impl10163 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_0_3__1__Impl_in_rule__Arguments__Group_0_3__110194 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10223 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_0_3_1_in_rule__Arguments__Group_0_3__1__Impl10235 = new BitSet(new long[]{0x0000000000000022L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_1__0__Impl_in_rule__Arguments__Group_1__010272 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_1__1_in_rule__Arguments__Group_1__010275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_1__1__Impl_in_rule__Arguments__Group_1__110333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_36_in_rule__Arguments__Group_1__1__Impl10361 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__0__Impl_in_rule__Arguments__Group_2__010396 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__1_in_rule__Arguments__Group_2__010399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_rule__Arguments__Group_2__0__Impl10427 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__1__Impl_in_rule__Arguments__Group_2__110458 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__2_in_rule__Arguments__Group_2__110461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__2__Impl_in_rule__Arguments__Group_2__210519 = new BitSet(new long[]{0x0000000800020000L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__3_in_rule__Arguments__Group_2__210522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_2_2_in_rule__Arguments__Group_2__2__Impl10549 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__3__Impl_in_rule__Arguments__Group_2__310579 = new BitSet(new long[]{0x0000000800020000L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__4_in_rule__Arguments__Group_2__310582 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__0_in_rule__Arguments__Group_2__3__Impl10609 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2__4__Impl_in_rule__Arguments__Group_2__410640 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Arguments__Group_2__4__Impl10668 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__0__Impl_in_rule__Arguments__Group_2_3__010709 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__1_in_rule__Arguments__Group_2_3__010712 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Arguments__Group_2_3__0__Impl10740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_2_3__1__Impl_in_rule__Arguments__Group_2_3__110771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10800 = new BitSet(new long[]{0x0000000500580032L});
+    public static final BitSet FOLLOW_rule__Arguments__ExpressionsAssignment_2_3_1_in_rule__Arguments__Group_2_3__1__Impl10812 = new BitSet(new long[]{0x0000000500580032L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_3__0__Impl_in_rule__Arguments__Group_3__010849 = new BitSet(new long[]{0x0000003100040000L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_3__1_in_rule__Arguments__Group_3__010852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Arguments__Group_3__1__Impl_in_rule__Arguments__Group_3__110910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_37_in_rule__Arguments__Group_3__1__Impl10938 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expressions__Group_1__0__Impl_in_rule__Expressions__Group_1__010973 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__Expressions__Group_1__1_in_rule__Expressions__Group_1__010976 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expressions__Group_1__1__Impl_in_rule__Expressions__Group_1__111034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Expressions__ValueAssignment_1_1_in_rule__Expressions__Group_1__1__Impl11061 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OutStoreReference__Group__0__Impl_in_rule__OutStoreReference__Group__011095 = new BitSet(new long[]{0x0000000500580030L});
+    public static final BitSet FOLLOW_rule__OutStoreReference__Group__1_in_rule__OutStoreReference__Group__011098 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OutStoreReference__Group__1__Impl_in_rule__OutStoreReference__Group__111156 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OutStoreReference__RefAssignment_1_in_rule__OutStoreReference__Group__1__Impl11183 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Updates__Group__0__Impl_in_rule__Updates__Group__011217 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_rule__Updates__Group__1_in_rule__Updates__Group__011220 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Updates__Group__1__Impl_in_rule__Updates__Group__111278 = new BitSet(new long[]{0x0000000500580030L});
@@ -28374,33 +28374,33 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleNatural_in_rule__Store__ValueAssignment_318930 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LOWER_in_rule__Reference__NameAssignment_118961 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_LOWER_in_rule__SelfReference__NameAssignment_218992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_0_119023 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_1_119054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicate_in_rule__Action__PredicateAssignment_119085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleArguments_in_rule__Action__ArgumentsAssignment_219116 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleUpdates_in_rule__Action__UpdatesAssignment_319147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateExpression_in_rule__Predicate__PredicateAssignment_219178 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateAnd_in_rule__PredicateOr__RightAssignment_1_219209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__RightAssignment_1_219240 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateEquality__OpAlternatives_1_1_0_in_rule__PredicateEquality__OpAssignment_1_119271 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__RightAssignment_1_219304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__PredicateComparison__OpAlternatives_1_1_0_in_rule__PredicateComparison__OpAssignment_1_119335 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__RightAssignment_1_219368 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__RightAssignment_1_219399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__RightAssignment_1_219430 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__RightAssignment_1_219461 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__RightAssignment_1_219492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rulePredicatePrimary_in_rule__PredicatePrimary__ExpressionAssignment_1_219523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNatural_in_rule__PredicateAtomic__ValueAssignment_0_119554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBool_in_rule__PredicateAtomic__ValueAssignment_1_119585 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRef_in_rule__PredicateStoreReference__RefAssignment_119616 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_219647 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_3_119678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_219709 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_3_119740 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNatural_in_rule__Expressions__ValueAssignment_1_119771 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRef_in_rule__OutStoreReference__RefAssignment_119802 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_LOWER_in_rule__FreeVariable__NameAssignment_119833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_rule__FreeVariable__NameAssignment_119023 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_0_119054 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_LOWER_in_rule__Action__NameAssignment_0_1_119085 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicate_in_rule__Action__PredicateAssignment_119116 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleArguments_in_rule__Action__ArgumentsAssignment_219147 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleUpdates_in_rule__Action__UpdatesAssignment_319178 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateExpression_in_rule__Predicate__PredicateAssignment_219209 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateAnd_in_rule__PredicateOr__RightAssignment_1_219240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateEquality_in_rule__PredicateAnd__RightAssignment_1_219271 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateEquality__OpAlternatives_1_1_0_in_rule__PredicateEquality__OpAssignment_1_119302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateComparison_in_rule__PredicateEquality__RightAssignment_1_219335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__PredicateComparison__OpAlternatives_1_1_0_in_rule__PredicateComparison__OpAssignment_1_119366 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateSubtraction_in_rule__PredicateComparison__RightAssignment_1_219399 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateAddition_in_rule__PredicateSubtraction__RightAssignment_1_219430 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateMultiplication_in_rule__PredicateAddition__RightAssignment_1_219461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicateDivision_in_rule__PredicateMultiplication__RightAssignment_1_219492 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicatePrimary_in_rule__PredicateDivision__RightAssignment_1_219523 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rulePredicatePrimary_in_rule__PredicatePrimary__ExpressionAssignment_1_219554 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNatural_in_rule__PredicateAtomic__ValueAssignment_0_119585 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBool_in_rule__PredicateAtomic__ValueAssignment_1_119616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStoreExpression_in_rule__PredicateStoreReference__RefAssignment_119647 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_219678 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInArguments_in_rule__Arguments__ExpressionsAssignment_0_3_119709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_219740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOutArguments_in_rule__Arguments__ExpressionsAssignment_2_3_119771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNatural_in_rule__Expressions__ValueAssignment_1_119802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStoreExpression_in_rule__OutStoreReference__RefAssignment_119833 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdate_in_rule__Updates__UpdatesAssignment_219864 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdate_in_rule__Updates__UpdatesAssignment_3_119895 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdateReference_in_rule__SingleEventUpdate__AssigneeAssignment_119926 = new BitSet(new long[]{0x0000000000000002L});
@@ -28411,19 +28411,19 @@ public class InternalCASPAParser extends AbstractInternalContentAssistParser {
     public static final BitSet FOLLOW_ruleUpdateReference_in_rule__DistributedEventUpdate__AssigneeAssignment_1_120081 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUniform_in_rule__DistributedEventUpdate__AssignerAssignment_1_520112 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUniform_in_rule__DistributedEventUpdate__DistributionAssignment_1_6_120143 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRef_in_rule__UpdateReference__RefAssignment_120174 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStoreExpression_in_rule__UpdateReference__RefAssignment_120174 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDouble_in_rule__Distribution__ProbAssignment_0_120205 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNatural_in_rule__Distribution__ExpressionAssignment_0_320236 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleDouble_in_rule__DistributionReference__ProbAssignment_120267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRef_in_rule__DistributionReference__RefAssignment_320298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStoreExpression_in_rule__DistributionReference__RefAssignment_320298 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNatural_in_rule__Uniform__ExpressionAssignment_0_120329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRef_in_rule__UniformReference__RefAssignment_120360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStoreExpression_in_rule__UniformReference__RefAssignment_120360 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdateAddition_in_rule__UpdateSubtraction__RightAssignment_1_220391 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdateMultiplication_in_rule__UpdateAddition__RightAssignment_1_220422 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdateDivision_in_rule__UpdateMultiplication__RightAssignment_1_220453 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleUpdatePrimary_in_rule__UpdateDivision__RightAssignment_1_220484 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleNatural_in_rule__UpdateAtomic__ValueAssignment_0_120515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleRef_in_rule__UpdateExpressionStoreReference__RefAssignment_120546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStoreExpression_in_rule__UpdateExpressionStoreReference__RefAssignment_120546 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_UPPER_in_rule__Process__NameAssignment_020577 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleProcessExpression_in_rule__Process__ValueAssignment_220608 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleChoice_in_rule__Parallel__RightAssignment_1_220639 = new BitSet(new long[]{0x0000000000000002L});
