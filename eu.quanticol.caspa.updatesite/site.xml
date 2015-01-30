@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/eu.quanticol.caspa.sdk_1.0.0.1.jar" id="eu.quanticol.caspa.sdk" version="1.0.0.1"/>
+   <feature url="features/eu.quanticol.caspa.sdk_1.0.0.2.jar" id="eu.quanticol.caspa.sdk" version="1.0.0.2"/>
 </site>
