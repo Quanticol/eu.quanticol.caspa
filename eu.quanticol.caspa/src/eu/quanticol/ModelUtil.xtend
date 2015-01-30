@@ -271,20 +271,20 @@ class ModelUtil {
 		}
 	}
 	
-	def boolean isReferencedProcess(ProcessExpression pe, Process p){
-		switch(pe){
-			Parallel: 			{pe.left.isReferencedProcess(p) ||
-								pe.right.isReferencedProcess(p)}
-			Choice: 			{pe.left.isReferencedProcess(p) ||
-								pe.right.isReferencedProcess(p)}
-			ReferencedProcess:	{
-				(pe.ref as Process).name.equals(p.name)
-			}
-			PredicateProcess: 	false
-			ActionProcess:		false
-			default:			false
-		}
-	}
+//	def boolean isReferencedProcess(ProcessExpression pe, Process p){
+//		switch(pe){
+//			Parallel: 			{pe.left.isReferencedProcess(p) ||
+//								pe.right.isReferencedProcess(p)}
+//			Choice: 			{pe.left.isReferencedProcess(p) ||
+//								pe.right.isReferencedProcess(p)}
+//			ReferencedProcess:	{
+//				(pe.ref as Process).name.equals(p.name)
+//			}
+//			PredicateProcess: 	false
+//			ActionProcess:		false
+//			default:			false
+//		}
+//	}
 	
 	def Set<Process> fromProcessGetProcesses(Process p){
 		

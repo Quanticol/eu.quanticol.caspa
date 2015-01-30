@@ -981,23 +981,37 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   @Check
   public void checkProcessExpressionsAreMoreThanJustReferences(final eu.quanticol.cASPA.Process p) {
-    boolean fails = false;
-    Set<eu.quanticol.cASPA.Process> allProcesses = this._modelUtil.fromProcessGetProcesses(p);
-    for (final eu.quanticol.cASPA.Process process : allProcesses) {
-      boolean _or = false;
-      ProcessExpression _value = process.getValue();
-      boolean _isReferencedProcess = this._modelUtil.isReferencedProcess(_value, process);
-      if (_isReferencedProcess) {
-        _or = true;
-      } else {
-        _or = fails;
-      }
-      fails = _or;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method isReferencedProcess is undefined for the type CASPAValidator"
+      + "\n|| cannot be resolved");
+  }
+  
+  public boolean testMoreThanChoParRef(final Set<eu.quanticol.cASPA.Process> set, final eu.quanticol.cASPA.Process start) {
+    Set<eu.quanticol.cASPA.Process> mySet = new HashSet<eu.quanticol.cASPA.Process>(set);
+    mySet.remove(start);
+    ArrayList<eu.quanticol.cASPA.Process> refs = this.getReference(start);
+    this.removeRefFromSet(mySet, refs);
+    int _size = refs.size();
+    boolean _equals = (_size == 0);
+    if (_equals) {
+      return false;
     }
-    if (fails) {
-      this.error("Expression has looping process references.", 
-        CASPAPackage.Literals.PROCESS__VALUE, 
-        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES);
+    return false;
+  }
+  
+  public ArrayList<eu.quanticol.cASPA.Process> getReference(final eu.quanticol.cASPA.Process p) {
+    List<ReferencedProcess> refProcs = EcoreUtil2.<ReferencedProcess>getAllContentsOfType(p, ReferencedProcess.class);
+    ArrayList<eu.quanticol.cASPA.Process> procs = new ArrayList<eu.quanticol.cASPA.Process>();
+    for (final ReferencedProcess refProc : refProcs) {
+      eu.quanticol.cASPA.Process _ref = refProc.getRef();
+      procs.add(((eu.quanticol.cASPA.Process) _ref));
+    }
+    return procs;
+  }
+  
+  public void removeRefFromSet(final Set<eu.quanticol.cASPA.Process> s, final ArrayList<eu.quanticol.cASPA.Process> l) {
+    for (final eu.quanticol.cASPA.Process proc : l) {
+      s.remove(proc);
     }
   }
 }

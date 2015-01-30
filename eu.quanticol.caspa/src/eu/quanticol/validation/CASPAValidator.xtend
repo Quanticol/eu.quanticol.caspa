@@ -594,5 +594,37 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		}
 	}
 	
+	def boolean testMoreThanChoParRef(Set<Process> set, Process start){
+		
+		var Set<Process> mySet = new HashSet<Process>(set)
+		mySet.remove(start)
+		var refs = start.getReference
+		mySet.removeRefFromSet(refs)
+		
+		if(refs.size == 0)
+			
+		
+		return false
+		
+	}
+	
+	def ArrayList<Process> getReference(Process p){
+		var refProcs = p.getAllContentsOfType(ReferencedProcess)
+		var ArrayList<Process> procs = new ArrayList<Process>()
+		
+		for(refProc : refProcs){
+			procs.add(refProc.ref as Process)
+		}
+		
+		return procs
+	}
+	
+	def void removeRefFromSet(Set<Process> s, ArrayList<Process> l){
+		
+		for(proc : l)
+			s.remove(proc)
+		
+	}
+	
 	
 }
