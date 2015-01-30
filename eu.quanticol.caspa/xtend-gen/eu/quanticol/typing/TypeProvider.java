@@ -127,6 +127,12 @@ public class TypeProvider {
       }
     }
     if (!_matched) {
+      if (e instanceof BooleanConstant) {
+        _matched=true;
+        _switchResult = TypeProvider.boolConstantType;
+      }
+    }
+    if (!_matched) {
       if (e instanceof Constant) {
         _matched=true;
         _switchResult = TypeProvider.constantType;

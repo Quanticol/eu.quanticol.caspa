@@ -49,6 +49,7 @@ import eu.quanticol.cASPA.UniformNatural
 import java.util.HashMap
 import eu.quanticol.cASPA.FreeVariable
 import eu.quanticol.cASPA.Bool
+import eu.quanticol.cASPA.BooleanConstant
 
 class ModelUtil {
 	
@@ -65,7 +66,7 @@ class ModelUtil {
 	}
 	
 	def String cTString(Predicate p){
-		"Predicate: " + p.predicate.cTString
+		"[ " + (p.predicate as PredicateExpression).cTString + " ]"
 	}
 	
 	def String cTString(PredicateExpression pe){
@@ -92,7 +93,7 @@ class ModelUtil {
 	}
 	
 	def String cTString(Bool bc){
-		"" + bc.value
+		"boolean"
 	}
 	
 	def String cTString(Action a){
@@ -207,10 +208,36 @@ class ModelUtil {
 			
 			for(rp : refProcesses)
 					lastRefProcesses.add(rp)
+					
+			var ArrayList<String> refProcNames = new ArrayList<String>()
 			
-			for(process : processes){
-				for(rp : lastRefProcesses)
-					process.value.getReferencedProcess(refProcesses,rp)
+			for(rp : lastRefProcesses)
+				refProcNames.add(rp.name)
+			
+			for(rp : lastRefProcesses){
+				var refs = rp.getAllContentsOfType(ReferencedProcess)
+				var ArrayList<String> refNames = new ArrayList<String>()
+				for(ref : refs)
+						refNames.add(ref.ref.name)
+						
+				for(proc : processes){
+					for(refName : refNames)
+						if(refName.equals(proc.name)){
+							refProcesses.add(proc)
+						}
+				}
+				
+			}
+			
+			for(proc : processes){
+				var refs = proc.getAllContentsOfType(ReferencedProcess)
+				var ArrayList<String> refNames = new ArrayList<String>()
+				for(ref : refs)
+					refNames.add(ref.ref.name)
+					
+				for(rp : refProcNames)
+					if(refNames.contains(rp))
+						refProcesses.add(proc)
 			}
 			
 		}
@@ -270,45 +297,30 @@ class ModelUtil {
 								}
 		}
 	}
-	
-//	def boolean isReferencedProcess(ProcessExpression pe, Process p){
-//		switch(pe){
-//			Parallel: 			{pe.left.isReferencedProcess(p) ||
-//								pe.right.isReferencedProcess(p)}
-//			Choice: 			{pe.left.isReferencedProcess(p) ||
-//								pe.right.isReferencedProcess(p)}
-//			ReferencedProcess:	{
-//				(pe.ref as Process).name.equals(p.name)
-//			}
-//			PredicateProcess: 	false
-//			ActionProcess:		false
-//			default:			false
-//		}
-//	}
-	
-	def Set<Process> fromProcessGetProcesses(Process p){
-		
-		var processes = p.getContainerOfType(typeof(Model)).processes
-		var Set<Process> refProcesses = new HashSet<Process>()
-		var Set<Process> lastRefProcesses = new HashSet<Process>()
-		
-		refProcesses.add(p)
-		
-		while(refProcesses.size > lastRefProcesses.size){
-			
-			for(rp : refProcesses)
-					lastRefProcesses.add(rp)
-			
-			for(process : processes){
-				for(rp : lastRefProcesses)
-					process.value.getReferencedProcess(refProcesses,rp)
-			}
-			
+
+	def boolean fromProcessExpressionIfParChoRef(ProcessExpression pe){
+		switch(pe){
+			Parallel:			true
+			Choice:				true
+			ReferencedProcess:	true
+			default:			false
 		}
-		
-		return refProcesses
 	}
 	
+	def boolean fromProcessExpressionIfNilKill(ProcessExpression pe){
+		switch(pe){
+			Leaf:				true
+			default:			false
+		}
+	}
+
+	def boolean fromProcessGetIfParChoRef(Process p){
+		return p.value.fromProcessExpressionIfParChoRef
+	}
+	
+	def boolean fromProcessGetIfNilKill(Process p){
+		return p.value.fromProcessExpressionIfNilKill
+	}
 	
 	def Set<Process> fromStoreExpressionGetProcesses(StoreExpression sr){
 		

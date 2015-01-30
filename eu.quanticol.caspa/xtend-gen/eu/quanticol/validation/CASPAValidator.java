@@ -12,6 +12,7 @@ import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
+import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Out;
@@ -97,6 +98,8 @@ public class CASPAValidator extends AbstractCASPAValidator {
   public final static String PROCESS_NEVER_USED = "eu.quanticol.processNeverUsed";
   
   public final static String PROCESSEXPRESSION_NOT_JUST_REFERENCES = "eu.quanticol.processExpressionsNotJustReferences";
+  
+  public final static String PROCESS_IS_NIL_KILL = "eu.quanticol.processIsNilKill";
   
   @Check
   public void checkProcessNamesUnique(final eu.quanticol.cASPA.Process process) {
@@ -951,7 +954,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(process, Model.class);
     EList<Term> terms = _containerOfType.getTerms();
     ArrayList<String> referencedProcesses = new ArrayList<String>();
-    Set<eu.quanticol.cASPA.Process> allProcesses = this._modelUtil.fromProcessGetProcesses(process);
+    Set<eu.quanticol.cASPA.Process> allProcesses = this._modelUtil.fromProcessGetReferences(process);
     for (final Term term : terms) {
       List<ReferencedProcess> _allContentsOfType = EcoreUtil2.<ReferencedProcess>getAllContentsOfType(term, ReferencedProcess.class);
       for (final ReferencedProcess rp : _allContentsOfType) {
@@ -973,7 +976,10 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
     fails = _and;
     if (fails) {
-      this.warning("Process is never used.", 
+      String _name_2 = process.getName();
+      String _plus = ("Process \'" + _name_2);
+      String _plus_1 = (_plus + "\' is never used.");
+      this.warning(_plus_1, 
         CASPAPackage.Literals.PROCESS__NAME, 
         CASPAValidator.PROCESS_NEVER_USED);
     }
@@ -981,30 +987,61 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   @Check
   public void checkProcessExpressionsAreMoreThanJustReferences(final eu.quanticol.cASPA.Process p) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method isReferencedProcess is undefined for the type CASPAValidator"
-      + "\n|| cannot be resolved");
+    boolean fails = false;
+    Set<eu.quanticol.cASPA.Process> allProcesses = this._modelUtil.fromProcessGetReferences(p);
+    boolean _testMoreThanChoParRef = this.testMoreThanChoParRef(allProcesses, p);
+    fails = _testMoreThanChoParRef;
+    if (fails) {
+      String _name = p.getName();
+      String _plus = ("Process \'" + _name);
+      String _plus_1 = (_plus + "\' has looping process references: Expression \'");
+      ProcessExpression _value = p.getValue();
+      String _cTString = this._modelUtil.cTString(_value);
+      String _plus_2 = (_plus_1 + _cTString);
+      String _plus_3 = (_plus_2 + "\'.");
+      this.error(_plus_3, 
+        CASPAPackage.Literals.PROCESS__VALUE, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES);
+    }
   }
   
   public boolean testMoreThanChoParRef(final Set<eu.quanticol.cASPA.Process> set, final eu.quanticol.cASPA.Process start) {
     Set<eu.quanticol.cASPA.Process> mySet = new HashSet<eu.quanticol.cASPA.Process>(set);
     mySet.remove(start);
-    ArrayList<eu.quanticol.cASPA.Process> refs = this.getReference(start);
+    ArrayList<eu.quanticol.cASPA.Process> refs = this.getReference(mySet, start);
     this.removeRefFromSet(mySet, refs);
+    boolean parChoRef = false;
     int _size = refs.size();
     boolean _equals = (_size == 0);
     if (_equals) {
-      return false;
+      boolean _fromProcessGetIfParChoRef = this._modelUtil.fromProcessGetIfParChoRef(start);
+      parChoRef = _fromProcessGetIfParChoRef;
+    } else {
+      for (int i = 0; (i < refs.size()); i++) {
+        boolean _or = false;
+        if (parChoRef) {
+          _or = true;
+        } else {
+          eu.quanticol.cASPA.Process _get = refs.get(i);
+          boolean _testMoreThanChoParRef = this.testMoreThanChoParRef(mySet, _get);
+          _or = _testMoreThanChoParRef;
+        }
+        parChoRef = _or;
+      }
     }
-    return false;
+    return parChoRef;
   }
   
-  public ArrayList<eu.quanticol.cASPA.Process> getReference(final eu.quanticol.cASPA.Process p) {
+  public ArrayList<eu.quanticol.cASPA.Process> getReference(final Set<eu.quanticol.cASPA.Process> s, final eu.quanticol.cASPA.Process p) {
     List<ReferencedProcess> refProcs = EcoreUtil2.<ReferencedProcess>getAllContentsOfType(p, ReferencedProcess.class);
     ArrayList<eu.quanticol.cASPA.Process> procs = new ArrayList<eu.quanticol.cASPA.Process>();
     for (final ReferencedProcess refProc : refProcs) {
       eu.quanticol.cASPA.Process _ref = refProc.getRef();
-      procs.add(((eu.quanticol.cASPA.Process) _ref));
+      boolean _contains = s.contains(((eu.quanticol.cASPA.Process) _ref));
+      if (_contains) {
+        eu.quanticol.cASPA.Process _ref_1 = refProc.getRef();
+        procs.add(((eu.quanticol.cASPA.Process) _ref_1));
+      }
     }
     return procs;
   }
@@ -1012,6 +1049,23 @@ public class CASPAValidator extends AbstractCASPAValidator {
   public void removeRefFromSet(final Set<eu.quanticol.cASPA.Process> s, final ArrayList<eu.quanticol.cASPA.Process> l) {
     for (final eu.quanticol.cASPA.Process proc : l) {
       s.remove(proc);
+    }
+  }
+  
+  @Check
+  public void checkNil(final eu.quanticol.cASPA.Process p) {
+    boolean fails = this._modelUtil.fromProcessGetIfNilKill(p);
+    if (fails) {
+      String _name = p.getName();
+      String _plus = ("Process \'" + _name);
+      String _plus_1 = (_plus + "\' is only \'");
+      ProcessExpression _value = p.getValue();
+      String _value_1 = ((Leaf) _value).getValue();
+      String _plus_2 = (_plus_1 + _value_1);
+      String _plus_3 = (_plus_2 + "\'.");
+      this.warning(_plus_3, 
+        CASPAPackage.Literals.PROCESS__VALUE, 
+        CASPAValidator.PROCESS_IS_NIL_KILL);
     }
   }
 }

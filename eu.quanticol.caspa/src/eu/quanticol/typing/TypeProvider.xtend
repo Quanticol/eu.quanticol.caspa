@@ -73,6 +73,7 @@ class TypeProvider {
 			PredicateMul:					constantType
 			PredicateDiv:					constantType
 			PredicateNot:					boolConstantType
+			BooleanConstant:				boolConstantType
 			Constant:						constantType
 			Store:							(e as StoreExpression)?.typeFor
 			FreeVariable:					(e as StoreExpression)?.typeFor

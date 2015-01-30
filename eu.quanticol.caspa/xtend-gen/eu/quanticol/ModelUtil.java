@@ -5,7 +5,6 @@ import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.Bool;
-import eu.quanticol.cASPA.BooleanConstant;
 import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
@@ -115,8 +114,9 @@ public class ModelUtil {
   
   public String cTString(final Predicate p) {
     PredicateExpression _predicate = p.getPredicate();
-    String _cTString = this.cTString(_predicate);
-    return ("Predicate: " + _cTString);
+    String _cTString = this.cTString(((PredicateExpression) _predicate));
+    String _plus = ("[ " + _cTString);
+    return (_plus + " ]");
   }
   
   public String cTString(final PredicateExpression pe) {
@@ -259,8 +259,7 @@ public class ModelUtil {
   }
   
   public String cTString(final Bool bc) {
-    BooleanConstant _value = bc.getValue();
-    return ("" + _value);
+    return "boolean";
   }
   
   public String cTString(final Action a) {
@@ -543,10 +542,46 @@ public class ModelUtil {
         for (final eu.quanticol.cASPA.Process rp : refProcesses) {
           lastRefProcesses.add(rp);
         }
-        for (final eu.quanticol.cASPA.Process process : processes) {
-          for (final eu.quanticol.cASPA.Process rp_1 : lastRefProcesses) {
-            ProcessExpression _value = process.getValue();
-            this.getReferencedProcess(_value, refProcesses, rp_1);
+        ArrayList<String> refProcNames = new ArrayList<String>();
+        for (final eu.quanticol.cASPA.Process rp_1 : lastRefProcesses) {
+          String _name = rp_1.getName();
+          refProcNames.add(_name);
+        }
+        for (final eu.quanticol.cASPA.Process rp_2 : lastRefProcesses) {
+          {
+            List<ReferencedProcess> refs = EcoreUtil2.<ReferencedProcess>getAllContentsOfType(rp_2, ReferencedProcess.class);
+            ArrayList<String> refNames = new ArrayList<String>();
+            for (final ReferencedProcess ref : refs) {
+              eu.quanticol.cASPA.Process _ref = ref.getRef();
+              String _name_1 = _ref.getName();
+              refNames.add(_name_1);
+            }
+            for (final eu.quanticol.cASPA.Process proc : processes) {
+              for (final String refName : refNames) {
+                String _name_2 = proc.getName();
+                boolean _equals = refName.equals(_name_2);
+                if (_equals) {
+                  refProcesses.add(proc);
+                }
+              }
+            }
+          }
+        }
+        for (final eu.quanticol.cASPA.Process proc : processes) {
+          {
+            List<ReferencedProcess> refs = EcoreUtil2.<ReferencedProcess>getAllContentsOfType(proc, ReferencedProcess.class);
+            ArrayList<String> refNames = new ArrayList<String>();
+            for (final ReferencedProcess ref : refs) {
+              eu.quanticol.cASPA.Process _ref = ref.getRef();
+              String _name_1 = _ref.getName();
+              refNames.add(_name_1);
+            }
+            for (final String rp_3 : refProcNames) {
+              boolean _contains = refNames.contains(rp_3);
+              if (_contains) {
+                refProcesses.add(proc);
+              }
+            }
           }
         }
       }
@@ -640,26 +675,56 @@ public class ModelUtil {
     }
   }
   
-  public Set<eu.quanticol.cASPA.Process> fromProcessGetProcesses(final eu.quanticol.cASPA.Process p) {
-    Model _containerOfType = EcoreUtil2.<Model>getContainerOfType(p, Model.class);
-    EList<eu.quanticol.cASPA.Process> processes = _containerOfType.getProcesses();
-    Set<eu.quanticol.cASPA.Process> refProcesses = new HashSet<eu.quanticol.cASPA.Process>();
-    Set<eu.quanticol.cASPA.Process> lastRefProcesses = new HashSet<eu.quanticol.cASPA.Process>();
-    refProcesses.add(p);
-    while ((refProcesses.size() > lastRefProcesses.size())) {
-      {
-        for (final eu.quanticol.cASPA.Process rp : refProcesses) {
-          lastRefProcesses.add(rp);
-        }
-        for (final eu.quanticol.cASPA.Process process : processes) {
-          for (final eu.quanticol.cASPA.Process rp_1 : lastRefProcesses) {
-            ProcessExpression _value = process.getValue();
-            this.getReferencedProcess(_value, refProcesses, rp_1);
-          }
-        }
+  public boolean fromProcessExpressionIfParChoRef(final ProcessExpression pe) {
+    boolean _switchResult = false;
+    boolean _matched = false;
+    if (!_matched) {
+      if (pe instanceof Parallel) {
+        _matched=true;
+        _switchResult = true;
       }
     }
-    return refProcesses;
+    if (!_matched) {
+      if (pe instanceof Choice) {
+        _matched=true;
+        _switchResult = true;
+      }
+    }
+    if (!_matched) {
+      if (pe instanceof ReferencedProcess) {
+        _matched=true;
+        _switchResult = true;
+      }
+    }
+    if (!_matched) {
+      _switchResult = false;
+    }
+    return _switchResult;
+  }
+  
+  public boolean fromProcessExpressionIfNilKill(final ProcessExpression pe) {
+    boolean _switchResult = false;
+    boolean _matched = false;
+    if (!_matched) {
+      if (pe instanceof Leaf) {
+        _matched=true;
+        _switchResult = true;
+      }
+    }
+    if (!_matched) {
+      _switchResult = false;
+    }
+    return _switchResult;
+  }
+  
+  public boolean fromProcessGetIfParChoRef(final eu.quanticol.cASPA.Process p) {
+    ProcessExpression _value = p.getValue();
+    return this.fromProcessExpressionIfParChoRef(_value);
+  }
+  
+  public boolean fromProcessGetIfNilKill(final eu.quanticol.cASPA.Process p) {
+    ProcessExpression _value = p.getValue();
+    return this.fromProcessExpressionIfNilKill(_value);
   }
   
   public Set<eu.quanticol.cASPA.Process> fromStoreExpressionGetProcesses(final StoreExpression sr) {

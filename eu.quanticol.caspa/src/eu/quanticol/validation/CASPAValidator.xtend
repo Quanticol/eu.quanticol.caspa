@@ -56,6 +56,7 @@ import java.util.ArrayList
 import eu.quanticol.cASPA.Arguments
 import eu.quanticol.cASPA.Out
 import eu.quanticol.cASPA.Constant
+import eu.quanticol.cASPA.Leaf
 
 /**
  * Custom validation rules. 
@@ -79,6 +80,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	public static val NO_ACTION_PARTNER = "eu.quanticol.noActionPartner"
 	public static val PROCESS_NEVER_USED = "eu.quanticol.processNeverUsed"
 	public static val PROCESSEXPRESSION_NOT_JUST_REFERENCES = "eu.quanticol.processExpressionsNotJustReferences"
+	public static val PROCESS_IS_NIL_KILL = "eu.quanticol.processIsNilKill"
 	
 	@Check
 	def checkProcessNamesUnique(Process process){
@@ -561,7 +563,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		var terms = process.getContainerOfType(Model).terms
 		var ArrayList<String> referencedProcesses = new ArrayList<String>()
 		
-		var allProcesses = process.fromProcessGetProcesses
+		var allProcesses = process.fromProcessGetReferences
 		
 		for(term : terms)
 			for( rp : term.getAllContentsOfType(ReferencedProcess))
@@ -570,7 +572,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		fails = !referencedProcesses.contains(process.name) && (allProcesses.size == 1)
 		
 		if(fails){
-			warning("Process is never used.",
+			warning("Process '"+process.name+"' is never used.",
 			CASPAPackage::Literals.PROCESS__NAME,
 			PROCESS_NEVER_USED)
 		}
@@ -581,14 +583,14 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	def checkProcessExpressionsAreMoreThanJustReferences(Process p){
 		var boolean fails = false
 		
-		var allProcesses = p.fromProcessGetProcesses
+		var allProcesses = p.fromProcessGetReferences
 		
-		for(process : allProcesses){
-			fails = (process.value.isReferencedProcess(process) || fails)
-		}
+		fails = testMoreThanChoParRef(allProcesses,p)
+		
+		//println("Process '"+p.name+"' has looping process references: Expression '" + p.value.cTString + "'.")
 		
 		if(fails){
-			error("Expression has looping process references.",
+			error("Process '"+p.name+"' has looping process references: Expression '" + p.value.cTString + "'.",
 			CASPAPackage::Literals.PROCESS__VALUE,
 			PROCESSEXPRESSION_NOT_JUST_REFERENCES)
 		}
@@ -598,22 +600,28 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		
 		var Set<Process> mySet = new HashSet<Process>(set)
 		mySet.remove(start)
-		var refs = start.getReference
+		var refs = mySet.getReference(start)
 		mySet.removeRefFromSet(refs)
+		var boolean parChoRef = false
 		
 		if(refs.size == 0)
+			parChoRef = start.fromProcessGetIfParChoRef
+		else
+			for(var i = 0; i < refs.size; i++)	{
+				parChoRef = parChoRef || testMoreThanChoParRef(mySet,refs.get(i))
+			}
 			
-		
-		return false
+		return parChoRef
 		
 	}
 	
-	def ArrayList<Process> getReference(Process p){
+	def ArrayList<Process> getReference(Set<Process> s, Process p){
 		var refProcs = p.getAllContentsOfType(ReferencedProcess)
 		var ArrayList<Process> procs = new ArrayList<Process>()
 		
 		for(refProc : refProcs){
-			procs.add(refProc.ref as Process)
+			if(s.contains(refProc.ref as Process))
+				procs.add(refProc.ref as Process)
 		}
 		
 		return procs
@@ -624,6 +632,16 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		for(proc : l)
 			s.remove(proc)
 		
+	}
+	
+	@Check
+	def checkNil(Process p){
+		var boolean fails = p.fromProcessGetIfNilKill
+		if(fails){
+			warning("Process '"+p.name+"' is only '" + (p.value as Leaf).value + "'.",
+			CASPAPackage::Literals.PROCESS__VALUE,
+			PROCESS_IS_NIL_KILL)
+		}
 	}
 	
 	

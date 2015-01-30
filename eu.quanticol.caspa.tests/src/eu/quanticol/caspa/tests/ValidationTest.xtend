@@ -284,11 +284,11 @@ class ValidationTest {
 	def void processesUsed(){
 		'''
 		(P,{a:=1});
-		P = P;
-		Q = Q;
+		P = [True]P;
+		Q = [True]Q;
 		'''.parse.assertWarning(CASPAPackage::eINSTANCE.process,
 			CASPAValidator::PROCESS_NEVER_USED,
-			"Process is never used.")
+			"Process 'Q' is never used.")
 		
 	}
 	
@@ -300,7 +300,7 @@ class ValidationTest {
 		Q = Q;
 		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
 			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
-			"Expression has looping process references.")
+			"Process 'Q' has looping process references: Expression 'Q'.")
 		
 	}
 	
@@ -312,10 +312,70 @@ class ValidationTest {
 		Q=P;
 		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
 			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
-			"Expression has looping process references.")
+			"Process 'P' has looping process references: Expression 'Q'.")
 		
 	}
 	
+	@Test
+	def void allReferencedProcesses3(){
+		'''
+		(A,{a:=1,b:=1});
+		A = P + Q;
+		P = C + D;
+		Q = [True]Q;
+		C = [True]C;
+		D = P;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
+			"Process 'A' has looping process references: Expression 'P + Q'")
+		
+	}
+	
+	
+	@Test
+	def void allReferencedProcesses4(){
+		'''
+		(A,{a:=1,b:=1});
+		A = P | Q;
+		P = P | Q;
+		Q = P | Q;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
+			"Process 'A' has looping process references: Expression 'P | Q'.")
+		
+	}
+	
+	@Test
+	def void allReferencedProcesses5(){
+		'''
+		(P,{a:=1, b:=1});
+		P = A + B;
+		A = A;
+		B = B;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
+			"Process 'P' has looping process references: Expression 'A + B'.")
+	}
+	
+	@Test
+	def void testNil(){
+		'''
+		(P,{a:=1});
+		P = nil;
+		'''.parse.assertWarning(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESS_IS_NIL_KILL,
+			"Process 'P' is only 'nil'.")
+	}
+	
+	@Test
+	def void testKill(){
+		'''
+		(P,{a:=1});
+		P = kill;
+		'''.parse.assertWarning(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESS_IS_NIL_KILL,
+			"Process 'P' is only 'kill'.")
+	}
 	
 //	
 //	@Test

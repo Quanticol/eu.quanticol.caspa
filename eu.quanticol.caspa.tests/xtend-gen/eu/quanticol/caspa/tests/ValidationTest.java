@@ -494,15 +494,15 @@ public class ValidationTest {
       StringConcatenation _builder = new StringConcatenation();
       _builder.append("(P,{a:=1});");
       _builder.newLine();
-      _builder.append("P = P;");
+      _builder.append("P = [True]P;");
       _builder.newLine();
-      _builder.append("Q = Q;");
+      _builder.append("Q = [True]Q;");
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       EClass _process = CASPAPackage.eINSTANCE.getProcess();
       this._validationTestHelper.assertWarning(_parse, _process, 
         CASPAValidator.PROCESS_NEVER_USED, 
-        "Process is never used.");
+        "Process \'Q\' is never used.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -522,7 +522,7 @@ public class ValidationTest {
       EClass _process = CASPAPackage.eINSTANCE.getProcess();
       this._validationTestHelper.assertError(_parse, _process, 
         CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
-        "Expression has looping process references.");
+        "Process \'Q\' has looping process references: Expression \'Q\'.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
@@ -542,7 +542,113 @@ public class ValidationTest {
       EClass _process = CASPAPackage.eINSTANCE.getProcess();
       this._validationTestHelper.assertError(_parse, _process, 
         CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
-        "Expression has looping process references.");
+        "Process \'P\' has looping process references: Expression \'Q\'.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void allReferencedProcesses3() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(A,{a:=1,b:=1});");
+      _builder.newLine();
+      _builder.append("A = P + Q;");
+      _builder.newLine();
+      _builder.append("P = C + D;");
+      _builder.newLine();
+      _builder.append("Q = [True]Q;");
+      _builder.newLine();
+      _builder.append("C = [True]C;");
+      _builder.newLine();
+      _builder.append("D = P;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertError(_parse, _process, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
+        "Process \'A\' has looping process references: Expression \'P + Q\'");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void allReferencedProcesses4() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(A,{a:=1,b:=1});");
+      _builder.newLine();
+      _builder.append("A = P | Q;");
+      _builder.newLine();
+      _builder.append("P = P | Q;");
+      _builder.newLine();
+      _builder.append("Q = P | Q;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertError(_parse, _process, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
+        "Process \'A\' has looping process references: Expression \'P | Q\'.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void allReferencedProcesses5() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1, b:=1});");
+      _builder.newLine();
+      _builder.append("P = A + B;");
+      _builder.newLine();
+      _builder.append("A = A;");
+      _builder.newLine();
+      _builder.append("B = B;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertError(_parse, _process, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
+        "Process \'P\' has looping process references: Expression \'A + B\'.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testNil() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = nil;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertWarning(_parse, _process, 
+        CASPAValidator.PROCESS_IS_NIL_KILL, 
+        "Process \'P\' is only \'nil\'.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
+  public void testKill() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(P,{a:=1});");
+      _builder.newLine();
+      _builder.append("P = kill;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertWarning(_parse, _process, 
+        CASPAValidator.PROCESS_IS_NIL_KILL, 
+        "Process \'P\' is only \'kill\'.");
     } catch (Throwable _e) {
       throw Exceptions.sneakyThrow(_e);
     }
