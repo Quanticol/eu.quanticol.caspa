@@ -300,10 +300,10 @@ class ModelUtil {
 
 	def boolean fromProcessExpressionIfParChoRef(ProcessExpression pe){
 		switch(pe){
-			Parallel:			true
-			Choice:				true
-			ReferencedProcess:	true
-			default:			false
+			Parallel:			{true}
+			Choice:				{true}
+			ReferencedProcess:	{true}
+			default:			{false}
 		}
 	}
 	

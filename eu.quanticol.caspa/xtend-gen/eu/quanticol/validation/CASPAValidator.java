@@ -987,11 +987,11 @@ public class CASPAValidator extends AbstractCASPAValidator {
   
   @Check
   public void checkProcessExpressionsAreMoreThanJustReferences(final eu.quanticol.cASPA.Process p) {
-    boolean fails = false;
+    boolean fail = false;
     Set<eu.quanticol.cASPA.Process> allProcesses = this._modelUtil.fromProcessGetReferences(p);
-    boolean _testMoreThanChoParRef = this.testMoreThanChoParRef(allProcesses, p);
-    fails = _testMoreThanChoParRef;
-    if (fails) {
+    boolean _testPathChoParRef = this.testPathChoParRef(allProcesses, p);
+    fail = _testPathChoParRef;
+    if (fail) {
       String _name = p.getName();
       String _plus = ("Process \'" + _name);
       String _plus_1 = (_plus + "\' has looping process references: Expression \'");
@@ -1005,28 +1005,25 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
   }
   
-  public boolean testMoreThanChoParRef(final Set<eu.quanticol.cASPA.Process> set, final eu.quanticol.cASPA.Process start) {
+  public boolean testPathChoParRef(final Set<eu.quanticol.cASPA.Process> set, final eu.quanticol.cASPA.Process start) {
     Set<eu.quanticol.cASPA.Process> mySet = new HashSet<eu.quanticol.cASPA.Process>(set);
-    mySet.remove(start);
     ArrayList<eu.quanticol.cASPA.Process> refs = this.getReference(mySet, start);
     this.removeRefFromSet(mySet, refs);
-    boolean parChoRef = false;
+    boolean parChoRef = this._modelUtil.fromProcessGetIfParChoRef(start);
     int _size = refs.size();
-    boolean _equals = (_size == 0);
-    if (_equals) {
-      boolean _fromProcessGetIfParChoRef = this._modelUtil.fromProcessGetIfParChoRef(start);
-      parChoRef = _fromProcessGetIfParChoRef;
-    } else {
+    boolean _greaterThan = (_size > 0);
+    if (_greaterThan) {
+      ArrayList<Boolean> test = new ArrayList<Boolean>();
       for (int i = 0; (i < refs.size()); i++) {
-        boolean _or = false;
-        if (parChoRef) {
-          _or = true;
-        } else {
-          eu.quanticol.cASPA.Process _get = refs.get(i);
-          boolean _testMoreThanChoParRef = this.testMoreThanChoParRef(mySet, _get);
-          _or = _testMoreThanChoParRef;
-        }
-        parChoRef = _or;
+        eu.quanticol.cASPA.Process _get = refs.get(i);
+        boolean _testPathChoParRef = this.testPathChoParRef(mySet, _get);
+        test.add(Boolean.valueOf(_testPathChoParRef));
+      }
+      boolean _contains = test.contains(Boolean.valueOf(true));
+      if (_contains) {
+        parChoRef = (true && parChoRef);
+      } else {
+        parChoRef = false;
       }
     }
     return parChoRef;

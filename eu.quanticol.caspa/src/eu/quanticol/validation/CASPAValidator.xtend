@@ -581,41 +581,65 @@ class CASPAValidator extends AbstractCASPAValidator  {
 	
 	@Check
 	def checkProcessExpressionsAreMoreThanJustReferences(Process p){
-		var boolean fails = false
 		
+//		println("----------------------Proc: " + p)
+		
+		var boolean fail = false;
 		var allProcesses = p.fromProcessGetReferences
+		fail = testPathChoParRef(allProcesses,p)
 		
-		fails = testMoreThanChoParRef(allProcesses,p)
-		
-		//println("Process '"+p.name+"' has looping process references: Expression '" + p.value.cTString + "'.")
-		
-		if(fails){
+		if(fail){
 			error("Process '"+p.name+"' has looping process references: Expression '" + p.value.cTString + "'.",
 			CASPAPackage::Literals.PROCESS__VALUE,
 			PROCESSEXPRESSION_NOT_JUST_REFERENCES)
 		}
+		
+//		println("result: " + fail)
 	}
 	
-	def boolean testMoreThanChoParRef(Set<Process> set, Process start){
+	def boolean testPathChoParRef(Set<Process> set, Process start){
+		
+//		println("proc@test: " + start.name)
 		
 		var Set<Process> mySet = new HashSet<Process>(set)
-		mySet.remove(start)
-		var refs = mySet.getReference(start)
-		mySet.removeRefFromSet(refs)
-		var boolean parChoRef = false
+		//mySet.remove(start)
 		
-		if(refs.size == 0)
-			parChoRef = start.fromProcessGetIfParChoRef
-		else
-			for(var i = 0; i < refs.size; i++)	{
-				parChoRef = parChoRef || testMoreThanChoParRef(mySet,refs.get(i))
+		//get this processes referenced processes, but only if they are in the incoming set
+		var refs = mySet.getReference(start)
+		
+		//remove the references from the set
+		mySet.removeRefFromSet(refs)
+		
+		//is this Process par, cho or ref
+		var boolean parChoRef = start.fromProcessGetIfParChoRef
+		
+		if(refs.size > 0){
+			
+			var ArrayList<Boolean> test = new ArrayList<Boolean>();
+			
+			for(var i = 0; i < refs.size; i++){
+//				println(refs.get(i).name)
+//				println(mySet)
+				test.add(testPathChoParRef(mySet,refs.get(i)))
+				
+				
 			}
 			
+			if(test.contains(true))
+				parChoRef = true && parChoRef
+			else
+				parChoRef = false
+		}
+		
+		//println(start.name + ": " + parChoRef)
 		return parChoRef
 		
 	}
 	
 	def ArrayList<Process> getReference(Set<Process> s, Process p){
+		
+//		println("incoming set: " + s)
+		
 		var refProcs = p.getAllContentsOfType(ReferencedProcess)
 		var ArrayList<Process> procs = new ArrayList<Process>()
 		
@@ -623,6 +647,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 			if(s.contains(refProc.ref as Process))
 				procs.add(refProc.ref as Process)
 		}
+//		println("refs: " + procs)
 		
 		return procs
 	}
@@ -631,7 +656,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		
 		for(proc : l)
 			s.remove(proc)
-		
+			
 	}
 	
 	@Check

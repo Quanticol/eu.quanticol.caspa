@@ -619,6 +619,28 @@ public class ValidationTest {
   }
   
   @Test
+  public void allReferencedProcesses6() {
+    try {
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append("(A,{a:=1,b:=1});");
+      _builder.newLine();
+      _builder.append("A = P + Q;");
+      _builder.newLine();
+      _builder.append("P = [True]A;");
+      _builder.newLine();
+      _builder.append("Q = A;");
+      _builder.newLine();
+      Model _parse = this._parseHelper.parse(_builder);
+      EClass _process = CASPAPackage.eINSTANCE.getProcess();
+      this._validationTestHelper.assertError(_parse, _process, 
+        CASPAValidator.PROCESSEXPRESSION_NOT_JUST_REFERENCES, 
+        "Process \'A\' has looping process references: Expression \'P + Q\'.");
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
+  }
+  
+  @Test
   public void testNil() {
     try {
       StringConcatenation _builder = new StringConcatenation();

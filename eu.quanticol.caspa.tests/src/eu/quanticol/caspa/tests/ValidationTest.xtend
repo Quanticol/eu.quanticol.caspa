@@ -357,6 +357,19 @@ class ValidationTest {
 			"Process 'P' has looping process references: Expression 'A + B'.")
 	}
 	
+	
+	@Test
+	def void allReferencedProcesses6(){
+		'''
+		(A,{a:=1,b:=1});
+		A = P + Q;
+		P = [True]A;
+		Q = A;
+		'''.parse.assertError(CASPAPackage::eINSTANCE.process,
+			CASPAValidator::PROCESSEXPRESSION_NOT_JUST_REFERENCES,
+			"Process 'A' has looping process references: Expression 'P + Q'.")
+	}
+	
 	@Test
 	def void testNil(){
 		'''

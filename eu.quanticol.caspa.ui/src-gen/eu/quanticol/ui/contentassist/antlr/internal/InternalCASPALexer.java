@@ -12,52 +12,52 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class InternalCASPALexer extends Lexer {
-    public static final int RULE_ID=7;
-    public static final int T__29=29;
-    public static final int T__28=28;
-    public static final int T__27=27;
-    public static final int T__26=26;
-    public static final int T__25=25;
-    public static final int T__24=24;
-    public static final int T__23=23;
-    public static final int T__22=22;
-    public static final int T__21=21;
-    public static final int RULE_ANY_OTHER=12;
-    public static final int T__20=20;
-    public static final int EOF=-1;
-    public static final int RULE_LOWER=5;
     public static final int T__19=19;
-    public static final int T__16=16;
     public static final int T__15=15;
-    public static final int T__18=18;
+    public static final int T__16=16;
     public static final int T__17=17;
-    public static final int T__14=14;
+    public static final int T__18=18;
     public static final int T__13=13;
+    public static final int T__14=14;
+    public static final int RULE_ID=7;
+    public static final int T__26=26;
+    public static final int T__27=27;
+    public static final int T__28=28;
     public static final int RULE_INT=4;
-    public static final int T__42=42;
-    public static final int T__43=43;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__46=46;
-    public static final int T__47=47;
-    public static final int T__44=44;
-    public static final int T__45=45;
-    public static final int RULE_UPPER=6;
-    public static final int T__48=48;
-    public static final int RULE_SL_COMMENT=10;
+    public static final int T__29=29;
+    public static final int T__22=22;
     public static final int RULE_ML_COMMENT=9;
-    public static final int T__30=30;
-    public static final int T__31=31;
+    public static final int T__23=23;
+    public static final int T__24=24;
+    public static final int T__25=25;
+    public static final int T__20=20;
+    public static final int T__21=21;
+    public static final int RULE_LOWER=5;
     public static final int RULE_STRING=8;
-    public static final int T__32=32;
+    public static final int RULE_SL_COMMENT=10;
+    public static final int T__37=37;
+    public static final int T__38=38;
+    public static final int T__39=39;
     public static final int T__33=33;
     public static final int T__34=34;
     public static final int T__35=35;
     public static final int T__36=36;
-    public static final int T__37=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
+    public static final int EOF=-1;
+    public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_WS=11;
+    public static final int RULE_UPPER=6;
+    public static final int RULE_ANY_OTHER=12;
+    public static final int T__48=48;
+    public static final int T__44=44;
+    public static final int T__45=45;
+    public static final int T__46=46;
+    public static final int T__47=47;
+    public static final int T__40=40;
+    public static final int T__41=41;
+    public static final int T__42=42;
+    public static final int T__43=43;
 
     // delegates
     // delegators
@@ -1739,27 +1739,27 @@ public class InternalCASPALexer extends Lexer {
 
     protected DFA14 dfa14 = new DFA14(this);
     static final String DFA14_eotS =
-        "\1\uffff\1\46\1\50\1\52\1\55\2\60\1\63\1\65\4\uffff\1\74\1\44\2\uffff\1\102\1\104\4\uffff\1\60\1\112\1\uffff\1\115\3\65\1\60\2\uffff\2\44\13\uffff\2\60\1\uffff\1\60\2\uffff\1\65\1\uffff\1\65\22\uffff\1\126\4\uffff\2\65\3\uffff\2\60\1\65\1\uffff\1\134\1\65\1\136\1\60\1\65\1\uffff\1\141\1\uffff\1\142\3\uffff";
+        "\1\uffff\1\46\1\50\1\52\1\55\2\57\1\63\1\66\4\uffff\1\74\1\44\2\uffff\1\102\1\104\4\uffff\1\57\1\112\1\uffff\1\114\3\66\1\57\2\uffff\2\44\13\uffff\1\57\1\uffff\2\57\2\uffff\2\66\23\uffff\1\126\4\uffff\2\66\3\uffff\2\57\1\66\1\uffff\1\134\1\66\1\136\1\57\1\66\1\uffff\1\141\1\uffff\1\142\3\uffff";
     static final String DFA14_eofS =
         "\143\uffff";
     static final String DFA14_minS =
-        "\1\0\4\75\2\60\1\75\1\60\4\uffff\1\174\1\46\2\uffff\1\52\1\51\4\uffff\2\60\1\uffff\1\101\4\60\2\uffff\2\0\13\uffff\2\60\1\uffff\1\60\2\uffff\1\60\1\uffff\1\60\22\uffff\1\60\4\uffff\2\60\3\uffff\3\60\1\uffff\4\60\1\56\1\uffff\1\60\1\uffff\1\60\3\uffff";
+        "\1\0\4\75\2\60\1\75\1\60\4\uffff\1\174\1\46\2\uffff\1\52\1\51\4\uffff\2\60\1\uffff\1\101\4\60\2\uffff\2\0\13\uffff\1\60\1\uffff\2\60\2\uffff\2\60\23\uffff\1\60\4\uffff\2\60\3\uffff\3\60\1\uffff\4\60\1\56\1\uffff\1\60\1\uffff\1\60\3\uffff";
     static final String DFA14_maxS =
-        "\1\uffff\3\75\1\76\2\172\1\75\1\172\4\uffff\1\174\1\46\2\uffff\1\57\1\51\4\uffff\2\172\1\uffff\5\172\2\uffff\2\uffff\13\uffff\2\172\1\uffff\1\172\2\uffff\1\172\1\uffff\1\172\22\uffff\1\172\4\uffff\2\172\3\uffff\3\172\1\uffff\5\172\1\uffff\1\172\1\uffff\1\172\3\uffff";
+        "\1\uffff\3\75\1\76\2\172\1\75\1\172\4\uffff\1\174\1\46\2\uffff\1\57\1\51\4\uffff\2\172\1\uffff\5\172\2\uffff\2\uffff\13\uffff\1\172\1\uffff\2\172\2\uffff\2\172\23\uffff\1\172\4\uffff\2\172\3\uffff\3\172\1\uffff\5\172\1\uffff\1\172\1\uffff\1\172\3\uffff";
     static final String DFA14_acceptS =
-        "\11\uffff\1\13\1\14\1\15\1\16\2\uffff\1\21\1\22\2\uffff\1\25\1\27\1\32\1\33\2\uffff\1\40\5\uffff\1\47\1\50\2\uffff\1\54\1\55\1\1\1\37\1\2\1\26\1\3\1\5\1\4\1\31\1\6\2\uffff\1\46\1\uffff\1\11\1\36\1\uffff\1\45\1\uffff\1\13\1\14\1\15\1\16\1\17\1\41\1\20\1\21\1\22\1\52\1\53\1\23\1\30\1\24\1\25\1\27\1\32\1\33\1\uffff\1\35\1\40\1\47\1\42\2\uffff\1\50\1\51\1\54\3\uffff\1\34\5\uffff\1\43\1\uffff\1\7\1\uffff\1\12\1\44\1\10";
+        "\11\uffff\1\13\1\14\1\15\1\16\2\uffff\1\21\1\22\2\uffff\1\25\1\27\1\32\1\33\2\uffff\1\40\5\uffff\1\47\1\50\2\uffff\1\54\1\55\1\1\1\37\1\2\1\26\1\3\1\5\1\4\1\31\1\6\1\uffff\1\46\2\uffff\1\11\1\36\2\uffff\1\45\1\13\1\14\1\15\1\16\1\17\1\41\1\20\1\21\1\22\1\52\1\53\1\23\1\30\1\24\1\25\1\27\1\32\1\33\1\uffff\1\35\1\40\1\42\1\47\2\uffff\1\50\1\51\1\54\3\uffff\1\34\5\uffff\1\43\1\uffff\1\7\1\uffff\1\12\1\44\1\10";
     static final String DFA14_specialS =
-        "\1\1\40\uffff\1\0\1\2\100\uffff}>";
+        "\1\0\40\uffff\1\1\1\2\100\uffff}>";
     static final String[] DFA14_transitionS = {
             "\11\44\2\43\2\44\1\43\22\44\1\43\1\2\1\41\3\44\1\16\1\42\1\22\1\23\1\12\1\20\1\24\1\17\1\11\1\21\12\40\1\7\1\31\1\4\1\1\1\3\2\44\5\36\1\6\11\36\1\27\3\36\1\5\1\30\5\36\1\13\1\44\1\14\1\32\1\37\1\44\12\35\1\34\2\35\1\33\5\35\1\10\6\35\1\25\1\15\1\26\uff82\44",
             "\1\45",
             "\1\47",
             "\1\51",
             "\1\53\1\54",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\21\57\1\56\10\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\1\61\31\57",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\56\10\60",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\1\61\31\60",
             "\1\62",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\7\66\1\64\22\66",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\7\65\1\64\22\65",
             "",
             "",
             "",
@@ -1774,14 +1774,14 @@ public class InternalCASPALexer extends Lexer {
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\21\57\1\111\10\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\21\60\1\111\10\60",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
-            "\32\114\4\uffff\1\114\1\uffff\32\114",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\10\66\1\116\21\66",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\10\66\1\117\21\66",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\32\115\4\uffff\1\115\1\uffff\32\115",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\10\65\1\116\21\65",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\10\65\1\117\21\65",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
             "\0\121",
@@ -1797,16 +1797,14 @@ public class InternalCASPALexer extends Lexer {
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\24\57\1\123\5\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\24\60\1\123\5\60",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\124\16\57",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\13\60\1\124\16\60",
             "",
             "",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\10\66\1\125\21\66",
-            "",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
-            "",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\10\65\1\125\21\65",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
             "",
             "",
             "",
@@ -1824,29 +1822,31 @@ public class InternalCASPALexer extends Lexer {
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "",
+            "",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
             "",
             "",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\13\66\1\127\16\66",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\13\66\1\130\16\66",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\13\65\1\127\16\65",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\13\65\1\130\16\65",
             "",
             "",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\131\25\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\22\57\1\132\7\57",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\22\66\1\133\7\66",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\131\25\60",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\22\60\1\132\7\60",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\22\65\1\133\7\65",
             "",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\13\66\1\135\16\66",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\4\57\1\137\25\57",
-            "\1\140\1\uffff\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\13\65\1\135\16\65",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\4\60\1\137\25\60",
+            "\1\140\1\uffff\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
             "",
-            "\12\66\7\uffff\32\66\4\uffff\1\66\1\uffff\32\66",
+            "\12\65\7\uffff\32\65\4\uffff\1\65\1\uffff\32\65",
             "",
-            "\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+            "\12\60\7\uffff\32\60\4\uffff\1\60\1\uffff\32\60",
             "",
             "",
             ""
@@ -1889,16 +1889,6 @@ public class InternalCASPALexer extends Lexer {
         	int _s = s;
             switch ( s ) {
                     case 0 : 
-                        int LA14_33 = input.LA(1);
-
-                        s = -1;
-                        if ( ((LA14_33>='\u0000' && LA14_33<='\uFFFF')) ) {s = 81;}
-
-                        else s = 36;
-
-                        if ( s>=0 ) return s;
-                        break;
-                    case 1 : 
                         int LA14_0 = input.LA(1);
 
                         s = -1;
@@ -1973,6 +1963,16 @@ public class InternalCASPALexer extends Lexer {
                         else if ( ((LA14_0>='\t' && LA14_0<='\n')||LA14_0=='\r'||LA14_0==' ') ) {s = 35;}
 
                         else if ( ((LA14_0>='\u0000' && LA14_0<='\b')||(LA14_0>='\u000B' && LA14_0<='\f')||(LA14_0>='\u000E' && LA14_0<='\u001F')||(LA14_0>='#' && LA14_0<='%')||(LA14_0>='?' && LA14_0<='@')||LA14_0=='\\'||LA14_0=='`'||(LA14_0>='~' && LA14_0<='\uFFFF')) ) {s = 36;}
+
+                        if ( s>=0 ) return s;
+                        break;
+                    case 1 : 
+                        int LA14_33 = input.LA(1);
+
+                        s = -1;
+                        if ( ((LA14_33>='\u0000' && LA14_33<='\uFFFF')) ) {s = 81;}
+
+                        else s = 36;
 
                         if ( s>=0 ) return s;
                         break;
