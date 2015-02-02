@@ -10,12 +10,14 @@ import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.DistributionNatural;
+import eu.quanticol.cASPA.DistributionReference;
 import eu.quanticol.cASPA.FreeVariable;
 import eu.quanticol.cASPA.In;
 import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
 import eu.quanticol.cASPA.Model;
 import eu.quanticol.cASPA.Out;
+import eu.quanticol.cASPA.OutStoreReference;
 import eu.quanticol.cASPA.Parallel;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateAnd;
@@ -28,6 +30,7 @@ import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateOr;
 import eu.quanticol.cASPA.PredicatePlu;
 import eu.quanticol.cASPA.PredicateProcess;
+import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.PredicateSub;
 import eu.quanticol.cASPA.ProcessExpression;
 import eu.quanticol.cASPA.Reference;
@@ -38,10 +41,13 @@ import eu.quanticol.cASPA.StoreExpression;
 import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.UniformNatural;
+import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateDiv;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateExpressionStoreReference;
 import eu.quanticol.cASPA.UpdateMul;
 import eu.quanticol.cASPA.UpdatePlu;
+import eu.quanticol.cASPA.UpdateStoreReference;
 import eu.quanticol.cASPA.UpdateSub;
 import eu.quanticol.cASPA.Updates;
 import java.util.ArrayList;
@@ -52,6 +58,7 @@ import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.EcoreUtil2;
 import org.eclipse.xtext.xbase.lib.Conversions;
+import org.eclipse.xtext.xbase.lib.InputOutput;
 
 @SuppressWarnings("all")
 public class ModelUtil {
@@ -109,6 +116,9 @@ public class ModelUtil {
         _switchResult = this.cTString(_action);
       }
     }
+    if (!_matched) {
+      _switchResult = "ProcessExpression";
+    }
     return _switchResult.toString();
   }
   
@@ -120,7 +130,7 @@ public class ModelUtil {
   }
   
   public String cTString(final PredicateExpression pe) {
-    String _switchResult = null;
+    Object _switchResult = null;
     boolean _matched = false;
     if (!_matched) {
       if (pe instanceof PredicateOr) {
@@ -250,6 +260,15 @@ public class ModelUtil {
         _switchResult = this.cTString(((SelfReference) pe));
       }
     }
+    if (!_matched) {
+      if (pe instanceof PredicateStoreReference) {
+        _matched=true;
+        _switchResult = this.cTString(((PredicateStoreReference) pe));
+      }
+    }
+    if (!_matched) {
+      _switchResult = InputOutput.<PredicateExpression>println(pe);
+    }
     return _switchResult.toString();
   }
   
@@ -272,7 +291,7 @@ public class ModelUtil {
     String _cTString_1 = this.cTString(_updates);
     upds = _cTString_1;
     String _name = a.getName();
-    String _plus = ("Action: " + _name);
+    String _plus = ("Action " + _name);
     String _plus_1 = (_plus + " ");
     Predicate _predicate = a.getPredicate();
     String _cTString_2 = this.cTString(_predicate);
@@ -355,7 +374,7 @@ public class ModelUtil {
       if (s instanceof SelfReference) {
         _matched=true;
         String _name = ((SelfReference)s).getName();
-        _switchResult = ("" + _name);
+        _switchResult = ("this." + _name);
       }
     }
     if (!_matched) {
@@ -365,15 +384,56 @@ public class ModelUtil {
         _switchResult = ("" + _name);
       }
     }
+    if (!_matched) {
+      if (s instanceof PredicateStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((PredicateStoreReference)s).getRef();
+        _switchResult = this.cTString(_ref);
+      }
+    }
+    if (!_matched) {
+      if (s instanceof UpdateExpressionStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((UpdateExpressionStoreReference)s).getRef();
+        _switchResult = this.cTString(_ref);
+      }
+    }
+    if (!_matched) {
+      if (s instanceof OutStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((OutStoreReference)s).getRef();
+        _switchResult = this.cTString(_ref);
+      }
+    }
+    if (!_matched) {
+      if (s instanceof UpdateStoreReference) {
+        _matched=true;
+        StoreExpression _ref = ((UpdateStoreReference)s).getRef();
+        _switchResult = this.cTString(_ref);
+      }
+    }
+    if (!_matched) {
+      if (s instanceof UniformReference) {
+        _matched=true;
+        StoreExpression _ref = ((UniformReference)s).getRef();
+        _switchResult = this.cTString(_ref);
+      }
+    }
+    if (!_matched) {
+      if (s instanceof DistributionReference) {
+        _matched=true;
+        StoreExpression _ref = ((DistributionReference)s).getRef();
+        _switchResult = this.cTString(_ref);
+      }
+    }
     return _switchResult.toString();
   }
   
   public String cTString(final Store s) {
     String _name = s.getName();
-    String _plus = ("" + _name);
-    String _plus_1 = (_plus + " = ");
+    String _plus = (_name + " := ");
     int _value = s.getValue();
-    return (_plus_1 + Integer.valueOf(_value));
+    return (_plus + Integer.valueOf(_value));
   }
   
   public String cTString(final Updates u) {
@@ -385,7 +445,7 @@ public class ModelUtil {
         this.cTString(update);
       }
     }
-    return ("Update: " + temp);
+    return ("{Update}: " + temp);
   }
   
   public String cTString(final LocalSingleEventUpdate u) {

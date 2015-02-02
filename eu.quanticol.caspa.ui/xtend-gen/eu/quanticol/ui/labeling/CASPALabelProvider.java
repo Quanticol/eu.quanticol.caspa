@@ -9,24 +9,41 @@ import eu.quanticol.cASPA.Action;
 import eu.quanticol.cASPA.ActionProcess;
 import eu.quanticol.cASPA.Arguments;
 import eu.quanticol.cASPA.Bool;
+import eu.quanticol.cASPA.BooleanConstant;
+import eu.quanticol.cASPA.Choice;
 import eu.quanticol.cASPA.Constant;
 import eu.quanticol.cASPA.DistributedEventUpdateProbability;
 import eu.quanticol.cASPA.DistributedEventUpdateUniform;
 import eu.quanticol.cASPA.DistributionNatural;
+import eu.quanticol.cASPA.DistributionReference;
+import eu.quanticol.cASPA.In;
+import eu.quanticol.cASPA.Leaf;
 import eu.quanticol.cASPA.LocalSingleEventUpdate;
+import eu.quanticol.cASPA.Out;
+import eu.quanticol.cASPA.OutStoreReference;
+import eu.quanticol.cASPA.Parallel;
 import eu.quanticol.cASPA.Predicate;
 import eu.quanticol.cASPA.PredicateExpression;
+import eu.quanticol.cASPA.PredicateNot;
 import eu.quanticol.cASPA.PredicateProcess;
+import eu.quanticol.cASPA.PredicateStoreReference;
 import eu.quanticol.cASPA.ProcessExpression;
 import eu.quanticol.cASPA.ReferencedProcess;
 import eu.quanticol.cASPA.Store;
+import eu.quanticol.cASPA.StoreExpression;
+import eu.quanticol.cASPA.Stores;
 import eu.quanticol.cASPA.Term;
 import eu.quanticol.cASPA.UniformNatural;
+import eu.quanticol.cASPA.UniformReference;
 import eu.quanticol.cASPA.UpdateExpression;
+import eu.quanticol.cASPA.UpdateExpressionStoreReference;
+import eu.quanticol.cASPA.UpdateStoreReference;
 import eu.quanticol.cASPA.Updates;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider;
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider;
 import org.eclipse.xtext.xbase.lib.Extension;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
 
 /**
  * Provides labels for a EObjects.
@@ -45,24 +62,57 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
   private ModelUtil _modelUtil;
   
   public String text(final Term term) {
-    String temp = null;
     ProcessExpression _ref = term.getRef();
     String _cTString = this._modelUtil.cTString(_ref);
-    temp = _cTString;
-    return ("Term " + temp);
+    String _plus = ("Term: (" + _cTString);
+    String result = (_plus + ", { ");
+    Stores _stores = term.getStores();
+    EList<StoreExpression> _stores_1 = _stores.getStores();
+    for (final StoreExpression s : _stores_1) {
+      Stores _stores_2 = term.getStores();
+      EList<StoreExpression> _stores_3 = _stores_2.getStores();
+      StoreExpression _last = IterableExtensions.<StoreExpression>last(_stores_3);
+      boolean _equals = _last.equals(s);
+      if (_equals) {
+        String _cTString_1 = this._modelUtil.cTString(s);
+        String _plus_1 = (result + _cTString_1);
+        result = _plus_1;
+      } else {
+        String _cTString_2 = this._modelUtil.cTString(s);
+        String _plus_2 = (result + _cTString_2);
+        String _plus_3 = (_plus_2 + ", ");
+        result = _plus_3;
+      }
+    }
+    result = (result + " })");
+    return result;
+  }
+  
+  public String text(final ReferencedProcess process) {
+    eu.quanticol.cASPA.Process _ref = process.getRef();
+    String _name = _ref.getName();
+    return ("References: " + _name);
   }
   
   public String text(final ProcessExpression pe) {
     return this._modelUtil.cTString(pe);
   }
   
-  public String text(final eu.quanticol.cASPA.Process p) {
-    return this._modelUtil.cTString(p);
+  public String text(final ActionProcess ap) {
+    return "Action: ";
   }
   
-  public String text(final ReferencedProcess process) {
-    eu.quanticol.cASPA.Process _ref = process.getRef();
-    return this._modelUtil.cTString(_ref);
+  public String text(final PredicateProcess pp) {
+    return this._modelUtil.cTString(pp);
+  }
+  
+  public String text(final Stores s) {
+    return "Stores: ";
+  }
+  
+  public String text(final eu.quanticol.cASPA.Process p) {
+    String _name = p.getName();
+    return ("Process: " + _name);
   }
   
   public String text(final Store s) {
@@ -70,7 +120,15 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
   }
   
   public String text(final Predicate p) {
-    return this._modelUtil.cTString(p);
+    return "[Predicate]: ";
+  }
+  
+  public String text(final UpdateExpressionStoreReference uesr) {
+    return this._modelUtil.cTString(uesr);
+  }
+  
+  public String text(final OutStoreReference osr) {
+    return this._modelUtil.cTString(osr);
   }
   
   public String text(final PredicateExpression pe) {
@@ -78,54 +136,90 @@ public class CASPALabelProvider extends DefaultEObjectLabelProvider {
   }
   
   public String text(final Constant c) {
-    return this._modelUtil.cTString(c);
+    return "value";
   }
   
   public String text(final Bool bc) {
-    return this._modelUtil.cTString(bc);
+    return "boolean";
   }
   
   public String text(final Action a) {
-    return this._modelUtil.cTString(a);
+    return a.getName();
   }
   
   public String text(final Arguments a) {
     return this._modelUtil.cTString(a);
   }
   
-  public String text(final Updates u) {
-    return this._modelUtil.cTString(u);
+  public String text(final Updates us) {
+    return this._modelUtil.cTString(us);
   }
   
   public String text(final LocalSingleEventUpdate u) {
-    return this._modelUtil.cTString(u);
+    return "Single event: ";
   }
   
   public String text(final DistributedEventUpdateProbability u) {
-    return this._modelUtil.cTString(u);
+    return "Distributed probability function: ";
   }
   
   public String text(final DistributedEventUpdateUniform u) {
-    return this._modelUtil.cTString(u);
+    return "Uniform probability function: ";
   }
   
   public String text(final DistributionNatural u) {
-    return this._modelUtil.cTString(u);
+    return "value";
   }
   
   public String text(final UniformNatural u) {
-    return this._modelUtil.cTString(u);
+    return "value";
   }
   
   public String text(final UpdateExpression u) {
     return this._modelUtil.cTString(u);
   }
   
-  public String text(final PredicateProcess p) {
-    return this._modelUtil.cTString(p);
+  public String text(final Choice ap) {
+    return "+";
   }
   
-  public String text(final ActionProcess p) {
-    return this._modelUtil.cTString(p);
+  public String text(final Parallel ap) {
+    return "|";
+  }
+  
+  public String text(final BooleanConstant bc) {
+    return "boolean";
+  }
+  
+  public String text(final Leaf leaf) {
+    return this._modelUtil.cTString(leaf);
+  }
+  
+  public String text(final UniformReference ur) {
+    return this._modelUtil.cTString(ur);
+  }
+  
+  public String text(final DistributionReference dr) {
+    return this._modelUtil.cTString(dr);
+  }
+  
+  public String text(final UpdateStoreReference usr) {
+    return this._modelUtil.cTString(usr);
+  }
+  
+  public String text(final In in) {
+    return "(In arguments)";
+  }
+  
+  public String text(final Out out) {
+    return "<Out arguments>";
+  }
+  
+  public String text(final PredicateStoreReference psr) {
+    return this._modelUtil.cTString(psr);
+  }
+  
+  public String text(final PredicateNot pn) {
+    return "!";
   }
 }

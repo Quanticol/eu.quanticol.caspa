@@ -50,6 +50,12 @@ import java.util.HashMap
 import eu.quanticol.cASPA.FreeVariable
 import eu.quanticol.cASPA.Bool
 import eu.quanticol.cASPA.BooleanConstant
+import eu.quanticol.cASPA.PredicateStoreReference
+import eu.quanticol.cASPA.UpdateExpressionStoreReference
+import eu.quanticol.cASPA.OutStoreReference
+import eu.quanticol.cASPA.UpdateStoreReference
+import eu.quanticol.cASPA.UniformReference
+import eu.quanticol.cASPA.DistributionReference
 
 class ModelUtil {
 	
@@ -62,6 +68,7 @@ class ModelUtil {
 			Leaf:							"" + e.value
 			PredicateProcess:				e.predicate.cTString
 			ActionProcess:					e.action.cTString
+			default:						"ProcessExpression"
 			}.toString
 	}
 	
@@ -84,6 +91,8 @@ class ModelUtil {
 			Bool:					(pe as Bool).cTString
 			Reference:				(pe as Reference).cTString
 			SelfReference:			(pe as SelfReference).cTString
+			PredicateStoreReference:(pe as PredicateStoreReference).cTString
+			default:				println(pe)
 		}.toString
 		
 	}
@@ -105,7 +114,7 @@ class ModelUtil {
 		
 		upds = a.updates.cTString
 			
-		return "Action: " + a.name + " " + a.predicate.cTString + " " + args + " " + upds
+		return "Action " + a.name + " " + a.predicate.cTString + " " + args + " " + upds
 	}
 	
 	def String cTString(Arguments a){
@@ -136,14 +145,20 @@ class ModelUtil {
 	
 	def String cTString(StoreExpression s){
 		switch(s){
-			Store:					"" + s.name + " = " + s.value
-			SelfReference:			"" + s.name
-			Reference:				"" + s.name
+			Store:							"" + s.name + " = " + s.value
+			SelfReference:					"this." + s.name
+			Reference:						"" + s.name
+			PredicateStoreReference:		s.ref.cTString
+			UpdateExpressionStoreReference:	s.ref.cTString
+			OutStoreReference:				s.ref.cTString
+			UpdateStoreReference:			s.ref.cTString
+			UniformReference:				s.ref.cTString
+			DistributionReference:			s.ref.cTString
 		}.toString
 	}
 	
 	def String cTString(Store s){
-		"" + s.name + " = " + s.value 
+		s.name + " := " + s.value 
 	}
 
 
@@ -151,7 +166,7 @@ class ModelUtil {
 		var String temp = ""
 		for(update : u.updates){
 			temp = temp + " " update.cTString}
-		return "Update: " + temp
+		return "{Update}: " + temp
 	}
 	
 	def String cTString(LocalSingleEventUpdate u){

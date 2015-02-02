@@ -28,6 +28,19 @@ import eu.quanticol.cASPA.Updates
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
 import eu.quanticol.cASPA.Bool
+import eu.quanticol.cASPA.Stores
+import eu.quanticol.cASPA.UpdateExpressionStoreReference
+import eu.quanticol.cASPA.OutStoreReference
+import eu.quanticol.cASPA.Choice
+import eu.quanticol.cASPA.Parallel
+import eu.quanticol.cASPA.Leaf
+import eu.quanticol.cASPA.UniformReference
+import eu.quanticol.cASPA.DistributionReference
+import eu.quanticol.cASPA.UpdateStoreReference
+import eu.quanticol.cASPA.Out
+import eu.quanticol.cASPA.In
+import eu.quanticol.cASPA.PredicateStoreReference
+import eu.quanticol.cASPA.PredicateNot
 
 /**
  * Provides labels for a EObjects.
@@ -45,104 +58,145 @@ class CASPALabelProvider extends DefaultEObjectLabelProvider {
 
 	def text(Term term){
 		
-		var String temp
-		
-//		for(process : term.processes){
-//			temp = process.cTString
-//		}
-
-		temp = term.ref.cTString
-			
-		return "Term " + temp
+		var String result = "Term: (" + term.ref.cTString + ", { " 
+		for(s : term.stores.stores)
+			if(term.stores.stores.last.equals(s))
+				result = result + s.cTString
+			else
+				result = result + s.cTString + ", "
+			result = result + " })"
+		return result
+	}
+	
+	def text(ReferencedProcess process){
+		return "References: " + process.ref.name
 	}
 	
 	def text(ProcessExpression pe){
-		pe.cTString
+		return pe.cTString
+	}
+	
+	def text(ActionProcess ap){
+		return "Action: "
+	}
+	
+	def text(PredicateProcess pp){
+		return pp.cTString
+	}
+	
+	def text(Stores s){
+		return "Stores: "
 	}
 	
 	def text(Process p){
-		p.cTString
-	}
-
-	
-//	def text(TPParallel tpp){
-//		 "|"
-//	}
-	
-	def text(ReferencedProcess process){
-		process.ref.cTString
+		return "Process: " + p.name
 	}
 	
 	def text(Store s){
 		s.cTString
 	}
 	
-//	def text(SelfReferencedStore s){
-//		s.cTString
-//	}
-//	
-//	def text(ReferencedStore s){
-//		s.cTString
-//	}
-	
 	def text(Predicate p){
-		p.cTString
+		return "[Predicate]: "
+	}
+	
+	def text(UpdateExpressionStoreReference uesr){
+		return uesr.cTString
+	}
+	
+	def text(OutStoreReference osr){
+		return osr.cTString
 	}
 	
 	def text(PredicateExpression pe){
-		pe.cTString
+		return pe.cTString
 	}
 	
 	def text(Constant c){
-		c.cTString
+		return "value"
 	}
 	
 	def text(Bool bc){
-		bc.cTString
+		return "boolean"
 	}
 	
 	def text(Action a){
-		a.cTString
+		return a.name
 	}
 	
 	def text(Arguments a){
-		a.cTString
+		return a.cTString
 	}
 	
-	def text(Updates u){
-		u.cTString
-	}	
+	def text(Updates us){
+		return us.cTString
+	}
 	
 	def text(LocalSingleEventUpdate u){
-		u.cTString
+		return "Single event: "
 	}
 	
 	def text(DistributedEventUpdateProbability u){
-		u.cTString
+		return "Distributed probability function: "
 	} 
 	
 	def text(DistributedEventUpdateUniform u){ 
-		u.cTString
+		return "Uniform probability function: "
 	}
 	
 	def text(DistributionNatural u){ 
-		u.cTString
+		return "value"
 	}
 	
 	def text(UniformNatural u){ 
-		u.cTString
+		return "value"
 	} 
 	
 	def text(UpdateExpression u){ 
-		u.cTString
+		return u.cTString
 	}
 	
-	def text(PredicateProcess p){
-		p.cTString
+	def text(Choice ap){
+		return "+"
 	}
 	
-	def text(ActionProcess p){
-		p.cTString
+	def text(Parallel ap){
+		return "|"
 	}
 	
+	def text(BooleanConstant bc){
+		return "boolean"
+	}
+	
+	def text(Leaf leaf){
+		return leaf.cTString
+	}
+	
+	def text(UniformReference ur){
+		return ur.cTString
+	}
+
+	def text(DistributionReference dr){
+		return dr.cTString
+	}
+	
+	def text(UpdateStoreReference usr){
+		return usr.cTString
+	}
+	
+	def text(In in){
+		return "(In arguments)"
+	}
+	
+	def text(Out out){
+		return "<Out arguments>"
+	}
+	
+	def text(PredicateStoreReference psr){
+		return psr.cTString
+	} 
+	
+	def text(PredicateNot pn){
+		return "!"
+	}
 }
