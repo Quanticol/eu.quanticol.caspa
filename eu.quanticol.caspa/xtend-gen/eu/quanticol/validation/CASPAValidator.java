@@ -924,7 +924,7 @@ public class CASPAValidator extends AbstractCASPAValidator {
     }
     fails = (count == 0);
     if (fails) {
-      this.error("No receiving or sending partner action.", 
+      this.warning("No receiving or sending partner action.", 
         CASPAPackage.Literals.ACTION__NAME, 
         CASPAValidator.NO_ACTION_PARTNER);
     }

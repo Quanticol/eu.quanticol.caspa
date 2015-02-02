@@ -414,7 +414,7 @@ public class ValidationTest {
       _builder.newLine();
       Model _parse = this._parseHelper.parse(_builder);
       EClass _action = CASPAPackage.eINSTANCE.getAction();
-      this._validationTestHelper.assertError(_parse, _action, 
+      this._validationTestHelper.assertWarning(_parse, _action, 
         CASPAValidator.NO_ACTION_PARTNER, 
         "No receiving or sending partner action.");
     } catch (Throwable _e) {

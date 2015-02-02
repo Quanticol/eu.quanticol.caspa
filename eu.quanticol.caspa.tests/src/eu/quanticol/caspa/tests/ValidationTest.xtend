@@ -235,7 +235,7 @@ class ValidationTest {
 		'''
 		(P,{a:=1});
 		P = a[a == 1]<>.P;
-		'''.parse.assertError(CASPAPackage::eINSTANCE.action,
+		'''.parse.assertWarning(CASPAPackage::eINSTANCE.action,
 			CASPAValidator::NO_ACTION_PARTNER,
 			"No receiving or sending partner action.")
 		

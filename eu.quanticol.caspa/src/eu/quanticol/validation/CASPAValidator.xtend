@@ -540,7 +540,7 @@ class CASPAValidator extends AbstractCASPAValidator  {
 		fails = count == 0
 			 
 		if(fails){
-			error("No receiving or sending partner action.",
+			warning("No receiving or sending partner action.",
 			CASPAPackage::Literals.ACTION__NAME,
 			NO_ACTION_PARTNER)
 		}
